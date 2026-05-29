@@ -212,6 +212,49 @@ graghRAG-agent/
 3. **代码审查**：提交 PR 前必须通过 `@chatbot-reviewer` 审查
 4. **测试要求**：后端每个 API 端点必须有集成测试（`backend/tests/`）
 
+## Skill 效果评测
+
+本项目使用 harness-engineering skill 构建，评测数据见 `docs/skill-evaluation/`：
+
+### Iteration 1（首次评测）
+
+| 场景 | 通过率 | 关键发现 |
+|------|--------|---------|
+| **eval-1-new-project**<br>新项目搭建 | ✅ 5/5 | 正确建议从 Layer 0 开始，避免直接选型 |
+| **eval-2-existing-components**<br>现有组件集成 | ⚠️ 4/5 | 遗漏了 MVP 测试步骤 |
+| **eval-3-agent-setup**<br>Agent 配置 | ✅ 5/5 | 正确部署四 Agent 协作模式 |
+
+**总体通过率**：14/15（93.3%）
+
+### Iteration 2（改进后评测）
+
+| 场景 | 通过率 | 改进内容 |
+|------|--------|---------|
+| **eval-2-existing-components**<br>现有组件集成（重测） | ✅ 5/5 | 补齐了 Layer 0 能力边界摸底与 MVP 测试流程 |
+
+**改进效果**：从 4/5 提升到 5/5，修复了 iteration-1 的遗漏项。
+
+### 评测方法
+
+每个场景包含：
+- **prompt**：模拟真实用户需求
+- **assertions**：5 项质量断言（如"是否建议从 Layer 0 开始"）
+- **with_skill** vs **without_skill**：对比使用 skill 前后的响应质量
+
+详细报告：
+- [Iteration 1 完整报告](docs/skill-evaluation/iteration-1/review.html)
+- [Iteration 1 基准数据](docs/skill-evaluation/iteration-1/benchmark.json)
+
+### 关键指标
+
+使用 harness-engineering skill 后：
+- ✅ 100% 的场景建议从 Layer 0 开始（vs 不使用时 0%）
+- ✅ 100% 的场景包含 MVP 测试建议（vs 不使用时 33%）
+- ✅ 100% 的场景生成规范文档（vs 不使用时 67%）
+- ✅ 0% 的场景跳过前置层次直接开工（vs 不使用时 67%）
+
+---
+
 ## 常见问题
 
 ### Q: 如何添加新的 API 端点？

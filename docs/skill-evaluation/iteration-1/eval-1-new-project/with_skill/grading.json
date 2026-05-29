@@ -1,0 +1,45 @@
+{
+  "expectations": [
+    {
+      "text": "响应中明确建议从能力边界摸底（Layer 0）开始，而非直接选型或写代码",
+      "passed": true,
+      "evidence": "现在，请从 **Layer 0** 开始：为上述 5 类候选组件（文档解析、实体抽取、图谱存储、向量检索、LLM 服务）逐一进行能力边界摸底。每完成一个组件的评估，将结论写入项目 Memory，然后进入 Layer 1。"
+    },
+    {
+      "text": "响应中包含MVP测试先于正式开发的建议",
+      "passed": true,
+      "evidence": "MVP 优先于完美 | Layer 0-2 不要追求完美，50 行跑通的脚本比 500 行的完整实现更有价值"
+    },
+    {
+      "text": "响应中提及生成规范文档（至少包含组件规范和API规范）",
+      "passed": true,
+      "evidence": "基于实测结果，生成**文档解析引擎规范文档 v1**（Layer 1 产出）；后端 API 架构规范包含 RESTful API 端点列表，每个端点含 method + path、request body/params schema、response body schema（Layer 5b）"
+    },
+    {
+      "text": "响应中建议在写产品代码之前先确立项目开发规范（目录结构、环境隔离等）",
+      "passed": true,
+      "evidence": "Layer 6: 项目开发规范确立 — 核心规范含：前端所有代码统一放在 frontend/、后端所有代码统一放在 backend/、后端敏感配置统一在 .env 管理、后端服务必须使用 uv 创建独立虚拟环境；附完整目录结构架构图"
+    },
+    {
+      "text": "响应中不包含跳过前面层次直接开工的建议",
+      "passed": true,
+      "evidence": "必须按顺序推进，不跳步——每一层都在验证上一层的假设是否正确，跳步的代价是后期返工。禁止跳步的常见反模式表格列出：跳过 Layer 0 直接写代码、Layer 2 就试图桥接两个组件、Layer 5 蓝图跳过直接施工等"
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.00
+  },
+  "claims": [],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [],
+    "workarounds": []
+  },
+  "eval_feedback": {
+    "suggestions": [],
+    "overall": "All 5 expectations pass. The response follows the yujia-engineering methodology rigorously: it starts with Layer 0 capability assessment, mandates MVP testing (Layers 1-2) before formal development, requires spec documents (component specs in Layers 1-2, API spec in Layer 5b, frontend design spec in Layer 5c), establishes project development norms in Layer 6 before coding in Layer 7, and explicitly warns against skipping layers with a dedicated anti-patterns table."
+  }
+}

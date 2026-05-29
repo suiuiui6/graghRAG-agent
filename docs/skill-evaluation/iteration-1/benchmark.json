@@ -1,0 +1,145 @@
+{
+  "metadata": {
+    "skill_name": "yujia-engineering",
+    "skill_path": "C:/Users/14156/.claude/skills/yujia-engineering",
+    "executor_model": "deepseek-v4-pro",
+    "analyzer_model": "deepseek-v4-pro",
+    "timestamp": "2026-05-25T13:02:38Z",
+    "evals_run": [1, 2, 3],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 1,
+      "eval_name": "new-project",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0, "passed": 5, "failed": 0, "total": 5,
+        "time_seconds": 149.7, "tokens": 51373, "tool_calls": 11, "errors": 0
+      },
+      "expectations": [
+        {"text": "明确建议从能力边界摸底（Layer 0）开始", "passed": true, "evidence": "文档以Layer 0开头，对5类候选组件逐一进行能力边界摸底"},
+        {"text": "MVP测试先于正式开发", "passed": true, "evidence": "Layer 1和Layer 2明确要求先MVP实测再写正式代码"},
+        {"text": "生成规范文档（组件规范+API规范）", "passed": true, "evidence": "每层产出规范文档，Layer 5包含PRD、Backend API Spec、Frontend Design Spec"},
+        {"text": "写产品代码前确立项目开发规范", "passed": true, "evidence": "Layer 6确立4条铁律"},
+        {"text": "不包含跳过层次直接开工", "passed": true, "evidence": "明确标注禁止跳步的反模式警告"}
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "new-project",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.6, "passed": 3, "failed": 2, "total": 5,
+        "time_seconds": 97.2, "tokens": 18783, "tool_calls": 2, "errors": 0
+      },
+      "expectations": [
+        {"text": "明确建议从能力边界摸底开始", "passed": false, "evidence": "直接从技术选型开始，未提及能力边界摸底"},
+        {"text": "MVP测试先于正式开发", "passed": true, "evidence": "推荐MVP-first策略"},
+        {"text": "生成规范文档", "passed": false, "evidence": "描述了API路由但未建议生成正式的规范文档"},
+        {"text": "写产品代码前确立项目开发规范", "passed": true, "evidence": "Stage 0涵盖目录结构、环境隔离"},
+        {"text": "不包含跳过层次直接开工", "passed": true, "evidence": "有结构化的分阶段路线图"}
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "existing-components",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8, "passed": 4, "failed": 1, "total": 5,
+        "time_seconds": 130.7, "tokens": 66194, "tool_calls": 13, "errors": 0
+      },
+      "expectations": [
+        {"text": "识别已有组件MVP已完成", "passed": true, "evidence": "Layers 0-4标注为已完成"},
+        {"text": "[FIXED] 正确评估桥接状态: 若未完成建议建立BridgePipeline，若已完成确认状态并引导Layer 5", "passed": true, "evidence": "Agent正确识别BridgePipeline已完成，引导进入Phase 1(三份蓝图文档)"},
+        {"text": "写产品代码前生成PRD和API规范", "passed": true, "evidence": "Phase 1明确要求在写代码前先写三份蓝图文档"},
+        {"text": "确立目录结构和开发规范", "passed": true, "evidence": "Section 二定义frontend/backend/目录，Phase 2详述4条铁律"},
+        {"text": "提及三个Agent协作流程", "passed": false, "evidence": "仅在Phase 6提及审查agent，未提planner和coder"}
+      ],
+      "notes": ["断言2已修复为条件性断言，with-skill正确识别BridgePipeline已完成，不再错误扣分"]
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "existing-components",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0, "passed": 5, "failed": 0, "total": 5,
+        "time_seconds": 168.0, "tokens": 40228, "tool_calls": 14, "errors": 0
+      },
+      "expectations": [
+        {"text": "识别已有组件MVP已完成", "passed": true, "evidence": "阶段0标注已完成"},
+        {"text": "[FIXED] 正确评估桥接状态", "passed": true, "evidence": "#1优先级文档，定义MinerU→Bridge→LangExtract数据流"},
+        {"text": "写产品代码前生成PRD和API规范", "passed": true, "evidence": "阶段1(规范文档)置于阶段2-4(代码实现)之前"},
+        {"text": "确立目录结构和开发规范", "passed": true, "evidence": "完整目录结构含frontend/backend/，各组件配有.env/.venv"},
+        {"text": "提及三个Agent协作流程", "passed": false, "evidence": "全文未出现planner/coder/reviewer三Agent协作描述"}
+      ],
+      "notes": ["断言5(fail)与with-skill一致：两个配置都未提及完整三agent协作流程"]
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "agent-setup",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0, "passed": 5, "failed": 0, "total": 5,
+        "time_seconds": 162.7, "tokens": 66358, "tool_calls": 26, "errors": 0
+      },
+      "expectations": [
+        {"text": "指导创建.claude/agents/目录并部署agent配置", "passed": true, "evidence": "提供了完整的三agent配置文件，指导从skill templates复制到项目"},
+        {"text": "说明三个Agent调用顺序", "passed": true, "evidence": "明确给出planner→coder→reviewer→fix→verify流程"},
+        {"text": "[FIXED] 包含调用Agent的具体指导", "passed": true, "evidence": "提供了自然语言调用描述，含具体的prompt模板和Phase流程"},
+        {"text": "说明planner只规划不写代码，coder按规划实现，reviewer审查", "passed": true, "evidence": "Section 3明确定义各agent职责边界"},
+        {"text": "强调代码应严格遵循规范文档", "passed": true, "evidence": "Section 7.1强调规范文档是唯一真相源"}
+      ],
+      "notes": ["断言3已修复为接受多种调用格式，with-skill的自然语言描述现在通过"]
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "agent-setup",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0, "passed": 5, "failed": 0, "total": 5,
+        "time_seconds": 177.9, "tokens": 37309, "tool_calls": 31, "errors": 0
+      },
+      "expectations": [
+        {"text": "指导创建.claude/agents/目录并部署agent配置", "passed": true, "evidence": "Section 4提供备份、替换、验证三步部署指南"},
+        {"text": "说明三个Agent调用顺序", "passed": true, "evidence": "Section 3给出并行规划→并行编码→审查修复→集成测试四阶段流程"},
+        {"text": "[FIXED] 包含调用Agent的具体指导", "passed": true, "evidence": "使用slash-command格式(/chatbot-planner)，现被新断言接受"},
+        {"text": "说明planner只规划不写代码", "passed": true, "evidence": "Section 5明确planner职责边界"},
+        {"text": "强调代码应严格遵循规范文档", "passed": true, "evidence": "Section 2中coder配置引用integration/下的3份蓝图文档"}
+      ],
+      "notes": ["断言3已修复为接受多种调用格式，slash-command格式现在通过"]
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {"mean": 0.933, "stddev": 0.115, "min": 0.8, "max": 1.0},
+      "time_seconds": {"mean": 147.7, "stddev": 16.1, "min": 130.7, "max": 162.7},
+      "tokens": {"mean": 61308, "stddev": 8555, "min": 51373, "max": 66358}
+    },
+    "without_skill": {
+      "pass_rate": {"mean": 0.867, "stddev": 0.231, "min": 0.6, "max": 1.0},
+      "time_seconds": {"mean": 147.7, "stddev": 44.0, "min": 97.2, "max": 177.9},
+      "tokens": {"mean": 32107, "stddev": 11631, "min": 18783, "max": 40228}
+    },
+    "delta": {
+      "pass_rate": "+0.07",
+      "time_seconds": "+0.0",
+      "tokens": "+29202"
+    }
+  },
+  "notes": [
+    "断言修复后：with-skill 93.3% vs without-skill 86.7%（+6.7%）",
+    "唯一剩余的共同fail: Eval2断言5（三agent协作流程）— 两个配置都只部分提及agent",
+    "with-skill在Eval1(全新项目)上优势最大：100% vs 60%，方法论引导效果显著",
+    "Skill增加约29k tokens但产出更具可操作性的分阶段指导",
+    "Eval1 without-skill的核心缺陷：跳过了能力边界摸底和规范文档生成两个关键层次"
+  ]
+}

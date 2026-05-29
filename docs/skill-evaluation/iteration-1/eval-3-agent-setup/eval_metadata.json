@@ -1,0 +1,12 @@
+{
+  "eval_id": 3,
+  "eval_name": "agent-setup",
+  "prompt": "我的多模态RAG项目已经有了完整的规范文档：PRD v1.0、后端API架构规范v1.0、前端系统设计规范v1.0，项目开发规范也已经写入CLAUDE.md。现在需要正式开工写代码。我听说Claude Code有chatbot-planner、chatbot-coder、chatbot-reviewer三个agent可以协作，但我的项目还没有配置它们。请帮我建立这三个agent的配置，并告诉我怎么用它们完成前端和后端的开发。",
+  "assertions": [
+    "响应中指导如何在项目下创建.claude/agents/目录并部署agent配置",
+    "响应中说明三个Agent的调用顺序：planner → coder → reviewer",
+    "响应中包含如何调用三个Agent的具体指导（接受以下任一形式：自然语言描述如\"使用chatbot-planner agent\"、slash命令如/chatbot-planner、或结构化Agent工具调用参数）",
+    "响应中说明chatbot-planner只做规划不写代码，chatbot-coder按规划实现，chatbot-reviewer做审查",
+    "响应中强调代码应严格遵循已有的规范文档（Layer 5的蓝图）"
+  ]
+}
