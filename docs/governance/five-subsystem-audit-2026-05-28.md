@@ -51,7 +51,7 @@
 
 - 根 `CLAUDE.md` 顶部声明"搭建期完成日期 2026-05-28，进入维护期"
 - `.claude/projects/D--graghRAG-agent/memory/MEMORY.md` 维护 Layer 0-1 关键决策
-- `plans/` 目录保存所有实施计划（含本计划 `yujia-engineering-remediation-plan.md`）
+- `plans/` 目录保存所有实施计划（含本计划 `harness-engineering-remediation-plan.md`）
 
 ---
 
