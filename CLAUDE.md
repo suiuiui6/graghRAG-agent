@@ -1,7 +1,7 @@
 # graghRAG-agent — 项目宪章
 
-> 驾驭工程搭建期完成日期：2026-05-28，自此进入维护期。
-> 维护期工作模式见 yujia-engineering skill 的"何时退出本方法论"章节。
+> Harness Engineering 搭建期完成日期：2026-05-28，自此进入维护期。
+> 维护期工作模式见 harness-engineering skill 的"何时退出本方法论"章节。
 
 ## 7 条铁律
 

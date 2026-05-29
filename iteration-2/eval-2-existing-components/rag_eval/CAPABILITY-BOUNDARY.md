@@ -1,6 +1,6 @@
 # rag_eval 能力边界（Layer 0 摸底）
 
-> 按 yujia-engineering 维护期重新进入触发器"引入新核心组件"，从 Layer 0 开始，
+> 按 harness-engineering 维护期重新进入触发器"引入新核心组件"，从 Layer 0 开始，
 > 作用范围仅限本子系统，不重做整个项目。
 
 ## ✅ 支持

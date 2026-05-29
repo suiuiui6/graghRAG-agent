@@ -1,0 +1,1004 @@
+{
+  "_meta": {
+    "doc_id": "doc_ingest_232e1611",
+    "doc_filename": "论文.pdf",
+    "kg_nodes_total": 439,
+    "kg_nodes_grounded": 252,
+    "kg_edges_total": 1901,
+    "version": "1.0",
+    "category_legend": {
+      "T1": "简单事实 (single-node, hops=1)",
+      "T2": "类型聚合 (recall-focused)",
+      "T3": "数值精度 (exact-number)",
+      "T4": "多跳推理 (graph traversal)",
+      "T5": "拒答 OOD (out-of-scope, should_refuse=true)",
+      "T6": "噪声鲁棒 (typos / paraphrase)",
+      "T7": "误导性 / 假前提 (false premise)"
+    },
+    "category_counts": {
+      "T1": 12,
+      "T2": 8,
+      "T3": 8,
+      "T4": 4,
+      "T5": 10,
+      "T6": 5,
+      "T7": 3
+    }
+  },
+  "questions": [
+    {
+      "qid": "Q01",
+      "category": "T1",
+      "question": "这篇论文的标题是什么？",
+      "expected_node_ids": [
+        "n0001"
+      ],
+      "expected_keywords": [
+        "绿电直连",
+        "电氢氨",
+        "园区",
+        "优化运行"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 1,
+      "evidence_pages": [
+        0
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q02",
+      "category": "T1",
+      "question": "这篇论文的编号(ID)是什么？",
+      "expected_node_ids": [
+        "n0002"
+      ],
+      "expected_keywords": [
+        "002196"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 1,
+      "evidence_pages": [
+        0
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q03",
+      "category": "T1",
+      "question": "论文中提到的 W4S1 场景代表什么？",
+      "expected_node_ids": [
+        "n0035"
+      ],
+      "expected_keywords": [
+        "最大弃电",
+        "maximum curtailment",
+        "173.7"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 1,
+      "evidence_pages": [
+        1
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q04",
+      "category": "T1",
+      "question": "论文使用了什么优化方法来求解问题二？",
+      "expected_node_ids": [
+        "n0018",
+        "n0079"
+      ],
+      "expected_keywords": [
+        "MILP",
+        "混合整数线性规划"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 1,
+      "evidence_pages": [
+        1,
+        3
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q05",
+      "category": "T1",
+      "question": "问题三采用的优化建模方法是什么？",
+      "expected_node_ids": [
+        "n0024"
+      ],
+      "expected_keywords": [
+        "LP",
+        "线性规划",
+        "连续"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 1,
+      "evidence_pages": [
+        1
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q06",
+      "category": "T1",
+      "question": "代码实现使用了哪个版本的 Python？",
+      "expected_node_ids": [
+        "n0407"
+      ],
+      "expected_keywords": [
+        "Python",
+        "3.10"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 1,
+      "evidence_pages": [
+        22
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q07",
+      "category": "T1",
+      "question": "论文用什么库做可视化？",
+      "expected_node_ids": [
+        "n0412"
+      ],
+      "expected_keywords": [
+        "Matplotlib"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 1,
+      "evidence_pages": [
+        22
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q08",
+      "category": "T1",
+      "question": "碳-电-氢-氨多市场耦合优化模型属于什么改进方向？",
+      "expected_node_ids": [
+        "n0395"
+      ],
+      "expected_keywords": [
+        "碳交易",
+        "carbon",
+        "耦合"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 1,
+      "evidence_pages": [
+        17
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q09",
+      "category": "T1",
+      "question": "论文中处理不确定性的改进方法有哪些？",
+      "expected_node_ids": [
+        "n0397"
+      ],
+      "expected_keywords": [
+        "鲁棒",
+        "随机规划",
+        "RO",
+        "SP"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 1,
+      "evidence_pages": [
+        17
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q10",
+      "category": "T1",
+      "question": "图 5 展示了什么内容？",
+      "expected_node_ids": [
+        "n0313"
+      ],
+      "expected_keywords": [
+        "问题四",
+        "三种模式",
+        "经济性",
+        "储能"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 1,
+      "evidence_pages": [
+        13
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q11",
+      "category": "T1",
+      "question": "图 6 是什么图？",
+      "expected_node_ids": [
+        "n0379"
+      ],
+      "expected_keywords": [
+        "全问题",
+        "汇总",
+        "吨氨成本",
+        "绿电指标"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 1,
+      "evidence_pages": [
+        17
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q12",
+      "category": "T1",
+      "question": "Pandas 在论文中扮演什么角色？",
+      "expected_node_ids": [
+        "n0411"
+      ],
+      "expected_keywords": [
+        "Pandas",
+        "data processing",
+        "数据处理"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 1,
+      "evidence_pages": [
+        22
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q13",
+      "category": "T2",
+      "question": "论文里采用了哪些优化建模方法？请尽量完整列出。",
+      "expected_node_ids": [
+        "n0018",
+        "n0024",
+        "n0079",
+        "n0395",
+        "n0397"
+      ],
+      "expected_keywords": [
+        "MILP",
+        "混合整数",
+        "LP",
+        "线性规划",
+        "鲁棒"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 2,
+      "evidence_pages": [
+        1,
+        3,
+        17
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q14",
+      "category": "T2",
+      "question": "该论文实现部分(Python 代码)使用了哪些主要函数？",
+      "expected_node_ids": [
+        "n0414",
+        "n0415",
+        "n0416",
+        "n0417",
+        "n0418"
+      ],
+      "expected_keywords": [
+        "load_all_data",
+        "generate_scenarios",
+        "solve_problem"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 2,
+      "evidence_pages": [
+        22
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q15",
+      "category": "T2",
+      "question": "论文中所有的图(figure)有哪些？",
+      "expected_node_ids": [
+        "n0221",
+        "n0313",
+        "n0379"
+      ],
+      "expected_keywords": [
+        "图 2",
+        "图 5",
+        "图 6"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 2,
+      "evidence_pages": [
+        10,
+        13,
+        17
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q16",
+      "category": "T2",
+      "question": "论文摘要中提到的吨氨成本类经济指标分别有哪些？",
+      "expected_node_ids": [
+        "n0015",
+        "n0019",
+        "n0021",
+        "n0022",
+        "n0025"
+      ],
+      "expected_keywords": [
+        "3554",
+        "5820",
+        "7111",
+        "3669",
+        "5652"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 2,
+      "evidence_pages": [
+        1
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q17",
+      "category": "T2",
+      "question": "论文摘要(p1)罗列出了哪些产能/装机的关键参数？",
+      "expected_node_ids": [
+        "n0006",
+        "n0007",
+        "n0008",
+        "n0009"
+      ],
+      "expected_keywords": [
+        "0.75MW",
+        "6MW",
+        "36吨",
+        "72吨"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 2,
+      "evidence_pages": [
+        1
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q18",
+      "category": "T2",
+      "question": "论文需要解决几个问题？分别是什么主题？",
+      "expected_node_ids": [
+        "n0057",
+        "n0076",
+        "n0077",
+        "n0078"
+      ],
+      "expected_keywords": [
+        "五个",
+        "递进",
+        "基准线",
+        "灵活性",
+        "离散启停"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 2,
+      "evidence_pages": [
+        3
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q19",
+      "category": "T2",
+      "question": "论文里出现了哪些关于'绿电指标合规率'的具体数值？",
+      "expected_node_ids": [
+        "n0020",
+        "n0029"
+      ],
+      "expected_keywords": [
+        "39.2",
+        "69.2",
+        "合规率"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 2,
+      "evidence_pages": [
+        1
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q20",
+      "category": "T2",
+      "question": "在摘要中给出的电力流向相关 metric (购电、售电、自发自用率等)有哪些？",
+      "expected_node_ids": [
+        "n0011",
+        "n0012",
+        "n0013",
+        "n0014",
+        "n0016",
+        "n0017"
+      ],
+      "expected_keywords": [
+        "558.72",
+        "603.45",
+        "172.04",
+        "216.77",
+        "28.2",
+        "35.9"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 2,
+      "evidence_pages": [
+        1
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q21",
+      "category": "T3",
+      "question": "论文摘要中给出的初始合成氨产能(initial)是多少吨/日？",
+      "expected_node_ids": [
+        "n0008"
+      ],
+      "expected_keywords": [
+        "36"
+      ],
+      "forbidden_keywords": [
+        "72吨/日",
+        "9023",
+        "10903"
+      ],
+      "should_refuse": false,
+      "reasoning_hops": 1,
+      "evidence_pages": [
+        1
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q22",
+      "category": "T3",
+      "question": "扩容后的合成氨产能(expanded)是多少吨/日？",
+      "expected_node_ids": [
+        "n0009"
+      ],
+      "expected_keywords": [
+        "72"
+      ],
+      "forbidden_keywords": [
+        "36吨/日"
+      ],
+      "should_refuse": false,
+      "reasoning_hops": 1,
+      "evidence_pages": [
+        1
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q23",
+      "category": "T3",
+      "question": "论文摘要给出的园区总用电量是多少 MWh？",
+      "expected_node_ids": [
+        "n0011"
+      ],
+      "expected_keywords": [
+        "558.72"
+      ],
+      "forbidden_keywords": [
+        "603.45",
+        "172.04",
+        "216.77"
+      ],
+      "should_refuse": false,
+      "reasoning_hops": 1,
+      "evidence_pages": [
+        1
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q24",
+      "category": "T3",
+      "question": "论文摘要中可再生能源发电量是多少 MWh？",
+      "expected_node_ids": [
+        "n0012"
+      ],
+      "expected_keywords": [
+        "603.45"
+      ],
+      "forbidden_keywords": [
+        "558.72",
+        "172.04"
+      ],
+      "should_refuse": false,
+      "reasoning_hops": 1,
+      "evidence_pages": [
+        1
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q25",
+      "category": "T3",
+      "question": "论文计算出的电网支撑价值是多少元/吨？",
+      "expected_node_ids": [
+        "n0040",
+        "n0041"
+      ],
+      "expected_keywords": [
+        "1970"
+      ],
+      "forbidden_keywords": [
+        "3554",
+        "5820",
+        "7111"
+      ],
+      "should_refuse": false,
+      "reasoning_hops": 1,
+      "evidence_pages": [
+        1
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q26",
+      "category": "T3",
+      "question": "论文摘要给出的可再生能源弃电率(curtailment rate)是多少？",
+      "expected_node_ids": [
+        "n0034"
+      ],
+      "expected_keywords": [
+        "95.4"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 1,
+      "evidence_pages": [
+        1
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q27",
+      "category": "T3",
+      "question": "离网带储能的最优储能配置容量/功率是多少？",
+      "expected_node_ids": [
+        "n0036"
+      ],
+      "expected_keywords": [
+        "210.4",
+        "30"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 1,
+      "evidence_pages": [
+        1
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q28",
+      "category": "T3",
+      "question": "摘要中给出的年度合成氨产量(无储能 vs 有储能)是多少吨？",
+      "expected_node_ids": [
+        "n0032",
+        "n0037"
+      ],
+      "expected_keywords": [
+        "9023",
+        "10903"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 1,
+      "evidence_pages": [
+        1
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q29",
+      "category": "T4",
+      "question": "解决问题二的核心建模方法及其与问题三方法的差异是什么？",
+      "expected_node_ids": [
+        "n0018",
+        "n0024",
+        "n0078",
+        "n0079"
+      ],
+      "expected_keywords": [
+        "MILP",
+        "LP",
+        "离散启停",
+        "连续",
+        "二进制",
+        "big-M"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 2,
+      "evidence_pages": [
+        1,
+        3
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q30",
+      "category": "T4",
+      "question": "离网带储能场景相比无储能场景，产量提升了多少？",
+      "expected_node_ids": [
+        "n0032",
+        "n0037",
+        "n0038"
+      ],
+      "expected_keywords": [
+        "20.8",
+        "9023",
+        "10903"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 2,
+      "evidence_pages": [
+        1
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q31",
+      "category": "T4",
+      "question": "成本最低和最高的两种运营模式分别对应多少元/吨？",
+      "expected_node_ids": [
+        "n0015",
+        "n0019",
+        "n0021"
+      ],
+      "expected_keywords": [
+        "3554",
+        "7111"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 2,
+      "evidence_pages": [
+        1
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q32",
+      "category": "T4",
+      "question": "摘要中讨论的两种连续调节方式分别使绿电合规率达到了什么水平？",
+      "expected_node_ids": [
+        "n0020",
+        "n0024",
+        "n0029",
+        "n0030"
+      ],
+      "expected_keywords": [
+        "39.2",
+        "69.2",
+        "线性",
+        "LP",
+        "连续"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 2,
+      "evidence_pages": [
+        1
+      ],
+      "notes": ""
+    },
+    {
+      "qid": "Q33",
+      "category": "T5",
+      "question": "Transformer 模型用了多少层 encoder？",
+      "expected_node_ids": [],
+      "expected_keywords": [],
+      "forbidden_keywords": [],
+      "should_refuse": true,
+      "reasoning_hops": 1,
+      "evidence_pages": [],
+      "notes": "Transformer 论文是 Attention is All You Need，与本 KG 无关"
+    },
+    {
+      "qid": "Q34",
+      "category": "T5",
+      "question": "BERT 在 GLUE benchmark 上的得分是多少？",
+      "expected_node_ids": [],
+      "expected_keywords": [],
+      "forbidden_keywords": [],
+      "should_refuse": true,
+      "reasoning_hops": 1,
+      "evidence_pages": [],
+      "notes": "BERT/GLUE 与本 KG 无关"
+    },
+    {
+      "qid": "Q35",
+      "category": "T5",
+      "question": "ResNet-50 的参数量有多少？",
+      "expected_node_ids": [],
+      "expected_keywords": [],
+      "forbidden_keywords": [],
+      "should_refuse": true,
+      "reasoning_hops": 1,
+      "evidence_pages": [],
+      "notes": "CV 模型与本 KG 无关"
+    },
+    {
+      "qid": "Q36",
+      "category": "T5",
+      "question": "这篇论文的第一作者是谁？",
+      "expected_node_ids": [],
+      "expected_keywords": [],
+      "forbidden_keywords": [],
+      "should_refuse": true,
+      "reasoning_hops": 1,
+      "evidence_pages": [],
+      "notes": "KG 中不含作者信息（仅 title 和 id）"
+    },
+    {
+      "qid": "Q37",
+      "category": "T5",
+      "question": "本论文里有没有讨论太阳能电池板的转换效率参数？",
+      "expected_node_ids": [],
+      "expected_keywords": [],
+      "forbidden_keywords": [],
+      "should_refuse": true,
+      "reasoning_hops": 1,
+      "evidence_pages": [],
+      "notes": "KG 中无该参数节点"
+    },
+    {
+      "qid": "Q38",
+      "category": "T5",
+      "question": "论文使用 GPU 训练了多少个 epoch？",
+      "expected_node_ids": [],
+      "expected_keywords": [],
+      "forbidden_keywords": [],
+      "should_refuse": true,
+      "reasoning_hops": 1,
+      "evidence_pages": [],
+      "notes": "该论文是优化建模题，没有训练过程"
+    },
+    {
+      "qid": "Q39",
+      "category": "T5",
+      "question": "该研究的实验在多少个城市进行了部署？",
+      "expected_node_ids": [],
+      "expected_keywords": [],
+      "forbidden_keywords": [],
+      "should_refuse": true,
+      "reasoning_hops": 1,
+      "evidence_pages": [],
+      "notes": "模拟研究无实际部署"
+    },
+    {
+      "qid": "Q40",
+      "category": "T5",
+      "question": "ImageNet 的图像分类准确率是多少？",
+      "expected_node_ids": [],
+      "expected_keywords": [],
+      "forbidden_keywords": [],
+      "should_refuse": true,
+      "reasoning_hops": 1,
+      "evidence_pages": [],
+      "notes": "ImageNet 不在 KG 中"
+    },
+    {
+      "qid": "Q41",
+      "category": "T5",
+      "question": "本论文的影响因子(impact factor)是多少？",
+      "expected_node_ids": [],
+      "expected_keywords": [],
+      "forbidden_keywords": [],
+      "should_refuse": true,
+      "reasoning_hops": 1,
+      "evidence_pages": [],
+      "notes": "影响因子是期刊属性，与论文 KG 无关"
+    },
+    {
+      "qid": "Q42",
+      "category": "T5",
+      "question": "论文里讨论了煤化工成本是多少？",
+      "expected_node_ids": [],
+      "expected_keywords": [],
+      "forbidden_keywords": [],
+      "should_refuse": true,
+      "reasoning_hops": 1,
+      "evidence_pages": [],
+      "notes": "论文聚焦绿电+电氢氨，未讨论煤化工"
+    },
+    {
+      "qid": "Q43",
+      "category": "T6",
+      "question": "这篇论文采用了什么方法求解问题2？(混合证书线性规化方法?)",
+      "expected_node_ids": [
+        "n0018",
+        "n0079"
+      ],
+      "expected_keywords": [
+        "MILP",
+        "混合整数线性规划"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 1,
+      "evidence_pages": [
+        1,
+        3
+      ],
+      "notes": "错别字: 证书->整数, 规化->规划"
+    },
+    {
+      "qid": "Q44",
+      "category": "T6",
+      "question": "摘要里说的园区总用店量是多少 mwh?",
+      "expected_node_ids": [
+        "n0011"
+      ],
+      "expected_keywords": [
+        "558.72"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 1,
+      "evidence_pages": [
+        1
+      ],
+      "notes": "用店->用电，单位大小写"
+    },
+    {
+      "qid": "Q45",
+      "category": "T6",
+      "question": "本文计算的吨案产能 expanded 是多少？",
+      "expected_node_ids": [
+        "n0009"
+      ],
+      "expected_keywords": [
+        "72"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 1,
+      "evidence_pages": [
+        1
+      ],
+      "notes": "吨案->吨氨"
+    },
+    {
+      "qid": "Q46",
+      "category": "T6",
+      "question": "Pythn 3.10 是用来做什么的?",
+      "expected_node_ids": [
+        "n0407"
+      ],
+      "expected_keywords": [
+        "Python",
+        "实现",
+        "代码",
+        "implementation"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 1,
+      "evidence_pages": [
+        22
+      ],
+      "notes": "Pythn->Python"
+    },
+    {
+      "qid": "Q47",
+      "category": "T6",
+      "question": "论文中提到的wind 4 solar 1场景代表什么含义?",
+      "expected_node_ids": [
+        "n0035"
+      ],
+      "expected_keywords": [
+        "最大弃电",
+        "173.7",
+        "curtailment"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 1,
+      "evidence_pages": [
+        1
+      ],
+      "notes": "W4S1 同义改写为 wind 4 solar 1"
+    },
+    {
+      "qid": "Q48",
+      "category": "T7",
+      "question": "论文用了 GPT-4 来辅助优化求解，对吗？",
+      "expected_node_ids": [],
+      "expected_keywords": [],
+      "forbidden_keywords": [],
+      "should_refuse": true,
+      "reasoning_hops": 1,
+      "evidence_pages": [],
+      "notes": "错误前提：论文用 MILP/LP，不用 GPT-4"
+    },
+    {
+      "qid": "Q49",
+      "category": "T7",
+      "question": "本论文证明了储能装置反而会降低园区产量，这个结论对吗？",
+      "expected_node_ids": [
+        "n0032",
+        "n0037",
+        "n0038"
+      ],
+      "expected_keywords": [
+        "20.8",
+        "提升",
+        "增加",
+        "9023",
+        "10903"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 1,
+      "evidence_pages": [
+        1
+      ],
+      "notes": "错误前提：实际储能使产量从 9023→10903 吨，提升 20.8%"
+    },
+    {
+      "qid": "Q50",
+      "category": "T7",
+      "question": "该论文的初始产能是 100 吨氨/日，是吗？",
+      "expected_node_ids": [
+        "n0008"
+      ],
+      "expected_keywords": [
+        "36",
+        "并非100",
+        "不是100"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 1,
+      "evidence_pages": [
+        1
+      ],
+      "notes": "错误前提：实际是 36 吨/日"
+    }
+  ]
+}

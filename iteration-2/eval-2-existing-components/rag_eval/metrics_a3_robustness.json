@@ -1,0 +1,380 @@
+{
+  "_meta": {
+    "script": "metrics_a3_robustness.py",
+    "gt_path": "D:\\graghRAG-agent\\iteration-2\\eval-2-existing-components\\rag_eval\\ground_truth.json",
+    "runs_path": "D:\\graghRAG-agent\\iteration-2\\eval-2-existing-components\\rag_eval\\raw_runs.jsonl",
+    "n_questions_total": 50
+  },
+  "t5_refusal": {
+    "n_t5": 10,
+    "correct_refusal_count": 10,
+    "correct_refusal_rate": 1.0,
+    "false_positive_answer_count": 0,
+    "t5_avg_tool_calls": 10.2,
+    "t1_avg_tool_calls": 11.5,
+    "over_retrieval_ratio": 0.887,
+    "t5_avg_latency_ms": 11154.0,
+    "t5_avg_tokens": 16357.0,
+    "per_question": [
+      {
+        "qid": "Q33",
+        "question": "Transformer 模型用了多少层 encoder？",
+        "answer_excerpt": "根据对知识图谱的查询，这篇论文的标题是 **\"A 题绿电直连型电氢氨园区优化运行\"**，内容是关于电氢氨园区的优化运行，涉及碱性电解槽、PEM电解槽、合成氨装置等设备组件。\n\n**知识图谱中不包含关于 Transformer 模型（神经网络架构）的信息。** 因此，无法回答 Transformer ...",
+        "refusal_keywords_hit": [
+          "不包含",
+          "无法"
+        ],
+        "is_correct_refusal": true,
+        "has_concrete_number": false,
+        "is_false_positive": false,
+        "num_tool_calls": 7,
+        "latency_ms": 9271,
+        "tokens_total": 6549
+      },
+      {
+        "qid": "Q34",
+        "question": "BERT 在 GLUE benchmark 上的得分是多少？",
+        "answer_excerpt": "根据知识图谱的查询结果，这篇论文是关于 **\"绿电直连型电氢氨园区优化运行\"** 的学术论文，与 BERT 模型或 GLUE benchmark 没有任何关联。\n\n**知识图谱中不包含关于 BERT 模型在 GLUE benchmark 上得分的信息。** 该知识图谱仅包含该中文论文的相关实体（如风...",
+        "refusal_keywords_hit": [
+          "不包含",
+          "没有",
+          "无法"
+        ],
+        "is_correct_refusal": true,
+        "has_concrete_number": false,
+        "is_false_positive": false,
+        "num_tool_calls": 9,
+        "latency_ms": 9098,
+        "tokens_total": 6984
+      },
+      {
+        "qid": "Q35",
+        "question": "ResNet-50 的参数量有多少？",
+        "answer_excerpt": "这篇论文的标题是 **\"A 题绿电直连型电氢氨园区优化运行\"**，是一篇关于绿色电力直接连接的电氢氨园区优化运行的论文，**并不涉及 ResNet-50 或任何深度学习模型**。\n\n因此，知识图谱中**没有包含 ResNet-50 参数量**的相关信息。如果您想了解 ResNet-50 的参数量，我...",
+        "refusal_keywords_hit": [
+          "没有",
+          "不涉及"
+        ],
+        "is_correct_refusal": true,
+        "has_concrete_number": true,
+        "is_false_positive": false,
+        "num_tool_calls": 6,
+        "latency_ms": 7666,
+        "tokens_total": 5042
+      },
+      {
+        "qid": "Q36",
+        "question": "这篇论文的第一作者是谁？",
+        "answer_excerpt": "根据对知识图谱的查询，该论文的元数据实体（节点ID: n0001）仅包含标题信息（\"A 题绿电直连型电氢氨园区优化运行\"）和ID信息（\"002196\"），**知识图谱中没有存储作者信息**。\n\n因此，我无法从该知识图谱中获取这篇论文的第一作者信息。如果您需要了解作者信息，建议查阅论文原文的首页或标题...",
+        "refusal_keywords_hit": [
+          "没有",
+          "无法"
+        ],
+        "is_correct_refusal": true,
+        "has_concrete_number": false,
+        "is_false_positive": false,
+        "num_tool_calls": 7,
+        "latency_ms": 8049,
+        "tokens_total": 7687
+      },
+      {
+        "qid": "Q37",
+        "question": "本论文里有没有讨论太阳能电池板的转换效率参数？",
+        "answer_excerpt": "根据对论文知识图谱的全面搜索，我得出以下结论：\n\n**本论文没有讨论太阳能电池板的转换效率参数。**\n\n具体分析如下：\n\n1. **论文主题**：该论文的标题为《**A 题绿电直连型电氢氨园区优化运行**》（节点ID: n0001），是一篇关于**绿色电力直连的电-氢-氨园区优化运行**的论文，主要...",
+        "refusal_keywords_hit": [
+          "不包含",
+          "没有"
+        ],
+        "is_correct_refusal": true,
+        "has_concrete_number": true,
+        "is_false_positive": false,
+        "num_tool_calls": 24,
+        "latency_ms": 19492,
+        "tokens_total": 29875
+      },
+      {
+        "qid": "Q38",
+        "question": "论文使用 GPU 训练了多少个 epoch？",
+        "answer_excerpt": "根据对知识图谱的全面搜索，这篇论文的标题是 **\"绿电直连型电氢氨园区优化运行\"**，它是一篇关于电力系统优化运行的学术论文，主要使用混合整数线性规划（MILP）和线性规划（LP）等优化方法，而不是使用 GPU 进行深度学习模型训练。\n\n**知识图谱中没有任何关于 GPU 训练 epoch 的信息。...",
+        "refusal_keywords_hit": [
+          "没有",
+          "不涉及",
+          "不存在"
+        ],
+        "is_correct_refusal": true,
+        "has_concrete_number": false,
+        "is_false_positive": false,
+        "num_tool_calls": 11,
+        "latency_ms": 11978,
+        "tokens_total": 17335
+      },
+      {
+        "qid": "Q39",
+        "question": "该研究的实验在多少个城市进行了部署？",
+        "answer_excerpt": "经过对知识图谱的全面搜索，我没有找到关于该研究实验在多少个城市进行部署的相关信息。该论文是关于\"绿电直连型电氢氨园区优化运行\"的研究，主要涉及的是对一个绿电园区的优化运行建模与分析，而非在多个城市进行实地实验部署。\n\n知识图谱中的信息显示，该研究涉及：\n- 一个园区（绿电直连型电氢氨园区）\n- 多种...",
+        "refusal_keywords_hit": [
+          "没有",
+          "无法"
+        ],
+        "is_correct_refusal": true,
+        "has_concrete_number": true,
+        "is_false_positive": false,
+        "num_tool_calls": 13,
+        "latency_ms": 16130,
+        "tokens_total": 51935
+      },
+      {
+        "qid": "Q40",
+        "question": "ImageNet 的图像分类准确率是多少？",
+        "answer_excerpt": "根据对知识图谱的全面搜索，该知识图谱中**不包含**关于 ImageNet 图像分类准确率的信息。\n\n该知识图谱的内容是关于一个**绿电制氨（绿色电力生产氨）**的学术论文，涉及风光出力场景、产能、成本等指标，与 ImageNet 图像分类任务无关。\n\n因此，我无法从该知识图谱中回答 ImageNe...",
+        "refusal_keywords_hit": [
+          "不包含",
+          "无关",
+          "无法"
+        ],
+        "is_correct_refusal": true,
+        "has_concrete_number": false,
+        "is_false_positive": false,
+        "num_tool_calls": 5,
+        "latency_ms": 5706,
+        "tokens_total": 4347
+      },
+      {
+        "qid": "Q41",
+        "question": "本论文的影响因子(impact factor)是多少？",
+        "answer_excerpt": "根据对知识图谱的全面查询，**该知识图谱中不包含关于这篇论文影响因子（Impact Factor）的信息**。\n\n具体说明如下：\n\n- 这篇论文的标题是 **\"A 题绿电直连型电氢氨园区优化运行\"**（节点ID: n0001），论文编号为 **002196**（节点ID: n0002）。\n- 知识图...",
+        "refusal_keywords_hit": [
+          "不包含",
+          "没有",
+          "无法"
+        ],
+        "is_correct_refusal": true,
+        "has_concrete_number": false,
+        "is_false_positive": false,
+        "num_tool_calls": 8,
+        "latency_ms": 8602,
+        "tokens_total": 6954
+      },
+      {
+        "qid": "Q42",
+        "question": "论文里讨论了煤化工成本是多少？",
+        "answer_excerpt": "根据知识图谱的检索结果，这篇论文的题目是 **《A 题绿电直连型电氢氨园区优化运行》**，主要讨论的是**绿电直连型电氢氨园区**的优化运行问题，而非传统意义上的\"煤化工\"。\n\n不过，论文中确实讨论了**绿氨（绿色合成氨）的生产成本**，具体数据如下：\n\n---\n\n### 论文中涉及的成本数据（均为...",
+        "refusal_keywords_hit": [
+          "没有",
+          "未涉及"
+        ],
+        "is_correct_refusal": true,
+        "has_concrete_number": true,
+        "is_false_positive": false,
+        "num_tool_calls": 12,
+        "latency_ms": 15551,
+        "tokens_total": 26858
+      }
+    ]
+  },
+  "t6_robustness": {
+    "n_t6": 5,
+    "t6_node_hit_count": 5,
+    "robustness_match_rate": 1.0,
+    "t6_avg_keyword_hit_rate": 0.95,
+    "clean_avg_keyword_hit_rate": 1.0,
+    "avg_delta_tool_calls": 5.2,
+    "avg_delta_latency_ms": 5076,
+    "avg_delta_tokens": 21736.2,
+    "n_degraded_on_hit": 0,
+    "pairwise_compare": [
+      {
+        "t6_qid": "Q43",
+        "t6_question": "这篇论文采用了什么方法求解问题2？(混合证书线性规化方法?)",
+        "t6_hit_node": true,
+        "t6_kw_hit_rate": 1.0,
+        "t6_kw_hits": [
+          "MILP",
+          "混合整数线性规划"
+        ],
+        "t6_num_tool_calls": 26,
+        "t6_latency_ms": 25640,
+        "t6_tokens_total": 100498,
+        "clean_qid": "Q04",
+        "clean_category": "T1",
+        "clean_question": "论文使用了什么优化方法来求解问题二？",
+        "clean_hit_node": false,
+        "clean_kw_hit_rate": 1.0,
+        "clean_num_tool_calls": 9,
+        "clean_latency_ms": 13727,
+        "clean_tokens_total": 19512,
+        "mapping_reason": "Q43 错字'证书->整数'+'规化->规划', 主题=问题二求解方法 (n0018,n0079)",
+        "delta_tool_calls": 17,
+        "delta_latency_ms": 11913,
+        "delta_tokens": 80986,
+        "degraded_on_hit": false
+      },
+      {
+        "t6_qid": "Q44",
+        "t6_question": "摘要里说的园区总用店量是多少 mwh?",
+        "t6_hit_node": true,
+        "t6_kw_hit_rate": 1.0,
+        "t6_kw_hits": [
+          "558.72"
+        ],
+        "t6_num_tool_calls": 18,
+        "t6_latency_ms": 19716,
+        "t6_tokens_total": 43481,
+        "clean_qid": "Q23",
+        "clean_category": "T3",
+        "clean_question": "论文摘要给出的园区总用电量是多少 MWh？",
+        "clean_hit_node": true,
+        "clean_kw_hit_rate": 1.0,
+        "clean_num_tool_calls": 19,
+        "clean_latency_ms": 16107,
+        "clean_tokens_total": 32598,
+        "mapping_reason": "Q44 错字'用店->用电' + 单位大小写; 主题=园区总用电量 (n0011, T3)",
+        "delta_tool_calls": -1,
+        "delta_latency_ms": 3609,
+        "delta_tokens": 10883,
+        "degraded_on_hit": false
+      },
+      {
+        "t6_qid": "Q45",
+        "t6_question": "本文计算的吨案产能 expanded 是多少？",
+        "t6_hit_node": true,
+        "t6_kw_hit_rate": 1.0,
+        "t6_kw_hits": [
+          "72"
+        ],
+        "t6_num_tool_calls": 5,
+        "t6_latency_ms": 5752,
+        "t6_tokens_total": 4094,
+        "clean_qid": "Q22",
+        "clean_category": "T3",
+        "clean_question": "扩容后的合成氨产能(expanded)是多少吨/日？",
+        "clean_hit_node": true,
+        "clean_kw_hit_rate": 1.0,
+        "clean_num_tool_calls": 7,
+        "clean_latency_ms": 6900,
+        "clean_tokens_total": 6347,
+        "mapping_reason": "Q45 错字'吨案->吨氨'; 主题=扩容产能 expanded (n0009, T3)",
+        "delta_tool_calls": -2,
+        "delta_latency_ms": -1148,
+        "delta_tokens": -2253,
+        "degraded_on_hit": false
+      },
+      {
+        "t6_qid": "Q46",
+        "t6_question": "Pythn 3.10 是用来做什么的?",
+        "t6_hit_node": true,
+        "t6_kw_hit_rate": 0.75,
+        "t6_kw_hits": [
+          "Python",
+          "实现",
+          "implementation"
+        ],
+        "t6_num_tool_calls": 8,
+        "t6_latency_ms": 12726,
+        "t6_tokens_total": 14199,
+        "clean_qid": "Q06",
+        "clean_category": "T1",
+        "clean_question": "代码实现使用了哪个版本的 Python？",
+        "clean_hit_node": true,
+        "clean_kw_hit_rate": 1.0,
+        "clean_num_tool_calls": 6,
+        "clean_latency_ms": 7978,
+        "clean_tokens_total": 5930,
+        "mapping_reason": "Q46 错字'Pythn->Python'; 主题=Python 3.10 用途 (n0407, T1)",
+        "delta_tool_calls": 2,
+        "delta_latency_ms": 4748,
+        "delta_tokens": 8269,
+        "degraded_on_hit": false
+      },
+      {
+        "t6_qid": "Q47",
+        "t6_question": "论文中提到的wind 4 solar 1场景代表什么含义?",
+        "t6_hit_node": true,
+        "t6_kw_hit_rate": 1.0,
+        "t6_kw_hits": [
+          "最大弃电",
+          "173.7",
+          "curtailment"
+        ],
+        "t6_num_tool_calls": 13,
+        "t6_latency_ms": 12560,
+        "t6_tokens_total": 14653,
+        "clean_qid": "Q03",
+        "clean_category": "T1",
+        "clean_question": "论文中提到的 W4S1 场景代表什么？",
+        "clean_hit_node": true,
+        "clean_kw_hit_rate": 1.0,
+        "clean_num_tool_calls": 3,
+        "clean_latency_ms": 6302,
+        "clean_tokens_total": 3857,
+        "mapping_reason": "Q47 同义改写'W4S1 -> wind 4 solar 1'; 主题=W4S1 场景 (n0035, T1)",
+        "delta_tool_calls": 10,
+        "delta_latency_ms": 6258,
+        "delta_tokens": 10796,
+        "degraded_on_hit": false
+      }
+    ]
+  },
+  "t7_false_premise": {
+    "n_t7": 3,
+    "rejection_count": 3,
+    "false_premise_rejection_rate": 1.0,
+    "per_question": [
+      {
+        "qid": "Q48",
+        "question": "论文用了 GPT-4 来辅助优化求解，对吗？",
+        "answer_excerpt": "从知识图谱的搜索结果来看，这篇论文的标题是 **\"A 题绿电直连型电氢氨园区优化运行\"**，内容涉及绿电、氢氨园区的优化运行建模（MILP、LP等），但**知识图谱中没有任何关于 GPT-4 的实体或信息**。\n\n因此，根据知识图谱中的内容，**这篇论文并没有使用 GPT-4 来辅助优化求解**。论文主要采用的是传统的数学优化方法，如混合整数线性规划（MILP）和线性规划（LP）等。\n\n如果您认为...",
+        "reject_keywords_hit": [
+          "没有"
+        ],
+        "is_rejected": true,
+        "expected_kw_hits": [],
+        "expected_kw_count": 0,
+        "num_tool_calls": 11,
+        "latency_ms": 10943,
+        "tokens_total": 10978,
+        "notes": "错误前提：论文用 MILP/LP，不用 GPT-4"
+      },
+      {
+        "qid": "Q49",
+        "question": "本论文证明了储能装置反而会降低园区产量，这个结论对吗？",
+        "answer_excerpt": "好的，让我总结一下我所找到的所有信息。\n\n根据知识图谱中的信息，**这个结论是不正确的**。论文并没有证明储能装置会降低园区产量，恰恰相反，论文中的证据显示储能装置**提升**了园区产量。\n\n以下是知识图谱中的关键证据：\n\n1. **指标 n0332**（第13页）：在**离网模式下配置210MWh储能**，**制氨产量提升21%**。这表明储能装置实际上提高了产量，而非降低。\n\n2. **指标 ...",
+        "reject_keywords_hit": [
+          "实际上",
+          "不正确",
+          "恰恰相反",
+          "相反",
+          "没有"
+        ],
+        "is_rejected": true,
+        "expected_kw_hits": [
+          "提升",
+          "9023"
+        ],
+        "expected_kw_count": 5,
+        "num_tool_calls": 60,
+        "latency_ms": 65268,
+        "tokens_total": 360023,
+        "notes": "错误前提：实际储能使产量从 9023→10903 吨，提升 20.8%"
+      },
+      {
+        "qid": "Q50",
+        "question": "该论文的初始产能是 100 吨氨/日，是吗？",
+        "answer_excerpt": "根据知识图谱中的信息，我来回答您的问题：\n\n**不是的。** 该论文的初始产能是 **36吨氨/日**，而不是100吨氨/日。\n\n具体依据如下：\n\n- 在论文摘要（第1页）中，知识图谱记录了初始产能（production capacity, initial phase）为 **\"36吨氨/日\"**（节点ID: **n0008**），其属性明确标注 `\"phase\": \"initial\"`。\n- 同...",
+        "reject_keywords_hit": [
+          "不是"
+        ],
+        "is_rejected": true,
+        "expected_kw_hits": [
+          "36",
+          "不是100"
+        ],
+        "expected_kw_count": 3,
+        "num_tool_calls": 9,
+        "latency_ms": 9612,
+        "tokens_total": 14729,
+        "notes": "错误前提：实际是 36 吨/日"
+      }
+    ]
+  }
+}

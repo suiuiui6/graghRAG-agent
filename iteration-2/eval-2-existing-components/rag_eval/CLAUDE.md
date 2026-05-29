@@ -1,6 +1,6 @@
 # rag_eval — RAG 评测子系统
 
-> 触发重新进入 yujia-engineering Layer 0 的产物（2026-05-29）。
+> 触发重新进入 harness-engineering Layer 0 的产物（2026-05-29）。
 > 作用范围：仅此目录内的评测脚本与指标，不影响产品代码。
 
 ## 用途

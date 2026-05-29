@@ -1,6 +1,6 @@
 # 五子系统自检 — 2026-05-28（首次）
 
-> 框架来自 walkinglabs/awesome-harness-engineering（instructions / tools / environment / state / feedback），由 yujia-engineering Layer 5 引入。
+> 框架来自 walkinglabs/awesome-harness-engineering（instructions / tools / environment / state / feedback），由 harness-engineering Layer 5 引入。
 
 ## 检查方式
 

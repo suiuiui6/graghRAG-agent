@@ -1,0 +1,2172 @@
+{
+  "_meta": {
+    "ground_truth_path": "D:\\graghRAG-agent\\iteration-2\\eval-2-existing-components\\rag_eval\\ground_truth.json",
+    "raw_runs_path": "D:\\graghRAG-agent\\iteration-2\\eval-2-existing-components\\rag_eval\\raw_runs.jsonl",
+    "nodes_path": "D:\\graghRAG-agent\\backend\\output\\kg\\doc_ingest_232e1611\\nodes.json",
+    "n_gt_questions": 50,
+    "n_run_records": 50,
+    "kg_node_count": 439,
+    "missing_in_runs": [],
+    "refusal_tokens": [
+      "不包含",
+      "没有",
+      "无法",
+      "未提及",
+      "未涉及",
+      "无关",
+      "无相关",
+      "不相关",
+      "not contain",
+      "no information",
+      "unable",
+      "无 (fallback)"
+    ],
+    "metric_definitions": {
+      "node_id_validity": "1 iff every id in answer_node_ids exists in nodes.json; None when answer cites no node ids.",
+      "hallucinated_node_ids": "answer_node_ids - KG-ids.",
+      "cited_in_retrieved_rate": "|answer_ids ∩ retrieved_ids| / |answer_ids|; None when answer cites no node ids.",
+      "keyword_coverage": "fraction of expected_keywords found as case-insensitive substrings in final_answer.",
+      "forbidden_violation": "1 iff ANY forbidden keyword appears (lowercased substring) in final_answer; None when forbidden_keywords is empty.",
+      "refusal_for_t5": "1 iff final_answer contains any of: 不包含, 没有, 无法, 未提及, 未涉及, 无关, 无相关, 不相关, not contain, no information, unable (fallback marker: '无'). Computed only for T5; None otherwise."
+    },
+    "aggregation": "Macro average per category across questions where each metric is defined. None values are skipped."
+  },
+  "global": {
+    "n_questions": 50,
+    "node_id_validity_macro": 1.0,
+    "node_id_validity_support": 43,
+    "cited_in_retrieved_rate_macro": 1.0,
+    "cited_in_retrieved_rate_support": 43,
+    "keyword_coverage_macro": 0.7987179487179487,
+    "keyword_coverage_support": 39,
+    "forbidden_violation_macro": 0.2,
+    "forbidden_violation_support": 5,
+    "refusal_for_t5_macro": 1.0,
+    "refusal_for_t5_support": 10,
+    "n_questions_with_hallucination": 0,
+    "hallucination_rate": 0.0
+  },
+  "by_category": {
+    "T1": {
+      "n_questions": 12,
+      "node_id_validity_macro": 1.0,
+      "node_id_validity_support": 12,
+      "cited_in_retrieved_rate_macro": 1.0,
+      "cited_in_retrieved_rate_support": 12,
+      "keyword_coverage_macro": 0.8333333333333334,
+      "keyword_coverage_support": 12,
+      "forbidden_violation_macro": null,
+      "forbidden_violation_support": 0,
+      "refusal_for_t5_macro": null,
+      "refusal_for_t5_support": 0,
+      "n_questions_with_hallucination": 0,
+      "hallucination_rate": 0.0
+    },
+    "T2": {
+      "n_questions": 8,
+      "node_id_validity_macro": 1.0,
+      "node_id_validity_support": 8,
+      "cited_in_retrieved_rate_macro": 1.0,
+      "cited_in_retrieved_rate_support": 8,
+      "keyword_coverage_macro": 0.7083333333333334,
+      "keyword_coverage_support": 8,
+      "forbidden_violation_macro": null,
+      "forbidden_violation_support": 0,
+      "refusal_for_t5_macro": null,
+      "refusal_for_t5_support": 0,
+      "n_questions_with_hallucination": 0,
+      "hallucination_rate": 0.0
+    },
+    "T3": {
+      "n_questions": 8,
+      "node_id_validity_macro": 1.0,
+      "node_id_validity_support": 8,
+      "cited_in_retrieved_rate_macro": 1.0,
+      "cited_in_retrieved_rate_support": 8,
+      "keyword_coverage_macro": 0.9375,
+      "keyword_coverage_support": 8,
+      "forbidden_violation_macro": 0.2,
+      "forbidden_violation_support": 5,
+      "refusal_for_t5_macro": null,
+      "refusal_for_t5_support": 0,
+      "n_questions_with_hallucination": 0,
+      "hallucination_rate": 0.0
+    },
+    "T4": {
+      "n_questions": 4,
+      "node_id_validity_macro": 1.0,
+      "node_id_validity_support": 4,
+      "cited_in_retrieved_rate_macro": 1.0,
+      "cited_in_retrieved_rate_support": 4,
+      "keyword_coverage_macro": 0.5416666666666666,
+      "keyword_coverage_support": 4,
+      "forbidden_violation_macro": null,
+      "forbidden_violation_support": 0,
+      "refusal_for_t5_macro": null,
+      "refusal_for_t5_support": 0,
+      "n_questions_with_hallucination": 0,
+      "hallucination_rate": 0.0
+    },
+    "T5": {
+      "n_questions": 10,
+      "node_id_validity_macro": 1.0,
+      "node_id_validity_support": 4,
+      "cited_in_retrieved_rate_macro": 1.0,
+      "cited_in_retrieved_rate_support": 4,
+      "keyword_coverage_macro": null,
+      "keyword_coverage_support": 0,
+      "forbidden_violation_macro": null,
+      "forbidden_violation_support": 0,
+      "refusal_for_t5_macro": 1.0,
+      "refusal_for_t5_support": 10,
+      "n_questions_with_hallucination": 0,
+      "hallucination_rate": 0.0
+    },
+    "T6": {
+      "n_questions": 5,
+      "node_id_validity_macro": 1.0,
+      "node_id_validity_support": 5,
+      "cited_in_retrieved_rate_macro": 1.0,
+      "cited_in_retrieved_rate_support": 5,
+      "keyword_coverage_macro": 0.95,
+      "keyword_coverage_support": 5,
+      "forbidden_violation_macro": null,
+      "forbidden_violation_support": 0,
+      "refusal_for_t5_macro": null,
+      "refusal_for_t5_support": 0,
+      "n_questions_with_hallucination": 0,
+      "hallucination_rate": 0.0
+    },
+    "T7": {
+      "n_questions": 3,
+      "node_id_validity_macro": 1.0,
+      "node_id_validity_support": 2,
+      "cited_in_retrieved_rate_macro": 1.0,
+      "cited_in_retrieved_rate_support": 2,
+      "keyword_coverage_macro": 0.5333333333333333,
+      "keyword_coverage_support": 2,
+      "forbidden_violation_macro": null,
+      "forbidden_violation_support": 0,
+      "refusal_for_t5_macro": null,
+      "refusal_for_t5_support": 0,
+      "n_questions_with_hallucination": 0,
+      "hallucination_rate": 0.0
+    }
+  },
+  "hallucinated_node_id_inventory": [],
+  "forbidden_violation_inventory": [
+    {
+      "qid": "Q24",
+      "category": "T3",
+      "forbidden_hits": [
+        "558.72"
+      ],
+      "answer_snippet": "…第1页） - 同时，摘要中还提到了**总用电量（total electricity consumption）**为 **558.72 MWh**（节点 n0011，第1页）  因此，论文摘要中提到的可再生能源发电量为 **603.45 MWh**。"
+    }
+  ],
+  "lowest_keyword_coverage_top5": [
+    {
+      "qid": "Q10",
+      "category": "T1",
+      "question": "图 5 展示了什么内容？",
+      "keyword_coverage": 0.0,
+      "expected_keywords": [
+        "问题四",
+        "三种模式",
+        "经济性",
+        "储能"
+      ],
+      "keyword_found": [],
+      "keyword_missing": [
+        "问题四",
+        "三种模式",
+        "经济性",
+        "储能"
+      ]
+    },
+    {
+      "qid": "Q11",
+      "category": "T1",
+      "question": "图 6 是什么图？",
+      "keyword_coverage": 0.0,
+      "expected_keywords": [
+        "全问题",
+        "汇总",
+        "吨氨成本",
+        "绿电指标"
+      ],
+      "keyword_found": [],
+      "keyword_missing": [
+        "全问题",
+        "汇总",
+        "吨氨成本",
+        "绿电指标"
+      ]
+    },
+    {
+      "qid": "Q15",
+      "category": "T2",
+      "question": "论文中所有的图(figure)有哪些？",
+      "keyword_coverage": 0.0,
+      "expected_keywords": [
+        "图 2",
+        "图 5",
+        "图 6"
+      ],
+      "keyword_found": [],
+      "keyword_missing": [
+        "图 2",
+        "图 5",
+        "图 6"
+      ]
+    },
+    {
+      "qid": "Q16",
+      "category": "T2",
+      "question": "论文摘要中提到的吨氨成本类经济指标分别有哪些？",
+      "keyword_coverage": 0.0,
+      "expected_keywords": [
+        "3554",
+        "5820",
+        "7111",
+        "3669",
+        "5652"
+      ],
+      "keyword_found": [],
+      "keyword_missing": [
+        "3554",
+        "5820",
+        "7111",
+        "3669",
+        "5652"
+      ]
+    },
+    {
+      "qid": "Q31",
+      "category": "T4",
+      "question": "成本最低和最高的两种运营模式分别对应多少元/吨？",
+      "keyword_coverage": 0.0,
+      "expected_keywords": [
+        "3554",
+        "7111"
+      ],
+      "keyword_found": [],
+      "keyword_missing": [
+        "3554",
+        "7111"
+      ]
+    }
+  ],
+  "t5_refusal_table": [
+    {
+      "qid": "Q33",
+      "question": "Transformer 模型用了多少层 encoder？",
+      "refusal_for_t5": 1,
+      "refusal_markers_matched": [
+        "不包含",
+        "无法"
+      ],
+      "answer_snippet": "根据对知识图谱的查询，这篇论文的标题是 **\"A 题绿电直连型电氢氨园区优化运行\"**，内容是关于电氢氨园区的优化运行，涉及碱性电解槽、PEM电解槽、合成氨装置等设备组件。  **知识图谱中不包含关于 Transformer 模型（神经网络…"
+    },
+    {
+      "qid": "Q34",
+      "question": "BERT 在 GLUE benchmark 上的得分是多少？",
+      "refusal_for_t5": 1,
+      "refusal_markers_matched": [
+        "不包含",
+        "没有",
+        "无法"
+      ],
+      "answer_snippet": "根据知识图谱的查询结果，这篇论文是关于 **\"绿电直连型电氢氨园区优化运行\"** 的学术论文，与 BERT 模型或 GLUE benchmark 没有任何关联。  **知识图谱中不包含关于 BERT 模型在 GLUE benchmark 上…"
+    },
+    {
+      "qid": "Q35",
+      "question": "ResNet-50 的参数量有多少？",
+      "refusal_for_t5": 1,
+      "refusal_markers_matched": [
+        "没有"
+      ],
+      "answer_snippet": "这篇论文的标题是 **\"A 题绿电直连型电氢氨园区优化运行\"**，是一篇关于绿色电力直接连接的电氢氨园区优化运行的论文，**并不涉及 ResNet-50 或任何深度学习模型**。  因此，知识图谱中**没有包含 ResNet-50 参数量*…"
+    },
+    {
+      "qid": "Q36",
+      "question": "这篇论文的第一作者是谁？",
+      "refusal_for_t5": 1,
+      "refusal_markers_matched": [
+        "没有",
+        "无法"
+      ],
+      "answer_snippet": "根据对知识图谱的查询，该论文的元数据实体（节点ID: n0001）仅包含标题信息（\"A 题绿电直连型电氢氨园区优化运行\"）和ID信息（\"002196\"），**知识图谱中没有存储作者信息**。  因此，我无法从该知识图谱中获取这篇论文的第一作…"
+    },
+    {
+      "qid": "Q37",
+      "question": "本论文里有没有讨论太阳能电池板的转换效率参数？",
+      "refusal_for_t5": 1,
+      "refusal_markers_matched": [
+        "不包含",
+        "没有"
+      ],
+      "answer_snippet": "根据对论文知识图谱的全面搜索，我得出以下结论：  **本论文没有讨论太阳能电池板的转换效率参数。**  具体分析如下：  1. **论文主题**：该论文的标题为《**A 题绿电直连型电氢氨园区优化运行**》（节点ID: n0001），是一篇…"
+    },
+    {
+      "qid": "Q38",
+      "question": "论文使用 GPU 训练了多少个 epoch？",
+      "refusal_for_t5": 1,
+      "refusal_markers_matched": [
+        "没有"
+      ],
+      "answer_snippet": "根据对知识图谱的全面搜索，这篇论文的标题是 **\"绿电直连型电氢氨园区优化运行\"**，它是一篇关于电力系统优化运行的学术论文，主要使用混合整数线性规划（MILP）和线性规划（LP）等优化方法，而不是使用 GPU 进行深度学习模型训练。  *…"
+    },
+    {
+      "qid": "Q39",
+      "question": "该研究的实验在多少个城市进行了部署？",
+      "refusal_for_t5": 1,
+      "refusal_markers_matched": [
+        "没有",
+        "无法"
+      ],
+      "answer_snippet": "经过对知识图谱的全面搜索，我没有找到关于该研究实验在多少个城市进行部署的相关信息。该论文是关于\"绿电直连型电氢氨园区优化运行\"的研究，主要涉及的是对一个绿电园区的优化运行建模与分析，而非在多个城市进行实地实验部署。  知识图谱中的信息显示，…"
+    },
+    {
+      "qid": "Q40",
+      "question": "ImageNet 的图像分类准确率是多少？",
+      "refusal_for_t5": 1,
+      "refusal_markers_matched": [
+        "不包含",
+        "无法",
+        "无关"
+      ],
+      "answer_snippet": "根据对知识图谱的全面搜索，该知识图谱中**不包含**关于 ImageNet 图像分类准确率的信息。  该知识图谱的内容是关于一个**绿电制氨（绿色电力生产氨）**的学术论文，涉及风光出力场景、产能、成本等指标，与 ImageNet 图像分类…"
+    },
+    {
+      "qid": "Q41",
+      "question": "本论文的影响因子(impact factor)是多少？",
+      "refusal_for_t5": 1,
+      "refusal_markers_matched": [
+        "不包含",
+        "没有",
+        "无法"
+      ],
+      "answer_snippet": "根据对知识图谱的全面查询，**该知识图谱中不包含关于这篇论文影响因子（Impact Factor）的信息**。  具体说明如下：  - 这篇论文的标题是 **\"A 题绿电直连型电氢氨园区优化运行\"**（节点ID: n0001），论文编号为 …"
+    },
+    {
+      "qid": "Q42",
+      "question": "论文里讨论了煤化工成本是多少？",
+      "refusal_for_t5": 1,
+      "refusal_markers_matched": [
+        "没有",
+        "未涉及"
+      ],
+      "answer_snippet": "根据知识图谱的检索结果，这篇论文的题目是 **《A 题绿电直连型电氢氨园区优化运行》**，主要讨论的是**绿电直连型电氢氨园区**的优化运行问题，而非传统意义上的\"煤化工\"。  不过，论文中确实讨论了**绿氨（绿色合成氨）的生产成本**，具…"
+    }
+  ],
+  "per_question": [
+    {
+      "qid": "Q01",
+      "category": "T1",
+      "question": "这篇论文的标题是什么？",
+      "should_refuse": false,
+      "answer_len_chars": 52,
+      "answer_node_ids": [
+        "n0001"
+      ],
+      "retrieved_node_ids_size": 2,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "绿电直连",
+        "电氢氨",
+        "园区",
+        "优化运行"
+      ],
+      "keyword_found": [
+        "绿电直连",
+        "电氢氨",
+        "园区",
+        "优化运行"
+      ],
+      "keyword_missing": [],
+      "keyword_coverage": 1.0,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "这篇论文的标题是 **\"A 题绿电直连型电氢氨园区优化运行\"**（节点ID: n0001，页码: 0）。"
+    },
+    {
+      "qid": "Q02",
+      "category": "T1",
+      "question": "这篇论文的编号(ID)是什么？",
+      "should_refuse": false,
+      "answer_len_chars": 49,
+      "answer_node_ids": [
+        "n0002"
+      ],
+      "retrieved_node_ids_size": 2,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "002196"
+      ],
+      "keyword_found": [
+        "002196"
+      ],
+      "keyword_missing": [],
+      "keyword_coverage": 1.0,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "根据知识图谱查询结果，这篇论文的编号(ID)是 **002196**（节点 ID: n0002）。"
+    },
+    {
+      "qid": "Q03",
+      "category": "T1",
+      "question": "论文中提到的 W4S1 场景代表什么？",
+      "should_refuse": false,
+      "answer_len_chars": 572,
+      "answer_node_ids": [
+        "n0035"
+      ],
+      "retrieved_node_ids_size": 11,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "最大弃电",
+        "maximum curtailment",
+        "173.7"
+      ],
+      "keyword_found": [
+        "最大弃电",
+        "maximum curtailment",
+        "173.7"
+      ],
+      "keyword_missing": [],
+      "keyword_coverage": 1.0,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "根据知识图谱中的信息，**W4S1** 代表的是 **\"maximum curtailment scenario\"（最大弃电场景）**，其具体含义如下：  - **实体类型**：dataset（数据集/场景） - **名称**：maximu…"
+    },
+    {
+      "qid": "Q04",
+      "category": "T1",
+      "question": "论文使用了什么优化方法来求解问题二？",
+      "should_refuse": false,
+      "answer_len_chars": 913,
+      "answer_node_ids": [
+        "n0166",
+        "n0167",
+        "n0168",
+        "n0169",
+        "n0171",
+        "n0172",
+        "n0175"
+      ],
+      "retrieved_node_ids_size": 44,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "MILP",
+        "混合整数线性规划"
+      ],
+      "keyword_found": [
+        "MILP",
+        "混合整数线性规划"
+      ],
+      "keyword_missing": [],
+      "keyword_coverage": 1.0,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "现在我已经收集到足够的信息来回答问题了。  ---  ## 答案  论文在**问题二**（第8页，章节 **5.2 问题二：离散制氨的MILP优化**）中，使用了 **混合整数线性规划（MILP, Mixed-Integer Linear …"
+    },
+    {
+      "qid": "Q05",
+      "category": "T1",
+      "question": "问题三采用的优化建模方法是什么？",
+      "should_refuse": false,
+      "answer_len_chars": 693,
+      "answer_node_ids": [
+        "n0024",
+        "n0076",
+        "n0234",
+        "n0418"
+      ],
+      "retrieved_node_ids_size": 91,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "LP",
+        "线性规划",
+        "连续"
+      ],
+      "keyword_found": [
+        "LP",
+        "线性规划",
+        "连续"
+      ],
+      "keyword_missing": [],
+      "keyword_coverage": 1.0,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "根据知识图谱中的信息，以下是关于问题三采用的优化建模方法的回答：  ---  ## 问题三采用的优化建模方法  问题三采用的是 **线性规划（Linear Programming, LP）模型**。  ### 详细信息  根据知识图谱中的记…"
+    },
+    {
+      "qid": "Q06",
+      "category": "T1",
+      "question": "代码实现使用了哪个版本的 Python？",
+      "should_refuse": false,
+      "answer_len_chars": 225,
+      "answer_node_ids": [
+        "n0407"
+      ],
+      "retrieved_node_ids_size": 10,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "Python",
+        "3.10"
+      ],
+      "keyword_found": [
+        "Python",
+        "3.10"
+      ],
+      "keyword_missing": [],
+      "keyword_coverage": 1.0,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "根据知识图谱中的信息，该论文的代码实现使用了 **Python 3.10**。  **详细信息：** - **节点 ID**: n0407 - **实体类型**: method（方法/实现） - **标签**: Python 3.10 - …"
+    },
+    {
+      "qid": "Q07",
+      "category": "T1",
+      "question": "论文用什么库做可视化？",
+      "should_refuse": false,
+      "answer_len_chars": 249,
+      "answer_node_ids": [
+        "n0407",
+        "n0411",
+        "n0412"
+      ],
+      "retrieved_node_ids_size": 9,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "Matplotlib"
+      ],
+      "keyword_found": [
+        "Matplotlib"
+      ],
+      "keyword_missing": [],
+      "keyword_coverage": 1.0,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "论文使用 **Matplotlib** 库进行可视化。  **详细信息：** - **实体 ID：** `n0412` - **类型：** method（方法） - **类别：** visualization（可视化） - **所在页码：*…"
+    },
+    {
+      "qid": "Q08",
+      "category": "T1",
+      "question": "碳-电-氢-氨多市场耦合优化模型属于什么改进方向？",
+      "should_refuse": false,
+      "answer_len_chars": 568,
+      "answer_node_ids": [
+        "n0389",
+        "n0390",
+        "n0392",
+        "n0394",
+        "n0395",
+        "n0396",
+        "n0397",
+        "n0398"
+      ],
+      "retrieved_node_ids_size": 16,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "碳交易",
+        "carbon",
+        "耦合"
+      ],
+      "keyword_found": [
+        "碳交易",
+        "carbon",
+        "耦合"
+      ],
+      "keyword_missing": [],
+      "keyword_coverage": 1.0,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "根据知识图谱中的信息，以下是完整的回答：  ---  **\"碳-电-氢-氨多市场耦合优化模型\"属于第6.2节\"模型不足与改进方向\"（节点ID: n0389，第17页）中讨论的改进方向。**  具体来说，该模型（节点ID: n0395，第17…"
+    },
+    {
+      "qid": "Q09",
+      "category": "T1",
+      "question": "论文中处理不确定性的改进方法有哪些？",
+      "should_refuse": false,
+      "answer_len_chars": 645,
+      "answer_node_ids": [
+        "n0389",
+        "n0396",
+        "n0397",
+        "n0398"
+      ],
+      "retrieved_node_ids_size": 18,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "鲁棒",
+        "随机规划",
+        "RO",
+        "SP"
+      ],
+      "keyword_found": [
+        "鲁棒",
+        "随机规划",
+        "RO",
+        "SP"
+      ],
+      "keyword_missing": [],
+      "keyword_coverage": 1.0,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "现在我已经收集到了足够的信息。让我总结一下回答。  根据知识图谱中的信息，以下是论文中关于处理不确定性的改进方法及相关内容：  ---  ## 论文中处理不确定性的改进方法  根据知识图谱，论文在第 **6.2节\"模型不足与改进方向\"**（…"
+    },
+    {
+      "qid": "Q10",
+      "category": "T1",
+      "question": "图 5 展示了什么内容？",
+      "should_refuse": false,
+      "answer_len_chars": 169,
+      "answer_node_ids": [
+        "n0150"
+      ],
+      "retrieved_node_ids_size": 68,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "问题四",
+        "三种模式",
+        "经济性",
+        "储能"
+      ],
+      "keyword_found": [],
+      "keyword_missing": [
+        "问题四",
+        "三种模式",
+        "经济性",
+        "储能"
+      ],
+      "keyword_coverage": 0.0,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "根据知识图谱的搜索结果，**知识图谱中只包含了一个figure实体——\"图1\"（节点ID: n0150，第8页）**，并没有找到关于\"图5\"的任何实体或信息。  因此，根据当前知识图谱的内容，**无法回答\"图5展示了什么内容\"**，因为该知…"
+    },
+    {
+      "qid": "Q11",
+      "category": "T1",
+      "question": "图 6 是什么图？",
+      "should_refuse": false,
+      "answer_len_chars": 235,
+      "answer_node_ids": [
+        "n0150"
+      ],
+      "retrieved_node_ids_size": 29,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "全问题",
+        "汇总",
+        "吨氨成本",
+        "绿电指标"
+      ],
+      "keyword_found": [],
+      "keyword_missing": [
+        "全问题",
+        "汇总",
+        "吨氨成本",
+        "绿电指标"
+      ],
+      "keyword_coverage": 0.0,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "根据我对知识图谱的全面搜索，**知识图谱中没有找到关于\"图 6\"的实体信息**。  具体来说： - 知识图谱中只包含了一个 **figure** 类型的实体：**\"图 1 问题一园区功率曲线\"**（节点ID: n0150，第8页） - 在所…"
+    },
+    {
+      "qid": "Q12",
+      "category": "T1",
+      "question": "Pandas 在论文中扮演什么角色？",
+      "should_refuse": false,
+      "answer_len_chars": 1133,
+      "answer_node_ids": [
+        "n0407",
+        "n0411",
+        "n0412",
+        "n0414",
+        "n0415",
+        "n0416",
+        "n0417",
+        "n0419",
+        "n0420",
+        "n0421",
+        "n0422"
+      ],
+      "retrieved_node_ids_size": 14,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "Pandas",
+        "data processing",
+        "数据处理"
+      ],
+      "keyword_found": [
+        "Pandas",
+        "data processing",
+        "数据处理"
+      ],
+      "keyword_missing": [],
+      "keyword_coverage": 1.0,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "根据知识图谱中的信息，以下是 **Pandas** 在论文中扮演的角色：  ---  ## Pandas 在论文中的角色  **Pandas**（节点 ID: **n0411**）在论文中被归类为 **数据处理（data processin…"
+    },
+    {
+      "qid": "Q13",
+      "category": "T2",
+      "question": "论文里采用了哪些优化建模方法？请尽量完整列出。",
+      "should_refuse": false,
+      "answer_len_chars": 1634,
+      "answer_node_ids": [
+        "n0018",
+        "n0024",
+        "n0076",
+        "n0077",
+        "n0078",
+        "n0079",
+        "n0364",
+        "n0365",
+        "n0389",
+        "n0395",
+        "n0397",
+        "n0398",
+        "n0407",
+        "n0411",
+        "n0412",
+        "n0415",
+        "n0417",
+        "n0418",
+        "n0420",
+        "n0421"
+      ],
+      "retrieved_node_ids_size": 65,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "MILP",
+        "混合整数",
+        "LP",
+        "线性规划",
+        "鲁棒"
+      ],
+      "keyword_found": [
+        "MILP",
+        "混合整数",
+        "LP",
+        "线性规划",
+        "鲁棒"
+      ],
+      "keyword_missing": [],
+      "keyword_coverage": 1.0,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "现在我已经掌握了所有信息，可以给出完整的回答。  ---  ## 论文中采用的优化建模方法  根据知识图谱的检索结果，该论文采用了以下优化建模方法：  ### 一、核心优化模型  1. **混合整数线性规划（MILP）模型**（节点ID: …"
+    },
+    {
+      "qid": "Q14",
+      "category": "T2",
+      "question": "该论文实现部分(Python 代码)使用了哪些主要函数？",
+      "should_refuse": false,
+      "answer_len_chars": 1140,
+      "answer_node_ids": [
+        "n0407",
+        "n0411",
+        "n0412",
+        "n0414",
+        "n0415",
+        "n0416",
+        "n0417",
+        "n0418",
+        "n0419",
+        "n0420",
+        "n0421",
+        "n0422",
+        "n0424"
+      ],
+      "retrieved_node_ids_size": 19,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "load_all_data",
+        "generate_scenarios",
+        "solve_problem"
+      ],
+      "keyword_found": [
+        "load_all_data",
+        "generate_scenarios",
+        "solve_problem"
+      ],
+      "keyword_missing": [],
+      "keyword_coverage": 1.0,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "以下是该论文实现部分（Python 代码）中使用的主要函数，均位于第 22 页（附录 B：支撑材料文件说明）：  ---  ## 论文 Python 代码实现中的主要函数  ### 1. 数据加载与场景生成 | 函数 | 节点 ID | 功…"
+    },
+    {
+      "qid": "Q15",
+      "category": "T2",
+      "question": "论文中所有的图(figure)有哪些？",
+      "should_refuse": false,
+      "answer_len_chars": 316,
+      "answer_node_ids": [
+        "n0150"
+      ],
+      "retrieved_node_ids_size": 11,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "图 2",
+        "图 5",
+        "图 6"
+      ],
+      "keyword_found": [],
+      "keyword_missing": [
+        "图 2",
+        "图 5",
+        "图 6"
+      ],
+      "keyword_coverage": 0.0,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "根据知识图谱的查询结果，论文中只包含 **1 个图（figure）**，具体信息如下：  ---  **图 1：问题一园区功率曲线（上：源荷对比；下：购售电功率）** - **节点 ID**：n0150 - **所在页码**：第 8 页 -…"
+    },
+    {
+      "qid": "Q16",
+      "category": "T2",
+      "question": "论文摘要中提到的吨氨成本类经济指标分别有哪些？",
+      "should_refuse": false,
+      "answer_len_chars": 1230,
+      "answer_node_ids": [
+        "n0141",
+        "n0145",
+        "n0205",
+        "n0206",
+        "n0207",
+        "n0208",
+        "n0209",
+        "n0223",
+        "n0224",
+        "n0316",
+        "n0357",
+        "n0369"
+      ],
+      "retrieved_node_ids_size": 77,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "3554",
+        "5820",
+        "7111",
+        "3669",
+        "5652"
+      ],
+      "keyword_found": [],
+      "keyword_missing": [
+        "3554",
+        "5820",
+        "7111",
+        "3669",
+        "5652"
+      ],
+      "keyword_coverage": 0.0,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "现在我已经收集了足够的信息。让我整理一下回答。  根据知识图谱中的信息，论文中提到的吨氨成本类经济指标如下：  ---  根据论文知识图谱，论文中涉及的**吨氨成本类经济指标**包括以下内容：  ### 一、问题一（绿电直连场景）—— 第8…"
+    },
+    {
+      "qid": "Q17",
+      "category": "T2",
+      "question": "论文摘要(p1)罗列出了哪些产能/装机的关键参数？",
+      "should_refuse": false,
+      "answer_len_chars": 1140,
+      "answer_node_ids": [
+        "n0005",
+        "n0006",
+        "n0007",
+        "n0008",
+        "n0009",
+        "n0011",
+        "n0012",
+        "n0013",
+        "n0014",
+        "n0015",
+        "n0016",
+        "n0017",
+        "n0020"
+      ],
+      "retrieved_node_ids_size": 37,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "0.75MW",
+        "6MW",
+        "36吨",
+        "72吨"
+      ],
+      "keyword_found": [
+        "0.75MW",
+        "6MW",
+        "36吨",
+        "72吨"
+      ],
+      "keyword_missing": [],
+      "keyword_coverage": 1.0,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "现在我已经收集了足够的信息。让我整理一下论文摘要（第1页）中罗列出的产能/装机关键参数。  ---  根据知识图谱中\"摘 要\"节点（n0005，第1页）及其关联实体的信息，论文摘要(p1)中罗列出的产能/装机关键参数如下：  ## 产能/装…"
+    },
+    {
+      "qid": "Q18",
+      "category": "T2",
+      "question": "论文需要解决几个问题？分别是什么主题？",
+      "should_refuse": false,
+      "answer_len_chars": 938,
+      "answer_node_ids": [
+        "n0030",
+        "n0057",
+        "n0066",
+        "n0073",
+        "n0074",
+        "n0076",
+        "n0077",
+        "n0078",
+        "n0165",
+        "n0234",
+        "n0314",
+        "n0319"
+      ],
+      "retrieved_node_ids_size": 77,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "五个",
+        "递进",
+        "基准线",
+        "灵活性",
+        "离散启停"
+      ],
+      "keyword_found": [
+        "五个",
+        "递进",
+        "基准线",
+        "灵活性",
+        "离散启停"
+      ],
+      "keyword_missing": [],
+      "keyword_coverage": 1.0,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "现在我已经收集了足够的信息来回答这个问题。让我整理一下答案。  根据知识图谱中的信息，这篇论文需要解决**五个递进问题**，具体如下：  ---  ## 论文需要解决五个递进问题  根据知识图谱中的信息（节点 **n0057**，第3页），…"
+    },
+    {
+      "qid": "Q19",
+      "category": "T2",
+      "question": "论文里出现了哪些关于'绿电指标合规率'的具体数值？",
+      "should_refuse": false,
+      "answer_len_chars": 1259,
+      "answer_node_ids": [
+        "n0044",
+        "n0077",
+        "n0141",
+        "n0142",
+        "n0143",
+        "n0144",
+        "n0185",
+        "n0186",
+        "n0187",
+        "n0188",
+        "n0189",
+        "n0190",
+        "n0191",
+        "n0192",
+        "n0193",
+        "n0194",
+        "n0195",
+        "n0196",
+        "n0197",
+        "n0198",
+        "n0199",
+        "n0200",
+        "n0201",
+        "n0202",
+        "n0203",
+        "n0204"
+      ],
+      "retrieved_node_ids_size": 45,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "39.2",
+        "69.2",
+        "合规率"
+      ],
+      "keyword_found": [
+        "69.2",
+        "合规率"
+      ],
+      "keyword_missing": [
+        "39.2"
+      ],
+      "keyword_coverage": 0.6666666666666666,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "现在我已经收集了足够的信息。让我整理一下回答。  根据知识图谱的查询结果，论文中关于\"绿电指标合规率\"（即绿电直连指标）的具体数值如下：  ---  ## 论文中出现的绿电指标相关数值  ### 一、问题一（表6）—— 绿电直连指标判定（第…"
+    },
+    {
+      "qid": "Q20",
+      "category": "T2",
+      "question": "在摘要中给出的电力流向相关 metric (购电、售电、自发自用率等)有哪些？",
+      "should_refuse": false,
+      "answer_len_chars": 885,
+      "answer_node_ids": [
+        "n0005",
+        "n0011",
+        "n0012",
+        "n0013",
+        "n0014",
+        "n0016",
+        "n0017",
+        "n0146",
+        "n0147"
+      ],
+      "retrieved_node_ids_size": 46,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "558.72",
+        "603.45",
+        "172.04",
+        "216.77",
+        "28.2",
+        "35.9"
+      ],
+      "keyword_found": [
+        "558.72",
+        "603.45",
+        "172.04",
+        "216.77",
+        "28.2",
+        "35.9"
+      ],
+      "keyword_missing": [],
+      "keyword_coverage": 1.0,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "Now I have a comprehensive picture. Let me compile the answer.  根据知识图谱中\"摘 要\"（摘要）部分（节点 n0005，第1页）的信息，与电力流向相关的 metric（购电、售…"
+    },
+    {
+      "qid": "Q21",
+      "category": "T3",
+      "question": "论文摘要中给出的初始合成氨产能(initial)是多少吨/日？",
+      "should_refuse": false,
+      "answer_len_chars": 302,
+      "answer_node_ids": [
+        "n0005",
+        "n0008",
+        "n0009"
+      ],
+      "retrieved_node_ids_size": 26,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "36"
+      ],
+      "keyword_found": [
+        "36"
+      ],
+      "keyword_missing": [],
+      "keyword_coverage": 1.0,
+      "forbidden_keywords": [
+        "72吨/日",
+        "9023",
+        "10903"
+      ],
+      "forbidden_hits": [],
+      "forbidden_violation": 0,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "根据知识图谱中的信息，论文摘要中给出的**初始合成氨产能（initial）为 36吨氨/日**。  **详细信息：** - **节点ID：** n0008 - **实体类型：** metric（指标） - **标签：** 36吨氨/日 - …"
+    },
+    {
+      "qid": "Q22",
+      "category": "T3",
+      "question": "扩容后的合成氨产能(expanded)是多少吨/日？",
+      "should_refuse": false,
+      "answer_len_chars": 273,
+      "answer_node_ids": [
+        "n0008",
+        "n0009",
+        "n0060"
+      ],
+      "retrieved_node_ids_size": 24,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "72"
+      ],
+      "keyword_found": [
+        "72"
+      ],
+      "keyword_missing": [],
+      "keyword_coverage": 1.0,
+      "forbidden_keywords": [
+        "36吨/日"
+      ],
+      "forbidden_hits": [],
+      "forbidden_violation": 0,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "根据知识图谱的查询结果，扩容后的合成氨产能（expanded）为 **72吨氨/日**（即72吨/日）。  **来源信息：** - **节点ID**: `n0009` — 标签为\"72吨氨/日\"，属性中明确标注 `\"phase\": \"exp…"
+    },
+    {
+      "qid": "Q23",
+      "category": "T3",
+      "question": "论文摘要给出的园区总用电量是多少 MWh？",
+      "should_refuse": false,
+      "answer_len_chars": 328,
+      "answer_node_ids": [
+        "n0005",
+        "n0011"
+      ],
+      "retrieved_node_ids_size": 36,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "558.72"
+      ],
+      "keyword_found": [
+        "558.72"
+      ],
+      "keyword_missing": [],
+      "keyword_coverage": 1.0,
+      "forbidden_keywords": [
+        "603.45",
+        "172.04",
+        "216.77"
+      ],
+      "forbidden_hits": [],
+      "forbidden_violation": 0,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "找到了！根据知识图谱中的信息：  论文摘要（\"摘 要\"，节点 n0005，第1页）中给出的**园区总用电量（total electricity consumption）为 558.72 MWh**（节点 n0011）。  **答案：** 论…"
+    },
+    {
+      "qid": "Q24",
+      "category": "T3",
+      "question": "论文摘要中可再生能源发电量是多少 MWh？",
+      "should_refuse": false,
+      "answer_len_chars": 265,
+      "answer_node_ids": [
+        "n0005",
+        "n0011",
+        "n0012"
+      ],
+      "retrieved_node_ids_size": 43,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "603.45"
+      ],
+      "keyword_found": [
+        "603.45"
+      ],
+      "keyword_missing": [],
+      "keyword_coverage": 1.0,
+      "forbidden_keywords": [
+        "558.72",
+        "172.04"
+      ],
+      "forbidden_hits": [
+        "558.72"
+      ],
+      "forbidden_violation": 1,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "现在信息很清楚了。让我回答用户的问题。  根据论文知识图谱中的信息，在论文的**摘要**部分（第1页，节点 n0005）中，涉及可再生能源发电量的数据如下：  - **可再生能源发电量（renewable generation）**：**6…"
+    },
+    {
+      "qid": "Q25",
+      "category": "T3",
+      "question": "论文计算出的电网支撑价值是多少元/吨？",
+      "should_refuse": false,
+      "answer_len_chars": 279,
+      "answer_node_ids": [
+        "n0041",
+        "n0316"
+      ],
+      "retrieved_node_ids_size": 17,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "1970"
+      ],
+      "keyword_found": [
+        "1970"
+      ],
+      "keyword_missing": [],
+      "keyword_coverage": 1.0,
+      "forbidden_keywords": [
+        "3554",
+        "5820",
+        "7111"
+      ],
+      "forbidden_hits": [],
+      "forbidden_violation": 0,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "根据知识图谱中的信息，论文计算出的**电网支撑价值为1970元/吨**。  具体来说：  - **节点 n0041**（第1页）明确指出：\"电网支撑价值为**1970元/吨**，量化了电网功率支撑对园区规模化生产的不可替代作用\"。 - **…"
+    },
+    {
+      "qid": "Q26",
+      "category": "T3",
+      "question": "论文摘要给出的可再生能源弃电率(curtailment rate)是多少？",
+      "should_refuse": false,
+      "answer_len_chars": 253,
+      "answer_node_ids": [
+        "n0034"
+      ],
+      "retrieved_node_ids_size": 13,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "95.4"
+      ],
+      "keyword_found": [
+        "95.4"
+      ],
+      "keyword_missing": [],
+      "keyword_coverage": 1.0,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "根据知识图谱中的信息，论文摘要中给出的可再生能源弃电率（renewable curtailment rate）为 **95.4%**。  - **节点ID**: n0034 - **实体类型**: metric（指标） - **属性**: …"
+    },
+    {
+      "qid": "Q27",
+      "category": "T3",
+      "question": "离网带储能的最优储能配置容量/功率是多少？",
+      "should_refuse": false,
+      "answer_len_chars": 843,
+      "answer_node_ids": [
+        "n0032",
+        "n0035",
+        "n0036",
+        "n0037",
+        "n0038",
+        "n0039",
+        "n0316",
+        "n0332",
+        "n0390"
+      ],
+      "retrieved_node_ids_size": 89,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "210.4",
+        "30"
+      ],
+      "keyword_found": [
+        "210.4",
+        "30"
+      ],
+      "keyword_missing": [],
+      "keyword_coverage": 1.0,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "现在我已经收集到了足够的信息。让我总结一下关于离网带储能的最优储能配置。  根据知识图谱中的信息，以下是关于离网带储能的最优储能配置容量/功率的答案：  ---  根据该论文《绿电直连型电氢氨园区优化运行》的知识图谱，关于离网带储能的最优储…"
+    },
+    {
+      "qid": "Q28",
+      "category": "T3",
+      "question": "摘要中给出的年度合成氨产量(无储能 vs 有储能)是多少吨？",
+      "should_refuse": false,
+      "answer_len_chars": 441,
+      "answer_node_ids": [
+        "n0032",
+        "n0037",
+        "n0315"
+      ],
+      "retrieved_node_ids_size": 96,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "9023",
+        "10903"
+      ],
+      "keyword_found": [
+        "10903"
+      ],
+      "keyword_missing": [
+        "9023"
+      ],
+      "keyword_coverage": 0.5,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "现在信息非常清楚了。以下是答案：  ---  根据论文知识图谱，摘要（第1页）中给出的年度合成氨产量数据如下：  **无储能（离网无储能）**：**9,023 吨/年** - 节点ID：n0032（page_idx=1） - 属性：`ann…"
+    },
+    {
+      "qid": "Q29",
+      "category": "T4",
+      "question": "解决问题二的核心建模方法及其与问题三方法的差异是什么？",
+      "should_refuse": false,
+      "answer_len_chars": 1719,
+      "answer_node_ids": [
+        "n0018",
+        "n0024",
+        "n0025",
+        "n0030",
+        "n0076",
+        "n0078",
+        "n0079",
+        "n0165",
+        "n0167",
+        "n0168",
+        "n0169",
+        "n0171",
+        "n0172",
+        "n0175",
+        "n0224",
+        "n0226",
+        "n0227",
+        "n0230",
+        "n0234",
+        "n0417"
+      ],
+      "retrieved_node_ids_size": 100,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "MILP",
+        "LP",
+        "离散启停",
+        "连续",
+        "二进制",
+        "big-M"
+      ],
+      "keyword_found": [
+        "MILP",
+        "LP",
+        "离散启停",
+        "连续",
+        "big-M"
+      ],
+      "keyword_missing": [
+        "二进制"
+      ],
+      "keyword_coverage": 0.8333333333333334,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "现在我已经收集了足够的信息，可以给出完整的回答。  ---  ## 问题二与问题三的核心建模方法及其差异  ### 一、问题二的核心建模方法  **问题二：离散制氨的MILP优化**（章节 **5.2**，第8页，节点 `n0165`）  …"
+    },
+    {
+      "qid": "Q30",
+      "category": "T4",
+      "question": "离网带储能场景相比无储能场景，产量提升了多少？",
+      "should_refuse": false,
+      "answer_len_chars": 413,
+      "answer_node_ids": [
+        "n0032",
+        "n0037",
+        "n0038"
+      ],
+      "retrieved_node_ids_size": 15,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "20.8",
+        "9023",
+        "10903"
+      ],
+      "keyword_found": [
+        "20.8"
+      ],
+      "keyword_missing": [
+        "9023",
+        "10903"
+      ],
+      "keyword_coverage": 0.3333333333333333,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "根据知识图谱中的信息，回答如下：  ---  **离网带储能场景相比无储能场景，产量提升了 20.8%。**  具体数据如下：  | 场景 | 年氨产量 | 节点ID | 页码 | |------|---------|--------|--…"
+    },
+    {
+      "qid": "Q31",
+      "category": "T4",
+      "question": "成本最低和最高的两种运营模式分别对应多少元/吨？",
+      "should_refuse": false,
+      "answer_len_chars": 1622,
+      "answer_node_ids": [
+        "n0025",
+        "n0205",
+        "n0206",
+        "n0207",
+        "n0208",
+        "n0209",
+        "n0214",
+        "n0316"
+      ],
+      "retrieved_node_ids_size": 153,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "3554",
+        "7111"
+      ],
+      "keyword_found": [],
+      "keyword_missing": [
+        "3554",
+        "7111"
+      ],
+      "keyword_coverage": 0.0,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "Now I have a clear picture. The 63.9% is the降幅 (reduction) from 6166 to 2226. So: - 6166元/吨 (72吨/日) → highest cost - 222…"
+    },
+    {
+      "qid": "Q32",
+      "category": "T4",
+      "question": "摘要中讨论的两种连续调节方式分别使绿电合规率达到了什么水平？",
+      "should_refuse": false,
+      "answer_len_chars": 972,
+      "answer_node_ids": [
+        "n0018",
+        "n0020",
+        "n0024",
+        "n0029"
+      ],
+      "retrieved_node_ids_size": 58,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "39.2",
+        "69.2",
+        "线性",
+        "LP",
+        "连续"
+      ],
+      "keyword_found": [
+        "39.2",
+        "69.2",
+        "线性",
+        "LP",
+        "连续"
+      ],
+      "keyword_missing": [],
+      "keyword_coverage": 1.0,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "Now I have all the information needed. Let me summarize my findings.  Based on the Knowledge Graph, the paper discusses …"
+    },
+    {
+      "qid": "Q33",
+      "category": "T5",
+      "question": "Transformer 模型用了多少层 encoder？",
+      "should_refuse": true,
+      "answer_len_chars": 217,
+      "answer_node_ids": [],
+      "retrieved_node_ids_size": 6,
+      "hallucinated_node_ids": [],
+      "node_id_validity": null,
+      "cited_in_retrieved_rate": null,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [],
+      "keyword_found": [],
+      "keyword_missing": [],
+      "keyword_coverage": null,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": 1,
+      "refusal_markers_matched": [
+        "不包含",
+        "无法"
+      ],
+      "answer_snippet": "根据对知识图谱的查询，这篇论文的标题是 **\"A 题绿电直连型电氢氨园区优化运行\"**，内容是关于电氢氨园区的优化运行，涉及碱性电解槽、PEM电解槽、合成氨装置等设备组件。  **知识图谱中不包含关于 Transformer 模型（神经网络…"
+    },
+    {
+      "qid": "Q34",
+      "category": "T5",
+      "question": "BERT 在 GLUE benchmark 上的得分是多少？",
+      "should_refuse": true,
+      "answer_len_chars": 222,
+      "answer_node_ids": [],
+      "retrieved_node_ids_size": 11,
+      "hallucinated_node_ids": [],
+      "node_id_validity": null,
+      "cited_in_retrieved_rate": null,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [],
+      "keyword_found": [],
+      "keyword_missing": [],
+      "keyword_coverage": null,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": 1,
+      "refusal_markers_matched": [
+        "不包含",
+        "没有",
+        "无法"
+      ],
+      "answer_snippet": "根据知识图谱的查询结果，这篇论文是关于 **\"绿电直连型电氢氨园区优化运行\"** 的学术论文，与 BERT 模型或 GLUE benchmark 没有任何关联。  **知识图谱中不包含关于 BERT 模型在 GLUE benchmark 上…"
+    },
+    {
+      "qid": "Q35",
+      "category": "T5",
+      "question": "ResNet-50 的参数量有多少？",
+      "should_refuse": true,
+      "answer_len_chars": 243,
+      "answer_node_ids": [],
+      "retrieved_node_ids_size": 6,
+      "hallucinated_node_ids": [],
+      "node_id_validity": null,
+      "cited_in_retrieved_rate": null,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [],
+      "keyword_found": [],
+      "keyword_missing": [],
+      "keyword_coverage": null,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": 1,
+      "refusal_markers_matched": [
+        "没有"
+      ],
+      "answer_snippet": "这篇论文的标题是 **\"A 题绿电直连型电氢氨园区优化运行\"**，是一篇关于绿色电力直接连接的电氢氨园区优化运行的论文，**并不涉及 ResNet-50 或任何深度学习模型**。  因此，知识图谱中**没有包含 ResNet-50 参数量*…"
+    },
+    {
+      "qid": "Q36",
+      "category": "T5",
+      "question": "这篇论文的第一作者是谁？",
+      "should_refuse": true,
+      "answer_len_chars": 152,
+      "answer_node_ids": [
+        "n0001"
+      ],
+      "retrieved_node_ids_size": 2,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [],
+      "keyword_found": [],
+      "keyword_missing": [],
+      "keyword_coverage": null,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": 1,
+      "refusal_markers_matched": [
+        "没有",
+        "无法"
+      ],
+      "answer_snippet": "根据对知识图谱的查询，该论文的元数据实体（节点ID: n0001）仅包含标题信息（\"A 题绿电直连型电氢氨园区优化运行\"）和ID信息（\"002196\"），**知识图谱中没有存储作者信息**。  因此，我无法从该知识图谱中获取这篇论文的第一作…"
+    },
+    {
+      "qid": "Q37",
+      "category": "T5",
+      "question": "本论文里有没有讨论太阳能电池板的转换效率参数？",
+      "should_refuse": true,
+      "answer_len_chars": 490,
+      "answer_node_ids": [
+        "n0001",
+        "n0093",
+        "n0095",
+        "n0163"
+      ],
+      "retrieved_node_ids_size": 35,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [],
+      "keyword_found": [],
+      "keyword_missing": [],
+      "keyword_coverage": null,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": 1,
+      "refusal_markers_matched": [
+        "不包含",
+        "没有"
+      ],
+      "answer_snippet": "根据对论文知识图谱的全面搜索，我得出以下结论：  **本论文没有讨论太阳能电池板的转换效率参数。**  具体分析如下：  1. **论文主题**：该论文的标题为《**A 题绿电直连型电氢氨园区优化运行**》（节点ID: n0001），是一篇…"
+    },
+    {
+      "qid": "Q38",
+      "category": "T5",
+      "question": "论文使用 GPU 训练了多少个 epoch？",
+      "should_refuse": true,
+      "answer_len_chars": 200,
+      "answer_node_ids": [],
+      "retrieved_node_ids_size": 51,
+      "hallucinated_node_ids": [],
+      "node_id_validity": null,
+      "cited_in_retrieved_rate": null,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [],
+      "keyword_found": [],
+      "keyword_missing": [],
+      "keyword_coverage": null,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": 1,
+      "refusal_markers_matched": [
+        "没有"
+      ],
+      "answer_snippet": "根据对知识图谱的全面搜索，这篇论文的标题是 **\"绿电直连型电氢氨园区优化运行\"**，它是一篇关于电力系统优化运行的学术论文，主要使用混合整数线性规划（MILP）和线性规划（LP）等优化方法，而不是使用 GPU 进行深度学习模型训练。  *…"
+    },
+    {
+      "qid": "Q39",
+      "category": "T5",
+      "question": "该研究的实验在多少个城市进行了部署？",
+      "should_refuse": true,
+      "answer_len_chars": 263,
+      "answer_node_ids": [],
+      "retrieved_node_ids_size": 109,
+      "hallucinated_node_ids": [],
+      "node_id_validity": null,
+      "cited_in_retrieved_rate": null,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [],
+      "keyword_found": [],
+      "keyword_missing": [],
+      "keyword_coverage": null,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": 1,
+      "refusal_markers_matched": [
+        "没有",
+        "无法"
+      ],
+      "answer_snippet": "经过对知识图谱的全面搜索，我没有找到关于该研究实验在多少个城市进行部署的相关信息。该论文是关于\"绿电直连型电氢氨园区优化运行\"的研究，主要涉及的是对一个绿电园区的优化运行建模与分析，而非在多个城市进行实地实验部署。  知识图谱中的信息显示，…"
+    },
+    {
+      "qid": "Q40",
+      "category": "T5",
+      "question": "ImageNet 的图像分类准确率是多少？",
+      "should_refuse": true,
+      "answer_len_chars": 197,
+      "answer_node_ids": [],
+      "retrieved_node_ids_size": 24,
+      "hallucinated_node_ids": [],
+      "node_id_validity": null,
+      "cited_in_retrieved_rate": null,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [],
+      "keyword_found": [],
+      "keyword_missing": [],
+      "keyword_coverage": null,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": 1,
+      "refusal_markers_matched": [
+        "不包含",
+        "无法",
+        "无关"
+      ],
+      "answer_snippet": "根据对知识图谱的全面搜索，该知识图谱中**不包含**关于 ImageNet 图像分类准确率的信息。  该知识图谱的内容是关于一个**绿电制氨（绿色电力生产氨）**的学术论文，涉及风光出力场景、产能、成本等指标，与 ImageNet 图像分类…"
+    },
+    {
+      "qid": "Q41",
+      "category": "T5",
+      "question": "本论文的影响因子(impact factor)是多少？",
+      "should_refuse": true,
+      "answer_len_chars": 315,
+      "answer_node_ids": [
+        "n0001",
+        "n0002"
+      ],
+      "retrieved_node_ids_size": 3,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [],
+      "keyword_found": [],
+      "keyword_missing": [],
+      "keyword_coverage": null,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": 1,
+      "refusal_markers_matched": [
+        "不包含",
+        "没有",
+        "无法"
+      ],
+      "answer_snippet": "根据对知识图谱的全面查询，**该知识图谱中不包含关于这篇论文影响因子（Impact Factor）的信息**。  具体说明如下：  - 这篇论文的标题是 **\"A 题绿电直连型电氢氨园区优化运行\"**（节点ID: n0001），论文编号为 …"
+    },
+    {
+      "qid": "Q42",
+      "category": "T5",
+      "question": "论文里讨论了煤化工成本是多少？",
+      "should_refuse": true,
+      "answer_len_chars": 934,
+      "answer_node_ids": [
+        "n0145",
+        "n0205",
+        "n0207",
+        "n0209",
+        "n0216",
+        "n0219",
+        "n0224",
+        "n0318",
+        "n0357",
+        "n0369"
+      ],
+      "retrieved_node_ids_size": 49,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [],
+      "keyword_found": [],
+      "keyword_missing": [],
+      "keyword_coverage": null,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": 1,
+      "refusal_markers_matched": [
+        "没有",
+        "未涉及"
+      ],
+      "answer_snippet": "根据知识图谱的检索结果，这篇论文的题目是 **《A 题绿电直连型电氢氨园区优化运行》**，主要讨论的是**绿电直连型电氢氨园区**的优化运行问题，而非传统意义上的\"煤化工\"。  不过，论文中确实讨论了**绿氨（绿色合成氨）的生产成本**，具…"
+    },
+    {
+      "qid": "Q43",
+      "category": "T6",
+      "question": "这篇论文采用了什么方法求解问题2？(混合证书线性规化方法?)",
+      "should_refuse": false,
+      "answer_len_chars": 794,
+      "answer_node_ids": [
+        "n0165",
+        "n0171",
+        "n0172",
+        "n0175",
+        "n0417"
+      ],
+      "retrieved_node_ids_size": 92,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "MILP",
+        "混合整数线性规划"
+      ],
+      "keyword_found": [
+        "MILP",
+        "混合整数线性规划"
+      ],
+      "keyword_missing": [],
+      "keyword_coverage": 1.0,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "现在我已经收集了足够的信息。让我总结一下回答。  根据知识图谱中的信息，这篇论文求解**问题二**所采用的方法是：  ## **混合整数线性规划（MILP）模型**  具体来说：  ### 方法名称 **混合整数线性规划（Mixed Int…"
+    },
+    {
+      "qid": "Q44",
+      "category": "T6",
+      "question": "摘要里说的园区总用店量是多少 mwh?",
+      "should_refuse": false,
+      "answer_len_chars": 243,
+      "answer_node_ids": [
+        "n0011"
+      ],
+      "retrieved_node_ids_size": 39,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "558.72"
+      ],
+      "keyword_found": [
+        "558.72"
+      ],
+      "keyword_missing": [],
+      "keyword_coverage": 1.0,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "找到了！在摘要（摘 要）部分，有一个指标实体 **\"558.72MWh\"**，其属性 `name` 为 \"total electricity consumption\"（总用电量），值为 558.72，单位是 MWh。  **答案：** 摘要…"
+    },
+    {
+      "qid": "Q45",
+      "category": "T6",
+      "question": "本文计算的吨案产能 expanded 是多少？",
+      "should_refuse": false,
+      "answer_len_chars": 291,
+      "answer_node_ids": [
+        "n0008",
+        "n0009"
+      ],
+      "retrieved_node_ids_size": 11,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "72"
+      ],
+      "keyword_found": [
+        "72"
+      ],
+      "keyword_missing": [],
+      "keyword_coverage": 1.0,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "根据知识图谱的查询结果，本文计算的 **expanded（扩建后）** 的吨氨产能为：  **72吨氨/日**（72 tons NH₃/day）  - **节点ID**: n0009 - **所在页面**: 第1页 - **属性说明**: …"
+    },
+    {
+      "qid": "Q46",
+      "category": "T6",
+      "question": "Pythn 3.10 是用来做什么的?",
+      "should_refuse": false,
+      "answer_len_chars": 803,
+      "answer_node_ids": [
+        "n0397",
+        "n0407",
+        "n0411",
+        "n0412",
+        "n0414",
+        "n0415",
+        "n0416"
+      ],
+      "retrieved_node_ids_size": 22,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "Python",
+        "实现",
+        "代码",
+        "implementation"
+      ],
+      "keyword_found": [
+        "Python",
+        "实现",
+        "implementation"
+      ],
+      "keyword_missing": [
+        "代码"
+      ],
+      "keyword_coverage": 0.75,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "根据知识图谱中的信息，以下是关于 **Python 3.10** 的答案：  ---  ## Python 3.10 的用途  根据知识图谱（KG），**Python 3.10**（节点ID: **n0407**，第22页）被归类为 **m…"
+    },
+    {
+      "qid": "Q47",
+      "category": "T6",
+      "question": "论文中提到的wind 4 solar 1场景代表什么含义?",
+      "should_refuse": false,
+      "answer_len_chars": 588,
+      "answer_node_ids": [
+        "n0035",
+        "n0415"
+      ],
+      "retrieved_node_ids_size": 30,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "最大弃电",
+        "173.7",
+        "curtailment"
+      ],
+      "keyword_found": [
+        "最大弃电",
+        "173.7",
+        "curtailment"
+      ],
+      "keyword_missing": [],
+      "keyword_coverage": 1.0,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "Now I have enough information to answer the question.  根据知识图谱中的信息，论文中提到的 **\"wind 4 solar 1\"（即 W4S1）** 代表以下含义：  ## 含义  **…"
+    },
+    {
+      "qid": "Q48",
+      "category": "T7",
+      "question": "论文用了 GPT-4 来辅助优化求解，对吗？",
+      "should_refuse": true,
+      "answer_len_chars": 260,
+      "answer_node_ids": [],
+      "retrieved_node_ids_size": 44,
+      "hallucinated_node_ids": [],
+      "node_id_validity": null,
+      "cited_in_retrieved_rate": null,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [],
+      "keyword_found": [],
+      "keyword_missing": [],
+      "keyword_coverage": null,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "从知识图谱的搜索结果来看，这篇论文的标题是 **\"A 题绿电直连型电氢氨园区优化运行\"**，内容涉及绿电、氢氨园区的优化运行建模（MILP、LP等），但**知识图谱中没有任何关于 GPT-4 的实体或信息**。  因此，根据知识图谱中的内容…"
+    },
+    {
+      "qid": "Q49",
+      "category": "T7",
+      "question": "本论文证明了储能装置反而会降低园区产量，这个结论对吗？",
+      "should_refuse": false,
+      "answer_len_chars": 656,
+      "answer_node_ids": [
+        "n0315",
+        "n0316",
+        "n0317",
+        "n0318",
+        "n0332",
+        "n0375"
+      ],
+      "retrieved_node_ids_size": 70,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "20.8",
+        "提升",
+        "增加",
+        "9023",
+        "10903"
+      ],
+      "keyword_found": [
+        "提升",
+        "9023"
+      ],
+      "keyword_missing": [
+        "20.8",
+        "增加",
+        "10903"
+      ],
+      "keyword_coverage": 0.4,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "好的，让我总结一下我所找到的所有信息。  根据知识图谱中的信息，**这个结论是不正确的**。论文并没有证明储能装置会降低园区产量，恰恰相反，论文中的证据显示储能装置**提升**了园区产量。  以下是知识图谱中的关键证据：  1. **指标 …"
+    },
+    {
+      "qid": "Q50",
+      "category": "T7",
+      "question": "该论文的初始产能是 100 吨氨/日，是吗？",
+      "should_refuse": false,
+      "answer_len_chars": 410,
+      "answer_node_ids": [
+        "n0008",
+        "n0009",
+        "n0060"
+      ],
+      "retrieved_node_ids_size": 46,
+      "hallucinated_node_ids": [],
+      "node_id_validity": 1,
+      "cited_in_retrieved_rate": 1.0,
+      "uncited_in_retrieved": [],
+      "expected_keywords": [
+        "36",
+        "并非100",
+        "不是100"
+      ],
+      "keyword_found": [
+        "36",
+        "不是100"
+      ],
+      "keyword_missing": [
+        "并非100"
+      ],
+      "keyword_coverage": 0.6666666666666666,
+      "forbidden_keywords": [],
+      "forbidden_hits": [],
+      "forbidden_violation": null,
+      "refusal_for_t5": null,
+      "refusal_markers_matched": [],
+      "answer_snippet": "根据知识图谱中的信息，我来回答您的问题：  **不是的。** 该论文的初始产能是 **36吨氨/日**，而不是100吨氨/日。  具体依据如下：  - 在论文摘要（第1页）中，知识图谱记录了初始产能（production capacity,…"
+    }
+  ]
+}
