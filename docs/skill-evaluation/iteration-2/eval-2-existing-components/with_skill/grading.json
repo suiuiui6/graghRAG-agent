@@ -40,6 +40,6 @@
   },
   "eval_feedback": {
     "suggestions": [],
-    "overall": "All 5 assertions pass with strong, direct evidence. The with_skill response follows the yujia-engineering 8-layer methodology rigorously: it correctly diagnoses existing components at Layers 0-2, identifies Layer 3 (BridgePipeline) as the next step, mandates Layer 5 PRD/API Spec/Frontend Design before product code, prescribes Layer 6 project structure with frontend/backend/, .env management, and uv venv isolation, and explicitly defines the three-agent (planner/coder/reviewer) collaboration workflow in Layer 7."
+    "overall": "All 5 assertions pass with strong, direct evidence. The with_skill response follows the harness-engineering 8-layer methodology rigorously: it correctly diagnoses existing components at Layers 0-2, identifies Layer 3 (BridgePipeline) as the next step, mandates Layer 5 PRD/API Spec/Frontend Design before product code, prescribes Layer 6 project structure with frontend/backend/, .env management, and uv venv isolation, and explicitly defines the three-agent (planner/coder/reviewer) collaboration workflow in Layer 7."
   }
 }

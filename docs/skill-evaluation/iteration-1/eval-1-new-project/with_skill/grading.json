@@ -40,6 +40,6 @@
   },
   "eval_feedback": {
     "suggestions": [],
-    "overall": "All 5 expectations pass. The response follows the yujia-engineering methodology rigorously: it starts with Layer 0 capability assessment, mandates MVP testing (Layers 1-2) before formal development, requires spec documents (component specs in Layers 1-2, API spec in Layer 5b, frontend design spec in Layer 5c), establishes project development norms in Layer 6 before coding in Layer 7, and explicitly warns against skipping layers with a dedicated anti-patterns table."
+    "overall": "All 5 expectations pass. The response follows the harness-engineering methodology rigorously: it starts with Layer 0 capability assessment, mandates MVP testing (Layers 1-2) before formal development, requires spec documents (component specs in Layers 1-2, API spec in Layer 5b, frontend design spec in Layer 5c), establishes project development norms in Layer 6 before coding in Layer 7, and explicitly warns against skipping layers with a dedicated anti-patterns table."
   }
 }

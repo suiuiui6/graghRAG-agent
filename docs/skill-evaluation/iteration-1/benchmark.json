@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "skill_name": "yujia-engineering",
-    "skill_path": "C:/Users/14156/.claude/skills/yujia-engineering",
+    "skill_name": "harness-engineering",
+    "skill_path": "C:/Users/14156/.claude/skills/harness-engineering",
     "executor_model": "deepseek-v4-pro",
     "analyzer_model": "deepseek-v4-pro",
     "timestamp": "2026-05-25T13:02:38Z",

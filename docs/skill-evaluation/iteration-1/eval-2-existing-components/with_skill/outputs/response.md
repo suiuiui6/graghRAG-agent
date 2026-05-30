@@ -1,6 +1,6 @@
 # GraphRAG 问答系统整合方案
 
-> 基于驾驭工程（yujia-engineering）8 层递进方法论，针对"已有 MinerU + LangExtract 两个独立服务，需整合为 RAG 问答系统"的场景。
+> 基于驾驭工程（harness-engineering）8 层递进方法论，针对"已有 MinerU + LangExtract 两个独立服务，需整合为 RAG 问答系统"的场景。
 
 ---
 
