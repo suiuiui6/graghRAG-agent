@@ -30,6 +30,9 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 
+# Uploaded files (runtime data, not source code)
+backend/uploads/
+
 # IDE
 .idea/
 .vscode/
