@@ -32,7 +32,7 @@ from kg_builder import build_knowledge_graph, serialize_kg
 UPLOADS_DIR = os.path.join(os.path.dirname(__file__), "uploads")
 
 
-def run_real_pipeline(task_id: str, filepath: str, filename: str, progress_callback):
+def run_real_pipeline(task_id: str, filepath: str, filename: str, progress_callback, ingest_options: dict | None = None):
     """Execute the full MinerU → BridgePipeline → LangExtract → KG pipeline."""
 
     env_file_url = os.getenv("FILE_URL", "").strip()
@@ -52,7 +52,7 @@ def run_real_pipeline(task_id: str, filepath: str, filename: str, progress_callb
                 # Successfully uploaded to OSS, use MinerU API
                 progress_callback("mineru", "MinerU 文档解析", 1, {"mineru": "calling_api"})
                 token = os.getenv("MINERU_API_TOKEN", "")
-                mineru_dir = _call_mineru_api(public_url, token, task_id)
+                mineru_dir = _call_mineru_api(public_url, token, task_id, ingest_options)
 
                 if mineru_dir:
                     progress_callback("mineru", "MinerU 文档解析", 1, {"mineru": "done"})
@@ -91,7 +91,7 @@ def run_real_pipeline(task_id: str, filepath: str, filename: str, progress_callb
         progress_callback("mineru", "MinerU 文档解析", 1, {"mineru": "running"})
         public_url = filepath
         token = os.getenv("MINERU_API_TOKEN", "")
-        mineru_dir = _call_mineru_api(public_url, token, task_id)
+        mineru_dir = _call_mineru_api(public_url, token, task_id, ingest_options)
 
         if not mineru_dir:
             progress_callback("mineru", "MinerU 文档解析", 1, {"mineru": "failed"},
@@ -185,12 +185,24 @@ def _upload_to_public(filepath: str) -> str | None:
         return None
 
 
-def _call_mineru_api(file_url: str, token: str, task_id: str) -> str | None:
+def _call_mineru_api(file_url: str, token: str, task_id: str, ingest_options: dict | None = None) -> str | None:
     """Submit to MinerU, poll, download ZIP, return output dir."""
     base = os.getenv("MINERU_API_BASE_URL", "https://mineru.net/api/v4/extract/task")
 
+    opts = ingest_options or {}
+    language = opts.get("language", "ch")
+    enable_formula = bool(opts.get("enable_formula", True))
+    enable_table = bool(opts.get("enable_table", True))
+    model_version = opts.get("model_version", "pipeline")
+
     # Submit
-    payload = json.dumps({"url": file_url, "language": "en", "enable_formula": True, "enable_table": True, "model_version": "pipeline"})
+    payload = json.dumps({
+        "url": file_url,
+        "language": language,
+        "enable_formula": enable_formula,
+        "enable_table": enable_table,
+        "model_version": model_version,
+    })
     try:
         result = subprocess.run(
             ["curl", "-s", "--max-time", "30", "-X", "POST", base,

@@ -20,8 +20,11 @@ os.makedirs(UPLOADS_DIR, exist_ok=True)
 _tasks: dict[str, dict] = {}
 
 
-def _run_indexing(task_id: str, filepath: str, filename: str, file_size: int):
+def _run_indexing(task_id: str, filepath: str, filename: str, file_size: int, ingest_options: dict):
     """Background indexing — REAL MinerU → LangExtract → KG pipeline."""
+
+    _tasks[task_id]["status"] = TaskStatus.RUNNING
+    _tasks[task_id]["updated_at"] = datetime.now(timezone.utc)
 
     def progress(stage_key: str, stage_name: str, step: int, details: dict, error: str | None = None):
         _tasks[task_id]["stage"] = stage_key
@@ -37,7 +40,7 @@ def _run_indexing(task_id: str, filepath: str, filename: str, file_size: int):
 
     try:
         from worker import run_real_pipeline
-        result = run_real_pipeline(task_id, filepath, filename, progress)
+        result = run_real_pipeline(task_id, filepath, filename, progress, ingest_options)
     except Exception as e:
         progress("mineru", "Pipeline Error", 0, {}, error=str(e))
         return
@@ -110,7 +113,14 @@ async def ingest(
             "filename": filename, "file_size_bytes": 0,
             "created_at": now, "updated_at": now, "progress": None, "result": None, "error": None,
         }
-        background_tasks.add_task(_run_indexing, task_id, url, filename, 0)
+        ingest_options = {
+            "language": language,
+            "enable_ocr": enable_ocr,
+            "enable_formula": enable_formula,
+            "enable_table": enable_table,
+            "model_version": model_version,
+        }
+        background_tasks.add_task(_run_indexing, task_id, url, filename, 0, ingest_options)
         return IngestResponse(task_id=task_id, status=TaskStatus.PENDING, filename=filename,
                               file_size_bytes=0, created_at=now, estimated_duration_seconds=60,
                               links={"status": f"/api/v1/status/{task_id}"})
@@ -139,10 +149,14 @@ async def ingest(
         "created_at": now, "updated_at": now, "progress": None, "result": None, "error": None,
     }
 
-    env_file_url = os.getenv("FILE_URL", "").strip()
-    if env_file_url:
-        filepath = env_file_url
-    background_tasks.add_task(_run_indexing, task_id, filepath, file.filename or "unknown", len(contents))
+    ingest_options = {
+        "language": language,
+        "enable_ocr": enable_ocr,
+        "enable_formula": enable_formula,
+        "enable_table": enable_table,
+        "model_version": model_version,
+    }
+    background_tasks.add_task(_run_indexing, task_id, filepath, file.filename or "unknown", len(contents), ingest_options)
 
     return IngestResponse(task_id=task_id, status=TaskStatus.PENDING,
         filename=file.filename or "unknown", file_size_bytes=len(contents),

@@ -10,3 +10,9 @@ All files under any `outputs/` directory in this subtree are treated as evaluati
 
 Scope for this convention:
 - `docs/skill-evaluation/**/outputs/**`
+
+## Reading Order
+
+1. Read [`../superpowers/skill-evaluation.md`](../superpowers/skill-evaluation.md) for the interpretation boundary around evaluation artifacts.
+2. Read [`../superpowers/harness-engineering-layer-mapping.md`](../superpowers/harness-engineering-layer-mapping.md) when a benchmark or eval prompt refers to Layer 0-6.
+3. Edit benchmark summaries or eval definitions only outside `outputs/` so evidence snapshots remain untouched.

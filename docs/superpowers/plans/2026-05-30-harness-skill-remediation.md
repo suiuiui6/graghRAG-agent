@@ -1,358 +1,182 @@
-# Harness Engineering Skill Remediation Implementation Plan
+# Harness Engineering Skill 误导性表述整改方案
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **目标**：清理 `harness-engineering` skill 中会误导模型或读者的三类信息源：方法论文档中的默认技术栈暗示、Agent 模板中的硬编码实现偏好、README/benchmark 中带主观解释的评测宣称。
 
-**Goal:** Unify `harness-engineering` branding and 7-layer semantics across evaluation and reference docs while preserving historical benchmark outcomes.
+## 背景判断
 
-**Architecture:** Apply documentation-only, minimal-scope edits in the skill package and keep benchmark scores unchanged. First fix objective metadata mismatches (`skill_name`, `skill_path`, stale naming), then align language drift (7-layer wording and layer index references), then remove residual legacy terms in explanatory docs. Verify via grep-based checks and JSON validity checks after each task.
+当前问题不是单点笔误，而是三条内容链条互相放大：
 
-**Tech Stack:** Markdown/JSON edits, Git, shell verification (`rg`, `jq`, `git diff`)
+1. `references/methodology.md` 在 Layer 5 把 Python/Node.js 写成“当前默认范围”，容易让模型把方法论误解成特定技术栈模板，而不是跨栈约束框架。
+2. `references/agent-templates/chatbot-coder.md` 直接预设 React/FastAPI/Tailwind/Pydantic，会把通用 coder 模板扭成特定项目脚手架提示词。
+3. `README.md` 与 `evals/skill-evaluation/iteration-1/benchmark.md` 使用“排除评测设计问题后的实际通过率”“with-skill would be ~93%”这类解释性语言，把评测结论从“记录结果”扩大成了“替结果做辩护”。
 
----
+这三类表述叠加后，会让外部读者和模型都形成错误预期：
 
-## File Structure and Responsibilities
+- 误以为该 skill 官方推荐 React + FastAPI 作为默认工程栈。
+- 误以为评测结果允许按主观判断重算。
+- 误以为方法论强绑定某个示例项目，而不是强调“先实测、后纳入规范”。
 
-- `C:/Users/14156/.claude/skills/harness-engineering/evals/skill-evaluation/iteration-1/benchmark.json`
-  - Benchmark metadata authority for skill identity and path.
-- `C:/Users/14156/.claude/skills/harness-engineering/evals/skill-evaluation/iteration-1/benchmark.md`
-  - Human-readable benchmark summary and notes.
-- `C:/Users/14156/.claude/skills/harness-engineering/references/methodology.md`
-  - Long-form methodology reference; must match current skill naming and layer semantics.
-- `C:/Users/14156/.claude/skills/harness-engineering/evals/evals.json`
-  - Eval prompt/expectation contract; wording must be internally consistent with canonical Layer 0-6 model.
+## 整改原则
 
----
+1. **去默认技术栈化**：保留“按宿主项目技术栈落地”的要求，删除会被读成推荐栈的硬编码示例。
+2. **去评测辩护化**：保留原始 benchmark 结果和已知限制，但不再把“修正后分数”写成正式宣传结论。
+3. **去项目绑定化**：示例项目可以存在，但必须明确是案例，而不是方法论默认实现。
+4. **最小改动**：仅修改误导性表述，不重写整套方法论，不改动 benchmark 原始数据文件。
 
-### Task 1: Correct Benchmark Metadata Identity
+## 影响范围
 
-**Files:**
-- Modify: `C:/Users/14156/.claude/skills/harness-engineering/evals/skill-evaluation/iteration-1/benchmark.json`
-- Test: `C:/Users/14156/.claude/skills/harness-engineering/evals/skill-evaluation/iteration-1/benchmark.json` (JSON parse)
+### A. 方法论正文
 
-- [ ] **Step 1: Write the failing metadata check**
+- `D:/graghRAG-agent/harness-engineering/references/methodology.md`
+- 重点位置：Layer 5 技术栈映射表、默认范围声明、依赖扫描与隔离环境描述。
 
-Run:
+### B. Agent 模板
 
-```bash
-jq -r '.metadata.skill_name, .metadata.skill_path' C:/Users/14156/.claude/skills/harness-engineering/evals/skill-evaluation/iteration-1/benchmark.json
-```
+- `D:/graghRAG-agent/harness-engineering/references/agent-templates/chatbot-coder.md`
+- 如检索后发现 planner/reviewer/debugger 也引用具体前后端栈，一并纳入同轮整改。
 
-Expected before fix:
+### C. 对外说明与评测基线文案
 
-```text
-harness-engineering
-C:/Users/14156/.claude/skills/harness-engineering
-```
+- `D:/graghRAG-agent/harness-engineering/README.md`
+- `D:/graghRAG-agent/harness-engineering/evals/skill-evaluation/iteration-1/benchmark.md`
 
-- [ ] **Step 2: Apply minimal metadata fix**
+## 实施步骤
 
-Replace this JSON fragment:
+### 任务 1：修正方法论文档中的“默认技术栈”误导
 
-```json
-"metadata": {
-  "skill_name": "harness-engineering",
-  "skill_path": "C:/Users/14156/.claude/skills/harness-engineering",
-```
+**目标**：把 Layer 5 从“默认 Python + Node.js”改成“按项目技术栈建立映射表，仓库仅提供示例格式”。
 
-With:
+**文件**：
 
-```json
-"metadata": {
-  "skill_name": "harness-engineering",
-  "skill_path": "C:/Users/14156/.claude/skills/harness-engineering",
-```
+- `D:/graghRAG-agent/harness-engineering/references/methodology.md`
 
-- [ ] **Step 3: Verify metadata now passes**
+**计划改动**：
 
-Run:
+1. 重写 `### 技术栈映射表` 前后的说明文字。
+2. 将“当前默认范围为 Python + Node.js”改为“下表仅示例映射格式，实际条目必须由项目团队按已选技术栈补齐”。
+3. 保留 Python / Node 行作为示例时，必须显式标注“示例”，避免被读成推荐默认值。
+4. 检查 Layer 5、Layer 6 中所有“按技术栈映射表执行”的表述，确保语义变为“按项目自定义映射表执行”，而不是“按本文内置映射表执行”。
+
+**验收检查**：
 
 ```bash
-jq -r '.metadata.skill_name, .metadata.skill_path' C:/Users/14156/.claude/skills/harness-engineering/evals/skill-evaluation/iteration-1/benchmark.json
+rg -n "当前默认范围为 Python \+ Node\.js|FastAPI|React 18|Tailwind CSS|Pydantic" D:/graghRAG-agent/harness-engineering/references/methodology.md
 ```
 
-Expected after fix:
+通过标准：
 
-```text
-harness-engineering
-C:/Users/14156/.claude/skills/harness-engineering
-```
+- 不再出现“当前默认范围为 Python + Node.js”。
+- 若保留语言行，仅作为“示例映射格式”存在，不出现框架级默认推荐。
 
-- [ ] **Step 4: Validate JSON integrity**
+### 任务 2：把 coder Agent 模板改成宿主项目感知，而不是框架预设
 
-Run:
+**目标**：让 `chatbot-coder` 模板先遵循项目既有技术栈与规范，再决定实现方式。
+
+**文件**：
+
+- `D:/graghRAG-agent/harness-engineering/references/agent-templates/chatbot-coder.md`
+
+**计划改动**：
+
+1. 改写角色定义，删除“你同时掌握前端 React/后端 FastAPI”的默认身份设定，替换为“根据项目实际技术栈完成实现”。
+2. 改写工作原则中的类型系统、CSS、API 规范描述，去掉 Pydantic、Tailwind、RESTful `/api/v1/` 这类具体框架/风格绑定。
+3. 删除或重写“项目技术栈”整段，改成使用说明：执行前先读取项目现有 stack、目录结构、测试方式和 design system。
+4. 检查是否需要在模板中新增一条硬约束：若规划方案与仓库现状冲突，先指出冲突，不凭空套用示例技术栈。
+
+**验收检查**：
 
 ```bash
-jq empty C:/Users/14156/.claude/skills/harness-engineering/evals/skill-evaluation/iteration-1/benchmark.json
+rg -n "React 18|Tailwind CSS|FastAPI|Pydantic|/api/v1/|fetch" D:/graghRAG-agent/harness-engineering/references/agent-templates/chatbot-coder.md
 ```
 
-Expected: exit code 0 and no output.
+通过标准：
 
-- [ ] **Step 5: Commit**
+- 不再残留任何被读作“默认实现栈”的硬编码框架词。
+- 模板明确要求优先遵循宿主项目实际约束。
+
+### 任务 3：收敛 README 中的评测宣传措辞
+
+**目标**：README 只陈述可追溯事实，不把“人工解释后的更高分数”作为对外结论。
+
+**文件**：
+
+- `D:/graghRAG-agent/harness-engineering/README.md`
+
+**计划改动**：
+
+1. 重写“评测效果”表格或脚注，使其与 benchmark 原始结果保持一致。
+2. 删除 `93%*` 和 `*排除评测设计问题后的实际通过率` 这类主观修正分数。
+3. 如果需要保留“评测存在设计局限”，改为中性表述，并把说明落到 benchmark 细节页，而不是 README 主结论区。
+4. 检查示例项目段落，确保 `graghRAG-agent` 被表述为“实践案例”，而不是推荐宿主架构。
+
+**验收检查**：
 
 ```bash
-git add C:/Users/14156/.claude/skills/harness-engineering/evals/skill-evaluation/iteration-1/benchmark.json
-git commit -m "docs(eval): align benchmark metadata with harness-engineering identity"
+rg -n "93%\*|排除评测设计问题后的实际通过率|实际通过率" D:/graghRAG-agent/harness-engineering/README.md
 ```
 
----
+通过标准：
 
-### Task 2: Correct Benchmark Summary Branding and Layer Note
+- README 不再出现重算后的通过率。
+- README 中的分数、措辞与 benchmark 摘要可直接对应。
 
-**Files:**
-- Modify: `C:/Users/14156/.claude/skills/harness-engineering/evals/skill-evaluation/iteration-1/benchmark.md`
-- Test: `C:/Users/14156/.claude/skills/harness-engineering/evals/skill-evaluation/iteration-1/benchmark.md` (content grep)
+### 任务 4：收敛 benchmark 摘要中的解释性辩护文案
 
-- [ ] **Step 1: Write the failing content checks**
+**目标**：保留已知评测缺陷说明，但不把“would be ~93%”写成事实性主结论。
 
-Run:
+**文件**：
+
+- `D:/graghRAG-agent/harness-engineering/evals/skill-evaluation/iteration-1/benchmark.md`
+
+**计划改动**：
+
+1. 保留 Eval2 / Eval3 的局限性说明，因为它们属于评测背景信息。
+2. 删除 `with-skill would be ~93% vs without-skill ~73%` 这种反事实重算语句。
+3. 将“following 7-layer methodology explicitly”改写为更中性的观察，例如“responses emphasized the documented Layer 0-6 process more strongly”。
+4. 确保 benchmark.md 仍然忠实呈现原始表格数据，不修改任何分数。
+
+**验收检查**：
 
 ```bash
-rg -n "harness-engineering|following [0-9]+-layer methodology explicitly" C:/Users/14156/.claude/skills/harness-engineering/evals/skill-evaluation/iteration-1/benchmark.md
+rg -n "would be ~93%|93%|7-layer methodology explicitly" D:/graghRAG-agent/harness-engineering/evals/skill-evaluation/iteration-1/benchmark.md
 ```
 
-Expected before fix: at least one match for title branding and one for layer note.
+通过标准：
 
-- [ ] **Step 2: Apply title/notes wording fix**
+- 不再出现反事实重算分数。
+- 观察性备注不再伪装成正式结论。
 
-Replace heading:
+## 执行顺序
 
-```markdown
-# Skill Benchmark: harness-engineering
-```
+建议按以下顺序落地，减少反复改文案：
 
-With:
+1. 先改 `methodology.md`，建立“按宿主项目技术栈落地”的统一口径。
+2. 再改 `chatbot-coder.md`，让 Agent 模板遵循新的统一口径。
+3. 然后改 `benchmark.md` 与 `README.md`，把对外叙述收敛到可追溯事实。
+4. 最后跑一次全文 grep，确认误导性词汇没有从别处漏出。
 
-```markdown
-# Skill Benchmark: harness-engineering
-```
-
-Replace note line:
-
-```markdown
-- with-skill responses are more thorough (2x tokens) and better structured, following 7-layer methodology explicitly
-```
-
-With:
-
-```markdown
-- with-skill responses are more thorough (2x tokens) and better structured, following the Layer 0-6 methodology explicitly
-```
-
-- [ ] **Step 3: Verify wording now passes**
-
-Run:
+## 全量回归检查
 
 ```bash
-rg -n "harness-engineering|following [0-9]+-layer methodology explicitly" C:/Users/14156/.claude/skills/harness-engineering/evals/skill-evaluation/iteration-1/benchmark.md
+rg -n "当前默认范围为 Python \+ Node\.js|React 18|Tailwind CSS|FastAPI|Pydantic|93%\*|排除评测设计问题后的实际通过率|would be ~93%" D:/graghRAG-agent/harness-engineering
 ```
 
-Expected after fix: no matches.
+**预期**：
 
-- [ ] **Step 4: Commit**
+- 方法论、Agent 模板、README、benchmark 主文档中不再出现上述误导性表述。
+- 若仍有命中，只能出现在历史评测产物、样例输出或明确标注为历史记录的归档文件中；不能留在当前对外主文档里。
 
-```bash
-git add C:/Users/14156/.claude/skills/harness-engineering/evals/skill-evaluation/iteration-1/benchmark.md
-git commit -m "docs(eval): update benchmark summary branding and layer wording"
-```
+## 风险与边界
 
----
+1. 不修改 `evals/skill-evaluation/.../grading.json`、历史 `outputs/response.md` 等评测产物，因为它们属于历史记录，不应被“洗稿”。
+2. 不追求把所有语言示例全部删空；关键是把“示例”与“默认推荐”区分清楚。
+3. 若 README 当前分数直接引用 iteration-1，而 benchmark 后续还有 iteration-2/3，后续可以再单独规划“评测基线版本化”整改；这不属于本轮最小修复范围。
 
-### Task 3: Remove Legacy Naming in Reference Methodology
+## 完成定义
 
-**Files:**
-- Modify: `C:/Users/14156/.claude/skills/harness-engineering/references/methodology.md`
-- Test: `C:/Users/14156/.claude/skills/harness-engineering/references/methodology.md` (content grep)
+满足以下条件即可视为本轮整改完成：
 
-- [ ] **Step 1: Write the failing legacy-name check**
-
-Run:
-
-```bash
-rg -n "harness-engineering" C:/Users/14156/.claude/skills/harness-engineering/references/methodology.md
-```
-
-Expected before fix: one or more matches (notably table label in Layer 5 section).
-
-- [ ] **Step 2: Apply minimal rename without semantic drift**
-
-Replace table header row segment:
-
-```markdown
-| 子系统 | harness-engineering 对应物 | 自检问题 |
-```
-
-With:
-
-```markdown
-| 子系统 | harness-engineering 对应物 | 自检问题 |
-```
-
-- [ ] **Step 3: Verify name cleanup**
-
-Run:
-
-```bash
-rg -n "harness-engineering" C:/Users/14156/.claude/skills/harness-engineering/references/methodology.md
-```
-
-Expected after fix: no matches.
-
-- [ ] **Step 4: Commit**
-
-```bash
-git add C:/Users/14156/.claude/skills/harness-engineering/references/methodology.md
-git commit -m "docs(reference): remove residual legacy skill naming"
-```
-
----
-
-### Task 4: Fix Eval Layer Index Wording Drift
-
-**Files:**
-- Modify: `C:/Users/14156/.claude/skills/harness-engineering/evals/evals.json`
-- Test: `C:/Users/14156/.claude/skills/harness-engineering/evals/evals.json` (consistency grep + JSON parse)
-
-- [ ] **Step 1: Write the failing wording checks**
-
-Run:
-
-```bash
-rg -n "Layer 3|Layer 5|Layer 6|BridgePipeline" C:/Users/14156/.claude/skills/harness-engineering/evals/evals.json
-```
-
-Expected before fix: line containing expectation text that maps BridgePipeline to Layer 3 and blueprint/spec steps to Layer 5/6 wording.
-
-- [ ] **Step 2: Apply precise expectation wording corrections**
-
-Replace expectation entry:
-
-```json
-"响应中正确评估了MinerU与LangExtract之间的桥接状态：若桥接尚未完成则建议先建立BridgePipeline（Layer 3），若桥接已完成则确认状态并引导进入产品蓝图阶段（Layer 5）"
-```
-
-With:
-
-```json
-"响应中正确评估了MinerU与LangExtract之间的桥接状态：若桥接尚未完成则建议先建立BridgePipeline（Layer 2），若桥接已完成则确认状态并引导进入产品蓝图阶段（Layer 4）"
-```
-
-Replace expectation entry:
-
-```json
-"响应中建议在写产品代码之前生成PRD和后端API规范（Layer 5）"
-```
-
-With:
-
-```json
-"响应中建议在写产品代码之前生成PRD和后端API规范（Layer 4）"
-```
-
-Replace expectation entry:
-
-```json
-"响应中建议确立项目目录结构和开发规范（Layer 6）：frontend/、backend/、.env管理、uv虚拟环境"
-```
-
-With:
-
-```json
-"响应中建议确立项目目录结构和开发规范（Layer 5）：frontend/、backend/、.env管理、uv虚拟环境"
-```
-
-- [ ] **Step 3: Verify wording and parse**
-
-Run:
-
-```bash
-rg -n "Layer 3\)|Layer 5\)|Layer 6\)" C:/Users/14156/.claude/skills/harness-engineering/evals/evals.json
-jq empty C:/Users/14156/.claude/skills/harness-engineering/evals/evals.json
-```
-
-Expected after fix:
-- grep returns only semantically correct occurrences.
-- `jq empty` returns exit code 0.
-
-- [ ] **Step 4: Commit**
-
-```bash
-git add C:/Users/14156/.claude/skills/harness-engineering/evals/evals.json
-git commit -m "docs(eval): align layer references with canonical 0-6 model"
-```
-
----
-
-### Task 5: Cross-File Consistency and Non-Regression Verification
-
-**Files:**
-- Test only:
-  - `C:/Users/14156/.claude/skills/harness-engineering/evals/skill-evaluation/iteration-1/benchmark.json`
-  - `C:/Users/14156/.claude/skills/harness-engineering/evals/skill-evaluation/iteration-1/benchmark.md`
-  - `C:/Users/14156/.claude/skills/harness-engineering/references/methodology.md`
-  - `C:/Users/14156/.claude/skills/harness-engineering/evals/evals.json`
-
-- [ ] **Step 1: Run global legacy-token scan**
-
-```bash
-rg -n "harness-engineering|legacy-layer-wording" C:/Users/14156/.claude/skills/harness-engineering/evals C:/Users/14156/.claude/skills/harness-engineering/references
-```
-
-Expected: no unintended residual matches in remediated scope.
-
-- [ ] **Step 2: Ensure benchmark scores unchanged**
-
-Run:
-
-```bash
-jq '.run_summary, .runs[].result' C:/Users/14156/.claude/skills/harness-engineering/evals/skill-evaluation/iteration-1/benchmark.json > /tmp/benchmark_after.json
-git show HEAD~4:C:/Users/14156/.claude/skills/harness-engineering/evals/skill-evaluation/iteration-1/benchmark.json | jq '.run_summary, .runs[].result' > /tmp/benchmark_before.json
-diff -u /tmp/benchmark_before.json /tmp/benchmark_after.json
-```
-
-Expected: no differences in score/time/token/result blocks.
-
-- [ ] **Step 3: Confirm change scope**
-
-Run:
-
-```bash
-git diff --name-only HEAD~4..HEAD
-```
-
-Expected:
-
-```text
-C:/Users/14156/.claude/skills/harness-engineering/evals/skill-evaluation/iteration-1/benchmark.json
-C:/Users/14156/.claude/skills/harness-engineering/evals/skill-evaluation/iteration-1/benchmark.md
-C:/Users/14156/.claude/skills/harness-engineering/references/methodology.md
-C:/Users/14156/.claude/skills/harness-engineering/evals/evals.json
-```
-
-- [ ] **Step 4: Final commit (only if previous tasks were squashed locally)**
-
-```bash
-git status --short
-```
-
-Expected: clean working tree. If not clean due to intentional final edits, add and commit with:
-
-```bash
-git add C:/Users/14156/.claude/skills/harness-engineering/evals/skill-evaluation/iteration-1/benchmark.json C:/Users/14156/.claude/skills/harness-engineering/evals/skill-evaluation/iteration-1/benchmark.md C:/Users/14156/.claude/skills/harness-engineering/references/methodology.md C:/Users/14156/.claude/skills/harness-engineering/evals/evals.json
-git commit -m "docs: finalize harness-engineering terminology and layer consistency remediation"
-```
-
----
-
-## Self-Review
-
-- Spec coverage check:
-  - Covers stale branding in benchmark artifacts.
-  - Covers 7-layer vs old wording drift in eval and summary docs.
-  - Covers residual legacy term in reference methodology.
-  - Preserves historical benchmark numerical outputs by verification step.
-- Placeholder scan:
-  - No TODO/TBD placeholders.
-  - Each step includes exact commands and expected outcomes.
-- Type/field consistency:
-  - Uses exact field names: `metadata.skill_name`, `metadata.skill_path`, `expected_output`, `expectations[]`.
-  - Layer mapping remains canonical: Layer 2 bridge, Layer 4 blueprints, Layer 5 engineering rules.
+- 方法论文档不再把 Python/Node.js 写成默认适用范围。
+- coder Agent 模板不再内置 React/FastAPI/Tailwind/Pydantic 等实现偏好。
+- README 与 benchmark 摘要不再使用重算后的通过率作为宣传结论。
+- 全量 grep 仅在历史评测样本或归档记录中命中旧表述，主文档全部清理完成。

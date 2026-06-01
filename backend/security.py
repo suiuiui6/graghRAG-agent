@@ -38,6 +38,9 @@ def check_rate_limit(request: Request) -> bool:
     if host not in _rate_store:
         _rate_store[host] = []
     _rate_store[host] = [t for t in _rate_store[host] if t > window_start]
+    if not _rate_store[host]:
+        del _rate_store[host]
+        _rate_store[host] = []
     if len(_rate_store[host]) >= RATE_LIMIT:
         return False
     _rate_store[host].append(now)

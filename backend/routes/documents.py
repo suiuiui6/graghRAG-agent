@@ -56,11 +56,14 @@ async def download_document(doc_id: str):
 @router.delete("/documents/{doc_id}", response_model=DeleteResponse)
 async def delete_document(doc_id: str):
     _base = os.path.dirname(os.path.dirname(__file__))
+    kg_root = os.path.realpath(os.path.join(_base, "output", "kg"))
 
     # 1. Clean KG directories
     for prefix in ["", "doc_"]:
-        kg_path = os.path.join(_base, "output", "kg", prefix + doc_id)
+        kg_path = os.path.realpath(os.path.join(kg_root, prefix + doc_id))
         try:
+            if not kg_path.startswith(kg_root + os.sep):
+                continue
             if os.path.isdir(kg_path):
                 shutil.rmtree(kg_path)
         except Exception:

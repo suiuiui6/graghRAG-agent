@@ -111,8 +111,9 @@ def reload_kg():
     global G_grounded, _agent
     new_g = _build_kg()
     new_agent = _build_agent(new_g)
-    G_grounded = new_g
-    _agent = new_agent
+    with _kg_swap_lock:
+        G_grounded = new_g
+        _agent = new_agent
 
 
 def _get_model():
@@ -174,6 +175,7 @@ If the KG doesn't have the answer, say so clearly."""
 
 _agent = None
 _agent_lock = threading.Lock()
+_kg_swap_lock = threading.Lock()
 
 
 def _get_agent():
@@ -182,8 +184,9 @@ def _get_agent():
     if _agent is None:
         with _agent_lock:
             if _agent is None:
-                _load_kg()
-                _agent = _build_agent(G_grounded)
+                with _kg_swap_lock:
+                    _load_kg()
+                    _agent = _build_agent(G_grounded)
     return _agent
 
 

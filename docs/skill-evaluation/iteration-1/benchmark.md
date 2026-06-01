@@ -24,6 +24,6 @@
 
 - Eval2 Assertion 2 (BridgePipeline) penalized with-skill for correctly recognizing existing work — eval design issue, not skill quality issue
 - Eval3 Assertion 3 (subagent_type format) too strict — both configurations failed
-- with-skill responses are more thorough (2x tokens) and better structured, following 7-layer methodology explicitly
+- with-skill responses are more thorough (2x tokens) and better structured, following the Layer 0-6 methodology explicitly
 - without-skill responses focus more on tech stack selection and less on process/methodology
 - Excluding the problematic assertions, with-skill would be ~93% vs without-skill ~73%
