@@ -33,3 +33,14 @@ def test_demo_fixture_contains_grounded_answer(client):
     assert relations
     assert relations[0]["source"] in entities
     assert relations[0]["target"] in entities
+
+
+def test_demo_missing_fixture_returns_actionable_error(client, monkeypatch):
+    from routes import demo
+
+    monkeypatch.setattr(demo, "FIXTURE_PATH", demo.FIXTURE_PATH.with_name("missing.json"))
+
+    response = client.get("/api/v1/demo/sample")
+
+    assert response.status_code == 503
+    assert response.json() == {"detail": "Offline demo fixture is unavailable."}
