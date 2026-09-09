@@ -13,8 +13,13 @@ RATE_WINDOW = 60.0    # per window (seconds)
 
 
 def get_file_access_token() -> str:
-    """Return the current file access token (printed at startup)."""
+    """Return the current file access token."""
     return FILE_ACCESS_TOKEN
+
+
+def token_log_hint(token: str) -> str:
+    """Describe token availability without disclosing credential material."""
+    return "[configured]" if token else "[unconfigured]"
 
 
 def verify_file_token(request: Request):

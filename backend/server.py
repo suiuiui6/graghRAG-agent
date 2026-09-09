@@ -16,7 +16,7 @@ from routes.ingest import router as ingest_router
 from routes.query import router as query_router
 from routes.documents import router as documents_router
 from routes.graph import router as graph_router
-from security import check_rate_limit, get_file_access_token, FILE_ACCESS_TOKEN
+from security import FILE_ACCESS_TOKEN, check_rate_limit, token_log_hint
 
 
 @asynccontextmanager
@@ -28,8 +28,8 @@ async def lifespan(app: FastAPI):
         print("[startup] KG loaded successfully")
     except Exception as e:
         print(f"[startup] KG load warning: {e}")
-    print(f"[security] File access token: {FILE_ACCESS_TOKEN}")
-    print(f"[security] Use: GET /api/v1/files/xxx.pdf?token={FILE_ACCESS_TOKEN}")
+    print(f"[security] File access token: {token_log_hint(FILE_ACCESS_TOKEN)}")
+    print("[security] File access requires the runtime token query parameter.")
     yield
 
 
