@@ -1,4 +1,7 @@
 import io
+import runpy
+import sys
+from pathlib import Path
 
 import pytest
 from fastapi.testclient import TestClient
@@ -73,3 +76,16 @@ def test_demo_malformed_or_non_object_fixture_returns_safe_error(
     assert response.json() == {"detail": "Offline demo fixture is unavailable."}
     assert fixture_text not in response.text
     assert "fixture-secret" not in response.text
+
+
+def test_offline_demo_smoke_script_imports_local_backend(monkeypatch):
+    repo_root = Path(__file__).resolve().parents[2]
+    backend_root = str(repo_root / "backend")
+    smoke_script = repo_root / "tools" / "run_offline_demo.py"
+    monkeypatch.setattr(sys, "path", ["foreign-backend", backend_root, *sys.path])
+    sys.modules.pop("server", None)
+
+    runpy.run_path(str(smoke_script), run_name="offline_demo_regression")
+
+    assert sys.path[0] == backend_root
+    assert Path(sys.modules["server"].__file__).resolve() == Path(backend_root) / "server.py"
