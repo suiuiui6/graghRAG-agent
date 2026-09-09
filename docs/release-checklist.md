@@ -1,7 +1,7 @@
 # GraphRAG Agent release-candidate checklist
 
 Date: 2026-09-10  
-Candidate: `main` at `31bd23b2edc017fc93a06bd4f810241993d96c3f` (plus this evidence commit)
+Candidate: `main` at `d9e0cf07d29ce047327816d4334297e8db6a2b9e`
 
 This checklist records a local release-candidate review. It is not a hosted-production
 approval and does not claim that provider integrations or browser behavior were observed.
@@ -15,15 +15,15 @@ Commands were run from the repository root unless noted otherwise.
 | Public surface | `python -B tools/check_public_surface.py` | PASS, exit 0 |
 | Offline process smoke | `python -B tools/run_offline_demo.py` | PASS, exit 0; fixture-only, no external provider |
 | Backend tests | `python -B -m pytest --rootdir backend -p no:cacheprovider -q backend/tests` | PASS, 7 passed, 33 warnings, exit 0 |
-| Frontend state tests | `Set-Location frontend; node --test tests/demo-state.test.mjs` | NOT-RUN/FAILED in this Windows shell: Node child-process spawn returned EPERM, exit 1 |
-| Frontend dependency install | `Set-Location frontend; npm ci` | NOT-RUN/FAILED in this Windows workspace: unlink of `node_modules/.package-lock.json` returned EPERM, exit -4048 |
-| Frontend build | `Set-Location frontend; npm run build` | NOT-RUN/FAILED in this Windows workspace: TypeScript could not write tracked `tsconfig.tsbuildinfo` (EPERM), exit 1 |
+| Frontend state tests | `Set-Location <isolated-temp>/frontend; node --test tests/demo-state.test.mjs` | PASS, 4 passed, exit 0; clean-shell fixture copy |
+| Frontend dependency install | `Set-Location <isolated-temp>/frontend; npm ci` | PASS, 241 packages installed, exit 0; clean-shell fixture copy |
+| Frontend build | `Set-Location <isolated-temp>/frontend; npm run build` | PASS, 302 modules transformed, exit 0; clean-shell fixture copy |
 | Diff hygiene | `git diff --check` | PASS, exit 0 |
 | Secret scan | `git grep -n -I -E '(sk-[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16}|BEGIN (RSA|OPENSSH|EC) PRIVATE KEY)' -- ':!*.example' ':!docs/assets/*'` | PASS, no matches, exit 0 |
 
-The frontend build had passed independently before this Windows file-lock failure; the
-failure above is retained rather than hidden. `frontend/tsconfig.tsbuildinfo` was restored
-and is not part of this evidence change.
+The repository workspace also reproduced Windows file-lock failures for these frontend
+commands. Those environment failures remain in the execution record; the isolated copy
+demonstrates the commands themselves succeed. `frontend/tsconfig.tsbuildinfo` was restored.
 
 ## Evidence boundaries
 

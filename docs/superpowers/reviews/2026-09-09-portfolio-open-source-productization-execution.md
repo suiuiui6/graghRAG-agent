@@ -28,13 +28,13 @@ runtime dependencies of GraphRAG Agent.
 | `git diff --check` | exit 0 |
 | tracked-file secret scan | zero matches, exit 0 |
 | `npm audit --package-lock-only --json` | zero current advisories, exit 0 |
-| frontend `npm ci` | Windows EPERM while unlinking `node_modules/.package-lock.json`; exit -4048 |
-| frontend `npm run build` | Windows EPERM writing `tsconfig.tsbuildinfo`; exit 1 |
-| frontend `node --test tests/demo-state.test.mjs` | Windows EPERM spawning child process; exit 1 |
+| frontend `npm ci` (isolated clean-shell copy) | PASS; 241 packages installed; exit 0 |
+| frontend `npm run build` (isolated clean-shell copy) | PASS; 302 modules transformed; exit 0 |
+| frontend `node --test tests/demo-state.test.mjs` (isolated clean-shell copy) | PASS; 4 passed; exit 0 |
 
-The frontend failures are environment/file-lock failures in the Windows workspace, not
-relaxed assertions or changed test expectations. A prior clean frontend build passed; rerun
-the exact CI sequence on Ubuntu and retain its Actions URL before release.
+The repository workspace also reproduced Windows EPERM file-lock failures for the same
+frontend commands. They are environment-only; the isolated clean-shell copy above is green.
+Rerun the exact CI sequence on Ubuntu and retain its Actions URL before release.
 
 ## Evidence classification
 
