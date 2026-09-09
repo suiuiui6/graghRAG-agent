@@ -19,3 +19,17 @@ def test_demo_fixture_contains_grounded_answer(client):
     assert payload["document_id"] == "sample-handbook"
     assert payload["answer"].strip()
     assert payload["sources"]
+
+    document = payload["document"]
+    entities = {entity["id"] for entity in payload["entities"]}
+    relations = payload["relations"]
+    source = payload["sources"][0]
+
+    assert source["document_id"] == document["id"] == payload["document_id"]
+    assert source["start"] >= 0
+    assert source["end"] <= len(document["text"])
+    assert document["text"][source["start"] : source["end"]] == source["span"]
+    assert set(source["entity_ids"]) <= entities
+    assert relations
+    assert relations[0]["source"] in entities
+    assert relations[0]["target"] in entities
