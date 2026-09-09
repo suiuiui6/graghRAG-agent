@@ -44,6 +44,39 @@ export interface HealthResponse {
   components: Record<string, string>; stats: Record<string, number>;
 }
 
+export interface DemoEntity {
+  id: string
+  type: string
+  label: string
+  grounding_status: string
+}
+
+export interface DemoRelation {
+  source: string
+  target: string
+  type: string
+}
+
+export interface DemoSource {
+  document_id: string
+  span: string
+  start: number
+  end?: number
+  page: number | null
+  entity_ids: string[]
+}
+
+export interface DemoResponse {
+  mode: 'offline' | 'provider' | 'not-run' | string
+  document_id: string
+  document: { id: string; title: string; text: string }
+  entities: DemoEntity[]
+  relations: DemoRelation[]
+  questions: string[]
+  answer: string
+  sources: DemoSource[]
+}
+
 export const api = {
   ingest: (formData: FormData): Promise<IngestResponse> =>
     fetch(`${BASE}/ingest`, { method: 'POST', body: formData }).then(async r => {
@@ -73,4 +106,6 @@ export const api = {
   getGraph: (docId: string): Promise<any> => request(`/graph/${docId}`),
 
   health: (): Promise<HealthResponse> => request('/health'),
+
+  getDemoSample: (): Promise<DemoResponse> => request('/demo/sample'),
 }

@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom'
 import { api } from '../lib/api'
 import { TYPE_COLORS, TYPE_ICONS } from '../lib/constants'
 import { StructuredView } from '../components/StructuredView'
+import { DemoState } from '../components/DemoState'
+import type { DemoResponse } from '../lib/api'
 
 declare const vis: any
 
@@ -19,6 +21,9 @@ export function GraphPage() {
   const [error, setError] = useState('')
   const [viewMode, setViewMode] = useState<ViewMode>('network')
   const [highlightNodeId, setHighlightNodeId] = useState<string | null>(null)
+  const [demo, setDemo] = useState<DemoResponse | null>(null)
+  const [demoLoading, setDemoLoading] = useState(true)
+  const [demoError, setDemoError] = useState<unknown>(null)
 
   // Fetch data — auto-poll every 10s
   useEffect(() => {
@@ -31,6 +36,17 @@ export function GraphPage() {
     const t = setInterval(fetchGraph, 10000)
     return () => clearInterval(t)
   }, [docId])
+
+  const loadDemo = () => {
+    setDemoLoading(true)
+    setDemoError(null)
+    api.getDemoSample()
+      .then(setDemo)
+      .catch(setDemoError)
+      .finally(() => setDemoLoading(false))
+  }
+
+  useEffect(() => { loadDemo() }, [])
 
   // CDN timeout detection for vis.js
   useEffect(() => {
@@ -143,9 +159,10 @@ export function GraphPage() {
 
   if (loading) {
     return (
-      <div className="flex flex-col items-center justify-center h-[calc(100vh-52px)] text-text-muted gap-3">
+      <div className="flex flex-col items-center justify-center h-[calc(100vh-52px)] text-text-muted gap-3 p-6">
         <div className="w-10 h-10 border-2 border-accent border-t-transparent rounded-full animate-spin" />
         <span className="text-sm">加载知识图谱数据...</span>
+        <div className="w-full max-w-md mt-3"><DemoState loading={demoLoading} demo={demo} error={demoError} onRetry={loadDemo} /></div>
       </div>
     )
   }
@@ -157,6 +174,7 @@ export function GraphPage() {
         <p className="text-red font-semibold">图谱加载失败</p>
         <p className="text-text-muted text-sm">{error}</p>
         <button onClick={() => window.location.reload()} className="py-2 px-6 bg-accent text-white rounded-full text-sm">重新加载</button>
+        <div className="w-full max-w-md"><DemoState loading={demoLoading} demo={demo} error={demoError} onRetry={loadDemo} /></div>
       </div>
     )
   }
@@ -185,6 +203,10 @@ export function GraphPage() {
         >
           📋 结构化视图
         </button>
+      </div>
+
+      <div className="absolute bottom-4 left-4 z-10 w-[min(360px,calc(100%-2rem))]">
+        <DemoState loading={demoLoading} demo={demo} error={demoError} onRetry={loadDemo} compact />
       </div>
 
       {/* Network View */}

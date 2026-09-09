@@ -4,6 +4,8 @@ import remarkGfm from 'remark-gfm'
 import { api } from '../lib/api'
 import type { QueryResponse } from '../lib/api'
 import { TYPE_COLORS } from '../lib/constants'
+import { DemoState } from '../components/DemoState'
+import type { DemoResponse } from '../lib/api'
 
 interface Message { id: string; role: 'user' | 'agent'; content: string; sources?: QueryResponse['sources'] }
 
@@ -13,6 +15,9 @@ export function QueryPage() {
   const [loading, setLoading] = useState(false)
   const [selectedSource, setSelectedSource] = useState<any>(null)
   const [kgStats, setKgStats] = useState<{ nodes: number; edges: number; docs: number } | null>(null)
+  const [demo, setDemo] = useState<DemoResponse | null>(null)
+  const [demoLoading, setDemoLoading] = useState(true)
+  const [demoError, setDemoError] = useState<unknown>(null)
   const chatRef = useRef<HTMLDivElement>(null)
 
   // Load KG stats on mount
@@ -37,6 +42,17 @@ export function QueryPage() {
       }])
     })
   }, [])
+
+  const loadDemo = () => {
+    setDemoLoading(true)
+    setDemoError(null)
+    api.getDemoSample()
+      .then(setDemo)
+      .catch(setDemoError)
+      .finally(() => setDemoLoading(false))
+  }
+
+  useEffect(() => { loadDemo() }, [])
 
   useEffect(() => { chatRef.current?.scrollTo(0, chatRef.current.scrollHeight) }, [messages])
 
@@ -105,6 +121,10 @@ export function QueryPage() {
       </div>
       {/* Detail panel */}
       <div className="flex-1 overflow-y-auto p-6">
+        <div className="mb-6">
+          <div className="text-[11px] font-semibold text-text-muted uppercase tracking-wider mb-3">Offline demo</div>
+          <DemoState loading={demoLoading} demo={demo} error={demoError} onRetry={loadDemo} />
+        </div>
         {selectedSource ? (
           <div>
             <h3 className="text-[11px] font-semibold text-text-muted uppercase tracking-wider mb-4">答案溯源</h3>
