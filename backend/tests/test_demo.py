@@ -1,3 +1,5 @@
+import io
+
 import pytest
 from fastapi.testclient import TestClient
 
@@ -44,3 +46,30 @@ def test_demo_missing_fixture_returns_actionable_error(client, monkeypatch):
 
     assert response.status_code == 503
     assert response.json() == {"detail": "Offline demo fixture is unavailable."}
+
+
+@pytest.mark.parametrize(
+    "fixture_text",
+    [
+        pytest.param('{"answer": "unterminated}', id="malformed-json"),
+        pytest.param("[\"fixture-secret\"]", id="array-json"),
+        pytest.param("42", id="scalar-json"),
+    ],
+)
+def test_demo_malformed_or_non_object_fixture_returns_safe_error(
+    client, monkeypatch, fixture_text
+):
+    from routes import demo
+
+    class InMemoryFixture:
+        def open(self, *, encoding):
+            return io.StringIO(fixture_text)
+
+    monkeypatch.setattr(demo, "FIXTURE_PATH", InMemoryFixture())
+
+    response = client.get("/api/v1/demo/sample")
+
+    assert response.status_code == 503
+    assert response.json() == {"detail": "Offline demo fixture is unavailable."}
+    assert fixture_text not in response.text
+    assert "fixture-secret" not in response.text
