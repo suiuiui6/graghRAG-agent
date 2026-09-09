@@ -7,7 +7,18 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED = ["README.md", "LICENSE", "CONTRIBUTING.md", "SECURITY.md", "CODE_OF_CONDUCT.md"]
-README_MARKERS = ["Quick Start", "Contributing", "Security", "License"]
+README_MARKERS = [
+    "Quick Start",
+    "Offline Demo",
+    "Screenshots",
+    "Limitations",
+    "Contributing",
+    "Security",
+    "License",
+    # Keep this exact boundary visible so synthetic/offline evidence cannot be
+    # mistaken for live provider or production validation.
+    "Live MinerU, DeepSeek, OSS, Neo4j, browser, and production deployment behavior is `not-run`",
+]
 SECRET_PATTERNS = [
     re.compile(r"sk-[A-Za-z0-9]{20,}"),
     re.compile(r"ghp_[A-Za-z0-9]{20,}"),
