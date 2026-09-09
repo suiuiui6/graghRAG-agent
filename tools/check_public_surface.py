@@ -19,6 +19,7 @@ README_MARKERS = [
     # mistaken for live provider or production validation.
     "Live MinerU, DeepSeek, OSS, Neo4j, browser, and production deployment behavior is `not-run`",
 ]
+README_SCREENSHOT_ALT = "![Offline demo showing a grounded answer and source document identifier](docs/assets/graphrag-demo.png)"
 SECRET_PATTERNS = [
     re.compile(r"sk-[A-Za-z0-9]{20,}"),
     re.compile(r"ghp_[A-Za-z0-9]{20,}"),
@@ -36,6 +37,20 @@ def main() -> int:
     for marker in README_MARKERS:
         if marker.lower() not in readme.lower():
             errors.append(f"README missing marker: {marker}")
+    if README_SCREENSHOT_ALT not in readme:
+        errors.append("README screenshot alt text must describe the visible source document identifier")
+    quick_start = readme.split("## Quick Start", 1)[1].split("## Offline Demo", 1)[0] if "## Quick Start" in readme and "## Offline Demo" in readme else ""
+    command_lines = []
+    in_fence = False
+    for line in quick_start.splitlines():
+        stripped = line.strip()
+        if stripped.startswith("```"):
+            in_fence = not in_fence
+            continue
+        if in_fence and stripped and not stripped.startswith("#"):
+            command_lines.append(stripped)
+    if len(command_lines) > 5:
+        errors.append(f"README Quick Start has {len(command_lines)} core command lines; maximum is 5")
     result = subprocess.run(["git", "ls-files", "-z"], cwd=ROOT, check=True, capture_output=True)
     for raw_name in result.stdout.decode().split("\0"):
         if not raw_name:

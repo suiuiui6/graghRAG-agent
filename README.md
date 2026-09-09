@@ -14,7 +14,7 @@ retrieval, and source-aware Q&A.
 
 ## Screenshots
 
-![Offline demo showing a grounded answer and source span](docs/assets/graphrag-demo.png)
+![Offline demo showing a grounded answer and source document identifier](docs/assets/graphrag-demo.png)
 
 The screenshot is captured from the checked-in offline fixture and shows the
 answer, entity/relation counts, and source document identifier.
@@ -23,25 +23,16 @@ answer, entity/relation counts, and source document identifier.
 
 The following commands start the application locally in about five minutes.
 
-### Backend (PowerShell)
+Run the first four commands in one shell; keep the backend running. Run the
+fifth command in a second shell opened at the same parent directory where the
+clone command ran.
 
 ```powershell
 git clone https://github.com/suiuiui6/graghRAG-agent.git
-Set-Location graghRAG-agent/backend
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-uvicorn server:app --reload
-```
-
-### Frontend
-
-In a second shell:
-
-```powershell
-Set-Location graghRAG-agent/frontend
-npm ci
-npm run dev
+Set-Location graghRAG-agent
+python -m venv backend/.venv
+Set-Location backend; .\.venv\Scripts\Activate.ps1; pip install -r requirements.txt; uvicorn server:app --reload
+Set-Location graghRAG-agent/frontend; npm ci; npm run dev
 ```
 
 Open the printed Vite URL (normally `http://localhost:5173`). The UI can load
