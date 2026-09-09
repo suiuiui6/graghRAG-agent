@@ -16,6 +16,7 @@ from routes.ingest import router as ingest_router
 from routes.query import router as query_router
 from routes.documents import router as documents_router
 from routes.graph import router as graph_router
+from routes.demo import router as demo_router
 from security import FILE_ACCESS_TOKEN, check_rate_limit, token_log_hint
 
 
@@ -66,6 +67,7 @@ app.include_router(ingest_router, prefix="/api/v1", tags=["Ingest"])
 app.include_router(query_router, prefix="/api/v1", tags=["Query"])
 app.include_router(documents_router, prefix="/api/v1", tags=["Documents"])
 app.include_router(graph_router, prefix="/api/v1", tags=["Graph"])
+app.include_router(demo_router, prefix="/api/v1", tags=["Demo"])
 
 
 @app.get("/")

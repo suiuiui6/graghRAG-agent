@@ -1,0 +1,47 @@
+{
+  "mode": "offline",
+  "document_id": "sample-handbook",
+  "document": {
+    "id": "sample-handbook",
+    "title": "Sample Engineering Handbook",
+    "text": "A release candidate must pass the offline smoke check before publication."
+  },
+  "entities": [
+    {
+      "id": "entity-release-candidate",
+      "type": "concept",
+      "label": "release candidate",
+      "grounding_status": "grounded"
+    },
+    {
+      "id": "entity-offline-smoke-check",
+      "type": "process",
+      "label": "offline smoke check",
+      "grounding_status": "grounded"
+    }
+  ],
+  "relations": [
+    {
+      "source": "entity-release-candidate",
+      "target": "entity-offline-smoke-check",
+      "type": "must-pass"
+    }
+  ],
+  "questions": [
+    "What must a release candidate pass before publication?"
+  ],
+  "answer": "A release candidate must pass the offline smoke check before publication.",
+  "sources": [
+    {
+      "document_id": "sample-handbook",
+      "span": "A release candidate must pass the offline smoke check before publication.",
+      "start": 0,
+      "end": 74,
+      "page": 1,
+      "entity_ids": [
+        "entity-release-candidate",
+        "entity-offline-smoke-check"
+      ]
+    }
+  ]
+}
