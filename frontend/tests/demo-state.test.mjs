@@ -22,6 +22,8 @@ test('maps exactly loading, empty, success, and error demo states without losing
   const sources = [{
     document_id: 'sample-handbook',
     page: 1,
+    start: 0,
+    end: 73,
     span: 'A release candidate must pass the offline smoke check before publication.',
     entity_ids: ['entity-release-candidate'],
   }]
@@ -92,4 +94,31 @@ test('turns malformed demo payloads into visible errors', async () => {
     mapDemoState({ loading: false, demo: malformed, error: null }),
     { kind: 'error', detail: 'Offline demo payload is invalid.' },
   )
+})
+
+test('rejects malformed source, entity, and relation entries', async () => {
+  const { mapDemoState } = await loadDemoStateModule()
+  const validDemo = {
+    mode: 'offline',
+    document_id: 'sample-handbook',
+    document: { id: 'sample-handbook', title: 'Sample Engineering Handbook', text: 'source text' },
+    entities: [{ id: 'entity-release-candidate', type: 'concept', label: 'release candidate' }],
+    relations: [{ source: 'entity-release-candidate', target: 'entity-offline-smoke-check', type: 'must-pass' }],
+    questions: [],
+    answer: 'A grounded answer.',
+    sources: [{ document_id: 'sample-handbook', start: 0, end: 11, span: 'source text' }],
+  }
+  const malformedDemos = [
+    { ...validDemo, sources: [null] },
+    { ...validDemo, sources: [{ start: 0, end: 11, span: 'source text' }] },
+    { ...validDemo, entities: [{ id: 'entity-release-candidate', type: 'concept' }] },
+    { ...validDemo, relations: [{ source: 'entity-release-candidate', type: 'must-pass' }] },
+  ]
+
+  for (const demo of malformedDemos) {
+    assert.deepEqual(
+      mapDemoState({ loading: false, demo, error: null }),
+      { kind: 'error', detail: 'Offline demo payload is invalid.' },
+    )
+  }
 })

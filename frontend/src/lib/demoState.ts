@@ -23,19 +23,51 @@ function isSupportedDemoMode(value: unknown): value is DemoMode {
   return typeof value === 'string' && DEMO_MODES.includes(value as DemoMode)
 }
 
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return !!value && typeof value === 'object' && !Array.isArray(value)
+}
+
+function isSource(value: unknown): boolean {
+  if (!isRecord(value)) return false
+  return typeof value.document_id === 'string'
+    && typeof value.start === 'number' && Number.isFinite(value.start)
+    && typeof value.end === 'number' && Number.isFinite(value.end)
+    && typeof value.span === 'string'
+}
+
+function isEntity(value: unknown): boolean {
+  if (!isRecord(value)) return false
+  return typeof value.id === 'string'
+    && typeof value.type === 'string'
+    // The checked-in fixture calls this display name `label`; accept `name`
+    // for compatible fixtures while requiring one of the two identifiers.
+    && (typeof value.name === 'string' || typeof value.label === 'string')
+}
+
+function isRelation(value: unknown): boolean {
+  if (!isRecord(value)) return false
+  return typeof value.source === 'string'
+    && typeof value.target === 'string'
+    && typeof value.type === 'string'
+}
+
 function isDemoResponse(value: unknown): value is DemoResponse {
-  if (!value || typeof value !== 'object') return false
-  const demo = value as Record<string, unknown>
-  const document = demo.document as Record<string, unknown> | null
+  if (!isRecord(value)) return false
+  const demo = value
+  const document = demo.document
   return isSupportedDemoMode(demo.mode)
     && typeof demo.document_id === 'string'
-    && !!document
+    && isRecord(document)
     && typeof document.id === 'string'
     && typeof document.title === 'string'
     && typeof document.text === 'string'
     && Array.isArray(demo.entities)
+    && demo.entities.every(isEntity)
     && Array.isArray(demo.relations)
+    && demo.relations.every(isRelation)
     && Array.isArray(demo.sources)
+    && demo.sources.every(isSource)
+    && Array.isArray(demo.questions)
     && typeof demo.answer === 'string'
 }
 
