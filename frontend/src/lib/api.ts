@@ -66,8 +66,10 @@ export interface DemoSource {
   entity_ids: string[]
 }
 
+export type DemoMode = 'offline' | 'provider' | 'not-run'
+
 export interface DemoResponse {
-  mode: 'offline' | 'provider' | 'not-run' | string
+  mode: DemoMode
   document_id: string
   document: { id: string; title: string; text: string }
   entities: DemoEntity[]

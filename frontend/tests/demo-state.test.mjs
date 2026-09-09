@@ -48,3 +48,48 @@ test('maps exactly loading, empty, success, and error demo states without losing
   assert.equal(states[2].demo.answer, demo.answer)
   assert.strictEqual(states[2].demo.sources, sources)
 })
+
+test('distinguishes supported demo modes and rejects unknown modes', async () => {
+  const { describeDemoMode, mapDemoState } = await loadDemoStateModule()
+  const baseDemo = {
+    document_id: 'sample-handbook',
+    document: { id: 'sample-handbook', title: 'Sample Engineering Handbook', text: 'source text' },
+    entities: [],
+    relations: [],
+    questions: [],
+    answer: 'A grounded answer.',
+    sources: [],
+  }
+
+  const offline = mapDemoState({ loading: false, demo: { ...baseDemo, mode: 'offline' }, error: null })
+  const provider = mapDemoState({ loading: false, demo: { ...baseDemo, mode: 'provider' }, error: null })
+  const notRun = mapDemoState({ loading: false, demo: { ...baseDemo, mode: 'not-run' }, error: null })
+  const unknown = mapDemoState({ loading: false, demo: { ...baseDemo, mode: 'preview' }, error: null })
+
+  assert.equal(offline.kind, 'success')
+  assert.equal(provider.kind, 'success')
+  assert.equal(notRun.kind, 'success')
+  assert.equal(describeDemoMode('offline').label, 'Offline demo ready')
+  assert.equal(describeDemoMode('provider').label, 'Provider result')
+  assert.equal(describeDemoMode('not-run').label, 'Provider run not performed')
+  assert.deepEqual(unknown, { kind: 'error', detail: 'Unsupported demo mode: preview.' })
+})
+
+test('turns malformed demo payloads into visible errors', async () => {
+  const { mapDemoState } = await loadDemoStateModule()
+  const malformed = {
+    mode: 'offline',
+    document_id: 'sample-handbook',
+    document: { id: 'sample-handbook', title: 'Sample Engineering Handbook' },
+    entities: {},
+    relations: [],
+    questions: [],
+    answer: null,
+    sources: 'not-an-array',
+  }
+
+  assert.deepEqual(
+    mapDemoState({ loading: false, demo: malformed, error: null }),
+    { kind: 'error', detail: 'Offline demo payload is invalid.' },
+  )
+})

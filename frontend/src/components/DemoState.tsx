@@ -1,5 +1,5 @@
 import type { DemoResponse } from '../lib/api'
-import { mapDemoState, type DemoState as MappedDemoState } from '../lib/demoState'
+import { describeDemoMode, mapDemoState, type DemoState as MappedDemoState } from '../lib/demoState'
 
 export { mapDemoState }
 export type { MappedDemoState as DemoRenderState }
@@ -38,11 +38,13 @@ export function DemoState({ loading, demo, error, onRetry, compact = false }: De
     </div>
   }
 
+  const mode = describeDemoMode(state.demo.mode)
   return <div className={`rounded-card border border-accent/30 bg-surface ${shell}`}>
     <div className="flex items-center gap-2 mb-2">
-      <span className="text-green text-xs font-semibold">● Offline demo ready</span>
+      <span className="text-green text-xs font-semibold">● {mode.label}</span>
       <span className="text-text-muted text-[11px]">{state.demo.document.title}</span>
     </div>
+    <p className="text-text-muted text-[11px] mb-2">{mode.detail}</p>
     <p className="text-text-primary text-sm leading-relaxed mb-3">{state.demo.answer}</p>
     <div className="flex gap-2 flex-wrap text-[11px] text-text-muted mb-2">
       <span className="py-1 px-2 rounded-full bg-elevated">{state.demo.entities.length} entities</span>
