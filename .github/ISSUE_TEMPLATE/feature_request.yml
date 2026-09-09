@@ -19,6 +19,13 @@ body:
       label: Expected outcome and acceptance criteria
     validations:
       required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior or current limitation
+      description: Describe what happens today, or write N/A for a new capability.
+    validations:
+      required: true
   - type: input
     id: environment
     attributes:
@@ -39,7 +46,17 @@ body:
       label: Verification status
       options:
         - label: I ran the offline demo smoke (or marked it not-run with a reason).
+          required: true
         - label: I ran relevant build checks (or marked them not-run with a reason).
+          required: true
         - label: I ran a secret scan and removed credentials from this issue.
+          required: true
+    validations:
+      required: true
+  - type: textarea
+    id: verification_notes
+    attributes:
+      label: Verification results or not-run reasons
+      description: Record commands, exit codes, and reasons for any not-run check.
     validations:
       required: true

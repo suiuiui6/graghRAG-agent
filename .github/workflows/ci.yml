@@ -15,6 +15,8 @@ jobs:
           python-version: '3.12'
       - name: Install backend test dependencies
         run: python -m pip install --disable-pip-version-check -r backend/requirements.txt
+      - name: Install pytest explicitly
+        run: python -m pip install --disable-pip-version-check pytest httpx
       - name: Check public surface
         run: python -B tools/check_public_surface.py
       - name: Run offline demo smoke

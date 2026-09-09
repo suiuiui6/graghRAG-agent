@@ -45,7 +45,17 @@ body:
       label: Verification status
       options:
         - label: I ran the offline demo smoke and report the result above.
+          required: true
         - label: I ran relevant backend/frontend build checks and report the result above.
+          required: true
         - label: I ran a secret scan and removed credentials from this report.
+          required: true
+    validations:
+      required: true
+  - type: textarea
+    id: verification_notes
+    attributes:
+      label: Verification results or not-run reasons
+      description: Record commands, exit codes, and reasons for any not-run check.
     validations:
       required: true
