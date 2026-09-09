@@ -11,7 +11,7 @@
 Bucket名称: zhongshiyou-digitalization
 Bucket地域: oss-cn-beijing
 Endpoint: oss-cn-beijing.aliyuncs.com
-AccessKey ID: <redacted-access-key-id>
+AccessKey ID: `<redacted>; use a local environment variable`
 路径前缀: graphrag/uploads/
 ```
 
@@ -120,7 +120,7 @@ zhongshiyou-digitalization/
 
 ### 1. AccessKey安全
 
-- ✅ 已使用独立的AccessKey
+- ✅ 运行时使用独立的AccessKey（凭据不存储在仓库）
 - ⚠️ 不要将AccessKey提交到Git
 - ⚠️ 定期轮换AccessKey
 - 建议: 使用RAM子账号（最小权限）

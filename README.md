@@ -17,7 +17,7 @@
 
 1. **克隆仓库**
 ```bash
-git clone https://github.com/your-username/graghRAG-agent.git
+git clone https://github.com/suiuiui6/graghRAG-agent.git
 cd graghRAG-agent
 ```
 
@@ -73,7 +73,7 @@ Harness Engineering 是一套 AI 辅助软件工程方法论，通过 7 个递�
 1. **下载 skill 到本地**
 ```bash
 # 克隆 skill 仓库（假设你已发布到 GitHub）
-git clone https://github.com/your-username/harness-engineering-skill.git \
+git clone https://github.com/suiuiui6/harness-engineering-skill.git \
   ~/.claude/skills/harness-engineering
 ```
 
@@ -280,6 +280,6 @@ MIT License
 
 ## 联系方式
 
-- 项目主页：https://github.com/your-username/graghRAG-agent
-- Issue 跟踪：https://github.com/your-username/graghRAG-agent/issues
-- Harness Engineering Skill：https://github.com/your-username/harness-engineering-skill
+- 项目主页：https://github.com/suiuiui6/graghRAG-agent
+- Issue 跟踪：https://github.com/suiuiui6/graghRAG-agent/issues
+- Harness Engineering Skill：https://github.com/suiuiui6/harness-engineering-skill

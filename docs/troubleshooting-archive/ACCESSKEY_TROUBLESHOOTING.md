@@ -30,7 +30,7 @@ AccessKey Secret: REDACTED_ACCESS_KEY_SECRET
 2. 右上角头像 → **AccessKey管理**
 3. 点击"创建AccessKey"
 4. **立即复制并保存：**
-   - AccessKey ID（例如：`<redacted-access-key-id>`）
+   - AccessKey ID（例如：`<your-access-key-id>`）
    - AccessKey Secret（例如：`aBcDeFgHiJkLmNoPqRsTuVwXyZ123456`）
 5. 将这两个值提供给我
 

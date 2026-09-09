@@ -199,7 +199,7 @@ LANGEXTRACT_BASE_URL=https://api.deepseek.com
 # 阿里云OSS
 OSS_ENDPOINT=oss-cn-hangzhou.aliyuncs.com
 OSS_BUCKET_NAME=my-graphrag-bucket
-OSS_ACCESS_KEY_ID=<redacted-access-key-id>
+OSS_ACCESS_KEY_ID=<your-access-key-id>
 OSS_ACCESS_KEY_SECRET=your-secret-key
 OSS_PATH_PREFIX=graphrag/uploads/
 ```
