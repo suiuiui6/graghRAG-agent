@@ -1,16 +1,45 @@
 name: Feature request
 description: Propose a focused application improvement
 title: "[Feature] "
+labels: [enhancement]
 body:
+  - type: markdown
+    attributes:
+      value: Explain the user value and keep live-provider claims explicitly scoped.
   - type: textarea
     id: problem
     attributes:
-      label: Problem to solve
+      label: Problem and reproduction
+      description: What is difficult today? Include a minimal example or steps if applicable.
     validations:
       required: true
   - type: textarea
-    id: outcome
+    id: expected
     attributes:
-      label: Desired outcome and acceptance criteria
+      label: Expected outcome and acceptance criteria
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Python/Node versions, and commit or release (or N/A).
+    validations:
+      required: true
+  - type: dropdown
+    id: evidence_level
+    attributes:
+      label: Evidence level
+      options: [contract (static or unit test), offline-fixture, observed-event, provider-integration, browser-e2e, production]
+    validations:
+      required: true
+  - type: checkboxes
+    id: verification
+    attributes:
+      label: Verification status
+      options:
+        - label: I ran the offline demo smoke (or marked it not-run with a reason).
+        - label: I ran relevant build checks (or marked them not-run with a reason).
+        - label: I ran a secret scan and removed credentials from this issue.
     validations:
       required: true

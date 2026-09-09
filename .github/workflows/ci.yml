@@ -1,0 +1,36 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  offline-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install backend test dependencies
+        run: python -m pip install --disable-pip-version-check -r backend/requirements.txt
+      - name: Check public surface
+        run: python -B tools/check_public_surface.py
+      - name: Run offline demo smoke
+        run: python -B tools/run_offline_demo.py
+      - name: Run backend tests
+        run: python -B -m pytest --rootdir backend -p no:cacheprovider -q backend/tests
+      - name: Install frontend dependencies
+        working-directory: frontend
+        run: npm ci
+      - name: Build frontend
+        working-directory: frontend
+        run: npm run build
+      - name: Scan tracked files for likely secrets
+        shell: bash
+        run: |
+          if git grep -n -I -E '(sk-[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16}|BEGIN (RSA|OPENSSH|EC) PRIVATE KEY)' -- ':!*.example' ':!docs/assets/*'; then
+            echo 'Potential secret detected in tracked files.' >&2
+            exit 1
+          fi

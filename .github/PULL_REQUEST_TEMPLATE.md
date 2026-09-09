@@ -1,13 +1,27 @@
 ## Summary
 
-Describe the user-visible application change.
+Describe the user-visible change and link the issue.
 
-## Evidence
+## Reproduction and behavior
 
-- [ ] Backend/frontend checks and exact commands are listed
-- [ ] Live provider and production claims are clearly bounded
-- [ ] No credentials, uploaded documents, generated logs, or caches are included
+- Reproduction or usage steps:
+- Expected behavior:
+- Actual behavior before this PR:
+- Environment (OS, Python/Node, commit):
+
+## Evidence and verification
+
+Evidence level: `contract` / `offline-fixture` / `observed-event` / `provider-integration` / `browser-e2e` / `production`
+
+- [ ] `python -B tools/check_public_surface.py`
+- [ ] `python -B tools/run_offline_demo.py` (or explain `not-run`)
+- [ ] Backend tests/build run (command and result below)
+- [ ] Frontend `npm ci` and `npm run build` run (command and result below)
+- [ ] Secret scan run; no credentials, private documents, logs, or caches included
+- [ ] Live providers and production claims are explicitly marked `not-run` unless observed
+
+Commands and results:
 
 ## Risk and rollback
 
-Describe the smallest rollback and affected component.
+Describe affected components, compatibility concerns, and the smallest rollback.

@@ -1,16 +1,51 @@
 name: Bug report
 description: Report a reproducible application problem
 title: "[Bug] "
+labels: [bug]
 body:
-  - type: textarea
-    id: problem
+  - type: markdown
     attributes:
-      label: Problem and expected behavior
+      value: Do not include credentials, private documents, or personal data. Redact logs before posting.
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: Give the smallest command or sequence that reproduces the problem.
     validations:
       required: true
   - type: textarea
-    id: reproduce
+    id: expected
     attributes:
-      label: Reproduction (no credentials or private documents)
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Python/Node versions, and commit or release.
+    validations:
+      required: true
+  - type: dropdown
+    id: evidence_level
+    attributes:
+      label: Evidence level
+      options: [contract (static or unit test), offline-fixture, observed-event, provider-integration, browser-e2e, production]
+    validations:
+      required: true
+  - type: checkboxes
+    id: verification
+    attributes:
+      label: Verification status
+      options:
+        - label: I ran the offline demo smoke and report the result above.
+        - label: I ran relevant backend/frontend build checks and report the result above.
+        - label: I ran a secret scan and removed credentials from this report.
     validations:
       required: true
