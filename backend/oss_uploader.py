@@ -5,6 +5,10 @@ import uuid
 import oss2
 from dotenv import load_dotenv
 
+from logging_config import get_logger
+
+logger = get_logger(__name__)
+
 # 加载环境变量（强制覆盖系统环境变量）
 _env_path = os.path.join(os.path.dirname(__file__), ".env")
 load_dotenv(_env_path, override=True)
@@ -49,12 +53,12 @@ def upload_to_oss(local_file_path: str, object_name: str = None) -> str:
     full_object_name = path_prefix + object_name
 
     # 上传文件
-    print(f"[OSS] 上传文件: {local_file_path} -> {full_object_name}")
+    logger.info("oss_uploading", path=local_file_path, object_name=full_object_name)
     bucket.put_object_from_file(full_object_name, local_file_path)
 
     # 生成公网URL
     url = f"https://{bucket_name}.{endpoint}/{full_object_name}"
-    print(f"[OSS] 上传成功: {url}")
+    logger.info("oss_upload_ok", url=url)
 
     return url
 
@@ -76,5 +80,5 @@ def test_oss_connection():
         # 测试连接（列举bucket信息）
         bucket.get_bucket_info()
         return True, "OSS连接成功"
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001  # OSS 连通性探测失败即返回不可用，由调用方决定降级路径
         return False, f"OSS连接失败: {str(e)}"

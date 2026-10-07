@@ -1,0 +1,94 @@
+{
+  "_meta": {
+    "name": "multiturn_smoke",
+    "description": "Small follow-up eval set for conversation rewrite supplemental validation on /api/v1/rag/query",
+    "version": "1.1"
+  },
+  "questions": [
+    {
+      "qid": "MT01",
+      "category": "MT",
+      "question": "它对应的弃电量是多少？",
+      "session_id": "mt-session-w4s1",
+      "conversation_setup": [
+        {
+          "question": "论文中提到的 W4S1 场景代表什么？"
+        }
+      ],
+      "expected_node_ids": [
+        "n0035"
+      ],
+      "expected_keywords": [
+        "W4S1",
+        "弃电"
+      ],
+      "gold_aliases": [
+        "W4S1"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 1,
+      "evidence_pages": [
+        1
+      ],
+      "notes": "Follow-up turn should produce rewritten_query anchored on W4S1."
+    },
+    {
+      "qid": "MT02",
+      "category": "MT",
+      "question": "它的绿电消纳率是多少？",
+      "session_id": "mt-session-w2s2",
+      "conversation_setup": [
+        {
+          "question": "论文中提到的 W2S2 场景是什么？"
+        }
+      ],
+      "expected_node_ids": [
+        "n0036"
+      ],
+      "expected_keywords": [
+        "W2S2",
+        "绿电"
+      ],
+      "gold_aliases": [
+        "W2S2"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 1,
+      "evidence_pages": [
+        2
+      ],
+      "notes": "Follow-up turn should preserve the W2S2 anchor in rewrite."
+    },
+    {
+      "qid": "MT03",
+      "category": "MT",
+      "question": "它的弃电量和消纳率分别是多少？",
+      "session_id": "mt-session-w3s3",
+      "conversation_setup": [
+        {
+          "question": "W3S3 是什么场景？"
+        }
+      ],
+      "expected_node_ids": [
+        "n0037"
+      ],
+      "expected_keywords": [
+        "W3S3",
+        "弃电",
+        "消纳"
+      ],
+      "gold_aliases": [
+        "W3S3"
+      ],
+      "forbidden_keywords": [],
+      "should_refuse": false,
+      "reasoning_hops": 1,
+      "evidence_pages": [
+        3
+      ],
+      "notes": "Follow-up turn should expand the ambiguous pronoun into the named scenario."
+    }
+  ]
+}

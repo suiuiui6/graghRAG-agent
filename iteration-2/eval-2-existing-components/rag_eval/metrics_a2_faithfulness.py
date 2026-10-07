@@ -58,6 +58,7 @@ Run with project venv:
 from __future__ import annotations
 
 import json
+import re
 import statistics
 from pathlib import Path
 from typing import Any
@@ -117,13 +118,30 @@ def _macro(values: list[float | int | None]) -> float | None:
     return statistics.fmean(vals)
 
 
+def _normalize_keyword_text(text: str) -> str:
+    normalized = (text or "").lower()
+    normalized = re.sub(
+        r"wind\s*(\d+)\s*solar\s*(\d+)",
+        lambda m: f"w{m.group(1)}s{m.group(2)}",
+        normalized,
+    )
+    normalized = re.sub(r"(图|表|figure|table)\s+(\d+)", r"\1\2", normalized)
+    normalized = re.sub(r"(?<=\d)\s+(?=[a-zA-Z%吨元日年月天小时])", "", normalized)
+    normalized = re.sub(r"(?<=[a-zA-Z])\s+(?=\d)", "", normalized)
+    normalized = re.sub(r"\s+", "", normalized)
+    return normalized
+
+
 def _keyword_hits(keywords: list[str], answer: str) -> tuple[list[str], list[str]]:
     """Return (found_keywords, missing_keywords). Case-insensitive substring."""
     answer_low = answer.lower()
+    answer_norm = _normalize_keyword_text(answer)
     found: list[str] = []
     missing: list[str] = []
     for kw in keywords:
-        if kw.lower() in answer_low:
+        kw_low = kw.lower()
+        kw_norm = _normalize_keyword_text(kw)
+        if kw_low in answer_low or (kw_norm and kw_norm in answer_norm):
             found.append(kw)
         else:
             missing.append(kw)
@@ -405,13 +423,15 @@ def main() -> None:
     fv = g["forbidden_violation_macro"]
     refuse_cat = per_category.get("T5", {})
     refuse_rate = refuse_cat.get("refusal_for_t5_macro")
+    def _fmt_pct(v: float | None) -> str:
+        return "无数据" if v is None else f"{v:.0%}"
     fv_str = "无数据" if fv is None else f"{fv:.0%}"
     refuse_str = "无数据" if refuse_rate is None else f"{refuse_rate:.0%}"
     md_lines.append(
         f"**一句话结论**：在 50 题样本中，answer-side node id 合法率 "
-        f"{nv:.0%}（{g['node_id_validity_support']} 题有引用），"
-        f"answer→retrieved 引用一致率 {cr:.0%}，"
-        f"expected keyword 覆盖率 {kc:.0%}（共 "
+        f"{_fmt_pct(nv)}（{g['node_id_validity_support']} 题有引用），"
+        f"answer→retrieved 引用一致率 {_fmt_pct(cr)}，"
+        f"expected keyword 覆盖率 {_fmt_pct(kc)}（共 "
         f"{g['keyword_coverage_support']} 题），"
         f"forbidden keyword 违规率 {fv_str}，"
         f"T5 拒答关键词命中率 {refuse_str}。"

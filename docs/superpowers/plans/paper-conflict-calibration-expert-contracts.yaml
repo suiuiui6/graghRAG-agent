@@ -1,0 +1,101 @@
+contract_version: "1.0"
+execution_owner: main_agent_using_independent_expert_skills
+delegated_agents: false
+recorded_on: 2026-10-07
+tasks:
+  - contract_version: "1.0"
+    project_id: graphrag-paper-001
+    paper_family: method-application
+    stage_id: M2
+    task_id: M2-CONFLICT-LIT-003
+    expert_skill: sci-skills-literature-search
+    task_summary: 核验冲突校准直接竞品，防止由期刊局限直接推定新颖性
+    inputs: [prior_recent_journal_review, direct_competitor_official_pages, author_request_recent_related_journals]
+    expected_outputs: [identity_and_version_table, overlap_matrix, search_and_access_boundaries]
+    evidence_boundaries: [official_primary_pages, preprints_not_top_journals, no_systematic_or_latest_exhaustiveness_claim, no_api]
+    acceptance_checks: [version_and_status_separated, date_anomaly_preserved, overlap_explicit, venue_quality_not_invented]
+    known_missing_items: [comprehensive_newest_version_and_correction_audit, narrower_provenance_competitors]
+    manual_operation_allowed: false
+    optional_adapters_allowed: [local-file-import]
+    stage_authority: sci-skills
+  - contract_version: "1.0"
+    project_id: graphrag-paper-001
+    paper_family: method-application
+    stage_id: M2
+    task_id: M2-CONFLICT-READ-003
+    expert_skill: sci-skills-paper-deep-reading
+    task_summary: 阅读冲突机制和作者局限，对照仓库历史评测适配边界
+    inputs: [C1_sections_3_to_6, C2_sections_3_8, C3_sections_3_to_6_appendix_A1, historical_eval_bundle]
+    expected_outputs: [C1_standard_card, method_limitation_matrix, repository_field_audit, falsifiable_hypotheses]
+    evidence_boundaries: [facts_not_ai_hypotheses, no_competitor_reproduction_claim, no_model_experiment, no_business_code_change]
+    acceptance_checks: [source_locators, behavioral_not_probability_calibration, OOD_not_source_conflict, current_P1_retained]
+    known_missing_items: [full_visible_context_replay, real_repository_conflict_pairs, narrower_candidate_novelty]
+    manual_operation_allowed: false
+    optional_adapters_allowed: [local-python, local-file-import]
+    stage_authority: sci-skills
+results:
+  - contract_version: "1.0"
+    expert_skill: sci-skills-literature-search
+    project_id: graphrag-paper-001
+    paper_family: method-application
+    stage_id: M2
+    task_id: M2-CONFLICT-LIT-003
+    task_status: PARTIAL
+    inputs_reviewed: [prior_recent_journal_review, C1_abstract_HTML, C2_publisher_HTML, C3_abstract_HTML]
+    outputs: [docs/superpowers/plans/paper-conflict-calibration-competitor-review.md]
+    evidence_status:
+      - label: VERIFIED_SOURCE
+        scope: C1_C2_C3_identity_and_declared_status
+        locator: report_section_2
+      - label: PENDING_VERIFICATION
+        scope: C3_date_consistency_and_comprehensive_corrections_latest_work
+      - label: AI_INFERENCE
+        scope: broad_contribution_overlap
+    assumptions: [bounded_representative_search_not_systematic]
+    author_input_needed: []
+    manual_actions: []
+    quality_checks: [no_preprint_as_journal, exact_date_anomaly_disclosed, no_AI_overview_evidence, search_boundary_declared]
+    conflicts: []
+    conflict_resolution_status: NOT_REQUIRED
+    merge_permission: orchestrator_only
+    recommended_next_action: repository_evidence_sufficiency_and_source_applicability_audit
+    stage_acceptance_recommendation: REPAIR
+  - contract_version: "1.0"
+    expert_skill: sci-skills-paper-deep-reading
+    project_id: graphrag-paper-001
+    paper_family: method-application
+    stage_id: M2
+    task_id: M2-CONFLICT-READ-003
+    task_status: PARTIAL
+    inputs_reviewed: [C1_method_experiment_results_discussion, C2_sufficiency_definitions_limitations, C3_problem_method_experiment_conclusion_A1, ground_truth_json, raw_runs_jsonl, generator_refusal_paths]
+    outputs: [docs/superpowers/plans/paper-conflict-calibration-competitor-review.md]
+    evidence_status:
+      - label: VERIFIED_SOURCE
+        scope: C1_S6_4_C2_S8_and_declared_method_boundaries
+        locator: report_sections_3_4
+      - label: EXECUTED_LOCAL
+        scope: 50_questions_50_runs_field_unions_and_SHA256
+        locator: report_section_5
+      - label: AI_INFERENCE
+        scope: candidate_overlap_and_falsification_requirements
+      - label: PENDING_VERIFICATION
+        scope: actual_repository_conflict_failure_and_narrower_novelty
+      - label: NOT_EXECUTED
+        scope: competitor_reproduction_new_models_scientific_experiments
+    assumptions: [bundle_audit_not_whole_repository_absence_proof]
+    author_input_needed: []
+    manual_actions: []
+    quality_checks: [source_locators, no_authored_limitations_for_C3, OOD_false_premise_not_source_conflict, IDs_not_full_context, prior_P1_verification_not_rerun]
+    conflicts: []
+    conflict_resolution_status: NOT_REQUIRED
+    merge_permission: orchestrator_only
+    recommended_next_action: repository_evidence_sufficiency_and_source_applicability_audit
+    stage_acceptance_recommendation: REPAIR
+orchestrator_review:
+  reviewed_on: 2026-10-07
+  identity_and_required_fields: VERIFIED_LOCAL_SCHEMA_IDENTITY_OUTPUT_AND_STATE_CHECK
+  result_scope: bounded_verified_review_not_verified_novelty
+  stage_decision: M2_PARTIAL_BROAD_CONTRIBUTION_REJECTED
+  narrower_candidates: UNAPPROVED_RESEARCH_HYPOTHESES
+  downstream_assets: PROVISIONAL_RETAINED
+  next_action: repository_evidence_sufficiency_and_source_applicability_audit

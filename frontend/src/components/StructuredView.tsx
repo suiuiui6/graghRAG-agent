@@ -1,17 +1,7 @@
 import { useState } from 'react'
 import { EntityGroupList } from './EntityGroupList'
 import { EntityDetailPanel } from './EntityDetailPanel'
-
-interface GraphData {
-  nodes: any[]
-  edges: any[]
-  stats: {
-    total_nodes: number
-    total_edges: number
-    grounded_nodes: number
-    entity_types: Record<string, number>
-  }
-}
+import type { GraphData, GraphNode } from '../lib/types'
 
 interface StructuredViewProps {
   data: GraphData
@@ -20,7 +10,7 @@ interface StructuredViewProps {
 
 export function StructuredView({ data, onViewInNetwork }: StructuredViewProps) {
   const [searchQuery, setSearchQuery] = useState('')
-  const [selectedEntity, setSelectedEntity] = useState<any>(null)
+  const [selectedEntity, setSelectedEntity] = useState<GraphNode | null>(null)
 
   return (
     <div className="w-full h-full flex flex-col">

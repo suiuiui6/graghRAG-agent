@@ -55,7 +55,7 @@ export function UploadPage() {
   const handleUrlUpload = async () => {
     const url = (document.getElementById('urlInput') as HTMLInputElement)?.value?.trim()
     if (!url) return
-    setFile({ name: url.split('/').pop() || 'document.pdf', size: 0 } as any)
+    setFile(new File([], url.split('/').pop() || 'document.pdf'))
     const fd = new FormData()
     fd.append('url', url)
     fd.append('language', 'en')
@@ -65,8 +65,8 @@ export function UploadPage() {
       const resp = await api.ingest(fd)
       startUpload(resp)
       pollTask(resp.task_id)
-    } catch (e: any) {
-      fail(e.message || 'Upload failed')
+    } catch (e: unknown) {
+      fail(e instanceof Error ? e.message : 'Upload failed')
     }
   }
 
@@ -81,8 +81,8 @@ export function UploadPage() {
       const resp = await api.ingest(fd)
       startUpload(resp)
       pollTask(resp.task_id)
-    } catch (e: any) {
-      fail(e.message || 'Upload failed')
+    } catch (e: unknown) {
+      fail(e instanceof Error ? e.message : 'Upload failed')
     }
   }
 
@@ -93,7 +93,7 @@ export function UploadPage() {
           上传文档，构建知识图谱
         </h1>
         <p className="text-text-muted text-sm max-w-[500px] mx-auto">
-          支持 {SUPPORTED_FORMATS.length} 种格式 · 自动解析 · 实体抽取 · 知识图谱构建 · 自然语言问答
+          支持 PDF / DOCX / XLSX / Markdown 格式 · 自动解析 · 实体抽取 · 知识图谱构建 · 自然语言问答
         </p>
       </div>
 

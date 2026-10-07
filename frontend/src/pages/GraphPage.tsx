@@ -3,12 +3,26 @@ import { useParams } from 'react-router-dom'
 import { api } from '../lib/api'
 import { TYPE_COLORS, TYPE_ICONS } from '../lib/constants'
 import { StructuredView } from '../components/StructuredView'
-import { DemoState } from '../components/DemoState'
-import type { DemoResponse } from '../lib/api'
+import type { GraphData, GraphNode, GraphEdge } from '../lib/types'
 
-declare const vis: any
-
-interface GraphData { nodes: any[]; edges: any[]; stats: { total_nodes: number; total_edges: number; grounded_nodes: number; entity_types: Record<string, number> } }
+// Dynamic vis.js CDN loader — loads the CDN script on demand and exposes `vis` globally
+const VIS_CDN = 'https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.6/dist/vis-network.min.js'
+let visLoadPromise: Promise<void> | null = null
+function loadVis(): Promise<void> {
+  if (typeof (window as unknown as Record<string, unknown>).vis !== 'undefined') return Promise.resolve()
+  if (visLoadPromise) return visLoadPromise
+  visLoadPromise = new Promise((resolve, reject) => {
+    const script = document.createElement('script')
+    script.src = VIS_CDN
+    script.onload = () => resolve()
+    script.onerror = () => reject(new Error('vis.js CDN 加载失败'))
+    document.head.appendChild(script)
+  })
+  return visLoadPromise
+}
+function getVis(): any {
+  return (window as unknown as Record<string, unknown>).vis
+}
 
 type ViewMode = 'network' | 'structured'
 
@@ -21,9 +35,7 @@ export function GraphPage() {
   const [error, setError] = useState('')
   const [viewMode, setViewMode] = useState<ViewMode>('network')
   const [highlightNodeId, setHighlightNodeId] = useState<string | null>(null)
-  const [demo, setDemo] = useState<DemoResponse | null>(null)
-  const [demoLoading, setDemoLoading] = useState(true)
-  const [demoError, setDemoError] = useState<unknown>(null)
+  const [visReady, setVisReady] = useState(false)
 
   // Fetch data — auto-poll every 10s
   useEffect(() => {
@@ -37,31 +49,23 @@ export function GraphPage() {
     return () => clearInterval(t)
   }, [docId])
 
-  const loadDemo = () => {
-    setDemoLoading(true)
-    setDemoError(null)
-    api.getDemoSample()
-      .then(setDemo)
-      .catch(setDemoError)
-      .finally(() => setDemoLoading(false))
-  }
-
-  useEffect(() => { loadDemo() }, [])
-
-  // CDN timeout detection for vis.js
+  // Load vis.js CDN dynamically
   useEffect(() => {
-    if (!data) return
-    if (typeof vis !== 'undefined') return
-    const timer = setTimeout(() => {
+    if (!data || viewMode !== 'network') return
+    const timeout = setTimeout(() => {
       setError('vis.js CDN 加载超时，请检查网络连接后刷新页面')
       setLoading(false)
-    }, 10000)
-    return () => clearTimeout(timer)
-  }, [data])
+    }, 15000)
+    loadVis()
+      .then(() => { setVisReady(true); clearTimeout(timeout) })
+      .catch(() => { setError('vis.js CDN 加载失败，请检查网络连接后刷新页面'); setLoading(false); clearTimeout(timeout) })
+    return () => clearTimeout(timeout)
+  }, [data, viewMode])
 
-  // Init vis.js — uses CDN global `vis` like visualizer.html
+  // Init vis.js — uses dynamically loaded CDN global `vis`
   useEffect(() => {
-    if (!data || !containerRef.current || typeof vis === 'undefined') return
+    const visLib = getVis()
+    if (!data || !containerRef.current || !visLib || !visReady) return
 
     // Destroy previous if exists
     if (networkRef.current) {
@@ -70,7 +74,7 @@ export function GraphPage() {
     }
 
     const c = containerRef.current
-    const nodesDS = new vis.DataSet(data.nodes.map((n: any) => ({
+    const nodesDS = new visLib.DataSet(data.nodes.map((n: GraphNode) => ({
       id: n.id,
       label: (n.label?.length > 25 ? n.label.slice(0, 23) + '…' : n.label) || '',
       color: {
@@ -84,13 +88,13 @@ export function GraphPage() {
       title: `<b>[${n.entity_type}]</b> ${n.label}${n.page_idx != null ? '<br/>📍 Page ' + n.page_idx : ''}`,
     })))
 
-    const edgesDS = new vis.DataSet(data.edges.map((e: any) => ({
+    const edgesDS = new visLib.DataSet(data.edges.map((e: GraphEdge) => ({
       id: e.id, from: e.from, to: e.to,
       color: { color: e.color || 'rgba(148,163,184,0.15)', highlight: '#38bdf8' },
       width: e.width || 0.5,
     })))
 
-    networkRef.current = new vis.Network(c, { nodes: nodesDS, edges: edgesDS }, {
+    networkRef.current = new visLib.Network(c, { nodes: nodesDS, edges: edgesDS }, {
       physics: {
         enabled: true,
         solver: 'forceAtlas2Based',
@@ -135,7 +139,7 @@ export function GraphPage() {
 
   // Highlight node when switching from structured view
   useEffect(() => {
-    if (viewMode === 'network' && highlightNodeId && networkRef.current && typeof vis !== 'undefined') {
+    if (viewMode === 'network' && highlightNodeId && networkRef.current && getVis()) {
       // Focus on the node
       networkRef.current.focus(highlightNodeId, {
         scale: 1.5,
@@ -159,10 +163,9 @@ export function GraphPage() {
 
   if (loading) {
     return (
-      <div className="flex flex-col items-center justify-center h-[calc(100vh-52px)] text-text-muted gap-3 p-6">
+      <div className="flex flex-col items-center justify-center h-[calc(100vh-52px)] text-text-muted gap-3">
         <div className="w-10 h-10 border-2 border-accent border-t-transparent rounded-full animate-spin" />
         <span className="text-sm">加载知识图谱数据...</span>
-        <div className="w-full max-w-md mt-3"><DemoState loading={demoLoading} demo={demo} error={demoError} onRetry={loadDemo} /></div>
       </div>
     )
   }
@@ -174,7 +177,16 @@ export function GraphPage() {
         <p className="text-red font-semibold">图谱加载失败</p>
         <p className="text-text-muted text-sm">{error}</p>
         <button onClick={() => window.location.reload()} className="py-2 px-6 bg-accent text-white rounded-full text-sm">重新加载</button>
-        <div className="w-full max-w-md"><DemoState loading={demoLoading} demo={demo} error={demoError} onRetry={loadDemo} /></div>
+      </div>
+    )
+  }
+
+  // Vis still loading when network view is active
+  if (viewMode === 'network' && !visReady) {
+    return (
+      <div className="flex flex-col items-center justify-center h-[calc(100vh-52px)] text-text-muted gap-3">
+        <div className="w-10 h-10 border-2 border-accent border-t-transparent rounded-full animate-spin" />
+        <span className="text-sm">加载图谱渲染引擎...</span>
       </div>
     )
   }
@@ -205,23 +217,23 @@ export function GraphPage() {
         </button>
       </div>
 
-      <div className="absolute bottom-4 left-4 z-10 w-[min(360px,calc(100%-2rem))]">
-        <DemoState loading={demoLoading} demo={demo} error={demoError} onRetry={loadDemo} compact />
-      </div>
-
       {/* Network View */}
       {viewMode === 'network' && (
         <>
           {/* Legend */}
           <div className="absolute top-4 right-4 z-10 bg-surface/95 backdrop-blur border border-border rounded-card p-3.5 max-h-[calc(100%-100px)] overflow-y-auto text-[11px] shadow-lg min-w-[180px]">
             <div className="text-[10px] font-bold text-text-muted uppercase tracking-wider mb-2">Entity Types</div>
-            {entityTypes.map(([type, count]) => (
-              <div key={type} className="flex items-center gap-2 py-0.5">
-                <div className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ background: TYPE_COLORS[type] || '#64748b' }} />
-                {TYPE_ICONS[type] || '?'} {type}
-                <span className="ml-auto text-text-muted">{count}</span>
-              </div>
-            ))}
+            {entityTypes.map(([type, count]) => {
+              const IconComp = TYPE_ICONS[type]
+              return (
+                <div key={type} className="flex items-center gap-2 py-0.5">
+                  <div className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ background: TYPE_COLORS[type] || '#64748b' }} />
+                  {IconComp ? <IconComp className="w-3 h-3 flex-shrink-0" /> : <span className="text-[10px]">?</span>}
+                  <span className="text-[11px]">{type}</span>
+                  <span className="ml-auto text-text-muted">{count}</span>
+                </div>
+              )
+            })}
             <div className="mt-3 pt-2 border-t border-border text-text-muted leading-relaxed">
               {(data?.stats?.total_nodes ?? 0)} nodes<br/>
               {(data?.stats?.total_edges ?? 0)} edges<br/>

@@ -1,0 +1,80 @@
+schema_version: "1.1"
+project_id: graphrag-paper-001
+stage_id: M3
+status: DESIGN_ONLY_NOT_EXECUTED
+endpoint: /api/v1/rag/query
+purpose: production_aligned_source_and_cross_encoder_comparison
+common:
+  retrieval_mode: local
+  enable_multi_query: false
+  enable_global_mode: false
+  final_k: 5
+  context_tokens: 4000
+  pre_rerank_cap: 7
+  temperature: 0
+  max_output_tokens: 2048
+  raw_candidates_total: null
+  raw_source_allocations: null
+  allocation_status: LOCK_ON_DEVELOPMENT_SET_BEFORE_M5
+  query_preprocessing: frozen_replay
+  generation_policy: identical_across_variants
+  rescue_policy: enabled_sources_only_identical_rules
+  final_selection_policy: identical_across_variants
+  rrf_policy: current_source_specific_constants_frozen
+  allowed_runtime_mode: rag_pipeline
+variants:
+  - variant_id: B01
+    enabled_sources: [bm25]
+    cross_encoder: "off"
+  - variant_id: B02
+    enabled_sources: [vector]
+    cross_encoder: "off"
+  - variant_id: B03
+    enabled_sources: [vector, bm25]
+    cross_encoder: "off"
+  - variant_id: B04
+    enabled_sources: [vector, bm25, kg]
+    cross_encoder: "off"
+  - variant_id: B05
+    enabled_sources: [vector, bm25, table]
+    cross_encoder: "off"
+    table_condition: metric_intent
+  - variant_id: B06
+    enabled_sources: [vector, bm25, kg, table]
+    cross_encoder: "off"
+    table_condition: metric_intent
+  - variant_id: B07
+    enabled_sources: [vector, bm25, kg, table]
+    cross_encoder: adaptive
+    table_condition: metric_intent
+paired_contrasts:
+  - contrast_id: KG_INCREMENT
+    treatment: B04
+    control: B03
+  - contrast_id: TABLE_INCREMENT
+    treatment: B05
+    control: B03
+    subgroup: predefined_metric_intent
+  - contrast_id: COMBINED_INCREMENT
+    treatment: B06
+    control: B03
+  - contrast_id: CROSS_ENCODER_INCREMENT
+    treatment: B07
+    control: B06
+execution_requirements:
+  - source_mask_covers_normal_global_retrieval_rescue_and_generator_rescue
+  - effective_config_recorded_and_checked
+  - canonical_evidence_registry_available
+  - actual_serialized_context_saved
+  - raw_answer_preserved_before_any_adjudication
+  - per_variant_output_directory_and_frozen_manifest
+  - all_scheduled_qids_and_failures_reported
+  - no_legacy_runtime_fallback_in_valid_comparisons
+pending_locks:
+  - raw_candidate_budget_and_source_allocations
+  - source_precedence_and_evidence_identity_version
+  - corpus_gold_and_held_out_split_hashes
+  - model_prompt_dependency_and_index_versions
+  - annotator_recheck_and_adjudication_protocol
+  - timing_cache_warmup_and_run_order_protocol
+  - statistical_interval_and_failure_sensitivity_protocol

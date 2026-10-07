@@ -2,10 +2,18 @@
 """
 Agentic-RAG MVP: KG-based QA with LangGraph + DeepSeek v4 pro
 
-Pipeline:
+@deprecated since 2026-06-08 — superseded by the full RAG pipeline:
+  backend/retrieval.py + prompt_builder.py + generator.py
+
+This file is kept as a standalone demo. For production use, the RAG pipeline
+at /api/v1/rag/query provides multi-path recall (Vector+KG+BM25+Table+MultiQuery),
+RRF reranking, citation-verified generation, and enterprise entity type support.
+
+Pipeline (legacy):
   nodes.json + edges.json → NetworkX Graph → LangChain Tools
   → LangGraph Agent (DeepSeek v4 pro) → KG-powered answers
 
+Data source: integration/output/.archive/ (old academic KG, not enterprise)
 Spec: follows D:\graghRAG-agent\langextract\docs\bridge-pipeline-specification-v1.0.md
 
 Usage:
@@ -15,16 +23,12 @@ Usage:
 
 import json
 import os
-import sys
 from datetime import datetime
-from typing import Annotated
 
 import networkx as nx
 from langchain.agents import create_agent
 from langchain.tools import tool
 from langchain_openai import ChatOpenAI
-from langgraph.graph import StateGraph, START, END
-from typing_extensions import TypedDict
 
 # ============================================================
 # 0. Config
@@ -47,7 +51,7 @@ print(f"  Model: {MODEL_NAME} via {DEEPSEEK_BASE_URL}")
 print(f"  {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 print("=" * 60)
 
-print(f"\n[1] Loading Knowledge Graph...")
+print("\n[1] Loading Knowledge Graph...")
 with open(NODES_PATH, "r", encoding="utf-8") as f:
     nodes_data = json.load(f)
 with open(EDGES_PATH, "r", encoding="utf-8") as f:
@@ -105,9 +109,9 @@ def search_kg_by_type(
 ) -> str:
     """
     Search the document's Knowledge Graph by entity type and optional keyword.
-    Use this to find entities of a specific type (e.g., 'metric', 'model_component',
-    'dataset', 'method', 'definition', 'claim', 'reference', 'paper_metadata',
-    'section_header', 'equation').
+    Use this to find entities of a specific type (e.g., 'metric', 'person_role',
+    'process_step', 'project_metadata', 'milestone', 'deliverable', 'risk_item',
+    'regulation_ref', 'department', 'timeline_event').
 
     Args:
         entity_type: Filter by entity type. Leave empty to search all types.
@@ -305,21 +309,21 @@ model = ChatOpenAI(
 )
 
 SYSTEM_PROMPT = """\
-You are a Knowledge Graph QA agent. You answer questions about an academic paper
-by querying its Knowledge Graph.
+You are a Knowledge Graph QA agent. You answer questions about enterprise project
+documents by querying their Knowledge Graph.
 
 The KG was built by the BridgePipeline (MinerU → LangExtract) and contains
 entities with these types:
-  - paper_metadata: title, authors, affiliations, venue
-  - section_header: chapter/section headings
-  - model_component: model parts (layers, mechanisms, modules)
-  - metric: quantitative results (scores, percentages, measurements)
-  - dataset: datasets and benchmarks
-  - method: techniques, algorithms, training strategies
-  - definition: explicitly defined concepts
-  - equation: mathematical formulas
-  - reference: citations to other works
-  - claim: key findings and conclusions
+  - project_metadata: project id, name, type, phase, total budget
+  - person_role: person name, role, department, contact info
+  - process_step: step name, order, approver, deadline days
+  - metric: quantitative indicators (name, value, unit)
+  - milestone: milestone name, planned date, actual date, status
+  - deliverable: deliverable name, type, acceptance criteria
+  - risk_item: risk description, level, probability, impact
+  - regulation_ref: regulation title, doc id, version
+  - department: department name, parent dept, head person
+  - timeline_event: event name, date, related entities
 
 Rules:
 1. Always use the tools to search the KG — do NOT guess or make up answers.
@@ -387,7 +391,7 @@ def main():
         run_query(agent, q, i)
 
     print(f"\n{'=' * 60}")
-    print(f"  Agentic-RAG MVP Complete")
+    print("  Agentic-RAG MVP Complete")
     print(f"  KG: {G_grounded.number_of_nodes()} grounded nodes, "
           f"{G_grounded.number_of_edges()} edges")
     print(f"  Model: {MODEL_NAME}")

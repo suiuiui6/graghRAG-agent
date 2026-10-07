@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom'
 import { toast } from 'sonner'
 import { useAppStore } from '../stores/useAppStore'
 import { api } from '../lib/api'
-import type { DocumentItem } from '../lib/api'
 import { ENTITY_TYPES, TYPE_COLORS, TYPE_ICONS } from '../lib/constants'
 
 export function DocumentsPage() {
-  const { documents, setDocuments } = useAppStore()
+  const documents = useAppStore(s => s.documents)
+  const setDocuments = useAppStore(s => s.setDocuments)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
   const failCountRef = useRef(0)
@@ -25,7 +25,7 @@ export function DocumentsPage() {
       await api.deleteDocument(docId)
       const data = await api.listDocuments()
       setDocuments(data.documents, data.total)
-    } catch (e: any) { toast.error(e.message) }
+    } catch (e: unknown) { toast.error(e instanceof Error ? e.message : '删除失败') }
   }
 
   return (
@@ -85,7 +85,6 @@ export function DocumentsPage() {
                   <td className="p-3.5">
                     <div className="flex gap-1.5 flex-wrap">
                       <a href={`/api/v1/documents/${doc.document_id}/download`} className="py-1.5 px-3 border border-border rounded-full text-[11px] text-text-secondary hover:border-accent hover:text-accent transition-all" title="下载">📥</a>
-                      <a href={`/api/v1/documents/${doc.document_id}/download`} target="_blank" className="py-1.5 px-3 border border-border rounded-full text-[11px] text-text-secondary hover:border-accent hover:text-accent transition-all" title="预览">👁</a>
                       <Link to={`/query/${doc.document_id}`} className="py-1.5 px-3 border border-border rounded-full text-[11px] text-text-secondary hover:border-accent hover:text-accent transition-all" title="问答">💬</Link>
                       <Link to={`/graph/${doc.document_id}`} className="py-1.5 px-3 border border-border rounded-full text-[11px] text-text-secondary hover:border-accent hover:text-accent transition-all" title="图谱">🔮</Link>
                       <button onClick={() => handleDelete(doc.document_id)} className="py-1.5 px-3 text-[11px] text-red hover:bg-red/10 rounded-full transition-all" title="删除">🗑</button>
@@ -100,13 +99,16 @@ export function DocumentsPage() {
 
       <h3 className="text-[11px] font-semibold text-text-muted uppercase tracking-wider mt-6 mb-3">实体类别参考 (示例数据)</h3>
       <div className="flex gap-2 flex-wrap">
-        {ENTITY_TYPES.map(e => (
-          <div key={e.type} className="flex-1 min-w-[120px] p-3 bg-elevated rounded-lg text-center">
-            <div className="text-xl mb-1">{TYPE_ICONS[e.type] || '?'}</div>
-            <div className="text-xl font-extrabold" style={{ color: TYPE_COLORS[e.type] }}>{e.count}</div>
-            <div className="text-[11px] text-text-muted">{e.type}</div>
-          </div>
-        ))}
+        {ENTITY_TYPES.map(e => {
+          const IconComp = TYPE_ICONS[e.type]
+          return (
+            <div key={e.type} className="flex-1 min-w-[120px] p-3 bg-elevated rounded-lg text-center">
+              <div className="text-xl mb-1">{IconComp ? <IconComp className="w-5 h-5 mx-auto" /> : '?'}</div>
+              <div className="text-xl font-extrabold" style={{ color: TYPE_COLORS[e.type] }}>{e.count}</div>
+              <div className="text-[11px] text-text-muted">{e.type}</div>
+            </div>
+          )
+        })}
       </div>
     </div>
   )

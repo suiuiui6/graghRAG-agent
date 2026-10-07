@@ -2,6 +2,7 @@
   "_meta": {
     "raw_runs_path": "D:\\graghRAG-agent\\iteration-2\\eval-2-existing-components\\rag_eval\\raw_runs.jsonl",
     "n_runs": 50,
+    "generated_at": "2026-07-04T15:22:02.805192+00:00",
     "pricing_usd_per_m_input": 0.27,
     "pricing_usd_per_m_output": 1.1,
     "pricing_note": "DeepSeek-chat (V3) 2025 public price, cache-miss conservative upper bound. Cache-hit input is $0.07/M which would lower costs by ~75% on hits.",
@@ -9,388 +10,355 @@
   },
   "global": {
     "total_runs": 50,
-    "total_latency_ms": 1001323,
-    "total_input_tokens": 4319951,
-    "total_output_tokens": 76385,
-    "total_tokens": 4396336,
-    "total_tool_calls": 954,
-    "total_cost_usd": 1.2504102700000002,
-    "mean_cost_usd_per_question": 0.025008205400000004
+    "total_latency_ms": 83730,
+    "total_input_tokens": 50808,
+    "total_output_tokens": 2755,
+    "total_tokens": 53563,
+    "total_tool_calls": 201,
+    "total_cost_usd": 0.016748660000000002,
+    "mean_cost_usd_per_question": 0.00033497320000000003
   },
   "latency_ms": {
     "global": {
       "n": 50,
-      "min": 1901,
-      "max": 137599,
-      "mean": 20026.46,
-      "median": 13049.0,
-      "p50": 12726,
-      "p75": 20548,
-      "p90": 41453,
-      "p95": 60198,
-      "p99": 137599,
-      "stdev": 22384.77326327877
+      "min": 39,
+      "max": 4891,
+      "mean": 1674.6,
+      "median": 1606.5,
+      "p50": 1590,
+      "p75": 2303,
+      "p90": 2951,
+      "p95": 3274,
+      "p99": 4891,
+      "stdev": 1077.8637390690903
     },
     "by_category": {
       "T1": {
-        "mean": 13630.0,
-        "median": 10367.0,
-        "p95": 60198,
+        "mean": 1625.3333333333333,
+        "median": 1514.5,
+        "p95": 2435,
         "n": 12
       },
       "T2": {
-        "mean": 21631.75,
-        "median": 21110.0,
-        "p95": 41453,
+        "mean": 3308.625,
+        "median": 3072.5,
+        "p95": 4891,
         "n": 8
       },
       "T3": {
-        "mean": 18669.375,
-        "median": 11614.5,
-        "p95": 47916,
+        "mean": 1737.5,
+        "median": 1673.5,
+        "p95": 2708,
         "n": 8
       },
       "T4": {
-        "mean": 60398.5,
-        "median": 47298.0,
-        "p95": 137599,
+        "mean": 2230.5,
+        "median": 2099.5,
+        "p95": 2784,
         "n": 4
       },
       "T5": {
-        "mean": 11154.3,
-        "median": 9184.5,
-        "p95": 19492,
+        "mean": 300.8,
+        "median": 55.0,
+        "p95": 1504,
         "n": 10
       },
       "T6": {
-        "mean": 15278.8,
-        "median": 12726,
-        "p95": 25640,
+        "mean": 1966.6,
+        "median": 1696,
+        "p95": 2734,
         "n": 5
       },
       "T7": {
-        "mean": 28607.666666666668,
-        "median": 10943,
-        "p95": 65268,
+        "mean": 698.0,
+        "median": 75,
+        "p95": 1954,
         "n": 3
       }
     },
     "by_tool_call_bucket": {
-      "1-3": {
-        "n": 4,
-        "mean": 4450.0,
-        "median": 4798.5
-      },
       "4-10": {
-        "n": 19,
-        "mean": 8391.631578947368,
-        "median": 8049
+        "n": 39,
+        "mean": 1777.0,
+        "median": 1623
       },
-      "31+": {
-        "n": 8,
-        "mean": 60836.25,
-        "median": 53814.5
-      },
-      "11-30": {
-        "n": 19,
-        "mean": 17757.473684210527,
-        "median": 16130
+      "1-3": {
+        "n": 11,
+        "mean": 1311.5454545454545,
+        "median": 1522
       }
     }
   },
   "tokens": {
     "input": {
       "n": 50,
-      "min": 1521,
-      "max": 1604366,
-      "mean": 86399.02,
-      "median": 15829.5,
-      "p50": 15110,
-      "p75": 48840,
-      "p90": 203773,
-      "p95": 355797,
-      "p99": 1604366,
-      "stdev": 236198.9892612151
+      "min": 0,
+      "max": 2102,
+      "mean": 1016.16,
+      "median": 1150.5,
+      "p50": 1147,
+      "p75": 1310,
+      "p90": 1782,
+      "p95": 1818,
+      "p99": 2102,
+      "stdev": 608.217407182662
     },
     "output": {
       "n": 50,
-      "min": 74,
-      "max": 9963,
-      "mean": 1527.7,
-      "median": 1005.0,
-      "p50": 974,
-      "p75": 1816,
-      "p90": 3556,
-      "p95": 4547,
-      "p99": 9963,
-      "stdev": 1693.4125929613256
+      "min": 0,
+      "max": 311,
+      "mean": 55.1,
+      "median": 25.0,
+      "p50": 25,
+      "p75": 65,
+      "p90": 127,
+      "p95": 273,
+      "p99": 311,
+      "stdev": 75.4122669066512
     },
     "total": {
       "n": 50,
-      "min": 1595,
-      "max": 1614329,
-      "mean": 87926.72,
-      "median": 16709.5,
-      "p50": 16084,
-      "p75": 50809,
-      "p90": 207329,
-      "p95": 360023,
-      "p99": 1614329,
-      "stdev": 237746.50991928694
+      "min": 0,
+      "max": 2183,
+      "mean": 1071.26,
+      "median": 1187.5,
+      "p50": 1179,
+      "p75": 1523,
+      "p90": 1826,
+      "p95": 2088,
+      "p99": 2183,
+      "stdev": 647.4371879958704
     },
     "input_over_output_ratio": {
       "n": 50,
-      "min": 7.052192066805845,
-      "max": 161.03241995382916,
-      "mean": 27.810752463022318,
-      "median": 18.14154158458878,
-      "p50": 17.37330873308733,
-      "p75": 30.576615831517792,
-      "p90": 57.66654498996167,
-      "p95": 84.19238050165642,
-      "p99": 161.03241995382916,
-      "stdev": 27.971783334831027
+      "min": 0.0,
+      "max": 179.71428571428572,
+      "mean": 33.72931907979524,
+      "median": 24.569148936170215,
+      "p50": 23.638297872340427,
+      "p75": 46.16,
+      "p90": 68.21052631578948,
+      "p95": 147.0,
+      "p99": 179.71428571428572,
+      "stdev": 40.01494234975989
     }
   },
   "tokens_total_by_category": {
     "T1": {
-      "mean": 35900.666666666664,
-      "median": 7675.5,
-      "p95": 308931,
+      "mean": 1287.4166666666667,
+      "median": 1187.5,
+      "p95": 1826,
       "n": 12
     },
     "T2": {
-      "mean": 61408.0,
-      "median": 46397.5,
-      "p95": 207329,
+      "mean": 1673.0,
+      "median": 1594.0,
+      "p95": 2088,
       "n": 8
     },
     "T3": {
-      "mean": 83730.375,
-      "median": 20105.0,
-      "p95": 371730,
+      "mean": 1187.375,
+      "median": 1258.5,
+      "p95": 1369,
       "n": 8
     },
     "T4": {
-      "mean": 519550.0,
-      "median": 226241.5,
-      "p95": 1614329,
+      "mean": 1700.5,
+      "median": 1693.0,
+      "p95": 2183,
       "n": 4
     },
     "T5": {
-      "mean": 16356.6,
-      "median": 7335.5,
-      "p95": 51935,
+      "mean": 114.9,
+      "median": 0.0,
+      "p95": 1149,
       "n": 10
     },
     "T6": {
-      "mean": 35385.0,
-      "median": 14653,
-      "p95": 100498,
+      "mean": 1233.4,
+      "median": 1265,
+      "p95": 1718,
       "n": 5
     },
     "T7": {
-      "mean": 128576.66666666667,
-      "median": 14729,
-      "p95": 360023,
+      "mean": 371.0,
+      "median": 0,
+      "p95": 1113,
       "n": 3
     }
   },
   "tool_calls": {
     "distribution": {
       "n": 50,
-      "min": 1,
-      "max": 100,
-      "mean": 19.08,
-      "median": 11.0,
-      "p50": 11,
-      "p75": 24,
-      "p90": 48,
-      "p95": 60,
-      "p99": 100,
-      "stdev": 20.07270783925278
+      "min": 3,
+      "max": 5,
+      "mean": 4.02,
+      "median": 4.0,
+      "p50": 4,
+      "p75": 4,
+      "p90": 5,
+      "p95": 5,
+      "p99": 5,
+      "stdev": 0.6779380502671317
     },
     "bucket_counts": {
-      "1-3": 4,
-      "4-10": 19,
-      "31+": 8,
-      "11-30": 19
+      "4-10": 39,
+      "1-3": 11
     }
   },
   "cost": {
-    "total_usd": 1.2504102700000002,
-    "per_question_mean_usd": 0.025008205400000004,
+    "total_usd": 0.016748660000000002,
+    "per_question_mean_usd": 0.00033497320000000003,
     "top5_most_expensive": [
       {
-        "qid": "Q31",
+        "qid": "Q20",
+        "category": "T2",
+        "input": 1782,
+        "output": 306,
+        "total": 2088,
+        "cost_usd": 0.00081774,
+        "latency_ms": 4891,
+        "num_tool_calls": 5
+      },
+      {
+        "qid": "Q13",
+        "category": "T2",
+        "input": 1310,
+        "output": 311,
+        "total": 1621,
+        "cost_usd": 0.0006958000000000001,
+        "latency_ms": 4076,
+        "num_tool_calls": 4
+      },
+      {
+        "qid": "Q32",
         "category": "T4",
-        "input": 1604366,
-        "output": 9963,
-        "total": 1614329,
-        "cost_usd": 0.44413812,
-        "latency_ms": 137599,
-        "num_tool_calls": 100
+        "input": 2102,
+        "output": 81,
+        "total": 2183,
+        "cost_usd": 0.0006566400000000001,
+        "latency_ms": 2108,
+        "num_tool_calls": 5
       },
       {
-        "qid": "Q27",
-        "category": "T3",
-        "input": 368028,
-        "output": 3702,
-        "total": 371730,
-        "cost_usd": 0.10343976,
-        "latency_ms": 47916,
-        "num_tool_calls": 56
+        "qid": "Q14",
+        "category": "T2",
+        "input": 1294,
+        "output": 273,
+        "total": 1567,
+        "cost_usd": 0.00064968,
+        "latency_ms": 3274,
+        "num_tool_calls": 4
       },
       {
-        "qid": "Q49",
-        "category": "T7",
-        "input": 355797,
-        "output": 4226,
-        "total": 360023,
-        "cost_usd": 0.10071379000000001,
-        "latency_ms": 65268,
-        "num_tool_calls": 60
-      },
-      {
-        "qid": "Q29",
-        "category": "T4",
-        "input": 315955,
-        "output": 5479,
-        "total": 321434,
-        "cost_usd": 0.09133475,
-        "latency_ms": 59713,
-        "num_tool_calls": 67
-      },
-      {
-        "qid": "Q05",
-        "category": "T1",
-        "input": 304384,
-        "output": 4547,
-        "total": 308931,
-        "cost_usd": 0.08718538,
-        "latency_ms": 60198,
-        "num_tool_calls": 58
+        "qid": "Q15",
+        "category": "T2",
+        "input": 1818,
+        "output": 143,
+        "total": 1961,
+        "cost_usd": 0.00064816,
+        "latency_ms": 2829,
+        "num_tool_calls": 5
       }
     ],
     "by_category": {
       "T1": {
         "n": 12,
-        "mean_usd": 0.0105246325,
-        "total_usd": 0.12629559
+        "mean_usd": 0.00037416250000000005,
+        "total_usd": 0.00448995
       },
       "T2": {
         "n": 8,
-        "mean_usd": 0.018125620000000002,
-        "total_usd": 0.14500496000000002
+        "mean_usd": 0.00060909875,
+        "total_usd": 0.00487279
       },
       "T3": {
         "n": 8,
-        "mean_usd": 0.02374886625,
-        "total_usd": 0.18999093
+        "mean_usd": 0.00034154875000000004,
+        "total_usd": 0.0027323900000000003
       },
       "T4": {
         "n": 4,
-        "mean_usd": 0.144174935,
-        "total_usd": 0.57669974
+        "mean_usd": 0.0005294775,
+        "total_usd": 0.00211791
       },
       "T5": {
         "n": 10,
-        "mean_usd": 0.0050748040000000005,
-        "total_usd": 0.05074804000000001
+        "mean_usd": 3.1604000000000004e-05,
+        "total_usd": 0.00031604000000000007
       },
       "T6": {
         "n": 5,
-        "mean_usd": 0.010546464000000002,
-        "total_usd": 0.052732320000000006
+        "mean_usd": 0.000376842,
+        "total_usd": 0.00188421
       },
       "T7": {
         "n": 3,
-        "mean_usd": 0.03631289666666667,
-        "total_usd": 0.10893869000000002
+        "mean_usd": 0.00011179,
+        "total_usd": 0.00033537
       }
     },
     "monthly_projection": {
-      "per_question_mean_usd": 0.025008205400000004,
-      "daily_1000_questions_usd": 25.008205400000005,
-      "monthly_1000_per_day_usd": 750.2461620000001,
-      "daily_10000_questions_usd": 250.08205400000003,
-      "monthly_10000_per_day_usd": 7502.461620000001
+      "per_question_mean_usd": 0.00033497320000000003,
+      "daily_1000_questions_usd": 0.3349732,
+      "monthly_1000_per_day_usd": 10.049196,
+      "daily_10000_questions_usd": 3.3497320000000004,
+      "monthly_10000_per_day_usd": 100.49196
     }
   },
   "outliers_p95": {
     "thresholds": {
-      "latency_ms_p95": 60198,
-      "total_tokens_p95": 360023,
-      "tool_calls_p95": 60
+      "latency_ms_p95": 3274,
+      "total_tokens_p95": 2088,
+      "tool_calls_p95": 5
     },
     "latency_over_p95": [
       {
-        "qid": "Q31",
-        "category": "T4",
-        "latency_ms": 137599,
-        "input": 1604366,
-        "output": 9963,
-        "total": 1614329,
-        "num_tool_calls": 100
+        "qid": "Q13",
+        "category": "T2",
+        "latency_ms": 4076,
+        "input": 1310,
+        "output": 311,
+        "total": 1621,
+        "num_tool_calls": 4
       },
       {
-        "qid": "Q49",
-        "category": "T7",
-        "latency_ms": 65268,
-        "input": 355797,
-        "output": 4226,
-        "total": 360023,
-        "num_tool_calls": 60
+        "qid": "Q20",
+        "category": "T2",
+        "latency_ms": 4891,
+        "input": 1782,
+        "output": 306,
+        "total": 2088,
+        "num_tool_calls": 5
       }
     ],
     "tokens_over_p95": [
       {
-        "qid": "Q27",
-        "category": "T3",
-        "latency_ms": 47916,
-        "input": 368028,
-        "output": 3702,
-        "total": 371730,
-        "num_tool_calls": 56
-      },
-      {
         "qid": "Q31",
         "category": "T4",
-        "latency_ms": 137599,
-        "input": 1604366,
-        "output": 9963,
-        "total": 1614329,
-        "num_tool_calls": 100
-      }
-    ],
-    "tool_calls_over_p95": [
-      {
-        "qid": "Q29",
-        "category": "T4",
-        "latency_ms": 59713,
-        "input": 315955,
-        "output": 5479,
-        "total": 321434,
-        "num_tool_calls": 67
+        "latency_ms": 1939,
+        "input": 2052,
+        "output": 60,
+        "total": 2112,
+        "num_tool_calls": 5
       },
       {
-        "qid": "Q31",
+        "qid": "Q32",
         "category": "T4",
-        "latency_ms": 137599,
-        "input": 1604366,
-        "output": 9963,
-        "total": 1614329,
-        "num_tool_calls": 100
+        "latency_ms": 2108,
+        "input": 2102,
+        "output": 81,
+        "total": 2183,
+        "num_tool_calls": 5
       }
     ],
-    "triple_outlier_qids": [
-      "Q31"
-    ]
+    "tool_calls_over_p95": [],
+    "triple_outlier_qids": []
   },
   "correlations_pearson": {
-    "pearson_calls_vs_latency": 0.9620296089023392,
-    "pearson_calls_vs_total_tokens": 0.8372794707886319,
-    "pearson_input_vs_output_tokens": 0.9132563194524551,
-    "pearson_latency_vs_total_tokens": 0.9406464780096135
+    "pearson_calls_vs_latency": 0.3306141877316757,
+    "pearson_calls_vs_total_tokens": 0.49210258305062826,
+    "pearson_input_vs_output_tokens": 0.4748450655287903,
+    "pearson_latency_vs_total_tokens": 0.8145256185735235
   }
 }

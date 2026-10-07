@@ -1,11 +1,25 @@
+import { useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useAppStore } from '../../stores/useAppStore'
+import { api } from '../../lib/api'
 import { NAV_ITEMS } from '../../lib/constants'
+import ChatWidget from '../ChatWidget'
 import type { ReactNode } from 'react'
 
 export function AppShell({ children }: { children: ReactNode }) {
   const loc = useLocation()
   const docCount = useAppStore(s => s.documents.length)
+  const stats = useAppStore(s => s.stats)
+  const setStats = useAppStore(s => s.setStats)
+  const setStatsError = useAppStore(s => s.setStatsError)
+
+  useEffect(() => {
+    api.getStats().then(setStats).catch(e => setStatsError(e.message))
+    const t = setInterval(() => {
+      api.getStats().then(setStats).catch(() => {})
+    }, 30000)
+    return () => clearInterval(t)
+  }, [setStats, setStatsError])
 
   return (
     <div className="flex h-screen overflow-hidden">
@@ -35,9 +49,9 @@ export function AppShell({ children }: { children: ReactNode }) {
         </nav>
         <div className="p-3.5 mx-3 mb-3 border-t border-border text-[11px] text-text-muted">
           <div className="flex justify-between py-0.5"><span>已索引文档</span><span className="text-text-secondary font-semibold">{docCount}</span></div>
-          <div className="flex justify-between py-0.5"><span>图谱节点</span><span className="text-text-secondary font-semibold">—</span></div>
-          <div className="flex justify-between py-0.5"><span>图谱关系</span><span className="text-text-secondary font-semibold">—</span></div>
-          <div className="flex justify-between py-0.5"><span>今日查询</span><span className="text-text-secondary font-semibold">—</span></div>
+          <div className="flex justify-between py-0.5"><span>图谱节点</span><span className="text-text-secondary font-semibold">{stats ? stats.total_kg_nodes.toLocaleString() : '—'}</span></div>
+          <div className="flex justify-between py-0.5"><span>图谱关系</span><span className="text-text-secondary font-semibold">{stats ? stats.total_kg_edges.toLocaleString() : '—'}</span></div>
+          <div className="flex justify-between py-0.5"><span>今日查询</span><span className="text-text-secondary font-semibold">{stats ? stats.queries_today.toLocaleString() : '—'}</span></div>
         </div>
       </aside>
 
@@ -47,16 +61,35 @@ export function AppShell({ children }: { children: ReactNode }) {
           <div className="text-xs text-text-muted">
             系统 / <span className="text-text-primary font-medium">{NAV_ITEMS.find(i => loc.pathname.startsWith(i.path))?.label || '首页'}</span>
           </div>
-          <div className="flex gap-3 text-[11px] text-text-muted">
-            <span><span className="w-1.5 h-1.5 rounded-full bg-green inline-block mr-1" />MinerU</span>
-            <span><span className="w-1.5 h-1.5 rounded-full bg-green inline-block mr-1" />DeepSeek</span>
-            <span><span className="w-1.5 h-1.5 rounded-full bg-green inline-block mr-1" />KG Store</span>
+          <div className="flex items-center gap-4">
+            <div className="flex gap-3 text-[11px] text-text-muted">
+              <span><span className="w-1.5 h-1.5 rounded-full bg-green inline-block mr-1" />MinerU</span>
+              <span><span className="w-1.5 h-1.5 rounded-full bg-green inline-block mr-1" />DeepSeek</span>
+              <span><span className="w-1.5 h-1.5 rounded-full bg-green inline-block mr-1" />KG Store</span>
+            </div>
+            {useAppStore(s => s.user) && (
+              <button
+                onClick={() => {
+                  localStorage.removeItem('access_token')
+                  localStorage.removeItem('refresh_token')
+                  window.location.href = '/login'
+                }}
+                className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border text-xs text-text-secondary hover:bg-surface transition-all"
+              >
+                <span className="w-5 h-5 rounded-full bg-accent/10 text-accent flex items-center justify-center text-[10px] font-semibold">
+                  {useAppStore(s => s.user)?.display_name?.[0] || 'U'}
+                </span>
+                <span>{useAppStore(s => s.user)?.display_name || '用户'}</span>
+              </button>
+            )}
           </div>
         </header>
         <main className="flex-1 overflow-y-auto">
           {children}
         </main>
       </div>
+
+      {/* AI Chat Widget */}      <ChatWidget />
 
       {/* Mobile bottom nav */}
       <nav className="md:hidden fixed bottom-0 inset-x-0 bg-surface border-t border-border flex justify-around py-2 z-20">

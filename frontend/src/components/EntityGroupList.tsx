@@ -1,50 +1,40 @@
-import { useState, useMemo } from 'react'
+import React, { useState, useMemo } from 'react'
 import { TYPE_COLORS, TYPE_ICONS } from '../lib/constants'
 import { EntityCard } from './EntityCard'
-
-interface GraphData {
-  nodes: any[]
-  edges: any[]
-  stats: {
-    total_nodes: number
-    total_edges: number
-    grounded_nodes: number
-    entity_types: Record<string, number>
-  }
-}
+import type { GraphData, GraphNode, GraphEdge, NeighborNode } from '../lib/types'
 
 interface EntityGroupListProps {
   data: GraphData
   searchQuery: string
-  onEntityClick?: (entity: any) => void
+  onEntityClick?: (entity: GraphNode) => void
 }
 
 interface EntityGroup {
   type: string
-  icon: string
+  icon: React.ComponentType<{ className?: string }> | null
   color: string
   count: number
-  entities: any[]
+  entities: GraphNode[]
 }
 
 export function EntityGroupList({ data, searchQuery, onEntityClick }: EntityGroupListProps) {
-  // 默认展开前3个类型
-  const defaultExpandedTypes = ['paper_metadata', 'claim', 'model_component']
+  // 默认展开前3个企业实体类型
+  const defaultExpandedTypes = ['person_role', 'metric', 'process_step']
   const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set(defaultExpandedTypes))
 
   // 按entity_type分组并过滤
   const entityGroups = useMemo(() => {
-    const groups: Record<string, any[]> = {}
+    const groups: Record<string, GraphNode[]> = {}
 
     // 构建节点ID到节点的映射
     const nodeMap = new Map(data.nodes.map(n => [n.id, n]))
 
     // 为每个节点添加neighbors信息
     const nodesWithNeighbors = data.nodes.map(node => {
-      const neighbors: any[] = []
+      const neighbors: NeighborNode[] = []
 
       // 查找所有相关的边
-      data.edges.forEach(edge => {
+      data.edges.forEach((edge: GraphEdge) => {
         if (edge.from === node.id) {
           const targetNode = nodeMap.get(edge.to)
           if (targetNode) {
@@ -83,7 +73,7 @@ export function EntityGroupList({ data, searchQuery, onEntityClick }: EntityGrou
     const groupArray: EntityGroup[] = Object.entries(groups)
       .map(([type, entities]) => ({
         type,
-        icon: TYPE_ICONS[type] || '?',
+        icon: TYPE_ICONS[type] || null,
         color: TYPE_COLORS[type] || '#64748b',
         count: entities.length,
         entities
@@ -147,7 +137,7 @@ export function EntityGroupList({ data, searchQuery, onEntityClick }: EntityGrou
                 className="w-3 h-3 rounded-full flex-shrink-0"
                 style={{ backgroundColor: group.color }}
               />
-              <span className="text-lg">{group.icon}</span>
+              {group.icon ? <group.icon className="w-4 h-4" /> : <span className="text-lg">?</span>}
               <span className="font-semibold text-sm">{group.type}</span>
               <span className="ml-auto text-xs text-text-muted bg-elevated px-2.5 py-1 rounded-full">
                 {group.count}

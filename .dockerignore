@@ -1,0 +1,41 @@
+# Python
+**/.venv/
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/.pytest_cache/
+
+# Node
+**/node_modules/
+**/dist/
+
+# Data
+**/output/
+**/uploads/
+
+# Secrets
+**/.env
+**/.env.*
+!**/.env.example
+
+# Git
+**/.git/
+**/.gitignore
+
+# IDE
+**/.vscode/
+**/.idea/
+
+# Docs & Plans
+**/.claude/
+**/plans/
+**/docs/
+**/iteration-*/
+**/mineru-mvp-test/
+**/langextract/
+**/harness-engineering/
+
+# Logs & Temp
+**/*.log
+*.tmp
+*.swp

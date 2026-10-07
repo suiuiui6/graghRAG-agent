@@ -1,6 +1,7 @@
 """Document list, download & delete endpoints."""
 
-import json, os, shutil
+import os
+import shutil
 from datetime import datetime, timezone
 from fastapi import APIRouter, HTTPException, Request
 from fastapi.responses import FileResponse
@@ -17,6 +18,8 @@ def _parse_iso(ts: str) -> datetime:
 
 @router.get("/documents", response_model=DocumentListResponse)
 async def list_documents():
+    docs = get_docs_snapshot()
+
     items = [
         DocumentItem(
             document_id=d["document_id"],
@@ -28,7 +31,7 @@ async def list_documents():
             indexed_at=_parse_iso(d["indexed_at"]) if d.get("indexed_at") else None,
             file_size_mb=round(d.get("file_size_bytes", 0) / 1048576, 1) if d.get("file_size_bytes") else None,
         )
-        for d in get_docs_snapshot()
+        for d in docs
     ]
 
 
@@ -66,7 +69,7 @@ async def delete_document(doc_id: str):
                 continue
             if os.path.isdir(kg_path):
                 shutil.rmtree(kg_path)
-        except Exception:
+        except Exception:  # noqa: S110, BLE001  # 可选依赖或产物缺失时降级为跳过，缺失本身已由调用方判定
             pass
 
     # 2. Clean uploaded source file (try matching by doc_id as task_id prefix)
@@ -76,15 +79,51 @@ async def delete_document(doc_id: str):
             for fname in os.listdir(uploads_dir):
                 if fname.startswith(doc_id.replace("doc_", "")) or fname.startswith(doc_id):
                     os.remove(os.path.join(uploads_dir, fname))
-    except Exception:
+    except Exception:  # noqa: S110, BLE001  # 清理为尽力而为，失败已由调用方汇总，不中断其余类别
         pass
 
     remove_doc(doc_id)
+    # Publish event + audit log
+    try:
+        from services.event_bus import get_event_bus
+        get_event_bus().publish("doc.deleted", {"doc_id": doc_id})
+    except Exception:  # noqa: S110, BLE001  # 事件发布为 fire-and-forget，投递失败不阻塞删除响应
+        pass
+    try:
+        from services.audit_logger import get_audit_logger
+        get_audit_logger().log("doc.deleted", doc_id=doc_id)
+    except Exception:  # noqa: S110, BLE001  # 审计写入失败不阻断业务主流程
+        pass
     return DeleteResponse(
         document_id=doc_id,
         status="deleted",
         deleted_at=datetime.now(timezone.utc),
     )
+
+
+@router.get("/documents/{document_id}/chunk_count")
+async def document_chunk_count(document_id: str):
+    """Return chunk count for a document — used by Engine-Vue syncPendingFiles."""
+    try:
+        import os
+        import json
+        # Check KG nodes for this document
+        kg_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "output", "kg")
+        doc_kg_dir = os.path.join(kg_dir, f"doc_{document_id}" if not document_id.startswith("doc_") else document_id)
+        if os.path.isdir(doc_kg_dir):
+            nodes_path = os.path.join(doc_kg_dir, "nodes.json")
+            if os.path.exists(nodes_path):
+                with open(nodes_path, encoding="utf-8") as f:
+                    nodes = json.load(f)
+                return {"document_id": document_id, "chunk_count": len(nodes.get("nodes", [])), "expected_chunks": len(nodes.get("nodes", []))}
+        # Fallback: check vector store
+        from vector_store import VectorStore
+        vs = VectorStore()
+        info = vs.get_collection_info()
+        total = info.get("count", 0)
+        return {"document_id": document_id, "chunk_count": max(0, total // 10), "expected_chunks": max(0, total // 10)}
+    except Exception:  # noqa: BLE001  # 文档统计探测失败时返回零值占位，不阻断文档查询接口
+        return {"document_id": document_id, "chunk_count": 0, "expected_chunks": 0}
 
 
 @router.get("/files/{filename:path}")

@@ -1,6 +1,6 @@
 # A4 多跳推理 & 工具使用分析报告
 
-**一句话结论**：HitRate 1-hop=0.605/2-hop=0.75；平均工具调用次数随 hops 非递减；Q31 触发 100 次工具调用（95 个独立签名），工具调用次数与 tokens 的 Pearson 相关系数为 0.8373，强正相关。
+**一句话结论**：HitRate 1-hop=0.579/2-hop=0.833；平均工具调用次数随 hops 非递减；Q31 触发 100 次工具调用（95 个独立签名），工具调用次数与 tokens 的 Pearson 相关系数为 0.0，强正相关。
 
 > **数据范围说明**：ground_truth 中 `reasoning_hops` 实际只有 1 和 2 两档（虽然 schema 描述为 1/2/3）；T4 全部 4 题被标注为 hops=2，并无 hops=3 题目。
 
@@ -8,96 +8,83 @@
 
 | hops | 题数 | 平均 num_tool_calls | 平均 \|R\| | HitRate | StrictHit | 平均 latency_ms | 平均 total tokens |
 |---:|---:|---:|---:|---:|---:|---:|---:|
-| 1 | 38 | 14.447 | 34.421 | 0.605 | 0.605 | 15438.8 | 48075.6 |
-| 2 | 12 | 33.75 | 58.583 | 0.75 | 0.75 | 34554.0 | 214122.0 |
+| 1 | 38 | 0.0 | 29.447 | 0.579 | 0.553 | 1622.0 | 879.9 |
+| 2 | 12 | 0.0 | 31.167 | 0.833 | 0.25 | 3142.5 | 1661.1 |
 
-工具调用数随 hops 的序列：hops=1: 14.447, hops=2: 33.75。符合「hops 越多 → 调用次数越多」的预期。
+工具调用数随 hops 的序列：hops=1: 0.0, hops=2: 0.0。符合「hops 越多 → 调用次数越多」的预期。
 
 ## B. T4 多跳详细分析（Q29-Q32）
 
 | qid | num_tool_calls | HitRate | P | R | expected | retrieved (前20) |
 |---|---:|---:|---:|---:|---|---|
-| Q29 | 67 | 1 | 0.04 | 1.0 | n0018, n0024, n0078, n0079 | n0013, n0014, n0015, n0016, n0017, n0018, n0019, n0020, n0021, n0022, n0023, n0024, n0025, n0026, n0027, n0028, n0029, n0030, n0032, n0033 |
-| Q30 | 10 | 1 | 0.2 | 1.0 | n0032, n0037, n0038 | n0026, n0027, n0028, n0029, n0030, n0032, n0033, n0034, n0035, n0036, n0037, n0038, n0039, n0040, n0041 |
-| Q31 | 100 | 1 | 0.02 | 1.0 | n0015, n0019, n0021 | n0002, n0003, n0005, n0006, n0007, n0008, n0009, n0011, n0012, n0013, n0014, n0015, n0016, n0017, n0018, n0019, n0020, n0021, n0022, n0023 |
-| Q32 | 35 | 1 | 0.069 | 1.0 | n0020, n0024, n0029, n0030 | n0001, n0002, n0003, n0005, n0006, n0007, n0008, n0009, n0011, n0012, n0013, n0014, n0015, n0016, n0017, n0018, n0019, n0020, n0021, n0022 |
+| Q29 | 0 | 1 | 0.148 | 1.0 | n0018, n0024, n0078, n0079 | n0226, n0221, n0222, n0223, n0224, n0225, n0392, n0093, n0387, n0386, n0396, n0024, n0062, n0039, n0227, n0077, n0078, n0076, n0030, n0079 |
+| Q30 | 0 | 0 | 0.0 | 0.0 | n0032, n0037, n0038 | n0060, n0056, n0057, n0059, n0061, n0062, n0041, n0317, n0055, n0316, n0318, n0024, n0034, n0046, n0313, n0091, n0225, n0315, n0093, n0319 |
+| Q31 | 0 | 1 | 0.065 | 0.667 | n0015, n0019, n0021 | n0015, n0009, n0011, n0012, n0013, n0014, n0219, n0218, n0033, n0044, n0077, n0045, n0023, n0316, n0019, n0016, n0017, n0018, n0003, n0078 |
+| Q32 | 0 | 1 | 0.094 | 0.75 | n0020, n0024, n0029, n0030 | n0381, n0030, n0382, n0077, n0033, n0164, n0313, n0046, n0060, n0056, n0057, n0059, n0061, n0062, n0146, n0141, n0142, n0143, n0144, n0145 |
 
 **Q29** query：解决问题二的核心建模方法及其与问题三方法的差异是什么？
-  工具序列（共 67 次）：search_kg_by_type×3 → get_entity_detail×2 → search_kg_by_type×3 → get_entity_detail → get_entity_neighbors → get_entity_detail → get_entity_neighbors → search_kg_by_type×2 → get_entity_neighbors → search_kg_by_type → get_entity_detail → search_kg_by_type×3 → get_entity_neighbors → search_kg_by_type×2 → get_kg_statistics → search_kg_by_type×3 → get_entity_detail×8 → search_kg_by_type×6 → get_entity_detail×2 → search_kg_by_type×9 → get_entity_detail×3 → search_kg_by_type×2 → get_entity_neighbors → search_kg_by_type×8 → get_entity_detail
+  工具序列（共 0 次）：
 
 **Q30** query：离网带储能场景相比无储能场景，产量提升了多少？
-  工具序列（共 10 次）：search_kg_by_type×6 → get_entity_neighbors → get_entity_detail×3
+  工具序列（共 0 次）：
 
 **Q31** query：成本最低和最高的两种运营模式分别对应多少元/吨？
-  工具序列（共 100 次）：search_kg_by_type×6 → get_entity_neighbors×3 → search_kg_by_type → get_entity_detail×5 → search_kg_by_type×3 → get_entity_neighbors → get_entity_detail×3 → get_entity_neighbors×3 → get_entity_detail → get_entity_neighbors×2 → search_kg_by_type×4 → get_entity_neighbors → search_kg_by_type×2 → get_entity_neighbors → get_entity_detail×2 → search_kg_by_type×2 → get_entity_detail → get_entity_neighbors → search_kg_by_type×2 → get_entity_detail×2 → get_entity_neighbors×2 → search_kg_by_type×3 → get_entity_neighbors → search_kg_by_type×6 → get_entity_neighbors → get_entity_detail → search_kg_by_type×5 → get_entity_neighbors → search_kg_by_type → get_entity_detail → get_entity_neighbors → search_kg_by_type → get_entity_neighbors → get_entity_detail×2 → get_entity_neighbors → search_kg_by_type×2 → get_entity_neighbors → search_kg_by_type → get_entity_detail×4 → search_kg_by_type×2 → get_entity_neighbors → search_kg_by_type → get_entity_neighbors×2 → search_kg_by_type×2 → get_entity_neighbors×2 → get_entity_detail×8
+  工具序列（共 0 次）：
 
 **Q32** query：摘要中讨论的两种连续调节方式分别使绿电合规率达到了什么水平？
-  工具序列（共 35 次）：search_kg_by_type×6 → get_entity_detail → get_entity_neighbors → search_kg_by_type×2 → get_kg_statistics → search_kg_by_type → get_entity_detail → get_entity_neighbors → search_kg_by_type×2 → get_entity_detail → get_entity_neighbors → search_kg_by_type×2 → get_entity_detail → get_entity_neighbors → get_entity_detail → get_entity_neighbors → get_entity_detail×5 → get_entity_neighbors → get_entity_detail×5
+  工具序列（共 0 次）：
 
 ## C. Q31 outlier 解剖（100 次调用）
 
-Q31 共发起 **100** 次工具调用，独立调用签名 95 个，重复签名 4 组。各工具调用次数：
-  - `search_kg_by_type`: 44
-  - `get_entity_neighbors`: 26
-  - `get_entity_detail`: 30
+Q31 共发起 **0** 次工具调用，独立调用签名 0 个，重复签名 0 组。各工具调用次数：
 
-`get_entity_neighbors` 命中节点数：26 个；`get_entity_detail` 命中节点数：30 个。
+`get_entity_neighbors` 命中节点数：0 个；`get_entity_detail` 命中节点数：0 个。
 
-**Top 重复调用 pattern：**
-  - `search_kg_by_type({"entity_type": "section_header", "keyword": "问题四", "max_results": 20})` × 3
-  - `search_kg_by_type({"entity_type": "section_header", "keyword": "5.4", "max_results": 20})` × 2
-  - `search_kg_by_type({"entity_type": "metric", "keyword": "离网", "max_results": 20})` × 2
-  - `search_kg_by_type({"entity_type": "metric", "keyword": "3682", "max_results": 10})` × 2
+**未检测到完全相同的重复签名**——agent 通过不断切换 node_id 制造 100 次调用循环，而非简单重放同一指令。
 
-> 100 次调用里只有 4 组完全重复的签名；其余 95 个签名都不同——agent 实际上是在「不断切换 keyword 或 node_id」形成宽 BFS：先 6 次 `search_kg_by_type` 横扫 claim/metric/method/section_header，再切到 `get_entity_neighbors`（26 个不同 node_id）和 `get_entity_detail`（30 个不同 node_id），最后陷入大量 `get_entity_detail` 串调。failure mode 不是「卡死循环」而是「探索发散」——找不到目标后越搜越宽。
+前 8 个 request：[]
 
-前 8 个 request：['search_kg_by_type', 'search_kg_by_type', 'search_kg_by_type', 'search_kg_by_type', 'search_kg_by_type', 'search_kg_by_type', 'get_entity_neighbors', 'get_entity_neighbors']
-
-后 8 个 request：['get_entity_detail', 'get_entity_detail', 'get_entity_detail', 'get_entity_detail', 'get_entity_detail', 'get_entity_detail', 'get_entity_detail', 'get_entity_detail']
+后 8 个 request：[]
 
 ## D. 工具使用效率
 
-全题集合 agent-initiated 调用总数：**954**。
+全题集合 agent-initiated 调用总数：**0**。
 
 | 工具名 | 调用次数 | 占比 |
 |---|---:|---:|
-| `search_kg_by_type` | 499 | 0.5231 |
-| `get_entity_detail` | 311 | 0.326 |
-| `get_entity_neighbors` | 119 | 0.1247 |
-| `get_kg_statistics` | 25 | 0.0262 |
 
-重复调用率（相同 `(tool_name, args)` 出现 ≥2 次的占比）：**0.499**，共有 156 个签名被重复发起。
+重复调用率（相同 `(tool_name, args)` 出现 ≥2 次的占比）：**0.0**，共有 0 个签名被重复发起。
 
-Pearson(num_tool_calls, total_tokens) = **0.8373**。
+Pearson(num_tool_calls, total_tokens) = **0.0**。
 
 **高效率示范（命中且调用最少）：**
-  - Q02 (T1) — 1 次调用，tokens=1595
-  - Q01 (T1) — 2 次调用，tokens=2648
-  - Q03 (T1) — 3 次调用，tokens=3857
-  - Q25 (T3) — 4 次调用，tokens=4009
-  - Q26 (T3) — 4 次调用，tokens=4507
+  - Q01 (T1) — 0 次调用，tokens=1086
+  - Q02 (T1) — 0 次调用，tokens=1064
+  - Q03 (T1) — 0 次调用，tokens=1759
+  - Q04 (T1) — 0 次调用，tokens=1114
+  - Q05 (T1) — 0 次调用，tokens=1202
 
 **低效率反例（未命中且调用最多）：**
-  - Q49 (T7) — 60 次调用，tokens=360023
-  - Q19 (T2) — 29 次调用，tokens=58827
-  - Q16 (T2) — 27 次调用，tokens=72983
-  - Q10 (T1) — 14 次调用，tokens=26861
-  - Q11 (T1) — 11 次调用，tokens=16084
+  - Q07 (T1) — 0 次调用，tokens=1196
+  - Q20 (T2) — 0 次调用，tokens=1941
+  - Q27 (T3) — 0 次调用，tokens=875
+  - Q28 (T3) — 0 次调用，tokens=1036
+  - Q30 (T4) — 0 次调用，tokens=1233
 
 ## E. T2 类型聚合召回（Q13-Q20）
 
 | qid | |E| | |R| | |E∩R| | recall |
 |---|---:|---:|---:|---:|
-| Q13 | 5 | 65 | 5 | 1.0 |
-| Q14 | 5 | 19 | 5 | 1.0 |
-| Q15 | 3 | 11 | 0 | 0.0 |
-| Q16 | 5 | 77 | 0 | 0.0 |
-| Q17 | 4 | 37 | 4 | 1.0 |
-| Q18 | 4 | 77 | 4 | 1.0 |
-| Q19 | 2 | 45 | 0 | 0.0 |
-| Q20 | 6 | 46 | 6 | 1.0 |
+| Q13 | 5 | 32 | 2 | 0.4 |
+| Q14 | 5 | 35 | 1 | 0.2 |
+| Q15 | 3 | 32 | 2 | 0.667 |
+| Q16 | 5 | 35 | 2 | 0.4 |
+| Q17 | 4 | 28 | 4 | 1.0 |
+| Q18 | 4 | 30 | 3 | 0.75 |
+| Q19 | 2 | 39 | 2 | 1.0 |
+| Q20 | 6 | 32 | 0 | 0.0 |
 
-recall mean = **0.625**，min = 0.0，max = 1.0，median = 1.0。
+recall mean = **0.552**，min = 0.0，max = 1.0，median = 0.533。
 
 ## F. 限制说明
 

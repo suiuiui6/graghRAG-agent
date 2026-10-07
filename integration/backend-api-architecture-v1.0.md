@@ -519,6 +519,7 @@ class QueryOptions(BaseModel):
     temperature: float = Field(default=0.0, ge=0.0, le=2.0)
     language: str = Field(default="en", pattern="^(en|ch|ja)$")
     include_sources: bool = Field(default=True)
+    enabled_sources: list[Literal["vector", "kg", "bm25", "table", "multi_query"]] | None = None
 
 class QueryRequest(BaseModel):
     query: str = Field(min_length=1, max_length=2000)
@@ -598,6 +599,22 @@ class IngestResponse(BaseModel):
 | Image | `.png`, `.jpg`, `.jpeg` | `image/png`, `image/jpeg` | pipeline (auto OCR) |
 | EPUB | `.epub` | `application/epub+zip` | pipeline |
 | HTML | `.html` | `text/html` | MinerU-HTML |
+
+### 4.3.0 生产 RAG 来源控制增量合同（M4-P1，2026-10-07）
+
+本合同适用于 `/api/v1/rag/query`、`/api/v1/rag/retrieve`、`/api/v1/rag/summarize`，不改变历史 `/api/v1/query` 的 legacy 契约。
+
+- `options.enabled_sources` 省略或为 null 时兼容原默认行为；显式列表为非空 allowlist，只接受 `vector`、`kg`、`bm25`、`table`、`multi_query`，按此顺序去重。空列表、未知来源、字符串替代列表返回 422。`per_source_caps` 是数量预算，不替代权限开关。
+- 普通召回、global/community、global 的 local 回退、retrieval rescue（KG/BM25/Table）和 generator rescue（KG/storage-vector）均在调用前应用同一请求级权限。候选图谱补投影也受 KG 权限约束；输入节点 ID 不授予 KG 查询权限。配置及记录不得修改共享 pipeline.config。
+- Multi-Query 还需 feature flag 开启、vector 权限、已有 embedding/vector 依赖和原文与改写不同。community 归属 KG，不接受独立开关；KG 禁用时跳过 global 并选择允许来源的 local。
+- 显式列表下 Table 普通召回和补证均要求 metric intent；null 保留旧 Table 补证条件。补证还须满足自身查询条件和正 top-k。storage-vector 补证仅在储能/产量降低的核实问句触发。
+- 显式来源请求的主 pipeline 不可用时返回 503，禁止悄悄使用 legacy fallback；null 仍兼容旧回退。该开关不承诺禁用一般查询预处理或模型生成服务。
+
+生产 RAG 响应 `metadata.effective_config` 的 `schema_version` 为 `1.0`，记录 requested_sources（null 或规范列表）、allowed_sources、eligible_sources（权限和 feature 依赖通过，不保证资源或题型满足）、flags、budget、query_mode、stages、attempted_sources、executed_sources、skipped_sources、cross_encoder。query_mode 是所选路由；global 无有效后代命中时可回退 local，具体来源以 stages 为准。
+
+stages 分 normal/global/retrieval_rescue/generator_rescue，各入口记录 status、reason、candidate_count。executed/count=0 是真实执行但零命中；skipped 表示未调用，含 source_disabled、query_condition、intent_condition、resource_unavailable 等原因；failed/count=null 表示调用失败而不是零命中。attempted 包括执行和失败，executed 只包括成功执行，community 汇总为 KG；skipped_sources 只汇总从未执行或失败的来源，逐入口原因以 stages 为准。cross_encoder 分 requested/attempted/executed/skip_reason，超时或不可用回退不算成功重排。
+
+budget 记录来源 top-k/caps、pre-rerank cap、最终候选/context 上限及重排预算；生成响应另记 prompt_max_context_tokens（prompt 构造实参，不与 retrieval 上限混同）。raw_candidates_total 当前为 null（未锁总原始预算）。Multi-Query 合法空变体记 skipped/query_variants_empty，变体请求或解析失败记 failed；不向执行账本写入异常内容或凭据。本增量不等于稳定证据身份、实际模型可见上下文、完整成本账本或七变体公平实验通过，后续按 P2/P3 验收。评测口径详见 `iteration-2/eval-2-existing-components/rag_eval/RAG-EVAL-SPECIFICATION.md` 的 M4-P1 合同。
 
 ### 4.3 输出数据与规范文档的对应关系
 

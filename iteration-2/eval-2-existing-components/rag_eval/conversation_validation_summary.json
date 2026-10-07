@@ -1,0 +1,8 @@
+{
+  "generated_at": "2026-07-03T13:11:54.572382+00:00",
+  "command": ".\\.venv\\Scripts\\python -m pytest tests/test_conversation_rewrite.py -q -s --capture=no",
+  "working_directory": "D:\\graghRAG-agent\\backend",
+  "exit_code": 0,
+  "summary": "5 passed, 1 warning in 24.75s",
+  "warnings": []
+}

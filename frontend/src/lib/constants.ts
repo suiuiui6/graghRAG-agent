@@ -1,22 +1,65 @@
+import type React from 'react'
+import {
+  Building2, Users, GitBranch, Gauge, Milestone, Package,
+  AlertTriangle, ScrollText, Building, Clock,
+} from 'lucide-react'
+
 export const TYPE_COLORS: Record<string, string> = {
-  paper_metadata: '#3b82f6', section_header: '#22c55e', model_component: '#a855f7',
-  metric: '#eab308', dataset: '#f97316', method: '#ec4899',
-  definition: '#8b5cf6', equation: '#14b8a6', reference: '#94a3b8', claim: '#ef4444',
+  project_metadata: '#3b82f6',
+  person_role: '#8b5cf6',
+  process_step: '#22c55e',
+  metric: '#eab308',
+  milestone: '#f97316',
+  deliverable: '#06b6d4',
+  risk_item: '#ef4444',
+  regulation_ref: '#ec4899',
+  department: '#14b8a6',
+  timeline_event: '#94a3b8',
 }
 
-export const TYPE_ICONS: Record<string, string> = {
-  paper_metadata: '\u{1F4CB}', section_header: '\u{1F4D1}', model_component: '\u{1F9E9}',
-  metric: '\u{1F4CA}', dataset: '\u{1F4BE}', method: '\u{1F527}',
-  definition: '\u{1F4D6}', equation: '∑', reference: '\u{1F4CE}', claim: '\u{1F4A1}',
+export const TYPE_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+  project_metadata: Building2,
+  person_role: Users,
+  process_step: GitBranch,
+  metric: Gauge,
+  milestone: Milestone,
+  deliverable: Package,
+  risk_item: AlertTriangle,
+  regulation_ref: ScrollText,
+  department: Building,
+  timeline_event: Clock,
 }
 
 export const ENTITY_TYPES = [
-  { type: 'reference', count: 76 }, { type: 'claim', count: 48 },
-  { type: 'model_component', count: 40 }, { type: 'metric', count: 35 },
-  { type: 'paper_metadata', count: 31 }, { type: 'method', count: 23 },
-  { type: 'section_header', count: 18 }, { type: 'equation', count: 16 },
-  { type: 'definition', count: 13 }, { type: 'dataset', count: 10 },
+  { type: 'person_role', count: 76 },
+  { type: 'risk_item', count: 48 },
+  { type: 'process_step', count: 40 },
+  { type: 'metric', count: 35 },
+  { type: 'project_metadata', count: 31 },
+  { type: 'milestone', count: 23 },
+  { type: 'deliverable', count: 18 },
+  { type: 'timeline_event', count: 16 },
+  { type: 'department', count: 13 },
+  { type: 'regulation_ref', count: 10 },
 ]
+
+export const SOURCE_TYPE_LABELS: Record<string, string> = {
+  vector: '向量检索',
+  kg: '知识图谱',
+  bm25: 'BM25',
+  table: '表格',
+  multi_query: '多查询',
+}
+
+export const SOURCE_TYPE_COLORS: Record<string, string> = {
+  vector: '#3b82f6',
+  kg: '#22c55e',
+  bm25: '#eab308',
+  table: '#f97316',
+  multi_query: '#8b5cf6',
+}
+
+export const QUERY_LOW_EVIDENCE_SCORE = 0.35
 
 export const SUPPORTED_FORMATS = ['PDF', 'DOCX', 'PPTX', 'XLSX', 'PNG', 'JPG', 'EPUB', 'HTML']
 
@@ -33,5 +76,12 @@ export const NAV_ITEMS = [
   { path: '/documents', icon: '\u{1F4DA}', label: '文档管理' },
   { path: '/query', icon: '\u{1F4AC}', label: '知识问答' },
   { path: '/graph', icon: '\u{1F52E}', label: '图谱可视化' },
+  { path: '/catalog', icon: '\u{1F4C8}', label: '数据目录' },
+  { path: '/quality', icon: '✅', label: '质量看板' },
+  { path: '/webhooks', icon: '\u{1F517}', label: 'Webhook' },
+  { path: '/api-keys', icon: '\u{1F511}', label: 'API Key' },
+  { path: '/audit', icon: '\u{1F4CB}', label: '审计日志' },
+  { path: '/settings/org', icon: '\u{1F3E2}', label: '组织管理' },
   { path: '/health', icon: '\u{1F4CA}', label: '系统状态' },
 ]
+

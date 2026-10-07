@@ -1,0 +1,1 @@
+{"questions": [{"qid": "MT01", "category": "MT", "question": "它对应的弃电量是多少？", "session_id": "s1", "conversation_setup": [{"question": "W4S1 是什么？"}], "expected_keywords": ["W4S1", "弃电"]}]}

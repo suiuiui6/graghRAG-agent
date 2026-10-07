@@ -1,0 +1,36 @@
+# GraphRAG Backend — FastAPI + uvicorn
+# enterprise-evolution-blueprint-v1.0 §7.2
+
+FROM python:3.12-slim
+
+WORKDIR /app
+
+# System dependencies for MinerU curl calls + unzip
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl unzip && \
+    rm -rf /var/lib/apt/lists/* && \
+    useradd --create-home --shell /bin/bash appuser
+
+# Python dependencies
+COPY backend/requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Application code
+COPY backend/ .
+
+# Create data directories with correct ownership
+RUN mkdir -p /app/output /app/uploads /app/frontend/public && chown -R appuser:appuser /app/output /app/uploads /app/frontend
+
+# Copy chat-widget.js for static serving
+COPY frontend/public/chat-widget.js /app/frontend/public/chat-widget.js
+
+# Runtime
+ENV PYTHONUNBUFFERED=1
+ENV OUTPUT_DIR=/app/output
+EXPOSE 8000
+
+HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
+    CMD curl -f http://localhost:8000/api/v1/health || exit 1
+
+USER appuser
+CMD ["uvicorn", "server:app", "--host", "0.0.0.0", "--port", "8000"]

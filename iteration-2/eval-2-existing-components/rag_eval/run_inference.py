@@ -1,293 +1,348 @@
 """
-RAG inference runner — 跑 ground truth 上的 50 题，保存所有原始日志.
+RAG eval inference runner.
 
-输出 raw_runs.jsonl，每行一条:
-{
-  qid, query, category,
-  retrieved_node_ids: [...],      # 从 tool call 结果中正则提取
-  tool_calls: [{name, args, result_preview}, ...],
-  num_tool_calls,
-  final_answer,
-  latency_ms,
-  tokens: {input, output, total},
-  error
-}
-
-NOTE: 该脚本直接构建 LangGraph agent (不通过 backend HTTP)，
-      原因是 backend 未运行，且直接调用更易拿到结构化中间结果。
+This harness exercises the production GraphRAG endpoint directly at
+`POST /api/v1/rag/query` via FastAPI's in-process TestClient, so the raw runs
+reflect the same request/response contract used by the primary backend path.
 """
+
+from __future__ import annotations
+
+import argparse
 import json
 import os
-import re
 import sys
 import time
 import traceback
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
+
 from dotenv import load_dotenv
+from fastapi.testclient import TestClient
+
+CURRENT_DIR = Path(__file__).resolve().parent
+CURRENT_DIR_STR = str(CURRENT_DIR)
+if CURRENT_DIR_STR not in sys.path:
+    sys.path.insert(0, CURRENT_DIR_STR)
+
+from run_inference_helpers import (
+    extract_node_ids_from_text,
+    extract_retrieved_node_ids_from_rag_sources,
+    normalize_token_usage,
+)
 
 ROOT = Path(r"D:/graghRAG-agent")
-KG_DIR = ROOT / "backend" / "output" / "kg" / "doc_ingest_232e1611"
+BACKEND_DIR = ROOT / "backend"
 EVAL_DIR = ROOT / "iteration-2" / "eval-2-existing-components" / "rag_eval"
 GT_PATH = EVAL_DIR / "ground_truth.json"
 OUT_PATH = EVAL_DIR / "raw_runs.jsonl"
 LOG_PATH = EVAL_DIR / "run.log"
 
-load_dotenv(ROOT / "backend" / ".env")
-DEEPSEEK_API_KEY = os.environ.get("LANGEXTRACT_API_KEY") or os.environ.get("DEEPSEEK_API_KEY")
-if not DEEPSEEK_API_KEY:
-    raise SystemExit("Missing DEEPSEEK API key (LANGEXTRACT_API_KEY or DEEPSEEK_API_KEY)")
 
-# ---- Build KG (mirror backend/agentic_rag_mvp.py) -----------------------------
-import networkx as nx
-from langchain.tools import tool
-from langchain_openai import ChatOpenAI
+def _parse_bool_env(name: str, default: bool = False) -> bool:
+    value = os.environ.get(name)
+    if value is None:
+        return default
+    return str(value).strip().lower() in {"1", "true", "yes", "on"}
 
-with open(KG_DIR / "nodes.json", "r", encoding="utf-8") as f:
-    nodes_data = json.load(f)
-with open(KG_DIR / "edges.json", "r", encoding="utf-8") as f:
-    edges_data = json.load(f)
 
-G = nx.Graph()
-for node in nodes_data["nodes"]:
-    G.add_node(node["node_id"], entity_type=node["entity_type"], label=node["label"],
-               properties=node.get("properties", {}), page_idx=node.get("page_idx"),
-               bbox_norm=node.get("bbox_norm"),
-               grounding_status=node.get("grounding_status", "ungrounded"))
-for edge in edges_data["edges"]:
-    G.add_edge(edge["source_node_id"], edge["target_node_id"],
-               relation=edge["relation_type"], **edge.get("properties", {}))
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Run production GraphRAG eval inference.")
+    parser.add_argument("--qids", nargs="*", default=None, help="Specific qids to run, e.g. Q01 Q03 Q47")
+    parser.add_argument("--offset", type=int, default=int(os.environ.get("RAG_EVAL_OFFSET", "0")))
+    parser.add_argument("--limit", type=int, default=None if os.environ.get("RAG_EVAL_LIMIT") in (None, "") else int(os.environ["RAG_EVAL_LIMIT"]))
+    parser.add_argument("--append", action="store_true", default=_parse_bool_env("RAG_EVAL_APPEND"))
+    parser.add_argument("--skip-existing", action="store_true", default=_parse_bool_env("RAG_EVAL_SKIP_EXISTING"))
+    parser.add_argument("--out-path", default=os.environ.get("RAG_EVAL_OUT_PATH"), help="Optional custom raw_runs output path")
+    parser.add_argument("--log-path", default=os.environ.get("RAG_EVAL_LOG_PATH"), help="Optional custom run.log output path")
+    parser.add_argument("--gt-path", default=os.environ.get("RAG_EVAL_GT_PATH"), help="Optional custom ground truth path")
+    return parser.parse_args()
 
-G_grounded = G.subgraph(
-    [n for n, d in G.nodes(data=True) if d.get("grounding_status") == "grounded"]
-).copy()
 
-print(f"[KG] nodes={G.number_of_nodes()} grounded={G_grounded.number_of_nodes()} edges={G.number_of_edges()}")
+def _load_existing_qids(path: Path) -> set[str]:
+    if not path.exists():
+        return set()
+    existing_qids: set[str] = set()
+    with path.open("r", encoding="utf-8") as handle:
+        for line in handle:
+            stripped = line.strip()
+            if not stripped:
+                continue
+            try:
+                payload = json.loads(stripped)
+            except json.JSONDecodeError:
+                continue
+            qid = payload.get("qid")
+            if qid:
+                existing_qids.add(str(qid))
+    return existing_qids
 
-# ---- Tools (copy exactly from backend) ---------------------------------------
-@tool
-def search_kg_by_type(entity_type: str = "", keyword: str = "", max_results: int = 15) -> str:
-    """Search the document's Knowledge Graph by entity type and optional keyword."""
-    results = []
-    kw = keyword.lower() if keyword else ""
-    for nid, data in G_grounded.nodes(data=True):
-        if entity_type and data["entity_type"] != entity_type:
+
+def resolve_output_paths(args: argparse.Namespace) -> tuple[Path, Path]:
+    out_path = Path(args.out_path) if getattr(args, "out_path", None) else OUT_PATH
+    log_path = Path(args.log_path) if getattr(args, "log_path", None) else LOG_PATH
+    return out_path, log_path
+
+
+def resolve_ground_truth_path(args: argparse.Namespace) -> Path:
+    return Path(args.gt_path) if getattr(args, "gt_path", None) else GT_PATH
+
+
+def select_questions(
+    questions: list[dict],
+    qids: list[str] | None,
+    offset: int,
+    limit: int | None,
+    existing_qids: set[str] | None = None,
+    skip_existing: bool = False,
+) -> list[dict]:
+    selected = list(questions)
+    if qids:
+        allowed = {qid.strip() for qid in qids if qid and qid.strip()}
+        selected = [question for question in selected if question.get("qid") in allowed]
+
+    if skip_existing and existing_qids:
+        selected = [question for question in selected if question.get("qid") not in existing_qids]
+
+    safe_offset = max(0, int(offset or 0))
+    if safe_offset:
+        selected = selected[safe_offset:]
+
+    if limit is not None:
+        selected = selected[: max(0, int(limit))]
+
+    return selected
+
+
+def _prepare_conversation_setup(conversation_setup: list[dict] | None) -> list[dict]:
+    normalized: list[dict] = []
+    for turn in conversation_setup or []:
+        if not isinstance(turn, dict):
             continue
-        label = data.get("label", "")
-        props_str = " ".join(str(v) for v in data.get("properties", {}).values())
-        if kw and kw not in label.lower() and kw not in props_str.lower():
-            continue
-        results.append({"node_id": nid, "entity_type": data["entity_type"],
-                        "label": label, "properties": data.get("properties", {}),
-                        "page_idx": data.get("page_idx")})
-        if len(results) >= max_results:
-            break
-    return json.dumps(results, ensure_ascii=False) if results else \
-        f"No entities found for entity_type='{entity_type}', keyword='{keyword}'"
+        query = (turn.get("query") or turn.get("question") or "").strip()
+        if query:
+            normalized.append({"query": query})
+    return normalized
 
-@tool
-def get_entity_neighbors(node_id: str = "", label_keyword: str = "",
-                         k_hops: int = 1, max_results: int = 15) -> str:
-    """Get the neighbor entities for a given KG entity."""
-    source_id = node_id
-    if not source_id and label_keyword:
-        kw = label_keyword.lower()
-        for nid, data in G_grounded.nodes(data=True):
-            if kw in data.get("label", "").lower():
-                source_id = nid
-                break
-    if not source_id or source_id not in G_grounded:
-        return f"Entity not found: node_id='{node_id}', label_keyword='{label_keyword}'"
-    ego = nx.ego_graph(G_grounded, source_id, radius=k_hops)
-    src = G_grounded.nodes[source_id]
-    neighbors = []
-    for nid in ego.nodes():
-        if nid == source_id:
-            continue
-        nd = G_grounded.nodes[nid]
-        ed = G_grounded.get_edge_data(source_id, nid) or {}
-        neighbors.append({"node_id": nid, "entity_type": nd["entity_type"],
-                          "label": nd["label"], "relation": ed.get("relation", "connected")})
-    return json.dumps({
-        "source": {"node_id": source_id, "label": src["label"], "entity_type": src["entity_type"],
-                   "page_idx": src.get("page_idx")},
-        "neighbors_count": len(neighbors[:max_results]),
-        "neighbors": neighbors[:max_results], "k_hops": k_hops,
-    }, ensure_ascii=False)
 
-@tool
-def get_entity_detail(node_id: str) -> str:
-    """Get full details of a specific KG entity."""
-    if node_id not in G_grounded:
-        if node_id in G:
-            data = G.nodes[node_id]
-        else:
-            return f"Entity '{node_id}' not found in KG."
+def _prepare_setup_payloads(question: dict) -> list[dict]:
+    session_id = question.get("session_id")
+    payloads: list[dict] = []
+    for turn in _prepare_conversation_setup(question.get("conversation_setup")):
+        payloads.append(_build_request_payload({**turn, "session_id": session_id}))
+    return payloads
+
+
+def _ensure_backend_import_path() -> None:
+    backend_str = str(BACKEND_DIR)
+    if backend_str not in sys.path:
+        sys.path.insert(0, backend_str)
+
+
+def _require_api_key() -> None:
+    load_dotenv(BACKEND_DIR / ".env", override=True)
+    api_key = os.environ.get("LANGEXTRACT_API_KEY") or os.environ.get("DEEPSEEK_API_KEY")
+    if not api_key:
+        raise SystemExit("Missing DEEPSEEK API key (LANGEXTRACT_API_KEY or DEEPSEEK_API_KEY)")
+
+
+def _load_test_client() -> TestClient:
+    _ensure_backend_import_path()
+    from server import app
+
+    return TestClient(app)
+
+
+def _build_execution_path() -> str:
+    return (
+        "POST /api/v1/rag/query via fastapi.testclient.TestClient(server.app) "
+        "(primary GraphRAG path; include_sources=true)"
+    )
+
+
+def _build_request_payload(question: str | dict) -> dict:
+    if isinstance(question, dict):
+        query = question.get("query") or question.get("question") or ""
+        session_id = question.get("session_id")
     else:
-        data = G_grounded.nodes[node_id]
-    edges = []
-    if node_id in G_grounded:
-        for nb in G_grounded.neighbors(node_id):
-            ed = G_grounded.get_edge_data(node_id, nb) or {}
-            nd = G_grounded.nodes[nb]
-            edges.append({"target_node_id": nb, "target_label": nd["label"][:80],
-                          "target_type": nd["entity_type"],
-                          "relation": ed.get("relation", "connected")})
-    return json.dumps({
-        "node_id": node_id, "entity_type": data["entity_type"], "label": data["label"],
-        "properties": data.get("properties", {}), "page_idx": data.get("page_idx"),
-        "grounding_status": data.get("grounding_status"),
-        "relationships": edges[:10],
-    }, ensure_ascii=False)
+        query = question
+        session_id = None
 
-@tool
-def get_kg_statistics() -> str:
-    """Get overall statistics of the Knowledge Graph."""
-    nc = {}; grounded = 0
-    for n, d in G.nodes(data=True):
-        t = d["entity_type"]; nc[t] = nc.get(t, 0) + 1
-        if d.get("grounding_status") == "grounded":
-            grounded += 1
-    ec = {}
-    for u, v, d in G.edges(data=True):
-        r = d.get("relation", "unknown"); ec[r] = ec.get(r, 0) + 1
-    return json.dumps({
-        "total_nodes": G.number_of_nodes(), "grounded_nodes": grounded,
-        "total_edges": G.number_of_edges(),
-        "entity_type_distribution": dict(sorted(nc.items(), key=lambda x: -x[1])),
-        "relation_type_distribution": dict(sorted(ec.items(), key=lambda x: -x[1])),
-    }, ensure_ascii=False)
+    return {
+        "query": query,
+        **({"session_id": session_id} if session_id else {}),
+        "options": {
+            "include_sources": True,
+            "language": "ch",
+        },
+    }
 
-# ---- Agent --------------------------------------------------------------------
-from langchain.agents import create_agent
 
-TOOLS = [search_kg_by_type, get_entity_neighbors, get_entity_detail, get_kg_statistics]
-model = ChatOpenAI(model="deepseek-chat", base_url="https://api.deepseek.com",
-                   api_key=DEEPSEEK_API_KEY, temperature=0.0, timeout=120)
+def _truncate_source_text(value: str, limit: int = 240) -> str:
+    text = (value or "").strip()
+    if len(text) <= limit:
+        return text
+    return text[:limit].rstrip() + "..."
 
-SYSTEM_PROMPT = """You are a Knowledge Graph QA agent. You answer questions about an academic paper by querying its Knowledge Graph.
 
-The KG was built by the BridgePipeline (MinerU -> LangExtract) and contains entities with these types:
-  - paper_metadata, section_header, model_component, metric, dataset, method, definition, equation, reference, claim
+def _apply_response_payload(record: dict, payload: dict) -> None:
+    sources = payload.get("sources") or []
+    metadata = payload.get("metadata") or {}
+    answer = payload.get("answer") or ""
 
-Rules:
-1. Always use the tools to search the KG -- do NOT guess or make up answers.
-2. Start with search_kg_by_type to find relevant entities.
-3. Use get_entity_neighbors to explore relationships.
-4. Use get_entity_detail for full entity information.
-5. Answer in the user's language (Chinese or English).
-6. Cite the specific node IDs and page numbers from the KG in your answer.
-7. If the KG doesn't contain the information, say so clearly.
-"""
+    record["retrieved_node_ids"] = extract_retrieved_node_ids_from_rag_sources(
+        sources,
+        metadata=metadata,
+    )
+    record["num_sources"] = len(sources)
+    record["activity_count"] = len(sources)
+    record["final_answer"] = answer
+    record["answer_node_ids"] = extract_node_ids_from_text(answer)
+    record["tokens"] = normalize_token_usage(metadata.get("token_usage"))
+    record["runtime_metadata"] = metadata
+    record["path_hit_node_ids"] = metadata.get("path_hit_node_ids") or {}
+    record["pre_rerank_node_ids"] = metadata.get("pre_rerank_node_ids") or []
+    record["final_context_node_ids"] = metadata.get("final_context_node_ids") or []
+    record["source_labels"] = [
+        str(source.get("label") or "").strip()
+        for source in sources
+        if str(source.get("label") or "").strip()
+    ]
+    record["source_text_snippets"] = [
+        _truncate_source_text(str(source.get("text_snippet") or source.get("text") or ""))
+        for source in sources
+        if str(source.get("text_snippet") or source.get("text") or "").strip()
+    ]
+    record["session_id"] = metadata.get("session_id") or record.get("session_id")
+    record["rewritten_query"] = metadata.get("rewritten_query")
+    record["rewrite_reason"] = metadata.get("rewrite_reason")
+    record["latency_ms"] = int(metadata.get("duration_ms") or record.get("latency_ms") or 0)
 
-agent = create_agent(model=model, tools=TOOLS, system_prompt=SYSTEM_PROMPT)
 
-# ---- Helpers ------------------------------------------------------------------
-NODE_ID_RE = re.compile(r"\bn\d{4}\b")
+def main() -> None:
+    args = parse_args()
+    _require_api_key()
+    execution_path = _build_execution_path()
+    out_path, log_path = resolve_output_paths(args)
+    gt_path = resolve_ground_truth_path(args)
 
-def extract_node_ids_from_text(s: str) -> list[str]:
-    if not s:
-        return []
-    return sorted(set(NODE_ID_RE.findall(s)))
+    with gt_path.open("r", encoding="utf-8") as handle:
+        gt = json.load(handle)
+    existing_qids = _load_existing_qids(out_path) if args.append and args.skip_existing else set()
+    questions = select_questions(
+        gt["questions"],
+        qids=args.qids,
+        offset=args.offset,
+        limit=args.limit,
+        existing_qids=existing_qids,
+        skip_existing=args.skip_existing,
+    )
+    print(f"[GT] loaded {len(questions)} questions")
+    print(f"[GT] path={gt_path}")
+    print(f"[EXEC] {execution_path}")
+    print(
+        f"[MODE] append={args.append} skip_existing={args.skip_existing} "
+        f"offset={args.offset} limit={args.limit} qids={args.qids or 'ALL'}"
+    )
+    print(f"[OUT] raw_runs={out_path}")
+    print(f"[OUT] run_log={log_path}")
 
-def serialize_tool_calls(messages) -> tuple[list, set[str]]:
-    """Extract tool calls + all node_ids that appeared in tool results."""
-    calls = []
-    retrieved = set()
-    for m in messages:
-        msg_type = type(m).__name__
-        if msg_type == "AIMessage" and getattr(m, "tool_calls", None):
-            for tc in m.tool_calls:
-                calls.append({"phase": "request", "name": tc["name"], "args": tc.get("args", {})})
-        elif msg_type == "ToolMessage":
-            content = m.content if hasattr(m, "content") else str(m)
-            preview = content[:500] if isinstance(content, str) else str(content)[:500]
-            tname = getattr(m, "name", "?")
-            calls.append({"phase": "result", "name": tname, "result_preview": preview})
-            retrieved.update(extract_node_ids_from_text(content if isinstance(content, str) else str(content)))
-    return calls, retrieved
+    log_mode = "a" if args.append else "w"
+    out_mode = "a" if args.append else "w"
 
-def extract_tokens(messages) -> dict:
-    """Aggregate token usage from all AIMessages."""
-    tin = tout = ttotal = 0
-    for m in messages:
-        if type(m).__name__ == "AIMessage":
-            um = getattr(m, "usage_metadata", None) or {}
-            if um:
-                tin += um.get("input_tokens", 0)
-                tout += um.get("output_tokens", 0)
-                ttotal += um.get("total_tokens", 0)
-            else:
-                rm = getattr(m, "response_metadata", {}) or {}
-                tu = rm.get("token_usage", {}) or rm.get("usage", {})
-                tin += tu.get("prompt_tokens", 0) or tu.get("input_tokens", 0)
-                tout += tu.get("completion_tokens", 0) or tu.get("output_tokens", 0)
-                ttotal += tu.get("total_tokens", 0)
-    return {"input": tin, "output": tout, "total": ttotal}
+    with _load_test_client() as client, log_path.open(log_mode, encoding="utf-8") as logf, out_path.open(out_mode, encoding="utf-8") as outf:
+        logf.write(f"=== RUN {datetime.now().isoformat()} ===\n")
+        logf.write(f"execution_path={execution_path}\n")
+        logf.write(f"ground_truth_path={gt_path}\n")
+        logf.write(
+            f"append={args.append} skip_existing={args.skip_existing} "
+            f"offset={args.offset} limit={args.limit} qids={args.qids or 'ALL'}\n"
+        )
 
-# ---- Main loop ----------------------------------------------------------------
-def main():
-    gt = json.load(open(GT_PATH, "r", encoding="utf-8"))
-    qs = gt["questions"]
-    print(f"[GT] loaded {len(qs)} questions")
+        for index, question in enumerate(questions, start=1):
+            qid = question["qid"]
+            query = question["question"]
+            print(f"\n[{index:02d}/{len(questions)}] {qid} ({question['category']}) {query[:60]}")
+            logf.write(f"\n--- {qid} {question['category']} ---\nQ: {query}\n")
+            logf.flush()
 
-    logf = open(LOG_PATH, "w", encoding="utf-8")
-    logf.write(f"=== RUN {datetime.now().isoformat()} ===\n")
+            record = {
+                "qid": qid,
+                "category": question["category"],
+                "query": query,
+                "should_refuse": question.get("should_refuse", False),
+                "expected_node_ids": question.get("expected_node_ids", []),
+                "execution_mode": "backend_rag_query_endpoint",
+                "execution_path": execution_path,
+                "retrieved_node_ids": [],
+                "path_hit_node_ids": {},
+                "pre_rerank_node_ids": [],
+                "final_context_node_ids": [],
+                "tool_calls": [],
+                "num_tool_calls": 0,
+                "num_sources": 0,
+                "activity_count": 0,
+                "activity_type": "retrieved_sources",
+                "final_answer": "",
+                "answer_node_ids": [],
+                "latency_ms": 0,
+                "tokens": {"input": 0, "output": 0, "total": 0},
+                "runtime_metadata": {},
+                "session_id": question.get("session_id"),
+                "source_labels": [],
+                "source_text_snippets": [],
+                "rewritten_query": None,
+                "rewrite_reason": None,
+                "http_status": None,
+                "error": None,
+                "timestamp": datetime.now().isoformat(),
+            }
 
-    outf = open(OUT_PATH, "w", encoding="utf-8")
+            t0 = time.time()
+            try:
+                for setup_payload in _prepare_setup_payloads(question):
+                    setup_response = client.post("/api/v1/rag/query", json=setup_payload)
+                    setup_response.raise_for_status()
+                response = client.post(
+                    "/api/v1/rag/query",
+                    json=_build_request_payload(question),
+                )
+                record["http_status"] = response.status_code
+                response.raise_for_status()
+                payload = response.json()
+                _apply_response_payload(record, payload)
+                if record["latency_ms"] == 0:
+                    record["latency_ms"] = int((time.time() - t0) * 1000)
+            except Exception as exc:
+                record["error"] = f"{type(exc).__name__}: {exc}"
+                if record["latency_ms"] == 0:
+                    record["latency_ms"] = int((time.time() - t0) * 1000)
+                logf.write(f"ERROR: {record['error']}\n{traceback.format_exc()}\n")
+                print(f"   [ERROR] {record['error']}")
 
-    for i, q in enumerate(qs, 1):
-        qid = q["qid"]
-        query = q["question"]
-        print(f"\n[{i:02d}/{len(qs)}] {qid} ({q['category']}) {query[:60]}")
-        logf.write(f"\n--- {qid} {q['category']} ---\nQ: {query}\n")
-        logf.flush()
+            outf.write(json.dumps(record, ensure_ascii=False) + "\n")
+            outf.flush()
 
-        record = {
-            "qid": qid, "category": q["category"], "query": query,
-            "should_refuse": q.get("should_refuse", False),
-            "expected_node_ids": q.get("expected_node_ids", []),
-            "retrieved_node_ids": [],
-            "tool_calls": [], "num_tool_calls": 0,
-            "final_answer": "", "answer_node_ids": [],
-            "latency_ms": 0, "tokens": {"input": 0, "output": 0, "total": 0},
-            "error": None, "timestamp": datetime.now().isoformat(),
-        }
-        t0 = time.time()
-        try:
-            result = agent.invoke({"messages": [("user", query)]})
-            messages = result.get("messages", [])
-            calls, retrieved = serialize_tool_calls(messages)
-            final = messages[-1] if messages else None
-            answer = final.content if final and hasattr(final, "content") else ""
-            record["tool_calls"] = calls
-            record["num_tool_calls"] = sum(1 for c in calls if c["phase"] == "request")
-            record["retrieved_node_ids"] = sorted(retrieved)
-            record["final_answer"] = answer
-            record["answer_node_ids"] = extract_node_ids_from_text(answer)
-            record["tokens"] = extract_tokens(messages)
-        except Exception as e:
-            record["error"] = f"{type(e).__name__}: {e}"
-            logf.write(f"ERROR: {record['error']}\n{traceback.format_exc()}\n")
-            print(f"   [ERROR] {record['error']}")
-        record["latency_ms"] = int((time.time() - t0) * 1000)
+            answer_preview = (record["final_answer"] or "")[:120].replace("\n", " ")
+            print(
+                f"   sources={record['num_sources']} "
+                f"retrieved={len(record['retrieved_node_ids'])} "
+                f"tokens={record['tokens']['total']} "
+                f"latency={record['latency_ms']}ms"
+            )
+            print(f"   ans: {answer_preview}")
+            logf.write(
+                f"http_status={record['http_status']} "
+                f"sources={record['num_sources']} "
+                f"retrieved={record['retrieved_node_ids']}\n"
+                f"latency_ms={record['latency_ms']} tokens={record['tokens']}\n"
+                f"answer: {record['final_answer'][:400]}\n"
+            )
+            logf.flush()
 
-        outf.write(json.dumps(record, ensure_ascii=False) + "\n")
-        outf.flush()
+    print(f"\nDONE -> {out_path}")
+    print(f"LOG -> {log_path}")
 
-        ans_preview = (record["final_answer"] or "")[:120].replace("\n", " ")
-        print(f"   tool_calls={record['num_tool_calls']} retrieved={len(record['retrieved_node_ids'])} "
-              f"tokens={record['tokens']['total']} latency={record['latency_ms']}ms")
-        print(f"   ans: {ans_preview}")
-        logf.write(f"tool_calls={record['num_tool_calls']} retrieved={record['retrieved_node_ids']}\n"
-                   f"latency_ms={record['latency_ms']} tokens={record['tokens']}\n"
-                   f"answer: {record['final_answer'][:400]}\n")
-        logf.flush()
-
-    outf.close()
-    logf.close()
-    print(f"\nDONE -> {OUT_PATH}")
-    print(f"LOG -> {LOG_PATH}")
 
 if __name__ == "__main__":
     main()

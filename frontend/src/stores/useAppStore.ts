@@ -1,16 +1,36 @@
 import { create } from 'zustand'
 import type { IngestResponse, StatusResponse, DocumentItem } from '../lib/api'
+import type { SystemStats } from '../lib/types'
+
+export interface UserInfo {
+  user_id: string; username: string; email: string; display_name: string;
+  roles: string[]; department: string | null; last_login: string | null;
+}
 
 interface AppState {
   documents: DocumentItem[]
   totalDocs: number
+  stats: SystemStats | null
+  statsLoading: boolean
+  statsError: string
+  user: UserInfo | null
   setDocuments: (docs: DocumentItem[], total: number) => void
+  setStats: (stats: SystemStats) => void
+  setStatsError: (err: string) => void
+  setUser: (user: UserInfo | null) => void
 }
 
 export const useAppStore = create<AppState>((set) => ({
   documents: [],
   totalDocs: 0,
+  stats: null,
+  statsLoading: true,
+  statsError: '',
+  user: null,
   setDocuments: (docs, total) => set({ documents: docs, totalDocs: total }),
+  setStats: (stats) => set({ stats, statsLoading: false, statsError: '' }),
+  setStatsError: (err) => set({ statsError: err, statsLoading: false }),
+  setUser: (user) => set({ user }),
 }))
 
 // Upload store — drives real pipeline

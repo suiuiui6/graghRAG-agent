@@ -1,6 +1,8 @@
 """Security middleware — rate limiting, file access tokens, ngrok defense."""
 
-import hashlib, os, time, uuid
+import hashlib
+import time
+import uuid
 from fastapi import HTTPException, Request
 
 # Generate a random file access token at startup
@@ -13,13 +15,12 @@ RATE_WINDOW = 60.0    # per window (seconds)
 
 
 def get_file_access_token() -> str:
-    """Return the current file access token."""
+    """Return the current file access token.
+
+    该 token 是文件访问的 bearer 凭据，**不落日志**；启动日志仅记录
+    ``file_access_token_set`` 布尔值。
+    """
     return FILE_ACCESS_TOKEN
-
-
-def token_log_hint(token: str) -> str:
-    """Describe token availability without disclosing credential material."""
-    return "[configured]" if token else "[unconfigured]"
 
 
 def verify_file_token(request: Request):

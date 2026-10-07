@@ -1,0 +1,289 @@
+{
+  "_meta": {
+    "ground_truth_path": "D:\\graghRAG-agent\\iteration-2\\eval-2-existing-components\\rag_eval\\ground_truth_multiturn_smoke.json",
+    "raw_runs_path": "D:\\graghRAG-agent\\iteration-2\\eval-2-existing-components\\rag_eval\\raw_runs_multiturn_smoke.jsonl",
+    "report_path": "D:\\graghRAG-agent\\iteration-2\\eval-2-existing-components\\rag_eval\\conversation_rewrite_report.md",
+    "missing_qids": [],
+    "small_sample_followup_threshold": 3
+  },
+  "global": {
+    "n_questions": 3,
+    "expected_questions": 3,
+    "matched_questions": 3,
+    "dataset_coverage_macro": 1.0,
+    "followup_questions": 3,
+    "rewrite_success_rate_macro": 1.0,
+    "session_id_match_rate_macro": 1.0,
+    "keyword_coverage_macro": 1.0,
+    "corpus_drift_cases": 2,
+    "invalid_eval_cases": 0,
+    "execution_failure_cases": 0,
+    "valid_questions_for_scoring": 1,
+    "sample_size_sufficient": true
+  },
+  "per_question": [
+    {
+      "qid": "MT01",
+      "category": "MT",
+      "question": "它对应的弃电量是多少？",
+      "is_followup": true,
+      "session_id_expected": "mt-session-w4s1",
+      "session_id_actual": "mt-session-w4s1",
+      "session_id_match": 1,
+      "rewritten_query": "W4S1 场景对应的弃电量是多少？",
+      "rewrite_reason": "coreference_resolution",
+      "rewrite_success": 1,
+      "gold_aliases": [
+        "W4S1"
+      ],
+      "gold_alias_found_in_rewrite": [
+        "W4S1"
+      ],
+      "gold_alias_missing_in_rewrite": [],
+      "gold_alias_found_in_sources": [],
+      "gold_alias_missing_in_sources": [
+        "W4S1"
+      ],
+      "expected_node_ids": [
+        "n0035"
+      ],
+      "retrieved_node_ids": [
+        "n0035",
+        "n0029",
+        "n0030",
+        "n0032",
+        "n0033",
+        "n0034",
+        "n0041",
+        "n0317",
+        "n0055",
+        "n0316",
+        "n0318",
+        "n0024",
+        "n0077",
+        "n0091",
+        "n0092",
+        "n0026",
+        "n0046",
+        "n0047",
+        "n0057",
+        "n0062",
+        "n0056",
+        "n0059",
+        "n0060",
+        "n0061",
+        "n0111",
+        "n0110",
+        "n0112",
+        "n0113",
+        "n0313",
+        "n0225",
+        "n0315",
+        "n0093",
+        "n0340",
+        "n0337",
+        "n0073",
+        "n0163",
+        "n0090",
+        "n0392",
+        "n0141",
+        "n0074"
+      ],
+      "expected_node_ids_hit": [
+        "n0035"
+      ],
+      "expected_keywords": [
+        "W4S1",
+        "弃电"
+      ],
+      "keyword_found": [
+        "W4S1",
+        "弃电"
+      ],
+      "keyword_missing": [],
+      "keyword_coverage": 1.0,
+      "eval_case_status": "valid",
+      "eval_case_reason": null,
+      "latency_ms": 6700,
+      "final_answer": "W4S1 场景对应的弃电量为 173.7 MWh/日 [c00009][c00110][c00022]。"
+    },
+    {
+      "qid": "MT02",
+      "category": "MT",
+      "question": "它的绿电消纳率是多少？",
+      "is_followup": true,
+      "session_id_expected": "mt-session-w2s2",
+      "session_id_actual": "mt-session-w2s2",
+      "session_id_match": 1,
+      "rewritten_query": "在W2S2场景下，绿电消纳率是多少？",
+      "rewrite_reason": "coreference_resolution",
+      "rewrite_success": 1,
+      "gold_aliases": [
+        "W2S2"
+      ],
+      "gold_alias_found_in_rewrite": [
+        "W2S2"
+      ],
+      "gold_alias_missing_in_rewrite": [],
+      "gold_alias_found_in_sources": [],
+      "gold_alias_missing_in_sources": [
+        "W2S2"
+      ],
+      "expected_node_ids": [
+        "n0036"
+      ],
+      "retrieved_node_ids": [
+        "n0062",
+        "n0056",
+        "n0057",
+        "n0059",
+        "n0060",
+        "n0061",
+        "n0024",
+        "n0055",
+        "n0018",
+        "n0078",
+        "n0079",
+        "n0001",
+        "n0003",
+        "n0141",
+        "n0142",
+        "n0143",
+        "n0144",
+        "n0145",
+        "n0146",
+        "n0030",
+        "n0077",
+        "n0382",
+        "n0392",
+        "n0033",
+        "n0093",
+        "n0046",
+        "n0223",
+        "n0216",
+        "n0218",
+        "n0219",
+        "n0221",
+        "n0222",
+        "n0073",
+        "n0026",
+        "n0074",
+        "n0340",
+        "n0337",
+        "n0163",
+        "n0090",
+        "n0023",
+        "n0028",
+        "n0152",
+        "n0004",
+        "n0399",
+        "n0091",
+        "n0029",
+        "n0400",
+        "n0044"
+      ],
+      "expected_node_ids_hit": [],
+      "expected_keywords": [
+        "W2S2",
+        "绿电"
+      ],
+      "keyword_found": [
+        "W2S2",
+        "绿电"
+      ],
+      "keyword_missing": [],
+      "keyword_coverage": 1.0,
+      "eval_case_status": "corpus_drift",
+      "eval_case_reason": "alias_missing_by_string_match",
+      "latency_ms": 6601,
+      "final_answer": "根据当前检索到的证据，第一，绿电指标是最大受益者——全满足率从39.2%跃升至69.2%（+30个百分点） [c00097]"
+    },
+    {
+      "qid": "MT03",
+      "category": "MT",
+      "question": "它的弃电量和消纳率分别是多少？",
+      "is_followup": true,
+      "session_id_expected": "mt-session-w3s3",
+      "session_id_actual": "mt-session-w3s3",
+      "session_id_match": 1,
+      "rewritten_query": "W3S3 场景的弃电量和消纳率分别是多少？",
+      "rewrite_reason": "coreference_resolution",
+      "rewrite_success": 1,
+      "gold_aliases": [
+        "W3S3"
+      ],
+      "gold_alias_found_in_rewrite": [
+        "W3S3"
+      ],
+      "gold_alias_missing_in_rewrite": [],
+      "gold_alias_found_in_sources": [],
+      "gold_alias_missing_in_sources": [
+        "W3S3"
+      ],
+      "expected_node_ids": [
+        "n0037"
+      ],
+      "retrieved_node_ids": [
+        "n0094",
+        "n0026",
+        "n0096",
+        "n0092",
+        "n0392",
+        "n0028",
+        "n0162",
+        "n0163",
+        "n0062",
+        "n0056",
+        "n0057",
+        "n0059",
+        "n0060",
+        "n0061",
+        "n0091",
+        "n0041",
+        "n0034",
+        "n0046",
+        "n0047",
+        "n0111",
+        "n0110",
+        "n0112",
+        "n0113",
+        "n0141",
+        "n0142",
+        "n0143",
+        "n0144",
+        "n0145",
+        "n0146",
+        "n0313",
+        "n0317",
+        "n0225",
+        "n0055",
+        "n0315",
+        "n0093",
+        "n0030",
+        "n0073",
+        "n0024",
+        "n0074",
+        "n0340",
+        "n0337",
+        "n0090"
+      ],
+      "expected_node_ids_hit": [],
+      "expected_keywords": [
+        "W3S3",
+        "弃电",
+        "消纳"
+      ],
+      "keyword_found": [
+        "W3S3",
+        "弃电",
+        "消纳"
+      ],
+      "keyword_missing": [],
+      "keyword_coverage": 1.0,
+      "eval_case_status": "corpus_drift",
+      "eval_case_reason": "alias_missing_by_string_match",
+      "latency_ms": 2075,
+      "final_answer": "文档中未提及此信息。\n\n[提示: 回答未包含引用标注，请核实信息准确性]"
+    }
+  ]
+}

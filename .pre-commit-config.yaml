@@ -1,0 +1,26 @@
+# 本地提交前防护：密钥扫描
+# 与 .github/workflows/ci.yml 的 secret-scan job 互补（本地拦截 + CI 兜底）。
+#
+# ⚠️ 两条已知局限（2026-09-17 安全事件暴露）：
+# 1. detect-secrets 默认跳过 .gitignore 命中的文件 —— 「未跟踪的 .env 被 git add -f
+#    强行提交」这一场景兜不住。.gitignore 只能防误加，不能防强加。
+# 2. detect-secrets 经 `git ls-files` 只扫**已跟踪**文件 —— 未跟踪文件（如
+#    langextract/mvp_deepseek_test.py）在 git add 之前不会被检出。
+# 两条局限都指向同一结论：真正的兜底是 CI 的 secret-scan（对已提交内容扫描），
+# pre-commit 只是第一道减速带。
+repos:
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.5.0
+    hooks:
+      - id: detect-secrets
+        args: ['--baseline', '.secrets.baseline']
+        # 扫描范围与生成 baseline 时保持一致，避免本地结果与 CI 漂移
+        exclude: |
+          (?x)^(
+            .*\.venv/.*|
+            .*node_modules/.*|
+            .*uv\.lock|
+            .*pnpm-lock\.yaml|
+            .*package-lock\.json|
+            .*\.secrets\.baseline
+          )$

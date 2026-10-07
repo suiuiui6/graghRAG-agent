@@ -1,0 +1,49 @@
+contract_version: "1.0"
+project_id: graphrag-paper-001
+paper_family: method-application
+stage_id: M2
+task_id: M2-LIT-001
+expert_skill: sci-skills-literature-search
+task_status: VERIFIED
+task_summary: >-
+  为“证据治理型可追溯 GraphRAG”主线建立可复核的现有方法、竞品方案与文献证据矩阵。
+inputs:
+  - docs/superpowers/plans/paper-control-console.md
+  - docs/superpowers/plans/2026-06-17-graphrag-paper-standard-manuscript-v1.md
+  - docs/superpowers/plans/2026-06-17-graphrag-paper-draft-v3-core-journal.md
+  - backend/
+  - iteration-2/eval-2-existing-components/rag_eval/
+expected_outputs:
+  - concept_and_synonym_table
+  - reproducible_search_strings_and_search_log
+  - verified_relevant_paper_table
+  - screening_and_exclusion_log
+  - claim_to_reference_evidence_matrix
+  - existing_method_comparison_inputs
+  - candidate_gap_statements_labeled_as_inference
+evidence_boundaries:
+  - 只使用平台原生搜索、论文原页、会议/期刊/出版社/作者官方页面和用户仓库材料
+  - 不使用第三方 API、密钥、SDK 或远程模型服务
+  - 不把搜索摘要当作全文核验
+  - 不把候选研究空白表述为已证明事实
+  - 不把不同语料、预算或指标下的数值直接横向比较
+acceptance_checks:
+  - 每篇入选文献的题名、作者、年份、载体和 DOI/arXiv ID 均已核验
+  - 至少覆盖 GraphRAG、长文档 RAG、grounded/citation、adaptive/cost-aware RAG 和 RAG evaluation
+  - 能明确本项目相对哪类方法改进以及不能声称什么
+  - 交付完整 expert contract 1.0
+known_missing_items:
+  - 目标期刊尚未确定
+  - 中国知网等登录数据库记录尚未人工导出
+manual_operation_allowed: false
+optional_adapters_allowed:
+  - local-file-import
+stage_authority: sci-skills
+returned_contract_identity:
+  project_id: graphrag-paper-001
+  paper_family: method-application
+  stage_id: M2
+  task_id: M2-LIT-001
+bibliographic_resolutions:
+  - conflict_id: GRAPHRAG-AUTHORS-VERSION
+    resolution: 采用当前 arXiv v2 与 Microsoft Research 页面记录的 10 位作者

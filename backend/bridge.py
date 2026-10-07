@@ -1,9 +1,7 @@
 """Format Bridge: MinerU output → LangExtract list[Document] + PositionMap."""
 
 import json
-import os
 import re
-from pathlib import Path
 
 from schema import PositionMap, Segment, SectionSplit
 
@@ -75,7 +73,9 @@ def _item_to_text(item: dict) -> str:
         return item.get("text", "")
     if t == "table":
         caption = " ".join(item.get("table_caption", []))
-        return caption or "[Table]"
+        body = _table_body_to_text(str(item.get("table_body", "") or ""))
+        parts = [part for part in (caption, body) if part]
+        return "\n".join(parts) if parts else "[Table]"
     if t == "equation":
         return item.get("text", "")
     if t == "image":
@@ -91,6 +91,18 @@ def _item_to_text(item: dict) -> str:
     if t == "page_number":
         return ""
     return ""
+
+
+def _table_body_to_text(table_body: str) -> str:
+    """Flatten MinerU HTML-like table bodies into lightweight searchable text."""
+    if not table_body:
+        return ""
+
+    text = re.sub(r"</t[dh]>\s*<t[dh][^>]*>", " | ", table_body, flags=re.IGNORECASE)
+    text = re.sub(r"</tr>\s*<tr[^>]*>", "\n", text, flags=re.IGNORECASE)
+    text = re.sub(r"<[^>]+>", "", text)
+    text = re.sub(r"\s+", " ", text).strip()
+    return text
 
 
 def _normalize(text: str) -> str:

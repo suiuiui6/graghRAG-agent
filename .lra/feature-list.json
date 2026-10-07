@@ -1,0 +1,169 @@
+{
+  "project": "GraphRAG Agent 知识图谱问答系统",
+  "description": "MinerU → LangExtract → Knowledge Graph → Agentic QA 多模态文档问答系统（FastAPI + React/TS）。已完成架构层能力（认证/租户/检索/可观测），当前聚焦工程规范收口与单机版交付。",
+  "created_at": "2026-09-17",
+  "source": "三份评估报告合并 backlog（plans/evaluation-consolidated-backlog.md）+ developer-kit LRA 工作流",
+  "features": [
+    {
+      "id": "F001",
+      "category": "testing",
+      "priority": "critical",
+      "description": "锁定依赖：补全 requirements.txt 缺失的 oss2 与 langextract，生成锁文件",
+      "acceptance_criteria": [
+        "requirements.txt 明确列出 oss2、langextract（代码已 import）",
+        "生成 uv.lock 或等价锁文件，提交入库",
+        "CI 增加干净环境 import 冒烟校验（import oss2 / langextract 不报错）"
+      ],
+      "status": "completed",
+      "completed_at": "2026-09-17",
+      "session": 1,
+      "notes": "对应 B16/C04。已建 pyproject.toml（25 依赖，langextract 走 tool.uv.sources 本地路径）、uv.lock（207 包）、requirements.txt 对齐（24 项）、scripts/check_imports.py + CI 冒烟步骤。实现中发现并补 duckdb / typing-extensions 两个漏声明依赖。"
+    },
+    {
+      "id": "F002",
+      "category": "testing",
+      "priority": "critical",
+      "description": "CI 安全扫描：pip-audit + bandit + git-secrets + pre-commit hook",
+      "acceptance_criteria": [
+        "CI 跑 pip-audit（依赖漏洞审计），高危阻断",
+        "CI 跑 bandit SAST，0 高危",
+        "pre-commit 接入 detect-secrets，阻止密钥提交",
+        "提交前 git diff --cached | grep -i 'api_key\\|secret\\|token' 自检可用"
+      ],
+      "status": "completed",
+      "completed_at": "2026-09-17",
+      "session": 1,
+      "notes": "对应 R4 + 铁律 2。已落 dependency-audit + secret-scan 两个 CI job 与 .pre-commit-config.yaml。bandit 未纳入（原 AC 有，本会话未做，留待后续）。**本任务额外发现安全事件**：backend/.env.backup 自 5e331ab 起被跟踪且含真实凭据，已停止跟踪并留档 docs/governance/security-incident-2026-09-17-tracked-credentials.md；LANGEXTRACT_API_KEY 待人工轮换。"
+    },
+    {
+      "id": "F003",
+      "category": "core",
+      "priority": "high",
+      "description": "日志规范：133 处 print() 替换为 structlog，带 request_id 关联",
+      "acceptance_criteria": [
+        "非测试代码 print() 清零（或仅 CLI 入口保留）",
+        "统一使用 structlog（logging_config.py 已有）+ JSON 格式",
+        "日志携带 request_id / task_id / trace_id",
+        "日志输出脱敏（不出现 API Key / Token）"
+      ],
+      "status": "completed",
+      "completed_at": "2026-09-18",
+      "session": 2,
+      "notes": "对应 B38/B39。分支 feat/logging-exception-governance，24 个提交，计划 docs/superpowers/plans/2026-09-18-logging-exception-governance.md。**实测数据（非估算）**：改造前 137 处非测试 print（109 处在不可 import 的 CLI 脚本 → 保留；28 处库代码 → 已清零）。**三项计划外发现**：① logging_config.py 缺 format_exc_info，全仓 6 处 exc_info=True 只输出 {\"exc_info\": true} 丢堆栈（已修，processor 链补 format_exc_info）；② server.py:266 输出 file_access_token 明文（文件访问 bearer 凭据），实际落盘 **126 次**而非计划初稿说的 3 次、全在轮转文件里；③ test_community_global_mode/test_kg_indexed_recall 的模块级假 structlog stub 会毒化日志测试（全量跑失败、单独跑通过），已由 conftest 修复。脱敏处理器含键名+值模式递归扫描，并修了 server.py 字段名被脱敏规则整键抹掉的陷阱。"
+    },
+    {
+      "id": "F004",
+      "category": "core",
+      "priority": "high",
+      "description": "异常规范：229 处 except Exception / 裸 except 收敛为分层错误码",
+      "acceptance_criteria": [
+        "禁止裸 except:，禁止静默 pass 吞异常",
+        "建立分层错误码体系（五阶段：解析/分段/抽取/溯源/建图）",
+        "外部调用区分 401/429/5xx/超时，分别处理",
+        "顶层边界用 raise ... from 保留原始 traceback"
+      ],
+      "status": "completed",
+      "completed_at": "2026-09-18",
+      "session": 2,
+      "notes": "对应 B39 + developer-kit error-handling rule。分支 feat/logging-exception-governance。**实测数据**：改造前 229 处 except Exception + 1 处裸 except（routes/query.py:277，全仓唯一）+ 116 处静默吞（32 文件）。改造后：裸 except 0；静默吞 0（逐处带 `# noqa: S110, BLE001  # 理由`）；except Exception 227（**未清零是设计使然** —— 宽捕本身合理，要求是每处带理由）。错误码：errors.py（顶层 stdlib-only）二维枚举 PIPELINE_<STAGE>_<REASON>，28 成员（25 + 3 边界码），仅收录可达组合，由 test_no_unreachable_error_codes 守卫。**发现并修复的真实缺陷**：① worker.py 的 Ollama `except Exception: continue` 让全批次失败伪装成成功 0 实体（正确性 bug，已改 raise + ExtractionOutcome）；② 降级分支缺 degraded=True 会产生 status=DONE + 残留 error 的脏任务；③ 向量化/BM25 失败路径同类问题；④ routes/query.py 与 routes/bot.py 回显内部异常文本；⑤ Pydantic 校验错误会回显用户提交的原值（登录时是密码）。强制手段：ruff 规则 + 策略守卫测试 + CI bandit job（全绿）。**遗留独立任务**：kg_builder.py 8 处关系查找失败后继续用失败值（见 backlog）、table_index.py B608 SQL 拼接（SAST 台账已豁免并记触发条件）。"
+    },
+    {
+      "id": "F005",
+      "category": "core",
+      "priority": "high",
+      "description": "状态持久化：任务/文档/图谱从进程内存迁移到 SQLite",
+      "acceptance_criteria": [
+        "任务表落 SQLite，重启可查进度",
+        "文档/任务/图谱三组表进 SQLite",
+        "图谱 JSON 读写改为事务 + 临时目录原子切换",
+        "多进程/重启后不再 404，删除带 tombstone"
+      ],
+      "status": "pending",
+      "completed_at": null,
+      "session": null,
+      "notes": "对应 B18/B09/B03。需确认当前 _tasks/_docs_store/G_grounded 是否仍为全局单例"
+    },
+    {
+      "id": "F006",
+      "category": "core",
+      "priority": "high",
+      "description": "健康检查真实化：拆分 liveness/readiness，接入真实探测",
+      "acceptance_criteria": [
+        "liveness 与 readiness 分离，未就绪返回 503",
+        "验证激活图谱版本与本地依赖",
+        "探测 Key/网络/磁盘真实状态，非静态写死",
+        "前端状态指示灯联动真实探测"
+      ],
+      "status": "pending",
+      "completed_at": null,
+      "session": null,
+      "notes": "对应 B20。health.py:96 仍按 Token 长度判 healthy"
+    },
+    {
+      "id": "F007",
+      "category": "security",
+      "priority": "high",
+      "description": "安全 hook 落地：裁剪 developer-kit prevent-destructive-commands 到本项目",
+      "acceptance_criteria": [
+        "阻断 rm/unlink 指向工作目录外的路径",
+        "阻断 git reset --hard / push --force / branch -D",
+        "阻断读取 .env / 密钥文件",
+        "不误伤现有 settings.local.json 已允许的合法命令"
+      ],
+      "status": "pending",
+      "completed_at": null,
+      "session": null,
+      "notes": "对应 developer-kit hooks。已有 deny 数组可作补充而非替换"
+    },
+    {
+      "id": "F008",
+      "category": "deployment",
+      "priority": "high",
+      "description": "部署收口：start.bat/start.sh + docker-compose + 锁文件",
+      "acceptance_criteria": [
+        "单机版一键启动脚本（Windows + Unix）",
+        "docker-compose 起 API + Worker（+ 可选 Neo4j/ChromaDB）",
+        "默认监听 127.0.0.1，开放局域网强制口令",
+        "提供离线演示模式"
+      ],
+      "status": "pending",
+      "completed_at": null,
+      "session": null,
+      "notes": "对应 B42 + PDF 单机版收尾清单"
+    },
+    {
+      "id": "F009",
+      "category": "testing",
+      "priority": "medium",
+      "description": "业务路由集成测试补齐：5 个业务路由 + 权限矩阵回归",
+      "acceptance_criteria": [
+        "覆盖正常请求 / 参数错误 / 资源不存在 / 越权访问四类场景",
+        "测试跑在真实依赖上（非 mock），符合铁律 5",
+        "CI 纳入覆盖率门槛",
+        "将三份报告的安全缺陷转为回归测试（越权删除、跨文档、来源伪造）"
+      ],
+      "status": "pending",
+      "completed_at": null,
+      "session": null,
+      "notes": "对应 B43 + 铁律 5 + GraphRAG(1).md 第 41 条"
+    },
+    {
+      "id": "F010",
+      "category": "documentation",
+      "priority": "medium",
+      "description": "文档对齐代码：修复 C01-C09 九处文档失实",
+      "acceptance_criteria": [
+        "README 修正 'clone 即可用' 与依赖清单",
+        "修正 Neo4j 描述（当前 SQLite/JSON + networkx）",
+        "修正巡检命令路径 backend/app/api → backend/routes",
+        "修正多模态口径（视频解析不存在）",
+        "补齐 .gitmodules 或清理失效子模块指针",
+        ".env.example 补 OSS 必填四项"
+      ],
+      "status": "pending",
+      "completed_at": null,
+      "session": null,
+      "notes": "对应第七章 C01-C09。文档是唯一真相源（铁律 7）"
+    }
+  ]
+}

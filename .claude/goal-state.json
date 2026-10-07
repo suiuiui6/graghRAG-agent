@@ -1,0 +1,9 @@
+{
+  "goal": "按照优先级，将这十项补充完整，成为一个让重度用户越用越顺的主工作流",
+  "mode": "maintenance",
+  "start_layer": 4,
+  "current_layer": 4,
+  "final_state": "maintenance_continues",
+  "layers": {},
+  "updated_at": "2026-06-11"
+}

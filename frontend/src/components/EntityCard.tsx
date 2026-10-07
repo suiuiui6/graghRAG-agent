@@ -1,11 +1,14 @@
+import type React from 'react'
+import type { GraphNode } from '../lib/types'
+
 interface EntityCardProps {
-  entity: any
+  entity: GraphNode
   color: string
-  icon: string
+  icon: React.ComponentType<{ className?: string }> | null
   onClick?: () => void
 }
 
-export function EntityCard({ entity, color, icon, onClick }: EntityCardProps) {
+export function EntityCard({ entity, color, icon: IconComp, onClick }: EntityCardProps) {
   return (
     <div
       onClick={onClick}
@@ -14,7 +17,7 @@ export function EntityCard({ entity, color, icon, onClick }: EntityCardProps) {
     >
       {/* Header */}
       <div className="flex items-start gap-2 mb-2">
-        <span className="text-base flex-shrink-0">{icon}</span>
+        <span className="text-base flex-shrink-0">{IconComp ? <IconComp className="w-4 h-4" /> : '?'}</span>
         <div className="flex-1 min-w-0">
           <h4 className="font-semibold text-sm text-text-primary truncate group-hover:text-accent transition-colors">
             {entity.label || entity.id}

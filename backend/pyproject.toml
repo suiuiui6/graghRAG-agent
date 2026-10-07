@@ -1,0 +1,121 @@
+[project]
+name = "graphrag-agent-backend"
+version = "0.1.0"
+description = "GraphRAG Agent 知识图谱问答系统后端（FastAPI）"
+requires-python = ">=3.12,<3.13"
+
+dependencies = [
+    # Web 框架
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "pydantic>=2.10.0",
+    "python-multipart>=0.0.18",
+    # Agent / LLM 编排
+    "langgraph>=1.0.0",
+    "langchain>=1.2.0",
+    "langchain-openai>=0.3.0",
+    # RAG pipeline
+    "chromadb>=0.5.0",
+    "networkx>=3.0.0",
+    "rank-bm25>=0.2.2",
+    "sentence-transformers>=3.0.0",
+    "python-docx>=1.1.0",
+    "openpyxl>=3.1.0",
+    # 基础设施
+    "pyyaml>=6.0",
+    "python-dotenv>=1.0.0",
+    "requests>=2.32.0",
+    "httpx>=0.27.0",
+    "structlog>=25.0.0",
+    "prometheus-client>=0.21.0",
+    "apscheduler>=3.10.0",
+    "pyjwt>=2.8.0",
+    # 对象存储（代码已 import，此前漏声明）
+    "oss2>=2.19.0",
+    # 表格召回：table_index.py 缺包时 raise，但调用方
+    # index_registry.build_table_index_from_chunks / worker.py 均 try/except 吞掉，
+    # 缺失时表格召回静默失效、入库照常完成。列为默认安装，非硬必需。
+    "duckdb>=1.0.0",
+    # agentic_rag_mvp.py 直接 import，此前仅靠传递依赖
+    "typing-extensions>=4.0.0",
+    # 本地子模块：langextract（见下方 sources）
+    "langextract",
+]
+# 刻意不声明（附理由，便于后续审计）：
+#   jieba        —— index_registry.py:218 在 try/except ImportError 内，有 bigram fallback，软依赖
+#   langchain-core —— routes/query.py:10 直接 import，但由 langchain / langgraph 硬性传递保证
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-timeout>=2.3.0",
+    "pip-audit>=2.7.0",
+    "bandit>=1.7.9",
+    "detect-secrets>=1.5.0",
+    "ruff>=0.8.0",
+]
+
+[tool.uv.sources]
+langextract = { path = "../langextract", editable = true }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+timeout = 60
+
+# ── Ruff ────────────────────────────────────────────────────────────────
+# 规则来源：.claude/rules/error-handling.md
+#   E722 裸 except / BLE001 盲捕 / S110 try-except-pass / T20 业务代码禁 print
+# 落地顺序：先清代码（Task 1-15），最后开规则（本任务），否则 CI 中途必红。
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+src = ["."]
+extend-exclude = [".venv", "output", "__pycache__", "uploads"]
+
+[tool.ruff.lint]
+select = [
+    "E4", "E7", "E9",   # E7 含 E722 裸 except
+    "F",                # pyflakes
+    "BLE",              # BLE001 blind except
+    "S110",             # try-except-pass
+    "T20",              # T201 print
+    "RUF100",           # 未使用的 noqa
+]
+# 明确不启用（防后续无意识扩张）：
+#   S 全量 —— 与 bandit SAST 重复且噪声大，只挑 S110 精确命中
+#   T 全量 —— 只启用 T20 子集
+
+[tool.ruff.lint.per-file-ignores]
+# T20/BLE001/S110：以下 6 个是可独立运行的 CLI 入口，其 stdout 就是用户界面，
+# 且宽捕后继续跑是其容错设计（脚本靠打印提示失败，不靠异常传播）。
+# 用 per-file-ignores 而非逐行 # noqa：豁免是**文件角色**属性，
+# 逐行 noqa 只会训练审阅者忽略 noqa。
+# （purge_log_secrets.py 为 Task 5 新增的一次性运维 CLI，与 check_imports.py 同属一类。）
+"pipeline.py" = ["T20", "BLE001", "S110", "E402"]
+"run_evaluation.py" = ["T20", "BLE001", "S110"]
+"agentic_rag_mvp.py" = ["T20", "BLE001", "S110"]
+"build_indices.py" = ["T20", "BLE001", "S110"]
+"scripts/check_imports.py" = ["T20", "BLE001", "S110"]   # stdout 是 CI 步骤的可见输出（ci.yml 冒烟步骤）
+"scripts/purge_log_secrets.py" = ["T20", "BLE001", "S110"]
+# 测试：用 except Exception 做容错断言、用 print 调试属正常实践；
+# 测试文件需先配好 sys.path 再导入项目模块，必须先有语句再 import（E402）。
+"tests/**" = ["T20", "BLE001", "S110", "E722", "E402"]
+
+# E402（模块级导入不在文件顶部）：以下文件**刻意**先执行副作用再导入 ——
+# server.py / worker.py 先 load_dotenv(override=True) 覆盖环境变量，再导入读取 env 的模块；
+# pipeline.py 先 sys.path.insert() 定位同仓库模块。
+# 这不是疏漏：改成顶部导入会改变运行时行为（env 还没加载就被读走），因此按文件豁免。
+"server.py" = ["E402"]
+"worker.py" = ["E402"]
+
+# ── Bandit SAST ─────────────────────────────────────────────────────────
+# 扫描范围排除测试与虚拟环境。豁免**不放这里** —— 放在 CI 调用点的注释里，
+# 因为审阅者是在 CI 日志里看到失败时去读 CI 文件，而不是翻 toml。
+# 每条豁免须在 docs/governance/sast-exemptions-2026-09-18.md 落档（含复查触发条件），
+# 沿用 docs/governance/dependency-audit-2026-09-17.md 的体例。
+[tool.bandit]
+exclude_dirs = ["tests", ".venv", "output", "uploads", "__pycache__"]
+# skips 保持为空：需要的豁免在 CI 里用 --skip 显式列出并附理由。
+skips = []
+

@@ -1,16 +1,27 @@
 """Graph data endpoint — returns aggregated KG for all indexed docs."""
 
-import json, os
+import json
+import os
 from collections import defaultdict
 from fastapi import APIRouter, HTTPException
+
+from logging_config import get_logger
+
+logger = get_logger(__name__)
 
 router = APIRouter()
 BASE = os.path.dirname(os.path.dirname(__file__))
 KG_DIR = os.path.join(BASE, "output", "kg")
 
 TYPE_COLORS = {
+    # Enterprise entity types (aligned with blueprint §2.4.3)
+    "project_metadata": "#3b82f6", "person_role": "#22c55e", "process_step": "#a855f7",
+    "metric": "#eab308", "milestone": "#f97316", "deliverable": "#ec4899",
+    "risk_item": "#ef4444", "regulation_ref": "#8b5cf6", "department": "#14b8a6",
+    "timeline_event": "#06b6d4",
+    # Legacy academic types (kept for backward compatibility)
     "paper_metadata": "#3b82f6", "section_header": "#22c55e", "model_component": "#a855f7",
-    "metric": "#eab308", "dataset": "#f97316", "method": "#ec4899",
+    "dataset": "#f97316", "method": "#ec4899",
     "definition": "#8b5cf6", "equation": "#14b8a6", "reference": "#94a3b8", "claim": "#ef4444",
     "task": "#06b6d4", "table": "#84cc16", "figure": "#f43f5e", "equation_parameter": "#8b5cf6",
 }
@@ -124,21 +135,25 @@ async def get_graph(document_id: str = "all"):
                 "source_doc_color": doc_color,
             })
             type_counts[n["entity_type"]] += 1
-            if grounded: grounded_count += 1
+            if grounded:
+                grounded_count += 1
 
         for e in ed.get("edges", []):
             edge_id_counter += 1
             from_id = node_id_map.get(e.get("source_node_id", e.get("from", "")))
             to_id = node_id_map.get(e.get("target_node_id", e.get("to", "")))
-            if from_id and to_id:
-                all_vis_edges.append({
-                    "id": f"e{edge_id_counter}",
-                    "from": from_id,
-                    "to": to_id,
-                    "relation": e.get("relation_type", e.get("relation", "connected")),
-                    "color": "rgba(148,163,184,0.12)",
-                    "width": 0.5,
-                })
+            if not from_id or not to_id:
+                logger.warning("graph_edge_missing_node", edge_id=e.get("edge_id", "unknown"),
+                               doc_id=doc.get("document_id", "unknown"))
+                continue
+            all_vis_edges.append({
+                "id": f"e{edge_id_counter}",
+                "from": from_id,
+                "to": to_id,
+                "relation": e.get("relation_type", e.get("relation", "connected")),
+                "color": "rgba(148,163,184,0.12)",
+                "width": 0.5,
+            })
 
     return {
         "nodes": all_vis_nodes,

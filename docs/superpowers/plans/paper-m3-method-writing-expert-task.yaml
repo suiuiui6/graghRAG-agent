@@ -1,0 +1,59 @@
+contract_version: "1.0"
+project_id: graphrag-paper-001
+paper_family: method-application
+stage_id: M3
+task_id: M3-WRITE-001
+expert_skill: sci-skills-manuscript-writing
+task_status: VERIFIED
+task_summary: >-
+  基于已通过的 M1/M2 和当前仓库能力，设计最小、可实现、可证伪的生产一致性
+  GraphRAG 证据损耗评测与治理方法合同；不撰写结果、不虚构创新。
+inputs:
+  - docs/superpowers/plans/paper-control-console.md
+  - docs/superpowers/plans/paper-m2-literature-ledger.md
+  - docs/superpowers/plans/paper-m2-method-comparison.md
+  - docs/superpowers/plans/paper-metric-contract.md
+  - docs/superpowers/plans/paper-annotation-protocol.md
+  - docs/superpowers/plans/paper-evidence-freeze-note.md
+  - docs/superpowers/plans/2026-06-17-graphrag-paper-standard-manuscript-v1.md
+expected_outputs:
+  - method_framework_text_version
+  - module_contracts_with_inputs_outputs_and_functions
+  - end_to_end_operation_flow
+  - improvement_map_against_M2_competitors
+  - resources_conditions_and_implementation_assumptions
+  - testable_claims_and_forbidden_claims
+  - exact_method_section_structure
+evidence_boundaries:
+  - 所有性能、统计、优势和效果均为 NOT_EXECUTED，禁止写成结果
+  - 候选研究空白保持 AI_INFERENCE，不使用首次、首创或填补空白等确定表述
+  - 方法必须复用生产主接口，不得以旧接口或独立原型替代生产一致性
+  - 不引入第三方 API、密钥、远程模型服务或未验证依赖
+acceptance_checks:
+  - 结构清楚且每个模块有单一明确功能
+  - 输入输出、记录字段、开关、预算与失败条件可复现
+  - 相对现有方法的改进点具体但不过度声称新颖性
+  - 与当前仓库能力和 M4 实施路径一致
+  - 返回完整 expert contract 1.0 且身份字段完全匹配
+known_missing_items:
+  - 当前没有统一 enabled_sources 或 ablation_flags
+  - claim-level 支持标注和自动判定尚未实现
+  - held-out 或跨文档评测集尚未冻结
+manual_operation_allowed: false
+optional_adapters_allowed:
+  - local-file-import
+stage_authority: sci-skills
+returned_contract_identity:
+  project_id: graphrag-paper-001
+  paper_family: method-application
+  stage_id: M3
+  task_id: M3-WRITE-001
+verified_outputs:
+  - method_framework_text_version
+  - module_contracts_with_inputs_outputs_and_functions
+  - end_to_end_operation_flow
+  - improvement_map_against_M2_competitors
+  - resources_conditions_and_implementation_assumptions
+  - testable_claims_and_forbidden_claims
+  - exact_method_section_structure
+

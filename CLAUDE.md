@@ -33,6 +33,7 @@
 - **Layer 2 集成拓扑**：`langextract/docs/bridge-pipeline-specification-v1.0.md`
 - **Layer 3 技术架构**：`langextract/docs/agentic-kg-rag-specification-v1.0.md`、`integration/Agentic-RAG-Architecture.md`
 - **Layer 4 三份蓝图**：`integration/multimodal-rag-prd-v1.0.md`、`integration/backend-api-architecture-v1.0.md`、`integration/frontend-system-design-v1.0.md`
+- **企业级演进蓝图**：`integration/enterprise-evolution-blueprint-v1.0.md` — 协作闭环 / 数据资产 / 生态集成 + Engine-Vue 对接方案
 
 ## 运行环境激活
 

@@ -1,0 +1,78 @@
+# Prometheus Alert Rules — GraphRAG Data Quality (§5.5)
+# enterprise-evolution-blueprint-v1.0 §5.9
+
+groups:
+  - name: rag_data_quality
+    rules:
+      - alert: LowGroundingRate
+        expr: rag_grounding_rate < 0.5
+        for: 1h
+        labels:
+          severity: warning
+        annotations:
+          summary: "Grounding rate dropped below 50%"
+          description: "Entity grounding rate is {{ $value }}. Less than 50% of extracted entities have grounding (page_idx + bbox) to source documents."
+
+      - alert: FeedbackRatioDrop
+        expr: rag_positive_feedback_ratio < 0.5
+        for: 24h
+        labels:
+          severity: critical
+        annotations:
+          summary: "Positive feedback ratio below 50% over 24h"
+          description: "User satisfaction has dropped to {{ $value }}. Review recent negative feedback clusters for common issues."
+
+      - alert: DataStaleness
+        expr: rag_data_freshness_days > 30
+        labels:
+          severity: warning
+        annotations:
+          summary: "No new documents ingested in {{ $value }} days"
+          description: "The knowledge base has not been updated in over 30 days. Data may be stale."
+
+      - alert: HighStaleEntityCount
+        expr: rag_stale_entities > 100
+        for: 1h
+        labels:
+          severity: warning
+        annotations:
+          summary: "{{ $value }} entities have not been retrieved in 30 days"
+          description: "A large number of KG entities are stale. Consider re-indexing or cleanup."
+
+      - alert: HighZeroResultRate
+        expr: rate(rag_zero_result_queries_total[1h]) > 0.15
+        for: 1h
+        labels:
+          severity: warning
+        annotations:
+          summary: "Zero-result query rate exceeds 15%"
+          description: "{{ $value }} of queries are returning 'not mentioned'. Knowledge coverage gap detected."
+
+  - name: rag_service_health
+    rules:
+      - alert: HighErrorRate
+        expr: rate(rag_errors_total[5m]) > 0.05
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "RAG error rate exceeds 5%"
+          description: "Service error rate is {{ $value }}. Check logs for error details."
+
+      - alert: HighLatency
+        expr: histogram_quantile(0.95, rate(rag_request_duration_seconds_bucket[5m])) > 30
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "P95 request latency exceeds 30 seconds"
+          description: "RAG queries are slow. P95 latency is {{ $value }}s. Check retrieval pipeline performance."
+
+      - alert: DiskUsageWarning
+        expr: (node_filesystem_size_bytes{mountpoint="/data"} - node_filesystem_free_bytes{mountpoint="/data"}) / node_filesystem_size_bytes{mountpoint="/data"} > 0.8
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Disk usage > 80% on /data"
+          description: "Disk usage is {{ $value | humanizePercentage }}. Consider cleanup or expanding storage."

@@ -1,6 +1,8 @@
 """Shared state between route modules — JSON-persisted document store."""
 
-import json, os, threading
+import json
+import os
+import threading
 
 _BASE = os.path.dirname(os.path.dirname(__file__))
 DOCS_JSON_PATH = os.path.join(_BASE, "output", "docs_store.json")

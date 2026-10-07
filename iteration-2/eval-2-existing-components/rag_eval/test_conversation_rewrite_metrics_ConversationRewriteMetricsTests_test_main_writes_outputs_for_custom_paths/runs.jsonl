@@ -1,0 +1,1 @@
+{"qid": "MT01", "session_id": "s1", "rewritten_query": "在W4S1场景下对应的弃电量是多少？", "rewrite_reason": "coreference_resolution", "final_answer": "在W4S1场景下，对应的弃电量为173.7 MWh/日。"}

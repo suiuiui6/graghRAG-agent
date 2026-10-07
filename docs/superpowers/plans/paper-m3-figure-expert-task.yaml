@@ -1,0 +1,51 @@
+contract_version: "1.0"
+project_id: graphrag-paper-001
+paper_family: method-application
+stage_id: M3
+task_id: M3-FIG-001
+expert_skill: sci-skills-scientific-figures
+task_status: VERIFIED
+task_summary: >-
+  为 M3 方法设计提出解释性图件的准确图位、信息边界和拆图方案，仅达到 PLAN_READY；
+  未获用户明确批准前不得渲染或插入论文。
+inputs:
+  - docs/superpowers/plans/paper-control-console.md
+  - docs/superpowers/plans/paper-m2-method-comparison.md
+  - docs/superpowers/plans/2026-06-17-graphrag-paper-standard-manuscript-v1.md
+expected_outputs:
+  - manuscript_figure_map
+  - option_1_single_multipanel_architecture
+  - option_2_overview_plus_module_figures
+  - panel_level_reader_questions_and_content_boundaries
+  - required_source_materials_and_rendering_route
+  - user_choice_record_as_AUTHOR_INPUT_NEEDED
+evidence_boundaries:
+  - 所有图均先分类为 EXPLANATORY 或 RESULT
+  - 本任务仅允许解释性图计划，不允许渲染任何图
+  - 图中不得出现未经验证的性能、数值、因果机制或实验结果
+  - 既有 DOCX 图仅可作为待审结构参考，不默认复用其结果、标签或视觉资产
+acceptance_checks:
+  - 给出准确正文位置、工作标题、沟通目标、包含与排除内容
+  - 至少提供单张多面板和全览加模块拆图两种方案及权衡
+  - 复杂方法未被强行压缩成拥挤单图
+  - readiness 保持 PLAN_READY 且 rendering/final approval 均为未批准
+  - 返回完整 expert contract 1.0 且身份字段完全匹配
+known_missing_items:
+  - 作者尚未选择图件拆分方案
+  - 未确定目标期刊版面限制
+manual_operation_allowed: false
+optional_adapters_allowed:
+  - local-file-import
+stage_authority: sci-skills
+returned_contract_identity:
+  project_id: graphrag-paper-001
+  paper_family: method-application
+  stage_id: M3
+  task_id: M3-FIG-001
+verified_outputs:
+  - manuscript_figure_map
+  - option_1_single_multipanel_architecture
+  - option_2_overview_plus_module_figures
+  - panel_level_reader_questions_and_content_boundaries
+  - required_source_materials_and_rendering_route
+  - user_choice_record_as_AUTHOR_INPUT_NEEDED

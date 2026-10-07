@@ -23,7 +23,6 @@ import os
 import sys
 import time
 from datetime import datetime
-from pathlib import Path
 
 from dotenv import load_dotenv
 
@@ -48,7 +47,7 @@ from bridge import (
 )
 from grounding import grounding_stats, resolve_grounding
 from kg_builder import build_knowledge_graph, print_kg_summary, serialize_kg
-from schema import KGNode, PositionMap
+from schema import PositionMap
 
 
 # ============================================================
@@ -61,7 +60,6 @@ def run_mineru(local_pdf: str | None = None, file_url: str | None = None) -> str
     Uses curl-based approach (Python requests blocked in this env).
     """
     import subprocess
-    import tempfile
 
     token = os.getenv("MINERU_API_TOKEN", "")
     base = os.getenv("MINERU_API_BASE_URL", "https://mineru.net/api/v4/extract/task")
@@ -175,7 +173,7 @@ def _upload_local(pdf_path: str) -> str:
 
 def run_bridge(mineru_output_dir: str) -> tuple[list[Document], dict, PositionMap, str]:
     """Convert MinerU output to LangExtract input."""
-    print(f"\n[Stage 2] Building format bridge...")
+    print("\n[Stage 2] Building format bridge...")
 
     # Locate files
     md_path = os.path.join(mineru_output_dir, "full.md")
@@ -247,7 +245,7 @@ def run_langextract(
     prompt_description: str,
 ) -> list:
     """Run LangExtract entity extraction."""
-    print(f"\n[Stage 3] Running LangExtract extraction...")
+    print("\n[Stage 3] Running LangExtract extraction...")
     print(f"  Documents: {len(documents)}")
     print(f"  Examples:  {examples_path}")
 
@@ -311,13 +309,13 @@ def run_grounding_and_kg(
     output_dir: str,
 ) -> tuple[str, str]:
     """Run grounding resolution and KG construction."""
-    print(f"\n[Stage 4] Resolving source grounding...")
+    print("\n[Stage 4] Resolving source grounding...")
     grounded = resolve_grounding(annotated_docs, position_map, document_offsets)
     stats = grounding_stats(grounded)
     print(f"  Total: {stats['total']}, Grounded: {stats['grounded']}, "
           f"Rate: {stats['grounding_rate']:.1%}")
 
-    print(f"\n[Stage 5] Building Knowledge Graph...")
+    print("\n[Stage 5] Building Knowledge Graph...")
     nodes, edges = build_knowledge_graph(grounded)
 
     metadata = {
@@ -337,18 +335,18 @@ def run_grounding_and_kg(
 # ============================================================
 
 DEFAULT_PROMPT = """\
-Extract structured entities from the academic paper text:
+Extract structured entities from the enterprise project document text:
 
-- paper_metadata: title, author names/affiliations, venue, date
-- section_header: section headings with hierarchy level (1-6)
-- model_component: named model parts (layers, mechanisms, modules, functions)
-- metric: quantitative results (score, percentage, measurement) with context
-- dataset: referenced datasets/benchmarks with task name
-- method: techniques, algorithms, training strategies
-- definition: explicitly defined terms, notations, or concepts
-- equation: important mathematical formulas in LaTeX
-- reference: citations with paper key and context
-- claim: key findings, observations, or conclusions
+- project_metadata: project id, name, type, phase, total budget
+- person_role: person name, role, department, contact info
+- process_step: step name, order, approver, deadline days, input/output docs
+- metric: quantitative indicators (name, value, unit, target, actual, deviation)
+- milestone: milestone name, planned date, actual date, status
+- deliverable: deliverable name, type, acceptance criteria, status
+- risk_item: risk description, level, probability, impact, mitigation measures
+- regulation_ref: regulation title, doc id, version, effective date, issuing dept
+- department: department name, parent dept, head person, responsibilities
+- timeline_event: event name, date, related entities
 
 Use exact text from the source for extraction_text. Do not paraphrase.
 Provide meaningful attributes for each entity type."""
@@ -402,7 +400,7 @@ def main():
     )
 
     print(f"\n{'=' * 60}")
-    print(f"  Pipeline Complete")
+    print("  Pipeline Complete")
     print(f"  Nodes: {nodes_path}")
     print(f"  Edges: {edges_path}")
     print(f"{'=' * 60}")
