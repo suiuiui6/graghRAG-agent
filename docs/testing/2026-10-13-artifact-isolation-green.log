@@ -1,0 +1,21 @@
+
+=================================== ERRORS ====================================
+__________ ERROR collecting tests/test_runtime_artifact_isolation.py __________
+backend\tests\test_runtime_artifact_isolation.py:7: in <module>
+    import index_registry
+backend\index_registry.py:20: in <module>
+    ARTIFACTS_DIR = Path(os.environ.get('GRAPHRAG_RUNTIME_ARTIFACTS_DIR')
+                         ^^
+E   NameError: name 'os' is not defined. Did you forget to import 'os'
+____________ ERROR collecting tests/test_parser_index_readiness.py ____________
+backend\tests\test_parser_index_readiness.py:14: in <module>
+    import index_registry as ir
+backend\index_registry.py:20: in <module>
+    ARTIFACTS_DIR = Path(os.environ.get('GRAPHRAG_RUNTIME_ARTIFACTS_DIR')
+                         ^^
+E   NameError: name 'os' is not defined. Did you forget to import 'os'
+=========================== short test summary info ===========================
+ERROR backend\tests\test_runtime_artifact_isolation.py - NameError: name 'os'...
+ERROR backend\tests\test_parser_index_readiness.py - NameError: name 'os' is ...
+!!!!!!!!!!!!!!!!!!! Interrupted: 2 errors during collection !!!!!!!!!!!!!!!!!!!
+2 errors in 1.47s

@@ -1,0 +1,82 @@
+{
+  "recorded_on": "2026-10-07",
+  "status": "READ_ONLY_CODE_AUDIT_NOT_RUNTIME_REPLAY",
+  "files_sha256": {
+    "backend/routes/rag_query.py": "0f4f6f9aa490bff77ec6a444638f02be310efe3cc43fb391371c9ac4d0e0635f",
+    "backend/models.py": "b599c0427134950432ae7e95052485ac7236976afa1b0adf58a16c1906f7143b",
+    "backend/retrieval.py": "7e1332a7bde6aff1d8d270397003567ccd72761f8a5b7fd25fd65851203f3e0b",
+    "backend/generator.py": "18a35058c95e89934b92d1c3a7229271fd2e5fca9d6ecb85abb9815cca7de9b1",
+    "backend/prompt_builder.py": "f6a62fe8529b8909e7a1c2a59f097d8659aea64020547f04087837bc2e529b7c",
+    "backend/config.py": "f0cf031aa0a8a3282199883f26a29816bf358d4a879a24085f313c3b9fb58e8c",
+    "backend/source_control.py": "b92d65ad4604207c0bdc65670197a3c63c37c668abacb8d6b38451d025001c25",
+    "backend/evidence_trace.py": "07cc6a3cce87c788a9639510a6540639f6b6d57e93f639b10a2593254b18bf65",
+    "backend/vector_store.py": "18d8fc6ff90823186034f5f10c876981a0da814bba5bb57c9299400eec0a6c82",
+    "backend/index_registry.py": "129fd58ffc584ae9f21cb4587e91c8b1cd8174b71c3948d672c197d0592ef066",
+    "backend/doc_processor.py": "a9fb7bc4d3c3a5fd64a0e568bc3b8f6dbe05f154098495d2ce7de3016cf91306",
+    "backend/conversation.py": "002365d260d315f3dca00416b709e3f11a84a069d99048d4d45e61f4f9737270",
+    "backend/embedding.py": "52b15ad92c396fa9f8b2d4d451ab255906feb330e56e7e3ff4db00c2859e780a",
+    "backend/uv.lock": "31caa7407226490b13e1853875eb1ebbe8f895980da39f2b19f58c79f11c14a3",
+    "docs/superpowers/plans/scope-pilot/gold.yaml": "e732d568715d2b750d3c9ced4afa88a31df66f2db65c869ff4c2536d8e05d5f2"
+  },
+  "predicate_checks": [
+    {
+      "qid": "D1-FIG",
+      "summary_metric_trigger": false,
+      "figure_inventory_trigger": true
+    },
+    {
+      "qid": "D1-COST",
+      "summary_metric_trigger": false,
+      "figure_inventory_trigger": false
+    },
+    {
+      "qid": "D1-LIMITS",
+      "summary_metric_trigger": false,
+      "figure_inventory_trigger": false
+    },
+    {
+      "qid": "D1-FUTURE",
+      "summary_metric_trigger": false,
+      "figure_inventory_trigger": false
+    },
+    {
+      "qid": "D2-ATTENTION",
+      "summary_metric_trigger": false,
+      "figure_inventory_trigger": false
+    },
+    {
+      "qid": "D2-DATA",
+      "summary_metric_trigger": false,
+      "figure_inventory_trigger": false
+    },
+    {
+      "qid": "D2-NONE",
+      "summary_metric_trigger": false,
+      "figure_inventory_trigger": false
+    },
+    {
+      "qid": "D3-TOOLS",
+      "summary_metric_trigger": false,
+      "figure_inventory_trigger": true
+    },
+    {
+      "qid": "D3-SUPERVISOR",
+      "summary_metric_trigger": false,
+      "figure_inventory_trigger": false
+    }
+  ],
+  "source_documents": {
+    "D1": {
+      "path": "backend/output/mineru/ingest_2/full.md",
+      "sha256": "f0e2b044ec0f8be55b1c00d9479830f6768a5da9970111a7db0353d59097a0d6"
+    },
+    "D2": {
+      "path": "backend/output/mineru/ingest_f/full.md",
+      "sha256": "ab7cdd99e8cd85ddd61e3d65e4e747685a25a62d22f68bed3e2d79d015e90623"
+    },
+    "D3": {
+      "path": "integration/Agentic-RAG-Architecture.md",
+      "sha256": "d0c64333bf10c761fef29bc1d9e002656f3968e720e176e92b8a18eb4a1e8e72"
+    }
+  }
+}

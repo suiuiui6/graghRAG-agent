@@ -1,0 +1,132 @@
+{
+  "status": "PASS_METADATA_AUDIT_NOT_HOLDOUT_CLEARANCE",
+  "guarded_files_rehashed": 2738,
+  "candidate_copies_rehashed": 33,
+  "source_drift": [],
+  "candidate_rows": [
+    {
+      "candidate_id": "C-0000e756b3ec",
+      "time_compatible_source_joins": 0,
+      "too_early_source_joins": 0,
+      "examples": []
+    },
+    {
+      "candidate_id": "C-1163f36560f3",
+      "time_compatible_source_joins": 3,
+      "too_early_source_joins": 33,
+      "examples": [
+        {
+          "path": "backend\\output\\conversations\\13192e4a87a2.json",
+          "pointer": "/turns/0",
+          "question": "请总结以下安全规定",
+          "created_at": "2026-07-08T14:29:36.630079+00:00",
+          "source_id": "c00040",
+          "source_file": "零容忍管理规定.docx",
+          "embedding_created_at_utc_assumed": "2026-07-08 13:34:26",
+          "historical_hash_binding": "UNKNOWN"
+        },
+        {
+          "path": "backend\\output\\conversations\\hse_1783519814764_4lxtsz.json",
+          "pointer": "/turns/1",
+          "question": "五个零容忍的具体内容是什么？",
+          "created_at": "2026-07-08T14:10:34.177936+00:00",
+          "source_id": "c00051",
+          "source_file": "零容忍管理规定.docx",
+          "embedding_created_at_utc_assumed": "2026-07-08 13:34:26",
+          "historical_hash_binding": "UNKNOWN"
+        },
+        {
+          "path": "backend\\output\\conversations\\hse_1783519909806_trcgm8.json",
+          "pointer": "/turns/0",
+          "question": "较大安全事故隐患如何判定？",
+          "created_at": "2026-07-08T14:12:02.484315+00:00",
+          "source_id": "c00049",
+          "source_file": "零容忍管理规定.docx",
+          "embedding_created_at_utc_assumed": "2026-07-08 13:34:26",
+          "historical_hash_binding": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "candidate_id": "C-3c8382414415",
+      "time_compatible_source_joins": 14,
+      "too_early_source_joins": 228,
+      "examples": [
+        {
+          "path": "backend\\output\\conversations\\13192e4a87a2.json",
+          "pointer": "/turns/0",
+          "question": "请总结以下安全规定",
+          "created_at": "2026-07-08T14:29:36.630079+00:00",
+          "source_id": "c00154",
+          "source_file": "01-中华人民共和国危险化学品安全法20251227--2026年5月1日实施.docx",
+          "embedding_created_at_utc_assumed": "2026-07-08 13:35:07",
+          "historical_hash_binding": "UNKNOWN"
+        },
+        {
+          "path": "backend\\output\\conversations\\246dd3ae1e04.json",
+          "pointer": "/turns/0",
+          "question": "安全生产责任制是什么",
+          "created_at": "2026-07-08T14:14:29.764357+00:00",
+          "source_id": "c00155",
+          "source_file": "01-中华人民共和国危险化学品安全法20251227--2026年5月1日实施.docx",
+          "embedding_created_at_utc_assumed": "2026-07-08 13:35:07",
+          "historical_hash_binding": "UNKNOWN"
+        },
+        {
+          "path": "backend\\output\\conversations\\3b33f91ed2ec.json",
+          "pointer": "/turns/0",
+          "question": "安全生产责任制是什么",
+          "created_at": "2026-07-09T00:00:36.601862+00:00",
+          "source_id": "c00155",
+          "source_file": "01-中华人民共和国危险化学品安全法20251227--2026年5月1日实施.docx",
+          "embedding_created_at_utc_assumed": "2026-07-08 13:35:07",
+          "historical_hash_binding": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "candidate_id": "C-4c5ea4fb6dd1",
+      "time_compatible_source_joins": 0,
+      "too_early_source_joins": 0,
+      "examples": []
+    },
+    {
+      "candidate_id": "C-67e5e6baf375",
+      "time_compatible_source_joins": 1,
+      "too_early_source_joins": 1,
+      "examples": [
+        {
+          "path": "backend\\output\\conversations\\54043bf7ecdd.json",
+          "pointer": "/turns/0",
+          "question": "请用一段简洁的中文总结以下内容要点：\n\n总结安全要点",
+          "created_at": "2026-07-08T14:37:07.589592+00:00",
+          "source_id": "c01141",
+          "source_file": "GBT 50484-2019石油化工建设工程施工安全技术标准(1).docx",
+          "embedding_created_at_utc_assumed": "2026-07-08 13:35:19",
+          "historical_hash_binding": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "candidate_id": "C-7ce1735d7f94",
+      "time_compatible_source_joins": 0,
+      "too_early_source_joins": 0,
+      "examples": []
+    },
+    {
+      "candidate_id": "C-b5e9ae1fdbf9",
+      "time_compatible_source_joins": 0,
+      "too_early_source_joins": 0,
+      "examples": []
+    },
+    {
+      "candidate_id": "C-c03d4a040075",
+      "time_compatible_source_joins": 0,
+      "too_early_source_joins": 0,
+      "examples": []
+    }
+  ],
+  "admitted_H1": [],
+  "admitted_H2": [],
+  "temporal_check_limitation": "SQLite naive CURRENT_TIMESTAMP interpreted UTC; compatible time does not prove metadata was never updated or IDs never reused."
+}

@@ -1,0 +1,33 @@
+contract_version: "1.0"
+expert_skill: sci-skills-statistical-reporting
+project_id: graphrag-paper-001
+paper_family: M
+stage_id: M2
+task_id: HOLDOUT-PROTOCOL-20261012-RECHECK
+task_status: COMPLETE
+inputs_reviewed:
+  - docs/contracts/2026-10-12-heldout-scope-qa-validation.md，定点§3及§7.3
+  - 统计报告技能及核心契约、证据、权限与playbook
+outputs:
+  - 首轮完整性裁决问题CLOSED：六行决策表区分内容完整、输入支持及穷尽承诺。
+  - 首轮评分盲化问题CLOSED：匿名答案锁分后审计输入链，仲裁及揭盲。
+  - 本次定点范围内新增严重/主要/中等/轻微问题均为0。
+evidence_status:
+  - VERIFIED_USER_MATERIAL：直接读取当前协议。
+  - AI_INFERENCE：两处修订的可执行性及问题关闭判断。
+  - NOT_EXECUTED：采集、生成、实际评分或分析。
+assumptions:
+  - 实际双人评分、覆盖核对与开发裁决训练仍须执行前落实。
+  - 无承诺且实际列全可成功，但完整性证明NOT_ESTABLISHED须另报。
+author_input_needed: []
+manual_actions: []
+quality_checks:
+  - 评分先锁内容属性、后输入审计与揭盲。
+  - 身份暴露及单人操作降级探索。
+  - 未闭合Gold不计方法失败。
+  - 仅两处定点复核，不冒充全协议重审或执行。
+conflicts: []
+conflict_resolution_status: NOT_REQUIRED
+merge_permission: orchestrator_only
+recommended_next_action: 编排者核验本合同，保持M2开放，登记后续样本与预算。
+stage_acceptance_recommendation: NOT_ASSESSED

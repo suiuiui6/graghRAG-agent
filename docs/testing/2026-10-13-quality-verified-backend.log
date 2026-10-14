@@ -1,0 +1,296 @@
+........................................................................ [  6%]
+........................................................................ [ 13%]
+........................................................................ [ 20%]
+........................................................................ [ 27%]
+........................................................................ [ 33%]
+..................................F..................................... [ 40%]
+........................................................................ [ 47%]
+........................................................................ [ 54%]
+........................................................................ [ 60%]
+........................................................................ [ 67%]
+.EEEEEEEE............................................................... [ 74%]
+........................................................................ [ 81%]
+........................................................................ [ 87%]
+........................................................................ [ 94%]
+..........................................................               [100%]
+=================================== ERRORS ====================================
+_ ERROR at setup of test_legacy_search_filters_grounded_type_properties_and_limit _
+backend\tests\test_query_quality_behaviors.py:338: in legacy_kg
+    module = runpy.run_path(str(source), run_name="offline_legacy_demo")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen runpy>:287: in run_path
+    ???
+<frozen runpy>:98: in _run_module_code
+    ???
+<frozen runpy>:88: in _run_code
+    ???
+backend\agentic_rag_mvp.py:346: in <module>
+    print(f"    - {t.name}: {t.description.split(chr(10))[0][:80]}...")
+                   ^^^^^^
+E   AttributeError: 'ToolWrapper' object has no attribute 'name'
+---------------------------- Captured stdout setup ----------------------------
+============================================================
+  Agentic-RAG MVP: KG-based QA
+  Model: deepseek-chat via https://api.deepseek.com
+  2026-10-13 08:15:40
+============================================================
+
+[1] Loading Knowledge Graph...
+  Nodes: 4 (grounded: 3)
+  Edges: 3 (grounded: 2)
+  Types: 4
+    project_metadata             1
+    metric                       1
+    milestone                    1
+    risk_item                    1
+
+[2] Agent created with 4 tools:
+_ ERROR at setup of test_legacy_neighbors_use_real_graph_hops_relations_and_grounding _
+backend\tests\test_query_quality_behaviors.py:338: in legacy_kg
+    module = runpy.run_path(str(source), run_name="offline_legacy_demo")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen runpy>:287: in run_path
+    ???
+<frozen runpy>:98: in _run_module_code
+    ???
+<frozen runpy>:88: in _run_code
+    ???
+backend\agentic_rag_mvp.py:346: in <module>
+    print(f"    - {t.name}: {t.description.split(chr(10))[0][:80]}...")
+                   ^^^^^^
+E   AttributeError: 'ToolWrapper' object has no attribute 'name'
+---------------------------- Captured stdout setup ----------------------------
+============================================================
+  Agentic-RAG MVP: KG-based QA
+  Model: deepseek-chat via https://api.deepseek.com
+  2026-10-13 08:15:40
+============================================================
+
+[1] Loading Knowledge Graph...
+  Nodes: 4 (grounded: 3)
+  Edges: 3 (grounded: 2)
+  Types: 4
+    project_metadata             1
+    metric                       1
+    milestone                    1
+    risk_item                    1
+
+[2] Agent created with 4 tools:
+_ ERROR at setup of test_legacy_entity_details_include_only_grounded_relationships _
+backend\tests\test_query_quality_behaviors.py:338: in legacy_kg
+    module = runpy.run_path(str(source), run_name="offline_legacy_demo")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen runpy>:287: in run_path
+    ???
+<frozen runpy>:98: in _run_module_code
+    ???
+<frozen runpy>:88: in _run_code
+    ???
+backend\agentic_rag_mvp.py:346: in <module>
+    print(f"    - {t.name}: {t.description.split(chr(10))[0][:80]}...")
+                   ^^^^^^
+E   AttributeError: 'ToolWrapper' object has no attribute 'name'
+---------------------------- Captured stdout setup ----------------------------
+============================================================
+  Agentic-RAG MVP: KG-based QA
+  Model: deepseek-chat via https://api.deepseek.com
+  2026-10-13 08:15:40
+============================================================
+
+[1] Loading Knowledge Graph...
+  Nodes: 4 (grounded: 3)
+  Edges: 3 (grounded: 2)
+  Types: 4
+    project_metadata             1
+    metric                       1
+    milestone                    1
+    risk_item                    1
+
+[2] Agent created with 4 tools:
+_ ERROR at setup of test_legacy_statistics_distinguish_grounded_subgraph_from_full_graph _
+backend\tests\test_query_quality_behaviors.py:338: in legacy_kg
+    module = runpy.run_path(str(source), run_name="offline_legacy_demo")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen runpy>:287: in run_path
+    ???
+<frozen runpy>:98: in _run_module_code
+    ???
+<frozen runpy>:88: in _run_code
+    ???
+backend\agentic_rag_mvp.py:346: in <module>
+    print(f"    - {t.name}: {t.description.split(chr(10))[0][:80]}...")
+                   ^^^^^^
+E   AttributeError: 'ToolWrapper' object has no attribute 'name'
+---------------------------- Captured stdout setup ----------------------------
+============================================================
+  Agentic-RAG MVP: KG-based QA
+  Model: deepseek-chat via https://api.deepseek.com
+  2026-10-13 08:15:40
+============================================================
+
+[1] Loading Knowledge Graph...
+  Nodes: 4 (grounded: 3)
+  Edges: 3 (grounded: 2)
+  Types: 4
+    project_metadata             1
+    metric                       1
+    milestone                    1
+    risk_item                    1
+
+[2] Agent created with 4 tools:
+_ ERROR at setup of test_legacy_query_display_extracts_final_answer_and_handles_empty_failure[content] _
+backend\tests\test_query_quality_behaviors.py:338: in legacy_kg
+    module = runpy.run_path(str(source), run_name="offline_legacy_demo")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen runpy>:287: in run_path
+    ???
+<frozen runpy>:98: in _run_module_code
+    ???
+<frozen runpy>:88: in _run_code
+    ???
+backend\agentic_rag_mvp.py:346: in <module>
+    print(f"    - {t.name}: {t.description.split(chr(10))[0][:80]}...")
+                   ^^^^^^
+E   AttributeError: 'ToolWrapper' object has no attribute 'name'
+---------------------------- Captured stdout setup ----------------------------
+============================================================
+  Agentic-RAG MVP: KG-based QA
+  Model: deepseek-chat via https://api.deepseek.com
+  2026-10-13 08:15:40
+============================================================
+
+[1] Loading Knowledge Graph...
+  Nodes: 4 (grounded: 3)
+  Edges: 3 (grounded: 2)
+  Types: 4
+    project_metadata             1
+    metric                       1
+    milestone                    1
+    risk_item                    1
+
+[2] Agent created with 4 tools:
+_ ERROR at setup of test_legacy_query_display_extracts_final_answer_and_handles_empty_failure[string] _
+backend\tests\test_query_quality_behaviors.py:338: in legacy_kg
+    module = runpy.run_path(str(source), run_name="offline_legacy_demo")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen runpy>:287: in run_path
+    ???
+<frozen runpy>:98: in _run_module_code
+    ???
+<frozen runpy>:88: in _run_code
+    ???
+backend\agentic_rag_mvp.py:346: in <module>
+    print(f"    - {t.name}: {t.description.split(chr(10))[0][:80]}...")
+                   ^^^^^^
+E   AttributeError: 'ToolWrapper' object has no attribute 'name'
+---------------------------- Captured stdout setup ----------------------------
+============================================================
+  Agentic-RAG MVP: KG-based QA
+  Model: deepseek-chat via https://api.deepseek.com
+  2026-10-13 08:15:40
+============================================================
+
+[1] Loading Knowledge Graph...
+  Nodes: 4 (grounded: 3)
+  Edges: 3 (grounded: 2)
+  Types: 4
+    project_metadata             1
+    metric                       1
+    milestone                    1
+    risk_item                    1
+
+[2] Agent created with 4 tools:
+_ ERROR at setup of test_legacy_query_display_extracts_final_answer_and_handles_empty_failure[empty] _
+backend\tests\test_query_quality_behaviors.py:338: in legacy_kg
+    module = runpy.run_path(str(source), run_name="offline_legacy_demo")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen runpy>:287: in run_path
+    ???
+<frozen runpy>:98: in _run_module_code
+    ???
+<frozen runpy>:88: in _run_code
+    ???
+backend\agentic_rag_mvp.py:346: in <module>
+    print(f"    - {t.name}: {t.description.split(chr(10))[0][:80]}...")
+                   ^^^^^^
+E   AttributeError: 'ToolWrapper' object has no attribute 'name'
+---------------------------- Captured stdout setup ----------------------------
+============================================================
+  Agentic-RAG MVP: KG-based QA
+  Model: deepseek-chat via https://api.deepseek.com
+  2026-10-13 08:15:40
+============================================================
+
+[1] Loading Knowledge Graph...
+  Nodes: 4 (grounded: 3)
+  Edges: 3 (grounded: 2)
+  Types: 4
+    project_metadata             1
+    metric                       1
+    milestone                    1
+    risk_item                    1
+
+[2] Agent created with 4 tools:
+_ ERROR at setup of test_legacy_query_display_extracts_final_answer_and_handles_empty_failure[error] _
+backend\tests\test_query_quality_behaviors.py:338: in legacy_kg
+    module = runpy.run_path(str(source), run_name="offline_legacy_demo")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen runpy>:287: in run_path
+    ???
+<frozen runpy>:98: in _run_module_code
+    ???
+<frozen runpy>:88: in _run_code
+    ???
+backend\agentic_rag_mvp.py:346: in <module>
+    print(f"    - {t.name}: {t.description.split(chr(10))[0][:80]}...")
+                   ^^^^^^
+E   AttributeError: 'ToolWrapper' object has no attribute 'name'
+---------------------------- Captured stdout setup ----------------------------
+============================================================
+  Agentic-RAG MVP: KG-based QA
+  Model: deepseek-chat via https://api.deepseek.com
+  2026-10-13 08:15:40
+============================================================
+
+[1] Loading Knowledge Graph...
+  Nodes: 4 (grounded: 3)
+  Edges: 3 (grounded: 2)
+  Types: 4
+    project_metadata             1
+    metric                       1
+    milestone                    1
+    risk_item                    1
+
+[2] Agent created with 4 tools:
+================================== FAILURES ===================================
+____________________ test_b0_preparation_is_not_execution _____________________
+backend\tests\test_local_scope_v2.py:31: in test_b0_preparation_is_not_execution
+    assert report['production_integrity']['all_match_freeze']
+E   assert False
+============================== warnings summary ===============================
+.tmp\backend-quality-venv-20261012\Lib\site-packages\starlette\testclient.py:53
+  D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\starlette\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]
+
+tests/test_error_handling_policy.py::test_no_bare_except_outside_tests
+tests/test_supply_chain.py::test_code_imports_are_declared
+tests/test_supply_chain.py::test_optional_jieba_is_guarded_and_falls_back_when_absent
+  <unknown>:2: SyntaxWarning: invalid escape sequence '\g'
+
+tests/test_query_quality_behaviors.py: 8 warnings
+tests/test_supply_chain.py: 2 warnings
+  D:\graghRAG-agent\backend\agentic_rag_mvp.py:2: SyntaxWarning: invalid escape sequence '\g'
+    """
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED backend\tests\test_local_scope_v2.py::test_b0_preparation_is_not_execution
+ERROR backend\tests\test_query_quality_behaviors.py::test_legacy_search_filters_grounded_type_properties_and_limit
+ERROR backend\tests\test_query_quality_behaviors.py::test_legacy_neighbors_use_real_graph_hops_relations_and_grounding
+ERROR backend\tests\test_query_quality_behaviors.py::test_legacy_entity_details_include_only_grounded_relationships
+ERROR backend\tests\test_query_quality_behaviors.py::test_legacy_statistics_distinguish_grounded_subgraph_from_full_graph
+ERROR backend\tests\test_query_quality_behaviors.py::test_legacy_query_display_extracts_final_answer_and_handles_empty_failure[content]
+ERROR backend\tests\test_query_quality_behaviors.py::test_legacy_query_display_extracts_final_answer_and_handles_empty_failure[string]
+ERROR backend\tests\test_query_quality_behaviors.py::test_legacy_query_display_extracts_final_answer_and_handles_empty_failure[empty]
+ERROR backend\tests\test_query_quality_behaviors.py::test_legacy_query_display_extracts_final_answer_and_handles_empty_failure[error]
+1 failed, 1057 passed, 14 warnings, 8 errors in 71.19s (0:01:11)

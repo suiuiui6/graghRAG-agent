@@ -1,0 +1,101 @@
+contract_version: "1.0"
+execution_owner: main_agent_using_independent_expert_skills
+delegated_agents: false
+recorded_on: 2026-10-07
+tasks:
+  - contract_version: "1.0"
+    project_id: graphrag-paper-001
+    paper_family: method-application
+    stage_id: M2
+    task_id: M2-RECENT-LIT-002
+    expert_skill: sci-skills-literature-search
+    task_summary: 核验近期相关期刊身份和更新竞品，复审原新颖性判断
+    inputs:
+      - docs/superpowers/plans/paper-m2-literature-ledger.md
+      - docs/superpowers/plans/paper-m2-method-comparison.md
+      - author_request_recent_related_journal_limitations
+    expected_outputs: [journal_and_preprint_inventory, source_locators, overlap_matrix, search_boundaries]
+    evidence_boundaries: [official_primary_sources, no_abstract_as_full_text, no_first_claim, no_api_or_credentials]
+    acceptance_checks: [venue_and_version_separated, relevance_explicit, later_work_checked, missing_coverage_disclosed]
+    known_missing_items: [direct_conflict_calibration_competitors, comprehensive_correction_and_latest_version_audit]
+    manual_operation_allowed: false
+    optional_adapters_allowed: [local-file-import]
+    stage_authority: sci-skills
+  - contract_version: "1.0"
+    project_id: graphrag-paper-001
+    paper_family: method-application
+    stage_id: M2
+    task_id: M2-RECENT-READ-002
+    expert_skill: sci-skills-paper-deep-reading
+    task_summary: 有限多篇主文精读，区分作者局限、后续进展与研究假设
+    inputs: [J1_TACL_main_text, J2_Nature_Communications_main_text, J3_PMC_author_manuscript, P1_to_P4_arxiv_versions]
+    expected_outputs: [author_limitation_matrix, method_and_experiment_boundary_notes, falsification_requirements]
+    evidence_boundaries: [source_fact_separate_from_ai_analysis, no_supplement_review_claim, no_new_method_implementation]
+    acceptance_checks: [section_or_page_locators, domain_boundary, overlap_not_overstated, hypothesis_not_novelty]
+    known_missing_items: [conflict_calibration_full_text_landscape, repository_conflict_failure_evidence]
+    manual_operation_allowed: false
+    optional_adapters_allowed: [local-file-import]
+    stage_authority: sci-skills
+results:
+  - contract_version: "1.0"
+    expert_skill: sci-skills-literature-search
+    project_id: graphrag-paper-001
+    paper_family: method-application
+    stage_id: M2
+    task_id: M2-RECENT-LIT-002
+    task_status: PARTIAL
+    inputs_reviewed: [prior_M2_ledger, prior_method_comparison, official_journal_and_arxiv_pages]
+    outputs: [docs/superpowers/plans/paper-recent-journal-limitations-review.md]
+    evidence_status:
+      - label: VERIFIED_SOURCE
+        scope: J1_J2_J3_identity_and_declared_P1_P4_versions
+        locator: report_sections_2_3_5
+      - label: AI_INFERENCE
+        scope: overlap_and_insufficient_novelty
+      - label: PENDING_VERIFICATION
+        scope: direct_conflict_calibration_landscape_and_comprehensive_version_audit
+    assumptions: [representative_search_not_systematic_review]
+    author_input_needed: []
+    manual_actions: []
+    quality_checks: [periodicals_not_preprints, source_depth_declared, adjacent_domain_flagged, query_and_access_limits_disclosed]
+    conflicts: []
+    conflict_resolution_status: NOT_REQUIRED
+    merge_permission: orchestrator_only
+    recommended_next_action: direct_conflict_calibration_competitor_review
+    stage_acceptance_recommendation: REPAIR
+  - contract_version: "1.0"
+    expert_skill: sci-skills-paper-deep-reading
+    project_id: graphrag-paper-001
+    paper_family: method-application
+    stage_id: M2
+    task_id: M2-RECENT-READ-002
+    task_status: PARTIAL
+    inputs_reviewed: [J1_main_text_pages_1_13, J2_official_main_text, J3_PMC_author_main_text, P1_P4_declared_sections]
+    outputs: [docs/superpowers/plans/paper-recent-journal-limitations-review.md]
+    evidence_status:
+      - label: VERIFIED_SOURCE
+        scope: J1_conclusion_page_639_J2_limitations_J3_discussion
+        locator: report_sections_3_4
+      - label: AI_INFERENCE
+        scope: overlap_and_repository_fit
+      - label: PENDING_VERIFICATION
+        scope: proposed_conflict_calibration_gap
+      - label: NOT_EXECUTED
+        scope: new_method_experiments_and_competitor_reproduction
+    assumptions: [bounded_limitation_review_not_complete_supplement_audit]
+    author_input_needed: []
+    manual_actions: []
+    quality_checks: [facts_not_inferred_limits, provenance_not_entailment, no_performance_copying, candidate_falsifiable]
+    conflicts: []
+    conflict_resolution_status: NOT_REQUIRED
+    merge_permission: orchestrator_only
+    recommended_next_action: direct_conflict_calibration_competitor_review
+    stage_acceptance_recommendation: REPAIR
+orchestrator_review:
+  reviewed_on: 2026-10-07
+  identity_and_required_fields: VERIFIED
+  result_scope: verified_bounded_artifacts_not_verified_novelty
+  stage_decision: M2_REOPENED_PARTIAL
+  downstream_assets: PROVISIONAL_RETAINED
+  engineering_P1: RETAIN_EXISTING_VERIFICATION_RECORD_NOT_RERUN
+  next_action: direct_conflict_calibration_competitor_review

@@ -1,0 +1,144 @@
+plan_version: 1.1
+status: BOUNDED_TEXT_PILOT_PASS_DEVELOPMENT_GOLD_V1
+activation_gate:
+  data_sufficiency: INSUFFICIENT
+  critical_gap: 现有8份同域企业安全材料可启动开发，但缺许可可核验的公开制造技术手册及跨结构开发材料；文件数量本身不是不足判据。
+  cleaning_or_derivation_can_repair: false
+  web_evidence_methodologically_appropriate: true
+  acquisition_activated: true
+crawl_gate:
+  crawl_necessity: BLOCKED
+  existing_data_checked: true
+  official_download_checked: true
+  open_repository_checked: true
+  paid_licensed_source_checked: false
+  authorized_export_checked: false
+  rejection_reasons: {}
+  permission_status: 使用官方文档许可；逐文件第三方内容待核
+  justification: 官方手册和技术报告可补足，不需要爬虫；未检查付费与登录导出，不升级采集路线。
+research_link:
+  research_question: 范围受限的集合问答中，自动范围读取、全扫描聚合及生产检索的范围选择、条目属性完整性与证据支持表现如何？
+  intended_inference: 开发校准与简单基线诊断；不从开发集估计留出泛化或机器人控制能力。
+  unit_of_analysis: 原始文档/同源手册家族；章节为任务单元，不冒作独立来源。
+  constructs:
+    - 范围选择
+    - 集合条目与必需属性完整性
+    - 实际输入支持
+  observable_signals:
+    - 章节边界及同名小节
+    - 条目/条件/参数的枚举和表格
+    - 主张到证据区间绑定
+scope:
+  population: 与制造系统、机床配置、机器人性能及工业部署相关的官方完整技术文档。
+  time_range: 固定版本，出版年不限；检索核查截至2026-10-12。
+  geography: 中文既有企业材料加英文国际公开文档；不代表制造行业总体。
+  languages:
+    - zh
+    - en
+  inclusion_rules:
+    - 官方完整正文可访问
+    - 明确来源与版本
+    - 有自然范围及多条目/属性结构
+    - 研究使用权可核验
+  exclusion_rules:
+    - 只有QA片段且无法取得完整源文档
+    - 未澄清原手册权利
+    - 以章节/译本/汇编重复扩充独立文档数
+    - 仅靠现有短答案宣称集合Gold穷尽
+  sampling_rule: 先官方许可与结构筛选；按家族/文档记录。开发中读到的正文及其近重复均登记为development；不按模型失败率选文档。
+  stopping_rule: 先3个页面或少量PDF页试采并审核字段与权利；通过后另冻结完整开发清单；不自动扩采。
+  expected_volume: 第一批6份NIST报告候选加1个LinuxCNC固定版本手册家族；与既有8份结合。数量不是功效保证；尚未落盘/去近重复/准入。
+source_options:
+  - name: LinuxCNC官方文档
+    rank: 1
+    role: 主开发技术手册
+    url: https://linuxcnc.org/docs/2.9/html/
+    license: GNU FDL 1.1 or later；官方文档许可页核实
+  - name: NIST制造技术报告
+    rank: 1
+    role: 主开发域扩展
+    url: https://www.nist.gov/nist-research-library/nist-series-publications
+    license: 官方员工著作政策已查；逐报告第三方内容待核
+  - name: TechManualQA-700
+    rank: 2
+    role: 问答与标注参考，原手册另核
+    url: https://zenodo.org/records/17410809
+    license: 数据声明CC BY4.0；不覆盖原厂家手册
+  - name: Industrial-Instruction
+    rank: 3
+    role: 工业QA片段辅助
+    url: https://huggingface.co/datasets/Parssky/industrial-instruction-dataset
+    license: CC BY-NC4.0，官方数据卡同时要求遵守原始文档条款；不推导原厂家正文再分发权。
+selected_source:
+  name: LinuxCNC官方固定版本手册（NIST报告为补充候选）
+  official_url: https://linuxcnc.org/docs/2.9/html/
+  source_family: 机床控制技术手册；同包章节/语言/版本按近重复家族归组
+  access_route: 官方普通网页及PDF链接，不用外部接口或爬虫
+  access_status: free
+  price_model: 公开普通页面读取无购买步骤；不是付费数据授权
+  price_verified_on: '2026-10-12'
+  license: GNU Free Documentation License 1.1 or later; no invariant sections/front/back-cover
+    texts
+  research_use_rights: 官方许可允许复制/分发/修改，保留署名与许可；代码例子另按其许可。NIST逐报告先核第三方例外。
+  export_limits: 先试采，不批量；当前未保存原始文档。
+  free_alternative: NIST Technical Series员工著作，逐文核验
+  selection_reason: 完整正文及章节结构公开，含重复报错列表、参数条件与跨章节引用，贴合三臂验证。
+output:
+  format: json+yaml+raw HTML/PDF after pilot
+  record_key: source_id + version + source_sha256
+  content_fields:
+    - document_title
+    - section_path
+    - source_text_raw_after_permission
+    - page_or_anchor
+    - question_type_candidate
+  provenance_fields:
+    - source_name
+    - source_url_or_record_id
+    - collected_at
+    - query_or_filter
+    - page_or_cursor
+    - raw_record_reference
+    - source_sha256
+    - license_url
+    - source_family_id
+    - known_exposure
+    - split_role
+compliance:
+  official_documentation_checked: true
+  terms_checked: true
+  robots_checked_if_crawling: false
+  privacy_reviewed: true
+  ethics_reviewed: true
+  copyright_reviewed: true
+  unresolved_items:
+    - 逐份NIST报告的第三方著作/图表例外
+    - 原始字节尚未保存/hash冻结
+    - TechManualQA厂家手册使用权不能由数据license推出
+pilot:
+  target_size: 3个官方页面或1–3页PDF的小样本；先验证元数据/结构/许可，正文保存后另审解析
+  status: pass_bounded_text_regions
+  critical_fields_present: true
+  parsing_accuracy_checked: true
+  missingness_summary: 2来源原件及许可已冻结；目标文字区域版面/解析/独立AI复核通过；图示和全17页视觉未核
+  duplicate_summary: LinuxCNC章节/合订本/中英版重叠，未做正文近重复处理
+  bias_notes:
+    - 英语技术文档与中文规章混合，语言及文体可能混杂
+    - 官方公开文档不代表真实企业维修日志
+  decision: PASS_FOR_SIX_TEXT_DEVELOPMENT_PROBES_ONLY
+full_collection:
+  status: limited_two_sources_no_expansion
+  raw_files:
+    - pilot/raw/ini-homing.html
+    - pilot/raw/NIST.IR.8091.pdf
+    - pilot/raw/gpld-copyright.html
+  data_dictionary: pilot/validated/data-dictionary.md
+  collection_log: pilot/raw/download-manifest.json
+  final_record_count: 2
+  known_failures:
+    - browser/node failed to write kernel assets (os error 3)
+    - PDF screenshot URL/ref attempts failed; cache miss
+post_collection_review:
+  user_decision: 用户明确授权开发、原文/解析核验与确认答案；协调者接受AI复核开发v1，不当作人工逐项Gold
+  requested_changes: []
+  cleaning_handoff: AUTHORIZED_AND_TARGET_REGION_CHECKS_PASS

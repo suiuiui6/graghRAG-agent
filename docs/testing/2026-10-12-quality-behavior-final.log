@@ -1,0 +1,17 @@
+....................................................................     [100%]
+============================== warnings summary ===============================
+backend\.venv\Lib\site-packages\_pytest\config\__init__.py:1434
+  D:\graghRAG-agent\backend\.venv\Lib\site-packages\_pytest\config\__init__.py:1434: PytestConfigWarning: Unknown config option: timeout
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+tests/test_supply_chain.py::test_code_imports_are_declared
+tests/test_supply_chain.py::test_known_unresolved_entries_are_load_bearing
+  D:\graghRAG-agent\backend\agentic_rag_mvp.py:2: SyntaxWarning: invalid escape sequence '\g'
+    """
+
+tests/test_error_handling_policy.py::test_no_bare_except_outside_tests
+  <unknown>:2: SyntaxWarning: invalid escape sequence '\g'
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+68 passed, 4 warnings in 10.72s

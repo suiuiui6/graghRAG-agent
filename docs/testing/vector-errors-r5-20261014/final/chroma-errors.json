@@ -1,0 +1,120 @@
+{
+  "version": "1.5.9",
+  "python": "3.12.8 (tags/v3.12.8:2dc476b, Dec  3 2024, 19:30:04) [MSC v.1942 64 bit (AMD64)]",
+  "cases": [
+    {
+      "name": "valid",
+      "status": "OK",
+      "value": [
+        [
+          "a"
+        ]
+      ]
+    },
+    {
+      "name": "no_match",
+      "status": "OK",
+      "value": []
+    },
+    {
+      "name": "empty_set",
+      "status": "REJECTED",
+      "application_category": "invalid_filter",
+      "native_class": "builtins.ValueError",
+      "native_message": "Expected where operand value to be a non-empty list, and all values to be of the same type got [] in get."
+    },
+    {
+      "name": "mixed_set",
+      "status": "REJECTED",
+      "application_category": "invalid_filter",
+      "native_class": "builtins.ValueError",
+      "native_message": "Expected where operand value to be a non-empty list, and all values to be of the same type got [1, 'x'] in get."
+    },
+    {
+      "name": "u64",
+      "status": "REJECTED",
+      "application_category": "invalid_filter",
+      "native_class": "chromadb.errors.InvalidArgumentError",
+      "native_message": "Invalid where clause"
+    },
+    {
+      "name": "numeric_overflow",
+      "status": "REJECTED",
+      "application_category": "invalid_filter",
+      "native_class": "chromadb.errors.InvalidArgumentError",
+      "native_message": "Invalid where clause"
+    },
+    {
+      "name": "dimension",
+      "status": "REJECTED",
+      "application_category": "invalid_dimension",
+      "native_class": "chromadb.errors.InvalidArgumentError",
+      "native_message": "Collection expecting embedding with dimension of 3, got 2"
+    },
+    {
+      "name": "length",
+      "status": "REJECTED",
+      "application_category": "invalid_input",
+      "native_class": "builtins.ValueError",
+      "native_message": "Unequal lengths for fields: ids: 2, embeddings: 1 in add."
+    },
+    {
+      "name": "record_overflow_native",
+      "status": "OK",
+      "value": null,
+      "candidate_policy": "invalid_input: signed-I64 record domain; native acceptance observed"
+    },
+    {
+      "name": "record_invalid",
+      "status": "REJECTED",
+      "application_category": "invalid_input",
+      "native_class": "builtins.ValueError",
+      "native_message": "Expected metadata value to be a str, int, float, bool, SparseVector, list, or None, got {'nested': 1} which is a dict in add."
+    },
+    {
+      "name": "nonfinite",
+      "status": "NATIVE_ACCEPTED",
+      "ids": [
+        [
+          "d"
+        ]
+      ],
+      "candidate_policy": "invalid_input"
+    },
+    {
+      "name": "real_bad_path",
+      "status": "REJECTED",
+      "application_category": "storage_unavailable",
+      "native_class": "chromadb.errors.InternalError",
+      "native_message": "\u5f53\u6587\u4ef6\u5df2\u5b58\u5728\u65f6\uff0c\u65e0\u6cd5\u521b\u5efa\u8be5\u6587\u4ef6\u3002 (os error 183)"
+    },
+    {
+      "name": "record_wide_readback",
+      "input": 9223372036854775808,
+      "status": "NATIVE_ACCEPTED",
+      "readback": 9.223372036854776e+18,
+      "readback_type": "float",
+      "float_hex": "0x1.0000000000000p+63",
+      "candidate_policy": "REJECTED invalid_input; compatibility GAP"
+    },
+    {
+      "name": "record_wide_readback",
+      "input": 18446744073709551616,
+      "status": "NATIVE_ACCEPTED",
+      "readback": 1.8446744073709552e+19,
+      "readback_type": "float",
+      "float_hex": "0x1.0000000000000p+64",
+      "candidate_policy": "REJECTED invalid_input; compatibility GAP"
+    },
+    {
+      "name": "record_wide_readback",
+      "input": -9223372036854775809,
+      "status": "NATIVE_ACCEPTED",
+      "readback": -9.223372036854776e+18,
+      "readback_type": "float",
+      "float_hex": "-0x1.0000000000000p+63",
+      "candidate_policy": "REJECTED invalid_input; compatibility GAP"
+    }
+  ],
+  "script_sha256": "83e673e9f6b62ec34f5eb04719029b60dba26858679c7c045f0ff642f6c32d55"
+}

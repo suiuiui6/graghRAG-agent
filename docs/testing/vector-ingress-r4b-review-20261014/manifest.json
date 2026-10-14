@@ -1,0 +1,15 @@
+{
+  "source_freeze_sha256": "82dbe6ed1397bc348ecfa8c4429270d5942431ef0763bd5eedbbaa9f7dd6fbe6",
+  "review": "docs/review/2026-10-14-vector-ingress-r4b-review.md",
+  "files": {
+    "audit-receipt.json": "db5a2338c10e96c2dac573e78081c3776253e10cfd5a6a375fd216e43bf40625",
+    "audit.py": "cf94bbce2a1b4174a538c55242b4d01bd2ff6edd47d572466dc96206e13e02ef",
+    "final-receipt.json": "6c09a476081f45340a6a53ccd9a0dbe382c8c53ac8cdb84664920a9e09f2756d",
+    "final_receipt.py": "5ad8264a644c9d2229a404302992592d606ac2ccaac12626caa149ff43481789",
+    "fresh-chroma.json": "ddced8de63c8b7be997e6092a425b02823567a0712d940b6a082c787172bcef3",
+    "fresh-lance.json": "35d2a6575fe2f89fb32f427115dbd70df879d87f7936ef998ea382e1aace283a",
+    "fresh_matrix.py": "6d9a4fb60e4258b25e445e0c9336b3ead685185cc643f0937f1b638ab7e28cc9",
+    "generic_filter.py": "5065ba11fb73337c9af06c61fade6d128a530fd53aa170cfd616c8474aaecaa4",
+    "parser_port.py": "18a85b55345caa9ce4ac7ea2e344cedc9561cdda8c1c0eb6824499b3a629753d"
+  }
+}

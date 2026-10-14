@@ -1,0 +1,66 @@
+{
+  "project_id": "graphrag-paper-001",
+  "decision_date": "2026-10-12",
+  "authority": "user explicitly permits these materials for local paper development",
+  "candidates": [
+    {
+      "candidate_id": "C-0000e756b3ec",
+      "sha256": "0000e756b3ecff2902c8a11928d4972d1d764c765c4862186d7ee4db6a554c08",
+      "current_role": "DEVELOPMENT_AUTHORIZED",
+      "holdout_admitted": false,
+      "historical_exposure": "unchanged; see exposure audit"
+    },
+    {
+      "candidate_id": "C-1163f36560f3",
+      "sha256": "1163f36560f327c353d8680bc74a965b7f8e1dc3816162f007e59289c540c602",
+      "current_role": "DEVELOPMENT_AUTHORIZED",
+      "holdout_admitted": false,
+      "historical_exposure": "unchanged; see exposure audit"
+    },
+    {
+      "candidate_id": "C-3c8382414415",
+      "sha256": "3c8382414415118a8f2817669d7acc2496e3ca71353b61a3c4769571f30cfec2",
+      "current_role": "DEVELOPMENT_AUTHORIZED",
+      "holdout_admitted": false,
+      "historical_exposure": "unchanged; see exposure audit"
+    },
+    {
+      "candidate_id": "C-4c5ea4fb6dd1",
+      "sha256": "4c5ea4fb6dd1ed5efb3b998d93b5d0c897e8d68717a76bc925c5f4bf6971413f",
+      "current_role": "DEVELOPMENT_AUTHORIZED",
+      "holdout_admitted": false,
+      "historical_exposure": "unchanged; see exposure audit"
+    },
+    {
+      "candidate_id": "C-67e5e6baf375",
+      "sha256": "67e5e6baf375d9b745b7bfc4a86fd88873dc89addcdfed1530312596bb254f45",
+      "current_role": "DEVELOPMENT_AUTHORIZED",
+      "holdout_admitted": false,
+      "historical_exposure": "unchanged; see exposure audit"
+    },
+    {
+      "candidate_id": "C-7ce1735d7f94",
+      "sha256": "7ce1735d7f94ebe73211903ac72eebe9de0b114ec7285f20e908ab3ea852a433",
+      "current_role": "DEVELOPMENT_AUTHORIZED",
+      "holdout_admitted": false,
+      "historical_exposure": "unchanged; see exposure audit"
+    },
+    {
+      "candidate_id": "C-b5e9ae1fdbf9",
+      "sha256": "b5e9ae1fdbf903e3264d77496e1a2f62f3abd1e54ff220089bd0b9a797eef9c9",
+      "current_role": "DEVELOPMENT_AUTHORIZED",
+      "holdout_admitted": false,
+      "historical_exposure": "unchanged; see exposure audit"
+    },
+    {
+      "candidate_id": "C-c03d4a040075",
+      "sha256": "c03d4a0400753aca3cbd8868b2341797aaba7ed5b36c913f236c74a90687d807",
+      "current_role": "DEVELOPMENT_AUTHORIZED",
+      "holdout_admitted": false,
+      "historical_exposure": "unchanged; see exposure audit"
+    }
+  ],
+  "public_release": "NOT_AUTHORIZED_BY_LOCAL_PERMISSION",
+  "H1": [],
+  "H2": []
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "Path": "D:\\graghRAG-agent\\backend\\generator.py",
+    "Hash": "CEC0DEB0165A6ED04D4F1C13547E77DBBC08A8E134C889985E1DCCFDE7FF1A3C"
+  },
+  {
+    "Path": "D:\\graghRAG-agent\\backend\\retrieval.py",
+    "Hash": "2F0761DCB736F63BA6E688C9749057FB60EE419CE2F33541969E4E8CDE7BD0E1"
+  },
+  {
+    "Path": "D:\\graghRAG-agent\\backend\\tests\\test_answer_completeness.py",
+    "Hash": "955DD4EED96F330468FEF9EA17F4C6C0F1E554DB23F316F05228C54888BB0E79"
+  },
+  {
+    "Path": "D:\\graghRAG-agent\\backend\\tests\\test_retrieval_generation_readiness.py",
+    "Hash": "65B799915F5BA465929CEC2DDF6B0D7B4D13CCBBA4D22E5E160B45674A2B80E3"
+  }
+]

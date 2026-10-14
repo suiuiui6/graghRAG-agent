@@ -1,0 +1,2007 @@
+version: '2.0'
+package_status: LOCAL_SOURCE_BOUND_PASS_CANDIDATE_PENDING_ORCHESTRATOR_ACCEPTANCE
+project_id: graphrag-paper-001
+paper_family: M
+stage_id: M2
+task_id: GOLD-PACKAGE-20261008
+created_on_utc: '2026-10-08'
+clock_evidence: 2026-10-08 00:06:46 UTC
+source_depth: repository_markdown_not_PDF_visual_verification
+annotation_status: AI_SOURCE_BOUND_PACKAGE_NOT_HUMAN_CERTIFIED
+core_question_count: 9
+core_item_count: 31
+split: development_and_exploratory_probe_not_held_out_blind_test
+locator_convention:
+  normalization: universal_newline_to_LF
+  index_unit: Unicode_codepoint
+  start: zero_based_inclusive
+  end: exclusive
+  not_units:
+  - UTF8_bytes
+  - UTF16_code_units
+authority:
+  stage_state_mutation: false
+  merge_permission: orchestrator_only
+  remote_API_batch_authorized: false
+  oracle_usage: Gold scope and expected items only for oracle and adjudication; never pass to AUTO resolver or model prompt.
+provenance:
+  old_gold_path: docs/superpowers/plans/scope-pilot/gold.yaml
+  old_gold_sha256: e732d568715d2b750d3c9ced4afa88a31df66f2db65c869ff4c2536d8e05d5f2
+  accepted_policy_version: 2.0-proposed
+  policy_approval_record: approval-record-20261008.yaml
+  inputs:
+  - path: docs/superpowers/plans/scope-pilot/gold-review-v2/gold-package-task-20261008.yaml
+    sha256: c92887f18bcb37fc66ef07559864130a3eff7c57805a9584b5042b3d3985e3ed
+  - path: docs/superpowers/plans/scope-pilot/gold-review-v2/approval-record-20261008.yaml
+    sha256: 340fe92828b19432b32c20726fb0209fef16042af45612aec698e58d7a5e13c8
+  - path: docs/superpowers/plans/scope-pilot/gold-review-v2/gold-policy-proposal.yaml
+    sha256: 4fe83eca2da0d12f52256d5c6a0eac0ed16696b8eb89caa44660bd5969620e99
+  - path: docs/superpowers/plans/scope-pilot/gold-review-v2/independent-sol-review.md
+    sha256: 5d4287581e9dff16d1dbb1cad1bae032344b52d594f57235acd4a8332e320d7c
+  - path: docs/superpowers/plans/scope-pilot/gold-review-v2/independent-sol-contract.yaml
+    sha256: 92c465870593a1a8cf6f7ca7069c80c51ebdaf21e47e54d840ea3847b527232d
+documents:
+  D1:
+    path: backend/output/mineru/ingest_2/full.md
+    sha256: f0e2b044ec0f8be55b1c00d9479830f6768a5da9970111a7db0353d59097a0d6
+    family: ammonia_optimization
+    split: development
+    sharing: author_rights_confirmation_required
+    normalized_text_sha256: f0e2b044ec0f8be55b1c00d9479830f6768a5da9970111a7db0353d59097a0d6
+    normalized_codepoint_length: 22366
+    external_transfer_authorized: false
+    privacy: Private frontmatter exists; identifiers are not copied to this package. A whole-document oracle scope is not
+      permission to transmit the whole original.
+  D2:
+    path: backend/output/mineru/ingest_f/full.md
+    sha256: ab7cdd99e8cd85ddd61e3d65e4e747685a25a62d22f68bed3e2d79d015e90623
+    family: transformer_paper
+    split: exploratory_probe_not_blind_test
+    sharing: third_party_paper_do_not_republish_full_text
+    caution: likely_model_pretraining_exposure
+    normalized_text_sha256: ab7cdd99e8cd85ddd61e3d65e4e747685a25a62d22f68bed3e2d79d015e90623
+    normalized_codepoint_length: 42551
+    external_transfer_authorized: false
+  D3:
+    path: integration/Agentic-RAG-Architecture.md
+    sha256: d0c64333bf10c761fef29bc1d9e002656f3968e720e176e92b8a18eb4a1e8e72
+    family: project_architecture_spec
+    split: exploratory_probe_not_blind_test
+    sharing: repository_internal_only
+    caution: specification_claims_not_current_implementation_facts
+    normalized_text_sha256: d0c64333bf10c761fef29bc1d9e002656f3968e720e176e92b8a18eb4a1e8e72
+    normalized_codepoint_length: 17729
+    external_transfer_authorized: false
+questions:
+- id: D1-FIG-v2
+  original_qid: D1-FIG
+  historical_qid: Q15
+  doc: D1
+  query_version: '2.0'
+  query: 仅根据提供的Markdown文档，列出所有显式编号的图，按图号去重；以正文题注为主，附录B名称作为可接受别名。不把未编号图片文件算作额外图号。
+  scope:
+    type: whole_document
+    start: 0
+    end: 22366
+    complete_original_interval: true
+    text_sha256: f0e2b044ec0f8be55b1c00d9479830f6768a5da9970111a7db0353d59097a0d6
+    start_marker: null
+    end_marker_excluded: null
+    materialization: Read original source locally, normalize universal newlines to LF, then text[start:end].
+    exact_text_omitted_reason: Private frontmatter and whole-document redistribution restriction; local original range remains
+      complete.
+    remote_transfer_authorized: false
+    membership_rule: All explicitly numbered figures in complete supplied Markdown, deduplicated by number; six body captions
+      plus six Appendix B aliases.
+    export_mapping_status: 'NOT_PROVIDED: require a separate redacted copy, its hash, original-to-redacted span mapping and
+      explicit provider approval before any future transfer.'
+  expected_item_ids:
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  items:
+  - id: F1
+    original_item_id: F1
+    required_attributes:
+    - key: figure_number
+      expected: '1'
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id001
+        doc: D1
+        start: 7650
+        end: 7679
+        exact_text: 图 1 问题一园区功率曲线（上：源荷对比；下：购售电功率）
+      - &id002
+        doc: D1
+        start: 21775
+        end: 21805
+        exact_text: 图 1— 问题一园区功率曲线（上：源荷对比；下：购售电功率）
+    - key: title
+      expected: 图 1 问题一园区功率曲线（上：源荷对比；下：购售电功率）
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id001
+      adjudication_criterion: Either body title or its source-supported Appendix B alias can satisfy this required title under
+        strict adjudication; no extra panel text is mandatory. Human judgment accepts meaning-preserving title paraphrase,
+        but rejects contradictory title or production claims.
+      accepted_expected_aliases:
+      - 图 1— 问题一园区功率曲线（上：源荷对比；下：购售电功率）
+    - key: role
+      expected: numbered_figure
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id001
+      - *id002
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    optional_attributes:
+    - key: caption_conditions
+      expected: 上：源荷对比；下：购售电功率
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id001
+      adjudication_criterion: Source-supported optional detail; omission does not fail the core item, but asserted contradictions
+        are separately recorded.
+    accepted_aliases:
+    - text: 图 1— 问题一园区功率曲线（上：源荷对比；下：购售电功率）
+      evidence:
+      - *id002
+      authority: appendix_B_alias
+  - id: F2
+    original_item_id: F2
+    required_attributes:
+    - key: figure_number
+      expected: '2'
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id003
+        doc: D1
+        start: 10776
+        end: 10815
+        exact_text: 图 2 问题二(1) 最优方案调度图（产量36吨/日，蓝色底色为设备运行时段）
+      - &id004
+        doc: D1
+        start: 21807
+        end: 21843
+        exact_text: 图 2— 问题二离散制氨最优调度（产量 36吨/日，蓝色为设备运行时段）
+    - key: title
+      expected: 图 2 问题二(1) 最优方案调度图（产量36吨/日，蓝色底色为设备运行时段）
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id003
+      adjudication_criterion: Either body title or its source-supported Appendix B alias can satisfy this required title under
+        strict adjudication; no extra panel text is mandatory. Human judgment accepts meaning-preserving title paraphrase,
+        but rejects contradictory title or production claims.
+      accepted_expected_aliases:
+      - 图 2— 问题二离散制氨最优调度（产量 36吨/日，蓝色为设备运行时段）
+    - key: role
+      expected: numbered_figure
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id003
+      - *id004
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    optional_attributes:
+    - key: caption_conditions
+      expected: 产量36吨/日；蓝色底色为设备运行时段
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id003
+      adjudication_criterion: Source-supported optional detail; omission does not fail the core item, but asserted contradictions
+        are separately recorded.
+    accepted_aliases:
+    - text: 图 2— 问题二离散制氨最优调度（产量 36吨/日，蓝色为设备运行时段）
+      evidence:
+      - *id004
+      authority: appendix_B_alias
+  - id: F3
+    original_item_id: F3
+    required_attributes:
+    - key: figure_number
+      expected: '3'
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id005
+        doc: D1
+        start: 11873
+        end: 11911
+        exact_text: 图 3 问题二(2) 全年吨氨成本分布（左：各产量箱线图；右：排序分布曲线）
+      - &id006
+        doc: D1
+        start: 21845
+        end: 21880
+        exact_text: 图 3— 问题二全年吨氨成本分布（左：各产量箱线图；右：排序分布曲线）
+    - key: title
+      expected: 图 3 问题二(2) 全年吨氨成本分布（左：各产量箱线图；右：排序分布曲线）
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id005
+      adjudication_criterion: Either body title or its source-supported Appendix B alias can satisfy this required title under
+        strict adjudication; no extra panel text is mandatory. Human judgment accepts meaning-preserving title paraphrase,
+        but rejects contradictory title or production claims.
+      accepted_expected_aliases:
+      - 图 3— 问题二全年吨氨成本分布（左：各产量箱线图；右：排序分布曲线）
+    - key: role
+      expected: numbered_figure
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id005
+      - *id006
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    optional_attributes:
+    - key: caption_conditions
+      expected: 左：各产量箱线图；右：排序分布曲线
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id005
+      adjudication_criterion: Source-supported optional detail; omission does not fail the core item, but asserted contradictions
+        are separately recorded.
+    accepted_aliases:
+    - text: 图 3— 问题二全年吨氨成本分布（左：各产量箱线图；右：排序分布曲线）
+      evidence:
+      - *id006
+      authority: appendix_B_alias
+  - id: F4
+    original_item_id: F4
+    required_attributes:
+    - key: figure_number
+      expected: '4'
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id007
+        doc: D1
+        start: 14725
+        end: 14760
+        exact_text: 图 4 离散 vs连续制氨对比（左：全年成本分布；右：绿电指标雷达图）
+      - &id008
+        doc: D1
+        start: 21882
+        end: 21921
+        exact_text: 图 4— 问题三离散 vs连续对比（左：全年成本分布曲线；右：绿电指标雷达图）
+    - key: title
+      expected: 图 4 离散 vs连续制氨对比（左：全年成本分布；右：绿电指标雷达图）
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id007
+      adjudication_criterion: Either body title or its source-supported Appendix B alias can satisfy this required title under
+        strict adjudication; no extra panel text is mandatory. Human judgment accepts meaning-preserving title paraphrase,
+        but rejects contradictory title or production claims.
+      accepted_expected_aliases:
+      - 图 4— 问题三离散 vs连续对比（左：全年成本分布曲线；右：绿电指标雷达图）
+    - key: role
+      expected: numbered_figure
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id007
+      - *id008
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    optional_attributes:
+    - key: caption_conditions
+      expected: 左：全年成本分布；右：绿电指标雷达图
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id007
+      adjudication_criterion: Source-supported optional detail; omission does not fail the core item, but asserted contradictions
+        are separately recorded.
+    accepted_aliases:
+    - text: 图 4— 问题三离散 vs连续对比（左：全年成本分布曲线；右：绿电指标雷达图）
+      evidence:
+      - *id008
+      authority: appendix_B_alias
+  - id: F5
+    original_item_id: F5
+    required_attributes:
+    - key: figure_number
+      expected: '5'
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id009
+        doc: D1
+        start: 16321
+        end: 16357
+        exact_text: 图 5 问题四分析结果（左：三种模式经济性对比；右：储能充放电调度曲线）
+      - &id010
+        doc: D1
+        start: 21923
+        end: 21961
+        exact_text: 图 5— 问题四离网与储能分析（左：三种模式经济性对比；右：储能充放电调度）
+    - key: title
+      expected: 图 5 问题四分析结果（左：三种模式经济性对比；右：储能充放电调度曲线）
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id009
+      adjudication_criterion: Either body title or its source-supported Appendix B alias can satisfy this required title under
+        strict adjudication; no extra panel text is mandatory. Human judgment accepts meaning-preserving title paraphrase,
+        but rejects contradictory title or production claims.
+      accepted_expected_aliases:
+      - 图 5— 问题四离网与储能分析（左：三种模式经济性对比；右：储能充放电调度）
+    - key: role
+      expected: numbered_figure
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id009
+      - *id010
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    optional_attributes:
+    - key: caption_conditions
+      expected: 左：三种模式经济性对比；右：储能充放电调度曲线
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id009
+      adjudication_criterion: Source-supported optional detail; omission does not fail the core item, but asserted contradictions
+        are separately recorded.
+    accepted_aliases:
+    - text: 图 5— 问题四离网与储能分析（左：三种模式经济性对比；右：储能充放电调度）
+      evidence:
+      - *id010
+      authority: appendix_B_alias
+  - id: F6
+    original_item_id: F6
+    required_attributes:
+    - key: figure_number
+      expected: '6'
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id011
+        doc: D1
+        start: 19169
+        end: 19231
+        exact_text: 图 6 全问题综合汇总（左上：各方案吨氨成本对比；右上：绿电指标雷达演进；左下：各产量成本对比；右下：离网vs联网产量对比）
+      - &id012
+        doc: D1
+        start: 21963
+        end: 22001
+        exact_text: 图 6— 全问题综合汇总图（四合一：成本对比/指标雷达/成本分布/产量对比）
+    - key: title
+      expected: 图 6 全问题综合汇总（左上：各方案吨氨成本对比；右上：绿电指标雷达演进；左下：各产量成本对比；右下：离网vs联网产量对比）
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id011
+      adjudication_criterion: Either body title or its source-supported Appendix B alias can satisfy this required title under
+        strict adjudication; no extra panel text is mandatory. Human judgment accepts meaning-preserving title paraphrase,
+        but rejects contradictory title or production claims.
+      accepted_expected_aliases:
+      - 图 6— 全问题综合汇总图（四合一：成本对比/指标雷达/成本分布/产量对比）
+    - key: role
+      expected: numbered_figure
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id011
+      - *id012
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    optional_attributes:
+    - key: caption_conditions
+      expected: 左上：各方案吨氨成本对比；右上：绿电指标雷达演进；左下：各产量成本对比；右下：离网vs联网产量对比
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id011
+      adjudication_criterion: Source-supported optional detail; omission does not fail the core item, but asserted contradictions
+        are separately recorded.
+    accepted_aliases:
+    - text: 图 6— 全问题综合汇总图（四合一：成本对比/指标雷达/成本分布/产量对比）
+      evidence:
+      - *id012
+      authority: appendix_B_alias
+  disallowed:
+  - 将final_comprehensive.png重复算为第七张图
+  - 图2绑定54吨每日
+- id: D1-COST-v2
+  original_qid: D1-COST
+  historical_qid: Q16
+  doc: D1
+  query_version: '2.0'
+  query: 仅根据摘要，列出直接报告的吨氨成本水平（单位元/吨）及对应问题、运行模式和产量或全年条件；不单独计入相对降幅或电网支撑价值。
+  scope:
+    type: section
+    start: 55
+    end: 1097
+    complete_original_interval: true
+    text_sha256: f929551785359718d9084a72ecfef1149af8765589ccb2c891c026ac8660e7b1
+    start_marker: '## 摘 要'
+    end_marker_excluded: 关键词：
+    materialization: Read original source locally, normalize universal newlines to LF, then text[start:end].
+    exact_text: '## 摘 要
+
+
+      （0.75MW/1.5t/h）及峰值6MW的常规电负荷，初始产能 36吨氨/日，扩容后达72吨氨日。研究构建了从满负荷基准线到离散/连续优化调度、从并网运行到离网储能配置、从单园区分析到系统级政策建议的完整建模框架。
+
+
+      问题一建立了满负荷连续运行基准线模型，计算表明典型日总用电量558.72MWh，新能源发电量 603.45MWh，网购电量 172.04MWh，上网电量 216.77MWh；吨氨成本3554元/吨。三项绿电直连指标中，新能源自发自用率28.2%（不满足>60%要求）和上网电量比例35.9%（不满足<20%要求）两项不合格，根源在于满负荷运行缺乏灵活性。
+
+
+      问题二针对产能 72吨/日、设备仅支持全开/全关的离散调节场景，构建了混合整数线性规划（MILP）模型，引入0-1启停变量和购售电互斥大M法约束。对5种产量×24种风光场景共120个子问题求解，全年吨氨成本 5820元/吨，绿电指标全满足率仅39.2%。高产量档指标达标率优但经济性差（72吨/日，18/24场景全满足，7111元/吨），低产量档反之（36吨/日，0/24场景全满足，3669元/吨），揭示了绿电合规与经济效益之间的根本矛盾。
+
+
+      问题三将设备功率扩展为 10%\~100%连续可调，引入氢平衡约束将电功率与物质流耦合，模型退化为线性规划（LP）。相比离散制氨，全年吨氨成本降至 5652元/吨（降低2.9%），网购电量减少11.2%，上网电量减少36.9%，绿电指标全满足率从39.2%跃升至69.2%（+30个百分点）。连续功率调节使设备可"如影随形"式贴合风光出力曲线，是提升绿电指标和经济性的关键技术路径。
+
+
+      问题四研究了离网运行与储能双层优化。离网无储能下全年制氨仅9023吨（联网的9.3%），风光利用率95.4%。针对最大弃电场景W4S1（弃电量173.7MWh/日），外层枚举60组储能配置、内层 LP求解，得到最优配置 210.4MWh/30MW，加储能后产量提升至10903吨（+20.8%），风光利用率达100%。电网支撑价值为1970元/吨，量化了电网功率支撑对园区规模化生产的不可替代作用。
+
+
+      问题五从新能源消纳、输配电损耗、辅助服务三方面分析了绿电园区大规模渗透的利好，从系统惯量下降、负荷海啸效应、鸭子曲线加剧三方面分析了不利影响，提出了碳资
+
+
+      产交易、友好互动电价、区域氨交易市场、储能配置标准四项政策建议，均基于前述定量结果给出论证依据。
+
+
+      '
+  expected_item_ids:
+  - C1
+  - C2
+  - C3
+  - C4
+  - C5
+  items:
+  - id: C1
+    original_item_id: C1
+    required_attributes:
+    - key: value
+      expected: '3554'
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id013
+        doc: D1
+        start: 173
+        end: 350
+        exact_text: 问题一建立了满负荷连续运行基准线模型，计算表明典型日总用电量558.72MWh，新能源发电量 603.45MWh，网购电量 172.04MWh，上网电量 216.77MWh；吨氨成本3554元/吨。三项绿电直连指标中，新能源自发自用率28.2%（不满足>60%要求）和上网电量比例35.9%（不满足<20%要求）两项不合格，根源在于满负荷运行缺乏灵活性。
+    - key: unit
+      expected: 元/吨
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id013
+    - key: problem
+      expected: 问题一
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id013
+    - key: operating_mode
+      expected: 满负荷连续运行基准
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id013
+    - key: role
+      expected: direct_reported_cost_level
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id013
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    - key: temporal_condition
+      expected: 典型日
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id013
+    optional_attributes: []
+    not_required: 36吨/日产能在摘要未与C1明确绑定，不从正文补入。
+  - id: C2
+    original_item_id: C2
+    required_attributes:
+    - key: value
+      expected: '5820'
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id014
+        doc: D1
+        start: 352
+        end: 573
+        exact_text: 问题二针对产能 72吨/日、设备仅支持全开/全关的离散调节场景，构建了混合整数线性规划（MILP）模型，引入0-1启停变量和购售电互斥大M法约束。对5种产量×24种风光场景共120个子问题求解，全年吨氨成本
+          5820元/吨，绿电指标全满足率仅39.2%。高产量档指标达标率优但经济性差（72吨/日，18/24场景全满足，7111元/吨），低产量档反之（36吨/日，0/24场景全满足，3669元/吨），揭示了绿电合规与经济效益之间的根本矛盾。
+    - key: unit
+      expected: 元/吨
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id014
+    - key: problem
+      expected: 问题二
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id014
+    - key: operating_mode
+      expected: 全开/全关离散调节
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id014
+    - key: role
+      expected: direct_reported_cost_level
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id014
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    - key: temporal_condition
+      expected: 全年
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id014
+    optional_attributes:
+    - key: scenario_coverage
+      expected: 5种产量×24种风光场景，共120个子问题
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id014
+      adjudication_criterion: Source-supported optional detail; omission does not fail the core item, but asserted contradictions
+        are separately recorded.
+  - id: C3
+    original_item_id: C3
+    required_attributes:
+    - key: value
+      expected: '7111'
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id015
+        doc: D1
+        start: 352
+        end: 573
+        exact_text: 问题二针对产能 72吨/日、设备仅支持全开/全关的离散调节场景，构建了混合整数线性规划（MILP）模型，引入0-1启停变量和购售电互斥大M法约束。对5种产量×24种风光场景共120个子问题求解，全年吨氨成本
+          5820元/吨，绿电指标全满足率仅39.2%。高产量档指标达标率优但经济性差（72吨/日，18/24场景全满足，7111元/吨），低产量档反之（36吨/日，0/24场景全满足，3669元/吨），揭示了绿电合规与经济效益之间的根本矛盾。
+    - key: unit
+      expected: 元/吨
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id015
+    - key: problem
+      expected: 问题二
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id015
+    - key: operating_mode
+      expected: 全开/全关离散调节
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id015
+    - key: role
+      expected: direct_reported_cost_level
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id015
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    - key: production
+      expected: 72吨/日
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id015
+    optional_attributes:
+    - key: temporal_condition
+      expected: 全年
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id015
+      adjudication_criterion: Source-supported optional detail; omission does not fail the core item, but asserted contradictions
+        are separately recorded.
+    - key: scenario_coverage
+      expected: 5种产量×24种风光场景，共120个子问题
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id015
+      adjudication_criterion: Source-supported optional detail; omission does not fail the core item, but asserted contradictions
+        are separately recorded.
+    - key: scenario_compliance
+      expected: 18/24场景全满足
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id015
+      adjudication_criterion: Source-supported optional detail; omission does not fail the core item, but asserted contradictions
+        are separately recorded.
+  - id: C4
+    original_item_id: C4
+    required_attributes:
+    - key: value
+      expected: '3669'
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id016
+        doc: D1
+        start: 352
+        end: 573
+        exact_text: 问题二针对产能 72吨/日、设备仅支持全开/全关的离散调节场景，构建了混合整数线性规划（MILP）模型，引入0-1启停变量和购售电互斥大M法约束。对5种产量×24种风光场景共120个子问题求解，全年吨氨成本
+          5820元/吨，绿电指标全满足率仅39.2%。高产量档指标达标率优但经济性差（72吨/日，18/24场景全满足，7111元/吨），低产量档反之（36吨/日，0/24场景全满足，3669元/吨），揭示了绿电合规与经济效益之间的根本矛盾。
+    - key: unit
+      expected: 元/吨
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id016
+    - key: problem
+      expected: 问题二
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id016
+    - key: operating_mode
+      expected: 全开/全关离散调节
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id016
+    - key: role
+      expected: direct_reported_cost_level
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id016
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    - key: production
+      expected: 36吨/日
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id016
+    optional_attributes:
+    - key: temporal_condition
+      expected: 全年
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id016
+      adjudication_criterion: Source-supported optional detail; omission does not fail the core item, but asserted contradictions
+        are separately recorded.
+    - key: scenario_coverage
+      expected: 5种产量×24种风光场景，共120个子问题
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id016
+      adjudication_criterion: Source-supported optional detail; omission does not fail the core item, but asserted contradictions
+        are separately recorded.
+    - key: scenario_compliance
+      expected: 0/24场景全满足
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id016
+      adjudication_criterion: Source-supported optional detail; omission does not fail the core item, but asserted contradictions
+        are separately recorded.
+  - id: C5
+    original_item_id: C5
+    required_attributes:
+    - key: value
+      expected: '5652'
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id017
+        doc: D1
+        start: 575
+        end: 766
+        exact_text: 问题三将设备功率扩展为 10%\~100%连续可调，引入氢平衡约束将电功率与物质流耦合，模型退化为线性规划（LP）。相比离散制氨，全年吨氨成本降至 5652元/吨（降低2.9%），网购电量减少11.2%，上网电量减少36.9%，绿电指标全满足率从39.2%跃升至69.2%（+30个百分点）。连续功率调节使设备可"如影随形"式贴合风光出力曲线，是提升绿电指标和经济性的关键技术路径。
+    - key: unit
+      expected: 元/吨
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id017
+    - key: problem
+      expected: 问题三
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id017
+    - key: operating_mode
+      expected: 连续可调
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence: &id018
+      - *id017
+    - key: role
+      expected: direct_reported_cost_level
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id017
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    - key: temporal_condition
+      expected: 全年
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id017
+    optional_attributes:
+    - key: relative_cost_reduction
+      expected: 2.9%
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - doc: D1
+        start: 640
+        end: 664
+        exact_text: 全年吨氨成本降至 5652元/吨（降低2.9%）
+      adjudication_criterion: Optional explanatory attribute; not an additional direct cost-level item.
+    - key: continuous_power_range
+      expected: 10%至100%
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence: *id018
+      adjudication_criterion: Source-supported optional detail; omission does not fail required operating_mode.
+    - key: comparison_reference
+      expected: 相比离散制氨
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id017
+      adjudication_criterion: Source-supported optional explanatory detail; omission does not fail approved-query completeness.
+  disallowed:
+  - 168元每吨作为摘要成本
+  - 3682或3749作为摘要成本
+  - 3554绑定问题二36吨每日
+  membership_rule: Exactly C1-C5 direct cost levels. C6 grid-support value and C7 relative reduction are historical sensitivity
+    material only, not new core items.
+- id: D1-LIMITS-v2
+  original_qid: D1-LIMITS
+  historical_qid: null
+  doc: D1
+  query_version: '2.0'
+  query: 仅列6.2的四个编号模型不足，并简述每项所忽略的因素或风险；不要把改进建议当作已采用方法。
+  scope:
+    type: section
+    start: 19694
+    end: 20159
+    complete_original_interval: true
+    text_sha256: 18ba89848b3128497be5862ea4275018a154ac459bda811e1fb2ed45d21cf642
+    start_marker: '## 6.2模型不足与改进方向'
+    end_marker_excluded: '## 参考文献'
+    materialization: Read original source locally, normalize universal newlines to LF, then text[start:end].
+    exact_text: '## 6.2模型不足与改进方向
+
+
+      (1) 忽略储能寿命衰减。当前模型将储能简化为无限循环次数的能量池，未考虑充放电深度和循环次数对电池寿命的影响。改进方向：引入雨流计数法或等效全循环寿命模型，将电池更换成本按等效循环次数摊入目标函数，实现储能投资与运行成本的精细化核算。
+
+
+      (2) 场景覆盖度有限。24种风光组合虽然覆盖了风光出力的主要变化模式，但未考虑季节性负荷变化（夏季空调、冬季供暖对常规电负荷的影响）以及电价政策的季节性调整。改进方向：采用全年 8760小时逐时仿真或基于历史数据的蒙特卡洛随机场景生成。
+
+
+      (3) 未纳入碳交易收益。当前吨氨成本计算中未考虑绿氨替代灰氨的碳减排经济价值。改进方向：建立碳-电-氢-氨多市场耦合优化模型，将CCER交易收益和碳配额成本纳入目标函数，更全面地评估绿电直连园区的综合经济性。
+
+
+      (4) 确定性模型未处理预测不确定性。当前模型依赖确定的日前风光场景，未量化预测误差带来的运行风险。改进方向：采用鲁棒优化（RO）或两阶段随机规划（SP）方法，在约束中加入预测误差的不确定性集合。
+
+
+      '
+  expected_item_ids:
+  - L1
+  - L2
+  - L3
+  - L4
+  items:
+  - id: L1
+    original_item_id: L1
+    required_attributes:
+    - key: category
+      expected: 忽略储能寿命衰减
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id019
+        doc: D1
+        start: 19711
+        end: 19829
+        exact_text: (1) 忽略储能寿命衰减。当前模型将储能简化为无限循环次数的能量池，未考虑充放电深度和循环次数对电池寿命的影响。改进方向：引入雨流计数法或等效全循环寿命模型，将电池更换成本按等效循环次数摊入目标函数，实现储能投资与运行成本的精细化核算。
+    - key: role
+      expected: current_model_limitation
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id019
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    - key: current_simplification
+      expected: 储能简化为无限循环次数的能量池
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id019
+    - key: omitted_charge_discharge_depth
+      expected: 未考虑充放电深度对电池寿命的影响
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id019
+    - key: omitted_cycle_count
+      expected: 未考虑循环次数对电池寿命的影响
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id019
+    optional_attributes: []
+  - id: L2
+    original_item_id: L2
+    required_attributes:
+    - key: category
+      expected: 场景覆盖度有限
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id020
+        doc: D1
+        start: 19831
+        end: 19950
+        exact_text: (2) 场景覆盖度有限。24种风光组合虽然覆盖了风光出力的主要变化模式，但未考虑季节性负荷变化（夏季空调、冬季供暖对常规电负荷的影响）以及电价政策的季节性调整。改进方向：采用全年 8760小时逐时仿真或基于历史数据的蒙特卡洛随机场景生成。
+    - key: role
+      expected: current_model_limitation
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id020
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    - key: omitted_seasonal_load
+      expected: 未考虑季节性常规负荷变化
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence: &id021
+      - *id020
+    - key: omitted_seasonal_tariffs
+      expected: 未考虑电价政策的季节性调整
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id020
+    optional_attributes:
+    - key: seasonal_load_examples
+      expected: 夏季空调和冬季供暖影响
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence: *id021
+      adjudication_criterion: Optional examples; seasonal-load omission itself satisfies the required factor.
+    - key: current_coverage
+      expected: 24种风光组合
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id020
+      adjudication_criterion: Source-supported optional explanatory detail; omission does not fail approved-query completeness.
+  - id: L3
+    original_item_id: L3
+    required_attributes:
+    - key: category
+      expected: 未纳入碳交易收益
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id022
+        doc: D1
+        start: 19952
+        end: 20057
+        exact_text: (3) 未纳入碳交易收益。当前吨氨成本计算中未考虑绿氨替代灰氨的碳减排经济价值。改进方向：建立碳-电-氢-氨多市场耦合优化模型，将CCER交易收益和碳配额成本纳入目标函数，更全面地评估绿电直连园区的综合经济性。
+    - key: role
+      expected: current_model_limitation
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id022
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    - key: omitted_carbon_value
+      expected: 吨氨成本未考虑绿氨替代灰氨的碳减排经济价值
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id022
+    optional_attributes: []
+  - id: L4
+    original_item_id: L4
+    required_attributes:
+    - key: category
+      expected: 确定性模型未处理预测不确定性
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id023
+        doc: D1
+        start: 20059
+        end: 20157
+        exact_text: (4) 确定性模型未处理预测不确定性。当前模型依赖确定的日前风光场景，未量化预测误差带来的运行风险。改进方向：采用鲁棒优化（RO）或两阶段随机规划（SP）方法，在约束中加入预测误差的不确定性集合。
+    - key: role
+      expected: current_model_limitation
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id023
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    - key: current_input
+      expected: 确定的日前风光场景
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id023
+    - key: unquantified_risk
+      expected: 未量化预测误差带来的运行风险
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id023
+    optional_attributes: []
+  disallowed:
+  - 将鲁棒优化或随机规划称为本文已采用的方法
+  category_denominator: 4
+  attribute_denominator_policy: Detailed omitted factors are scored separately within four category items, never as additional
+    numbered limitations.
+- id: D1-FUTURE-v2
+  original_qid: D1-FUTURE
+  historical_qid: null
+  doc: D1
+  query_version: '2.0'
+  query: 仅根据6.2中第4项，为处理预测不确定性建议了哪些优化方法？说明这是建议而非已实施结果。
+  scope:
+    type: section
+    start: 19694
+    end: 20159
+    complete_original_interval: true
+    text_sha256: 18ba89848b3128497be5862ea4275018a154ac459bda811e1fb2ed45d21cf642
+    start_marker: '## 6.2模型不足与改进方向'
+    end_marker_excluded: '## 参考文献'
+    materialization: Read original source locally, normalize universal newlines to LF, then text[start:end].
+    exact_text: '## 6.2模型不足与改进方向
+
+
+      (1) 忽略储能寿命衰减。当前模型将储能简化为无限循环次数的能量池，未考虑充放电深度和循环次数对电池寿命的影响。改进方向：引入雨流计数法或等效全循环寿命模型，将电池更换成本按等效循环次数摊入目标函数，实现储能投资与运行成本的精细化核算。
+
+
+      (2) 场景覆盖度有限。24种风光组合虽然覆盖了风光出力的主要变化模式，但未考虑季节性负荷变化（夏季空调、冬季供暖对常规电负荷的影响）以及电价政策的季节性调整。改进方向：采用全年 8760小时逐时仿真或基于历史数据的蒙特卡洛随机场景生成。
+
+
+      (3) 未纳入碳交易收益。当前吨氨成本计算中未考虑绿氨替代灰氨的碳减排经济价值。改进方向：建立碳-电-氢-氨多市场耦合优化模型，将CCER交易收益和碳配额成本纳入目标函数，更全面地评估绿电直连园区的综合经济性。
+
+
+      (4) 确定性模型未处理预测不确定性。当前模型依赖确定的日前风光场景，未量化预测误差带来的运行风险。改进方向：采用鲁棒优化（RO）或两阶段随机规划（SP）方法，在约束中加入预测误差的不确定性集合。
+
+
+      '
+  expected_item_ids:
+  - R1
+  - R2
+  items:
+  - id: R1
+    original_item_id: R1
+    required_attributes:
+    - key: method
+      expected: 鲁棒优化
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id024
+        doc: D1
+        start: 20059
+        end: 20157
+        exact_text: (4) 确定性模型未处理预测不确定性。当前模型依赖确定的日前风光场景，未量化预测误差带来的运行风险。改进方向：采用鲁棒优化（RO）或两阶段随机规划（SP）方法，在约束中加入预测误差的不确定性集合。
+    - key: role
+      expected: proposed_not_implemented
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id024
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    - key: relation
+      expected: RO或两阶段SP，备选关系
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id024
+    optional_attributes:
+    - key: proposed_measure
+      expected: 在约束中加入预测误差的不确定性集合
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id024
+    - key: abbreviation
+      expected: RO
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id024
+      adjudication_criterion: Source-supported optional detail; omission does not fail the core item, but asserted contradictions
+        are separately recorded.
+    - key: target
+      expected: 日前风光预测误差不确定性与运行风险
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id024
+      adjudication_criterion: Source-supported optional detail; omission does not fail the core item, but asserted contradictions
+        are separately recorded.
+  - id: R2
+    original_item_id: R2
+    required_attributes:
+    - key: method
+      expected: 两阶段随机规划
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id025
+        doc: D1
+        start: 20059
+        end: 20157
+        exact_text: (4) 确定性模型未处理预测不确定性。当前模型依赖确定的日前风光场景，未量化预测误差带来的运行风险。改进方向：采用鲁棒优化（RO）或两阶段随机规划（SP）方法，在约束中加入预测误差的不确定性集合。
+    - key: role
+      expected: proposed_not_implemented
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id025
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    - key: relation
+      expected: RO或两阶段SP，备选关系
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id025
+    optional_attributes:
+    - key: proposed_measure
+      expected: 在约束中加入预测误差的不确定性集合
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id025
+    - key: abbreviation
+      expected: SP
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id025
+      adjudication_criterion: Source-supported optional detail; omission does not fail the core item, but asserted contradictions
+        are separately recorded.
+    - key: target
+      expected: 日前风光预测误差不确定性与运行风险
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id025
+      adjudication_criterion: Source-supported optional detail; omission does not fail the core item, but asserted contradictions
+        are separately recorded.
+  disallowed:
+  - 将MILP与LP计入此改进建议集合
+  - 把RO或SP称为本文已实现方法
+  semantic_target_interval:
+    start: 20059
+    end: 20157
+    restriction: Only numbered item (4), despite full section context.
+  coverage_adjudication_target:
+    type: numbered_item
+    source_field: semantic_target_interval
+    doc: D1
+    start: 20059
+    end: 20157
+    text_sha256: 93f4bf2f3092f2f82c5ab918527794f20029cd59626c3d89de4255997b66831d
+    complete_when: Actual input verifiably contains the whole numbered item (4), [20059,20157). Other three limitations are
+      not required for COMPLETE coverage on this question.
+    context_scope_role: The wider scope [19694,20159) is optional context/read scope, not the mandatory provider-visible target.
+- id: D2-ATTENTION-v2
+  original_qid: D2-ATTENTION
+  historical_qid: null
+  doc: D2
+  query_version: '2.0'
+  query: List the three uses in section 3.2.3. Give Q/K/V sources where explicitly stated; for decoder self-attention describe
+    the stated visibility and masking, and distinguish any inference about provenance.
+  scope:
+    type: section
+    start: 12251
+    end: 13474
+    complete_original_interval: true
+    text_sha256: e27f8a404fd87d4f90fdc5488ea1b778f9bbe6eb0720931c487a4f6f65b949a5
+    start_marker: '## 3.2.3 Applications of Attention in our Model'
+    end_marker_excluded: '## 3.3 Position-wise Feed-Forward Networks'
+    materialization: Read original source locally, normalize universal newlines to LF, then text[start:end].
+    exact_text: '## 3.2.3 Applications of Attention in our Model
+
+
+      The Transformer uses multi-head attention in three different ways:
+
+
+      • In "encoder-decoder attention" layers, the queries come from the previous decoder layer, and the memory keys and values
+      come from the output of the encoder. This allows every position in the decoder to attend over all positions in the input
+      sequence. This mimics the typical encoder-decoder attention mechanisms in sequence-to-sequence models such as [38, 2,
+      9].
+
+
+      • The encoder contains self-attention layers. In a self-attention layer all of the keys, values and queries come from
+      the same place, in this case, the output of the previous layer in the encoder. Each position in the encoder can attend
+      to all positions in the previous layer of the encoder.
+
+
+      • Similarly, self-attention layers in the decoder allow each position in the decoder to attend to all positions in the
+      decoder up to and including that position. We need to prevent leftward information flow in the decoder to preserve the
+      auto-regressive property. We implement this inside of scaled dot-product attention by masking out (setting to −∞) all
+      values in the input of the softmax which correspond to illegal connections. See Figure 2.
+
+
+      '
+  expected_item_ids:
+  - A1
+  - A2
+  - A3
+  items:
+  - id: A1
+    original_item_id: A1
+    required_attributes:
+    - key: use
+      expected: encoder-decoder attention
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id026
+        doc: D2
+        start: 12370
+        end: 12526
+        exact_text: In "encoder-decoder attention" layers, the queries come from the previous decoder layer, and the memory
+          keys and values come from the output of the encoder.
+    - key: role
+      expected: attention_mechanism
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id026
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    - key: queries_source
+      expected: previous decoder layer
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id026
+    - key: keys_source
+      expected: output of the encoder
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id026
+    - key: values_source
+      expected: output of the encoder
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id026
+    optional_attributes: []
+  - id: A2
+    original_item_id: A2
+    required_attributes:
+    - key: use
+      expected: encoder self-attention
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id027
+        doc: D2
+        start: 12736
+        end: 12779
+        exact_text: The encoder contains self-attention layers.
+    - key: role
+      expected: attention_mechanism
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id027
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    - key: queries_source
+      expected: output of the previous layer in the encoder
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id028
+        doc: D2
+        start: 12780
+        end: 12930
+        exact_text: In a self-attention layer all of the keys, values and queries come from the same place, in this case,
+          the output of the previous layer in the encoder.
+    - key: keys_source
+      expected: output of the previous layer in the encoder
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id028
+    - key: values_source
+      expected: output of the previous layer in the encoder
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id028
+    optional_attributes: []
+  - id: A3
+    original_item_id: A3
+    required_attributes:
+    - key: use
+      expected: decoder self-attention
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id029
+        doc: D2
+        start: 13027
+        end: 13472
+        exact_text: • Similarly, self-attention layers in the decoder allow each position in the decoder to attend to all
+          positions in the decoder up to and including that position. We need to prevent leftward information flow in the
+          decoder to preserve the auto-regressive property. We implement this inside of scaled dot-product attention by masking
+          out (setting to −∞) all values in the input of the softmax which correspond to illegal connections. See Figure 2.
+    - key: role
+      expected: attention_mechanism
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id029
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    - key: visibility
+      expected: All decoder positions up to and including the current position
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id029
+    - key: masking
+      expected: Set illegal-connection inputs of softmax to negative infinity
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id029
+    - key: queries_exact_layer_source_explicit
+      expected: Not explicitly restated in section 3.2.3
+      evidence_class: absence
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id030
+        doc: D2
+        start: 12251
+        end: 13474
+        exact_text: '## 3.2.3 Applications of Attention in our Model
+
+
+          The Transformer uses multi-head attention in three different ways:
+
+
+          • In "encoder-decoder attention" layers, the queries come from the previous decoder layer, and the memory keys and
+          values come from the output of the encoder. This allows every position in the decoder to attend over all positions
+          in the input sequence. This mimics the typical encoder-decoder attention mechanisms in sequence-to-sequence models
+          such as [38, 2, 9].
+
+
+          • The encoder contains self-attention layers. In a self-attention layer all of the keys, values and queries come
+          from the same place, in this case, the output of the previous layer in the encoder. Each position in the encoder
+          can attend to all positions in the previous layer of the encoder.
+
+
+          • Similarly, self-attention layers in the decoder allow each position in the decoder to attend to all positions
+          in the decoder up to and including that position. We need to prevent leftward information flow in the decoder to
+          preserve the auto-regressive property. We implement this inside of scaled dot-product attention by masking out (setting
+          to −∞) all values in the input of the softmax which correspond to illegal connections. See Figure 2.
+
+
+          '
+      adjudication_criterion: Absence follows only from reviewing the complete target scope. Do not label a prior-decoder-layer
+        claim explicit; a single shared caveat may satisfy all three source-status fields.
+    - key: keys_exact_layer_source_explicit
+      expected: Not explicitly restated in section 3.2.3
+      evidence_class: absence
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id030
+      adjudication_criterion: Absence follows only from reviewing the complete target scope. Do not label a prior-decoder-layer
+        claim explicit; a single shared caveat may satisfy all three source-status fields.
+    - key: values_exact_layer_source_explicit
+      expected: Not explicitly restated in section 3.2.3
+      evidence_class: absence
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id030
+      adjudication_criterion: Absence follows only from reviewing the complete target scope. Do not label a prior-decoder-layer
+        claim explicit; a single shared caveat may satisfy all three source-status fields.
+    optional_attributes:
+    - key: QKV_semantic_inference
+      expected: Decoder-side self-attention states; exact prior-decoder-layer origin is an inference, not an explicit source
+        statement
+      evidence_class: inferred
+      evidence_label: AI_INFERENCE
+      evidence:
+      - *id028
+      - *id029
+      adjudication_criterion: Accept only if labelled inference and accompanied by the scope-specific non-explicit caveat.
+        Familiarity or another section is not in-scope evidence.
+  disallowed:
+  - 将Adam视为attention用途
+- id: D2-DATA-v2
+  original_qid: D2-DATA
+  historical_qid: null
+  doc: D2
+  query_version: '2.0'
+  query: According to section 5.1 only, list every translation language pair and the corresponding reported training-set size,
+    preserving the source units.
+  scope:
+    type: section
+    start: 20861
+    end: 21487
+    complete_original_interval: true
+    text_sha256: 31861f4e86411ef01d7ca84d172c2d3160082b40ad86ba771235634996699e08
+    start_marker: '## 5.1 Training Data and Batching'
+    end_marker_excluded: '## 5.2 Hardware and Schedule'
+    materialization: Read original source locally, normalize universal newlines to LF, then text[start:end].
+    exact_text: '## 5.1 Training Data and Batching
+
+
+      We trained on the standard WMT 2014 English-German dataset consisting of about 4.5 million sentence pairs. Sentences
+      were encoded using byte-pair encoding [3], which has a shared sourcetarget vocabulary of about 37000 tokens. For English-French,
+      we used the significantly larger WMT 2014 English-French dataset consisting of 36M sentences and split tokens into a
+      32000 word-piece vocabulary [38]. Sentence pairs were batched together by approximate sequence length. Each training
+      batch contained a set of sentence pairs containing approximately 25000 source tokens and 25000 target tokens.
+
+
+      '
+  expected_item_ids:
+  - T1
+  - T2
+  items:
+  - id: T1
+    original_item_id: T1
+    required_attributes:
+    - key: language_pair
+      expected: English-German
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id031
+        doc: D2
+        start: 20896
+        end: 21002
+        exact_text: We trained on the standard WMT 2014 English-German dataset consisting of about 4.5 million sentence pairs.
+    - key: size
+      expected: about 4.5 million
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id031
+    - key: unit
+      expected: sentence pairs
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id031
+    - key: dataset
+      expected: WMT 2014
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id031
+    - key: role
+      expected: reported_training_dataset
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id031
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    - key: approximation
+      expected: about
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id031
+    optional_attributes: []
+  - id: T2
+    original_item_id: T2
+    required_attributes:
+    - key: language_pair
+      expected: English-French
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id032
+        doc: D2
+        start: 21122
+        end: 21292
+        exact_text: For English-French, we used the significantly larger WMT 2014 English-French dataset consisting of 36M
+          sentences and split tokens into a 32000 word-piece vocabulary [38].
+    - key: size
+      expected: 36M
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id032
+    - key: unit
+      expected: sentences
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id032
+    - key: dataset
+      expected: WMT 2014
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id032
+    - key: role
+      expected: reported_training_dataset
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id032
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    optional_attributes: []
+  disallowed:
+  - 将25000tokens当作数据集规模
+  - 将36M原文单位无说明改为sentence_pairs
+- id: D2-NONE-v2
+  original_qid: D2-NONE
+  historical_qid: null
+  doc: D2
+  query_version: '2.0'
+  query: In section 3.2.3 only, which optimizer names are stated? If none are stated there, say so without importing information
+    from other sections.
+  scope:
+    type: section
+    start: 12251
+    end: 13474
+    complete_original_interval: true
+    text_sha256: e27f8a404fd87d4f90fdc5488ea1b778f9bbe6eb0720931c487a4f6f65b949a5
+    start_marker: '## 3.2.3 Applications of Attention in our Model'
+    end_marker_excluded: '## 3.3 Position-wise Feed-Forward Networks'
+    materialization: Read original source locally, normalize universal newlines to LF, then text[start:end].
+    exact_text: '## 3.2.3 Applications of Attention in our Model
+
+
+      The Transformer uses multi-head attention in three different ways:
+
+
+      • In "encoder-decoder attention" layers, the queries come from the previous decoder layer, and the memory keys and values
+      come from the output of the encoder. This allows every position in the decoder to attend over all positions in the input
+      sequence. This mimics the typical encoder-decoder attention mechanisms in sequence-to-sequence models such as [38, 2,
+      9].
+
+
+      • The encoder contains self-attention layers. In a self-attention layer all of the keys, values and queries come from
+      the same place, in this case, the output of the previous layer in the encoder. Each position in the encoder can attend
+      to all positions in the previous layer of the encoder.
+
+
+      • Similarly, self-attention layers in the decoder allow each position in the decoder to attend to all positions in the
+      decoder up to and including that position. We need to prevent leftward information flow in the decoder to preserve the
+      auto-regressive property. We implement this inside of scaled dot-product attention by masking out (setting to −∞) all
+      values in the input of the softmax which correspond to illegal connections. See Figure 2.
+
+
+      '
+  expected_item_ids: []
+  items: []
+  disallowed:
+  - Adam_as_in_scope_item
+  empty_set_proof:
+    expected_behavior: Section 3.2.3 states no optimizer name; do not claim no optimizer in the whole paper.
+    evidence_class: absence
+    evidence_label: VERIFIED_USER_MATERIAL
+    evidence:
+    - *id030
+    criterion: Only complete target-scope access and inspection prove this source empty set; empty retrieval or missing context
+      permits information-insufficient only.
+    no_optimizer_names_found_in_review: true
+- id: D3-TOOLS-v2
+  original_qid: D3-TOOLS
+  historical_qid: null
+  doc: D3
+  query_version: '2.0'
+  query: 根据架构规范3.2“Agent工具集”的表格，列出所有工具及用途，不要声称它们都已在当前代码中实现。
+  scope:
+    type: section
+    start: 6399
+    end: 6809
+    complete_original_interval: true
+    text_sha256: 42c7c694111fb52c6f721c6407eef736893bb5dc717b0a7fdbfbbbf7c8ad2928
+    start_marker: '### 3.2 Agent 工具集'
+    end_marker_excluded: '### 3.3 路由逻辑 (Supervisor)'
+    materialization: Read original source locally, normalize universal newlines to LF, then text[start:end].
+    exact_text: '### 3.2 Agent 工具集
+
+
+      | 工具 | 描述 | 输入 | 输出 |
+
+      |---|---|---|---|
+
+      | `search_kg` | 知识图谱结构化查询 | entity_type, keyword, k_hops | 子图节点 + 边 |
+
+      | `search_vector` | 语义相似度检索 | query_text, top_k | 相关 entity 列表 (含 score) |
+
+      | `search_keyword` | BM25 关键词检索 | keywords, top_k | 原文片段 + page_idx |
+
+      | `get_entity_detail` | 获取实体完整信息 | node_id | 属性 + 关联 + 页面位置 |
+
+      | `get_page_context` | 获取 PDF 页面上下文 | page_idx, entity_bbox | 原文包围区域文本 |
+
+
+      '
+  expected_item_ids:
+  - K1
+  - K2
+  - K3
+  - K4
+  - K5
+  items:
+  - id: K1
+    original_item_id: K1
+    required_attributes:
+    - key: tool_name
+      expected: search_kg
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id033
+        doc: D3
+        start: 6458
+        end: 6527
+        exact_text: '| `search_kg` | 知识图谱结构化查询 | entity_type, keyword, k_hops | 子图节点 + 边 |'
+    - key: purpose
+      expected: 知识图谱结构化查询
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id033
+    - key: role
+      expected: specified_tool_not_verified_live_implementation
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id033
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    optional_attributes: []
+  - id: K2
+    original_item_id: K2
+    required_attributes:
+    - key: tool_name
+      expected: search_vector
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id034
+        doc: D3
+        start: 6528
+        end: 6602
+        exact_text: '| `search_vector` | 语义相似度检索 | query_text, top_k | 相关 entity 列表 (含 score) |'
+    - key: purpose
+      expected: 语义相似度检索
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id034
+    - key: role
+      expected: specified_tool_not_verified_live_implementation
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id034
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    optional_attributes: []
+  - id: K3
+    original_item_id: K3
+    required_attributes:
+    - key: tool_name
+      expected: search_keyword
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id035
+        doc: D3
+        start: 6603
+        end: 6672
+        exact_text: '| `search_keyword` | BM25 关键词检索 | keywords, top_k | 原文片段 + page_idx |'
+    - key: purpose
+      expected: BM25 关键词检索
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id035
+    - key: role
+      expected: specified_tool_not_verified_live_implementation
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id035
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    optional_attributes: []
+  - id: K4
+    original_item_id: K4
+    required_attributes:
+    - key: tool_name
+      expected: get_entity_detail
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id036
+        doc: D3
+        start: 6673
+        end: 6734
+        exact_text: '| `get_entity_detail` | 获取实体完整信息 | node_id | 属性 + 关联 + 页面位置 |'
+    - key: purpose
+      expected: 获取实体完整信息
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id036
+    - key: role
+      expected: specified_tool_not_verified_live_implementation
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id036
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    optional_attributes: []
+  - id: K5
+    original_item_id: K5
+    required_attributes:
+    - key: tool_name
+      expected: get_page_context
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id037
+        doc: D3
+        start: 6735
+        end: 6807
+        exact_text: '| `get_page_context` | 获取 PDF 页面上下文 | page_idx, entity_bbox | 原文包围区域文本 |'
+    - key: purpose
+      expected: 获取 PDF 页面上下文
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id037
+    - key: role
+      expected: specified_tool_not_verified_live_implementation
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id037
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    optional_attributes: []
+  disallowed:
+  - 把routing函数当作3.2表格中的工具
+- id: D3-SUPERVISOR-v2
+  original_qid: D3-SUPERVISOR
+  historical_qid: null
+  doc: D3
+  query_version: '2.0'
+  query: 仅按架构规范4.1，Supervisor有哪些职责？完整列出。
+  scope:
+    type: section
+    start: 11015
+    end: 11170
+    complete_original_interval: true
+    text_sha256: 3d112a9c5ffcefd0d4767442992f24908ff11dd17fb2c7b4ce146b9bfebca817
+    start_marker: '### 4.1 Supervisor 的职责'
+    end_marker_excluded: '### 4.2 Agent 间通信协议'
+    materialization: Read original source locally, normalize universal newlines to LF, then text[start:end].
+    exact_text: '### 4.1 Supervisor 的职责
+
+
+      1. **解析用户 query**：识别需要哪些 Agent 参与
+
+      2. **任务分发**：将子任务路由到对应的 Specialist Agent
+
+      3. **结果整合**：合并各个 Agent 的返回结果
+
+      4. **最终生成**：基于合并结果生成带引用的答案
+
+
+      '
+  expected_item_ids:
+  - S1
+  - S2
+  - S3
+  - S4
+  items:
+  - id: S1
+    original_item_id: S1
+    required_attributes:
+    - key: responsibility
+      expected: 解析用户 query
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id038
+        doc: D3
+        start: 11039
+        end: 11072
+        exact_text: 1. **解析用户 query**：识别需要哪些 Agent 参与
+    - key: binding
+      expected: 识别需要哪些 Agent 参与
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id038
+    - key: role
+      expected: specified_responsibility_not_verified_live_behavior
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id038
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    optional_attributes: []
+  - id: S2
+    original_item_id: S2
+    required_attributes:
+    - key: responsibility
+      expected: 任务分发
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id039
+        doc: D3
+        start: 11073
+        end: 11112
+        exact_text: 2. **任务分发**：将子任务路由到对应的 Specialist Agent
+    - key: binding
+      expected: 将子任务路由到对应的 Specialist Agent
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id039
+    - key: role
+      expected: specified_responsibility_not_verified_live_behavior
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id039
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    optional_attributes: []
+  - id: S3
+    original_item_id: S3
+    required_attributes:
+    - key: responsibility
+      expected: 结果整合
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id040
+        doc: D3
+        start: 11113
+        end: 11141
+        exact_text: 3. **结果整合**：合并各个 Agent 的返回结果
+    - key: binding
+      expected: 合并各个 Agent 的返回结果
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id040
+    - key: role
+      expected: specified_responsibility_not_verified_live_behavior
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id040
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    optional_attributes: []
+  - id: S4
+    original_item_id: S4
+    required_attributes:
+    - key: responsibility
+      expected: 最终生成
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - &id041
+        doc: D3
+        start: 11142
+        end: 11168
+        exact_text: 4. **最终生成**：基于合并结果生成带引用的答案
+    - key: binding
+      expected: 基于合并结果生成带引用的答案
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id041
+    - key: role
+      expected: specified_responsibility_not_verified_live_behavior
+      evidence_class: explicit
+      evidence_label: VERIFIED_USER_MATERIAL
+      evidence:
+      - *id041
+      adjudication_criterion: Judge semantic role and contradictions; the answer need not print the internal normalization
+        enum.
+    optional_attributes: []
+  disallowed:
+  - 把离线建索引计入4.1职责
+historical_sensitivity_only:
+  applies_to_original_query_only: true
+  excluded_from_new_core_items: true
+  sets:
+    direct_cost_levels:
+    - C1
+    - C2
+    - C3
+    - C4
+    - C5
+    per_ton_economic_values:
+    - C1
+    - C2
+    - C3
+    - C4
+    - C5
+    - C6-proposed
+    cost_related_indicators:
+    - C1
+    - C2
+    - C3
+    - C4
+    - C5
+    - C6-proposed
+    - C7-proposed
+  candidates:
+  - id: C6-proposed
+    role: grid_support_economic_comparison
+    value: '1970'
+    unit: 元/吨
+    evidence:
+    - doc: D1
+      start: 768
+      end: 967
+      exact_text: 问题四研究了离网运行与储能双层优化。离网无储能下全年制氨仅9023吨（联网的9.3%），风光利用率95.4%。针对最大弃电场景W4S1（弃电量173.7MWh/日），外层枚举60组储能配置、内层 LP求解，得到最优配置
+        210.4MWh/30MW，加储能后产量提升至10903吨（+20.8%），风光利用率达100%。电网支撑价值为1970元/吨，量化了电网功率支撑对园区规模化生产的不可替代作用。
+    boundary: No subtraction formula supplied in abstract; not a direct cost-level member.
+  - id: C7-proposed
+    role: relative_cost_reduction
+    value: '2.9'
+    unit: '%'
+    evidence:
+    - doc: D1
+      start: 640
+      end: 664
+      exact_text: 全年吨氨成本降至 5652元/吨（降低2.9%）
+    boundary: Optional C5 context in v2; never count twice as a core cost level.
+adjudication:
+  mode: manual_semantic_adjudication_only
+  automatic_checks: Exact slice, source/scope hash and structural checks verify package binding only; they cannot score semantic
+    correctness.
+  dimensions:
+    content: Expected item membership, atomic value/unit/condition/provenance/role and completeness; report per-question exact
+      set and per-attribute decisions separately.
+    support: The actual provided input must entail each answered attribute. Document factual correctness and request-input
+      support are separate records; correct memory cannot replace input evidence.
+    scope: Record COMPLETE, PARTIAL, MISSING or OUTSIDE for actual context coverage. Use coverage_adjudication_target when
+      present, otherwise scope. D1-FUTURE requires only the complete item (4); the remaining three limitations are optional
+      reading context. Complete question-specific target is required for completeness and absence claims.
+    citation: Check cited source identity, locator, scope inclusion and semantic entailment for each claim; a present but
+      irrelevant anchor is not a valid citation. Citation-free factual correctness does not satisfy a citation contract.
+    negative: D2-NONE succeeds only as scope-specific no-optimizer-name statement with complete-scope support; empty retrieval
+      means insufficient evidence.
+    role: Do not relabel proposed methods or specified architecture functions as implemented results.
+    extras: Report out-of-set assertions separately and distinguish source-supported historical context from fabricated or
+      scope-external claims; C6/C7 are not unsupported merely because excluded from new membership.
+  decision_values:
+  - PASS
+  - FAIL
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  aggregation: No automatic accuracy or aggregate metric is emitted by this package. Do not mix rewritten v2 questions with
+    old 27 answers or change old denominators. Human judges must preserve disagreement and rationale.
+  per_attribute_record:
+  - qid
+  - item_id
+  - attribute_key
+  - actual_claim
+  - content_decision
+  - support_decision
+  - scope_decision
+  - citation_decision
+  - evidence_class
+  - rationale
+  inference_rule: Explicit text, inferred provenance, and absence are distinct labels; a semantic inference never becomes
+    explicit by repetition.
+  unit_rules: Preserve about and original source units; quantity-equivalent normalizations may be accepted by human judgment.
+    Do not silently convert 36M sentences to sentence pairs.
+  compatibility: 'Existing pilot.py is not v2 compatible: new IDs, whole-document FIG scope, numeric source spans, attribute
+    lists and absence contracts require an approved adapter before any future run.'
+  future_assembler_requirement: 'Not implemented by this package: whole-document scan or a source-supported caption inventory
+    projection with complete-scan coverage proof; the legacy six-appendix projection alone cannot establish all-document completeness.
+    Budget-limited or otherwise partial inputs must be recorded as PARTIAL, never strictly complete.'
+  source_vs_provider_coverage: The full local FIG oracle interval [0,22366) does not establish complete provider-visible evidence.
+    A future assembler must record actual source spans and context-budget coverage independently.
+  required_vs_optional: Required attributes follow the approved question. Optional source-supported details never lower required
+    completeness when omitted, but their asserted errors are recorded as contradictions. Internal enums and field keys need
+    not be printed by an answer.
+  figure_title_alias_rule: Every recorded body title and its Appendix B alias may satisfy required title, including F6. Optional
+    panel diagnostics do not create mandatory detail beyond the accepted alias. Any explicit F2 production claim contradicting
+    36吨/日 is rejected.
+  semantic_role_rule: Evaluate proposed/specification/current-result roles semantically; do not require literal internal enum
+    strings.
+  coverage_target_selection: 'Required algorithm: target = question.coverage_adjudication_target if present else question.scope.
+    Compare actual mapped input coverage against that target, not against an optional wider context scope.'
+availability:
+  inventory:
+  - 'Original Markdown sources: local, hashes recorded'
+  - 'Processed Gold: this local YAML and README'
+  - 'Existing runner: legacy, not adapted by this task'
+  - 'PDFs/images: not accessed or visually verified'
+  - 'Corpus/runtime identity: unavailable to this specialist'
+  - 'Models and trained parameters: not part of this deliverable'
+  repository_option: Local internal repository only; no external deposit or upload executed or newly authorized.
+  availability_statement: Versioned Gold and source locators are retained in the local project. Source full text remains subject
+    to author, third-party and internal rights and privacy restrictions; no public release is promised.
+  identifier_status: No DOI, accession or external repository identifier created.
+  license: No new redistribution license asserted.
+  FAIR_audit:
+    findable: Versioned local paths and task ID
+    accessible: Local authorized workspace; external access pending rights approval
+    interoperable: YAML, explicit Unicode/LF spans and hashes
+    reusable: Source-bound attributes, policy, limitations, manual judgment contract; original rights retained
+  deposit_checklist:
+  - Obtain author and third-party redistribution rights before external deposit
+  - Remove private identifiers from any approved export
+  - Record redacted hash and original-to-export span mapping
+  - Provide version, README, data dictionary and actual license
+  - Record returned persistent identifier only after deposit evidence exists
+  manual_actions: []
+  restrictions:
+  - No new remote batch authorization
+  - Gold oracle content must not leak to AUTO or model prompts
+  - Whole-source FIG interval does not authorize provider transmission
+  - No human annotation or original PDF visual certification
+  missing:
+  - runtime_identity
+  - corpus_mapping
+  - new_API_batch_permission
+  - human_annotation
+  - original_PDF_visual_check
+  - redacted_export_and_span_mapping

@@ -1,0 +1,3688 @@
+{
+  "schema_version": "1.0",
+  "status": "DEVELOPMENT_GOLD_V1_AI_REVIEWED",
+  "dataset_role": "development_only",
+  "human_gold_verified": false,
+  "questions": [
+    {
+      "question_id": "DEV-L01",
+      "source_id": "LCNC-HOME",
+      "status": "DEVELOPMENT_GOLD_V1_AI_REVIEWED",
+      "role": "development",
+      "question_language": "zh",
+      "evidence_language": "en",
+      "question": "按第6节 Configuration 开头的表格，列出全部回零类型，并分别给出 HOME_SEARCH_VEL、HOME_LATCH_VEL、HOME_USE_INDEX 的取值。",
+      "gold_items": [
+        {
+          "item": "Immediate",
+          "required_attributes": {
+            "HOME_SEARCH_VEL": "0",
+            "HOME_LATCH_VEL": "0",
+            "HOME_USE_INDEX": "NO"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              99,
+              99
+            ],
+            "snapshot_char_half_open": [
+              6204,
+              6230
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "evidence": [
+            {
+              "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+              "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+              "canonical_char_half_open": [
+                5872,
+                5894
+              ],
+              "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+              "xpaths": [
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/tbody[1]/tr[1]"
+              ],
+              "quote": "Immediate | 0 | 0 | NO"
+            },
+            {
+              "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+              "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+              "canonical_char_half_open": [
+                5807,
+                5870
+              ],
+              "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+              "xpaths": [
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/thead[1]/tr[1]"
+              ],
+              "quote": "Homing Type | HOME_SEARCH_VEL | HOME_LATCH_VEL | HOME_USE_INDEX"
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "HOME_SEARCH_VEL",
+              "expected": "0",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    5872,
+                    5894
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/tbody[1]/tr[1]"
+                  ],
+                  "quote": "Immediate | 0 | 0 | NO"
+                },
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    5807,
+                    5870
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/thead[1]/tr[1]"
+                  ],
+                  "quote": "Homing Type | HOME_SEARCH_VEL | HOME_LATCH_VEL | HOME_USE_INDEX"
+                }
+              ]
+            },
+            {
+              "atom_id": "HOME_LATCH_VEL",
+              "expected": "0",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    5872,
+                    5894
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/tbody[1]/tr[1]"
+                  ],
+                  "quote": "Immediate | 0 | 0 | NO"
+                },
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    5807,
+                    5870
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/thead[1]/tr[1]"
+                  ],
+                  "quote": "Homing Type | HOME_SEARCH_VEL | HOME_LATCH_VEL | HOME_USE_INDEX"
+                }
+              ]
+            },
+            {
+              "atom_id": "HOME_USE_INDEX",
+              "expected": "NO",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    5872,
+                    5894
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/tbody[1]/tr[1]"
+                  ],
+                  "quote": "Immediate | 0 | 0 | NO"
+                },
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    5807,
+                    5870
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/thead[1]/tr[1]"
+                  ],
+                  "quote": "Homing Type | HOME_SEARCH_VEL | HOME_LATCH_VEL | HOME_USE_INDEX"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "item": "Index-only",
+          "required_attributes": {
+            "HOME_SEARCH_VEL": "0",
+            "HOME_LATCH_VEL": "nonzero",
+            "HOME_USE_INDEX": "YES"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              100,
+              100
+            ],
+            "snapshot_char_half_open": [
+              6230,
+              6264
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "evidence": [
+            {
+              "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+              "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+              "canonical_char_half_open": [
+                5896,
+                5926
+              ],
+              "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+              "xpaths": [
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/tbody[1]/tr[2]"
+              ],
+              "quote": "Index-only | 0 | nonzero | YES"
+            },
+            {
+              "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+              "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+              "canonical_char_half_open": [
+                5807,
+                5870
+              ],
+              "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+              "xpaths": [
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/thead[1]/tr[1]"
+              ],
+              "quote": "Homing Type | HOME_SEARCH_VEL | HOME_LATCH_VEL | HOME_USE_INDEX"
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "HOME_SEARCH_VEL",
+              "expected": "0",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    5896,
+                    5926
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/tbody[1]/tr[2]"
+                  ],
+                  "quote": "Index-only | 0 | nonzero | YES"
+                },
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    5807,
+                    5870
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/thead[1]/tr[1]"
+                  ],
+                  "quote": "Homing Type | HOME_SEARCH_VEL | HOME_LATCH_VEL | HOME_USE_INDEX"
+                }
+              ]
+            },
+            {
+              "atom_id": "HOME_LATCH_VEL",
+              "expected": "nonzero",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    5896,
+                    5926
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/tbody[1]/tr[2]"
+                  ],
+                  "quote": "Index-only | 0 | nonzero | YES"
+                },
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    5807,
+                    5870
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/thead[1]/tr[1]"
+                  ],
+                  "quote": "Homing Type | HOME_SEARCH_VEL | HOME_LATCH_VEL | HOME_USE_INDEX"
+                }
+              ]
+            },
+            {
+              "atom_id": "HOME_USE_INDEX",
+              "expected": "YES",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    5896,
+                    5926
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/tbody[1]/tr[2]"
+                  ],
+                  "quote": "Index-only | 0 | nonzero | YES"
+                },
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    5807,
+                    5870
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/thead[1]/tr[1]"
+                  ],
+                  "quote": "Homing Type | HOME_SEARCH_VEL | HOME_LATCH_VEL | HOME_USE_INDEX"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "item": "Switch-only",
+          "required_attributes": {
+            "HOME_SEARCH_VEL": "nonzero",
+            "HOME_LATCH_VEL": "nonzero",
+            "HOME_USE_INDEX": "NO"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              101,
+              101
+            ],
+            "snapshot_char_half_open": [
+              6264,
+              6304
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "evidence": [
+            {
+              "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+              "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+              "canonical_char_half_open": [
+                5928,
+                5964
+              ],
+              "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+              "xpaths": [
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/tbody[1]/tr[3]"
+              ],
+              "quote": "Switch-only | nonzero | nonzero | NO"
+            },
+            {
+              "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+              "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+              "canonical_char_half_open": [
+                5807,
+                5870
+              ],
+              "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+              "xpaths": [
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/thead[1]/tr[1]"
+              ],
+              "quote": "Homing Type | HOME_SEARCH_VEL | HOME_LATCH_VEL | HOME_USE_INDEX"
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "HOME_SEARCH_VEL",
+              "expected": "nonzero",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    5928,
+                    5964
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/tbody[1]/tr[3]"
+                  ],
+                  "quote": "Switch-only | nonzero | nonzero | NO"
+                },
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    5807,
+                    5870
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/thead[1]/tr[1]"
+                  ],
+                  "quote": "Homing Type | HOME_SEARCH_VEL | HOME_LATCH_VEL | HOME_USE_INDEX"
+                }
+              ]
+            },
+            {
+              "atom_id": "HOME_LATCH_VEL",
+              "expected": "nonzero",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    5928,
+                    5964
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/tbody[1]/tr[3]"
+                  ],
+                  "quote": "Switch-only | nonzero | nonzero | NO"
+                },
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    5807,
+                    5870
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/thead[1]/tr[1]"
+                  ],
+                  "quote": "Homing Type | HOME_SEARCH_VEL | HOME_LATCH_VEL | HOME_USE_INDEX"
+                }
+              ]
+            },
+            {
+              "atom_id": "HOME_USE_INDEX",
+              "expected": "NO",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    5928,
+                    5964
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/tbody[1]/tr[3]"
+                  ],
+                  "quote": "Switch-only | nonzero | nonzero | NO"
+                },
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    5807,
+                    5870
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/thead[1]/tr[1]"
+                  ],
+                  "quote": "Homing Type | HOME_SEARCH_VEL | HOME_LATCH_VEL | HOME_USE_INDEX"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "item": "Switch and Index",
+          "required_attributes": {
+            "HOME_SEARCH_VEL": "nonzero",
+            "HOME_LATCH_VEL": "nonzero",
+            "HOME_USE_INDEX": "YES"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              102,
+              102
+            ],
+            "snapshot_char_half_open": [
+              6304,
+              6350
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "evidence": [
+            {
+              "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+              "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+              "canonical_char_half_open": [
+                5966,
+                6008
+              ],
+              "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+              "xpaths": [
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/tbody[1]/tr[4]"
+              ],
+              "quote": "Switch and Index | nonzero | nonzero | YES"
+            },
+            {
+              "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+              "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+              "canonical_char_half_open": [
+                5807,
+                5870
+              ],
+              "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+              "xpaths": [
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/thead[1]/tr[1]"
+              ],
+              "quote": "Homing Type | HOME_SEARCH_VEL | HOME_LATCH_VEL | HOME_USE_INDEX"
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "HOME_SEARCH_VEL",
+              "expected": "nonzero",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    5966,
+                    6008
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/tbody[1]/tr[4]"
+                  ],
+                  "quote": "Switch and Index | nonzero | nonzero | YES"
+                },
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    5807,
+                    5870
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/thead[1]/tr[1]"
+                  ],
+                  "quote": "Homing Type | HOME_SEARCH_VEL | HOME_LATCH_VEL | HOME_USE_INDEX"
+                }
+              ]
+            },
+            {
+              "atom_id": "HOME_LATCH_VEL",
+              "expected": "nonzero",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    5966,
+                    6008
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/tbody[1]/tr[4]"
+                  ],
+                  "quote": "Switch and Index | nonzero | nonzero | YES"
+                },
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    5807,
+                    5870
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/thead[1]/tr[1]"
+                  ],
+                  "quote": "Homing Type | HOME_SEARCH_VEL | HOME_LATCH_VEL | HOME_USE_INDEX"
+                }
+              ]
+            },
+            {
+              "atom_id": "HOME_USE_INDEX",
+              "expected": "YES",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    5966,
+                    6008
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/tbody[1]/tr[4]"
+                  ],
+                  "quote": "Switch and Index | nonzero | nonzero | YES"
+                },
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    5807,
+                    5870
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/thead[1]/tr[1]"
+                  ],
+                  "quote": "Homing Type | HOME_SEARCH_VEL | HOME_LATCH_VEL | HOME_USE_INDEX"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "expected_item_count": 4,
+      "scoring_notes": [
+        "条目和三个参数属性分开计分；不补入图示中的运动轨迹。"
+      ],
+      "human_annotation_verified": false,
+      "task_role": "SCOPE_EXPLICIT_CALIBRATION_PROBE_NOT_DIFFICULTY_OR_NOVELTY_EVIDENCE",
+      "range_condition": "scope_given",
+      "evaluation_input_rule": "Only question and corpus for baseline; gold scope, item count, offsets and answers excluded from model input",
+      "attribute_header_evidence": {
+        "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+        "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+        "canonical_char_half_open": [
+          5807,
+          5870
+        ],
+        "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+        "xpaths": [
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/thead[1]/tr[1]"
+        ],
+        "quote": "Homing Type | HOME_SEARCH_VEL | HOME_LATCH_VEL | HOME_USE_INDEX"
+      },
+      "draft_provenance": {
+        "file": "../questions-gold.draft.json",
+        "sha256": "895a529f94c431763a7f5cc3eed8619971a595204ed6f270b71a0404bfdc3159",
+        "old_scope": {
+          "web_lines_inclusive": [
+            93,
+            104
+          ],
+          "snapshot_char_half_open": [
+            5971,
+            6406
+          ],
+          "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+        }
+      },
+      "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+      "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+      "review_kind": "Original-source and target-region visual review plus independent AI review; not human Gold",
+      "scope": {
+        "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+        "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+        "canonical_char_half_open": [
+          5666,
+          6063
+        ],
+        "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+        "xpaths": [
+          "/html[1]/body[1]/div[2]/div[6]/h2[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[1]/p[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/thead[1]/tr[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/tbody[1]/tr[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/tbody[1]/tr[2]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/tbody[1]/tr[3]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/tbody[1]/tr[4]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[3]/table[1]/tr[1]"
+        ],
+        "quote": "6. Configuration\n\nThe following determines exactly how the home sequence behaves. They are defined in an [JOINT_n] section of the INI file.\n\nHoming Type | HOME_SEARCH_VEL | HOME_LATCH_VEL | HOME_USE_INDEX\n\nImmediate | 0 | 0 | NO\n\nIndex-only | 0 | nonzero | YES\n\nSwitch-only | nonzero | nonzero | NO\n\nSwitch and Index | nonzero | nonzero | YES\n\nNote | Any other combinations may result in an error."
+      },
+      "scope_semantics": "Gold target region; retrieval may use supporting context outside it, without adding off-scope answer items"
+    },
+    {
+      "question_id": "DEV-L02",
+      "source_id": "LCNC-HOME",
+      "status": "DEVELOPMENT_GOLD_V1_AI_REVIEWED",
+      "role": "development",
+      "question_language": "zh",
+      "evidence_language": "en",
+      "question": "在6.10 HOME_ABSOLUTE_ENCODER 中，列出枚举代码中的设置值及其行为，并列出该节Note说明的静默忽略行为。",
+      "gold_items": [
+        {
+          "item": "0",
+          "required_attributes": {
+            "default": true,
+            "behavior": "不使用绝对编码器"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              150,
+              150
+            ],
+            "snapshot_char_half_open": [
+              12326,
+              12406
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "evidence": [
+            {
+              "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+              "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+              "canonical_char_half_open": [
+                11954,
+                12028
+              ],
+              "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+              "xpaths": [
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[13]/div[3]/div[1]/pre[1]"
+              ],
+              "quote": "HOME_ABSOLUTE_ENCODER = 0 (Default) joint does not use an absolute encoder"
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "default",
+              "expected": true,
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    11954,
+                    12028
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[13]/div[3]/div[1]/pre[1]"
+                  ],
+                  "quote": "HOME_ABSOLUTE_ENCODER = 0 (Default) joint does not use an absolute encoder"
+                }
+              ]
+            },
+            {
+              "atom_id": "behavior",
+              "expected": "不使用绝对编码器",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    11954,
+                    12028
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[13]/div[3]/div[1]/pre[1]"
+                  ],
+                  "quote": "HOME_ABSOLUTE_ENCODER = 0 (Default) joint does not use an absolute encoder"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "item": "1",
+          "required_attributes": {
+            "behavior": "使用绝对编码器，并最终移动到 [JOINT_n]HOME"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              151,
+              151
+            ],
+            "snapshot_char_half_open": [
+              12406,
+              12482
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "evidence": [
+            {
+              "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+              "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+              "canonical_char_half_open": [
+                12029,
+                12100
+              ],
+              "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+              "xpaths": [
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[13]/div[3]/div[1]/pre[1]"
+              ],
+              "quote": "HOME_ABSOLUTE_ENCODER = 1 Absolute encoder, final move to [JOINT_n]HOME"
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "behavior",
+              "expected": "使用绝对编码器，并最终移动到 [JOINT_n]HOME",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    12029,
+                    12100
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[13]/div[3]/div[1]/pre[1]"
+                  ],
+                  "quote": "HOME_ABSOLUTE_ENCODER = 1 Absolute encoder, final move to [JOINT_n]HOME"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "item": "2",
+          "required_attributes": {
+            "behavior": "使用绝对编码器，不执行最终到 [JOINT_n]HOME 的移动"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              152,
+              152
+            ],
+            "snapshot_char_half_open": [
+              12482,
+              12562
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "evidence": [
+            {
+              "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+              "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+              "canonical_char_half_open": [
+                12101,
+                12175
+              ],
+              "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+              "xpaths": [
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[13]/div[3]/div[1]/pre[1]"
+              ],
+              "quote": "HOME_ABSOLUTE_ENCODER = 2 Absolute encoder, NO final move to [JOINT_n]HOME"
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "behavior",
+              "expected": "使用绝对编码器，不执行最终到 [JOINT_n]HOME 的移动",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    12101,
+                    12175
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[13]/div[3]/div[1]/pre[1]"
+                  ],
+                  "quote": "HOME_ABSOLUTE_ENCODER = 2 Absolute encoder, NO final move to [JOINT_n]HOME"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "item": "HOME_IS_SHARED",
+          "required_attributes": {
+            "behavior": "设置被静默忽略"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              154,
+              154
+            ],
+            "snapshot_char_half_open": [
+              12563,
+              12617
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "evidence": [
+            {
+              "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+              "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+              "canonical_char_half_open": [
+                12177,
+                12229
+              ],
+              "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+              "xpaths": [
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[13]/div[4]/table[1]/tr[1]"
+              ],
+              "quote": "Note | A HOME_IS_SHARED setting is silently ignored."
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "behavior",
+              "expected": "设置被静默忽略",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    12177,
+                    12229
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[13]/div[4]/table[1]/tr[1]"
+                  ],
+                  "quote": "Note | A HOME_IS_SHARED setting is silently ignored."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "item": "rehome request",
+          "required_attributes": {
+            "behavior": "重新回零请求被静默忽略"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              156,
+              156
+            ],
+            "snapshot_char_half_open": [
+              12618,
+              12677
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "evidence": [
+            {
+              "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+              "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+              "canonical_char_half_open": [
+                12231,
+                12288
+              ],
+              "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+              "xpaths": [
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[13]/div[5]/table[1]/tr[1]"
+              ],
+              "quote": "Note | A request to rehome the joint is silently ignored."
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "behavior",
+              "expected": "重新回零请求被静默忽略",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    12231,
+                    12288
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[13]/div[5]/table[1]/tr[1]"
+                  ],
+                  "quote": "Note | A request to rehome the joint is silently ignored."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "expected_item_count": 5,
+      "scoring_notes": [
+        "前三项是枚举值，后两项是注意事项；允许分组，不能漏后两项。"
+      ],
+      "human_annotation_verified": false,
+      "task_role": "SCOPE_EXPLICIT_CALIBRATION_PROBE_NOT_DIFFICULTY_OR_NOVELTY_EVIDENCE",
+      "range_condition": "scope_given",
+      "evaluation_input_rule": "Only question and corpus for baseline; gold scope, item count, offsets and answers excluded from model input",
+      "draft_provenance": {
+        "file": "../questions-gold.draft.json",
+        "sha256": "895a529f94c431763a7f5cc3eed8619971a595204ed6f270b71a0404bfdc3159",
+        "old_scope": {
+          "web_lines_inclusive": [
+            145,
+            156
+          ],
+          "snapshot_char_half_open": [
+            12049,
+            12677
+          ],
+          "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+        }
+      },
+      "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+      "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+      "review_kind": "Original-source and target-region visual review plus independent AI review; not human Gold",
+      "scope": {
+        "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+        "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+        "canonical_char_half_open": [
+          11680,
+          12288
+        ],
+        "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+        "xpaths": [
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[13]/h3[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[13]/div[1]/p[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[13]/div[2]/p[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[13]/div[3]/div[1]/pre[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[13]/div[4]/table[1]/tr[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[13]/div[5]/table[1]/tr[1]"
+        ],
+        "quote": "6.10. HOME_ABSOLUTE_ENCODER\n\nUse for absolute encoders. When a request is made to home the joint, the current joint position is set to the [JOINT_n]HOME_OFFSET value.\n\nThe final move to the [JOINT_n]HOME position is optional according to the HOME_ABSOLUTE_ENCODER setting:\n\nHOME_ABSOLUTE_ENCODER = 0 (Default) joint does not use an absolute encoder\nHOME_ABSOLUTE_ENCODER = 1 Absolute encoder, final move to [JOINT_n]HOME\nHOME_ABSOLUTE_ENCODER = 2 Absolute encoder, NO final move to [JOINT_n]HOME\n\nNote | A HOME_IS_SHARED setting is silently ignored.\n\nNote | A request to rehome the joint is silently ignored."
+      },
+      "scope_semantics": "Gold target region; retrieval may use supporting context outside it, without adding off-scope answer items"
+    },
+    {
+      "question_id": "DEV-L03",
+      "source_id": "LCNC-HOME",
+      "status": "DEVELOPMENT_GOLD_V1_AI_REVIEWED",
+      "role": "development",
+      "question_language": "zh",
+      "evidence_language": "en",
+      "question": "仅依据6.1–6.3，列出三个速度参数的单位和数值默认值；若没有给出数值默认值，写出未设置时的行为。对 HOME_FINAL_VEL 补充允许的取值条件。对 HOME_SEARCH_VEL，另说明零值对搜索阶段的影响。",
+      "gold_items": [
+        {
+          "item": "HOME_SEARCH_VEL",
+          "required_attributes": {
+            "units": "machine-units per second",
+            "default": "0",
+            "behavior": "假定没有回零开关，跳过搜索阶段"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              107,
+              109
+            ],
+            "snapshot_char_half_open": [
+              6432,
+              6624
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "evidence": [
+            {
+              "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+              "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+              "canonical_char_half_open": [
+                6087,
+                6278
+              ],
+              "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+              "xpaths": [
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[4]/div[1]/p[1]",
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[4]/div[2]/p[1]"
+              ],
+              "quote": "This variable has units of machine-units per second.\n\nThe default value is zero. A value of zero causes LinuxCNC to assume that there is no home switch; the search stage of homing is skipped."
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "units",
+              "expected": "machine-units per second",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    6087,
+                    6278
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[4]/div[1]/p[1]",
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[4]/div[2]/p[1]"
+                  ],
+                  "quote": "This variable has units of machine-units per second.\n\nThe default value is zero. A value of zero causes LinuxCNC to assume that there is no home switch; the search stage of homing is skipped."
+                }
+              ]
+            },
+            {
+              "atom_id": "default",
+              "expected": "0",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    6087,
+                    6278
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[4]/div[1]/p[1]",
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[4]/div[2]/p[1]"
+                  ],
+                  "quote": "This variable has units of machine-units per second.\n\nThe default value is zero. A value of zero causes LinuxCNC to assume that there is no home switch; the search stage of homing is skipped."
+                }
+              ]
+            },
+            {
+              "atom_id": "behavior",
+              "expected": "假定没有回零开关，跳过搜索阶段",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    6087,
+                    6278
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[4]/div[1]/p[1]",
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[4]/div[2]/p[1]"
+                  ],
+                  "quote": "This variable has units of machine-units per second.\n\nThe default value is zero. A value of zero causes LinuxCNC to assume that there is no home switch; the search stage of homing is skipped."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "item": "HOME_LATCH_VEL",
+          "required_attributes": {
+            "units": "machine-units per second",
+            "default": "0"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              114,
+              117
+            ],
+            "snapshot_char_half_open": [
+              7423,
+              8470
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "evidence": [
+            {
+              "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+              "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+              "canonical_char_half_open": [
+                7076,
+                8123
+              ],
+              "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+              "xpaths": [
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[5]/div[1]/p[1]",
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[5]/div[2]/p[1]"
+              ],
+              "quote": "This variable has units of machine-units per second.\n\nSpecifies the speed and direction that LinuxCNC uses when it makes its final accurate determination of the home switch (if present) and index pulse location (if present). It will usually be slower than the search velocity to maximize accuracy. If HOME_SEARCH_VEL and HOME_LATCH_VEL have the same sign, then the latch phase is done while moving in the same direction as the search phase. (In that case, LinuxCNC first backs off the switch, before moving towards it again at the latch velocity.) If HOME_SEARCH_VEL and HOME_LATCH_VEL have opposite signs, the latch phase is done while moving in the opposite direction from the search phase. That means LinuxCNC will latch the first pulse after it moves off the switch. If HOME_SEARCH_VEL is zero (meaning there is no home switch), and this parameter is nonzero, LinuxCNC goes ahead to the index pulse search. If HOME_SEARCH_VEL is non-zero and this parameter is zero, it is an error and the homing operation will fail. The default value is zero."
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "units",
+              "expected": "machine-units per second",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    7076,
+                    8123
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[5]/div[1]/p[1]",
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[5]/div[2]/p[1]"
+                  ],
+                  "quote": "This variable has units of machine-units per second.\n\nSpecifies the speed and direction that LinuxCNC uses when it makes its final accurate determination of the home switch (if present) and index pulse location (if present). It will usually be slower than the search velocity to maximize accuracy. If HOME_SEARCH_VEL and HOME_LATCH_VEL have the same sign, then the latch phase is done while moving in the same direction as the search phase. (In that case, LinuxCNC first backs off the switch, before moving towards it again at the latch velocity.) If HOME_SEARCH_VEL and HOME_LATCH_VEL have opposite signs, the latch phase is done while moving in the opposite direction from the search phase. That means LinuxCNC will latch the first pulse after it moves off the switch. If HOME_SEARCH_VEL is zero (meaning there is no home switch), and this parameter is nonzero, LinuxCNC goes ahead to the index pulse search. If HOME_SEARCH_VEL is non-zero and this parameter is zero, it is an error and the homing operation will fail. The default value is zero."
+                }
+              ]
+            },
+            {
+              "atom_id": "default",
+              "expected": "0",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    7076,
+                    8123
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[5]/div[1]/p[1]",
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[5]/div[2]/p[1]"
+                  ],
+                  "quote": "This variable has units of machine-units per second.\n\nSpecifies the speed and direction that LinuxCNC uses when it makes its final accurate determination of the home switch (if present) and index pulse location (if present). It will usually be slower than the search velocity to maximize accuracy. If HOME_SEARCH_VEL and HOME_LATCH_VEL have the same sign, then the latch phase is done while moving in the same direction as the search phase. (In that case, LinuxCNC first backs off the switch, before moving towards it again at the latch velocity.) If HOME_SEARCH_VEL and HOME_LATCH_VEL have opposite signs, the latch phase is done while moving in the opposite direction from the search phase. That means LinuxCNC will latch the first pulse after it moves off the switch. If HOME_SEARCH_VEL is zero (meaning there is no home switch), and this parameter is nonzero, LinuxCNC goes ahead to the index pulse search. If HOME_SEARCH_VEL is non-zero and this parameter is zero, it is an error and the homing operation will fail. The default value is zero."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "item": "HOME_FINAL_VEL",
+          "required_attributes": {
+            "units": "machine-units per second",
+            "missing_behavior": "使用关节最大速度",
+            "value_constraint": "必须为正数"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              120,
+              122
+            ],
+            "snapshot_char_half_open": [
+              8495,
+              8798
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "evidence": [
+            {
+              "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+              "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+              "canonical_char_half_open": [
+                8146,
+                8448
+              ],
+              "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+              "xpaths": [
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[6]/div[1]/p[1]",
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[6]/div[2]/p[1]"
+              ],
+              "quote": "This variable has units of machine-units per second.\n\nIt specifies the speed that LinuxCNC uses when it makes its move from HOME_OFFSET to the HOME position. If the HOME_FINAL_VEL is missing from the INI file, then the maximum joint speed is used to make this move. The value must be a positive number."
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "units",
+              "expected": "machine-units per second",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    8146,
+                    8448
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[6]/div[1]/p[1]",
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[6]/div[2]/p[1]"
+                  ],
+                  "quote": "This variable has units of machine-units per second.\n\nIt specifies the speed that LinuxCNC uses when it makes its move from HOME_OFFSET to the HOME position. If the HOME_FINAL_VEL is missing from the INI file, then the maximum joint speed is used to make this move. The value must be a positive number."
+                }
+              ]
+            },
+            {
+              "atom_id": "missing_behavior",
+              "expected": "使用关节最大速度",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    8146,
+                    8448
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[6]/div[1]/p[1]",
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[6]/div[2]/p[1]"
+                  ],
+                  "quote": "This variable has units of machine-units per second.\n\nIt specifies the speed that LinuxCNC uses when it makes its move from HOME_OFFSET to the HOME position. If the HOME_FINAL_VEL is missing from the INI file, then the maximum joint speed is used to make this move. The value must be a positive number."
+                }
+              ]
+            },
+            {
+              "atom_id": "value_constraint",
+              "expected": "必须为正数",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    8146,
+                    8448
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[6]/div[1]/p[1]",
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[6]/div[2]/p[1]"
+                  ],
+                  "quote": "This variable has units of machine-units per second.\n\nIt specifies the speed that LinuxCNC uses when it makes its move from HOME_OFFSET to the HOME position. If the HOME_FINAL_VEL is missing from the INI file, then the maximum joint speed is used to make this move. The value must be a positive number."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "expected_item_count": 3,
+      "scoring_notes": [
+        "HOME_FINAL_VEL 未设置的行为不能错误写成数值默认0；不要求补充问题未请求的全部锁存逻辑。"
+      ],
+      "human_annotation_verified": false,
+      "task_role": "SCOPE_EXPLICIT_CALIBRATION_PROBE_NOT_DIFFICULTY_OR_NOVELTY_EVIDENCE",
+      "range_condition": "scope_given",
+      "evaluation_input_rule": "Only question and corpus for baseline; gold scope, item count, offsets and answers excluded from model input",
+      "draft_provenance": {
+        "file": "../questions-gold.draft.json",
+        "sha256": "895a529f94c431763a7f5cc3eed8619971a595204ed6f270b71a0404bfdc3159",
+        "old_scope": {
+          "web_lines_inclusive": [
+            105,
+            122
+          ],
+          "snapshot_char_half_open": [
+            6406,
+            8798
+          ],
+          "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+        }
+      },
+      "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+      "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+      "review_kind": "Original-source and target-region visual review plus independent AI review; not human Gold",
+      "scope": {
+        "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+        "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+        "canonical_char_half_open": [
+          6065,
+          8448
+        ],
+        "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+        "xpaths": [
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[4]/h3[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[4]/div[1]/p[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[4]/div[2]/p[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[4]/div[3]/p[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[5]/h3[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[5]/div[1]/p[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[5]/div[2]/p[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[6]/h3[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[6]/div[1]/p[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[6]/div[2]/p[1]"
+        ],
+        "quote": "6.1. HOME_SEARCH_VEL\n\nThis variable has units of machine-units per second.\n\nThe default value is zero. A value of zero causes LinuxCNC to assume that there is no home switch; the search stage of homing is skipped.\n\nIf HOME_SEARCH_VEL is non-zero, then LinuxCNC assumes that there is a home switch. It begins by checking whether the home switch is already tripped. If tripped it backs off the switch at HOME_SEARCH_VEL. The direction of the back-off is opposite the sign of HOME_SEARCH_VEL. Then it searches for the home switch by moving in the direction specified by the sign of HOME_SEARCH_VEL, at a speed determined by its absolute value. When the home switch is detected, the joint will stop as fast as possible, but there will always be some overshoot. The amount of overshoot depends on the speed. If it is too high, the joint might overshoot enough to hit a limit switch or crash into the end of travel. On the other hand, if HOME_SEARCH_VEL is too low, homing can take a long time.\n\n6.2. HOME_LATCH_VEL\n\nThis variable has units of machine-units per second.\n\nSpecifies the speed and direction that LinuxCNC uses when it makes its final accurate determination of the home switch (if present) and index pulse location (if present). It will usually be slower than the search velocity to maximize accuracy. If HOME_SEARCH_VEL and HOME_LATCH_VEL have the same sign, then the latch phase is done while moving in the same direction as the search phase. (In that case, LinuxCNC first backs off the switch, before moving towards it again at the latch velocity.) If HOME_SEARCH_VEL and HOME_LATCH_VEL have opposite signs, the latch phase is done while moving in the opposite direction from the search phase. That means LinuxCNC will latch the first pulse after it moves off the switch. If HOME_SEARCH_VEL is zero (meaning there is no home switch), and this parameter is nonzero, LinuxCNC goes ahead to the index pulse search. If HOME_SEARCH_VEL is non-zero and this parameter is zero, it is an error and the homing operation will fail. The default value is zero.\n\n6.3. HOME_FINAL_VEL\n\nThis variable has units of machine-units per second.\n\nIt specifies the speed that LinuxCNC uses when it makes its move from HOME_OFFSET to the HOME position. If the HOME_FINAL_VEL is missing from the INI file, then the maximum joint speed is used to make this move. The value must be a positive number."
+      },
+      "scope_semantics": "Gold target region; retrieval may use supporting context outside it, without adding off-scope answer items"
+    },
+    {
+      "question_id": "DEV-L04",
+      "source_id": "LCNC-HOME",
+      "status": "DEVELOPMENT_GOLD_V1_AI_REVIEWED",
+      "role": "development",
+      "question_language": "zh",
+      "evidence_language": "en",
+      "question": "列出6.11为三关节系统给出的全部示例，按顺序给出三个 HOME_SEQUENCE 值，并说明哪些关节同步最终移动。",
+      "gold_items": [
+        {
+          "item": "示例1",
+          "required_attributes": {
+            "values": [
+              0,
+              1,
+              1
+            ],
+            "synchronized_joints": []
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              169,
+              173
+            ],
+            "snapshot_char_half_open": [
+              14466,
+              14602
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "evidence": [
+            {
+              "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+              "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+              "canonical_char_half_open": [
+                14078,
+                14199
+              ],
+              "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+              "xpaths": [
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[8]/p[1]",
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[9]/div[1]/pre[1]"
+              ],
+              "quote": "Two sequences (0,1), no synchronization\n\n[JOINT_0]HOME_SEQUENCE = 0\n[JOINT_1]HOME_SEQUENCE = 1\n[JOINT_2]HOME_SEQUENCE = 1"
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "HOME_SEQUENCE.JOINT_0",
+              "expected": 0,
+              "match": "exact_numeric",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    14078,
+                    14199
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[8]/p[1]",
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[9]/div[1]/pre[1]"
+                  ],
+                  "quote": "Two sequences (0,1), no synchronization\n\n[JOINT_0]HOME_SEQUENCE = 0\n[JOINT_1]HOME_SEQUENCE = 1\n[JOINT_2]HOME_SEQUENCE = 1"
+                }
+              ]
+            },
+            {
+              "atom_id": "HOME_SEQUENCE.JOINT_1",
+              "expected": 1,
+              "match": "exact_numeric",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    14078,
+                    14199
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[8]/p[1]",
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[9]/div[1]/pre[1]"
+                  ],
+                  "quote": "Two sequences (0,1), no synchronization\n\n[JOINT_0]HOME_SEQUENCE = 0\n[JOINT_1]HOME_SEQUENCE = 1\n[JOINT_2]HOME_SEQUENCE = 1"
+                }
+              ]
+            },
+            {
+              "atom_id": "HOME_SEQUENCE.JOINT_2",
+              "expected": 1,
+              "match": "exact_numeric",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    14078,
+                    14199
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[8]/p[1]",
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[9]/div[1]/pre[1]"
+                  ],
+                  "quote": "Two sequences (0,1), no synchronization\n\n[JOINT_0]HOME_SEQUENCE = 0\n[JOINT_1]HOME_SEQUENCE = 1\n[JOINT_2]HOME_SEQUENCE = 1"
+                }
+              ]
+            },
+            {
+              "atom_id": "synchronized_joints",
+              "expected": [],
+              "match": "exact_unordered_set",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    14078,
+                    14199
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[8]/p[1]",
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[9]/div[1]/pre[1]"
+                  ],
+                  "quote": "Two sequences (0,1), no synchronization\n\n[JOINT_0]HOME_SEQUENCE = 0\n[JOINT_1]HOME_SEQUENCE = 1\n[JOINT_2]HOME_SEQUENCE = 1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "item": "示例2",
+          "required_attributes": {
+            "values": [
+              0,
+              -1,
+              -1
+            ],
+            "synchronized_joints": [
+              1,
+              2
+            ]
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              174,
+              178
+            ],
+            "snapshot_char_half_open": [
+              14602,
+              14744
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "evidence": [
+            {
+              "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+              "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+              "canonical_char_half_open": [
+                14201,
+                14328
+              ],
+              "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+              "xpaths": [
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[10]/p[1]",
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[11]/div[1]/pre[1]"
+              ],
+              "quote": "Two sequences, joints 1 and 2 synchronized\n\n[JOINT_0]HOME_SEQUENCE =  0\n[JOINT_1]HOME_SEQUENCE = -1\n[JOINT_2]HOME_SEQUENCE = -1"
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "HOME_SEQUENCE.JOINT_0",
+              "expected": 0,
+              "match": "exact_numeric",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    14201,
+                    14328
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[10]/p[1]",
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[11]/div[1]/pre[1]"
+                  ],
+                  "quote": "Two sequences, joints 1 and 2 synchronized\n\n[JOINT_0]HOME_SEQUENCE =  0\n[JOINT_1]HOME_SEQUENCE = -1\n[JOINT_2]HOME_SEQUENCE = -1"
+                }
+              ]
+            },
+            {
+              "atom_id": "HOME_SEQUENCE.JOINT_1",
+              "expected": -1,
+              "match": "exact_numeric",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    14201,
+                    14328
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[10]/p[1]",
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[11]/div[1]/pre[1]"
+                  ],
+                  "quote": "Two sequences, joints 1 and 2 synchronized\n\n[JOINT_0]HOME_SEQUENCE =  0\n[JOINT_1]HOME_SEQUENCE = -1\n[JOINT_2]HOME_SEQUENCE = -1"
+                }
+              ]
+            },
+            {
+              "atom_id": "HOME_SEQUENCE.JOINT_2",
+              "expected": -1,
+              "match": "exact_numeric",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    14201,
+                    14328
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[10]/p[1]",
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[11]/div[1]/pre[1]"
+                  ],
+                  "quote": "Two sequences, joints 1 and 2 synchronized\n\n[JOINT_0]HOME_SEQUENCE =  0\n[JOINT_1]HOME_SEQUENCE = -1\n[JOINT_2]HOME_SEQUENCE = -1"
+                }
+              ]
+            },
+            {
+              "atom_id": "synchronized_joints",
+              "expected": [
+                1,
+                2
+              ],
+              "match": "exact_unordered_set",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    14201,
+                    14328
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[10]/p[1]",
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[11]/div[1]/pre[1]"
+                  ],
+                  "quote": "Two sequences, joints 1 and 2 synchronized\n\n[JOINT_0]HOME_SEQUENCE =  0\n[JOINT_1]HOME_SEQUENCE = -1\n[JOINT_2]HOME_SEQUENCE = -1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "item": "示例3",
+          "required_attributes": {
+            "values": [
+              0,
+              -1,
+              1
+            ],
+            "synchronized_joints": [
+              1,
+              2
+            ]
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              180,
+              184
+            ],
+            "snapshot_char_half_open": [
+              14745,
+              14913
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "evidence": [
+            {
+              "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+              "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+              "canonical_char_half_open": [
+                14330,
+                14483
+              ],
+              "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+              "xpaths": [
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[12]/p[1]",
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[13]/div[1]/pre[1]"
+              ],
+              "quote": "With mixed positive and negative values, joints 1 and 2 synchronized\n\n[JOINT_0]HOME_SEQUENCE =  0\n[JOINT_1]HOME_SEQUENCE = -1\n[JOINT_2]HOME_SEQUENCE =  1"
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "HOME_SEQUENCE.JOINT_0",
+              "expected": 0,
+              "match": "exact_numeric",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    14330,
+                    14483
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[12]/p[1]",
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[13]/div[1]/pre[1]"
+                  ],
+                  "quote": "With mixed positive and negative values, joints 1 and 2 synchronized\n\n[JOINT_0]HOME_SEQUENCE =  0\n[JOINT_1]HOME_SEQUENCE = -1\n[JOINT_2]HOME_SEQUENCE =  1"
+                }
+              ]
+            },
+            {
+              "atom_id": "HOME_SEQUENCE.JOINT_1",
+              "expected": -1,
+              "match": "exact_numeric",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    14330,
+                    14483
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[12]/p[1]",
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[13]/div[1]/pre[1]"
+                  ],
+                  "quote": "With mixed positive and negative values, joints 1 and 2 synchronized\n\n[JOINT_0]HOME_SEQUENCE =  0\n[JOINT_1]HOME_SEQUENCE = -1\n[JOINT_2]HOME_SEQUENCE =  1"
+                }
+              ]
+            },
+            {
+              "atom_id": "HOME_SEQUENCE.JOINT_2",
+              "expected": 1,
+              "match": "exact_numeric",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    14330,
+                    14483
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[12]/p[1]",
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[13]/div[1]/pre[1]"
+                  ],
+                  "quote": "With mixed positive and negative values, joints 1 and 2 synchronized\n\n[JOINT_0]HOME_SEQUENCE =  0\n[JOINT_1]HOME_SEQUENCE = -1\n[JOINT_2]HOME_SEQUENCE =  1"
+                }
+              ]
+            },
+            {
+              "atom_id": "synchronized_joints",
+              "expected": [
+                1,
+                2
+              ],
+              "match": "exact_unordered_set",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    14330,
+                    14483
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[12]/p[1]",
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[13]/div[1]/pre[1]"
+                  ],
+                  "quote": "With mixed positive and negative values, joints 1 and 2 synchronized\n\n[JOINT_0]HOME_SEQUENCE =  0\n[JOINT_1]HOME_SEQUENCE = -1\n[JOINT_2]HOME_SEQUENCE =  1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "item": "示例4",
+          "required_attributes": {
+            "values": [
+              0,
+              0,
+              0
+            ],
+            "synchronized_joints": []
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              186,
+              190
+            ],
+            "snapshot_char_half_open": [
+              14914,
+              15046
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "evidence": [
+            {
+              "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+              "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+              "canonical_char_half_open": [
+                14485,
+                14602
+              ],
+              "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+              "xpaths": [
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[14]/p[1]",
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[15]/div[1]/pre[1]"
+              ],
+              "quote": "One sequence, no synchronization\n\n[JOINT_0]HOME_SEQUENCE =  0\n[JOINT_1]HOME_SEQUENCE =  0\n[JOINT_2]HOME_SEQUENCE =  0"
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "HOME_SEQUENCE.JOINT_0",
+              "expected": 0,
+              "match": "exact_numeric",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    14485,
+                    14602
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[14]/p[1]",
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[15]/div[1]/pre[1]"
+                  ],
+                  "quote": "One sequence, no synchronization\n\n[JOINT_0]HOME_SEQUENCE =  0\n[JOINT_1]HOME_SEQUENCE =  0\n[JOINT_2]HOME_SEQUENCE =  0"
+                }
+              ]
+            },
+            {
+              "atom_id": "HOME_SEQUENCE.JOINT_1",
+              "expected": 0,
+              "match": "exact_numeric",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    14485,
+                    14602
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[14]/p[1]",
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[15]/div[1]/pre[1]"
+                  ],
+                  "quote": "One sequence, no synchronization\n\n[JOINT_0]HOME_SEQUENCE =  0\n[JOINT_1]HOME_SEQUENCE =  0\n[JOINT_2]HOME_SEQUENCE =  0"
+                }
+              ]
+            },
+            {
+              "atom_id": "HOME_SEQUENCE.JOINT_2",
+              "expected": 0,
+              "match": "exact_numeric",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    14485,
+                    14602
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[14]/p[1]",
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[15]/div[1]/pre[1]"
+                  ],
+                  "quote": "One sequence, no synchronization\n\n[JOINT_0]HOME_SEQUENCE =  0\n[JOINT_1]HOME_SEQUENCE =  0\n[JOINT_2]HOME_SEQUENCE =  0"
+                }
+              ]
+            },
+            {
+              "atom_id": "synchronized_joints",
+              "expected": [],
+              "match": "exact_unordered_set",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    14485,
+                    14602
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[14]/p[1]",
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[15]/div[1]/pre[1]"
+                  ],
+                  "quote": "One sequence, no synchronization\n\n[JOINT_0]HOME_SEQUENCE =  0\n[JOINT_1]HOME_SEQUENCE =  0\n[JOINT_2]HOME_SEQUENCE =  0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "item": "示例5",
+          "required_attributes": {
+            "values": [
+              -1,
+              -1,
+              -1
+            ],
+            "synchronized_joints": [
+              0,
+              1,
+              2
+            ]
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              191,
+              195
+            ],
+            "snapshot_char_half_open": [
+              15046,
+              15183
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "evidence": [
+            {
+              "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+              "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+              "canonical_char_half_open": [
+                14604,
+                14726
+              ],
+              "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+              "xpaths": [
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[16]/p[1]",
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[17]/div[1]/pre[1]"
+              ],
+              "quote": "One sequence, all joints synchronized\n\n[JOINT_0]HOME_SEQUENCE = -1\n[JOINT_1]HOME_SEQUENCE = -1\n[JOINT_2]HOME_SEQUENCE = -1"
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "HOME_SEQUENCE.JOINT_0",
+              "expected": -1,
+              "match": "exact_numeric",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    14604,
+                    14726
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[16]/p[1]",
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[17]/div[1]/pre[1]"
+                  ],
+                  "quote": "One sequence, all joints synchronized\n\n[JOINT_0]HOME_SEQUENCE = -1\n[JOINT_1]HOME_SEQUENCE = -1\n[JOINT_2]HOME_SEQUENCE = -1"
+                }
+              ]
+            },
+            {
+              "atom_id": "HOME_SEQUENCE.JOINT_1",
+              "expected": -1,
+              "match": "exact_numeric",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    14604,
+                    14726
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[16]/p[1]",
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[17]/div[1]/pre[1]"
+                  ],
+                  "quote": "One sequence, all joints synchronized\n\n[JOINT_0]HOME_SEQUENCE = -1\n[JOINT_1]HOME_SEQUENCE = -1\n[JOINT_2]HOME_SEQUENCE = -1"
+                }
+              ]
+            },
+            {
+              "atom_id": "HOME_SEQUENCE.JOINT_2",
+              "expected": -1,
+              "match": "exact_numeric",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    14604,
+                    14726
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[16]/p[1]",
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[17]/div[1]/pre[1]"
+                  ],
+                  "quote": "One sequence, all joints synchronized\n\n[JOINT_0]HOME_SEQUENCE = -1\n[JOINT_1]HOME_SEQUENCE = -1\n[JOINT_2]HOME_SEQUENCE = -1"
+                }
+              ]
+            },
+            {
+              "atom_id": "synchronized_joints",
+              "expected": [
+                0,
+                1,
+                2
+              ],
+              "match": "exact_unordered_set",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    14604,
+                    14726
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[16]/p[1]",
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[17]/div[1]/pre[1]"
+                  ],
+                  "quote": "One sequence, all joints synchronized\n\n[JOINT_0]HOME_SEQUENCE = -1\n[JOINT_1]HOME_SEQUENCE = -1\n[JOINT_2]HOME_SEQUENCE = -1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "expected_item_count": 5,
+      "scoring_notes": [
+        "同步指最终移动同步；同序号可同时回零不自动等于最终移动同步。"
+      ],
+      "human_annotation_verified": false,
+      "task_role": "SCOPE_EXPLICIT_CALIBRATION_PROBE_NOT_DIFFICULTY_OR_NOVELTY_EVIDENCE",
+      "range_condition": "scope_given",
+      "evaluation_input_rule": "Only question and corpus for baseline; gold scope, item count, offsets and answers excluded from model input",
+      "draft_provenance": {
+        "file": "../questions-gold.draft.json",
+        "sha256": "895a529f94c431763a7f5cc3eed8619971a595204ed6f270b71a0404bfdc3159",
+        "old_scope": {
+          "web_lines_inclusive": [
+            167,
+            195
+          ],
+          "snapshot_char_half_open": [
+            14435,
+            15183
+          ],
+          "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+        }
+      },
+      "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+      "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+      "review_kind": "Original-source and target-region visual review plus independent AI review; not human Gold",
+      "scope": {
+        "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+        "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+        "canonical_char_half_open": [
+          14047,
+          14726
+        ],
+        "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+        "xpaths": [
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[7]/p[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[8]/p[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[9]/div[1]/pre[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[10]/p[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[11]/div[1]/pre[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[12]/p[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[13]/div[1]/pre[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[14]/p[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[15]/div[1]/pre[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[16]/p[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[17]/div[1]/pre[1]"
+        ],
+        "quote": "Examples for a 3 joint system\n\nTwo sequences (0,1), no synchronization\n\n[JOINT_0]HOME_SEQUENCE = 0\n[JOINT_1]HOME_SEQUENCE = 1\n[JOINT_2]HOME_SEQUENCE = 1\n\nTwo sequences, joints 1 and 2 synchronized\n\n[JOINT_0]HOME_SEQUENCE =  0\n[JOINT_1]HOME_SEQUENCE = -1\n[JOINT_2]HOME_SEQUENCE = -1\n\nWith mixed positive and negative values, joints 1 and 2 synchronized\n\n[JOINT_0]HOME_SEQUENCE =  0\n[JOINT_1]HOME_SEQUENCE = -1\n[JOINT_2]HOME_SEQUENCE =  1\n\nOne sequence, no synchronization\n\n[JOINT_0]HOME_SEQUENCE =  0\n[JOINT_1]HOME_SEQUENCE =  0\n[JOINT_2]HOME_SEQUENCE =  0\n\nOne sequence, all joints synchronized\n\n[JOINT_0]HOME_SEQUENCE = -1\n[JOINT_1]HOME_SEQUENCE = -1\n[JOINT_2]HOME_SEQUENCE = -1"
+      },
+      "scope_semantics": "Gold target region; retrieval may use supporting context outside it, without adding off-scope answer items"
+    },
+    {
+      "question_id": "DEV-L05",
+      "source_id": "LCNC-HOME",
+      "status": "DEVELOPMENT_GOLD_V1_AI_REVIEWED",
+      "role": "development",
+      "question_language": "zh",
+      "evidence_language": "en",
+      "question": "列出6.14 Immediate Homing 代码块中的全部配置及其给定值或允许替代值，并说明省略 HOME_SEQUENCE 对 HOME ALL 的影响。",
+      "gold_items": [
+        {
+          "item": "HOME_SEARCH_VEL",
+          "required_attributes": {
+            "value": "0"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              207,
+              207
+            ],
+            "snapshot_char_half_open": [
+              15892,
+              15917
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "evidence": [
+            {
+              "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+              "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+              "canonical_char_half_open": [
+                15426,
+                15445
+              ],
+              "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+              "xpaths": [
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[17]/div[2]/div[1]/pre[1]"
+              ],
+              "quote": "HOME_SEARCH_VEL = 0"
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "value",
+              "expected": "0",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    15426,
+                    15445
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[17]/div[2]/div[1]/pre[1]"
+                  ],
+                  "quote": "HOME_SEARCH_VEL = 0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "item": "HOME_LATCH_VEL",
+          "required_attributes": {
+            "value": "0"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              208,
+              208
+            ],
+            "snapshot_char_half_open": [
+              15917,
+              15940
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "evidence": [
+            {
+              "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+              "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+              "canonical_char_half_open": [
+                15446,
+                15464
+              ],
+              "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+              "xpaths": [
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[17]/div[2]/div[1]/pre[1]"
+              ],
+              "quote": "HOME_LATCH_VEL = 0"
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "value",
+              "expected": "0",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    15446,
+                    15464
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[17]/div[2]/div[1]/pre[1]"
+                  ],
+                  "quote": "HOME_LATCH_VEL = 0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "item": "HOME_USE_INDEX",
+          "required_attributes": {
+            "value": "NO"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              209,
+              209
+            ],
+            "snapshot_char_half_open": [
+              15940,
+              15964
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "evidence": [
+            {
+              "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+              "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+              "canonical_char_half_open": [
+                15465,
+                15484
+              ],
+              "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+              "xpaths": [
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[17]/div[2]/div[1]/pre[1]"
+              ],
+              "quote": "HOME_USE_INDEX = NO"
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "value",
+              "expected": "NO",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    15465,
+                    15484
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[17]/div[2]/div[1]/pre[1]"
+                  ],
+                  "quote": "HOME_USE_INDEX = NO"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "item": "HOME_OFFSET",
+          "required_attributes": {
+            "value": "0",
+            "alternative": "home position offset (HOME)"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              210,
+              210
+            ],
+            "snapshot_char_half_open": [
+              15964,
+              16021
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "evidence": [
+            {
+              "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+              "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+              "canonical_char_half_open": [
+                15485,
+                15537
+              ],
+              "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+              "xpaths": [
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[17]/div[2]/div[1]/pre[1]"
+              ],
+              "quote": "HOME_OFFSET = 0 (Or the home position offset (HOME))"
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "value",
+              "expected": "0",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    15485,
+                    15537
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[17]/div[2]/div[1]/pre[1]"
+                  ],
+                  "quote": "HOME_OFFSET = 0 (Or the home position offset (HOME))"
+                }
+              ]
+            },
+            {
+              "atom_id": "alternative",
+              "expected": "home position offset (HOME)",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    15485,
+                    15537
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[17]/div[2]/div[1]/pre[1]"
+                  ],
+                  "quote": "HOME_OFFSET = 0 (Or the home position offset (HOME))"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "item": "HOME_SEQUENCE",
+          "required_attributes": {
+            "value": "0",
+            "alternative": "other valid sequence number",
+            "omission_effect": "该关节不参与 HOME ALL"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              211,
+              212
+            ],
+            "snapshot_char_half_open": [
+              16021,
+              16405
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "evidence": [
+            {
+              "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+              "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+              "canonical_char_half_open": [
+                15538,
+                15588
+              ],
+              "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+              "xpaths": [
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[17]/div[2]/div[1]/pre[1]"
+              ],
+              "quote": "HOME_SEQUENCE = 0 (or other valid sequence number)"
+            },
+            {
+              "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+              "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+              "canonical_char_half_open": [
+                15590,
+                15916
+              ],
+              "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+              "xpaths": [
+                "/html[1]/body[1]/div[2]/div[6]/div[1]/div[17]/div[3]/table[1]/tr[1]"
+              ],
+              "quote": "Note | The default values for unspecified HOME_SEARCH_VEL, HOME_LATCH_VEL, HOME_USE_INDEX, HOME, and HOME_OFFSET are zero, so they may be omitted when requesting immediate homing. A valid HOME_SEQUENCE number should usually be included since omitting a HOME_SEQUENCE eliminates the joint from HOME ALL behavior as noted above."
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "value",
+              "expected": "0",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    15538,
+                    15588
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[17]/div[2]/div[1]/pre[1]"
+                  ],
+                  "quote": "HOME_SEQUENCE = 0 (or other valid sequence number)"
+                },
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    15590,
+                    15916
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[17]/div[3]/table[1]/tr[1]"
+                  ],
+                  "quote": "Note | The default values for unspecified HOME_SEARCH_VEL, HOME_LATCH_VEL, HOME_USE_INDEX, HOME, and HOME_OFFSET are zero, so they may be omitted when requesting immediate homing. A valid HOME_SEQUENCE number should usually be included since omitting a HOME_SEQUENCE eliminates the joint from HOME ALL behavior as noted above."
+                }
+              ]
+            },
+            {
+              "atom_id": "alternative",
+              "expected": "other valid sequence number",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    15538,
+                    15588
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[17]/div[2]/div[1]/pre[1]"
+                  ],
+                  "quote": "HOME_SEQUENCE = 0 (or other valid sequence number)"
+                },
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    15590,
+                    15916
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[17]/div[3]/table[1]/tr[1]"
+                  ],
+                  "quote": "Note | The default values for unspecified HOME_SEARCH_VEL, HOME_LATCH_VEL, HOME_USE_INDEX, HOME, and HOME_OFFSET are zero, so they may be omitted when requesting immediate homing. A valid HOME_SEQUENCE number should usually be included since omitting a HOME_SEQUENCE eliminates the joint from HOME ALL behavior as noted above."
+                }
+              ]
+            },
+            {
+              "atom_id": "omission_effect",
+              "expected": "该关节不参与 HOME ALL",
+              "match": "semantic_or_exact_as_applicable",
+              "evidence": [
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    15538,
+                    15588
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[17]/div[2]/div[1]/pre[1]"
+                  ],
+                  "quote": "HOME_SEQUENCE = 0 (or other valid sequence number)"
+                },
+                {
+                  "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+                  "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+                  "canonical_char_half_open": [
+                    15590,
+                    15916
+                  ],
+                  "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+                  "xpaths": [
+                    "/html[1]/body[1]/div[2]/div[6]/div[1]/div[17]/div[3]/table[1]/tr[1]"
+                  ],
+                  "quote": "Note | The default values for unspecified HOME_SEARCH_VEL, HOME_LATCH_VEL, HOME_USE_INDEX, HOME, and HOME_OFFSET are zero, so they may be omitted when requesting immediate homing. A valid HOME_SEQUENCE number should usually be included since omitting a HOME_SEQUENCE eliminates the joint from HOME ALL behavior as noted above."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "expected_item_count": 5,
+      "scoring_notes": [
+        "代码块内容和省略行为均需回答；HOME 仅作解释，不能增加为代码块中的第六项。"
+      ],
+      "human_annotation_verified": false,
+      "task_role": "SCOPE_EXPLICIT_CALIBRATION_PROBE_NOT_DIFFICULTY_OR_NOVELTY_EVIDENCE",
+      "range_condition": "scope_given",
+      "evaluation_input_rule": "Only question and corpus for baseline; gold scope, item count, offsets and answers excluded from model input",
+      "draft_provenance": {
+        "file": "../questions-gold.draft.json",
+        "sha256": "895a529f94c431763a7f5cc3eed8619971a595204ed6f270b71a0404bfdc3159",
+        "old_scope": {
+          "web_lines_inclusive": [
+            203,
+            212
+          ],
+          "snapshot_char_half_open": [
+            15594,
+            16405
+          ],
+          "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+        }
+      },
+      "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+      "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+      "review_kind": "Original-source and target-region visual review plus independent AI review; not human Gold",
+      "scope": {
+        "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+        "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+        "canonical_char_half_open": [
+          15132,
+          15916
+        ],
+        "locator_kind": "XHTML_XPATH_AND_CANONICAL_CHARS",
+        "xpaths": [
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[17]/h3[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[17]/div[1]/p[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[17]/div[2]/div[1]/pre[1]",
+          "/html[1]/body[1]/div[2]/div[6]/div[1]/div[17]/div[3]/table[1]/tr[1]"
+        ],
+        "quote": "6.14. Immediate Homing\n\nIf a joint does not have home switches or does not have a logical home position like a rotary joint and you want that joint to home at the current position when the \"Home All\" button is pressed in the AXIS GUI, then the following INI entries for that joint are needed.\n\nHOME_SEARCH_VEL = 0\nHOME_LATCH_VEL = 0\nHOME_USE_INDEX = NO\nHOME_OFFSET = 0 (Or the home position offset (HOME))\nHOME_SEQUENCE = 0 (or other valid sequence number)\n\nNote | The default values for unspecified HOME_SEARCH_VEL, HOME_LATCH_VEL, HOME_USE_INDEX, HOME, and HOME_OFFSET are zero, so they may be omitted when requesting immediate homing. A valid HOME_SEQUENCE number should usually be included since omitting a HOME_SEQUENCE eliminates the joint from HOME ALL behavior as noted above."
+      },
+      "scope_semantics": "Gold target region; retrieval may use supporting context outside it, without adding off-scope answer items"
+    },
+    {
+      "question_id": "DEV-N01",
+      "source_id": "NIST-8091",
+      "status": "DEVELOPMENT_GOLD_V1_AI_REVIEWED",
+      "role": "development",
+      "question_language": "zh",
+      "evidence_language": "en",
+      "question": "在NISTIR 8091第3节中，引出子系统所需度量的列表列出了哪些类别？为每类保留括号中全部示例或判定要点，并说明该列表是否声称穷尽全部度量。",
+      "gold_items": [
+        {
+          "item": "Tolerances",
+          "required_attributes": {
+            "example_or_meaning_components": [
+              "机械臂到达指令位置的变化",
+              "传感器输出的不确定性"
+            ]
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              214,
+              215
+            ],
+            "snapshot_char_half_open": [
+              2942,
+              3075
+            ],
+            "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+          },
+          "evidence": [
+            {
+              "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+              "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+              "canonical_char_half_open": [
+                16937,
+                17075
+              ],
+              "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+              "pdf_page_zero_based": 7,
+              "pdf_page_one_based": 8,
+              "printed_page_label": "5",
+              "quote": "   Tolerances (e.g., variability by which a manipulator reaches a commanded position,\n    uncertainty in the reported output of a sensor)"
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "example_or_meaning_components.1",
+              "expected": "机械臂到达指令位置的变化",
+              "match": "semantic_equivalent",
+              "evidence": [
+                {
+                  "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+                  "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+                  "canonical_char_half_open": [
+                    16937,
+                    17075
+                  ],
+                  "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+                  "pdf_page_zero_based": 7,
+                  "pdf_page_one_based": 8,
+                  "printed_page_label": "5",
+                  "quote": "   Tolerances (e.g., variability by which a manipulator reaches a commanded position,\n    uncertainty in the reported output of a sensor)"
+                }
+              ]
+            },
+            {
+              "atom_id": "example_or_meaning_components.2",
+              "expected": "传感器输出的不确定性",
+              "match": "semantic_equivalent",
+              "evidence": [
+                {
+                  "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+                  "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+                  "canonical_char_half_open": [
+                    16937,
+                    17075
+                  ],
+                  "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+                  "pdf_page_zero_based": 7,
+                  "pdf_page_one_based": 8,
+                  "printed_page_label": "5",
+                  "quote": "   Tolerances (e.g., variability by which a manipulator reaches a commanded position,\n    uncertainty in the reported output of a sensor)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "item": "Time needed for execution",
+          "required_attributes": {
+            "example_or_meaning_components": [
+              "机械臂抓取零件所需时间",
+              "传感器定位零件所需时间"
+            ]
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              216,
+              217
+            ],
+            "snapshot_char_half_open": [
+              3075,
+              3169
+            ],
+            "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+          },
+          "evidence": [
+            {
+              "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+              "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+              "canonical_char_half_open": [
+                17076,
+                17175
+              ],
+              "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+              "pdf_page_zero_based": 7,
+              "pdf_page_one_based": 8,
+              "printed_page_label": "5",
+              "quote": "   Time needed for execution (e.g., a manipulator picking up a part, a sensor locating a\n    part)"
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "example_or_meaning_components.1",
+              "expected": "机械臂抓取零件所需时间",
+              "match": "semantic_equivalent",
+              "evidence": [
+                {
+                  "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+                  "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+                  "canonical_char_half_open": [
+                    17076,
+                    17175
+                  ],
+                  "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+                  "pdf_page_zero_based": 7,
+                  "pdf_page_one_based": 8,
+                  "printed_page_label": "5",
+                  "quote": "   Time needed for execution (e.g., a manipulator picking up a part, a sensor locating a\n    part)"
+                }
+              ]
+            },
+            {
+              "atom_id": "example_or_meaning_components.2",
+              "expected": "传感器定位零件所需时间",
+              "match": "semantic_equivalent",
+              "evidence": [
+                {
+                  "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+                  "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+                  "canonical_char_half_open": [
+                    17076,
+                    17175
+                  ],
+                  "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+                  "pdf_page_zero_based": 7,
+                  "pdf_page_one_based": 8,
+                  "printed_page_label": "5",
+                  "quote": "   Time needed for execution (e.g., a manipulator picking up a part, a sensor locating a\n    part)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "item": "Variability",
+          "required_attributes": {
+            "example_or_meaning_components": [
+              "时间的变化",
+              "位置的变化"
+            ]
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              218,
+              218
+            ],
+            "snapshot_char_half_open": [
+              3169,
+              3209
+            ],
+            "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+          },
+          "evidence": [
+            {
+              "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+              "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+              "canonical_char_half_open": [
+                17176,
+                17217
+              ],
+              "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+              "pdf_page_zero_based": 7,
+              "pdf_page_one_based": 8,
+              "printed_page_label": "5",
+              "quote": "   Variability (e.g., in time, position)"
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "example_or_meaning_components.1",
+              "expected": "时间的变化",
+              "match": "semantic_equivalent",
+              "evidence": [
+                {
+                  "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+                  "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+                  "canonical_char_half_open": [
+                    17176,
+                    17217
+                  ],
+                  "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+                  "pdf_page_zero_based": 7,
+                  "pdf_page_one_based": 8,
+                  "printed_page_label": "5",
+                  "quote": "   Variability (e.g., in time, position)"
+                }
+              ]
+            },
+            {
+              "atom_id": "example_or_meaning_components.2",
+              "expected": "位置的变化",
+              "match": "semantic_equivalent",
+              "evidence": [
+                {
+                  "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+                  "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+                  "canonical_char_half_open": [
+                    17176,
+                    17217
+                  ],
+                  "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+                  "pdf_page_zero_based": 7,
+                  "pdf_page_one_based": 8,
+                  "printed_page_label": "5",
+                  "quote": "   Variability (e.g., in time, position)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "item": "Weight",
+          "required_attributes": {
+            "example_or_meaning_components": [
+              "机械臂负载能力",
+              "可达体积不同部位的负载能力约束"
+            ]
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              219,
+              220
+            ],
+            "snapshot_char_half_open": [
+              3209,
+              3325
+            ],
+            "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+          },
+          "evidence": [
+            {
+              "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+              "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+              "canonical_char_half_open": [
+                17218,
+                17339
+              ],
+              "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+              "pdf_page_zero_based": 7,
+              "pdf_page_one_based": 8,
+              "printed_page_label": "5",
+              "quote": "   Weight (e.g., load capacity of a manipulator, constraints on capacity in different parts\n    of its reachable volume)"
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "example_or_meaning_components.1",
+              "expected": "机械臂负载能力",
+              "match": "semantic_equivalent",
+              "evidence": [
+                {
+                  "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+                  "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+                  "canonical_char_half_open": [
+                    17218,
+                    17339
+                  ],
+                  "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+                  "pdf_page_zero_based": 7,
+                  "pdf_page_one_based": 8,
+                  "printed_page_label": "5",
+                  "quote": "   Weight (e.g., load capacity of a manipulator, constraints on capacity in different parts\n    of its reachable volume)"
+                }
+              ]
+            },
+            {
+              "atom_id": "example_or_meaning_components.2",
+              "expected": "可达体积不同部位的负载能力约束",
+              "match": "semantic_equivalent",
+              "evidence": [
+                {
+                  "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+                  "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+                  "canonical_char_half_open": [
+                    17218,
+                    17339
+                  ],
+                  "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+                  "pdf_page_zero_based": 7,
+                  "pdf_page_one_based": 8,
+                  "printed_page_label": "5",
+                  "quote": "   Weight (e.g., load capacity of a manipulator, constraints on capacity in different parts\n    of its reachable volume)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "item": "Size",
+          "required_attributes": {
+            "example_or_meaning_components": [
+              "设备占地",
+              "传感器视场",
+              "机器人可抓取物体的最大尺寸"
+            ]
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              221,
+              222
+            ],
+            "snapshot_char_half_open": [
+              3325,
+              3446
+            ],
+            "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+          },
+          "evidence": [
+            {
+              "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+              "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+              "canonical_char_half_open": [
+                17340,
+                17466
+              ],
+              "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+              "pdf_page_zero_based": 7,
+              "pdf_page_one_based": 8,
+              "printed_page_label": "5",
+              "quote": "   Size (e.g., the footprint of a machine or the field of view of a sensor, the largest-sized\n    object a robot can pick up)"
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "example_or_meaning_components.1",
+              "expected": "设备占地",
+              "match": "semantic_equivalent",
+              "evidence": [
+                {
+                  "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+                  "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+                  "canonical_char_half_open": [
+                    17340,
+                    17466
+                  ],
+                  "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+                  "pdf_page_zero_based": 7,
+                  "pdf_page_one_based": 8,
+                  "printed_page_label": "5",
+                  "quote": "   Size (e.g., the footprint of a machine or the field of view of a sensor, the largest-sized\n    object a robot can pick up)"
+                }
+              ]
+            },
+            {
+              "atom_id": "example_or_meaning_components.2",
+              "expected": "传感器视场",
+              "match": "semantic_equivalent",
+              "evidence": [
+                {
+                  "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+                  "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+                  "canonical_char_half_open": [
+                    17340,
+                    17466
+                  ],
+                  "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+                  "pdf_page_zero_based": 7,
+                  "pdf_page_one_based": 8,
+                  "printed_page_label": "5",
+                  "quote": "   Size (e.g., the footprint of a machine or the field of view of a sensor, the largest-sized\n    object a robot can pick up)"
+                }
+              ]
+            },
+            {
+              "atom_id": "example_or_meaning_components.3",
+              "expected": "机器人可抓取物体的最大尺寸",
+              "match": "semantic_equivalent",
+              "evidence": [
+                {
+                  "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+                  "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+                  "canonical_char_half_open": [
+                    17340,
+                    17466
+                  ],
+                  "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+                  "pdf_page_zero_based": 7,
+                  "pdf_page_one_based": 8,
+                  "printed_page_label": "5",
+                  "quote": "   Size (e.g., the footprint of a machine or the field of view of a sensor, the largest-sized\n    object a robot can pick up)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "item": "Reachability of equipment",
+          "required_attributes": {
+            "example_or_meaning_components": [
+              "机械臂工作体积"
+            ]
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              223,
+              223
+            ],
+            "snapshot_char_half_open": [
+              3446,
+              3518
+            ],
+            "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+          },
+          "evidence": [
+            {
+              "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+              "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+              "canonical_char_half_open": [
+                17467,
+                17540
+              ],
+              "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+              "pdf_page_zero_based": 7,
+              "pdf_page_one_based": 8,
+              "printed_page_label": "5",
+              "quote": "   Reachability of equipment (e.g., the working volume of a manipulator)"
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "example_or_meaning_components.1",
+              "expected": "机械臂工作体积",
+              "match": "semantic_equivalent",
+              "evidence": [
+                {
+                  "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+                  "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+                  "canonical_char_half_open": [
+                    17467,
+                    17540
+                  ],
+                  "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+                  "pdf_page_zero_based": 7,
+                  "pdf_page_one_based": 8,
+                  "printed_page_label": "5",
+                  "quote": "   Reachability of equipment (e.g., the working volume of a manipulator)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "item": "Accuracy of equipment",
+          "required_attributes": {
+            "example_or_meaning_components": [
+              "机器人能否足够精确地配合零件以完成装配",
+              "传感器能否以取件所需精度测量"
+            ]
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              224,
+              226
+            ],
+            "snapshot_char_half_open": [
+              3518,
+              3687
+            ],
+            "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+          },
+          "evidence": [
+            {
+              "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+              "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+              "canonical_char_half_open": [
+                17541,
+                17719
+              ],
+              "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+              "pdf_page_zero_based": 7,
+              "pdf_page_one_based": 8,
+              "printed_page_label": "5",
+              "quote": "   Accuracy of equipment (e.g., Is a robot capable of mating parts well enough to\n    achieve the assembly? Can a sensor measure to the required accuracy to acquire a\n    part?)"
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "example_or_meaning_components.1",
+              "expected": "机器人能否足够精确地配合零件以完成装配",
+              "match": "semantic_equivalent",
+              "evidence": [
+                {
+                  "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+                  "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+                  "canonical_char_half_open": [
+                    17541,
+                    17719
+                  ],
+                  "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+                  "pdf_page_zero_based": 7,
+                  "pdf_page_one_based": 8,
+                  "printed_page_label": "5",
+                  "quote": "   Accuracy of equipment (e.g., Is a robot capable of mating parts well enough to\n    achieve the assembly? Can a sensor measure to the required accuracy to acquire a\n    part?)"
+                }
+              ]
+            },
+            {
+              "atom_id": "example_or_meaning_components.2",
+              "expected": "传感器能否以取件所需精度测量",
+              "match": "semantic_equivalent",
+              "evidence": [
+                {
+                  "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+                  "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+                  "canonical_char_half_open": [
+                    17541,
+                    17719
+                  ],
+                  "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+                  "pdf_page_zero_based": 7,
+                  "pdf_page_one_based": 8,
+                  "printed_page_label": "5",
+                  "quote": "   Accuracy of equipment (e.g., Is a robot capable of mating parts well enough to\n    achieve the assembly? Can a sensor measure to the required accuracy to acquire a\n    part?)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "item": "Speed of equipment",
+          "required_attributes": {
+            "example_or_meaning_components": [
+              "子系统能否在分配时间内执行"
+            ]
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              227,
+              227
+            ],
+            "snapshot_char_half_open": [
+              3687,
+              3768
+            ],
+            "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+          },
+          "evidence": [
+            {
+              "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+              "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+              "canonical_char_half_open": [
+                17720,
+                17802
+              ],
+              "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+              "pdf_page_zero_based": 7,
+              "pdf_page_one_based": 8,
+              "printed_page_label": "5",
+              "quote": "   Speed of equipment (e.g., can the subsystem execute within the time allotted?)"
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "example_or_meaning_components.1",
+              "expected": "子系统能否在分配时间内执行",
+              "match": "semantic_equivalent",
+              "evidence": [
+                {
+                  "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+                  "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+                  "canonical_char_half_open": [
+                    17720,
+                    17802
+                  ],
+                  "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+                  "pdf_page_zero_based": 7,
+                  "pdf_page_one_based": 8,
+                  "printed_page_label": "5",
+                  "quote": "   Speed of equipment (e.g., can the subsystem execute within the time allotted?)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "item": "Part feeding",
+          "required_attributes": {
+            "example_or_meaning_components": [
+              "设备是否需要精确供料",
+              "是否需增加传感器定位零件"
+            ]
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              228,
+              229
+            ],
+            "snapshot_char_half_open": [
+              3768,
+              3884
+            ],
+            "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+          },
+          "evidence": [
+            {
+              "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+              "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+              "canonical_char_half_open": [
+                17803,
+                17924
+              ],
+              "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+              "pdf_page_zero_based": 7,
+              "pdf_page_one_based": 8,
+              "printed_page_label": "5",
+              "quote": "   Part feeding (e.g., does the equipment need precise feeding? Does a sensor need to be\n    added to locate the parts?)"
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "example_or_meaning_components.1",
+              "expected": "设备是否需要精确供料",
+              "match": "semantic_equivalent",
+              "evidence": [
+                {
+                  "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+                  "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+                  "canonical_char_half_open": [
+                    17803,
+                    17924
+                  ],
+                  "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+                  "pdf_page_zero_based": 7,
+                  "pdf_page_one_based": 8,
+                  "printed_page_label": "5",
+                  "quote": "   Part feeding (e.g., does the equipment need precise feeding? Does a sensor need to be\n    added to locate the parts?)"
+                }
+              ]
+            },
+            {
+              "atom_id": "example_or_meaning_components.2",
+              "expected": "是否需增加传感器定位零件",
+              "match": "semantic_equivalent",
+              "evidence": [
+                {
+                  "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+                  "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+                  "canonical_char_half_open": [
+                    17803,
+                    17924
+                  ],
+                  "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+                  "pdf_page_zero_based": 7,
+                  "pdf_page_one_based": 8,
+                  "printed_page_label": "5",
+                  "quote": "   Part feeding (e.g., does the equipment need precise feeding? Does a sensor need to be\n    added to locate the parts?)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "item": "Required system capacity",
+          "required_attributes": {
+            "example_or_meaning_components": [
+              "当前配置系统能否达到必要吞吐量"
+            ]
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              230,
+              231
+            ],
+            "snapshot_char_half_open": [
+              3884,
+              3982
+            ],
+            "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+          },
+          "evidence": [
+            {
+              "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+              "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+              "canonical_char_half_open": [
+                17925,
+                18028
+              ],
+              "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+              "pdf_page_zero_based": 7,
+              "pdf_page_one_based": 8,
+              "printed_page_label": "5",
+              "quote": "   Required system capacity (e.g., can the system as configured achieve the necessary\n    throughput?)"
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "example_or_meaning_components.1",
+              "expected": "当前配置系统能否达到必要吞吐量",
+              "match": "semantic_equivalent",
+              "evidence": [
+                {
+                  "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+                  "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+                  "canonical_char_half_open": [
+                    17925,
+                    18028
+                  ],
+                  "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+                  "pdf_page_zero_based": 7,
+                  "pdf_page_one_based": 8,
+                  "printed_page_label": "5",
+                  "quote": "   Required system capacity (e.g., can the system as configured achieve the necessary\n    throughput?)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "item": "Uptime of equipment",
+          "required_attributes": {
+            "example_or_meaning_components": [
+              "设备可靠性是否足以保证所需产能",
+              "子系统失效对整体系统的影响"
+            ]
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              232,
+              234
+            ],
+            "snapshot_char_half_open": [
+              3982,
+              4158
+            ],
+            "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+          },
+          "evidence": [
+            {
+              "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+              "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+              "canonical_char_half_open": [
+                18029,
+                18214
+              ],
+              "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+              "pdf_page_zero_based": 7,
+              "pdf_page_one_based": 8,
+              "printed_page_label": "5",
+              "quote": "   Uptime of equipment (is the system reliable enough to ensure that the required\n    capacity will be achieved? If a subsystem fails, what is the impact on the system as a\n    whole?)"
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "example_or_meaning_components.1",
+              "expected": "设备可靠性是否足以保证所需产能",
+              "match": "semantic_equivalent",
+              "evidence": [
+                {
+                  "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+                  "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+                  "canonical_char_half_open": [
+                    18029,
+                    18214
+                  ],
+                  "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+                  "pdf_page_zero_based": 7,
+                  "pdf_page_one_based": 8,
+                  "printed_page_label": "5",
+                  "quote": "   Uptime of equipment (is the system reliable enough to ensure that the required\n    capacity will be achieved? If a subsystem fails, what is the impact on the system as a\n    whole?)"
+                }
+              ]
+            },
+            {
+              "atom_id": "example_or_meaning_components.2",
+              "expected": "子系统失效对整体系统的影响",
+              "match": "semantic_equivalent",
+              "evidence": [
+                {
+                  "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+                  "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+                  "canonical_char_half_open": [
+                    18029,
+                    18214
+                  ],
+                  "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+                  "pdf_page_zero_based": 7,
+                  "pdf_page_one_based": 8,
+                  "printed_page_label": "5",
+                  "quote": "   Uptime of equipment (is the system reliable enough to ensure that the required\n    capacity will be achieved? If a subsystem fails, what is the impact on the system as a\n    whole?)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "item": "Tool changes required",
+          "required_attributes": {
+            "example_or_meaning_components": [
+              "是否需要换刀",
+              "若需要，能否调整操作顺序以减少换刀"
+            ]
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              235,
+              236
+            ],
+            "snapshot_char_half_open": [
+              4158,
+              4270
+            ],
+            "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+          },
+          "evidence": [
+            {
+              "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+              "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+              "canonical_char_half_open": [
+                18215,
+                18332
+              ],
+              "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+              "pdf_page_zero_based": 7,
+              "pdf_page_one_based": 8,
+              "printed_page_label": "5",
+              "quote": "   Tool changes required (if tool changes are needed, can the order of operations be\n    modified to minimize them?)"
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "example_or_meaning_components.1",
+              "expected": "是否需要换刀",
+              "match": "semantic_equivalent",
+              "evidence": [
+                {
+                  "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+                  "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+                  "canonical_char_half_open": [
+                    18215,
+                    18332
+                  ],
+                  "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+                  "pdf_page_zero_based": 7,
+                  "pdf_page_one_based": 8,
+                  "printed_page_label": "5",
+                  "quote": "   Tool changes required (if tool changes are needed, can the order of operations be\n    modified to minimize them?)"
+                }
+              ]
+            },
+            {
+              "atom_id": "example_or_meaning_components.2",
+              "expected": "若需要，能否调整操作顺序以减少换刀",
+              "match": "semantic_equivalent",
+              "evidence": [
+                {
+                  "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+                  "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+                  "canonical_char_half_open": [
+                    18215,
+                    18332
+                  ],
+                  "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+                  "pdf_page_zero_based": 7,
+                  "pdf_page_one_based": 8,
+                  "printed_page_label": "5",
+                  "quote": "   Tool changes required (if tool changes are needed, can the order of operations be\n    modified to minimize them?)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "item": "Testing and inspection",
+          "required_attributes": {
+            "example_or_meaning_components": [
+              "测试与检查能否并入其他步骤",
+              "是否需要独立子系统",
+              "若需要，独立子系统的数量"
+            ]
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              237,
+              238
+            ],
+            "snapshot_char_half_open": [
+              4270,
+              4411
+            ],
+            "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+          },
+          "evidence": [
+            {
+              "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+              "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+              "canonical_char_half_open": [
+                18333,
+                18479
+              ],
+              "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+              "pdf_page_zero_based": 7,
+              "pdf_page_one_based": 8,
+              "printed_page_label": "5",
+              "quote": "   Testing and inspection (can testing and inspection be incorporated in other steps or is\n    a separate subsystem needed and, if so, how many?)"
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "example_or_meaning_components.1",
+              "expected": "测试与检查能否并入其他步骤",
+              "match": "semantic_equivalent",
+              "evidence": [
+                {
+                  "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+                  "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+                  "canonical_char_half_open": [
+                    18333,
+                    18479
+                  ],
+                  "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+                  "pdf_page_zero_based": 7,
+                  "pdf_page_one_based": 8,
+                  "printed_page_label": "5",
+                  "quote": "   Testing and inspection (can testing and inspection be incorporated in other steps or is\n    a separate subsystem needed and, if so, how many?)"
+                }
+              ]
+            },
+            {
+              "atom_id": "example_or_meaning_components.2",
+              "expected": "是否需要独立子系统",
+              "match": "semantic_equivalent",
+              "evidence": [
+                {
+                  "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+                  "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+                  "canonical_char_half_open": [
+                    18333,
+                    18479
+                  ],
+                  "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+                  "pdf_page_zero_based": 7,
+                  "pdf_page_one_based": 8,
+                  "printed_page_label": "5",
+                  "quote": "   Testing and inspection (can testing and inspection be incorporated in other steps or is\n    a separate subsystem needed and, if so, how many?)"
+                }
+              ]
+            },
+            {
+              "atom_id": "example_or_meaning_components.3",
+              "expected": "若需要，独立子系统的数量",
+              "match": "semantic_equivalent",
+              "evidence": [
+                {
+                  "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+                  "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+                  "canonical_char_half_open": [
+                    18333,
+                    18479
+                  ],
+                  "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+                  "pdf_page_zero_based": 7,
+                  "pdf_page_one_based": 8,
+                  "printed_page_label": "5",
+                  "quote": "   Testing and inspection (can testing and inspection be incorporated in other steps or is\n    a separate subsystem needed and, if so, how many?)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "item": "Constraints",
+          "required_attributes": {
+            "example_or_meaning_components": [
+              "新增子系统是否限制其他子系统的使用",
+              "例如机械臂要求传感器在特定容差内定位零件"
+            ]
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes",
+          "draft_evidence": {
+            "web_lines_inclusive": [
+              239,
+              241
+            ],
+            "snapshot_char_half_open": [
+              4411,
+              4591
+            ],
+            "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+          },
+          "evidence": [
+            {
+              "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+              "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+              "canonical_char_half_open": [
+                18480,
+                18668
+              ],
+              "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+              "pdf_page_zero_based": 7,
+              "pdf_page_one_based": 8,
+              "printed_page_label": "5",
+              "quote": "   Constraints—does adding this subsystem limit how other subsystems can be used\n    (e.g., a manipulator requires a sensor to be able to locate a part to within a specific\n    tolerance)"
+            }
+          ],
+          "scoring_atoms": [
+            {
+              "atom_id": "example_or_meaning_components.1",
+              "expected": "新增子系统是否限制其他子系统的使用",
+              "match": "semantic_equivalent",
+              "evidence": [
+                {
+                  "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+                  "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+                  "canonical_char_half_open": [
+                    18480,
+                    18668
+                  ],
+                  "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+                  "pdf_page_zero_based": 7,
+                  "pdf_page_one_based": 8,
+                  "printed_page_label": "5",
+                  "quote": "   Constraints—does adding this subsystem limit how other subsystems can be used\n    (e.g., a manipulator requires a sensor to be able to locate a part to within a specific\n    tolerance)"
+                }
+              ]
+            },
+            {
+              "atom_id": "example_or_meaning_components.2",
+              "expected": "例如机械臂要求传感器在特定容差内定位零件",
+              "match": "semantic_equivalent",
+              "evidence": [
+                {
+                  "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+                  "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+                  "canonical_char_half_open": [
+                    18480,
+                    18668
+                  ],
+                  "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+                  "pdf_page_zero_based": 7,
+                  "pdf_page_one_based": 8,
+                  "printed_page_label": "5",
+                  "quote": "   Constraints—does adding this subsystem limit how other subsystems can be used\n    (e.g., a manipulator requires a sensor to be able to locate a part to within a specific\n    tolerance)"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "expected_item_count": 14,
+      "scoring_notes": [
+        "14类为该范围内列举的全部条目，不代表领域全集；必须注明原文称列表不完整，证据web行213。",
+        "每类括号内示例/问题的语义逐项检查，不要求逐字翻译；不能将执行时间与变化性等合并。"
+      ],
+      "human_annotation_verified": false,
+      "task_role": "SCOPE_EXPLICIT_CALIBRATION_PROBE_NOT_DIFFICULTY_OR_NOVELTY_EVIDENCE",
+      "range_condition": "scope_given",
+      "evaluation_input_rule": "Only question and corpus for baseline; gold scope, item count, offsets and answers excluded from model input",
+      "required_answer_qualifiers": [
+        {
+          "claim": "列表不完整；只穷尽文中当前列表，不代表所有可能度量",
+          "evidence": [
+            {
+              "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+              "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+              "canonical_char_half_open": [
+                16869,
+                16935
+              ],
+              "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+              "pdf_page_zero_based": 7,
+              "pdf_page_one_based": 8,
+              "printed_page_label": "5",
+              "quote": "incomplete list of the kinds of measures that are needed includes:"
+            }
+          ]
+        }
+      ],
+      "draft_provenance": {
+        "file": "../questions-gold.draft.json",
+        "sha256": "895a529f94c431763a7f5cc3eed8619971a595204ed6f270b71a0404bfdc3159",
+        "old_scope": {
+          "web_lines_inclusive": [
+            205,
+            241
+          ],
+          "snapshot_char_half_open": [
+            2180,
+            4591
+          ],
+          "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+        }
+      },
+      "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+      "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+      "review_kind": "Original-source and target-region visual review plus independent AI review; not human Gold",
+      "scope": {
+        "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+        "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+        "canonical_char_half_open": [
+          16174,
+          18668
+        ],
+        "locator_kind": "PDF_PAGE_AND_CANONICAL_CHARS",
+        "pdf_page_zero_based": 7,
+        "pdf_page_one_based": 8,
+        "printed_page_label": "5",
+        "quote": "The performance criteria for an assembly system at the highest level are economic and\ninclude cost, product quality, flexibility, throughput, reliability, and ease of setup and use\n(and re-use) of the equipment. The criteria for individual subsystems include the same\neconomic measures and, more importantly, characteristics that determine the suitability\nof the subsystem to contribute to making the product. Performance measures for a\nmanipulator or a sensor must enable a decision to be made about whether or not it will\ncontribute to a step in the assembly and, if so, what constraints it will impose on the\nsolution and how adding it will affect the total system’s cost and performance. An\nincomplete list of the kinds of measures that are needed includes:\n\n   Tolerances (e.g., variability by which a manipulator reaches a commanded position,\n    uncertainty in the reported output of a sensor)\n   Time needed for execution (e.g., a manipulator picking up a part, a sensor locating a\n    part)\n   Variability (e.g., in time, position)\n   Weight (e.g., load capacity of a manipulator, constraints on capacity in different parts\n    of its reachable volume)\n   Size (e.g., the footprint of a machine or the field of view of a sensor, the largest-sized\n    object a robot can pick up)\n   Reachability of equipment (e.g., the working volume of a manipulator)\n   Accuracy of equipment (e.g., Is a robot capable of mating parts well enough to\n    achieve the assembly? Can a sensor measure to the required accuracy to acquire a\n    part?)\n   Speed of equipment (e.g., can the subsystem execute within the time allotted?)\n   Part feeding (e.g., does the equipment need precise feeding? Does a sensor need to be\n    added to locate the parts?)\n   Required system capacity (e.g., can the system as configured achieve the necessary\n    throughput?)\n   Uptime of equipment (is the system reliable enough to ensure that the required\n    capacity will be achieved? If a subsystem fails, what is the impact on the system as a\n    whole?)\n   Tool changes required (if tool changes are needed, can the order of operations be\n    modified to minimize them?)\n   Testing and inspection (can testing and inspection be incorporated in other steps or is\n    a separate subsystem needed and, if so, how many?)\n   Constraints—does adding this subsystem limit how other subsystems can be used\n    (e.g., a manipulator requires a sensor to be able to locate a part to within a specific\n    tolerance)"
+      },
+      "scope_semantics": "Gold target region; retrieval may use supporting context outside it, without adding off-scope answer items"
+    }
+  ],
+  "heldout_H1": [],
+  "heldout_H2": [],
+  "intended_use": "6 scope_given calibration probes, not generalization/novelty or automatic scope difficulty evidence",
+  "scoring": {
+    "surfaces": [
+      "scope selection separately",
+      "item precision and recall",
+      "required atomic attributes",
+      "runtime input evidence support"
+    ],
+    "attributes": "Each scoring atom separately; no credit for an item name alone; record extras as false positives",
+    "evidence": "Gold source evidence is not proof of runtime support; audit actual input receipts separately",
+    "scope": "Report scope_given separately from any later scope_hidden tasks",
+    "unit": "two source units; five same-page questions are correlated, not five independent documents",
+    "fuzzy_grading": "semantic translations require adjudication; no automatic judge has been run",
+    "units": "81 scoring units; compound fields require all semantic parts; historical scoring_atoms name does not imply minimal atomicity"
+  },
+  "reviewed_candidate_sha256": "31c50d0600b0b686d2045645c6f326ec05e35325876a0e331b18f8e1c91a937f",
+  "acceptance": {
+    "authority": "SCI orchestrator",
+    "scope": "local development only",
+    "user_authorization": "明确授权本地开发、原文核验及确认开发标准答案",
+    "human_annotation_verified": false,
+    "scientific_stage": "M2_OPEN",
+    "stage_advanced": false,
+    "independent_expert_result": "expert-result.yaml"
+  }
+}

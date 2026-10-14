@@ -1,0 +1,17 @@
+{
+  "utc": "2026-10-14T05:46:01.659066+00:00",
+  "command": ".tmp/backend-quality-venv-20261012/Scripts/python.exe .tmp/vector-numeric-semantics-20261014/probe.py",
+  "exit_code": 0,
+  "scope": "312 real Chroma queries; empirical readback-normalized predicate model; 84 boundary/error probes",
+  "raw_model_mismatches": 76,
+  "readback_drifts": 4,
+  "files": {
+    "archive.py": "8a08ad53d00cc6063479d640aaab057219b101a4ea02a789906576c885fe15c7",
+    "input-readback-drifts.json": "0256dff992aca89d1ea9ecea196814b29ffada85d117dda47dc8d070a2e8735f",
+    "oracle.json": "a246dba13d90c794e064735784c99c4e3675596e907cb9c0967cb23c14585eb3",
+    "probe.py": "9394afca60b242b93a0f057df1321e6eb0934ccf39a4ec7ab330a6c70174637f",
+    "raw-model-differences.json": "98ad9ec899eeba91093326768ba77a081102d85e012850a5677387d2d539dbb6",
+    "sqlite_metadata.rs": "04000c5215c292baa960b28842490bf030547332c7e43551d83e4d0b6903817a",
+    "stable-domain-predicate-check.json": "4d36ba91a09816e1ae9ed1899fa0e6932214281d509498c6e95ceede6786f72b"
+  }
+}

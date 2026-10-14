@@ -1,0 +1,35 @@
+contract_version: "1.0"
+expert_skill: sci-skills-data-availability
+project_id: graphrag-paper-001
+paper_family: M
+stage_id: M2
+task_id: HOLDOUT-INVENTORY-20261012
+task_status: PROVISIONAL
+inputs_reviewed:
+  - 根规则、memory及专家必要指引
+  - backend/uploads、backend/output/mineru、mineru-mvp-test路径/大小/SHA256
+  - backend/output/docs_store.json元数据及docs/memory/plans/integration历史引用
+  - 用户确认本地研究授权（协调者转达）
+outputs:
+  - 33安全资料副本归并8个完全相同内容组。
+  - 8组均有indexed元数据；方法开发/QA曝光仍UNKNOWN。
+  - 8份申报书同hash，未扩大授权，排除。
+  - D2及MinerU副本属development整族，样例属fixture。
+evidence_status:
+  - EXECUTED_LOCAL：hash去重及已有元数据核查。
+  - VERIFIED_USER_MATERIAL：本地研究使用授权。
+  - PENDING_VERIFICATION：公开/第三方传输、历史QA/调参及来源近重复。
+assumptions:
+  - 入库不等同论文QA曝光；未搜索到历史引用也不证明未曝光。
+author_input_needed:
+  - 曝光角色账本及可核验记录。
+manual_actions: []
+quality_checks:
+  - 未读取候选正文或KG内容，不解析新文档。
+  - 未联网、生成、修改源文件或推进M2。
+  - 未将8个hash冒称8个独立家族。
+conflicts: []
+conflict_resolution_status: NOT_REQUIRED
+merge_permission: orchestrator_only
+recommended_next_action: 保留隔离候选，曝光与来源家族核实后才准入。
+stage_acceptance_recommendation: NOT_ASSESSED

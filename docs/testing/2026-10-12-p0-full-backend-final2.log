@@ -1,0 +1,244 @@
+........................................F............................... [  9%]
+........................................................................ [ 19%]
+.....................................FFFFFFFFFFFFFFFFFF................. [ 29%]
+...................................FF................................... [ 39%]
+........................................................................ [ 49%]
+........................................................................ [ 59%]
+........................................................................ [ 69%]
+........................................................................ [ 79%]
+........................................................................ [ 89%]
+...............F........................................................ [ 99%]
+.......                                                                  [100%]
+================================== FAILURES ===================================
+_____________________ test_library_modules_have_no_print ______________________
+backend\tests\test_error_handling_policy.py:45: in test_library_modules_have_no_print
+    assert not offenders, f"��������� print()��{offenders}"
+E   AssertionError: ��������� print()��['research/deepseek_scope_pilot.py:336', 'research/deepseek_scope_pilot.py:338', 'research/local_scope_v2.py:199', 'research/local_scope_v2.py:203']
+E   assert not ['research/deepseek_scope_pilot.py:336', 'research/deepseek_scope_pilot.py:338', 'research/local_scope_v2.py:199', 'research/local_scope_v2.py:203']
+________________ test_environment_does_not_inherit_credentials ________________
+backend\tests\test_isolated_guard.py:30: in test_environment_does_not_inherit_credentials
+    env = api().build_environment(tmp_path, manifest(tmp_path))
+          ^^^^^
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+_______________________ test_binding_and_unsafe_writes ________________________
+backend\tests\test_isolated_guard.py:40: in test_binding_and_unsafe_writes
+    module = api()
+             ^^^^^
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+______________ test_hook_blocks_in_fresh_child[socket.socket()] _______________
+backend\tests\test_isolated_guard.py:62: in test_hook_blocks_in_fresh_child
+    api()
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+_ test_hook_blocks_in_fresh_child[socket.getaddrinfo('example.invalid', 80)] __
+backend\tests\test_isolated_guard.py:62: in test_hook_blocks_in_fresh_child
+    api()
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+_ test_hook_blocks_in_fresh_child[subprocess.run([sys.executable, '-c', 'pass'])] _
+backend\tests\test_isolated_guard.py:62: in test_hook_blocks_in_fresh_child
+    api()
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+_________ test_hook_blocks_in_fresh_child[os.system('never_execute')] _________
+backend\tests\test_isolated_guard.py:62: in test_hook_blocks_in_fresh_child
+    api()
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+_____________ test_hook_blocks_in_fresh_child[open(outside, 'w')] _____________
+backend\tests\test_isolated_guard.py:62: in test_hook_blocks_in_fresh_child
+    api()
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+_____________ test_hook_blocks_in_fresh_child[os.mkdir(outside)] ______________
+backend\tests\test_isolated_guard.py:62: in test_hook_blocks_in_fresh_child
+    api()
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+_________ test_hook_blocks_in_fresh_child[os.rename(inside, outside)] _________
+backend\tests\test_isolated_guard.py:62: in test_hook_blocks_in_fresh_child
+    api()
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+____________ test_hook_blocks_in_fresh_child[ctypes.CDLL(outside)] ____________
+backend\tests\test_isolated_guard.py:62: in test_hook_blocks_in_fresh_child
+    api()
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+__________ test_hook_blocks_in_fresh_child[site.addsitedir(outside)] __________
+backend\tests\test_isolated_guard.py:62: in test_hook_blocks_in_fresh_child
+    api()
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+_____________ test_hook_blocks_in_fresh_child[os.remove(outside)] _____________
+backend\tests\test_isolated_guard.py:62: in test_hook_blocks_in_fresh_child
+    api()
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+__________ test_hook_blocks_in_fresh_child[os.link(inside, outside)] __________
+backend\tests\test_isolated_guard.py:62: in test_hook_blocks_in_fresh_child
+    api()
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+_______________________ test_hook_allows_snapshot_write _______________________
+backend\tests\test_isolated_guard.py:88: in test_hook_allows_snapshot_write
+    module = api()
+             ^^^^^
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+______________ test_environment_rejects_nonstandard_windows_root ______________
+backend\tests\test_isolated_guard.py:97: in test_environment_rejects_nonstandard_windows_root
+    api().build_environment(tmp_path, manifest(tmp_path))
+    ^^^^^
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+_ test_secret_reads_are_blocked_before_open[open(os.path.join(run, '.env'), 'r')] _
+backend\tests\test_isolated_guard.py:105: in test_secret_reads_are_blocked_before_open
+    test_hook_blocks_in_fresh_child(tmp_path, operation)
+backend\tests\test_isolated_guard.py:62: in test_hook_blocks_in_fresh_child
+    api()
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+_ test_secret_reads_are_blocked_before_open[open(os.path.join(run, '.env.local'), 'rb')] _
+backend\tests\test_isolated_guard.py:105: in test_secret_reads_are_blocked_before_open
+    test_hook_blocks_in_fresh_child(tmp_path, operation)
+backend\tests\test_isolated_guard.py:62: in test_hook_blocks_in_fresh_child
+    api()
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+____________ test_named_existing_system_dll_allowed_in_fresh_child ____________
+backend\tests\test_isolated_guard.py:111: in test_named_existing_system_dll_allowed_in_fresh_child
+    api()
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+____________________ test_b0_preparation_is_not_execution _____________________
+backend\tests\test_local_scope_v2.py:31: in test_b0_preparation_is_not_execution
+    assert report['production_integrity']['all_match_freeze']
+E   assert False
+_____ test_b0_metadata_includes_nonvector_artifacts_and_historical_guard ______
+backend\tests\test_local_scope_v2.py:44: in test_b0_metadata_includes_nonvector_artifacts_and_historical_guard
+    assert report['local_artifact_metadata']['bm25']['records'] == 3
+E   assert 172 == 3
+_______________________ test_code_imports_are_declared ________________________
+backend\tests\test_supply_chain.py:146: in test_code_imports_are_declared
+    assert not missing, (
+E   AssertionError: ���°������� import����δ�������嵥��������δ�Ǽǽ� _KNOWN_UNRESOLVED / _NAMESPACE_ROOTS����
+E       pytest  (research\test_deepseek_scope_pilot.py imports 'pytest')
+E   assert not {'pytest': "research\\test_deepseek_scope_pilot.py imports 'pytest'"}
+============================== warnings summary ===============================
+backend\.venv\Lib\site-packages\_pytest\config\__init__.py:1434
+  D:\graghRAG-agent\backend\.venv\Lib\site-packages\_pytest\config\__init__.py:1434: PytestConfigWarning: Unknown config option: timeout
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+tests/test_error_handling_policy.py::test_no_bare_except_outside_tests
+  <unknown>:2: SyntaxWarning: invalid escape sequence '\g'
+
+tests/test_hybrid_retrieval_trimming.py::test_bm25_query_uses_same_tokenizer_as_index
+  D:\graghRAG-agent\backend\.venv\Lib\site-packages\jieba\_compat.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+    import pkg_resources
+
+tests/test_supply_chain.py::test_code_imports_are_declared
+tests/test_supply_chain.py::test_known_unresolved_entries_are_load_bearing
+  D:\graghRAG-agent\backend\agentic_rag_mvp.py:2: SyntaxWarning: invalid escape sequence '\g'
+    """
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED backend\tests\test_error_handling_policy.py::test_library_modules_have_no_print
+FAILED backend\tests\test_isolated_guard.py::test_environment_does_not_inherit_credentials
+FAILED backend\tests\test_isolated_guard.py::test_binding_and_unsafe_writes
+FAILED backend\tests\test_isolated_guard.py::test_hook_blocks_in_fresh_child[socket.socket()]
+FAILED backend\tests\test_isolated_guard.py::test_hook_blocks_in_fresh_child[socket.getaddrinfo('example.invalid', 80)]
+FAILED backend\tests\test_isolated_guard.py::test_hook_blocks_in_fresh_child[subprocess.run([sys.executable, '-c', 'pass'])]
+FAILED backend\tests\test_isolated_guard.py::test_hook_blocks_in_fresh_child[os.system('never_execute')]
+FAILED backend\tests\test_isolated_guard.py::test_hook_blocks_in_fresh_child[open(outside, 'w')]
+FAILED backend\tests\test_isolated_guard.py::test_hook_blocks_in_fresh_child[os.mkdir(outside)]
+FAILED backend\tests\test_isolated_guard.py::test_hook_blocks_in_fresh_child[os.rename(inside, outside)]
+FAILED backend\tests\test_isolated_guard.py::test_hook_blocks_in_fresh_child[ctypes.CDLL(outside)]
+FAILED backend\tests\test_isolated_guard.py::test_hook_blocks_in_fresh_child[site.addsitedir(outside)]
+FAILED backend\tests\test_isolated_guard.py::test_hook_blocks_in_fresh_child[os.remove(outside)]
+FAILED backend\tests\test_isolated_guard.py::test_hook_blocks_in_fresh_child[os.link(inside, outside)]
+FAILED backend\tests\test_isolated_guard.py::test_hook_allows_snapshot_write
+FAILED backend\tests\test_isolated_guard.py::test_environment_rejects_nonstandard_windows_root
+FAILED backend\tests\test_isolated_guard.py::test_secret_reads_are_blocked_before_open[open(os.path.join(run, '.env'), 'r')]
+FAILED backend\tests\test_isolated_guard.py::test_secret_reads_are_blocked_before_open[open(os.path.join(run, '.env.local'), 'rb')]
+FAILED backend\tests\test_isolated_guard.py::test_named_existing_system_dll_allowed_in_fresh_child
+FAILED backend\tests\test_local_scope_v2.py::test_b0_preparation_is_not_execution
+FAILED backend\tests\test_local_scope_v2.py::test_b0_metadata_includes_nonvector_artifacts_and_historical_guard
+FAILED backend\tests\test_supply_chain.py::test_code_imports_are_declared - A...
+22 failed, 705 passed, 5 warnings in 42.69s

@@ -1,0 +1,38 @@
+.......................................................FFFF....          [100%]
+================================== FAILURES ===================================
+_ test_completion_emits_readable_supported_chinese_answer[visualization library-Matplotlib] _
+backend\tests\test_retrieval_generation_readiness.py:283: in test_completion_emits_readable_supported_chinese_answer
+    assert "???" not in answer
+E   AssertionError: assert '???' not in '???????????...?? [c00001]?'
+E     
+E     '???' is contained here:
+E       ??????????????? Matplotlib ????? [c00001]?
+E     ?             +++
+_ test_completion_emits_readable_supported_chinese_answer[pandas role-Pandas] _
+backend\tests\test_retrieval_generation_readiness.py:283: in test_completion_emits_readable_supported_chinese_answer
+    assert "???" not in answer
+E   AssertionError: assert '???' not in '???????????...?? [c00001]?'
+E     
+E     '???' is contained here:
+E       ???????????Pandas ?????????? [c00001]?
+E     ? +++
+_ test_completion_emits_readable_supported_chinese_answer[python implementation-Python 3.10] _
+backend\tests\test_retrieval_generation_readiness.py:283: in test_completion_emits_readable_supported_chinese_answer
+    assert "???" not in answer
+E   AssertionError: assert '???' not in '???????????...?? [c00001]?'
+E     
+E     '???' is contained here:
+E       ???????????Python 3.10 ????????????????? [c00001]?
+E     ? +++
+______________ test_method_inventory_extracts_actual_tool_names _______________
+backend\tests\test_retrieval_generation_readiness.py:288: in test_method_inventory_extracts_actual_tool_names
+    assert g._summarize_structured_inventory_snippet("MILP Pandas Python Pandas") == "MILP / Pandas / Python"
+E   AssertionError: assert '' == 'MILP / Pandas / Python'
+E     
+E     - MILP / Pandas / Python
+=========================== short test summary info ===========================
+FAILED backend\tests\test_retrieval_generation_readiness.py::test_completion_emits_readable_supported_chinese_answer[visualization library-Matplotlib]
+FAILED backend\tests\test_retrieval_generation_readiness.py::test_completion_emits_readable_supported_chinese_answer[pandas role-Pandas]
+FAILED backend\tests\test_retrieval_generation_readiness.py::test_completion_emits_readable_supported_chinese_answer[python implementation-Python 3.10]
+FAILED backend\tests\test_retrieval_generation_readiness.py::test_method_inventory_extracts_actual_tool_names
+4 failed, 59 passed in 6.65s

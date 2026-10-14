@@ -1,0 +1,61 @@
+{
+  "python": "3.12.8 (tags/v3.12.8:2dc476b, Dec  3 2024, 19:30:04) [MSC v.1942 64 bit (AMD64)]",
+  "executable": "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Scripts\\python.exe",
+  "packages": {
+    "annotated-types": "0.8.0",
+    "colorama": "0.4.6",
+    "deprecation": "2.1.0",
+    "lancedb": "0.40.0",
+    "lance-namespace": "0.13.0",
+    "lance-namespace-urllib3-client": "0.13.0",
+    "numpy": "2.5.4",
+    "packaging": "26.3",
+    "pyarrow": "26.0.0",
+    "pydantic": "2.14.1",
+    "pydantic_core": "2.50.1",
+    "python-dateutil": "2.9.0.post0",
+    "six": "1.17.0",
+    "structlog": "26.1.0",
+    "tqdm": "4.70.1",
+    "typing_extensions": "4.16.0",
+    "typing-inspection": "0.4.4",
+    "urllib3": "2.8.0"
+  },
+  "module_paths": {
+    "lancedb": "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Lib\\site-packages\\lancedb\\__init__.py",
+    "pyarrow": "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Lib\\site-packages\\pyarrow\\__init__.py",
+    "structlog": "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Lib\\site-packages\\structlog\\__init__.py"
+  },
+  "locks": {
+    ".tmp\\vector-replacement-mvp-20261013\\uv.lock": "ab27e2d7dc601aeff7b004502382ef329128115f7812b76f26e72699fe99986d",
+    ".tmp\\vector-errors-testenv-20261014\\uv.lock": "28d9b74c05eca7f5d5f8378a8415594e00b2e0adc2757ac6239c996ece03525b",
+    "backend\\uv.lock": "0b9618aede31fd0553ff10b845a2feb5a388d1e153c8e38549d769a3074dacf6"
+  },
+  "source_hashes": {
+    "boundary_probe.py": "d19dda4d65841ec4c586fd4e7d1c8b7747216665db701cdf03e13327dce44087",
+    "chroma_errors.py": "83e673e9f6b62ec34f5eb04719029b60dba26858679c7c045f0ff642f6c32d55",
+    "execute_r4b.py": "34a0864c8e6a372210837ff75db04677af7b93a68d4758cdf6630f58723ee87d",
+    "extend_tests.py": "56b39e41bfa0e3e0a90b3db32f2058cc3a4b24785c85ad23a44e24a02bc0c7b8",
+    "fix_facade.py": "db77c08dadaa277a4258aed4c9eac3d9b4b32bccfec8b655d8bfe2af599ef0b7",
+    "freeze_r4b.py": "5d6c4216e834632dadda0973d08ac94b1ad54bbfdc3de1a89beb1758532e4e16",
+    "freeze_r5.py": "48d709527a09c8ce40c807e8390f7eb479b8dc1b8a2d58c462e961da87c3d7a7",
+    "fresh_matrix.py": "246ab3b8e1fbc51edbcb69599840b1d6728f5163e71bb54cf045d2ca1593a846",
+    "generic_filter.py": "33e1de11241f0884e1853c6fdbec71c9ed79a9351b2c8275c2524f8ff6fb49b8",
+    "implement_r5.py": "54e19af159986b713689b52a3ef59eb7d3f43f999af4e2d6462cf2669fad4948",
+    "ingress_matrix.py": "11b722b98b872ef9819e048b0bb9609199f41d1d29ebfa0fff5065434bdb127e",
+    "lance_truth.py": "e4089b75ca9889e0dea8150fe8ae3b4450846016e6bb490000276a7e5dbb41ef",
+    "numeric_matrix-r3-historical.py": "cd8e3652b25e824793b0c0bf5b09c7850f4bef9790b54673eb301db38a5095d5",
+    "numeric_matrix.py": "d935dd19403f7cb252b3d561a05c5279bfea02767dd6b80132f323b8ed1cbec4",
+    "parser_port.py": "18a85b55345caa9ce4ac7ea2e344cedc9561cdda8c1c0eb6824499b3a629753d",
+    "probe_store.py": "5cef32dcc4e5c595c71ddbc686158dc52899a9333b6af5a1e5f329cf793df51b",
+    "record_environment.py": "b7beeb306de340ef1f6910b7ebfa80cdd2f94969f092c230072f0064ba29e976",
+    "red_contract.py": "0b62aab9fc5e182ea1488e0677acad00703c91babc6c29dcef980b6f21c81a37",
+    "run_checks.py": "b69e1bfaef245d80ca549e16b29c392d2b4f6bbc249352009fcea71182095b60",
+    "test_errors.py": "f66e246ace9a9fde1dcc0a6d0aef9055097eea1c7f35582d4c36dda26f323eaa",
+    "test_facade.py": "e47c1220d455d623517e55eb604bd4e91dfa4d7270c815de44ab5f2517f1f037",
+    "vector_errors.py": "b9a23b941eb84a7b50c866716e0c9dbcff3b1248be7c9daf2f9f594dc7ed4661",
+    "verify_baseline.py": "aab7ac0d444be11f8f87bd806389f2693e04a7b0cde2b3672dac27f2d199da69",
+    "wide_integer.py": "fac36833a9d062810272878748c912111f3f7f619e65e79c904e33a6bd147b0f",
+    "wide_matrix.py": "8bb009d2ea836d7e2ecc558dbace16b80e83380139cfb406778aca22fc37dcbd"
+  }
+}

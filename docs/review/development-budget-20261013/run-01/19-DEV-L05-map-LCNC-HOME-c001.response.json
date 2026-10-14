@@ -1,0 +1,35 @@
+{
+  "status": "SUCCESS",
+  "http_status": 200,
+  "usage_known": true,
+  "provider_response": {
+    "id": "ee20aa41-ada1-4916-a7f9-1197bea7b2a1",
+    "object": "chat.completion",
+    "created": 1791851044,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "根据提供的文档片段，6.14 Immediate Homing 代码块中的配置如下：\n\n| 配置项 | 给定值或允许替代值 | 来源 |\n|---|---|---|\n| HOME_SEARCH_VEL | 0 | [LCNC-HOME-c001] |\n| HOME_LATCH_VEL | 0 | [LCNC-HOME-c001] |\n| HOME_USE_INDEX | NO | [LCNC-HOME-c001] |\n| HOME_OFFSET | 0（或 home position offset (HOME)） | [LCNC-HOME-c001] |\n| HOME_SEQUENCE | 0（或其他有效的 sequence number） | [LCNC-HOME-c001] |\n\n关于省略 HOME_SEQUENCE 对 HOME ALL 的影响：\n\n如果未指定 HOME_SEQUENCE，则该关节不会被 HOME ALL 序列归零（但可以通过单个关节专用的归零命令归零）[LCNC-HOME-c001]。省略 HOME_SEQUENCE 会使该关节从 HOME ALL 行为中排除 [LCNC-HOME-c001]。因此通常应包含一个有效的 HOME_SEQUENCE 编号 [LCNC-HOME-c001]。\n\n此外，未指定的 HOME_SEARCH_VEL、HOME_LATCH_VEL、HOME_USE_INDEX、HOME 和 HOME_OFFSET 的默认值均为零，因此在请求立即归零时可以省略这些项 [LCNC-HOME-c001]。"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2974,
+      "completion_tokens": 291,
+      "total_tokens": 3265,
+      "prompt_tokens_details": {
+        "cached_tokens": 768
+      },
+      "prompt_cache_hit_tokens": 768,
+      "prompt_cache_miss_tokens": 2206
+    },
+    "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+  },
+  "send_status": "HTTP_RESPONSE_RECEIVED",
+  "worker_elapsed_seconds": 2.375
+}

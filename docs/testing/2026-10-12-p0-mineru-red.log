@@ -1,0 +1,222 @@
+FFFFFFFFFFFFFFFFFF                                                       [100%]
+================================== FAILURES ===================================
+_______ test_full_task_ids_with_same_prefix_have_distinct_outputs[url] ________
+tests\test_p0_mineru_isolation.py:26: in test_full_task_ids_with_same_prefix_have_distinct_outputs
+    assert outputs[0] != outputs[1]
+E   AssertionError: assert WindowsPath('D:/graghRAG-agent/backend/tests/_tmp_p0_mineru_red_final/test_full_task_ids_with_same_p0/output/mineru/ingest_a') != WindowsPath('D:/graghRAG-agent/backend/tests/_tmp_p0_mineru_red_final/test_full_task_ids_with_same_p0/output/mineru/ingest_a')
+______ test_full_task_ids_with_same_prefix_have_distinct_outputs[local] _______
+tests\test_p0_mineru_isolation.py:26: in test_full_task_ids_with_same_prefix_have_distinct_outputs
+    assert outputs[0] != outputs[1]
+E   AssertionError: assert WindowsPath('D:/graghRAG-agent/backend/tests/_tmp_p0_mineru_red_final/test_full_task_ids_with_same_p1/output/mineru/ingest_a') != WindowsPath('D:/graghRAG-agent/backend/tests/_tmp_p0_mineru_red_final/test_full_task_ids_with_same_p1/output/mineru/ingest_a')
+______ test_unsafe_task_id_rejected_before_supplier_call[url-../outside] ______
+tests\test_p0_mineru_isolation.py:39: in test_unsafe_task_id_rejected_before_supplier_call
+    with pytest.raises(StageMinerUError) as exc:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'errors.StageMinerUError'>
+________ test_unsafe_task_id_rejected_before_supplier_call[url-bad/id] ________
+tests\test_p0_mineru_isolation.py:39: in test_unsafe_task_id_rejected_before_supplier_call
+    with pytest.raises(StageMinerUError) as exc:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'errors.StageMinerUError'>
+_______ test_unsafe_task_id_rejected_before_supplier_call[url-bad\\id] ________
+tests\test_p0_mineru_isolation.py:39: in test_unsafe_task_id_rejected_before_supplier_call
+    with pytest.raises(StageMinerUError) as exc:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'errors.StageMinerUError'>
+___________ test_unsafe_task_id_rejected_before_supplier_call[url-] ___________
+tests\test_p0_mineru_isolation.py:39: in test_unsafe_task_id_rejected_before_supplier_call
+    with pytest.raises(StageMinerUError) as exc:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'errors.StageMinerUError'>
+_______ test_unsafe_task_id_rejected_before_supplier_call[url-C:escape] _______
+tests\test_p0_mineru_isolation.py:39: in test_unsafe_task_id_rejected_before_supplier_call
+    with pytest.raises(StageMinerUError) as exc:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'errors.StageMinerUError'>
+_________ test_unsafe_task_id_rejected_before_supplier_call[url-CON] __________
+tests\test_p0_mineru_isolation.py:39: in test_unsafe_task_id_rejected_before_supplier_call
+    with pytest.raises(StageMinerUError) as exc:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'errors.StageMinerUError'>
+_____ test_unsafe_task_id_rejected_before_supplier_call[local-../outside] _____
+tests\test_p0_mineru_isolation.py:39: in test_unsafe_task_id_rejected_before_supplier_call
+    with pytest.raises(StageMinerUError) as exc:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'errors.StageMinerUError'>
+_______ test_unsafe_task_id_rejected_before_supplier_call[local-bad/id] _______
+tests\test_p0_mineru_isolation.py:39: in test_unsafe_task_id_rejected_before_supplier_call
+    with pytest.raises(StageMinerUError) as exc:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'errors.StageMinerUError'>
+______ test_unsafe_task_id_rejected_before_supplier_call[local-bad\\id] _______
+tests\test_p0_mineru_isolation.py:39: in test_unsafe_task_id_rejected_before_supplier_call
+    with pytest.raises(StageMinerUError) as exc:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'errors.StageMinerUError'>
+__________ test_unsafe_task_id_rejected_before_supplier_call[local-] __________
+tests\test_p0_mineru_isolation.py:39: in test_unsafe_task_id_rejected_before_supplier_call
+    with pytest.raises(StageMinerUError) as exc:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'errors.StageMinerUError'>
+______ test_unsafe_task_id_rejected_before_supplier_call[local-C:escape] ______
+tests\test_p0_mineru_isolation.py:39: in test_unsafe_task_id_rejected_before_supplier_call
+    with pytest.raises(StageMinerUError) as exc:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'errors.StageMinerUError'>
+________ test_unsafe_task_id_rejected_before_supplier_call[local-CON] _________
+tests\test_p0_mineru_isolation.py:39: in test_unsafe_task_id_rejected_before_supplier_call
+    with pytest.raises(StageMinerUError) as exc:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'errors.StageMinerUError'>
+_____________ test_existing_output_is_never_reused_or_overwritten _____________
+tests\test_p0_mineru_isolation.py:55: in test_existing_output_is_never_reused_or_overwritten
+    assert calls == []
+E   AssertionError: assert [(['curl', '-...gest_same'],)] == []
+E     
+E     Left contains 2 more items, first extra item: (['curl', '-s', '-o', 'D:\\graghRAG-agent\\backend\\tests\\_tmp_p0_mineru_red_final\\test_existing_output_is_never_0\\ingest_same\\result.zip', 'unused'],)
+E     Use -v to get more diff
+___________ test_same_output_concurrent_attempt_has_only_one_writer ___________
+tests\test_p0_mineru_isolation.py:79: in test_same_output_concurrent_attempt_has_only_one_writer
+    mineru_client.download_and_extract("unused", str(output), task_id="ingest_same")
+mineru_client.py:427: in download_and_extract
+    subprocess.run(["curl", "-s", "-o", zip_path, zip_url],
+tests\test_p0_mineru_isolation.py:67: in run
+    assert release.wait(5)
+E   assert False
+E    +  where False = wait(5)
+E    +    where wait = <threading.Event at 0x1933956b3b0: unset>.wait
+_______ test_old_complete_cache_never_becomes_new_upload_result[False] ________
+tests\test_p0_mineru_isolation.py:102: in test_old_complete_cache_never_becomes_new_upload_result
+    assert "����" in exc.value.context.details["hint"]
+E   AssertionError: assert '����' in '��� MINERU_API_TOKEN �����磻���ṩ���� URL �� URL ģʽ����ȷʵҪ���� output/mineru/ �µļ��в������ʽ�� allow_cached_mineru_output=true'
+---------------------------- Captured stdout call -----------------------------
+2026-10-12 12:35:32 [warning  ] mineru_direct_upload_failed    error_code=PIPELINE_MINERU_IO task_id=ingest_new
+�������������������������������������������� Traceback (most recent call last) ��������������������������������������������
+�� D:\graghRAG-agent\backend\worker.py:244 in _resolve_mineru_dir              ��
+��                                                                             ��
+��    241 ��   # ������ʧ�ܲ�������ʧ�ܣ����ⵥһ�ⲿ����崻�������ȫ������⡣ ��
+��    242 ��   progress_callback("mineru", "MinerU �ĵ�����", 1, {"mineru": "up ��
+��    243 ��   try:                                                             ��
+�� >  244 ��   ��   mineru_dir = _call_mineru_local_file(filepath, token, task_i ��
+��    245 ��   ��   progress_callback("mineru", "MinerU �ĵ�����", 1, {"mineru": ��
+��    246 ��   ��   return mineru_dir                                            ��
+��    247 ��   except PipelineError as exc:                                     ��
+��                                                                             ��
+�� �������������������������������������������������� locals ��������������������������������������������������                  ��
+�� ��            exc = StageMinerUError('����')              ��                  ��
+�� ��       filepath = 'probe.pdf'                           ��                  ��
+�� �� ingest_options = {'allow_cached_mineru_output': False} ��                  ��
+�� ��      is_remote = False                                 ��                  ��
+�� ��        task_id = 'ingest_new'                          ��                  ��
+�� ��          token = ''                                    ��                  ��
+�� ��  upload_errors = ['mineru-direct:PIPELINE_MINERU_IO']  ��                  ��
+�� ��������������������������������������������������������������������������������������������������������������������                  ��
+��                                                                             ��
+�� D:\graghRAG-agent\backend\tests\test_p0_mineru_isolation.py:95 in fail      ��
+��                                                                             ��
+��    92 ��   monkeypatch.setattr(worker, "__file__", str(tmp_path / "worker.py ��
+��    93 ��                                                                     ��
+��    94 ��   def fail(*a, **k):                                                ��
+�� >  95 ��   ��   raise StageMinerUError("����", code=ErrorCode.PIPELINE_MINERU ��
+��    96 ��                                                                     ��
+��    97 ��   monkeypatch.setattr(worker, "_call_mineru_local_file", fail)      ��
+��    98 ��   monkeypatch.setattr(worker, "_upload_to_public", lambda *a: None) ��
+��                                                                             ��
+�� ���������������������������������������� locals ������������������������������������������                           ��
+�� �� a = (                                         ��                           ��
+�� ��     ��   'probe.pdf',                          ��                           ��
+�� ��     ��   '',                                   ��                           ��
+�� ��     ��   'ingest_new',                         ��                           ��
+�� ��     ��   {                                     ��                           ��
+�� ��     ��   ��   'allow_cached_mineru_output':     ��                           ��
+�� ��     False                                     ��                           ��
+�� ��     ��   }                                     ��                           ��
+�� ��     )                                         ��                           ��
+�� �� k = {}                                        ��                           ��
+�� ��������������������������������������������������������������������������������������������������                           ��
+��������������������������������������������������������������������������������������������������������������������������������������������������������������
+StageMinerUError: ����
+
+2026-10-12 12:35:32 [warning  ] oss_upload_unavailable         task_id=ingest_new
+________ test_old_complete_cache_never_becomes_new_upload_result[True] ________
+tests\test_p0_mineru_isolation.py:99: in test_old_complete_cache_never_becomes_new_upload_result
+    with pytest.raises(StageMinerUError) as exc:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'errors.StageMinerUError'>
+---------------------------- Captured stdout call -----------------------------
+2026-10-12 12:35:32 [warning  ] mineru_direct_upload_failed    error_code=PIPELINE_MINERU_IO task_id=ingest_new
+�������������������������������������������� Traceback (most recent call last) ��������������������������������������������
+�� D:\graghRAG-agent\backend\worker.py:244 in _resolve_mineru_dir              ��
+��                                                                             ��
+��    241 ��   # ������ʧ�ܲ�������ʧ�ܣ����ⵥһ�ⲿ����崻�������ȫ������⡣ ��
+��    242 ��   progress_callback("mineru", "MinerU �ĵ�����", 1, {"mineru": "up ��
+��    243 ��   try:                                                             ��
+�� >  244 ��   ��   mineru_dir = _call_mineru_local_file(filepath, token, task_i ��
+��    245 ��   ��   progress_callback("mineru", "MinerU �ĵ�����", 1, {"mineru": ��
+��    246 ��   ��   return mineru_dir                                            ��
+��    247 ��   except PipelineError as exc:                                     ��
+��                                                                             ��
+�� ������������������������������������������������ locals ��������������������������������������������������                   ��
+�� ��            exc = StageMinerUError('����')             ��                   ��
+�� ��       filepath = 'probe.pdf'                          ��                   ��
+�� �� ingest_options = {'allow_cached_mineru_output': True} ��                   ��
+�� ��      is_remote = False                                ��                   ��
+�� ��        task_id = 'ingest_new'                         ��                   ��
+�� ��          token = ''                                   ��                   ��
+�� ��  upload_errors = ['mineru-direct:PIPELINE_MINERU_IO'] ��                   ��
+�� ������������������������������������������������������������������������������������������������������������������                   ��
+��                                                                             ��
+�� D:\graghRAG-agent\backend\tests\test_p0_mineru_isolation.py:95 in fail      ��
+��                                                                             ��
+��    92 ��   monkeypatch.setattr(worker, "__file__", str(tmp_path / "worker.py ��
+��    93 ��                                                                     ��
+��    94 ��   def fail(*a, **k):                                                ��
+�� >  95 ��   ��   raise StageMinerUError("����", code=ErrorCode.PIPELINE_MINERU ��
+��    96 ��                                                                     ��
+��    97 ��   monkeypatch.setattr(worker, "_call_mineru_local_file", fail)      ��
+��    98 ��   monkeypatch.setattr(worker, "_upload_to_public", lambda *a: None) ��
+��                                                                             ��
+�� ������������������������������������������������������������������ locals �������������������������������������������������������������������� ��
+�� �� a = (                                                                   �� ��
+�� ��     ��   'probe.pdf',                                                    �� ��
+�� ��     ��   '',                                                             �� ��
+�� ��     ��   'ingest_new',                                                   �� ��
+�� ��     ��   {                                                               �� ��
+�� ��     ��   ��   'allow_cached_mineru_output':                               �� ��
+�� ��     True                                                                �� ��
+�� ��     ��   }                                                               �� ��
+�� ��     )                                                                   �� ��
+�� �� k = {}                                                                  �� ��
+�� ������������������������������������������������������������������������������������������������������������������������������������������������������ ��
+��������������������������������������������������������������������������������������������������������������������������������������������������������������
+StageMinerUError: ����
+
+2026-10-12 12:35:33 [warning  ] oss_upload_unavailable         task_id=ingest_new
+2026-10-12 12:35:33 [warning  ] mineru_using_cached_output     cached_dir=D:\graghRAG-agent\backend\tests\_tmp_p0_mineru_red_final\test_old_complete_cache_never_1\output\mineru\zzz_old note=�����뱾���ļ��޹أ����÷�����ʽ���� task_id=ingest_new
+============================== warnings summary ===============================
+.venv\Lib\site-packages\_pytest\config\__init__.py:1434
+  D:\graghRAG-agent\backend\.venv\Lib\site-packages\_pytest\config\__init__.py:1434: PytestConfigWarning: Unknown config option: timeout
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_p0_mineru_isolation.py::test_full_task_ids_with_same_prefix_have_distinct_outputs[url]
+FAILED tests/test_p0_mineru_isolation.py::test_full_task_ids_with_same_prefix_have_distinct_outputs[local]
+FAILED tests/test_p0_mineru_isolation.py::test_unsafe_task_id_rejected_before_supplier_call[url-../outside]
+FAILED tests/test_p0_mineru_isolation.py::test_unsafe_task_id_rejected_before_supplier_call[url-bad/id]
+FAILED tests/test_p0_mineru_isolation.py::test_unsafe_task_id_rejected_before_supplier_call[url-bad\\id]
+FAILED tests/test_p0_mineru_isolation.py::test_unsafe_task_id_rejected_before_supplier_call[url-]
+FAILED tests/test_p0_mineru_isolation.py::test_unsafe_task_id_rejected_before_supplier_call[url-C:escape]
+FAILED tests/test_p0_mineru_isolation.py::test_unsafe_task_id_rejected_before_supplier_call[url-CON]
+FAILED tests/test_p0_mineru_isolation.py::test_unsafe_task_id_rejected_before_supplier_call[local-../outside]
+FAILED tests/test_p0_mineru_isolation.py::test_unsafe_task_id_rejected_before_supplier_call[local-bad/id]
+FAILED tests/test_p0_mineru_isolation.py::test_unsafe_task_id_rejected_before_supplier_call[local-bad\\id]
+FAILED tests/test_p0_mineru_isolation.py::test_unsafe_task_id_rejected_before_supplier_call[local-]
+FAILED tests/test_p0_mineru_isolation.py::test_unsafe_task_id_rejected_before_supplier_call[local-C:escape]
+FAILED tests/test_p0_mineru_isolation.py::test_unsafe_task_id_rejected_before_supplier_call[local-CON]
+FAILED tests/test_p0_mineru_isolation.py::test_existing_output_is_never_reused_or_overwritten
+FAILED tests/test_p0_mineru_isolation.py::test_same_output_concurrent_attempt_has_only_one_writer
+FAILED tests/test_p0_mineru_isolation.py::test_old_complete_cache_never_becomes_new_upload_result[False]
+FAILED tests/test_p0_mineru_isolation.py::test_old_complete_cache_never_becomes_new_upload_result[True]
+18 failed, 1 warning in 8.53s

@@ -1,0 +1,963 @@
+{
+  "status": "DRAFT_NOT_EXECUTABLE_BENCHMARK",
+  "questions": [
+    {
+      "question_id": "DEV-L01",
+      "source_id": "LCNC-HOME",
+      "source_snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a",
+      "status": "PROVISIONAL_GOLD_BLOCKED_RAW_AND_VISUAL_QA",
+      "role": "development",
+      "question_language": "zh",
+      "evidence_language": "en",
+      "scope": {
+        "web_lines_inclusive": [
+          93,
+          104
+        ],
+        "snapshot_char_half_open": [
+          5971,
+          6406
+        ],
+        "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+      },
+      "question": "按第6节 Configuration 开头的表格，列出全部回零类型，并分别给出 HOME_SEARCH_VEL、HOME_LATCH_VEL、HOME_USE_INDEX 的取值。",
+      "gold_items": [
+        {
+          "item": "Immediate",
+          "required_attributes": {
+            "HOME_SEARCH_VEL": "0",
+            "HOME_LATCH_VEL": "0",
+            "HOME_USE_INDEX": "NO"
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              99,
+              99
+            ],
+            "snapshot_char_half_open": [
+              6204,
+              6230
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        },
+        {
+          "item": "Index-only",
+          "required_attributes": {
+            "HOME_SEARCH_VEL": "0",
+            "HOME_LATCH_VEL": "nonzero",
+            "HOME_USE_INDEX": "YES"
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              100,
+              100
+            ],
+            "snapshot_char_half_open": [
+              6230,
+              6264
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        },
+        {
+          "item": "Switch-only",
+          "required_attributes": {
+            "HOME_SEARCH_VEL": "nonzero",
+            "HOME_LATCH_VEL": "nonzero",
+            "HOME_USE_INDEX": "NO"
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              101,
+              101
+            ],
+            "snapshot_char_half_open": [
+              6264,
+              6304
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        },
+        {
+          "item": "Switch and Index",
+          "required_attributes": {
+            "HOME_SEARCH_VEL": "nonzero",
+            "HOME_LATCH_VEL": "nonzero",
+            "HOME_USE_INDEX": "YES"
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              102,
+              102
+            ],
+            "snapshot_char_half_open": [
+              6304,
+              6350
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        }
+      ],
+      "expected_item_count": 4,
+      "scoring_notes": [
+        "条目和三个参数属性分开计分；不补入图示中的运动轨迹。"
+      ],
+      "human_annotation_verified": false,
+      "task_role": "SCOPE_EXPLICIT_CALIBRATION_PROBE_NOT_DIFFICULTY_OR_NOVELTY_EVIDENCE",
+      "range_condition": "scope_given",
+      "evaluation_input_rule": "Only question and corpus for baseline; gold scope, item count, offsets and answers excluded from model input",
+      "attribute_header_evidence": {
+        "web_lines_inclusive": [
+          97,
+          98
+        ],
+        "snapshot_char_half_open": [
+          6115,
+          6204
+        ],
+        "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+      }
+    },
+    {
+      "question_id": "DEV-L02",
+      "source_id": "LCNC-HOME",
+      "source_snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a",
+      "status": "PROVISIONAL_GOLD_BLOCKED_RAW_AND_VISUAL_QA",
+      "role": "development",
+      "question_language": "zh",
+      "evidence_language": "en",
+      "scope": {
+        "web_lines_inclusive": [
+          145,
+          156
+        ],
+        "snapshot_char_half_open": [
+          12049,
+          12677
+        ],
+        "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+      },
+      "question": "在6.10 HOME_ABSOLUTE_ENCODER 中，列出枚举代码中的设置值及其行为，并列出该节Note说明的静默忽略行为。",
+      "gold_items": [
+        {
+          "item": "0",
+          "required_attributes": {
+            "default": true,
+            "behavior": "不使用绝对编码器"
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              150,
+              150
+            ],
+            "snapshot_char_half_open": [
+              12326,
+              12406
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        },
+        {
+          "item": "1",
+          "required_attributes": {
+            "behavior": "使用绝对编码器，并最终移动到 [JOINT_n]HOME"
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              151,
+              151
+            ],
+            "snapshot_char_half_open": [
+              12406,
+              12482
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        },
+        {
+          "item": "2",
+          "required_attributes": {
+            "behavior": "使用绝对编码器，不执行最终到 [JOINT_n]HOME 的移动"
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              152,
+              152
+            ],
+            "snapshot_char_half_open": [
+              12482,
+              12562
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        },
+        {
+          "item": "HOME_IS_SHARED",
+          "required_attributes": {
+            "behavior": "设置被静默忽略"
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              154,
+              154
+            ],
+            "snapshot_char_half_open": [
+              12563,
+              12617
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        },
+        {
+          "item": "rehome request",
+          "required_attributes": {
+            "behavior": "重新回零请求被静默忽略"
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              156,
+              156
+            ],
+            "snapshot_char_half_open": [
+              12618,
+              12677
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        }
+      ],
+      "expected_item_count": 5,
+      "scoring_notes": [
+        "前三项是枚举值，后两项是注意事项；允许分组，不能漏后两项。"
+      ],
+      "human_annotation_verified": false,
+      "task_role": "SCOPE_EXPLICIT_CALIBRATION_PROBE_NOT_DIFFICULTY_OR_NOVELTY_EVIDENCE",
+      "range_condition": "scope_given",
+      "evaluation_input_rule": "Only question and corpus for baseline; gold scope, item count, offsets and answers excluded from model input"
+    },
+    {
+      "question_id": "DEV-L03",
+      "source_id": "LCNC-HOME",
+      "source_snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a",
+      "status": "PROVISIONAL_GOLD_BLOCKED_RAW_AND_VISUAL_QA",
+      "role": "development",
+      "question_language": "zh",
+      "evidence_language": "en",
+      "scope": {
+        "web_lines_inclusive": [
+          105,
+          122
+        ],
+        "snapshot_char_half_open": [
+          6406,
+          8798
+        ],
+        "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+      },
+      "question": "仅依据6.1–6.3，列出三个速度参数的单位和数值默认值；若没有给出数值默认值，写出未设置时的行为。对 HOME_FINAL_VEL 补充允许的取值条件。",
+      "gold_items": [
+        {
+          "item": "HOME_SEARCH_VEL",
+          "required_attributes": {
+            "units": "machine-units per second",
+            "default": "0",
+            "behavior": "假定没有回零开关，跳过搜索阶段"
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              107,
+              109
+            ],
+            "snapshot_char_half_open": [
+              6432,
+              6624
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        },
+        {
+          "item": "HOME_LATCH_VEL",
+          "required_attributes": {
+            "units": "machine-units per second",
+            "default": "0"
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              114,
+              117
+            ],
+            "snapshot_char_half_open": [
+              7423,
+              8470
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        },
+        {
+          "item": "HOME_FINAL_VEL",
+          "required_attributes": {
+            "units": "machine-units per second",
+            "missing_behavior": "使用关节最大速度",
+            "value_constraint": "必须为正数"
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              120,
+              122
+            ],
+            "snapshot_char_half_open": [
+              8495,
+              8798
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        }
+      ],
+      "expected_item_count": 3,
+      "scoring_notes": [
+        "HOME_FINAL_VEL 未设置的行为不能错误写成数值默认0；不要求补充问题未请求的全部锁存逻辑。"
+      ],
+      "human_annotation_verified": false,
+      "task_role": "SCOPE_EXPLICIT_CALIBRATION_PROBE_NOT_DIFFICULTY_OR_NOVELTY_EVIDENCE",
+      "range_condition": "scope_given",
+      "evaluation_input_rule": "Only question and corpus for baseline; gold scope, item count, offsets and answers excluded from model input"
+    },
+    {
+      "question_id": "DEV-L04",
+      "source_id": "LCNC-HOME",
+      "source_snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a",
+      "status": "PROVISIONAL_GOLD_BLOCKED_RAW_AND_VISUAL_QA",
+      "role": "development",
+      "question_language": "zh",
+      "evidence_language": "en",
+      "scope": {
+        "web_lines_inclusive": [
+          167,
+          195
+        ],
+        "snapshot_char_half_open": [
+          14435,
+          15183
+        ],
+        "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+      },
+      "question": "列出6.11为三关节系统给出的全部示例，按顺序给出三个 HOME_SEQUENCE 值，并说明哪些关节同步最终移动。",
+      "gold_items": [
+        {
+          "item": "示例1",
+          "required_attributes": {
+            "values": [
+              0,
+              1,
+              1
+            ],
+            "synchronized_joints": []
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              169,
+              173
+            ],
+            "snapshot_char_half_open": [
+              14466,
+              14602
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        },
+        {
+          "item": "示例2",
+          "required_attributes": {
+            "values": [
+              0,
+              -1,
+              -1
+            ],
+            "synchronized_joints": [
+              1,
+              2
+            ]
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              174,
+              178
+            ],
+            "snapshot_char_half_open": [
+              14602,
+              14744
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        },
+        {
+          "item": "示例3",
+          "required_attributes": {
+            "values": [
+              0,
+              -1,
+              1
+            ],
+            "synchronized_joints": [
+              1,
+              2
+            ]
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              180,
+              184
+            ],
+            "snapshot_char_half_open": [
+              14745,
+              14913
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        },
+        {
+          "item": "示例4",
+          "required_attributes": {
+            "values": [
+              0,
+              0,
+              0
+            ],
+            "synchronized_joints": []
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              186,
+              190
+            ],
+            "snapshot_char_half_open": [
+              14914,
+              15046
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        },
+        {
+          "item": "示例5",
+          "required_attributes": {
+            "values": [
+              -1,
+              -1,
+              -1
+            ],
+            "synchronized_joints": [
+              0,
+              1,
+              2
+            ]
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              191,
+              195
+            ],
+            "snapshot_char_half_open": [
+              15046,
+              15183
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        }
+      ],
+      "expected_item_count": 5,
+      "scoring_notes": [
+        "同步指最终移动同步；同序号可同时回零不自动等于最终移动同步。"
+      ],
+      "human_annotation_verified": false,
+      "task_role": "SCOPE_EXPLICIT_CALIBRATION_PROBE_NOT_DIFFICULTY_OR_NOVELTY_EVIDENCE",
+      "range_condition": "scope_given",
+      "evaluation_input_rule": "Only question and corpus for baseline; gold scope, item count, offsets and answers excluded from model input"
+    },
+    {
+      "question_id": "DEV-L05",
+      "source_id": "LCNC-HOME",
+      "source_snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a",
+      "status": "PROVISIONAL_GOLD_BLOCKED_RAW_AND_VISUAL_QA",
+      "role": "development",
+      "question_language": "zh",
+      "evidence_language": "en",
+      "scope": {
+        "web_lines_inclusive": [
+          203,
+          212
+        ],
+        "snapshot_char_half_open": [
+          15594,
+          16405
+        ],
+        "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+      },
+      "question": "列出6.14 Immediate Homing 代码块中的全部配置及其给定值或允许替代值，并说明省略 HOME_SEQUENCE 对 HOME ALL 的影响。",
+      "gold_items": [
+        {
+          "item": "HOME_SEARCH_VEL",
+          "required_attributes": {
+            "value": "0"
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              207,
+              207
+            ],
+            "snapshot_char_half_open": [
+              15892,
+              15917
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        },
+        {
+          "item": "HOME_LATCH_VEL",
+          "required_attributes": {
+            "value": "0"
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              208,
+              208
+            ],
+            "snapshot_char_half_open": [
+              15917,
+              15940
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        },
+        {
+          "item": "HOME_USE_INDEX",
+          "required_attributes": {
+            "value": "NO"
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              209,
+              209
+            ],
+            "snapshot_char_half_open": [
+              15940,
+              15964
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        },
+        {
+          "item": "HOME_OFFSET",
+          "required_attributes": {
+            "value": "0",
+            "alternative": "home position offset (HOME)"
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              210,
+              210
+            ],
+            "snapshot_char_half_open": [
+              15964,
+              16021
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        },
+        {
+          "item": "HOME_SEQUENCE",
+          "required_attributes": {
+            "value": "0",
+            "alternative": "other valid sequence number",
+            "omission_effect": "该关节不参与 HOME ALL"
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              211,
+              212
+            ],
+            "snapshot_char_half_open": [
+              16021,
+              16405
+            ],
+            "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        }
+      ],
+      "expected_item_count": 5,
+      "scoring_notes": [
+        "代码块内容和省略行为均需回答；HOME 仅作解释，不能增加为代码块中的第六项。"
+      ],
+      "human_annotation_verified": false,
+      "task_role": "SCOPE_EXPLICIT_CALIBRATION_PROBE_NOT_DIFFICULTY_OR_NOVELTY_EVIDENCE",
+      "range_condition": "scope_given",
+      "evaluation_input_rule": "Only question and corpus for baseline; gold scope, item count, offsets and answers excluded from model input"
+    },
+    {
+      "question_id": "DEV-N01",
+      "source_id": "NIST-8091",
+      "source_snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8",
+      "status": "PROVISIONAL_GOLD_BLOCKED_RAW_AND_VISUAL_QA",
+      "role": "development",
+      "question_language": "zh",
+      "evidence_language": "en",
+      "scope": {
+        "web_lines_inclusive": [
+          205,
+          241
+        ],
+        "snapshot_char_half_open": [
+          2180,
+          4591
+        ],
+        "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+      },
+      "question": "在NISTIR 8091第3节中，引出子系统所需度量的列表列出了哪些类别？为每类保留括号中全部示例或判定要点，并说明该列表是否声称穷尽全部度量。",
+      "gold_items": [
+        {
+          "item": "Tolerances",
+          "required_attributes": {
+            "example_or_meaning_components": [
+              "机械臂到达指令位置的变化",
+              "传感器输出的不确定性"
+            ]
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              214,
+              215
+            ],
+            "snapshot_char_half_open": [
+              2942,
+              3075
+            ],
+            "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        },
+        {
+          "item": "Time needed for execution",
+          "required_attributes": {
+            "example_or_meaning_components": [
+              "机械臂抓取零件所需时间",
+              "传感器定位零件所需时间"
+            ]
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              216,
+              217
+            ],
+            "snapshot_char_half_open": [
+              3075,
+              3169
+            ],
+            "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        },
+        {
+          "item": "Variability",
+          "required_attributes": {
+            "example_or_meaning_components": [
+              "时间的变化",
+              "位置的变化"
+            ]
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              218,
+              218
+            ],
+            "snapshot_char_half_open": [
+              3169,
+              3209
+            ],
+            "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        },
+        {
+          "item": "Weight",
+          "required_attributes": {
+            "example_or_meaning_components": [
+              "机械臂负载能力",
+              "可达体积不同部位的负载能力约束"
+            ]
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              219,
+              220
+            ],
+            "snapshot_char_half_open": [
+              3209,
+              3325
+            ],
+            "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        },
+        {
+          "item": "Size",
+          "required_attributes": {
+            "example_or_meaning_components": [
+              "设备占地",
+              "传感器视场",
+              "机器人可抓取物体的最大尺寸"
+            ]
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              221,
+              222
+            ],
+            "snapshot_char_half_open": [
+              3325,
+              3446
+            ],
+            "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        },
+        {
+          "item": "Reachability of equipment",
+          "required_attributes": {
+            "example_or_meaning_components": [
+              "机械臂工作体积"
+            ]
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              223,
+              223
+            ],
+            "snapshot_char_half_open": [
+              3446,
+              3518
+            ],
+            "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        },
+        {
+          "item": "Accuracy of equipment",
+          "required_attributes": {
+            "example_or_meaning_components": [
+              "机器人能否足够精确地配合零件以完成装配",
+              "传感器能否以取件所需精度测量"
+            ]
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              224,
+              226
+            ],
+            "snapshot_char_half_open": [
+              3518,
+              3687
+            ],
+            "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        },
+        {
+          "item": "Speed of equipment",
+          "required_attributes": {
+            "example_or_meaning_components": [
+              "子系统能否在分配时间内执行"
+            ]
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              227,
+              227
+            ],
+            "snapshot_char_half_open": [
+              3687,
+              3768
+            ],
+            "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        },
+        {
+          "item": "Part feeding",
+          "required_attributes": {
+            "example_or_meaning_components": [
+              "设备是否需要精确供料",
+              "是否需增加传感器定位零件"
+            ]
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              228,
+              229
+            ],
+            "snapshot_char_half_open": [
+              3768,
+              3884
+            ],
+            "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        },
+        {
+          "item": "Required system capacity",
+          "required_attributes": {
+            "example_or_meaning_components": [
+              "当前配置系统能否达到必要吞吐量"
+            ]
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              230,
+              231
+            ],
+            "snapshot_char_half_open": [
+              3884,
+              3982
+            ],
+            "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        },
+        {
+          "item": "Uptime of equipment",
+          "required_attributes": {
+            "example_or_meaning_components": [
+              "设备可靠性是否足以保证所需产能",
+              "子系统失效对整体系统的影响"
+            ]
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              232,
+              234
+            ],
+            "snapshot_char_half_open": [
+              3982,
+              4158
+            ],
+            "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        },
+        {
+          "item": "Tool changes required",
+          "required_attributes": {
+            "example_or_meaning_components": [
+              "是否需要换刀",
+              "若需要，能否调整操作顺序以减少换刀"
+            ]
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              235,
+              236
+            ],
+            "snapshot_char_half_open": [
+              4158,
+              4270
+            ],
+            "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        },
+        {
+          "item": "Testing and inspection",
+          "required_attributes": {
+            "example_or_meaning_components": [
+              "测试与检查能否并入其他步骤",
+              "是否需要独立子系统",
+              "若需要，独立子系统的数量"
+            ]
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              237,
+              238
+            ],
+            "snapshot_char_half_open": [
+              4270,
+              4411
+            ],
+            "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        },
+        {
+          "item": "Constraints",
+          "required_attributes": {
+            "example_or_meaning_components": [
+              "新增子系统是否限制其他子系统的使用",
+              "例如机械臂要求传感器在特定容差内定位零件"
+            ]
+          },
+          "evidence": {
+            "web_lines_inclusive": [
+              239,
+              241
+            ],
+            "snapshot_char_half_open": [
+              4411,
+              4591
+            ],
+            "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+          },
+          "attribute_scoring_rule": "Score each named field and each list component separately; semantic equivalents accepted; item name alone does not satisfy attributes"
+        }
+      ],
+      "expected_item_count": 14,
+      "scoring_notes": [
+        "14类为该范围内列举的全部条目，不代表领域全集；必须注明原文称列表不完整，证据web行213。",
+        "每类括号内示例/问题的语义逐项检查，不要求逐字翻译；不能将执行时间与变化性等合并。"
+      ],
+      "human_annotation_verified": false,
+      "task_role": "SCOPE_EXPLICIT_CALIBRATION_PROBE_NOT_DIFFICULTY_OR_NOVELTY_EVIDENCE",
+      "range_condition": "scope_given",
+      "evaluation_input_rule": "Only question and corpus for baseline; gold scope, item count, offsets and answers excluded from model input",
+      "required_answer_qualifiers": [
+        {
+          "claim": "列表不完整；只穷尽文中当前列表，不代表所有可能度量",
+          "evidence": {
+            "web_lines_inclusive": [
+              213,
+              213
+            ],
+            "snapshot_char_half_open": [
+              2875,
+              2942
+            ],
+            "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8"
+          }
+        }
+      ]
+    }
+  ],
+  "heldout_H1": [],
+  "heldout_H2": [],
+  "annotator": "AI source-grounded draft; not independent human Gold"
+}

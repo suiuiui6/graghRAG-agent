@@ -1,0 +1,27 @@
+{
+  "input_files": 53,
+  "input_manifest_sha256": "88e7356ceefccf79fa1fb9b8f11110cb11b66ea8d41faab2c5a3cc0182a0356d",
+  "drift": 0,
+  "production_files": 29,
+  "lines": {
+    "total": 957,
+    "covered": 927,
+    "skipped": 0,
+    "pct": 96.86
+  },
+  "branches": {
+    "total": 913,
+    "covered": 853,
+    "skipped": 0,
+    "pct": 93.42
+  },
+  "commands": {
+    "audit": 0,
+    "css_browser": 0,
+    "coverage": 0,
+    "widget_browser": 0,
+    "frozen": 0,
+    "build": 0
+  },
+  "generated_at": "2026-10-13T20:09:32.7268112+08:00"
+}

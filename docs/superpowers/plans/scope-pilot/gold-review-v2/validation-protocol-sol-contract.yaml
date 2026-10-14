@@ -1,0 +1,126 @@
+contract_version: "1.0"
+expert_skill: sci-skills-statistical-reporting
+project_id: graphrag-paper-001
+paper_family: M
+stage_id: M2
+task_id: BASELINE-PROTOCOL-20261007
+task_status: PROVISIONAL
+inputs_reviewed:
+  - path: docs/superpowers/plans/scope-pilot/gold-review-v2/independent-sol-review.md
+    extent: complete_independent_AI_gold_review_not_human_certification
+  - path: docs/superpowers/plans/scope-pilot/gold-review-v2/independent-sol-contract.yaml
+    extent: complete_contract_and_five_unresolved_conflicts
+  - path: docs/superpowers/plans/scope-pilot/gold-review-v2/production-readiness-audit.md
+    extent: complete_read_only_audit_not_runtime_replay
+  - path: docs/superpowers/plans/scope-pilot/gold-review-v2/production-readiness-audit.json
+    extent: complete_recorded_source_hashes_and_predicate_checks
+  - path: docs/superpowers/plans/scope-pilot/gold.yaml
+    extent: original_nine_questions_and_31_draft_items_read_only
+  - path: docs/superpowers/plans/scope-pilot/gold-review-v2/gold-policy-proposal.yaml
+    extent: complete_2_0_proposed_nine_questions_31_core_items_not_canonical
+outputs:
+  - path: docs/superpowers/plans/scope-pilot/gold-review-v2/validation-protocol-sol.md
+    artifact_type: prospective_statistical_validation_design
+    status: PROVISIONAL_NOT_EXECUTED
+  - path: docs/superpowers/plans/scope-pilot/gold-review-v2/validation-protocol-sol-contract.yaml
+    artifact_type: expert_result_contract
+    status: PROVISIONAL
+evidence_status:
+  - label: VERIFIED_USER_MATERIAL
+    finding: independent_gold_review_records_source_supported_membership_attribute_and_scope_conflicts
+    boundary: repository_Markdown_and_AI_review_not_human_gold_certification
+  - label: VERIFIED_USER_MATERIAL
+    finding: production_audit_records_document_id_echo_only_API_4000_character_cut_recomposed_offsets_and_request_setting_differences
+    boundary: inherited_code_audit_not_independent_runtime_verification
+  - label: AI_INFERENCE
+    finding: two_track_paired_diagnostic_design_can_separate_native_system_behavior_from_controlled_scope_intervention
+  - label: AI_INFERENCE
+    finding: conditional_54_provider_call_cap_requires_native_at_most_one_preprocess_and_two_generation_attempts_then_three_controlled_single_calls_reusing_native_captured_preprocessing
+    boundary: hidden_calls_must_be_ruled_out_before_using_cap
+  - label: EXECUTED_LOCAL
+    finding: YAML_parsing_exact_19_field_contract_task_identity_two_output_paths_five_inherited_conflicts_and_proposed_policy_identity_validated
+    boundary: artifact_format_only_not_experiment_execution
+  - label: PENDING_VERIFICATION
+    activities: [canonical_gold_policy_approval, runtime_identity, corpus_D1_D2_D3_mapping, index_snapshot_hashes, original_span_mapping, local_embedding_availability, source_transmission_permission, actual_provider_request_settings, hidden_calls_and_cache_behavior]
+  - label: NOT_EXECUTED
+    activities: [API_calls, production_replay, adapter_implementation, new_answer_generation, statistical_analysis, human_gold_certification, holdout_selection, stage_advancement]
+assumptions:
+  - Original_nine_questions_31_draft_Gold_items_and_27_old_responses_remain_immutable_and_not_rescored_into_one_aggregate_accuracy.
+  - Gold_rule_proposals_remain_proposals_until_approved_and_versioned_by_evaluation_owner.
+  - Existing_three_documents_are_seen_diagnostic_material_not_blind_holdout.
+  - Question_is_paired_comparison_unit_and_document_or_document_family_is_independent_sampling_unit.
+  - Controlled_adapter_is_not_unmodified_B0_NATIVE_and_ORACLE_scope_is_not_automatic_routing.
+  - Generic_AUTO_resolver_receives_only_user_query_and_genuine_source_structure_metadata_and_abstains_on_ambiguity.
+  - Same_context_upper_budget_does_not_imply_equal_actual_context_length_or_exact_provider_token_count.
+  - Common_controlled_source_identity_must_come_from_genuine_user_document_selection_not_Gold_keys_or_silently_rewritten_queries.
+  - Controlled_arms_have_no_retries_no_repeated_preprocessing_and_no_LLM_scope_routing.
+  - Fifty_four_calls_is_a_conditional_design_cap_not_authorized_API_budget_or_cost_estimate.
+  - Existing_user_preference_of_no_monetary_limit_is_preserved_while_new_batch_calls_and_data_range_still_require_authorization.
+  - Specialist_design_delivery_does_not_change_project_or_stage_state.
+author_input_needed:
+  - decision: approve_versioned_Gold_membership_provenance_titles_and_binding_policy_before_new_answers
+    conflict_ids: [GIR-C01, GIR-C02, GIR-C03, GIR-C04, GIR-C05]
+  - decision: approve_two_track_diagnostic_design_and_common_paired_cases_before_execution
+  - decision: confirm_runtime_corpus_and_genuine_user_source_identity_source_rights_and_finite_call_token_time_scope_before_any_new_API_batch
+  - decision: choose_new_whole_document_or_family_holdout_sampling_frame_only_if_diagnostics_justify_extension
+manual_actions: []
+quality_checks:
+  - check: three_validation_options_with_recommended_small_two_track_design
+    status: PASS_DESIGN
+  - check: native_B0_preserves_production_rescues_prompts_postprocessing_and_request_envelope
+    status: PASS_DESIGN
+  - check: controlled_three_arms_use_common_model_prompt_output_preprocessing_postprocessing_and_upper_budget
+    status: PASS_DESIGN
+  - check: AUTO_leakage_prohibitions_UNRESOLVED_behavior_and_ORACLE_boundary_explicit
+    status: PASS_DESIGN
+  - check: query_versions_and_old_COST_five_six_seven_sensitivities_not_mixed
+    status: PASS_DESIGN
+  - check: content_attributes_INPUT_support_scope_coverage_false_exhaustiveness_citations_and_negative_proof_separate
+    status: PASS_DESIGN
+  - check: raw_postprocessed_and_API_visible_answers_separate_and_token_estimate_usage_UTF8_bytes_distinct
+    status: PASS_DESIGN
+  - check: three_documents_not_used_for_p_values_power_or_pseudoreplicated_27_row_inference
+    status: PASS_DESIGN
+  - check: finite_conditional_call_cap_hidden_calls_retries_cache_privacy_and_no_auto_ingest_gates
+    status: PASS_DESIGN
+  - check: original_user_money_preference_preserved_controlled_no_retries_reuses_native_capture_and_genuine_source_identity
+    status: PASS_DESIGN
+  - check: YAML_exact_fields_task_identity_and_artifact_scope
+    status: PASS_EXECUTED_LOCAL
+  - check: actual_runtime_validation_API_permission_and_canonical_Gold
+    status: NOT_EXECUTED
+conflicts:
+  - conflict_id: GIR-C01
+    conflict_type: inherited_question_ontology_ambiguity
+    claim: original_COST_has_unique_five_item_denominator
+    sources: [independent-sol-review.md_D1_COST]
+    competing_interpretations: [five_direct_cost_levels, six_with_grid_support_value, seven_with_relative_change]
+    recommended_resolution: retain_old_sensitivities_and_approve_separate_narrow_future_question_version
+  - conflict_id: GIR-C02
+    conflict_type: inherited_attention_attribute_scope_mismatch
+    claim: A3_previous_decoder_layer_provenance_is_explicit_in_section_3_2_3
+    sources: [independent-sol-review.md_D2_ATTENTION]
+    competing_interpretations: [explicit_only_with_absence_note, labelled_decoder_side_inference, unsupported_exact_layer_import]
+    recommended_resolution: approve_explicit_vs_inferred_attribute_policy_before_scoring
+  - conflict_id: GIR-C03
+    conflict_type: inherited_figure_scope_title_policy
+    claim: appendix_regex_is_whole_source_scan_and_titles_are_identical
+    sources: [independent-sol-review.md_D1_FIG]
+    competing_interpretations: [body_primary_full_Markdown_with_aliases, appendix_only_projection]
+    recommended_resolution: version_full_Markdown_policy_and_do_not_claim_old_projection_is_full_scan
+  - conflict_id: GIR-C04
+    conflict_type: inherited_category_vs_binding_granularity
+    claim: four_limitations_headings_verify_all_substantive_bindings
+    sources: [independent-sol-review.md_D1_LIMITS]
+    competing_interpretations: [category_only_completeness, category_plus_named_omissions_and_risks]
+    recommended_resolution: keep_four_category_denominator_and_report_substantive_binding_separately
+  - conflict_id: GIR-C05
+    conflict_type: inherited_anchor_vs_attribute_support
+    claim: anchor_presence_alone_verifies_answer_attributes
+    sources: [independent-sol-review.md_D2_ATTENTION, production-readiness-audit.md_original_span_gate]
+    competing_interpretations: [existence_anchor_only, attribute_specific_verified_source_and_INPUT_spans]
+    recommended_resolution: approve_attribute_level_adjudication_and_validate_original_spans
+conflict_resolution_status: UNRESOLVED
+merge_permission: orchestrator_only
+recommended_next_action: "批准版本化 Gold 规则与本验证设计，随后另行准备执行门禁；本轮不启动新 API 实验。"
+stage_acceptance_recommendation: REPAIR

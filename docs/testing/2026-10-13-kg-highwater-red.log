@@ -1,0 +1,71 @@
+FFFFFFF                                                                  [100%]
+================================== FAILURES ===================================
+______ test_invalid_highwater_cannot_create_or_retire_any_version[True] _______
+D:\graghRAG-agent\backend\tests\test_kg_highwater_validation.py:27: in test_invalid_highwater_cannot_create_or_retire_any_version
+    with pytest.raises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+---------------------------- Captured stdout call -----------------------------
+2026-10-13 17:43:54 [info     ] kg_version_created             doc_id=strict edges=0 nodes=0 version=12
+2026-10-13 17:43:54 [debug    ] event_published                event_id=12f59d4ab186 event_type=kg.version_created
+______ test_invalid_highwater_cannot_create_or_retire_any_version[False] ______
+D:\graghRAG-agent\backend\tests\test_kg_highwater_validation.py:27: in test_invalid_highwater_cannot_create_or_retire_any_version
+    with pytest.raises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+---------------------------- Captured stdout call -----------------------------
+2026-10-13 17:43:56 [info     ] kg_version_created             doc_id=strict edges=0 nodes=0 version=12
+2026-10-13 17:43:56 [debug    ] event_published                event_id=a0160e70702e event_type=kg.version_created
+______ test_invalid_highwater_cannot_create_or_retire_any_version[99.5] _______
+D:\graghRAG-agent\backend\tests\test_kg_highwater_validation.py:27: in test_invalid_highwater_cannot_create_or_retire_any_version
+    with pytest.raises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+---------------------------- Captured stdout call -----------------------------
+2026-10-13 17:43:56 [info     ] kg_version_created             doc_id=strict edges=0 nodes=0 version=99.5
+2026-10-13 17:43:56 [debug    ] event_published                event_id=260b0ac90078 event_type=kg.version_created
+_______ test_invalid_highwater_cannot_create_or_retire_any_version[-1] ________
+D:\graghRAG-agent\backend\tests\test_kg_highwater_validation.py:27: in test_invalid_highwater_cannot_create_or_retire_any_version
+    with pytest.raises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+---------------------------- Captured stdout call -----------------------------
+2026-10-13 17:43:56 [info     ] kg_version_created             doc_id=strict edges=0 nodes=0 version=12
+2026-10-13 17:43:56 [debug    ] event_published                event_id=f90956fbe214 event_type=kg.version_created
+________ test_invalid_highwater_cannot_create_or_retire_any_version[0] ________
+D:\graghRAG-agent\backend\tests\test_kg_highwater_validation.py:27: in test_invalid_highwater_cannot_create_or_retire_any_version
+    with pytest.raises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+---------------------------- Captured stdout call -----------------------------
+2026-10-13 17:43:56 [info     ] kg_version_created             doc_id=strict edges=0 nodes=0 version=12
+2026-10-13 17:43:56 [debug    ] event_published                event_id=94c2a054db6c event_type=kg.version_created
+______ test_invalid_highwater_cannot_create_or_retire_any_version[None] _______
+D:\graghRAG-agent\backend\tests\test_kg_highwater_validation.py:28: in test_invalid_highwater_cannot_create_or_retire_any_version
+    manager.create_version([], [])
+D:\graghRAG-agent\backend\kg_store.py:352: in create_version
+    new_v = self._next_version(meta)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+D:\graghRAG-agent\backend\kg_store.py:332: in _next_version
+    return max([0, meta.get("next_version", 1) - 1,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: unsupported operand type(s) for -: 'NoneType' and 'int'
+_______ test_invalid_highwater_cannot_create_or_retire_any_version[99] ________
+D:\graghRAG-agent\backend\tests\test_kg_highwater_validation.py:28: in test_invalid_highwater_cannot_create_or_retire_any_version
+    manager.create_version([], [])
+D:\graghRAG-agent\backend\kg_store.py:352: in create_version
+    new_v = self._next_version(meta)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+D:\graghRAG-agent\backend\kg_store.py:332: in _next_version
+    return max([0, meta.get("next_version", 1) - 1,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: unsupported operand type(s) for -: 'str' and 'int'
+=========================== short test summary info ===========================
+FAILED backend\tests\test_kg_highwater_validation.py::test_invalid_highwater_cannot_create_or_retire_any_version[True]
+FAILED backend\tests\test_kg_highwater_validation.py::test_invalid_highwater_cannot_create_or_retire_any_version[False]
+FAILED backend\tests\test_kg_highwater_validation.py::test_invalid_highwater_cannot_create_or_retire_any_version[99.5]
+FAILED backend\tests\test_kg_highwater_validation.py::test_invalid_highwater_cannot_create_or_retire_any_version[-1]
+FAILED backend\tests\test_kg_highwater_validation.py::test_invalid_highwater_cannot_create_or_retire_any_version[0]
+FAILED backend\tests\test_kg_highwater_validation.py::test_invalid_highwater_cannot_create_or_retire_any_version[None]
+FAILED backend\tests\test_kg_highwater_validation.py::test_invalid_highwater_cannot_create_or_retire_any_version[99]
+7 failed in 2.89s

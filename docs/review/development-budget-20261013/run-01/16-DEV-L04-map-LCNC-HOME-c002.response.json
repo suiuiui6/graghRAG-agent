@@ -1,0 +1,35 @@
+{
+  "status": "SUCCESS",
+  "http_status": 200,
+  "usage_known": true,
+  "provider_response": {
+    "id": "ea86ce1b-f688-49f0-990f-b5e1a95a02c2",
+    "object": "chat.completion",
+    "created": 1791851030,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "根据提供的摘录，6.11 节（HOME_SEQUENCE）中给出的示例情况如下。\n\n## 示例概述\n\n该示例描述的是使用负序列值（-1）实现同步归位的关节 0 和关节 1 [LCNC-HOME-c002]。示例通过一个开关（allow_jjog）在负序列（同步归位）与正序列（归位前单独点动）之间切换 [LCNC-HOME-c002]。\n\n## 三个 HOME_SEQUENCE 值（按出现顺序）\n\n| 顺序 | HOME_SEQUENCE 值 | 用途/条件 | 引用 |\n|------|------------------|-----------|------|\n| 1 | -1 | 用于同步归位（负序列） | [LCNC-HOME-c002] |\n| 2 | 1 | 用于归位前的单独关节点动（正序列） | [LCNC-HOME-c002] |\n| 3 | -1 | 作为 mux2 的 in0 默认输入值 | [LCNC-HOME-c002] |\n\n## 最终同步移动的关节\n\n最终同步移动的是关节 0 和关节 1 [LCNC-HOME-c002]。这两个关节通过 `net home_seq_s32 => ini.0.home_sequence` 和 `net home_seq_s32 => ini.1.home_sequence` 连接到同一个序列值 [LCNC-HOME-c002]。\n\n## 相关注意事项\n\n- 默认情况下，同步规定禁止归位前的关节点动，以防止可能使机器错位的点动（例如龙门架扭曲）[LCNC-HOME-c002]。\n- 系统集成商可通过 HAL 逻辑切换 [JOINT_N]HOME_SEQUENCE 项来允许归位前的关节点动 [LCNC-HOME-c002]。\n- 该逻辑还应置位 motion.homing-inhibit 引脚，以确保在启用关节点动时不会意外启动归位 [LCNC-HOME-c002]。\n- INI HAL 引脚（如 ini.N.home_sequence）在 milltask 启动前不可用，因此上述 HAL 命令应通过 postgui HAL 文件或延迟的 [APPLICATION]APP= 脚本推迟执行 [LCNC-HOME-c002]。\n- 多关节点动的实时同步需要为 MPG 类型点动引脚（joint.N.enable、joint.N.scale、joint.N.counts）添加额外的 HAL 连接 [LCNC-HOME-c002]。\n- 一个演示使用负归位序列时关节点动的示例仿真配置（gantry_jjog.ini）位于 configs/sim/axis/gantry/ 目录中 [LCNC-HOME-c002]。\n\n注：摘录中仅明确提及关节 0 和关节 1 的同步归位，未提及其他关节的同步移动信息。"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1485,
+      "completion_tokens": 599,
+      "total_tokens": 2084,
+      "prompt_tokens_details": {
+        "cached_tokens": 768
+      },
+      "prompt_cache_hit_tokens": 768,
+      "prompt_cache_miss_tokens": 717
+    },
+    "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+  },
+  "send_status": "HTTP_RESPONSE_RECEIVED",
+  "worker_elapsed_seconds": 3.9530000000377186
+}

@@ -1,0 +1,211 @@
+# GraphRAG CI Pipeline
+# enterprise-evolution-blueprint-v1.0 §7.3
+
+name: CI
+
+on:
+  push:
+    branches: [master, develop]
+  pull_request:
+    branches: [master]
+
+env:
+  PYTHON_VERSION: "3.12"
+  NODE_VERSION: "22"
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    env:
+      # 锁文件绑定阿里云；uv tool run 拉取 ruff 本身也走此镜像
+      # （见 backend/CLAUDE.md 的镜像约束章节）
+      UV_DEFAULT_INDEX: https://mirrors.aliyun.com/pypi/simple/
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Ruff (Python lint)
+        working-directory: ./backend
+        run: |
+          # 钉版本：原用 chartboost/ruff-action@v1（未钉），规则行为会随解析版本漂移，
+          # 且不保证传 --config，导致 backend/pyproject.toml 的 [tool.ruff] 可能不生效。
+          # 工作目录已切到 backend，ruff 自动读取该目录的 pyproject.toml。
+          uv tool run ruff==0.8.4 check .
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: ESLint (Frontend lint)
+        working-directory: ./frontend
+        run: |
+          corepack enable
+          pnpm install --frozen-lockfile
+          npx eslint src/ --ext .ts,.tsx || true
+
+  bandit-sast:
+    runs-on: ubuntu-latest
+    env:
+      UV_DEFAULT_INDEX: https://mirrors.aliyun.com/pypi/simple/
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: bandit（中危+中置信度起阻断）
+        working-directory: ./backend
+        run: |
+          # -c pyproject.toml 必须带上：bandit 只有通过 -c 才会读取
+          # [tool.bandit] 的 exclude_dirs，否则会把 .venv 下上万个文件一起扫，
+          # 既慢又产生大量无关告警（本地实测：漏掉 -c 会直接扫 .venv）。
+          #
+          # -ll -ii = 中危 + 中置信度起阻断。默认 -l -i 会报大量低危噪声，
+          # 结果是阻塞 CI 或被迫整体跳过 —— 二者都会训练人忽略该 job。
+          #
+          # 2026-10-13：DuckDB 条件已改表达式编译，撤销历史 B608 豁免。
+          # 保留完整规则，不将 LLM 输出视为可信 SQL。
+          # --python 3.12 必须显式指定：bandit 1.7.10 在 Python 3.14 上会崩
+          # （`ast.Num` 已在 3.12 后移除，bandit 内部仍引用 → 报
+          # "module 'ast' has no attribute 'Num'"，本地实测）。uv 默认挑最新
+          # 解释器，不钉 --python 就会失败。
+          uv tool run --python 3.12 bandit==1.7.10 -c pyproject.toml -r . -ll -ii
+
+  dependency-audit:
+    runs-on: ubuntu-latest
+    env:
+      # 锁文件绑定阿里云镜像，CI 必须设同一索引，否则 --check 必然失败
+      UV_DEFAULT_INDEX: https://mirrors.aliyun.com/pypi/simple/
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: 校验锁文件与 pyproject 同步
+        working-directory: ./backend
+        run: uv lock --check
+
+      - name: 依赖漏洞审计（高危阻断）
+        working-directory: ./backend
+        run: |
+          # Audit the lock closure, not a fresh resolution of floating requirements.
+          # Local langextract source is reviewed separately; its registry deps remain.
+          uv sync --locked
+          uv export --locked --no-emit-project --no-emit-package langextract --no-hashes --output-file /tmp/backend-audit.txt
+          # Embedded Chroma still has unresolved dependency advisories; do not ignore them.
+          uv run --no-sync pip-audit -r /tmp/backend-audit.txt --no-deps --disable-pip --strict --desc on
+
+  secret-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 需要完整历史以扫描提交
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: 安装 detect-secrets
+        run: pip install detect-secrets
+
+      - name: 密钥扫描
+        # 注意：detect-secrets 已声明在 backend/pyproject.toml [dependency-groups].dev，
+        # 但本 job 在仓库根目录运行、不重装后端依赖，故仍走 pip 安装（与
+        # dependency-audit 的锁定来源策略不一致，见任务报告）。
+        run: detect-secrets scan --baseline .secrets.baseline
+
+  test:
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          version: "0.11.16"
+
+      - name: Install backend dependencies (locked)
+        working-directory: ./backend
+        env:
+          # 锁文件绑定阿里云镜像，与 dependency-audit 保持同一索引
+          UV_DEFAULT_INDEX: https://mirrors.aliyun.com/pypi/simple/
+        run: uv sync --locked
+
+      - name: 导入冒烟校验（真实入库链路依赖齐全）
+        working-directory: ./backend
+        run: uv run --no-sync python scripts/check_imports.py
+
+      - name: Backend tests
+        working-directory: ./backend
+        env:
+          JWT_SECRET_KEY: ci-test-secret-key-at-least-32-chars
+        run: uv run --no-sync pytest tests/ research/test_deepseek_scope_pilot.py -v --tb=short --timeout=60
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Frontend typecheck
+        working-directory: ./frontend
+        run: |
+          corepack enable
+          pnpm install --frozen-lockfile
+          npx tsc --noEmit
+
+  build-and-push:
+    needs: [test, dependency-audit, bandit-sast, secret-scan]
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build & push backend
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: Dockerfile.backend
+          push: true
+          tags: ghcr.io/${{ github.repository }}/graphrag-backend:${{ github.sha }},ghcr.io/${{ github.repository }}/graphrag-backend:latest
+
+      - name: Build & push frontend
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: Dockerfile.frontend
+          push: true
+          tags: ghcr.io/${{ github.repository }}/graphrag-frontend:${{ github.sha }},ghcr.io/${{ github.repository }}/graphrag-frontend:latest

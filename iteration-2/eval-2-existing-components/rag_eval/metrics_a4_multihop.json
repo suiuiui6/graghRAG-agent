@@ -1,0 +1,420 @@
+{
+  "A_by_hops": {
+    "per_hops": {
+      "1": {
+        "n_questions": 38,
+        "qids": [
+          "Q01",
+          "Q02",
+          "Q03",
+          "Q04",
+          "Q05",
+          "Q06",
+          "Q07",
+          "Q08",
+          "Q09",
+          "Q10",
+          "Q11",
+          "Q12",
+          "Q21",
+          "Q22",
+          "Q23",
+          "Q24",
+          "Q25",
+          "Q26",
+          "Q27",
+          "Q28",
+          "Q33",
+          "Q34",
+          "Q35",
+          "Q36",
+          "Q37",
+          "Q38",
+          "Q39",
+          "Q40",
+          "Q41",
+          "Q42",
+          "Q43",
+          "Q44",
+          "Q45",
+          "Q46",
+          "Q47",
+          "Q48",
+          "Q49",
+          "Q50"
+        ],
+        "avg_num_tool_calls": 0.0,
+        "avg_retrieved": 29.447,
+        "hit_rate": 0.579,
+        "strict_hit": 0.553,
+        "avg_latency_ms": 1622.0,
+        "avg_total_tokens": 879.9
+      },
+      "2": {
+        "n_questions": 12,
+        "qids": [
+          "Q13",
+          "Q14",
+          "Q15",
+          "Q16",
+          "Q17",
+          "Q18",
+          "Q19",
+          "Q20",
+          "Q29",
+          "Q30",
+          "Q31",
+          "Q32"
+        ],
+        "avg_num_tool_calls": 0.0,
+        "avg_retrieved": 31.167,
+        "hit_rate": 0.833,
+        "strict_hit": 0.25,
+        "avg_latency_ms": 3142.5,
+        "avg_total_tokens": 1661.1
+      }
+    },
+    "tool_calls_monotonic_nondec_with_hops": true,
+    "tool_calls_sequence_by_hops": {
+      "1": 0.0,
+      "2": 0.0
+    }
+  },
+  "B_t4_detail": {
+    "questions": [
+      {
+        "qid": "Q29",
+        "query": "解决问题二的核心建模方法及其与问题三方法的差异是什么？",
+        "expected_node_ids": [
+          "n0018",
+          "n0024",
+          "n0078",
+          "n0079"
+        ],
+        "retrieved_node_ids_first20": [
+          "n0226",
+          "n0221",
+          "n0222",
+          "n0223",
+          "n0224",
+          "n0225",
+          "n0392",
+          "n0093",
+          "n0387",
+          "n0386",
+          "n0396",
+          "n0024",
+          "n0062",
+          "n0039",
+          "n0227",
+          "n0077",
+          "n0078",
+          "n0076",
+          "n0030",
+          "n0079"
+        ],
+        "num_retrieved_total": 27,
+        "num_tool_calls": 0,
+        "tool_sequence": [],
+        "hit_rate": 1,
+        "strict_hit": 1,
+        "precision": 0.148,
+        "recall": 1.0
+      },
+      {
+        "qid": "Q30",
+        "query": "离网带储能场景相比无储能场景，产量提升了多少？",
+        "expected_node_ids": [
+          "n0032",
+          "n0037",
+          "n0038"
+        ],
+        "retrieved_node_ids_first20": [
+          "n0060",
+          "n0056",
+          "n0057",
+          "n0059",
+          "n0061",
+          "n0062",
+          "n0041",
+          "n0317",
+          "n0055",
+          "n0316",
+          "n0318",
+          "n0024",
+          "n0034",
+          "n0046",
+          "n0313",
+          "n0091",
+          "n0225",
+          "n0315",
+          "n0093",
+          "n0319"
+        ],
+        "num_retrieved_total": 21,
+        "num_tool_calls": 0,
+        "tool_sequence": [],
+        "hit_rate": 0,
+        "strict_hit": 0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      {
+        "qid": "Q31",
+        "query": "成本最低和最高的两种运营模式分别对应多少元/吨？",
+        "expected_node_ids": [
+          "n0015",
+          "n0019",
+          "n0021"
+        ],
+        "retrieved_node_ids_first20": [
+          "n0015",
+          "n0009",
+          "n0011",
+          "n0012",
+          "n0013",
+          "n0014",
+          "n0219",
+          "n0218",
+          "n0033",
+          "n0044",
+          "n0077",
+          "n0045",
+          "n0023",
+          "n0316",
+          "n0019",
+          "n0016",
+          "n0017",
+          "n0018",
+          "n0003",
+          "n0078"
+        ],
+        "num_retrieved_total": 31,
+        "num_tool_calls": 0,
+        "tool_sequence": [],
+        "hit_rate": 1,
+        "strict_hit": 0,
+        "precision": 0.065,
+        "recall": 0.667
+      },
+      {
+        "qid": "Q32",
+        "query": "摘要中讨论的两种连续调节方式分别使绿电合规率达到了什么水平？",
+        "expected_node_ids": [
+          "n0020",
+          "n0024",
+          "n0029",
+          "n0030"
+        ],
+        "retrieved_node_ids_first20": [
+          "n0381",
+          "n0030",
+          "n0382",
+          "n0077",
+          "n0033",
+          "n0164",
+          "n0313",
+          "n0046",
+          "n0060",
+          "n0056",
+          "n0057",
+          "n0059",
+          "n0061",
+          "n0062",
+          "n0146",
+          "n0141",
+          "n0142",
+          "n0143",
+          "n0144",
+          "n0145"
+        ],
+        "num_retrieved_total": 32,
+        "num_tool_calls": 0,
+        "tool_sequence": [],
+        "hit_rate": 1,
+        "strict_hit": 0,
+        "precision": 0.094,
+        "recall": 0.75
+      }
+    ]
+  },
+  "B_q31_outlier": {
+    "total_requests": 0,
+    "calls_by_tool_name": {},
+    "unique_call_signatures": 0,
+    "repeated_call_signatures_count": 0,
+    "top_repeated_calls": [],
+    "search_kg_by_type_arg_combos_first5": [],
+    "get_entity_neighbors_node_ids_first10": [],
+    "get_entity_neighbors_distinct_nodes": 0,
+    "get_entity_detail_node_ids_first10": [],
+    "get_entity_detail_distinct_nodes": 0,
+    "first_8_request_names": [],
+    "last_8_request_names": []
+  },
+  "C_tool_efficiency": {
+    "total_requests_all_questions": 0,
+    "calls_by_tool_name": {},
+    "repeat_signature_ratio": 0.0,
+    "repeat_signature_distinct_count": 0,
+    "pearson_num_tool_calls_vs_total_tokens": 0.0,
+    "most_efficient_hits_top5": [
+      {
+        "qid": "Q01",
+        "category": "T1",
+        "num_tool_calls": 0,
+        "hit": 1,
+        "n_expected": 1,
+        "tokens_total": 1086,
+        "latency_ms": 1669
+      },
+      {
+        "qid": "Q02",
+        "category": "T1",
+        "num_tool_calls": 0,
+        "hit": 1,
+        "n_expected": 1,
+        "tokens_total": 1064,
+        "latency_ms": 1515
+      },
+      {
+        "qid": "Q03",
+        "category": "T1",
+        "num_tool_calls": 0,
+        "hit": 1,
+        "n_expected": 1,
+        "tokens_total": 1759,
+        "latency_ms": 1429
+      },
+      {
+        "qid": "Q04",
+        "category": "T1",
+        "num_tool_calls": 0,
+        "hit": 1,
+        "n_expected": 2,
+        "tokens_total": 1114,
+        "latency_ms": 1191
+      },
+      {
+        "qid": "Q05",
+        "category": "T1",
+        "num_tool_calls": 0,
+        "hit": 1,
+        "n_expected": 1,
+        "tokens_total": 1202,
+        "latency_ms": 1585
+      }
+    ],
+    "least_efficient_misses_top5": [
+      {
+        "qid": "Q07",
+        "category": "T1",
+        "num_tool_calls": 0,
+        "hit": 0,
+        "n_expected": 1,
+        "tokens_total": 1196,
+        "latency_ms": 1205
+      },
+      {
+        "qid": "Q20",
+        "category": "T2",
+        "num_tool_calls": 0,
+        "hit": 0,
+        "n_expected": 6,
+        "tokens_total": 1941,
+        "latency_ms": 2852
+      },
+      {
+        "qid": "Q27",
+        "category": "T3",
+        "num_tool_calls": 0,
+        "hit": 0,
+        "n_expected": 1,
+        "tokens_total": 875,
+        "latency_ms": 4172
+      },
+      {
+        "qid": "Q28",
+        "category": "T3",
+        "num_tool_calls": 0,
+        "hit": 0,
+        "n_expected": 2,
+        "tokens_total": 1036,
+        "latency_ms": 1327
+      },
+      {
+        "qid": "Q30",
+        "category": "T4",
+        "num_tool_calls": 0,
+        "hit": 0,
+        "n_expected": 3,
+        "tokens_total": 1233,
+        "latency_ms": 1722
+      }
+    ]
+  },
+  "D_t2_recall": {
+    "questions": [
+      {
+        "qid": "Q13",
+        "n_expected": 5,
+        "n_retrieved": 32,
+        "intersection": 2,
+        "recall": 0.4
+      },
+      {
+        "qid": "Q14",
+        "n_expected": 5,
+        "n_retrieved": 35,
+        "intersection": 1,
+        "recall": 0.2
+      },
+      {
+        "qid": "Q15",
+        "n_expected": 3,
+        "n_retrieved": 32,
+        "intersection": 2,
+        "recall": 0.667
+      },
+      {
+        "qid": "Q16",
+        "n_expected": 5,
+        "n_retrieved": 35,
+        "intersection": 2,
+        "recall": 0.4
+      },
+      {
+        "qid": "Q17",
+        "n_expected": 4,
+        "n_retrieved": 28,
+        "intersection": 4,
+        "recall": 1.0
+      },
+      {
+        "qid": "Q18",
+        "n_expected": 4,
+        "n_retrieved": 30,
+        "intersection": 3,
+        "recall": 0.75
+      },
+      {
+        "qid": "Q19",
+        "n_expected": 2,
+        "n_retrieved": 39,
+        "intersection": 2,
+        "recall": 1.0
+      },
+      {
+        "qid": "Q20",
+        "n_expected": 6,
+        "n_retrieved": 32,
+        "intersection": 0,
+        "recall": 0.0
+      }
+    ],
+    "recall_mean": 0.552,
+    "recall_min": 0.0,
+    "recall_max": 1.0,
+    "recall_median": 0.533
+  }
+}

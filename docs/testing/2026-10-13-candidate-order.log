@@ -1,0 +1,19 @@
+.............................................................            [100%]
+============================== warnings summary ===============================
+.tmp\backend-quality-venv-20261012\Lib\site-packages\starlette\testclient.py:53
+  D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\starlette\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]
+
+tests/test_query_quality_behaviors.py::test_legacy_search_filters_grounded_type_properties_and_limit
+tests/test_query_quality_behaviors.py::test_legacy_neighbors_use_real_graph_hops_relations_and_grounding
+tests/test_query_quality_behaviors.py::test_legacy_entity_details_include_only_grounded_relationships
+tests/test_query_quality_behaviors.py::test_legacy_statistics_distinguish_grounded_subgraph_from_full_graph
+tests/test_query_quality_behaviors.py::test_legacy_query_display_extracts_final_answer_and_handles_empty_failure[content]
+tests/test_query_quality_behaviors.py::test_legacy_query_display_extracts_final_answer_and_handles_empty_failure[string]
+tests/test_query_quality_behaviors.py::test_legacy_query_display_extracts_final_answer_and_handles_empty_failure[empty]
+tests/test_query_quality_behaviors.py::test_legacy_query_display_extracts_final_answer_and_handles_empty_failure[error]
+  D:\graghRAG-agent\backend\agentic_rag_mvp.py:2: SyntaxWarning: invalid escape sequence '\g'
+    """
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+61 passed, 9 warnings in 2.63s

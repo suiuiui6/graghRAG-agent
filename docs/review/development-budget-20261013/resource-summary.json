@@ -1,0 +1,285 @@
+{
+  "verified_utc": "2026-10-13T00:25:35.338663+00:00",
+  "status": "RECEIPTS_VERIFIED",
+  "profile_status": "PROFILE_COMPLETE",
+  "python_version": "3.12.8",
+  "provider_models": [
+    "deepseek-flash"
+  ],
+  "provider_fingerprints_present": 29,
+  "P0_NATIVE": {
+    "status": "CORPUS_UNAVAILABLE",
+    "answer_budget_measured": false
+  },
+  "A_AUTO_READ": {
+    "resolved": 0,
+    "unresolved": 6,
+    "model_calls": 0,
+    "answer_budget_measured": false
+  },
+  "by_arm": {
+    "P0_PROMPT_ONLY_DIAGNOSTIC": {
+      "calls": 2,
+      "successful_calls": 2,
+      "known_usage_subtotal": {
+        "prompt_tokens": 4141,
+        "completion_tokens": 305,
+        "total_tokens": 4446
+      },
+      "max_single_input_tokens": 2246,
+      "max_single_output_tokens": 213,
+      "sum_local_call_seconds": 4.688000000023749,
+      "median_local_call_seconds": 2.3440000000118744,
+      "cache_hit_input_tokens": 0,
+      "unknown_cost_calls": 0
+    },
+    "S_SCAN_ALL": {
+      "calls": 27,
+      "successful_calls": 27,
+      "known_usage_subtotal": {
+        "prompt_tokens": 60984,
+        "completion_tokens": 10916,
+        "total_tokens": 71900
+      },
+      "max_single_input_tokens": 3001,
+      "max_single_output_tokens": 1358,
+      "sum_local_call_seconds": 91.70199999999022,
+      "median_local_call_seconds": 3.26500000001397,
+      "cache_hit_input_tokens": 13440,
+      "unknown_cost_calls": 0
+    }
+  },
+  "S_by_question": {
+    "DEV-L01": {
+      "calls": 4,
+      "successful_calls": 4,
+      "known_usage_subtotal": {
+        "prompt_tokens": 8439,
+        "completion_tokens": 1083,
+        "total_tokens": 9522
+      },
+      "max_single_input_tokens": 2979,
+      "max_single_output_tokens": 377,
+      "sum_local_call_seconds": 11.51500000001397,
+      "median_local_call_seconds": 2.8435000000172295,
+      "cache_hit_input_tokens": 1536,
+      "unknown_cost_calls": 0
+    },
+    "DEV-L02": {
+      "calls": 4,
+      "successful_calls": 4,
+      "known_usage_subtotal": {
+        "prompt_tokens": 8257,
+        "completion_tokens": 1039,
+        "total_tokens": 9296
+      },
+      "max_single_input_tokens": 2975,
+      "max_single_output_tokens": 486,
+      "sum_local_call_seconds": 11.046999999962281,
+      "median_local_call_seconds": 2.75800000000163,
+      "cache_hit_input_tokens": 1792,
+      "unknown_cost_calls": 0
+    },
+    "DEV-L03": {
+      "calls": 4,
+      "successful_calls": 4,
+      "known_usage_subtotal": {
+        "prompt_tokens": 9006,
+        "completion_tokens": 2004,
+        "total_tokens": 11010
+      },
+      "max_single_input_tokens": 3001,
+      "max_single_output_tokens": 823,
+      "sum_local_call_seconds": 15.563000000023749,
+      "median_local_call_seconds": 4.008499999996275,
+      "cache_hit_input_tokens": 1792,
+      "unknown_cost_calls": 0
+    },
+    "DEV-L04": {
+      "calls": 4,
+      "successful_calls": 4,
+      "known_usage_subtotal": {
+        "prompt_tokens": 9397,
+        "completion_tokens": 3016,
+        "total_tokens": 12413
+      },
+      "max_single_input_tokens": 2970,
+      "max_single_output_tokens": 1358,
+      "sum_local_call_seconds": 18.39000000001397,
+      "median_local_call_seconds": 4.398499999981141,
+      "cache_hit_input_tokens": 1792,
+      "unknown_cost_calls": 0
+    },
+    "DEV-L05": {
+      "calls": 4,
+      "successful_calls": 4,
+      "known_usage_subtotal": {
+        "prompt_tokens": 8460,
+        "completion_tokens": 1344,
+        "total_tokens": 9804
+      },
+      "max_single_input_tokens": 2974,
+      "max_single_output_tokens": 600,
+      "sum_local_call_seconds": 13.155999999959022,
+      "median_local_call_seconds": 3.2189999999827705,
+      "cache_hit_input_tokens": 1792,
+      "unknown_cost_calls": 0
+    },
+    "DEV-N01": {
+      "calls": 7,
+      "successful_calls": 7,
+      "known_usage_subtotal": {
+        "prompt_tokens": 17425,
+        "completion_tokens": 2430,
+        "total_tokens": 19855
+      },
+      "max_single_input_tokens": 2913,
+      "max_single_output_tokens": 918,
+      "sum_local_call_seconds": 22.03100000001723,
+      "median_local_call_seconds": 2.905999999959022,
+      "cache_hit_input_tokens": 4736,
+      "unknown_cost_calls": 0
+    }
+  },
+  "input_traversal": {
+    "DEV-L01": {
+      "successful_map_intervals": [
+        [
+          0,
+          8000
+        ],
+        [
+          8000,
+          16000
+        ],
+        [
+          16000,
+          18101
+        ]
+      ],
+      "source_id": "LCNC-HOME",
+      "full_text_input_traversal": true,
+      "semantic_completeness": "NOT_ASSESSED"
+    },
+    "DEV-L02": {
+      "successful_map_intervals": [
+        [
+          0,
+          8000
+        ],
+        [
+          8000,
+          16000
+        ],
+        [
+          16000,
+          18101
+        ]
+      ],
+      "source_id": "LCNC-HOME",
+      "full_text_input_traversal": true,
+      "semantic_completeness": "NOT_ASSESSED"
+    },
+    "DEV-L03": {
+      "successful_map_intervals": [
+        [
+          0,
+          8000
+        ],
+        [
+          8000,
+          16000
+        ],
+        [
+          16000,
+          18101
+        ]
+      ],
+      "source_id": "LCNC-HOME",
+      "full_text_input_traversal": true,
+      "semantic_completeness": "NOT_ASSESSED"
+    },
+    "DEV-L04": {
+      "successful_map_intervals": [
+        [
+          0,
+          8000
+        ],
+        [
+          8000,
+          16000
+        ],
+        [
+          16000,
+          18101
+        ]
+      ],
+      "source_id": "LCNC-HOME",
+      "full_text_input_traversal": true,
+      "semantic_completeness": "NOT_ASSESSED"
+    },
+    "DEV-L05": {
+      "successful_map_intervals": [
+        [
+          0,
+          8000
+        ],
+        [
+          8000,
+          16000
+        ],
+        [
+          16000,
+          18101
+        ]
+      ],
+      "source_id": "LCNC-HOME",
+      "full_text_input_traversal": true,
+      "semantic_completeness": "NOT_ASSESSED"
+    },
+    "DEV-N01": {
+      "successful_map_intervals": [
+        [
+          0,
+          8000
+        ],
+        [
+          8000,
+          16000
+        ],
+        [
+          16000,
+          24000
+        ],
+        [
+          24000,
+          32000
+        ],
+        [
+          32000,
+          40000
+        ],
+        [
+          40000,
+          41704
+        ]
+      ],
+      "source_id": "NIST-8091",
+      "full_text_input_traversal": true,
+      "semantic_completeness": "NOT_ASSESSED"
+    }
+  },
+  "all_known_usage": {
+    "prompt_tokens": 65125,
+    "completion_tokens": 11221,
+    "total_tokens": 76346
+  },
+  "global_local_elapsed_seconds": 96.40600000001723,
+  "code_unchanged": true,
+  "source_inputs_unchanged": true,
+  "same_weight_snapshot_verified": false,
+  "three_baseline_budget_frozen": false,
+  "statistical_inference": "NONE; 6 correlated development questions in 2 source units, one profile each",
+  "semantic_scoring": "NOT_EXECUTED",
+  "scientific_stage": "M2_OPEN"
+}

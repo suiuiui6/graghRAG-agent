@@ -1,0 +1,375 @@
+{
+  "frozen_at_utc": "2026-10-13T13:08:36.871880+00:00",
+  "source_root": "D:\\graghRAG-agent\\.tmp\\vector-replacement-mvp-20261013",
+  "files": [
+    {
+      "file": "filter-differential-summary.json",
+      "sha256": "ffe99b30399561b95fe3cdec59bbee3aadb3e5fa5cb1a0557e8ad052de9b50b8",
+      "bytes": 3181
+    },
+    {
+      "file": "filter_differential.py",
+      "sha256": "709ac13d9d1af2fa9ac7106d3324bf0fa389e7c85c5e639103303f854d3fb5ab",
+      "bytes": 3749
+    },
+    {
+      "file": "filters-chroma-01.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "bytes": 3
+    },
+    {
+      "file": "filters-chroma-01.log",
+      "sha256": "eebf44c73504ee7c0dab5a3d6cb567d120bf3c4aabe71eb0817a856de84a6738",
+      "bytes": 2150
+    },
+    {
+      "file": "filters-chroma-1791896788532707300.json",
+      "sha256": "478ce7e8971d081e2f906bc03149f4a9c5bae7e4b5b4a581b333d8e39085c14f",
+      "bytes": 4354
+    },
+    {
+      "file": "filters-lance-01.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "bytes": 3
+    },
+    {
+      "file": "filters-lance-01.log",
+      "sha256": "b5c0709c06e733dac55a4c3d866a82165b00cc2c46100e0178f0b12be0357c46",
+      "bytes": 1931
+    },
+    {
+      "file": "filters-lance-1791896797122078300.json",
+      "sha256": "8d42a15929b3af054c2dcbd44a36d3fa7c32436923785a7188729e46b66ced14",
+      "bytes": 4054
+    },
+    {
+      "file": "freeze_evidence.py",
+      "sha256": "35e1e8390958de0db329a4d53c236f596ca0a4b899c65dc87b3dfe6193438e8f",
+      "bytes": 2691
+    },
+    {
+      "file": "import-01.exit",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04",
+      "bytes": 3
+    },
+    {
+      "file": "import-01.log",
+      "sha256": "d72101b286cbf2c42f78955ec8b92675703d14c4fee6e77967e1ec6be73cf998",
+      "bytes": 29684
+    },
+    {
+      "file": "installed-identity.json",
+      "sha256": "ddcf00c529d1509ae59937708b6901972b9c19d54519c138b2020c632f782bd5",
+      "bytes": 2652
+    },
+    {
+      "file": "probe-01-interrupted.log",
+      "sha256": "cdfeb46647897e8917d72001180ec41b3714209d23d61deb6960a0a7a6871463",
+      "bytes": 210
+    },
+    {
+      "file": "probe-01.exit",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04",
+      "bytes": 3
+    },
+    {
+      "file": "probe-02-approved.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "bytes": 3
+    },
+    {
+      "file": "probe-02-approved.log",
+      "sha256": "fe1c788ba83545f23b43e7b267d592e4c2bdc552cba350da217f8d7390db7074",
+      "bytes": 3636
+    },
+    {
+      "file": "probe.py",
+      "sha256": "9d9983bb0085cda1a4d92f535d8e74faac55b84c987df15179d0a333de355e79",
+      "bytes": 10554
+    },
+    {
+      "file": "pyproject.toml",
+      "sha256": "dd65f24ee90f96fed44e6fa3ff938612d02c190610d85bd6d7fe3b7bad4aa034",
+      "bytes": 140
+    },
+    {
+      "file": "results-1791896680974061500.json",
+      "sha256": "2961e95692c538463072e11300de423b6b3a3d2f4069443af44f44dfe194bfac",
+      "bytes": 4378
+    },
+    {
+      "file": "runtime-audit-01.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "bytes": 3
+    },
+    {
+      "file": "runtime-audit-01.json",
+      "sha256": "12e1d648579217de387b25832ea1a0811d3fd41f8de1553a9f77ec9230698bd9",
+      "bytes": 1037
+    },
+    {
+      "file": "runtime-audit-01.log",
+      "sha256": "e82148c0c30269ca5a2c35420ece6af011a4faf5a375325d750e243ffdb10625",
+      "bytes": 268
+    },
+    {
+      "file": "runtime-lock-01.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "bytes": 3
+    },
+    {
+      "file": "runtime-lock-01.log",
+      "sha256": "5c5349cb0f4225c0f98a7c6846554473d4ef90f51404049e0610b33601087e1d",
+      "bytes": 866
+    },
+    {
+      "file": "runtime-registry.txt",
+      "sha256": "beac948777a812287401d92414081e01e9015fa4e062a08f20990f3ba1c8f53e",
+      "bytes": 358
+    },
+    {
+      "file": "sqlite-01.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "bytes": 3
+    },
+    {
+      "file": "sqlite-01.log",
+      "sha256": "c968255d31ad4e4bd02eaab01323d49a2e10aa5bf4b6d0f96538f356f0e1ee08",
+      "bytes": 713
+    },
+    {
+      "file": "sqlite-results-1791896494464615000.json",
+      "sha256": "92d7a215c731d1e2949b72e1cc3a5daa9e5278532e2446c542245c42116a9ace",
+      "bytes": 820
+    },
+    {
+      "file": "sqlite_reference.py",
+      "sha256": "106f244e652b2497fd9eb55dedd9bc629dc61561990ff0d4d4f5223bf0011ea3",
+      "bytes": 3869
+    },
+    {
+      "file": "sync-01.exit",
+      "sha256": "df4e26a04a444901b95afef44e4a96cfae34690fff2ad2c66389c70079cdff2b",
+      "bytes": 3
+    },
+    {
+      "file": "sync-01.log",
+      "sha256": "4249a8a032b320cd293ab878a5dc00222a076ee18eb1a453a50b8544157c90d0",
+      "bytes": 438
+    },
+    {
+      "file": "sync-02-approved.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "bytes": 3
+    },
+    {
+      "file": "sync-02-approved.log",
+      "sha256": "45e1475acefb30f4b25ee7a7a62fce0d116eedb0dd47a60fcd3fdfbcd98a635b",
+      "bytes": 1572
+    },
+    {
+      "file": "sync-03-runtime.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "bytes": 3
+    },
+    {
+      "file": "sync-03-runtime.log",
+      "sha256": "dadabbfe9ae0f73a939aa16543955edf82422758f70be177f33b1540ffcf6690",
+      "bytes": 636
+    },
+    {
+      "file": "uv-with-audit-original.lock",
+      "sha256": "315c191b56c05024988d4f337a7dbf4569d898cf11b48741aa9d3e61ab0fb1f1",
+      "bytes": 61404
+    },
+    {
+      "file": "uv.lock",
+      "sha256": "ab27e2d7dc601aeff7b004502382ef329128115f7812b76f26e72699fe99986d",
+      "bytes": 25002
+    },
+    {
+      "file": "venv-01-failure.log",
+      "sha256": "041a484e2ab1806253bd7abf5bba010330c19734e2e09143043caa860c2400a3",
+      "bytes": 431
+    },
+    {
+      "file": "venv-02.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "bytes": 3
+    },
+    {
+      "file": "venv-02.log",
+      "sha256": "d0df2a69e74fcee2f4042df2ddd6d99c1023e7ddae2928385afc09a8eb519626",
+      "bytes": 183
+    }
+  ],
+  "synthetic_data_policy": "Only generated values; database files remain in exclusive tmp and are not product artifacts. Reproduction scripts preserved.",
+  "summary": {
+    "status": "NATIVE_CAPABILITY_PASS_COMPATIBILITY_BLOCKED",
+    "cases": 18,
+    "different": 5,
+    "same": 13,
+    "differences": [
+      {
+        "where": {
+          "source": {
+            "$ne": "s1"
+          }
+        },
+        "chroma": {
+          "where": {
+            "source": {
+              "$ne": "s1"
+            }
+          },
+          "ids": [
+            "b",
+            "c",
+            "d",
+            "f"
+          ],
+          "status": "OK"
+        },
+        "lance": {
+          "where": {
+            "source": {
+              "$ne": "s1"
+            }
+          },
+          "ids": [
+            "c",
+            "d",
+            "f"
+          ],
+          "status": "OK"
+        }
+      },
+      {
+        "where": {
+          "source": {
+            "$nin": [
+              "s1"
+            ]
+          }
+        },
+        "chroma": {
+          "where": {
+            "source": {
+              "$nin": [
+                "s1"
+              ]
+            }
+          },
+          "ids": [
+            "b",
+            "c",
+            "d",
+            "f"
+          ],
+          "status": "OK"
+        },
+        "lance": {
+          "where": {
+            "source": {
+              "$nin": [
+                "s1"
+              ]
+            }
+          },
+          "ids": [
+            "c",
+            "d",
+            "f"
+          ],
+          "status": "OK"
+        }
+      },
+      {
+        "where": {
+          "active": 1
+        },
+        "chroma": {
+          "where": {
+            "active": 1
+          },
+          "ids": [],
+          "status": "OK"
+        },
+        "lance": {
+          "where": {
+            "active": 1
+          },
+          "status": "REJECTED",
+          "error": "ValueError: literal type"
+        }
+      },
+      {
+        "where": {
+          "page": true
+        },
+        "chroma": {
+          "where": {
+            "page": true
+          },
+          "ids": [],
+          "status": "OK"
+        },
+        "lance": {
+          "where": {
+            "page": true
+          },
+          "status": "REJECTED",
+          "error": "ValueError: literal type"
+        }
+      },
+      {
+        "where": {
+          "missing_field": {
+            "$ne": "anything"
+          }
+        },
+        "chroma": {
+          "where": {
+            "missing_field": {
+              "$ne": "anything"
+            }
+          },
+          "ids": [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f"
+          ],
+          "status": "OK"
+        },
+        "lance": {
+          "where": {
+            "missing_field": {
+              "$ne": "anything"
+            }
+          },
+          "status": "REJECTED",
+          "error": "ValueError: unknown field"
+        }
+      }
+    ],
+    "not_run": [
+      "complete_VectorStore_adapter",
+      "all_consumer_paths",
+      "pagination_fixed_generation_5001",
+      "100k_scale",
+      "30_warmup_100_measurements",
+      "RSS_measurements",
+      "topk_full_numpy_differential",
+      "Chroma_duplicate_id_differential",
+      "process_kill_power_loss_recovery",
+      "parallel_process_writers",
+      "application_wide_migration_barrier",
+      "real_data_read_only_inventory",
+      "production_dependency_merge_audit",
+      "backend_full_acceptance_and_dual90"
+    ]
+  }
+}

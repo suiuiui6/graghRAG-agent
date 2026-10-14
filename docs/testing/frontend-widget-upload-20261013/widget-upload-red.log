@@ -1,0 +1,121 @@
+
+> graphrag-frontend@1.0.0 test D:\graghRAG-agent\frontend
+> vitest run "--" "tests/widget.test.ts" "tests/upload-races.test.tsx"
+
+
+ RUN  v5.0.4 D:/graghRAG-agent/frontend
+
+ ❯ tests/upload-races.test.tsx (3 tests | 3 failed) 134ms
+   × ignores an ingest response after leaving without starting a hidden poller 80ms
+   × old in-flight poll success cannot overwrite a replacement task 33ms
+   × old in-flight poll error cannot overwrite a replacement task 19ms
+Not implemented: navigation to another Document
+Not implemented: navigation to another Document
+Not implemented: navigation to another Document
+Not implemented: navigation to another Document
+Not implemented: navigation to another Document
+Not implemented: navigation to another Document
+Not implemented: navigation to another Document
+ ❯ tests/widget.test.ts (1 test | 1 failed) 448ms
+   × renders untrusted title, answer and source label/type as inert text 447ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/upload-races.test.tsx > ignores an ingest response after leaving without starting a hidden poller
+AssertionError: expected "getStatus" to not be called at all, but actually been called 3 times
+
+Received:
+
+  1st getStatus call:
+
+    Array [
+      "old",
+    ]
+
+  2nd getStatus call:
+
+    Array [
+      "old",
+    ]
+
+  3rd getStatus call:
+
+    Array [
+      "old",
+    ]
+
+
+Number of calls: 3
+
+ ❯ tests/upload-races.test.tsx:20:22
+     18|   await act(async () => pending.resolve(task('old')))
+     19|   await act(async () => vi.advanceTimersByTimeAsync(6000))
+     20|   expect(status).not.toHaveBeenCalled()
+       |                      ^
+     21|   expect(useUploadStore.getState().taskId).toBeNull()
+     22| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  tests/upload-races.test.tsx > old in-flight poll success cannot overwrite a replacement task
+AssertionError: expected 'done' to be 'indexing' // Object.is equality
+
+Expected: "indexing"
+Received: "done"
+
+ ❯ tests/upload-races.test.tsx:32:44
+     30|   await act(async () => mode === 'success' ? old.resolve({ status: 'do…
+     31|   await act(async () => vi.advanceTimersByTimeAsync(2000))
+     32|   expect(useUploadStore.getState().status).toBe('indexing')
+       |                                            ^
+     33|   expect(useUploadStore.getState().result).toBeNull()
+     34|   expect(status).toHaveBeenLastCalledWith('new')
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  tests/upload-races.test.tsx > old in-flight poll error cannot overwrite a replacement task
+AssertionError: expected last "getStatus" call to have been called with [ 'new' ]
+
+- Expected
++ Received
+
+  [
+-   "new",
++   "old",
+  ]
+
+ ❯ tests/upload-races.test.tsx:34:18
+     32|   expect(useUploadStore.getState().status).toBe('indexing')
+     33|   expect(useUploadStore.getState().result).toBeNull()
+     34|   expect(status).toHaveBeenLastCalledWith('new')
+       |                  ^
+     35| })
+     36|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  tests/widget.test.ts > renders untrusted title, answer and source label/type as inert text
+AssertionError: expected '' to be '<img src=x onerror="window.pwn=1">' // Object.is equality
+
+- Expected
++ Received
+
+- <img src=x onerror="window.pwn=1">
+
+ ❯ tests/widget.test.ts:29:64
+     27|   widget().ask('question')
+     28|   await flush()
+     29|   expect(root.querySelector('.chat-header span')?.textContent).toBe(pa…
+       |                                                                ^
+     30|   expect(root.querySelector('.message.assistant')?.textContent).toCont…
+     31|   expect(root.querySelector('.source-label')?.textContent).toContain(p…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  2 failed | 7 passed (9)
+      Tests  4 failed | 104 passed (108)
+   Start at  17:46:18
+   Duration  9.86s (environment 70%, setup 18%, import 5%, tests 5%, transform 1%)
+
+ ELIFECYCLE  Test failed. See above for more details.

@@ -1,0 +1,49 @@
+
+ RUN  v5.0.4 D:/graghRAG-agent/frontend
+
+Not implemented: navigation to another Document
+Not implemented: navigation to another Document
+Not implemented: navigation to another Document
+Not implemented: navigation to another Document
+Not implemented: navigation to another Document
+Not implemented: navigation to another Document
+Not implemented: navigation to another Document
+ ❯ tests/api.test.ts (17 tests | 2 failed) 56ms
+   × preserves scoped query options and normalizes legacy metadata without dropping evidence 13ms
+   × all REST adapters retain methods, identifiers and optional parameters 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/api.test.ts > preserves scoped query options and normalizes legacy metadata without dropping evidence
+TypeError: Body is unusable: Body has already been read
+ ❯ request src/lib/api.ts:49:14
+     47|     throw new Error(err?.detail || err?.error?.message || `HTTP ${res.…
+     48|   }
+     49|   return res.json()
+       |              ^
+     50| }
+     51|
+ ❯ Object.ask src/lib/api.ts:222:22
+ ❯ tests/api.test.ts:14:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/api.test.ts > all REST adapters retain methods, identifiers and optional parameters
+TypeError: Body is unusable: Body has already been read
+ ❯ request src/lib/api.ts:49:14
+     47|     throw new Error(err?.detail || err?.error?.message || `HTTP ${res.…
+     48|   }
+     49|   return res.json()
+       |              ^
+     50| }
+     51|
+ ❯ tests/api.test.ts:62:46
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  2 failed | 17 passed (19)
+   Start at  08:37:28
+   Duration  4.87s (environment 65%, setup 32%, import 1%, transform 1%, tests 1%)
+

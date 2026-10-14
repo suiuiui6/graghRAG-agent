@@ -1,0 +1,7 @@
+warn: could not canonicalize path D:\graghRAG-agent
+warn: could not canonicalize path D:\
+     Locking 11 packages to latest compatible versions
+error: failed to download `serde_core v1.0.228`
+
+Caused by:
+  attempting to make an HTTP request, but --offline was specified

@@ -1,0 +1,17 @@
+{
+  "coverage_json": "docs/testing/2026-10-13-service-readiness-coverage.json",
+  "coverage_config": "docs/testing/coverage-backend-2026-10-12.ini",
+  "tests": 23,
+  "files": {
+    "backend/services/lifecycle.py": "f782a4c2f75e7de7b4a87d7779ee098c97f867bed5b6aa16554bb2b3b65964d1",
+    "backend/conversation.py": "002365d260d315f3dca00416b709e3f11a84a069d99048d4d45e61f4f9737270",
+    "backend/services/kg_service.py": "2a2df381d95cde067d6012701c7e2461625b8958369ea1e9e9d34f4a2ddf6498",
+    "backend/services/kg_exporter.py": "611c5d16580d18a6abd264211c807cc9cb22a7f28443dcd88deb50e078d7fabc",
+    "backend/services/catalog.py": "7c29f43180a049b3ba0998ce5250b14ad4772788147bd2dee6aecbaf736ff6ef",
+    "docs/testing/coverage-backend-2026-10-12.ini": "4d9cc425396c80c16fe2e65efb4786e38f99b305d24f9f7a713fa8fa82922a70",
+    "backend/tests/test_service_readiness.py": "a5b057616dd6af260eba02ab117d3f646b245bdf7e234ee2f3bd1915aab8668c",
+    "backend/services/bot_handler.py": "c75ebaefd1dab0b2b171639f65f173544c3120fc7040779523f55c58a8bf24aa"
+  },
+  "pytest_exit": 0,
+  "time_utc": "2026-10-13T00:44:22.8784952Z"
+}

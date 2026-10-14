@@ -1,0 +1,22 @@
+{
+  "reviewed_on": "2026-10-12",
+  "reviewer": "primary AI, actual local rendered image inspection",
+  "status": "PASS_FOR_SIX_TEXT_TASK_REGIONS_ONLY",
+  "observed_images": [
+    {"file": "render/nist-cover.png", "finding": "NISTIR8091 title and author match frozen original"},
+    {"file": "render/nist-page-8.png", "finding": "14 separate bullets; complete parenthetical examples; incomplete-list statement; printed footer 5, not earlier platform-reported 6"},
+    {"file": "render/linux-table.png", "finding": "Four rows, four columns; header-to-cell association and zero/nonzero/NO/YES intact"},
+    {"file": "render/linux-absolute.png", "finding": "Three enum lines plus two separate Note blocks; additional opening behavior lies outside question target"},
+    {"file": "render/linux-search.png", "finding": "Units/default and zero-skips-search explanation intact"},
+    {"file": "render/linux-latch.png", "finding": "Units/default zero; error conditions not conflated with numerical default"},
+    {"file": "render/linux-final.png", "finding": "Missing uses maximum joint speed; positive value constraint intact"},
+    {"file": "render/linux-sequence.png", "finding": "Five separate examples; signed values and captions intact; synchronization means final move"},
+    {"file": "render/linux-immediate.png", "finding": "Five code lines plus omission Note; HOME is not a sixth code entry"}
+  ],
+  "limitations": [
+    "Only the two inspected PDF pages and HTML text task regions were visually checked; not a whole-report visual audit",
+    "Poppler rendering emitted No display font for Symbol warnings; inspected task-page bullets and body visibly intact",
+    "HTML is offline with official CSS, JavaScript disabled, missing external figure images; no diagram questions admitted",
+    "Not an independent human annotation or agreement study"
+  ]
+}

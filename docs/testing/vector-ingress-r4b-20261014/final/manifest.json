@@ -1,0 +1,90 @@
+{
+  "utc": "2026-10-14T08:21:37.476468+00:00",
+  "phase": "final",
+  "inputs_before": {
+    ".tmp\\vector-ingress-r4b-20261014\\archive.py": "52c6d86f80d135fbb62973c50d510e93b258be1d7babfeb9517f1f05a7b61d52",
+    ".tmp\\vector-ingress-r4b-20261014\\boundary_probe.py": "d19dda4d65841ec4c586fd4e7d1c8b7747216665db701cdf03e13327dce44087",
+    ".tmp\\vector-ingress-r4b-20261014\\execute_r4b.py": "34a0864c8e6a372210837ff75db04677af7b93a68d4758cdf6630f58723ee87d",
+    ".tmp\\vector-ingress-r4b-20261014\\finalize.py": "d7d60a0b52465debbb9f6413130108e63ce66d4bd5b14edb1ddd92c50ed0e222",
+    ".tmp\\vector-ingress-r4b-20261014\\freeze_r4b.py": "5d6c4216e834632dadda0973d08ac94b1ad54bbfdc3de1a89beb1758532e4e16",
+    ".tmp\\vector-ingress-r4b-20261014\\fresh_matrix.py": "246ab3b8e1fbc51edbcb69599840b1d6728f5163e71bb54cf045d2ca1593a846",
+    ".tmp\\vector-ingress-r4b-20261014\\generic_filter.py": "5065ba11fb73337c9af06c61fade6d128a530fd53aa170cfd616c8474aaecaa4",
+    ".tmp\\vector-ingress-r4b-20261014\\ingress_matrix.py": "11b722b98b872ef9819e048b0bb9609199f41d1d29ebfa0fff5065434bdb127e",
+    ".tmp\\vector-ingress-r4b-20261014\\lance_truth.py": "e4089b75ca9889e0dea8150fe8ae3b4450846016e6bb490000276a7e5dbb41ef",
+    ".tmp\\vector-ingress-r4b-20261014\\numeric_matrix-r3-historical.py": "cd8e3652b25e824793b0c0bf5b09c7850f4bef9790b54673eb301db38a5095d5",
+    ".tmp\\vector-ingress-r4b-20261014\\numeric_matrix.py": "d935dd19403f7cb252b3d561a05c5279bfea02767dd6b80132f323b8ed1cbec4",
+    ".tmp\\vector-ingress-r4b-20261014\\parser_port.py": "18a85b55345caa9ce4ac7ea2e344cedc9561cdda8c1c0eb6824499b3a629753d",
+    ".tmp\\vector-ingress-r4b-20261014\\run_checks.py": "b69e1bfaef245d80ca549e16b29c392d2b4f6bbc249352009fcea71182095b60",
+    ".tmp\\vector-ingress-r4b-20261014\\wide_integer.py": "fac36833a9d062810272878748c912111f3f7f619e65e79c904e33a6bd147b0f",
+    ".tmp\\vector-ingress-r4b-20261014\\wide_matrix.py": "8bb009d2ea836d7e2ecc558dbace16b80e83380139cfb406778aca22fc37dcbd",
+    ".tmp\\vector-ingress-r4b-20261014\\fixtures.json": "3723ab816a7bc0ae212af88c8776f52518cd32a419620df61935e676a39b681a",
+    ".tmp\\vector-ingress-r4b-20261014\\chroma-truth-1791897325903702500.json": "9f714ff93b3ddd4fa49f1396691274014ed6bf954747eaba98ff428418f39f1f",
+    ".tmp\\vector-replacement-mvp-20261013\\uv.lock": "ab27e2d7dc601aeff7b004502382ef329128115f7812b76f26e72699fe99986d",
+    "backend\\uv.lock": "0b9618aede31fd0553ff10b845a2feb5a388d1e153c8e38549d769a3074dacf6",
+    "docs\\contracts\\2026-10-14-vector-numeric-semantics.md": "62329adbdef8a229851a4685a24ed11a8a8ba5b0965f1e6d5bf5cb3749805c3c"
+  },
+  "inputs_after": {
+    ".tmp\\vector-ingress-r4b-20261014\\archive.py": "52c6d86f80d135fbb62973c50d510e93b258be1d7babfeb9517f1f05a7b61d52",
+    ".tmp\\vector-ingress-r4b-20261014\\boundary_probe.py": "d19dda4d65841ec4c586fd4e7d1c8b7747216665db701cdf03e13327dce44087",
+    ".tmp\\vector-ingress-r4b-20261014\\execute_r4b.py": "34a0864c8e6a372210837ff75db04677af7b93a68d4758cdf6630f58723ee87d",
+    ".tmp\\vector-ingress-r4b-20261014\\finalize.py": "d7d60a0b52465debbb9f6413130108e63ce66d4bd5b14edb1ddd92c50ed0e222",
+    ".tmp\\vector-ingress-r4b-20261014\\freeze_r4b.py": "5d6c4216e834632dadda0973d08ac94b1ad54bbfdc3de1a89beb1758532e4e16",
+    ".tmp\\vector-ingress-r4b-20261014\\fresh_matrix.py": "246ab3b8e1fbc51edbcb69599840b1d6728f5163e71bb54cf045d2ca1593a846",
+    ".tmp\\vector-ingress-r4b-20261014\\generic_filter.py": "5065ba11fb73337c9af06c61fade6d128a530fd53aa170cfd616c8474aaecaa4",
+    ".tmp\\vector-ingress-r4b-20261014\\ingress_matrix.py": "11b722b98b872ef9819e048b0bb9609199f41d1d29ebfa0fff5065434bdb127e",
+    ".tmp\\vector-ingress-r4b-20261014\\lance_truth.py": "e4089b75ca9889e0dea8150fe8ae3b4450846016e6bb490000276a7e5dbb41ef",
+    ".tmp\\vector-ingress-r4b-20261014\\numeric_matrix-r3-historical.py": "cd8e3652b25e824793b0c0bf5b09c7850f4bef9790b54673eb301db38a5095d5",
+    ".tmp\\vector-ingress-r4b-20261014\\numeric_matrix.py": "d935dd19403f7cb252b3d561a05c5279bfea02767dd6b80132f323b8ed1cbec4",
+    ".tmp\\vector-ingress-r4b-20261014\\parser_port.py": "18a85b55345caa9ce4ac7ea2e344cedc9561cdda8c1c0eb6824499b3a629753d",
+    ".tmp\\vector-ingress-r4b-20261014\\run_checks.py": "b69e1bfaef245d80ca549e16b29c392d2b4f6bbc249352009fcea71182095b60",
+    ".tmp\\vector-ingress-r4b-20261014\\wide_integer.py": "fac36833a9d062810272878748c912111f3f7f619e65e79c904e33a6bd147b0f",
+    ".tmp\\vector-ingress-r4b-20261014\\wide_matrix.py": "8bb009d2ea836d7e2ecc558dbace16b80e83380139cfb406778aca22fc37dcbd",
+    ".tmp\\vector-ingress-r4b-20261014\\fixtures.json": "3723ab816a7bc0ae212af88c8776f52518cd32a419620df61935e676a39b681a",
+    ".tmp\\vector-ingress-r4b-20261014\\chroma-truth-1791897325903702500.json": "9f714ff93b3ddd4fa49f1396691274014ed6bf954747eaba98ff428418f39f1f",
+    ".tmp\\vector-replacement-mvp-20261013\\uv.lock": "ab27e2d7dc601aeff7b004502382ef329128115f7812b76f26e72699fe99986d",
+    "backend\\uv.lock": "0b9618aede31fd0553ff10b845a2feb5a388d1e153c8e38549d769a3074dacf6",
+    "docs\\contracts\\2026-10-14-vector-numeric-semantics.md": "62329adbdef8a229851a4685a24ed11a8a8ba5b0965f1e6d5bf5cb3749805c3c"
+  },
+  "unchanged": true,
+  "commands": [
+    {
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\vector-replacement-mvp-20261013\\.venv\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-ingress-r4b-20261014\\lance_truth.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\backend-quality-venv-20261012\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-ingress-r4b-20261014\\boundary_probe.py",
+        "chroma"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\vector-replacement-mvp-20261013\\.venv\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-ingress-r4b-20261014\\boundary_probe.py",
+        "lance"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\backend-quality-venv-20261012\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-ingress-r4b-20261014\\numeric_matrix.py",
+        "chroma"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\vector-replacement-mvp-20261013\\.venv\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-ingress-r4b-20261014\\numeric_matrix.py",
+        "lance"
+      ],
+      "exit_code": 0
+    }
+  ]
+}

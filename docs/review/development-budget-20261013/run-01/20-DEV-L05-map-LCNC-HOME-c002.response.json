@@ -1,0 +1,35 @@
+{
+  "status": "SUCCESS",
+  "http_status": 200,
+  "usage_known": true,
+  "provider_response": {
+    "id": "ed5f936e-e099-42b7-a032-6343a902bac8",
+    "object": "chat.completion",
+    "created": 1791851047,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "文档中未提及此信息。\n\n提供的摘录（LCNC-HOME-c002，Unicode [16000,18101)）内容涉及负值 `[JOINT_N]HOME_SEQUENCE` 的同步归零、归零前关节点动（joint jogging）的 HAL 逻辑、`motion.homing-inhibit` 引脚、`home_sequence_mux`/`home_sequence_s32` 示例代码，以及 `gantry_jjog.ini` 仿真配置 [LCNC-HOME-c002]。该摘录中未出现 \"6.14 Immediate Homing\" 代码块，也未列出该代码块的任何配置项、给定值或允许替代值 [LCNC-HOME-c002]。同样，摘录中未说明省略 `HOME_SEQUENCE` 对 \"HOME ALL\" 的影响 [LCNC-HOME-c002]。\n\n由于本摘录仅为部分内容，无法据此证明这些信息不存在或已穷尽 [LCNC-HOME-c002]。"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1489,
+      "completion_tokens": 213,
+      "total_tokens": 1702,
+      "prompt_tokens_details": {
+        "cached_tokens": 768
+      },
+      "prompt_cache_hit_tokens": 768,
+      "prompt_cache_miss_tokens": 721
+    },
+    "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+  },
+  "send_status": "HTTP_RESPONSE_RECEIVED",
+  "worker_elapsed_seconds": 2.1560000000172295
+}

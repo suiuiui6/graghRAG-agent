@@ -1,0 +1,26 @@
+contract_version: "1.0"
+project_id: graphrag-paper-001
+paper_family: M
+stage_id: M2
+task_id: HOLDOUT-PROTOCOL-20261012-REVIEW
+expert_skill: sci-skills-statistical-reporting
+task_summary: 独立审查留出文档验证协议的泄漏控制、预算、公平比较和统计决策。
+inputs:
+  - docs/contracts/2026-10-12-heldout-scope-qa-validation.md
+  - docs/review/2026-10-12-scope-qa-evidence-and-novelty.md
+  - docs/superpowers/plans/scope-pilot/gold-review-v2/validation-protocol-sol.md
+expected_outputs:
+  - 具体阻断问题、主要问题及修订建议，或明确无阻断。
+  - 完整专家结果合同；不得推进学术阶段。
+evidence_boundaries:
+  - 只读设计审查，不执行模型、联网、生产或数据采集。
+  - 不将未知样本、未定预算或规则设计标成已验证结果。
+acceptance_checks:
+  - 三主臂与oracle分开，冻结版本与披露差异。
+  - 文档族留出、重复与失败分母清楚。
+  - 三评价面与进入方法设计的门禁可执行且不循环。
+known_missing_items:
+  - 实际合法文档池、样本清单、预算profile、Gold人工认证及模型执行证据。
+manual_operation_allowed: false
+optional_adapters_allowed: []
+stage_authority: sci-skills

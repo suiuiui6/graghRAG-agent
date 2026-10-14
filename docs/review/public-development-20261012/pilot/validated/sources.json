@@ -1,0 +1,28 @@
+[
+  {
+    "source_id": "LCNC-HOME",
+    "raw_file": "../raw/ini-homing.html",
+    "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+    "canonical_file": "LCNC-HOME.canonical.txt",
+    "canonical_sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+    "coverage": "complete HTML textual blocks, diagrams omitted",
+    "scope": "text-only development",
+    "full_text_scan_eligible": true,
+    "full_multimodal_scan_eligible": false,
+    "version": "2.9 branch; footer 2026-10-11 09:59:50 UTC; byte hash is snapshot identity",
+    "section_or_page_map": "LCNC-HOME.blocks.json"
+  },
+  {
+    "source_id": "NIST-8091",
+    "raw_file": "../raw/NIST.IR.8091.pdf",
+    "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+    "canonical_file": "NIST-8091.canonical.txt",
+    "canonical_sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+    "coverage": "complete 17-page pdftotext layout; figure contents not OCRed",
+    "scope": "text-only development",
+    "full_text_scan_eligible": true,
+    "full_multimodal_scan_eligible": false,
+    "version": "NISTIR 8091 November 2015",
+    "section_or_page_map": "NIST-8091.pages.json"
+  }
+]

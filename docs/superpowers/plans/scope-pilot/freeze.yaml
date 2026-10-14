@@ -1,0 +1,14 @@
+version: "0.1"
+recorded_on: 2026-10-07
+freeze_type: hash_guard_of_dirty_worktree_not_runtime_or_model_freeze
+model_status: NOT_EXECUTED
+production_endpoint_status: NOT_EXECUTED
+files:
+  backend/retrieval.py: fa3510aa4c894e9bb246a40dc1ab38ba12031544caa3f81fb1c1864c0e4d77b3
+  backend/generator.py: 03cd7c72cf903d4c381dfe9bf4b145dd7b5a233cd8351bc6b106d21602b6b5f8
+  backend/prompt_builder.py: ae5bfa9bc6f98048dbf474406cedcb605165818e898800459dfc7e48878fe165
+  backend/source_control.py: 6ff4fdfc93ea90849b50bc35ca4e838232b882303b7484c09d64a76a7435b5a1
+  backend/routes/rag_query.py: 5bfbd1e0b3243d614f37804f66c9c80f348a1934e565bce894ee19548e8f128f
+  backend/config.py: a85d747885594ae309a90c143ef470d8b90b343f446a6d697ba1b407a5e5d9f6
+  backend/uv.lock: 31caa7407226490b13e1853875eb1ebbe8f895980da39f2b19f58c79f11c14a3
+pending: [actual_model_identity, runtime_effective_config, corpus_to_production_doc_mapping, visible_context_capture, model_token_budget]

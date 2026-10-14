@@ -1,0 +1,1145 @@
+[
+  {
+    "block_id": 0,
+    "tag": "h1",
+    "xpath": "/html[1]/body[1]/div[1]/h1[1]",
+    "anchor": null,
+    "text": "Homing Configuration",
+    "start": 0,
+    "end": 20
+  },
+  {
+    "block_id": 1,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[1]/div[1]/noscript[1]/p[1]",
+    "anchor": null,
+    "text": "JavaScript must be enabled in your browser to display the table of contents.",
+    "start": 22,
+    "end": 98
+  },
+  {
+    "block_id": 2,
+    "tag": "h2",
+    "xpath": "/html[1]/body[1]/div[2]/div[1]/h2[1]",
+    "anchor": "cha:homing-configuration",
+    "text": "1. Overview",
+    "start": 100,
+    "end": 111
+  },
+  {
+    "block_id": 3,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/p[1]",
+    "anchor": null,
+    "text": "Homing sets the zero origin of the G53 machine coordinates. Soft limits are defined relative to the machine origin. The soft limits automatically decelerate and stop the axes before they hit the limits switches A properly configured and functioning machine will not move beyond soft(ware) limits and will have the machine origin set as repeatable as the home switch/index mechanism is. Linuxcnc can be homed by eye (alignment marks), with switches, with switches and an encoder index, or by using absolute encoders. Homing seems simple enough - just move each joint to a known location, and set LinuxCNC’s internal variables accordingly. However, different machines have different requirements, and homing is actually quite complicated.",
+    "start": 113,
+    "end": 849
+  },
+  {
+    "block_id": 4,
+    "tag": "tr",
+    "xpath": "/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/table[1]/tr[1]",
+    "anchor": null,
+    "text": "Note | While it is possible to use LinuxCNC without homing switches/home procedures or limit switches, It defeats the extra security of the soft limits.",
+    "start": 851,
+    "end": 1003
+  },
+  {
+    "block_id": 5,
+    "tag": "h2",
+    "xpath": "/html[1]/body[1]/div[2]/div[2]/h2[1]",
+    "anchor": "_prerequisite",
+    "text": "2. Prerequisite",
+    "start": 1005,
+    "end": 1020
+  },
+  {
+    "block_id": 6,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[2]/div[1]/div[1]/p[1]",
+    "anchor": null,
+    "text": "Homing relies on some fundamental machine assumptions.",
+    "start": 1022,
+    "end": 1076
+  },
+  {
+    "block_id": 7,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[1]/p[1]",
+    "anchor": null,
+    "text": "The negative and positive directions are based on Tool Movement which can be different from the actual machine movement. I.e., on a mill typically the table moves rather then the tool.",
+    "start": 1078,
+    "end": 1262
+  },
+  {
+    "block_id": 8,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[2]/p[1]",
+    "anchor": null,
+    "text": "Everything is referenced from the G53 machine zero origin, the origin can be anywhere (even outside where you can move)",
+    "start": 1264,
+    "end": 1383
+  },
+  {
+    "block_id": 9,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[3]/p[1]",
+    "anchor": null,
+    "text": "The G53 machine zero origin is typically inside the soft limits area but not necessarily.",
+    "start": 1385,
+    "end": 1474
+  },
+  {
+    "block_id": 10,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[4]/p[1]",
+    "anchor": null,
+    "text": "The homing switch offset sets where the origin is, but even it is referenced from the origin.",
+    "start": 1476,
+    "end": 1569
+  },
+  {
+    "block_id": 11,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[5]/p[1]",
+    "anchor": null,
+    "text": "When using encoder index homing, the home switch offset is calculated from the encoder reference position, after the home switch has been tripped.",
+    "start": 1571,
+    "end": 1717
+  },
+  {
+    "block_id": 12,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[6]/p[1]",
+    "anchor": null,
+    "text": "The negative soft(ware) limits are the most you can move in the negative direction after homing. (but they might not be negative in the absolute sense)",
+    "start": 1719,
+    "end": 1870
+  },
+  {
+    "block_id": 13,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[7]/p[1]",
+    "anchor": null,
+    "text": "The positive soft(ware) limits are the most you can move in the positive direction after homing. (but they might not be positive in the absolute sense, though it is usual to set it as a positive number)",
+    "start": 1872,
+    "end": 2074
+  },
+  {
+    "block_id": 14,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[8]/p[1]",
+    "anchor": null,
+    "text": "Soft(ware) limits are inside the limit switch area.",
+    "start": 2076,
+    "end": 2127
+  },
+  {
+    "block_id": 15,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[9]/p[1]",
+    "anchor": null,
+    "text": "(Final) Homed Position is inside the soft limit area",
+    "start": 2129,
+    "end": 2181
+  },
+  {
+    "block_id": 16,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[10]/p[1]",
+    "anchor": null,
+    "text": "(If using switch based homing) the homing switch(es) either utilize the limit switches (shared home / limit switch), or when using a separate home switch, are inside the limit switch area.",
+    "start": 2183,
+    "end": 2371
+  },
+  {
+    "block_id": 17,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[11]/p[1]",
+    "anchor": null,
+    "text": "If using a separate homing switch, it is possible to start homing on the wrong side of the home switch, which combined with HOME_IGNORE_LIMITS option will lead to a hard crash. You can avoid this by making the home switch toggle its state when the trip dog is on a particular side until it returns passed the trip point again. Said another way, the home switch state must represent the position of the dog relative to the switch (ie before or after the switch), and must stay that way even if the dog coasts past the switch in the same direction.",
+    "start": 2373,
+    "end": 2919
+  },
+  {
+    "block_id": 18,
+    "tag": "tr",
+    "xpath": "/html[1]/body[1]/div[2]/div[2]/div[1]/div[3]/table[1]/tr[1]",
+    "anchor": null,
+    "text": "Note | While it is possible to use LinuxCNC with the G53 machine origin outside the soft machine limits, if you use G28 or G30 without setting the parameters it goes to the origin by default. This would trip the limit switches before getting to position.",
+    "start": 2921,
+    "end": 3175
+  },
+  {
+    "block_id": 19,
+    "tag": "h2",
+    "xpath": "/html[1]/body[1]/div[2]/div[3]/h2[1]",
+    "anchor": "_separate_home_switch_example_layout",
+    "text": "3. Separate Home Switch Example Layout",
+    "start": 3177,
+    "end": 3215
+  },
+  {
+    "block_id": 20,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[3]/div[1]/div[1]/p[1]",
+    "anchor": null,
+    "text": "This example shows minimum and maximum limit switches with a separate home switch.",
+    "start": 3217,
+    "end": 3299
+  },
+  {
+    "block_id": 21,
+    "tag": "figcaption",
+    "xpath": "/html[1]/body[1]/div[2]/div[3]/div[1]/div[2]/div[1]/figure[1]/figcaption[1]",
+    "anchor": null,
+    "text": "Figure 1. Demonstrative Separate Switch Layout",
+    "start": 3301,
+    "end": 3347
+  },
+  {
+    "block_id": 22,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[3]/div[1]/div[3]/ul[1]/li[1]/p[1]",
+    "anchor": null,
+    "text": "A is the negative soft limit",
+    "start": 3349,
+    "end": 3377
+  },
+  {
+    "block_id": 23,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[3]/div[1]/div[3]/ul[1]/li[2]/p[1]",
+    "anchor": null,
+    "text": "B is the G53 machine coordinate Origin",
+    "start": 3379,
+    "end": 3417
+  },
+  {
+    "block_id": 24,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[3]/div[1]/div[3]/ul[1]/li[3]/p[1]",
+    "anchor": null,
+    "text": "C is the home switch trip point",
+    "start": 3419,
+    "end": 3450
+  },
+  {
+    "block_id": 25,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[3]/div[1]/div[3]/ul[1]/li[4]/p[1]",
+    "anchor": null,
+    "text": "D is the positive soft limit",
+    "start": 3452,
+    "end": 3480
+  },
+  {
+    "block_id": 26,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[3]/div[1]/div[3]/ul[1]/li[5]/p[1]",
+    "anchor": null,
+    "text": "H is the final home position (HOME) = 0 units",
+    "start": 3482,
+    "end": 3527
+  },
+  {
+    "block_id": 27,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[3]/div[1]/div[3]/ul[1]/li[6]/p[1]",
+    "anchor": null,
+    "text": "The -L and +L are the limit switches trip points",
+    "start": 3529,
+    "end": 3577
+  },
+  {
+    "block_id": 28,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[3]/div[1]/div[3]/ul[1]/li[7]/p[1]",
+    "anchor": null,
+    "text": "A<->B is the negative soft limits (MIN_LIMITS) = -3 units",
+    "start": 3579,
+    "end": 3636
+  },
+  {
+    "block_id": 29,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[3]/div[1]/div[3]/ul[1]/li[8]/p[1]",
+    "anchor": null,
+    "text": "B<->C is the home_offset (HOME_OFFSET) = -2.3 units",
+    "start": 3638,
+    "end": 3689
+  },
+  {
+    "block_id": 30,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[3]/div[1]/div[3]/ul[1]/li[9]/p[1]",
+    "anchor": null,
+    "text": "B<->D is the positive soft limits (MAX_LIMITS) = 7 units",
+    "start": 3691,
+    "end": 3747
+  },
+  {
+    "block_id": 31,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[3]/div[1]/div[3]/ul[1]/li[10]/p[1]",
+    "anchor": null,
+    "text": "A<->D is the total travel = 10 units",
+    "start": 3749,
+    "end": 3785
+  },
+  {
+    "block_id": 32,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[3]/div[1]/div[3]/ul[1]/li[11]/p[1]",
+    "anchor": null,
+    "text": "The distance between the limit switches and soft limits (-L<->A and D<-+L) is magnified in this example",
+    "start": 3787,
+    "end": 3890
+  },
+  {
+    "block_id": 33,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[3]/div[1]/div[3]/ul[1]/li[12]/p[1]",
+    "anchor": null,
+    "text": "Note that there is distance between the limit switches and actual physical hard contact for coasting after the amplifier is disabled.",
+    "start": 3892,
+    "end": 4025
+  },
+  {
+    "block_id": 34,
+    "tag": "tr",
+    "xpath": "/html[1]/body[1]/div[2]/div[3]/div[1]/div[4]/table[1]/tr[1]",
+    "anchor": null,
+    "text": "Note | Homing sets the G53 coordinate system, while the machine origin (zero point) can be anywhere, setting the zero point at the negative soft limit makes all G53 coordinates positive, which is probably easiest to remember. Do this by setting MIN_LIMIT = 0 and make sure MAX_LIMIT is positive.",
+    "start": 4027,
+    "end": 4322
+  },
+  {
+    "block_id": 35,
+    "tag": "h2",
+    "xpath": "/html[1]/body[1]/div[2]/div[4]/h2[1]",
+    "anchor": "_shared_limit_home_switch_example_layout",
+    "text": "4. Shared Limit/Home Switch Example Layout",
+    "start": 4324,
+    "end": 4366
+  },
+  {
+    "block_id": 36,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[4]/div[1]/div[1]/p[1]",
+    "anchor": null,
+    "text": "This example shows a maximum limit switch and a combined minimum limit/home switch.",
+    "start": 4368,
+    "end": 4451
+  },
+  {
+    "block_id": 37,
+    "tag": "figcaption",
+    "xpath": "/html[1]/body[1]/div[2]/div[4]/div[1]/div[2]/div[1]/figure[1]/figcaption[1]",
+    "anchor": null,
+    "text": "Figure 2. Demonstrative Shared Switch Layout",
+    "start": 4453,
+    "end": 4497
+  },
+  {
+    "block_id": 38,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[1]/p[1]",
+    "anchor": null,
+    "text": "A is the negative soft limit.",
+    "start": 4499,
+    "end": 4528
+  },
+  {
+    "block_id": 39,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[2]/p[1]",
+    "anchor": null,
+    "text": "B is the G53 machine coordinate Origin.",
+    "start": 4530,
+    "end": 4569
+  },
+  {
+    "block_id": 40,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[3]/p[1]",
+    "anchor": null,
+    "text": "C is the home switch trip point shared with (-L) minimum limit trip.",
+    "start": 4571,
+    "end": 4639
+  },
+  {
+    "block_id": 41,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[4]/p[1]",
+    "anchor": null,
+    "text": "D is the positive soft limit.",
+    "start": 4641,
+    "end": 4670
+  },
+  {
+    "block_id": 42,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[5]/p[1]",
+    "anchor": null,
+    "text": "H is the final home position (HOME) = 3 units.",
+    "start": 4672,
+    "end": 4718
+  },
+  {
+    "block_id": 43,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[6]/p[1]",
+    "anchor": null,
+    "text": "The -L and +L are the limit switch trip points.",
+    "start": 4720,
+    "end": 4767
+  },
+  {
+    "block_id": 44,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[7]/p[1]",
+    "anchor": null,
+    "text": "A<->B is the negative soft limits (MIN_LIMITS) = 0 units.",
+    "start": 4769,
+    "end": 4826
+  },
+  {
+    "block_id": 45,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[8]/p[1]",
+    "anchor": null,
+    "text": "B<->C is the home_offset (HOME_OFFSET) = -0.7 units.",
+    "start": 4828,
+    "end": 4880
+  },
+  {
+    "block_id": 46,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[9]/p[1]",
+    "anchor": null,
+    "text": "B<->D is the positive soft limits (MAX_LIMITS) 10 units.",
+    "start": 4882,
+    "end": 4938
+  },
+  {
+    "block_id": 47,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[10]/p[1]",
+    "anchor": null,
+    "text": "A<->D is the total travel = 10 units.",
+    "start": 4940,
+    "end": 4977
+  },
+  {
+    "block_id": 48,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[11]/p[1]",
+    "anchor": null,
+    "text": "The distance between the limits switches and soft limits (-L<->A and D<->+L) is magnified in this example.",
+    "start": 4979,
+    "end": 5085
+  },
+  {
+    "block_id": 49,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[12]/p[1]",
+    "anchor": null,
+    "text": "Note that there is distance between the limit switches and actual physical hard contact for coasting after the amplifier is disabled.",
+    "start": 5087,
+    "end": 5220
+  },
+  {
+    "block_id": 50,
+    "tag": "h2",
+    "xpath": "/html[1]/body[1]/div[2]/div[5]/h2[1]",
+    "anchor": "_homing_sequence",
+    "text": "5. Homing Sequence",
+    "start": 5222,
+    "end": 5240
+  },
+  {
+    "block_id": 51,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[5]/div[1]/div[1]/p[1]",
+    "anchor": null,
+    "text": "There are four possible homing sequences defined by the sign of HOME_SEARCH_VEL and HOME_LATCH_VEL, along with the associated configuration parameters as shown in the following table. Two basic conditions exist, HOME_SEARCH_VEL and HOME_LATCH_VEL are the same sign or they are opposite signs. For a more detailed description of what each configuration parameter does, see the following section.",
+    "start": 5242,
+    "end": 5636
+  },
+  {
+    "block_id": 52,
+    "tag": "figcaption",
+    "xpath": "/html[1]/body[1]/div[2]/div[5]/div[1]/div[2]/div[1]/figure[1]/figcaption[1]",
+    "anchor": null,
+    "text": "Figure 3. Homing Sequences",
+    "start": 5638,
+    "end": 5664
+  },
+  {
+    "block_id": 53,
+    "tag": "h2",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/h2[1]",
+    "anchor": "_configuration",
+    "text": "6. Configuration",
+    "start": 5666,
+    "end": 5682
+  },
+  {
+    "block_id": 54,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[1]/p[1]",
+    "anchor": null,
+    "text": "The following determines exactly how the home sequence behaves. They are defined in an [JOINT_n] section of the INI file.",
+    "start": 5684,
+    "end": 5805
+  },
+  {
+    "block_id": 55,
+    "tag": "tr",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/thead[1]/tr[1]",
+    "anchor": null,
+    "text": "Homing Type | HOME_SEARCH_VEL | HOME_LATCH_VEL | HOME_USE_INDEX",
+    "start": 5807,
+    "end": 5870
+  },
+  {
+    "block_id": 56,
+    "tag": "tr",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/tbody[1]/tr[1]",
+    "anchor": null,
+    "text": "Immediate | 0 | 0 | NO",
+    "start": 5872,
+    "end": 5894
+  },
+  {
+    "block_id": 57,
+    "tag": "tr",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/tbody[1]/tr[2]",
+    "anchor": null,
+    "text": "Index-only | 0 | nonzero | YES",
+    "start": 5896,
+    "end": 5926
+  },
+  {
+    "block_id": 58,
+    "tag": "tr",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/tbody[1]/tr[3]",
+    "anchor": null,
+    "text": "Switch-only | nonzero | nonzero | NO",
+    "start": 5928,
+    "end": 5964
+  },
+  {
+    "block_id": 59,
+    "tag": "tr",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[2]/table[1]/tbody[1]/tr[4]",
+    "anchor": null,
+    "text": "Switch and Index | nonzero | nonzero | YES",
+    "start": 5966,
+    "end": 6008
+  },
+  {
+    "block_id": 60,
+    "tag": "tr",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[3]/table[1]/tr[1]",
+    "anchor": null,
+    "text": "Note | Any other combinations may result in an error.",
+    "start": 6010,
+    "end": 6063
+  },
+  {
+    "block_id": 61,
+    "tag": "h3",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[4]/h3[1]",
+    "anchor": "_home_search_vel",
+    "text": "6.1. HOME_SEARCH_VEL",
+    "start": 6065,
+    "end": 6085
+  },
+  {
+    "block_id": 62,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[4]/div[1]/p[1]",
+    "anchor": null,
+    "text": "This variable has units of machine-units per second.",
+    "start": 6087,
+    "end": 6139
+  },
+  {
+    "block_id": 63,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[4]/div[2]/p[1]",
+    "anchor": null,
+    "text": "The default value is zero. A value of zero causes LinuxCNC to assume that there is no home switch; the search stage of homing is skipped.",
+    "start": 6141,
+    "end": 6278
+  },
+  {
+    "block_id": 64,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[4]/div[3]/p[1]",
+    "anchor": null,
+    "text": "If HOME_SEARCH_VEL is non-zero, then LinuxCNC assumes that there is a home switch. It begins by checking whether the home switch is already tripped. If tripped it backs off the switch at HOME_SEARCH_VEL. The direction of the back-off is opposite the sign of HOME_SEARCH_VEL. Then it searches for the home switch by moving in the direction specified by the sign of HOME_SEARCH_VEL, at a speed determined by its absolute value. When the home switch is detected, the joint will stop as fast as possible, but there will always be some overshoot. The amount of overshoot depends on the speed. If it is too high, the joint might overshoot enough to hit a limit switch or crash into the end of travel. On the other hand, if HOME_SEARCH_VEL is too low, homing can take a long time.",
+    "start": 6280,
+    "end": 7053
+  },
+  {
+    "block_id": 65,
+    "tag": "h3",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[5]/h3[1]",
+    "anchor": "_home_latch_vel",
+    "text": "6.2. HOME_LATCH_VEL",
+    "start": 7055,
+    "end": 7074
+  },
+  {
+    "block_id": 66,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[5]/div[1]/p[1]",
+    "anchor": null,
+    "text": "This variable has units of machine-units per second.",
+    "start": 7076,
+    "end": 7128
+  },
+  {
+    "block_id": 67,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[5]/div[2]/p[1]",
+    "anchor": null,
+    "text": "Specifies the speed and direction that LinuxCNC uses when it makes its final accurate determination of the home switch (if present) and index pulse location (if present). It will usually be slower than the search velocity to maximize accuracy. If HOME_SEARCH_VEL and HOME_LATCH_VEL have the same sign, then the latch phase is done while moving in the same direction as the search phase. (In that case, LinuxCNC first backs off the switch, before moving towards it again at the latch velocity.) If HOME_SEARCH_VEL and HOME_LATCH_VEL have opposite signs, the latch phase is done while moving in the opposite direction from the search phase. That means LinuxCNC will latch the first pulse after it moves off the switch. If HOME_SEARCH_VEL is zero (meaning there is no home switch), and this parameter is nonzero, LinuxCNC goes ahead to the index pulse search. If HOME_SEARCH_VEL is non-zero and this parameter is zero, it is an error and the homing operation will fail. The default value is zero.",
+    "start": 7130,
+    "end": 8123
+  },
+  {
+    "block_id": 68,
+    "tag": "h3",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[6]/h3[1]",
+    "anchor": "_home_final_vel",
+    "text": "6.3. HOME_FINAL_VEL",
+    "start": 8125,
+    "end": 8144
+  },
+  {
+    "block_id": 69,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[6]/div[1]/p[1]",
+    "anchor": null,
+    "text": "This variable has units of machine-units per second.",
+    "start": 8146,
+    "end": 8198
+  },
+  {
+    "block_id": 70,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[6]/div[2]/p[1]",
+    "anchor": null,
+    "text": "It specifies the speed that LinuxCNC uses when it makes its move from HOME_OFFSET to the HOME position. If the HOME_FINAL_VEL is missing from the INI file, then the maximum joint speed is used to make this move. The value must be a positive number.",
+    "start": 8200,
+    "end": 8448
+  },
+  {
+    "block_id": 71,
+    "tag": "h3",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[7]/h3[1]",
+    "anchor": "_home_ignore_limits",
+    "text": "6.4. HOME_IGNORE_LIMITS",
+    "start": 8450,
+    "end": 8473
+  },
+  {
+    "block_id": 72,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[7]/div[1]/p[1]",
+    "anchor": null,
+    "text": "Can hold the values YES / NO. The default value for this parameter is NO. This flag determines whether LinuxCNC will ignore the limit switch input for this joint while homing. This setting will not ignore limit inputs for other joints. If you do not have a separate home switch set this to YES and connect the limit switch signal to the joint home switch input in HAL. LinuxCNC will ignore the limit switch input for this joint while homing. To use only one input for all homing and limits you will have to block the limit signals of the joints not homing in HAL and home one joint at a time.",
+    "start": 8475,
+    "end": 9067
+  },
+  {
+    "block_id": 73,
+    "tag": "h3",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[8]/h3[1]",
+    "anchor": "_home_use_index",
+    "text": "6.5. HOME_USE_INDEX",
+    "start": 9069,
+    "end": 9088
+  },
+  {
+    "block_id": 74,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[8]/div[1]/p[1]",
+    "anchor": null,
+    "text": "Specifies whether or not there is an index pulse. If the flag is true (HOME_USE_INDEX = YES), LinuxCNC will latch on the rising edge of the index pulse. If false, LinuxCNC will latch on either the rising or falling edge of the home switch (depending on the signs of HOME_SEARCH_VEL and HOME_LATCH_VEL). The default value is NO.",
+    "start": 9090,
+    "end": 9417
+  },
+  {
+    "block_id": 75,
+    "tag": "tr",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[8]/div[2]/table[1]/tr[1]",
+    "anchor": null,
+    "text": "Note | HOME_USE_INDEX requires connections in your HAL file to joint.n.index-enable from the encoder.n.index-enable.",
+    "start": 9419,
+    "end": 9535
+  },
+  {
+    "block_id": 76,
+    "tag": "h3",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[9]/h3[1]",
+    "anchor": "_home_index_no_encoder_reset",
+    "text": "6.6. HOME_INDEX_NO_ENCODER_RESET",
+    "start": 9537,
+    "end": 9569
+  },
+  {
+    "block_id": 77,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[9]/div[1]/p[1]",
+    "anchor": null,
+    "text": "Default is NO. Use YES if the encoder used for this joint does not reset its counter when an index pulse is detected after assertion of the joint index_enable HAL pin. Applicable only for HOME_USE_INDEX = YES.",
+    "start": 9571,
+    "end": 9780
+  },
+  {
+    "block_id": 78,
+    "tag": "h3",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[10]/h3[1]",
+    "anchor": "_home_offset",
+    "text": "6.7. HOME_OFFSET",
+    "start": 9782,
+    "end": 9798
+  },
+  {
+    "block_id": 79,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[10]/div[1]/p[1]",
+    "anchor": null,
+    "text": "This defines the location of the origin zero point of the G53 machine coordinate system. It is the distance (offset), in joint units, from the machine origin to the home switch trip point or index pulse. After detecting the switch trip point/index pulse, LinuxCNC sets the joint coordinate position to HOME_OFFSET, thus defining the origin, which the soft limits references from. The default value is zero.",
+    "start": 9800,
+    "end": 10206
+  },
+  {
+    "block_id": 80,
+    "tag": "tr",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[10]/div[2]/table[1]/tr[1]",
+    "anchor": null,
+    "text": "Note | The home switch location, as indicated by the HOME_OFFSET variable, can be inside or outside the soft limits. They will be shared with or inside the hard limit switches.",
+    "start": 10208,
+    "end": 10384
+  },
+  {
+    "block_id": 81,
+    "tag": "h3",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[11]/h3[1]",
+    "anchor": "_home",
+    "text": "6.8. HOME",
+    "start": 10386,
+    "end": 10395
+  },
+  {
+    "block_id": 82,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[11]/div[1]/p[1]",
+    "anchor": null,
+    "text": "The position that the joint will go to upon completion of the homing sequence. After detecting the home switch or home switch then index pulse (depending on configuration), and setting the coordinate of that point to HOME_OFFSET, LinuxCNC makes a move to HOME as the final step of the homing process. The default value is zero. Note that even if this parameter is the same as HOME_OFFSET, the joint will slightly overshoot the latched position as it stops. Therefore there will always be a small move at this time (unless HOME_SEARCH_VEL is zero, and the entire search/latch stage was skipped). This final move will be made at the joint’s maximum velocity unless HOME_FINAL_VEL has been set.",
+    "start": 10397,
+    "end": 11088
+  },
+  {
+    "block_id": 83,
+    "tag": "tr",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[11]/div[2]/table[1]/tr[1]",
+    "anchor": null,
+    "text": "Note | The distinction between HOME_OFFSET and HOME is that HOME_OFFSET first establishes the origin location and scale on the machine by applying the HOME_OFFSET value to the location where home was found, and then HOME says where the joint should move to on that scale.",
+    "start": 11090,
+    "end": 11361
+  },
+  {
+    "block_id": 84,
+    "tag": "h3",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[12]/h3[1]",
+    "anchor": "_home_is_shared",
+    "text": "6.9. HOME_IS_SHARED",
+    "start": 11363,
+    "end": 11382
+  },
+  {
+    "block_id": 85,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[12]/div[1]/p[1]",
+    "anchor": null,
+    "text": "If there is not a separate home switch input for this joint, but a number of momentary switches wired to the same pin, set this value to 1 to prevent homing from starting if one of the shared switches is already closed. Set this value to 0 to permit homing even if the switch is already closed.",
+    "start": 11384,
+    "end": 11678
+  },
+  {
+    "block_id": 86,
+    "tag": "h3",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[13]/h3[1]",
+    "anchor": "_home_absolute_encoder",
+    "text": "6.10. HOME_ABSOLUTE_ENCODER",
+    "start": 11680,
+    "end": 11707
+  },
+  {
+    "block_id": 87,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[13]/div[1]/p[1]",
+    "anchor": null,
+    "text": "Use for absolute encoders. When a request is made to home the joint, the current joint position is set to the [JOINT_n]HOME_OFFSET value.",
+    "start": 11709,
+    "end": 11846
+  },
+  {
+    "block_id": 88,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[13]/div[2]/p[1]",
+    "anchor": null,
+    "text": "The final move to the [JOINT_n]HOME position is optional according to the HOME_ABSOLUTE_ENCODER setting:",
+    "start": 11848,
+    "end": 11952
+  },
+  {
+    "block_id": 89,
+    "tag": "pre",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[13]/div[3]/div[1]/pre[1]",
+    "anchor": null,
+    "text": "HOME_ABSOLUTE_ENCODER = 0 (Default) joint does not use an absolute encoder\nHOME_ABSOLUTE_ENCODER = 1 Absolute encoder, final move to [JOINT_n]HOME\nHOME_ABSOLUTE_ENCODER = 2 Absolute encoder, NO final move to [JOINT_n]HOME",
+    "start": 11954,
+    "end": 12175
+  },
+  {
+    "block_id": 90,
+    "tag": "tr",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[13]/div[4]/table[1]/tr[1]",
+    "anchor": null,
+    "text": "Note | A HOME_IS_SHARED setting is silently ignored.",
+    "start": 12177,
+    "end": 12229
+  },
+  {
+    "block_id": 91,
+    "tag": "tr",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[13]/div[5]/table[1]/tr[1]",
+    "anchor": null,
+    "text": "Note | A request to rehome the joint is silently ignored.",
+    "start": 12231,
+    "end": 12288
+  },
+  {
+    "block_id": 92,
+    "tag": "h3",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/h3[1]",
+    "anchor": "sec:homing-section",
+    "text": "6.11. HOME_SEQUENCE",
+    "start": 12290,
+    "end": 12309
+  },
+  {
+    "block_id": 93,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[1]/p[1]",
+    "anchor": null,
+    "text": "Used to define a multi-joint homing sequence HOME ALL and enforce homing order (e.g., Z may not be homed if X is not yet homed). A joint may be homed after all joints with a lower (absolute value) HOME_SEQUENCE have already been homed and are at the HOME_OFFSET. If two joints have the same HOME_SEQUENCE, they may be homed at the same time.",
+    "start": 12311,
+    "end": 12652
+  },
+  {
+    "block_id": 94,
+    "tag": "tr",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[2]/table[1]/tr[1]",
+    "anchor": null,
+    "text": "Note | If HOME_SEQUENCE is not specified then the joint will not be homed by the HOME ALL sequence (but may be homed by individual joint-specific homing commands).",
+    "start": 12654,
+    "end": 12817
+  },
+  {
+    "block_id": 95,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[3]/p[1]",
+    "anchor": null,
+    "text": "The initial HOME_SEQUENCE number may be 0, 1 (or -1). The absolute value of sequence numbers must increment by one — skipping sequence numbers is not supported. If a sequence number is omitted, HOME ALL homing will stop upon completion of the last valid sequence number.",
+    "start": 12819,
+    "end": 13089
+  },
+  {
+    "block_id": 96,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[4]/p[1]",
+    "anchor": null,
+    "text": "Negative HOME_SEQUENCE values indicate that joints in the sequence should synchronize the final move to [JOINT_n]HOME by waiting until all joints in the sequence are ready. If any joint has a negative HOME_SEQUENCE value, then all joints with the same absolute value (positive or negative) of the HOME_SEQUENCE item value will synchronize the final move.",
+    "start": 13091,
+    "end": 13445
+  },
+  {
+    "block_id": 97,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[5]/p[1]",
+    "anchor": null,
+    "text": "A negative HOME_SEQUENCE also applies to commands to home a single joint. If the HOME_SEQUENCE value is negative, all joints having the same absolute value of that HOME_SEQUENCE will be homed together with a synchronized final move. If the HOME_SEQUENCE value is zero or positive, a command to home the joint will home only the specified joint.",
+    "start": 13447,
+    "end": 13791
+  },
+  {
+    "block_id": 98,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[6]/p[1]",
+    "anchor": null,
+    "text": "Joint mode jogging of joints having a negative HOME_SEQUENCE is disallowed. In common gantry applications, such jogging can lead to misalignment (racking). Note that conventional jogging in world coordinates is always available once a machine is homed.",
+    "start": 13793,
+    "end": 14045
+  },
+  {
+    "block_id": 99,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[7]/p[1]",
+    "anchor": null,
+    "text": "Examples for a 3 joint system",
+    "start": 14047,
+    "end": 14076
+  },
+  {
+    "block_id": 100,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[8]/p[1]",
+    "anchor": null,
+    "text": "Two sequences (0,1), no synchronization",
+    "start": 14078,
+    "end": 14117
+  },
+  {
+    "block_id": 101,
+    "tag": "pre",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[9]/div[1]/pre[1]",
+    "anchor": null,
+    "text": "[JOINT_0]HOME_SEQUENCE = 0\n[JOINT_1]HOME_SEQUENCE = 1\n[JOINT_2]HOME_SEQUENCE = 1",
+    "start": 14119,
+    "end": 14199
+  },
+  {
+    "block_id": 102,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[10]/p[1]",
+    "anchor": null,
+    "text": "Two sequences, joints 1 and 2 synchronized",
+    "start": 14201,
+    "end": 14243
+  },
+  {
+    "block_id": 103,
+    "tag": "pre",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[11]/div[1]/pre[1]",
+    "anchor": null,
+    "text": "[JOINT_0]HOME_SEQUENCE =  0\n[JOINT_1]HOME_SEQUENCE = -1\n[JOINT_2]HOME_SEQUENCE = -1",
+    "start": 14245,
+    "end": 14328
+  },
+  {
+    "block_id": 104,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[12]/p[1]",
+    "anchor": null,
+    "text": "With mixed positive and negative values, joints 1 and 2 synchronized",
+    "start": 14330,
+    "end": 14398
+  },
+  {
+    "block_id": 105,
+    "tag": "pre",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[13]/div[1]/pre[1]",
+    "anchor": null,
+    "text": "[JOINT_0]HOME_SEQUENCE =  0\n[JOINT_1]HOME_SEQUENCE = -1\n[JOINT_2]HOME_SEQUENCE =  1",
+    "start": 14400,
+    "end": 14483
+  },
+  {
+    "block_id": 106,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[14]/p[1]",
+    "anchor": null,
+    "text": "One sequence, no synchronization",
+    "start": 14485,
+    "end": 14517
+  },
+  {
+    "block_id": 107,
+    "tag": "pre",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[15]/div[1]/pre[1]",
+    "anchor": null,
+    "text": "[JOINT_0]HOME_SEQUENCE =  0\n[JOINT_1]HOME_SEQUENCE =  0\n[JOINT_2]HOME_SEQUENCE =  0",
+    "start": 14519,
+    "end": 14602
+  },
+  {
+    "block_id": 108,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[16]/p[1]",
+    "anchor": null,
+    "text": "One sequence, all joints synchronized",
+    "start": 14604,
+    "end": 14641
+  },
+  {
+    "block_id": 109,
+    "tag": "pre",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[14]/div[17]/div[1]/pre[1]",
+    "anchor": null,
+    "text": "[JOINT_0]HOME_SEQUENCE = -1\n[JOINT_1]HOME_SEQUENCE = -1\n[JOINT_2]HOME_SEQUENCE = -1",
+    "start": 14643,
+    "end": 14726
+  },
+  {
+    "block_id": 110,
+    "tag": "h3",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[15]/h3[1]",
+    "anchor": "_volatile_home",
+    "text": "6.12. VOLATILE_HOME",
+    "start": 14728,
+    "end": 14747
+  },
+  {
+    "block_id": 111,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[15]/div[1]/p[1]",
+    "anchor": null,
+    "text": "If this setting is true, this joint becomes unhomed whenever the machine transitions into the OFF state. This is appropriate for any joint that does not maintain position when the joint drive is off. Some stepper drives, especially microstep drives, may need this.",
+    "start": 14749,
+    "end": 15013
+  },
+  {
+    "block_id": 112,
+    "tag": "h3",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[16]/h3[1]",
+    "anchor": "_locking_indexer",
+    "text": "6.13. LOCKING_INDEXER",
+    "start": 15015,
+    "end": 15036
+  },
+  {
+    "block_id": 113,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[16]/div[1]/p[1]",
+    "anchor": null,
+    "text": "If this joint is a locking rotary indexer, it will unlock before homing, and lock afterward.",
+    "start": 15038,
+    "end": 15130
+  },
+  {
+    "block_id": 114,
+    "tag": "h3",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[17]/h3[1]",
+    "anchor": "_immediate_homing",
+    "text": "6.14. Immediate Homing",
+    "start": 15132,
+    "end": 15154
+  },
+  {
+    "block_id": 115,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[17]/div[1]/p[1]",
+    "anchor": null,
+    "text": "If a joint does not have home switches or does not have a logical home position like a rotary joint and you want that joint to home at the current position when the \"Home All\" button is pressed in the AXIS GUI, then the following INI entries for that joint are needed.",
+    "start": 15156,
+    "end": 15424
+  },
+  {
+    "block_id": 116,
+    "tag": "pre",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[17]/div[2]/div[1]/pre[1]",
+    "anchor": null,
+    "text": "HOME_SEARCH_VEL = 0\nHOME_LATCH_VEL = 0\nHOME_USE_INDEX = NO\nHOME_OFFSET = 0 (Or the home position offset (HOME))\nHOME_SEQUENCE = 0 (or other valid sequence number)",
+    "start": 15426,
+    "end": 15588
+  },
+  {
+    "block_id": 117,
+    "tag": "tr",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[17]/div[3]/table[1]/tr[1]",
+    "anchor": null,
+    "text": "Note | The default values for unspecified HOME_SEARCH_VEL, HOME_LATCH_VEL, HOME_USE_INDEX, HOME, and HOME_OFFSET are zero, so they may be omitted when requesting immediate homing. A valid HOME_SEQUENCE number should usually be included since omitting a HOME_SEQUENCE eliminates the joint from HOME ALL behavior as noted above.",
+    "start": 15590,
+    "end": 15916
+  },
+  {
+    "block_id": 118,
+    "tag": "h3",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[18]/h3[1]",
+    "anchor": "_inhibiting_homing",
+    "text": "6.15. Inhibiting Homing",
+    "start": 15918,
+    "end": 15941
+  },
+  {
+    "block_id": 119,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[18]/div[1]/p[1]",
+    "anchor": null,
+    "text": "A HAL pin (motion.homing-inhibit) is provided to disallow homing initiation for both \"Home All\" and individual joint homing.",
+    "start": 15943,
+    "end": 16067
+  },
+  {
+    "block_id": 120,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[18]/div[2]/p[1]",
+    "anchor": null,
+    "text": "Some systems take advantage of the provisions for synchronizing final joint homing moves as controlled by negative [JOINT_N]HOME_SEQUENCE= INI file items. By default, the synchronization provisions disallow joint jogging prior to homing in order to prevent joint jogs that could misalign the machine (gantry racking for example).",
+    "start": 16069,
+    "end": 16398
+  },
+  {
+    "block_id": 121,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[18]/div[3]/p[1]",
+    "anchor": null,
+    "text": "System integrator can allow joint jogging prior to homing with HAL logic that switches the [JOINT_N]HOME_SEQUENCE items. This logic should also assert the motion.homing-inhibit pin to ensure that homing is not inadvertently initiated when joint jogging is enabled.",
+    "start": 16400,
+    "end": 16664
+  },
+  {
+    "block_id": 122,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[18]/div[4]/p[1]",
+    "anchor": null,
+    "text": "Example: Synced joints 0,1 using negative sequence (-1) for synchronized homing with a switch (allow_jjog) that selects a positive sequence (1) for individual joint jogging prior to homing (partial HAL code):",
+    "start": 16666,
+    "end": 16874
+  },
+  {
+    "block_id": 123,
+    "tag": "pre",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[18]/div[5]/div[1]/pre[1]",
+    "anchor": null,
+    "text": "loadrt mux2           names=home_sequence_mux\nloadrt conv_float_s32 names=home_sequence_s32\nsetp home_sequence_mux.in0 -1\nsetp home_sequence_mux.in1  1\naddf home_sequence_mux servo-thread\naddf home_sequence_s32 servo-thread\n...\nnet home_seq_float <= home_sequence_mux.out\nnet home_seq_float => home_sequence_s32.in\nnet home_seq_s32   <= home_sequence_s32.out\nnet home_seq_s32   => ini.0.home_sequence\nnet home_seq_s32   => ini.1.home_sequence\n...\n# allow_jjog: pin created by a virtual panel or hardware switch\nnet hsequence_select <= allow_jjog\nnet hsequence_select => home_sequence_mux.sel\nnet hsequence_select => motion.homing-inhibit",
+    "start": 16876,
+    "end": 17513
+  },
+  {
+    "block_id": 124,
+    "tag": "tr",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[18]/div[6]/table[1]/tr[1]",
+    "anchor": null,
+    "text": "Note | INI HAL pins (like ini.N.home_sequence) are not available until milltask starts so execution of the above HAL commands should be deferred using a postgui HAL file or a delayed [APPLICATION]APP= script.",
+    "start": 17515,
+    "end": 17723
+  },
+  {
+    "block_id": 125,
+    "tag": "tr",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[18]/div[7]/table[1]/tr[1]",
+    "anchor": null,
+    "text": "Note | Realtime synchronization of joint jogging for multiple joints requires additional HAL connections for the Manual-Pulse-Generator (MPG) type jog pins (joint.N.enable, joint.N.scale, joint.N.counts).",
+    "start": 17725,
+    "end": 17929
+  },
+  {
+    "block_id": 126,
+    "tag": "p",
+    "xpath": "/html[1]/body[1]/div[2]/div[6]/div[1]/div[18]/div[8]/p[1]",
+    "anchor": null,
+    "text": "An example simulation config (gantry_jjog.ini) that demonstrates joint jogging when using negative home sequences is located in the: configs/sim/axis/gantry/ directory.",
+    "start": 17931,
+    "end": 18099
+  }
+]

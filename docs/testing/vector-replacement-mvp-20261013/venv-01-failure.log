@@ -1,0 +1,5 @@
+Command: uv venv .venv --python 3.12 (cwd D:/graghRAG-agent)
+Exit: 1
+error: Failed to inspect Python interpreter from first executable in the search path at D:\Python\python.exe
+Caused by: Failed to persist temporary interpreter cache under sandbox AC/uv/cache: 拒绝访问。(os error 5)
+No root .venv was created by this failed command. Corrected cwd to exclusive MVP directory and UV_CACHE_DIR to its uv-cache; venv-02 exit0.

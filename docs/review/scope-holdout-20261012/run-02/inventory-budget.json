@@ -1,0 +1,1397 @@
+{
+  "project_id": "graphrag-paper-001",
+  "stage": "M2_OPEN",
+  "created_utc": "2026-10-12T10:20:18.060008+00:00",
+  "script_sha256": "23004eee59f3f38bd248f2d79326100e15c4a0f7e76eff4e80e0509454db5a6c",
+  "scope": [
+    "backend/uploads",
+    "backend/output/mineru",
+    "mineru-mvp-test"
+  ],
+  "inventory_scope_note": "Bounded source asset directories; tests/temp/isolated snapshots and project prose are not new raw documents.",
+  "inventory_file_count": 62,
+  "exact_hash_group_count": 27,
+  "candidates": [
+    {
+      "candidate_id": "C-0000e756b3ec",
+      "sha256": "0000e756b3ecff2902c8a11928d4972d1d764c765c4862186d7ee4db6a554c08",
+      "representative_path": "backend/uploads/ingest_32f1d803_质安〔2018〕190号_8.较大安全环保事故隐患判定标准（工程建设企业）.docx",
+      "copies": [
+        {
+          "path": "backend/uploads/ingest_32f1d803_质安〔2018〕190号_8.较大安全环保事故隐患判定标准（工程建设企业）.docx",
+          "bytes": 21016
+        },
+        {
+          "path": "backend/uploads/ingest_bd7e01a3_质安〔2018〕190号_8.较大安全环保事故隐患判定标准（工程建设企业）.docx",
+          "bytes": 21016
+        },
+        {
+          "path": "backend/uploads/ingest_f3d9b908_质安〔2018〕190号_8.较大安全环保事故隐患判定标准（工程建设企业）.docx",
+          "bytes": 21016
+        },
+        {
+          "path": "backend/uploads/ingest_f7af6ada_质安〔2018〕190号_8.较大安全环保事故隐患判定标准（工程建设企业）.docx",
+          "bytes": 21016
+        }
+      ],
+      "local_use": "USER_CONFIRMED_LOCAL_RESEARCH_20261012",
+      "public_release": "NOT_AUTHORIZED_OR_VERIFIED",
+      "third_party_transfer": "NOT_AUTHORIZED_OR_VERIFIED",
+      "exposure": "UNKNOWN_NOT_CLEARED_FOR_HOLDOUT",
+      "body_read_in_this_audit": false,
+      "prior_ingest_label_matches": 1,
+      "ingest_label_match_is_content_identity": false,
+      "source_family": "PENDING_NEAR_DUPLICATE_AND_PROVENANCE_AUDIT",
+      "admission": "QUARANTINE_PENDING_EXPOSURE_AND_FAMILY_CLEARANCE"
+    },
+    {
+      "candidate_id": "C-1163f36560f3",
+      "sha256": "1163f36560f327c353d8680bc74a965b7f8e1dc3816162f007e59289c540c602",
+      "representative_path": "backend/uploads/ingest_06d87633_零容忍管理规定.docx",
+      "copies": [
+        {
+          "path": "backend/uploads/ingest_06d87633_零容忍管理规定.docx",
+          "bytes": 24252
+        },
+        {
+          "path": "backend/uploads/ingest_114de6b0_中油吉林化建工程有限公司安全质量零容忍管理规定.docx",
+          "bytes": 24252
+        },
+        {
+          "path": "backend/uploads/ingest_965cb5c4_test-kg.docx",
+          "bytes": 24252
+        },
+        {
+          "path": "backend/uploads/ingest_aa45eda5_中油吉林化建工程有限公司安全质量零容忍管理规定.docx",
+          "bytes": 24252
+        },
+        {
+          "path": "backend/uploads/ingest_d728bd25_零容忍管理规定.docx",
+          "bytes": 24252
+        },
+        {
+          "path": "backend/uploads/ingest_dee33c5a_test.docx",
+          "bytes": 24252
+        },
+        {
+          "path": "backend/uploads/ingest_f9729545_中油吉林化建工程有限公司安全质量零容忍管理规定.docx",
+          "bytes": 24252
+        }
+      ],
+      "local_use": "USER_CONFIRMED_LOCAL_RESEARCH_20261012",
+      "public_release": "NOT_AUTHORIZED_OR_VERIFIED",
+      "third_party_transfer": "NOT_AUTHORIZED_OR_VERIFIED",
+      "exposure": "UNKNOWN_NOT_CLEARED_FOR_HOLDOUT",
+      "body_read_in_this_audit": false,
+      "prior_ingest_label_matches": 1,
+      "ingest_label_match_is_content_identity": false,
+      "source_family": "PENDING_NEAR_DUPLICATE_AND_PROVENANCE_AUDIT",
+      "admission": "QUARANTINE_PENDING_EXPOSURE_AND_FAMILY_CLEARANCE"
+    },
+    {
+      "candidate_id": "C-3c8382414415",
+      "sha256": "3c8382414415118a8f2817669d7acc2496e3ca71353b61a3c4769571f30cfec2",
+      "representative_path": "backend/uploads/ingest_5c6e7ec5_01-中华人民共和国危险化学品安全法20251227--2026年5月1日实施.docx",
+      "copies": [
+        {
+          "path": "backend/uploads/ingest_5c6e7ec5_01-中华人民共和国危险化学品安全法20251227--2026年5月1日实施.docx",
+          "bytes": 111918
+        },
+        {
+          "path": "backend/uploads/ingest_b06c0569_01-中华人民共和国危险化学品安全法20251227--2026年5月1日实施.docx",
+          "bytes": 111918
+        },
+        {
+          "path": "backend/uploads/ingest_d800fac9_01-中华人民共和国危险化学品安全法20251227--2026年5月1日实施.docx",
+          "bytes": 111918
+        }
+      ],
+      "local_use": "USER_CONFIRMED_LOCAL_RESEARCH_20261012",
+      "public_release": "NOT_AUTHORIZED_OR_VERIFIED",
+      "third_party_transfer": "NOT_AUTHORIZED_OR_VERIFIED",
+      "exposure": "UNKNOWN_NOT_CLEARED_FOR_HOLDOUT",
+      "body_read_in_this_audit": false,
+      "prior_ingest_label_matches": 1,
+      "ingest_label_match_is_content_identity": false,
+      "source_family": "PENDING_NEAR_DUPLICATE_AND_PROVENANCE_AUDIT",
+      "admission": "QUARANTINE_PENDING_EXPOSURE_AND_FAMILY_CLEARANCE"
+    },
+    {
+      "candidate_id": "C-4c5ea4fb6dd1",
+      "sha256": "4c5ea4fb6dd1ed5efb3b998d93b5d0c897e8d68717a76bc925c5f4bf6971413f",
+      "representative_path": "backend/uploads/ingest_4bd7e6b1_中国石油集团工程股份有限公司安全生产“五个零容忍”通知.docx",
+      "copies": [
+        {
+          "path": "backend/uploads/ingest_4bd7e6b1_中国石油集团工程股份有限公司安全生产“五个零容忍”通知.docx",
+          "bytes": 22317
+        },
+        {
+          "path": "backend/uploads/ingest_5455ebd8_中国石油集团工程股份有限公司安全生产“五个零容忍”通知.docx",
+          "bytes": 22317
+        },
+        {
+          "path": "backend/uploads/ingest_da630a7a_中国石油集团工程股份有限公司安全生产“五个零容忍”通知.docx",
+          "bytes": 22317
+        },
+        {
+          "path": "backend/uploads/ingest_e5ba0ad7_中国石油集团工程股份有限公司安全生产“五个零容忍”通知.docx",
+          "bytes": 22317
+        }
+      ],
+      "local_use": "USER_CONFIRMED_LOCAL_RESEARCH_20261012",
+      "public_release": "NOT_AUTHORIZED_OR_VERIFIED",
+      "third_party_transfer": "NOT_AUTHORIZED_OR_VERIFIED",
+      "exposure": "UNKNOWN_NOT_CLEARED_FOR_HOLDOUT",
+      "body_read_in_this_audit": false,
+      "prior_ingest_label_matches": 1,
+      "ingest_label_match_is_content_identity": false,
+      "source_family": "PENDING_NEAR_DUPLICATE_AND_PROVENANCE_AUDIT",
+      "admission": "QUARANTINE_PENDING_EXPOSURE_AND_FAMILY_CLEARANCE"
+    },
+    {
+      "candidate_id": "C-67e5e6baf375",
+      "sha256": "67e5e6baf375d9b745b7bfc4a86fd88873dc89addcdfed1530312596bb254f45",
+      "representative_path": "backend/uploads/ingest_8198cda1_GBT 50484-2019石油化工建设工程施工安全技术标准(1).docx",
+      "copies": [
+        {
+          "path": "backend/uploads/ingest_8198cda1_GBT 50484-2019石油化工建设工程施工安全技术标准(1).docx",
+          "bytes": 505962
+        },
+        {
+          "path": "backend/uploads/ingest_873b5a07_GBT 50484-2019石油化工建设工程施工安全技术标准(1).docx",
+          "bytes": 505962
+        },
+        {
+          "path": "backend/uploads/ingest_cd238f8d_GBT 50484-2019石油化工建设工程施工安全技术标准(1).docx",
+          "bytes": 505962
+        }
+      ],
+      "local_use": "USER_CONFIRMED_LOCAL_RESEARCH_20261012",
+      "public_release": "NOT_AUTHORIZED_OR_VERIFIED",
+      "third_party_transfer": "NOT_AUTHORIZED_OR_VERIFIED",
+      "exposure": "UNKNOWN_NOT_CLEARED_FOR_HOLDOUT",
+      "body_read_in_this_audit": false,
+      "prior_ingest_label_matches": 1,
+      "ingest_label_match_is_content_identity": false,
+      "source_family": "PENDING_NEAR_DUPLICATE_AND_PROVENANCE_AUDIT",
+      "admission": "QUARANTINE_PENDING_EXPOSURE_AND_FAMILY_CLEARANCE"
+    },
+    {
+      "candidate_id": "C-7ce1735d7f94",
+      "sha256": "7ce1735d7f94ebe73211903ac72eebe9de0b114ec7285f20e908ab3ea852a433",
+      "representative_path": "backend/uploads/ingest_53393257_附件2：中国寰球工程有限公司安全生产底线（停工）条款.docx",
+      "copies": [
+        {
+          "path": "backend/uploads/ingest_53393257_附件2：中国寰球工程有限公司安全生产底线（停工）条款.docx",
+          "bytes": 20786
+        },
+        {
+          "path": "backend/uploads/ingest_ad83fe5c_附件2：中国寰球工程有限公司安全生产底线（停工）条款.docx",
+          "bytes": 20786
+        },
+        {
+          "path": "backend/uploads/ingest_bf94f736_附件2：中国寰球工程有限公司安全生产底线（停工）条款.docx",
+          "bytes": 20786
+        },
+        {
+          "path": "backend/uploads/ingest_f5030490_附件2：中国寰球工程有限公司安全生产底线（停工）条款.docx",
+          "bytes": 20786
+        }
+      ],
+      "local_use": "USER_CONFIRMED_LOCAL_RESEARCH_20261012",
+      "public_release": "NOT_AUTHORIZED_OR_VERIFIED",
+      "third_party_transfer": "NOT_AUTHORIZED_OR_VERIFIED",
+      "exposure": "UNKNOWN_NOT_CLEARED_FOR_HOLDOUT",
+      "body_read_in_this_audit": false,
+      "prior_ingest_label_matches": 1,
+      "ingest_label_match_is_content_identity": false,
+      "source_family": "PENDING_NEAR_DUPLICATE_AND_PROVENANCE_AUDIT",
+      "admission": "QUARANTINE_PENDING_EXPOSURE_AND_FAMILY_CLEARANCE"
+    },
+    {
+      "candidate_id": "C-b5e9ae1fdbf9",
+      "sha256": "b5e9ae1fdbf903e3264d77496e1a2f62f3abd1e54ff220089bd0b9a797eef9c9",
+      "representative_path": "backend/uploads/ingest_0a9423d0_质安〔2018〕190号_1.较大安全环保事故隐患判定标准（通用部分）.docx",
+      "copies": [
+        {
+          "path": "backend/uploads/ingest_0a9423d0_质安〔2018〕190号_1.较大安全环保事故隐患判定标准（通用部分）.docx",
+          "bytes": 20997
+        },
+        {
+          "path": "backend/uploads/ingest_337a8800_质安〔2018〕190号_1.较大安全环保事故隐患判定标准（通用部分）.docx",
+          "bytes": 20997
+        },
+        {
+          "path": "backend/uploads/ingest_bc3e6eba_质安〔2018〕190号_1.较大安全环保事故隐患判定标准（通用部分）.docx",
+          "bytes": 20997
+        },
+        {
+          "path": "backend/uploads/ingest_bc4baa57_质安〔2018〕190号_1.较大安全环保事故隐患判定标准（通用部分）.docx",
+          "bytes": 20997
+        }
+      ],
+      "local_use": "USER_CONFIRMED_LOCAL_RESEARCH_20261012",
+      "public_release": "NOT_AUTHORIZED_OR_VERIFIED",
+      "third_party_transfer": "NOT_AUTHORIZED_OR_VERIFIED",
+      "exposure": "UNKNOWN_NOT_CLEARED_FOR_HOLDOUT",
+      "body_read_in_this_audit": false,
+      "prior_ingest_label_matches": 1,
+      "ingest_label_match_is_content_identity": false,
+      "source_family": "PENDING_NEAR_DUPLICATE_AND_PROVENANCE_AUDIT",
+      "admission": "QUARANTINE_PENDING_EXPOSURE_AND_FAMILY_CLEARANCE"
+    },
+    {
+      "candidate_id": "C-c03d4a040075",
+      "sha256": "c03d4a0400753aca3cbd8868b2341797aaba7ed5b36c913f236c74a90687d807",
+      "representative_path": "backend/uploads/ingest_641fa2a5_附件1：中国寰球工程有限公司安全生产“高压线”.docx",
+      "copies": [
+        {
+          "path": "backend/uploads/ingest_641fa2a5_附件1：中国寰球工程有限公司安全生产“高压线”.docx",
+          "bytes": 17862
+        },
+        {
+          "path": "backend/uploads/ingest_79bab77d_附件1：中国寰球工程有限公司安全生产“高压线”.docx",
+          "bytes": 17862
+        },
+        {
+          "path": "backend/uploads/ingest_8b402697_附件1：中国寰球工程有限公司安全生产“高压线”.docx",
+          "bytes": 17862
+        },
+        {
+          "path": "backend/uploads/ingest_fdeeb015_附件1：中国寰球工程有限公司安全生产“高压线”.docx",
+          "bytes": 17862
+        }
+      ],
+      "local_use": "USER_CONFIRMED_LOCAL_RESEARCH_20261012",
+      "public_release": "NOT_AUTHORIZED_OR_VERIFIED",
+      "third_party_transfer": "NOT_AUTHORIZED_OR_VERIFIED",
+      "exposure": "UNKNOWN_NOT_CLEARED_FOR_HOLDOUT",
+      "body_read_in_this_audit": false,
+      "prior_ingest_label_matches": 1,
+      "ingest_label_match_is_content_identity": false,
+      "source_family": "PENDING_NEAR_DUPLICATE_AND_PROVENANCE_AUDIT",
+      "admission": "QUARANTINE_PENDING_EXPOSURE_AND_FAMILY_CLEARANCE"
+    }
+  ],
+  "opaque_file_groups": [
+    {
+      "sha256": "0000e756b3ecff2902c8a11928d4972d1d764c765c4862186d7ee4db6a554c08",
+      "copies": [
+        {
+          "path": "backend/uploads/ingest_32f1d803_质安〔2018〕190号_8.较大安全环保事故隐患判定标准（工程建设企业）.docx",
+          "bytes": 21016
+        },
+        {
+          "path": "backend/uploads/ingest_bd7e01a3_质安〔2018〕190号_8.较大安全环保事故隐患判定标准（工程建设企业）.docx",
+          "bytes": 21016
+        },
+        {
+          "path": "backend/uploads/ingest_f3d9b908_质安〔2018〕190号_8.较大安全环保事故隐患判定标准（工程建设企业）.docx",
+          "bytes": 21016
+        },
+        {
+          "path": "backend/uploads/ingest_f7af6ada_质安〔2018〕190号_8.较大安全环保事故隐患判定标准（工程建设企业）.docx",
+          "bytes": 21016
+        }
+      ],
+      "copy_count": 4
+    },
+    {
+      "sha256": "1163f36560f327c353d8680bc74a965b7f8e1dc3816162f007e59289c540c602",
+      "copies": [
+        {
+          "path": "backend/uploads/ingest_06d87633_零容忍管理规定.docx",
+          "bytes": 24252
+        },
+        {
+          "path": "backend/uploads/ingest_114de6b0_中油吉林化建工程有限公司安全质量零容忍管理规定.docx",
+          "bytes": 24252
+        },
+        {
+          "path": "backend/uploads/ingest_965cb5c4_test-kg.docx",
+          "bytes": 24252
+        },
+        {
+          "path": "backend/uploads/ingest_aa45eda5_中油吉林化建工程有限公司安全质量零容忍管理规定.docx",
+          "bytes": 24252
+        },
+        {
+          "path": "backend/uploads/ingest_d728bd25_零容忍管理规定.docx",
+          "bytes": 24252
+        },
+        {
+          "path": "backend/uploads/ingest_dee33c5a_test.docx",
+          "bytes": 24252
+        },
+        {
+          "path": "backend/uploads/ingest_f9729545_中油吉林化建工程有限公司安全质量零容忍管理规定.docx",
+          "bytes": 24252
+        }
+      ],
+      "copy_count": 7
+    },
+    {
+      "sha256": "3c8382414415118a8f2817669d7acc2496e3ca71353b61a3c4769571f30cfec2",
+      "copies": [
+        {
+          "path": "backend/uploads/ingest_5c6e7ec5_01-中华人民共和国危险化学品安全法20251227--2026年5月1日实施.docx",
+          "bytes": 111918
+        },
+        {
+          "path": "backend/uploads/ingest_b06c0569_01-中华人民共和国危险化学品安全法20251227--2026年5月1日实施.docx",
+          "bytes": 111918
+        },
+        {
+          "path": "backend/uploads/ingest_d800fac9_01-中华人民共和国危险化学品安全法20251227--2026年5月1日实施.docx",
+          "bytes": 111918
+        }
+      ],
+      "copy_count": 3
+    },
+    {
+      "sha256": "415d939771e9be9596ba7c4b798839a2244e41d77b2c79282e656dadd1376ed6",
+      "copies": [
+        {
+          "path": "backend/output/mineru/ingest_e/2c21764f-9ac3-4efd-a158-e5aae5598b93_origin.pdf",
+          "bytes": 773
+        }
+      ],
+      "copy_count": 1
+    },
+    {
+      "sha256": "4c5ea4fb6dd1ed5efb3b998d93b5d0c897e8d68717a76bc925c5f4bf6971413f",
+      "copies": [
+        {
+          "path": "backend/uploads/ingest_4bd7e6b1_中国石油集团工程股份有限公司安全生产“五个零容忍”通知.docx",
+          "bytes": 22317
+        },
+        {
+          "path": "backend/uploads/ingest_5455ebd8_中国石油集团工程股份有限公司安全生产“五个零容忍”通知.docx",
+          "bytes": 22317
+        },
+        {
+          "path": "backend/uploads/ingest_da630a7a_中国石油集团工程股份有限公司安全生产“五个零容忍”通知.docx",
+          "bytes": 22317
+        },
+        {
+          "path": "backend/uploads/ingest_e5ba0ad7_中国石油集团工程股份有限公司安全生产“五个零容忍”通知.docx",
+          "bytes": 22317
+        }
+      ],
+      "copy_count": 4
+    },
+    {
+      "sha256": "4e012487a2b2a28930329e5924b0aee03fc7afbfe4a7a9db18f767624ea5f42f",
+      "copies": [
+        {
+          "path": "backend/output/mineru/ingest_e/c84df38c-eadf-418a-b1f3-dda5275bbc4c_origin.docx",
+          "bytes": 10909073
+        }
+      ],
+      "copy_count": 1
+    },
+    {
+      "sha256": "508396612f0444d4a0f0a40aa934d4ec97839644d1ebb928aad1308aa2d0f3ec",
+      "copies": [
+        {
+          "path": "backend/output/mineru/ingest_c/585f21dc-c742-4f28-bb5f-4abbd6145384_origin.docx",
+          "bytes": 123928576
+        }
+      ],
+      "copy_count": 1
+    },
+    {
+      "sha256": "537dba6dc00707ea78cad0655bf69e8f7146c667754384cb99e9c22a779c8f87",
+      "copies": [
+        {
+          "path": "backend/output/mineru/ingest_c/full.md",
+          "bytes": 47356
+        }
+      ],
+      "copy_count": 1
+    },
+    {
+      "sha256": "55f8718109829bf506b09d8af615b9f107a266e19f7a311039d1035f180b22d4",
+      "copies": [
+        {
+          "path": "backend/uploads/demo.pdf",
+          "bytes": 10
+        }
+      ],
+      "copy_count": 1
+    },
+    {
+      "sha256": "5c192b4065c89cb6c1245f3a087d8e133e0d5d7c81d410a98eb026ee83c7f866",
+      "copies": [
+        {
+          "path": "backend/uploads/ingest_080da161_【申报书】2026年“挑战杯”吉林省大学生创.doc",
+          "bytes": 125489132
+        },
+        {
+          "path": "backend/uploads/ingest_1aa103d1_【申报书】2026年“挑战杯”吉林省大学生创.doc",
+          "bytes": 125489132
+        },
+        {
+          "path": "backend/uploads/ingest_a9cf6633_【申报书】2026年“挑战杯”吉林省大学生创.doc",
+          "bytes": 125489132
+        },
+        {
+          "path": "backend/uploads/ingest_addc74f7_【申报书】2026年“挑战杯”吉林省大学生创.doc",
+          "bytes": 125489132
+        },
+        {
+          "path": "backend/uploads/ingest_b9518481_【申报书】2026年“挑战杯”吉林省大学生创.doc",
+          "bytes": 125489132
+        },
+        {
+          "path": "backend/uploads/ingest_c14c83df_【申报书】2026年“挑战杯”吉林省大学生创.doc",
+          "bytes": 125489132
+        },
+        {
+          "path": "backend/uploads/ingest_c333b5b6_【申报书】2026年“挑战杯”吉林省大学生创.doc",
+          "bytes": 125489132
+        },
+        {
+          "path": "backend/uploads/ingest_cb284548_【申报书】2026年“挑战杯”吉林省大学生创.doc",
+          "bytes": 125489132
+        }
+      ],
+      "copy_count": 8
+    },
+    {
+      "sha256": "67e5e6baf375d9b745b7bfc4a86fd88873dc89addcdfed1530312596bb254f45",
+      "copies": [
+        {
+          "path": "backend/uploads/ingest_8198cda1_GBT 50484-2019石油化工建设工程施工安全技术标准(1).docx",
+          "bytes": 505962
+        },
+        {
+          "path": "backend/uploads/ingest_873b5a07_GBT 50484-2019石油化工建设工程施工安全技术标准(1).docx",
+          "bytes": 505962
+        },
+        {
+          "path": "backend/uploads/ingest_cd238f8d_GBT 50484-2019石油化工建设工程施工安全技术标准(1).docx",
+          "bytes": 505962
+        }
+      ],
+      "copy_count": 3
+    },
+    {
+      "sha256": "6867a0fa0f334bfe80af7433aa86b199390cb3f6ec97ae41ffac750e5125dbbd",
+      "copies": [
+        {
+          "path": "backend/output/mineru/ingest_2/ee9203d3-3a8a-4a88-9f20-cd38aa8598f3_origin.pdf",
+          "bytes": 1227528
+        }
+      ],
+      "copy_count": 1
+    },
+    {
+      "sha256": "7ce1735d7f94ebe73211903ac72eebe9de0b114ec7285f20e908ab3ea852a433",
+      "copies": [
+        {
+          "path": "backend/uploads/ingest_53393257_附件2：中国寰球工程有限公司安全生产底线（停工）条款.docx",
+          "bytes": 20786
+        },
+        {
+          "path": "backend/uploads/ingest_ad83fe5c_附件2：中国寰球工程有限公司安全生产底线（停工）条款.docx",
+          "bytes": 20786
+        },
+        {
+          "path": "backend/uploads/ingest_bf94f736_附件2：中国寰球工程有限公司安全生产底线（停工）条款.docx",
+          "bytes": 20786
+        },
+        {
+          "path": "backend/uploads/ingest_f5030490_附件2：中国寰球工程有限公司安全生产底线（停工）条款.docx",
+          "bytes": 20786
+        }
+      ],
+      "copy_count": 4
+    },
+    {
+      "sha256": "7ddff6d4e91c904b736e11367a438ff7f37e96290009142bdbc5c882f1349804",
+      "copies": [
+        {
+          "path": "backend/output/mineru/ingest_4/0cfe533d-01b9-406d-9eb3-e64c2486eca1_origin.docx",
+          "bytes": 10722334
+        }
+      ],
+      "copy_count": 1
+    },
+    {
+      "sha256": "8b4142393bd91c5b68b8c3848a638fabc6ab0741ce9005597aa4f97888de1824",
+      "copies": [
+        {
+          "path": "backend/output/mineru/ingest_c/ad4a29c6-b7fd-4027-987a-c7e6fadb8f03_origin.docx",
+          "bytes": 123939484
+        }
+      ],
+      "copy_count": 1
+    },
+    {
+      "sha256": "923876e5987b3352021c5c786284b69d5c8de5c1996c874dcf535e5cf4102c61",
+      "copies": [
+        {
+          "path": "backend/output/mineru/ingest_4/full.md",
+          "bytes": 58
+        },
+        {
+          "path": "backend/output/mineru/ingest_e/full.md",
+          "bytes": 58
+        }
+      ],
+      "copy_count": 2
+    },
+    {
+      "sha256": "a1271202eae0c9e9b90fd356c3465bb689d8448131d6cca135586f2ce4db901b",
+      "copies": [
+        {
+          "path": "mineru-mvp-test/sample.pdf",
+          "bytes": 59706
+        }
+      ],
+      "copy_count": 1
+    },
+    {
+      "sha256": "a3452be08a2b3f4347b08ffcfa113a7f9aee6a1f1171823009a6043e8f6d318c",
+      "copies": [
+        {
+          "path": "backend/output/mineru/ingest_5/4e141a12-983d-4dcf-ad89-92ef5f63386e_origin.pdf",
+          "bytes": 176348
+        }
+      ],
+      "copy_count": 1
+    },
+    {
+      "sha256": "a9b4d955e942db8d7833993c0916b04b09b2f0c2a17b183a3aa09a674dbcd8af",
+      "copies": [
+        {
+          "path": "backend/uploads/test_local.pdf",
+          "bytes": 65
+        }
+      ],
+      "copy_count": 1
+    },
+    {
+      "sha256": "ab7cdd99e8cd85ddd61e3d65e4e747685a25a62d22f68bed3e2d79d015e90623",
+      "copies": [
+        {
+          "path": "backend/output/mineru/ingest_f/full.md",
+          "bytes": 42636
+        },
+        {
+          "path": "mineru-mvp-test/output/87bc1f56/full.md",
+          "bytes": 42636
+        }
+      ],
+      "copy_count": 2
+    },
+    {
+      "sha256": "b5e9ae1fdbf903e3264d77496e1a2f62f3abd1e54ff220089bd0b9a797eef9c9",
+      "copies": [
+        {
+          "path": "backend/uploads/ingest_0a9423d0_质安〔2018〕190号_1.较大安全环保事故隐患判定标准（通用部分）.docx",
+          "bytes": 20997
+        },
+        {
+          "path": "backend/uploads/ingest_337a8800_质安〔2018〕190号_1.较大安全环保事故隐患判定标准（通用部分）.docx",
+          "bytes": 20997
+        },
+        {
+          "path": "backend/uploads/ingest_bc3e6eba_质安〔2018〕190号_1.较大安全环保事故隐患判定标准（通用部分）.docx",
+          "bytes": 20997
+        },
+        {
+          "path": "backend/uploads/ingest_bc4baa57_质安〔2018〕190号_1.较大安全环保事故隐患判定标准（通用部分）.docx",
+          "bytes": 20997
+        }
+      ],
+      "copy_count": 4
+    },
+    {
+      "sha256": "c03d4a0400753aca3cbd8868b2341797aaba7ed5b36c913f236c74a90687d807",
+      "copies": [
+        {
+          "path": "backend/uploads/ingest_641fa2a5_附件1：中国寰球工程有限公司安全生产“高压线”.docx",
+          "bytes": 17862
+        },
+        {
+          "path": "backend/uploads/ingest_79bab77d_附件1：中国寰球工程有限公司安全生产“高压线”.docx",
+          "bytes": 17862
+        },
+        {
+          "path": "backend/uploads/ingest_8b402697_附件1：中国寰球工程有限公司安全生产“高压线”.docx",
+          "bytes": 17862
+        },
+        {
+          "path": "backend/uploads/ingest_fdeeb015_附件1：中国寰球工程有限公司安全生产“高压线”.docx",
+          "bytes": 17862
+        }
+      ],
+      "copy_count": 4
+    },
+    {
+      "sha256": "c7a2c7e06fdcf10aba4fbf1ba7cdcabf045fdea9ff62ee79d83d6fe6679a3396",
+      "copies": [
+        {
+          "path": "backend/output/mineru/ingest_f/185f605f-00bf-4f6f-933b-00f58332e212_origin.pdf",
+          "bytes": 2127679
+        },
+        {
+          "path": "mineru-mvp-test/output/87bc1f56/185f605f-00bf-4f6f-933b-00f58332e212_origin.pdf",
+          "bytes": 2127679
+        }
+      ],
+      "copy_count": 2
+    },
+    {
+      "sha256": "dc5ff1fc4959b48d9e050cc08ac7095934cc4ea7c1d95da57f95705f1c4c7138",
+      "copies": [
+        {
+          "path": "backend/output/mineru/ingest_e/d720b289-2299-4710-9ff9-f06b36a38deb_origin.docx",
+          "bytes": 10722335
+        }
+      ],
+      "copy_count": 1
+    },
+    {
+      "sha256": "e1253a6630f11e11af7663b16bb6c99e6061e35d5f48e840658c4967e8dccbef",
+      "copies": [
+        {
+          "path": "backend/uploads/test_oss_only.pdf",
+          "bytes": 552
+        }
+      ],
+      "copy_count": 1
+    },
+    {
+      "sha256": "e7c5f818563e6d49b775d4a13885810847cdbd72aa490791191346103b404b1e",
+      "copies": [
+        {
+          "path": "backend/output/mineru/ingest_5/full.md",
+          "bytes": 7062
+        }
+      ],
+      "copy_count": 1
+    },
+    {
+      "sha256": "f0e2b044ec0f8be55b1c00d9479830f6768a5da9970111a7db0353d59097a0d6",
+      "copies": [
+        {
+          "path": "backend/output/mineru/ingest_2/full.md",
+          "bytes": 38228
+        }
+      ],
+      "copy_count": 1
+    }
+  ],
+  "holdout_admitted": [],
+  "holdout_H1": [],
+  "holdout_H2": [],
+  "split_status": "BLOCKED_UNVERIFIED_EXPOSURE_FAMILY_AND_INSUFFICIENT_DOCUMENTS",
+  "development_documents": [
+    {
+      "doc": "D1",
+      "codepoints": 22366,
+      "utf8_bytes": 38228,
+      "proxy_tokens": 14167
+    },
+    {
+      "doc": "D2",
+      "codepoints": 42551,
+      "utf8_bytes": 42636,
+      "proxy_tokens": 13236
+    },
+    {
+      "doc": "D3",
+      "codepoints": 17729,
+      "utf8_bytes": 22650,
+      "proxy_tokens": 6051
+    }
+  ],
+  "development_questions": [
+    {
+      "qid": "D1-FIG-v2",
+      "doc": "D1",
+      "query_version": "2.0",
+      "target_codepoints": 22366,
+      "target_utf8_bytes": 38228,
+      "target_proxy_tokens": 14167,
+      "query_proxy_tokens": 54,
+      "is_generator_token_count": false
+    },
+    {
+      "qid": "D1-COST-v2",
+      "doc": "D1",
+      "query_version": "2.0",
+      "target_codepoints": 1042,
+      "target_utf8_bytes": 2581,
+      "target_proxy_tokens": 735,
+      "query_proxy_tokens": 44,
+      "is_generator_token_count": false
+    },
+    {
+      "qid": "D1-LIMITS-v2",
+      "doc": "D1",
+      "query_version": "2.0",
+      "target_codepoints": 465,
+      "target_utf8_bytes": 1295,
+      "target_proxy_tokens": 310,
+      "query_proxy_tokens": 33,
+      "is_generator_token_count": false
+    },
+    {
+      "qid": "D1-FUTURE-v2",
+      "doc": "D1",
+      "query_version": "2.0",
+      "target_codepoints": 98,
+      "target_utf8_bytes": 278,
+      "target_proxy_tokens": 62,
+      "query_proxy_tokens": 27,
+      "is_generator_token_count": false
+    },
+    {
+      "qid": "D2-ATTENTION-v2",
+      "doc": "D2",
+      "query_version": "2.0",
+      "target_codepoints": 1223,
+      "target_utf8_bytes": 1233,
+      "target_proxy_tokens": 306,
+      "query_proxy_tokens": 50,
+      "is_generator_token_count": false
+    },
+    {
+      "qid": "D2-DATA-v2",
+      "doc": "D2",
+      "query_version": "2.0",
+      "target_codepoints": 626,
+      "target_utf8_bytes": 626,
+      "target_proxy_tokens": 153,
+      "query_proxy_tokens": 29,
+      "is_generator_token_count": false
+    },
+    {
+      "qid": "D2-NONE-v2",
+      "doc": "D2",
+      "query_version": "2.0",
+      "target_codepoints": 1223,
+      "target_utf8_bytes": 1233,
+      "target_proxy_tokens": 306,
+      "query_proxy_tokens": 33,
+      "is_generator_token_count": false
+    },
+    {
+      "qid": "D3-TOOLS-v2",
+      "doc": "D3",
+      "query_version": "2.0",
+      "target_codepoints": 410,
+      "target_utf8_bytes": 564,
+      "target_proxy_tokens": 233,
+      "query_proxy_tokens": 31,
+      "is_generator_token_count": false
+    },
+    {
+      "qid": "D3-SUPERVISOR-v2",
+      "doc": "D3",
+      "query_version": "2.0",
+      "target_codepoints": 155,
+      "target_utf8_bytes": 283,
+      "target_proxy_tokens": 68,
+      "query_proxy_tokens": 15,
+      "is_generator_token_count": false
+    }
+  ],
+  "tokenizer": {
+    "path": "C:\\Users\\14156\\.cache\\huggingface\\hub\\models--BAAI--bge-m3\\snapshots\\5617a9f61b028005a4858fdac845db406aefb181\\tokenizer.json",
+    "sha256": "21106b6d7dab2952c1d496fb21d5dc9db75c28ed361a05f5020bbba27810dd08",
+    "purpose": "LOCAL_BGE_M3_RETRIEVAL_TOKENIZER_PROXY_ONLY_NOT_GENERATOR",
+    "package": "tokenizers",
+    "version": "0.22.2",
+    "truncation": false,
+    "padding": false,
+    "add_special_tokens": false
+  },
+  "historical_provider_usage": [
+    {
+      "index": 0,
+      "qid": "D1-FIG",
+      "arm": "B1",
+      "source_utf8_bytes": 8281,
+      "source_proxy_tokens": 2480,
+      "prompt_tokens_recorded": 2906,
+      "completion_tokens_recorded": 37,
+      "total_tokens_recorded": 2943,
+      "response_sha256": "fd6840ce07781c502e59b265a1395c709a8d0bc2020b2bdea7d33fb2853c95fa",
+      "request_max_output": 2048,
+      "request_model": "deepseek-v4-pro",
+      "response_model": "deepseek-v4-pro",
+      "finish_reason": "stop"
+    },
+    {
+      "index": 1,
+      "qid": "D1-FIG",
+      "arm": "B2",
+      "source_utf8_bytes": 602,
+      "source_proxy_tokens": 174,
+      "prompt_tokens_recorded": 351,
+      "completion_tokens_recorded": 316,
+      "total_tokens_recorded": 667,
+      "response_sha256": "9e43833e108e7753d658d0c044cdda6591b7ddf60be1bfd616b9bd2da667f6dc",
+      "request_max_output": 2048,
+      "request_model": "deepseek-v4-pro",
+      "response_model": "deepseek-v4-pro",
+      "finish_reason": "stop"
+    },
+    {
+      "index": 2,
+      "qid": "D1-FIG",
+      "arm": "B3",
+      "source_utf8_bytes": 602,
+      "source_proxy_tokens": 174,
+      "prompt_tokens_recorded": 351,
+      "completion_tokens_recorded": 315,
+      "total_tokens_recorded": 666,
+      "response_sha256": "751c71e5d4b467d3251febe55c633d44f5b91babb4fb8300d3d827c0c2436768",
+      "request_max_output": 2048,
+      "request_model": "deepseek-v4-pro",
+      "response_model": "deepseek-v4-pro",
+      "finish_reason": "stop"
+    },
+    {
+      "index": 3,
+      "qid": "D1-COST",
+      "arm": "B1",
+      "source_utf8_bytes": 8244,
+      "source_proxy_tokens": 2338,
+      "prompt_tokens_recorded": 2619,
+      "completion_tokens_recorded": 507,
+      "total_tokens_recorded": 3126,
+      "response_sha256": "b65df1fade287fa5c7213695ddde469e1c5309bfd1b3d350db09a037c1467d7c",
+      "request_max_output": 2048,
+      "request_model": "deepseek-v4-pro",
+      "response_model": "deepseek-v4-pro",
+      "finish_reason": "stop"
+    },
+    {
+      "index": 4,
+      "qid": "D1-COST",
+      "arm": "B2",
+      "source_utf8_bytes": 2579,
+      "source_proxy_tokens": 734,
+      "prompt_tokens_recorded": 876,
+      "completion_tokens_recorded": 283,
+      "total_tokens_recorded": 1159,
+      "response_sha256": "91aeabc16d2e20c65bdf0bb961caffe7d4d5db2c84ae8e4e947d7525689524ba",
+      "request_max_output": 2048,
+      "request_model": "deepseek-v4-pro",
+      "response_model": "deepseek-v4-pro",
+      "finish_reason": "stop"
+    },
+    {
+      "index": 5,
+      "qid": "D1-COST",
+      "arm": "B3",
+      "source_utf8_bytes": 2581,
+      "source_proxy_tokens": 735,
+      "prompt_tokens_recorded": 818,
+      "completion_tokens_recorded": 356,
+      "total_tokens_recorded": 1174,
+      "response_sha256": "470b2feb1e1a7e289bc983fb71591181da4c518a9e9a2e23b202348e8587ec02",
+      "request_max_output": 2048,
+      "request_model": "deepseek-v4-pro",
+      "response_model": "deepseek-v4-pro",
+      "finish_reason": "stop"
+    },
+    {
+      "index": 6,
+      "qid": "D1-LIMITS",
+      "arm": "B1",
+      "source_utf8_bytes": 8259,
+      "source_proxy_tokens": 2842,
+      "prompt_tokens_recorded": 3187,
+      "completion_tokens_recorded": 195,
+      "total_tokens_recorded": 3382,
+      "response_sha256": "bad724591ae56152d45fcec83fa8b2f5597dd0e72b42fcc138eee5af2a473bcb",
+      "request_max_output": 2048,
+      "request_model": "deepseek-v4-pro",
+      "response_model": "deepseek-v4-pro",
+      "finish_reason": "stop"
+    },
+    {
+      "index": 7,
+      "qid": "D1-LIMITS",
+      "arm": "B2",
+      "source_utf8_bytes": 1293,
+      "source_proxy_tokens": 309,
+      "prompt_tokens_recorded": 461,
+      "completion_tokens_recorded": 231,
+      "total_tokens_recorded": 692,
+      "response_sha256": "d07ad71937d33b93fa55ffe7d25cb47e1c95b4a96f20d74b710d959f613d1a6e",
+      "request_max_output": 2048,
+      "request_model": "deepseek-v4-pro",
+      "response_model": "deepseek-v4-pro",
+      "finish_reason": "stop"
+    },
+    {
+      "index": 8,
+      "qid": "D1-LIMITS",
+      "arm": "B3",
+      "source_utf8_bytes": 1295,
+      "source_proxy_tokens": 310,
+      "prompt_tokens_recorded": 423,
+      "completion_tokens_recorded": 178,
+      "total_tokens_recorded": 601,
+      "response_sha256": "11ff83861f885ac1a9267416100daae0de5dd89efaab61de56190537551187c3",
+      "request_max_output": 2048,
+      "request_model": "deepseek-v4-pro",
+      "response_model": "deepseek-v4-pro",
+      "finish_reason": "stop"
+    },
+    {
+      "index": 9,
+      "qid": "D1-FUTURE",
+      "arm": "B1",
+      "source_utf8_bytes": 8242,
+      "source_proxy_tokens": 2842,
+      "prompt_tokens_recorded": 2991,
+      "completion_tokens_recorded": 123,
+      "total_tokens_recorded": 3114,
+      "response_sha256": "7ca42016263134ea8afd1729b468f0dd81d3f5f269036256256e292bcb34ba3c",
+      "request_max_output": 2048,
+      "request_model": "deepseek-v4-pro",
+      "response_model": "deepseek-v4-pro",
+      "finish_reason": "stop"
+    },
+    {
+      "index": 10,
+      "qid": "D1-FUTURE",
+      "arm": "B2",
+      "source_utf8_bytes": 1293,
+      "source_proxy_tokens": 309,
+      "prompt_tokens_recorded": 464,
+      "completion_tokens_recorded": 113,
+      "total_tokens_recorded": 577,
+      "response_sha256": "ab7d06fcda27040a5cec01ba76b96eb348190981cd2e5d4c36e54497374a0d1c",
+      "request_max_output": 2048,
+      "request_model": "deepseek-v4-pro",
+      "response_model": "deepseek-v4-pro",
+      "finish_reason": "stop"
+    },
+    {
+      "index": 11,
+      "qid": "D1-FUTURE",
+      "arm": "B3",
+      "source_utf8_bytes": 1295,
+      "source_proxy_tokens": 310,
+      "prompt_tokens_recorded": 426,
+      "completion_tokens_recorded": 111,
+      "total_tokens_recorded": 537,
+      "response_sha256": "c27d4836acfde979c9ebd871033024a17b023570248d2f9839b7e3a0f49f1538",
+      "request_max_output": 2048,
+      "request_model": "deepseek-v4-pro",
+      "response_model": "deepseek-v4-pro",
+      "finish_reason": "stop"
+    },
+    {
+      "index": 12,
+      "qid": "D2-ATTENTION",
+      "arm": "B1",
+      "source_utf8_bytes": 8257,
+      "source_proxy_tokens": 2160,
+      "prompt_tokens_recorded": 2421,
+      "completion_tokens_recorded": 219,
+      "total_tokens_recorded": 2640,
+      "response_sha256": "b88668c6fc9a87fbfa3e9f287495d054a1d5076b48dc72c7efd0cc10777432ff",
+      "request_max_output": 2048,
+      "request_model": "deepseek-v4-pro",
+      "response_model": "deepseek-v4-pro",
+      "finish_reason": "stop"
+    },
+    {
+      "index": 13,
+      "qid": "D2-ATTENTION",
+      "arm": "B2",
+      "source_utf8_bytes": 1448,
+      "source_proxy_tokens": 358,
+      "prompt_tokens_recorded": 512,
+      "completion_tokens_recorded": 250,
+      "total_tokens_recorded": 762,
+      "response_sha256": "c7ea3c9970434b7af8bb177337393892c14607a97dffbabf8a01a99e7fddf5a7",
+      "request_max_output": 2048,
+      "request_model": "deepseek-v4-pro",
+      "response_model": "deepseek-v4-pro",
+      "finish_reason": "stop"
+    },
+    {
+      "index": 14,
+      "qid": "D2-ATTENTION",
+      "arm": "B3",
+      "source_utf8_bytes": 1233,
+      "source_proxy_tokens": 306,
+      "prompt_tokens_recorded": 390,
+      "completion_tokens_recorded": 336,
+      "total_tokens_recorded": 726,
+      "response_sha256": "42ce8671cc11620372cc50504d69120daffd08ce27e32784e992dcdab014d5eb",
+      "request_max_output": 2048,
+      "request_model": "deepseek-v4-pro",
+      "response_model": "deepseek-v4-pro",
+      "finish_reason": "stop"
+    },
+    {
+      "index": 15,
+      "qid": "D2-DATA",
+      "arm": "B1",
+      "source_utf8_bytes": 8259,
+      "source_proxy_tokens": 2110,
+      "prompt_tokens_recorded": 2403,
+      "completion_tokens_recorded": 109,
+      "total_tokens_recorded": 2512,
+      "response_sha256": "f16d8d412b94be3e4751e991eb22c9dcb09ef05806e64b1276bd986f1c4d8ea9",
+      "request_max_output": 2048,
+      "request_model": "deepseek-v4-pro",
+      "response_model": "deepseek-v4-pro",
+      "finish_reason": "stop"
+    },
+    {
+      "index": 16,
+      "qid": "D2-DATA",
+      "arm": "B2",
+      "source_utf8_bytes": 788,
+      "source_proxy_tokens": 189,
+      "prompt_tokens_recorded": 338,
+      "completion_tokens_recorded": 79,
+      "total_tokens_recorded": 417,
+      "response_sha256": "dc1583adea62cb03325f9246d58ffd6fe2b587897c91e7b04310d521e823e527",
+      "request_max_output": 2048,
+      "request_model": "deepseek-v4-pro",
+      "response_model": "deepseek-v4-pro",
+      "finish_reason": "stop"
+    },
+    {
+      "index": 17,
+      "qid": "D2-DATA",
+      "arm": "B3",
+      "source_utf8_bytes": 626,
+      "source_proxy_tokens": 153,
+      "prompt_tokens_recorded": 269,
+      "completion_tokens_recorded": 48,
+      "total_tokens_recorded": 317,
+      "response_sha256": "bc7b45d40830e8ad860935b6e072add34be5a8bdc91b84c4199cc2273900aa35",
+      "request_max_output": 2048,
+      "request_model": "deepseek-v4-pro",
+      "response_model": "deepseek-v4-pro",
+      "finish_reason": "stop"
+    },
+    {
+      "index": 18,
+      "qid": "D2-NONE",
+      "arm": "B1",
+      "source_utf8_bytes": 8264,
+      "source_proxy_tokens": 2011,
+      "prompt_tokens_recorded": 2357,
+      "completion_tokens_recorded": 16,
+      "total_tokens_recorded": 2373,
+      "response_sha256": "564a65fc555de3d57fee3a91e56a9d332e42801b6a47e5c96b74ab7836a30c4c",
+      "request_max_output": 2048,
+      "request_model": "deepseek-v4-pro",
+      "response_model": "deepseek-v4-pro",
+      "finish_reason": "stop"
+    },
+    {
+      "index": 19,
+      "qid": "D2-NONE",
+      "arm": "B2",
+      "source_utf8_bytes": 1448,
+      "source_proxy_tokens": 358,
+      "prompt_tokens_recorded": 515,
+      "completion_tokens_recorded": 15,
+      "total_tokens_recorded": 530,
+      "response_sha256": "53126f55d560f3026aa17d041c7e296e2a410f30c4629f060db5bb031ae8654e",
+      "request_max_output": 2048,
+      "request_model": "deepseek-v4-pro",
+      "response_model": "deepseek-v4-pro",
+      "finish_reason": "stop"
+    },
+    {
+      "index": 20,
+      "qid": "D2-NONE",
+      "arm": "B3",
+      "source_utf8_bytes": 1233,
+      "source_proxy_tokens": 306,
+      "prompt_tokens_recorded": 393,
+      "completion_tokens_recorded": 15,
+      "total_tokens_recorded": 408,
+      "response_sha256": "31afcad2de3c452e97a9ba65850fec0c2ca5e3a9c0bee23c5d23b004ff96b94e",
+      "request_max_output": 2048,
+      "request_model": "deepseek-v4-pro",
+      "response_model": "deepseek-v4-pro",
+      "finish_reason": "stop"
+    },
+    {
+      "index": 21,
+      "qid": "D3-TOOLS",
+      "arm": "B1",
+      "source_utf8_bytes": 8468,
+      "source_proxy_tokens": 1891,
+      "prompt_tokens_recorded": 3754,
+      "completion_tokens_recorded": 277,
+      "total_tokens_recorded": 4031,
+      "response_sha256": "1a286fe89001ba7d82d05f82729e003ad33cb6c0b6e6043ea619b99dccce3ac9",
+      "request_max_output": 2048,
+      "request_model": "deepseek-v4-pro",
+      "response_model": "deepseek-v4-pro",
+      "finish_reason": "stop"
+    },
+    {
+      "index": 22,
+      "qid": "D3-TOOLS",
+      "arm": "B2",
+      "source_utf8_bytes": 568,
+      "source_proxy_tokens": 232,
+      "prompt_tokens_recorded": 394,
+      "completion_tokens_recorded": 221,
+      "total_tokens_recorded": 615,
+      "response_sha256": "8cf06d73af898369948b25691f48587d52eab25b8bb7c89542c071cf1e44085d",
+      "request_max_output": 2048,
+      "request_model": "deepseek-v4-pro",
+      "response_model": "deepseek-v4-pro",
+      "finish_reason": "stop"
+    },
+    {
+      "index": 23,
+      "qid": "D3-TOOLS",
+      "arm": "B3",
+      "source_utf8_bytes": 564,
+      "source_proxy_tokens": 233,
+      "prompt_tokens_recorded": 312,
+      "completion_tokens_recorded": 106,
+      "total_tokens_recorded": 418,
+      "response_sha256": "7612bf4e7aebb94d50d11653b6fa8b95518107dd0969803adeee299ebcd9b0e8",
+      "request_max_output": 2048,
+      "request_model": "deepseek-v4-pro",
+      "response_model": "deepseek-v4-pro",
+      "finish_reason": "stop"
+    },
+    {
+      "index": 24,
+      "qid": "D3-SUPERVISOR",
+      "arm": "B1",
+      "source_utf8_bytes": 8439,
+      "source_proxy_tokens": 1886,
+      "prompt_tokens_recorded": 3478,
+      "completion_tokens_recorded": 170,
+      "total_tokens_recorded": 3648,
+      "response_sha256": "61b93d92a9f009e5b74d93d10c3373defd5f3047c70d2fa5eb6183c5b5bd98a8",
+      "request_max_output": 2048,
+      "request_model": "deepseek-v4-pro",
+      "response_model": "deepseek-v4-pro",
+      "finish_reason": "stop"
+    },
+    {
+      "index": 25,
+      "qid": "D3-SUPERVISOR",
+      "arm": "B2",
+      "source_utf8_bytes": 284,
+      "source_proxy_tokens": 67,
+      "prompt_tokens_recorded": 243,
+      "completion_tokens_recorded": 168,
+      "total_tokens_recorded": 411,
+      "response_sha256": "13231055e1a444cfac725db1cae7ea13dfb41c3a1828c09abfc977e3ae1c58c1",
+      "request_max_output": 2048,
+      "request_model": "deepseek-v4-pro",
+      "response_model": "deepseek-v4-pro",
+      "finish_reason": "stop"
+    },
+    {
+      "index": 26,
+      "qid": "D3-SUPERVISOR",
+      "arm": "B3",
+      "source_utf8_bytes": 283,
+      "source_proxy_tokens": 68,
+      "prompt_tokens_recorded": 194,
+      "completion_tokens_recorded": 93,
+      "total_tokens_recorded": 287,
+      "response_sha256": "bb5204f4093d833a227a9fdc2d526e255a6d8f33a0301507c58835a18a2d76da",
+      "request_max_output": 2048,
+      "request_model": "deepseek-v4-pro",
+      "response_model": "deepseek-v4-pro",
+      "finish_reason": "stop"
+    }
+  ],
+  "historical_arm_summary": [
+    {
+      "arm": "B1",
+      "n": 9,
+      "prompt_min": 2357,
+      "prompt_median": 2906,
+      "prompt_max": 3754,
+      "completion_max": 507,
+      "total_sum": 27769
+    },
+    {
+      "arm": "B2",
+      "n": 9,
+      "prompt_min": 243,
+      "prompt_median": 461,
+      "prompt_max": 876,
+      "completion_max": 316,
+      "total_sum": 5830
+    },
+    {
+      "arm": "B3",
+      "n": 9,
+      "prompt_min": 194,
+      "prompt_median": 390,
+      "prompt_max": 818,
+      "completion_max": 356,
+      "total_sum": 5134
+    }
+  ],
+  "legacy_scope_resolution": "ORACLE_RESOLVED_B2_B3_NOT_AUTOMATIC_ROUTING",
+  "legacy_budget_type": "UTF8_BYTES_NOT_TOKENS",
+  "historical_usage_is_new_v2_or_scan_experiment": false,
+  "generator_tokenizer": "UNAVAILABLE_NOT_IDENTIFIED",
+  "execution_budget_frozen": false,
+  "new_model_calls": 0,
+  "network_calls": 0,
+  "candidate_body_extraction": false,
+  "source_drift": [],
+  "guards_before_and_after": {
+    "docs\\superpowers\\plans\\scope-pilot\\gold-review-v2\\gold-v2.yaml": {
+      "before": "1b5aa18287aa6f39160acf580082a460b054b77b7b29e75bc9e566b8280a3619",
+      "after": "1b5aa18287aa6f39160acf580082a460b054b77b7b29e75bc9e566b8280a3619"
+    },
+    "docs\\superpowers\\plans\\scope-pilot\\api-runs\\20261007-live-v1\\plan.json": {
+      "before": "82d15a0ce8f687b40c6bb50d854f8933382c7478bc8a1b2bb6b4a556bfa13efe",
+      "after": "82d15a0ce8f687b40c6bb50d854f8933382c7478bc8a1b2bb6b4a556bfa13efe"
+    },
+    "backend\\output\\docs_store.json": {
+      "before": "d8c9e077356d2f46c2c2ae4ba7585b6a6b57bb7c360dc46844fe1d0eac52f5d9",
+      "after": "d8c9e077356d2f46c2c2ae4ba7585b6a6b57bb7c360dc46844fe1d0eac52f5d9"
+    },
+    "C:\\Users\\14156\\.cache\\huggingface\\hub\\models--BAAI--bge-m3\\snapshots\\5617a9f61b028005a4858fdac845db406aefb181\\tokenizer.json": {
+      "before": "21106b6d7dab2952c1d496fb21d5dc9db75c28ed361a05f5020bbba27810dd08",
+      "after": "21106b6d7dab2952c1d496fb21d5dc9db75c28ed361a05f5020bbba27810dd08"
+    },
+    "docs\\superpowers\\plans\\scope-pilot\\api-runs\\20261007-live-v1\\000-response.json": {
+      "before": "fd6840ce07781c502e59b265a1395c709a8d0bc2020b2bdea7d33fb2853c95fa",
+      "after": "fd6840ce07781c502e59b265a1395c709a8d0bc2020b2bdea7d33fb2853c95fa"
+    },
+    "docs\\superpowers\\plans\\scope-pilot\\api-runs\\20261007-live-v1\\001-response.json": {
+      "before": "9e43833e108e7753d658d0c044cdda6591b7ddf60be1bfd616b9bd2da667f6dc",
+      "after": "9e43833e108e7753d658d0c044cdda6591b7ddf60be1bfd616b9bd2da667f6dc"
+    },
+    "docs\\superpowers\\plans\\scope-pilot\\api-runs\\20261007-live-v1\\002-response.json": {
+      "before": "751c71e5d4b467d3251febe55c633d44f5b91babb4fb8300d3d827c0c2436768",
+      "after": "751c71e5d4b467d3251febe55c633d44f5b91babb4fb8300d3d827c0c2436768"
+    },
+    "docs\\superpowers\\plans\\scope-pilot\\api-runs\\20261007-live-v1\\003-response.json": {
+      "before": "b65df1fade287fa5c7213695ddde469e1c5309bfd1b3d350db09a037c1467d7c",
+      "after": "b65df1fade287fa5c7213695ddde469e1c5309bfd1b3d350db09a037c1467d7c"
+    },
+    "docs\\superpowers\\plans\\scope-pilot\\api-runs\\20261007-live-v1\\004-response.json": {
+      "before": "91aeabc16d2e20c65bdf0bb961caffe7d4d5db2c84ae8e4e947d7525689524ba",
+      "after": "91aeabc16d2e20c65bdf0bb961caffe7d4d5db2c84ae8e4e947d7525689524ba"
+    },
+    "docs\\superpowers\\plans\\scope-pilot\\api-runs\\20261007-live-v1\\005-response.json": {
+      "before": "470b2feb1e1a7e289bc983fb71591181da4c518a9e9a2e23b202348e8587ec02",
+      "after": "470b2feb1e1a7e289bc983fb71591181da4c518a9e9a2e23b202348e8587ec02"
+    },
+    "docs\\superpowers\\plans\\scope-pilot\\api-runs\\20261007-live-v1\\006-response.json": {
+      "before": "bad724591ae56152d45fcec83fa8b2f5597dd0e72b42fcc138eee5af2a473bcb",
+      "after": "bad724591ae56152d45fcec83fa8b2f5597dd0e72b42fcc138eee5af2a473bcb"
+    },
+    "docs\\superpowers\\plans\\scope-pilot\\api-runs\\20261007-live-v1\\007-response.json": {
+      "before": "d07ad71937d33b93fa55ffe7d25cb47e1c95b4a96f20d74b710d959f613d1a6e",
+      "after": "d07ad71937d33b93fa55ffe7d25cb47e1c95b4a96f20d74b710d959f613d1a6e"
+    },
+    "docs\\superpowers\\plans\\scope-pilot\\api-runs\\20261007-live-v1\\008-response.json": {
+      "before": "11ff83861f885ac1a9267416100daae0de5dd89efaab61de56190537551187c3",
+      "after": "11ff83861f885ac1a9267416100daae0de5dd89efaab61de56190537551187c3"
+    },
+    "docs\\superpowers\\plans\\scope-pilot\\api-runs\\20261007-live-v1\\009-response.json": {
+      "before": "7ca42016263134ea8afd1729b468f0dd81d3f5f269036256256e292bcb34ba3c",
+      "after": "7ca42016263134ea8afd1729b468f0dd81d3f5f269036256256e292bcb34ba3c"
+    },
+    "docs\\superpowers\\plans\\scope-pilot\\api-runs\\20261007-live-v1\\010-response.json": {
+      "before": "ab7d06fcda27040a5cec01ba76b96eb348190981cd2e5d4c36e54497374a0d1c",
+      "after": "ab7d06fcda27040a5cec01ba76b96eb348190981cd2e5d4c36e54497374a0d1c"
+    },
+    "docs\\superpowers\\plans\\scope-pilot\\api-runs\\20261007-live-v1\\011-response.json": {
+      "before": "c27d4836acfde979c9ebd871033024a17b023570248d2f9839b7e3a0f49f1538",
+      "after": "c27d4836acfde979c9ebd871033024a17b023570248d2f9839b7e3a0f49f1538"
+    },
+    "docs\\superpowers\\plans\\scope-pilot\\api-runs\\20261007-live-v1\\012-response.json": {
+      "before": "b88668c6fc9a87fbfa3e9f287495d054a1d5076b48dc72c7efd0cc10777432ff",
+      "after": "b88668c6fc9a87fbfa3e9f287495d054a1d5076b48dc72c7efd0cc10777432ff"
+    },
+    "docs\\superpowers\\plans\\scope-pilot\\api-runs\\20261007-live-v1\\013-response.json": {
+      "before": "c7ea3c9970434b7af8bb177337393892c14607a97dffbabf8a01a99e7fddf5a7",
+      "after": "c7ea3c9970434b7af8bb177337393892c14607a97dffbabf8a01a99e7fddf5a7"
+    },
+    "docs\\superpowers\\plans\\scope-pilot\\api-runs\\20261007-live-v1\\014-response.json": {
+      "before": "42ce8671cc11620372cc50504d69120daffd08ce27e32784e992dcdab014d5eb",
+      "after": "42ce8671cc11620372cc50504d69120daffd08ce27e32784e992dcdab014d5eb"
+    },
+    "docs\\superpowers\\plans\\scope-pilot\\api-runs\\20261007-live-v1\\015-response.json": {
+      "before": "f16d8d412b94be3e4751e991eb22c9dcb09ef05806e64b1276bd986f1c4d8ea9",
+      "after": "f16d8d412b94be3e4751e991eb22c9dcb09ef05806e64b1276bd986f1c4d8ea9"
+    },
+    "docs\\superpowers\\plans\\scope-pilot\\api-runs\\20261007-live-v1\\016-response.json": {
+      "before": "dc1583adea62cb03325f9246d58ffd6fe2b587897c91e7b04310d521e823e527",
+      "after": "dc1583adea62cb03325f9246d58ffd6fe2b587897c91e7b04310d521e823e527"
+    },
+    "docs\\superpowers\\plans\\scope-pilot\\api-runs\\20261007-live-v1\\017-response.json": {
+      "before": "bc7b45d40830e8ad860935b6e072add34be5a8bdc91b84c4199cc2273900aa35",
+      "after": "bc7b45d40830e8ad860935b6e072add34be5a8bdc91b84c4199cc2273900aa35"
+    },
+    "docs\\superpowers\\plans\\scope-pilot\\api-runs\\20261007-live-v1\\018-response.json": {
+      "before": "564a65fc555de3d57fee3a91e56a9d332e42801b6a47e5c96b74ab7836a30c4c",
+      "after": "564a65fc555de3d57fee3a91e56a9d332e42801b6a47e5c96b74ab7836a30c4c"
+    },
+    "docs\\superpowers\\plans\\scope-pilot\\api-runs\\20261007-live-v1\\019-response.json": {
+      "before": "53126f55d560f3026aa17d041c7e296e2a410f30c4629f060db5bb031ae8654e",
+      "after": "53126f55d560f3026aa17d041c7e296e2a410f30c4629f060db5bb031ae8654e"
+    },
+    "docs\\superpowers\\plans\\scope-pilot\\api-runs\\20261007-live-v1\\020-response.json": {
+      "before": "31afcad2de3c452e97a9ba65850fec0c2ca5e3a9c0bee23c5d23b004ff96b94e",
+      "after": "31afcad2de3c452e97a9ba65850fec0c2ca5e3a9c0bee23c5d23b004ff96b94e"
+    },
+    "docs\\superpowers\\plans\\scope-pilot\\api-runs\\20261007-live-v1\\021-response.json": {
+      "before": "1a286fe89001ba7d82d05f82729e003ad33cb6c0b6e6043ea619b99dccce3ac9",
+      "after": "1a286fe89001ba7d82d05f82729e003ad33cb6c0b6e6043ea619b99dccce3ac9"
+    },
+    "docs\\superpowers\\plans\\scope-pilot\\api-runs\\20261007-live-v1\\022-response.json": {
+      "before": "8cf06d73af898369948b25691f48587d52eab25b8bb7c89542c071cf1e44085d",
+      "after": "8cf06d73af898369948b25691f48587d52eab25b8bb7c89542c071cf1e44085d"
+    },
+    "docs\\superpowers\\plans\\scope-pilot\\api-runs\\20261007-live-v1\\023-response.json": {
+      "before": "7612bf4e7aebb94d50d11653b6fa8b95518107dd0969803adeee299ebcd9b0e8",
+      "after": "7612bf4e7aebb94d50d11653b6fa8b95518107dd0969803adeee299ebcd9b0e8"
+    },
+    "docs\\superpowers\\plans\\scope-pilot\\api-runs\\20261007-live-v1\\024-response.json": {
+      "before": "61b93d92a9f009e5b74d93d10c3373defd5f3047c70d2fa5eb6183c5b5bd98a8",
+      "after": "61b93d92a9f009e5b74d93d10c3373defd5f3047c70d2fa5eb6183c5b5bd98a8"
+    },
+    "docs\\superpowers\\plans\\scope-pilot\\api-runs\\20261007-live-v1\\025-response.json": {
+      "before": "13231055e1a444cfac725db1cae7ea13dfb41c3a1828c09abfc977e3ae1c58c1",
+      "after": "13231055e1a444cfac725db1cae7ea13dfb41c3a1828c09abfc977e3ae1c58c1"
+    },
+    "docs\\superpowers\\plans\\scope-pilot\\api-runs\\20261007-live-v1\\026-response.json": {
+      "before": "bb5204f4093d833a227a9fdc2d526e255a6d8f33a0301507c58835a18a2d76da",
+      "after": "bb5204f4093d833a227a9fdc2d526e255a6d8f33a0301507c58835a18a2d76da"
+    },
+    "backend\\output\\mineru\\ingest_2\\full.md": {
+      "before": "f0e2b044ec0f8be55b1c00d9479830f6768a5da9970111a7db0353d59097a0d6",
+      "after": "f0e2b044ec0f8be55b1c00d9479830f6768a5da9970111a7db0353d59097a0d6"
+    },
+    "backend\\output\\mineru\\ingest_f\\full.md": {
+      "before": "ab7cdd99e8cd85ddd61e3d65e4e747685a25a62d22f68bed3e2d79d015e90623",
+      "after": "ab7cdd99e8cd85ddd61e3d65e4e747685a25a62d22f68bed3e2d79d015e90623"
+    },
+    "integration\\Agentic-RAG-Architecture.md": {
+      "before": "d0c64333bf10c761fef29bc1d9e002656f3968e720e176e92b8a18eb4a1e8e72",
+      "after": "d0c64333bf10c761fef29bc1d9e002656f3968e720e176e92b8a18eb4a1e8e72"
+    }
+  }
+}

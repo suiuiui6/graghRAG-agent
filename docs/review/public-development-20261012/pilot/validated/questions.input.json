@@ -1,0 +1,38 @@
+[
+  {
+    "question_id": "DEV-L01",
+    "source_id": "LCNC-HOME",
+    "question": "按第6节 Configuration 开头的表格，列出全部回零类型，并分别给出 HOME_SEARCH_VEL、HOME_LATCH_VEL、HOME_USE_INDEX 的取值。",
+    "range_condition": "scope_given"
+  },
+  {
+    "question_id": "DEV-L02",
+    "source_id": "LCNC-HOME",
+    "question": "在6.10 HOME_ABSOLUTE_ENCODER 中，列出枚举代码中的设置值及其行为，并列出该节Note说明的静默忽略行为。",
+    "range_condition": "scope_given"
+  },
+  {
+    "question_id": "DEV-L03",
+    "source_id": "LCNC-HOME",
+    "question": "仅依据6.1–6.3，列出三个速度参数的单位和数值默认值；若没有给出数值默认值，写出未设置时的行为。对 HOME_FINAL_VEL 补充允许的取值条件。对 HOME_SEARCH_VEL，另说明零值对搜索阶段的影响。",
+    "range_condition": "scope_given"
+  },
+  {
+    "question_id": "DEV-L04",
+    "source_id": "LCNC-HOME",
+    "question": "列出6.11为三关节系统给出的全部示例，按顺序给出三个 HOME_SEQUENCE 值，并说明哪些关节同步最终移动。",
+    "range_condition": "scope_given"
+  },
+  {
+    "question_id": "DEV-L05",
+    "source_id": "LCNC-HOME",
+    "question": "列出6.14 Immediate Homing 代码块中的全部配置及其给定值或允许替代值，并说明省略 HOME_SEQUENCE 对 HOME ALL 的影响。",
+    "range_condition": "scope_given"
+  },
+  {
+    "question_id": "DEV-N01",
+    "source_id": "NIST-8091",
+    "question": "在NISTIR 8091第3节中，引出子系统所需度量的列表列出了哪些类别？为每类保留括号中全部示例或判定要点，并说明该列表是否声称穷尽全部度量。",
+    "range_condition": "scope_given"
+  }
+]

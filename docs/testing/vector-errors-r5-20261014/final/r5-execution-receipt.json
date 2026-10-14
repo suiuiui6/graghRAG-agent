@@ -1,0 +1,39 @@
+{
+  "utc": "2026-10-14T09:06:40.105590+00:00",
+  "inputs": {
+    "docs\\contracts\\2026-10-14-vector-error-semantics.md": "dcfc66e6d97fb95478a4341225b95330626d53c9a46d7668b5f0ab49c6262051",
+    "docs\\plans\\2026-10-14-vector-error-fix.md": "c9ab9cdc52ef2485881ba35a7a23fb5ff04898a0e041828156476ee28568d494",
+    "docs\\review\\2026-10-14-vector-error-consumer-audit.md": "ce21121273f6fe72a63db04115fbad21782b65ebc0901cbb2732471678b93380",
+    "docs\\review\\2026-10-14-vector-errors-design-review.md": "2c1cf02d7399a9e23900e8a0465bbddb1f3473908a4a581598a9d2068e98a54d",
+    ".tmp\\vector-errors-testenv-20261014\\pyproject.toml": "85e4b0b8bdbb189fd794694f89b8d9a4eb1991bc882e5837ee9c997f615b13e2",
+    ".tmp\\vector-errors-testenv-20261014\\uv.lock": "28d9b74c05eca7f5d5f8378a8415594e00b2e0adc2757ac6239c996ece03525b",
+    ".tmp\\vector-errors-testenv-20261014\\runtime-pins.json": "e0621885e14ac9cf5a2536eed88372ac7aed6f50bbae029a1cdf3f3675af1c52"
+  },
+  "commands": [
+    {
+      "command": ".tmp/vector-replacement-mvp-20261013/.venv/Scripts/python.exe .tmp/vector-errors-r5-20261014/red_contract.py",
+      "exit": 1,
+      "kind": "red before implementation"
+    },
+    {
+      "command": ".tmp/vector-replacement-mvp-20261013/.venv/Scripts/python.exe .tmp/vector-errors-r5-20261014/execute_r4b.py green",
+      "exit": 0,
+      "kind": "old full specialized regressions"
+    },
+    {
+      "command": ".tmp/backend-quality-venv-20261012/Scripts/python.exe .tmp/vector-errors-r5-20261014/chroma_errors.py",
+      "exit": 0,
+      "kind": "real Chroma 15 native observations"
+    },
+    {
+      "command": ".tmp/vector-errors-testenv-20261014/.venv/Scripts/python.exe .tmp/vector-errors-r5-20261014/test_errors.py",
+      "exit": 0,
+      "kind": "5 unittest groups; real Lance+consumer AST+real logging processors"
+    }
+  ],
+  "offline_env": {
+    "PYTHON_DOTENV_DISABLED": "1",
+    "HF_HUB_OFFLINE": "1"
+  },
+  "review": "PENDING; candidate snapshot, not approval"
+}

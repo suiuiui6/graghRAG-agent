@@ -1,0 +1,124 @@
+{
+  "overall": "BLOCKED_SECURITY_AND_RELEASE_VALIDATION",
+  "execution_mode": "audit-only-windows",
+  "backend": {
+    "production_files": 90,
+    "pytest_exit": 0,
+    "coverage_export_exit": 0,
+    "lines": {
+      "covered": 12698,
+      "total": 13568,
+      "percent": 93.58785377358491,
+      "passed": true
+    },
+    "branches": {
+      "covered": 4154,
+      "total": 4584,
+      "percent": 90.6195462478185,
+      "passed": true
+    },
+    "snapshot_stable": true,
+    "protected_artifacts_stable": true,
+    "current_input_drift": [],
+    "snapshot_sha256": "54fdbfdbf20799812290a7eb4988a0d4c0091ae141c4fa99dc276511b24709c9"
+  },
+  "frontend": {
+    "production_files": 29,
+    "lines": {
+      "covered": 927,
+      "total": 957,
+      "percent": 96.86520376175548,
+      "passed": true
+    },
+    "branches": {
+      "covered": 853,
+      "total": 913,
+      "percent": 93.42825848849945,
+      "passed": true
+    },
+    "current_input_drift": []
+  },
+  "rag_eval": {
+    "production_files": 12,
+    "lines": {
+      "covered": 1722,
+      "total": 1742,
+      "percent": 98.85189437428244,
+      "passed": true
+    },
+    "branches": {
+      "covered": 415,
+      "total": 440,
+      "percent": 94.31818181818181,
+      "passed": true
+    },
+    "evidence": "docs/testing/rag-eval-readiness-20261013/",
+    "current_input_drift": []
+  },
+  "backend_dependency_findings": [
+    {
+      "package": "chromadb",
+      "version": "1.5.9",
+      "id": "PYSEC-2026-311",
+      "fix_versions": [],
+      "aliases": [
+        "GHSA-f4j7-r4q5-qw2c",
+        "CVE-2026-45829"
+      ],
+      "description": "A pre-authentication, code injection vulnerability in version 1.0.0 or later of the ChromaDB Python project allows an unauthenticated attacker to run arbitrary code on the server by sending a malicious model repository and trust_remote_code set to true in the /api/v2/tenants/{tenant}/databases/{db}/collections endpoint."
+    },
+    {
+      "package": "chromadb",
+      "version": "1.5.9",
+      "id": "PYSEC-2026-311",
+      "fix_versions": [],
+      "aliases": [
+        "GHSA-f4j7-r4q5-qw2c",
+        "CVE-2026-45829"
+      ],
+      "description": "A pre-authentication, code injection vulnerability in version 1.0.0 or later of the ChromaDB Python project allows an unauthenticated attacker to run arbitrary code on the server by sending a malicious model repository and trust_remote_code set to true in the /api/v2/tenants/{tenant}/databases/{db}/collections endpoint."
+    },
+    {
+      "package": "chromadb",
+      "version": "1.5.9",
+      "id": "PYSEC-2026-3814",
+      "fix_versions": [],
+      "aliases": [
+        "GHSA-36p7-vc44-83pf",
+        "CVE-2026-45833"
+      ],
+      "description": "A code injection vulnerability in version 0.4.17 or later of the ChromaDB Python project allows an authenticated attacker to run arbitrary code on the server by sending a malicious model repository and trust_remote_code set to true in the /api/v2/tenants/default_tenant/databases/default_database/collections/{collection_id} if they have the UPDATE_COLLECTION permission."
+    },
+    {
+      "package": "chromadb",
+      "version": "1.5.9",
+      "id": "PYSEC-2026-3815",
+      "fix_versions": [],
+      "aliases": [
+        "CVE-2026-45831",
+        "GHSA-xph7-9rjv-w5fr"
+      ],
+      "description": "The SimpleRBACAuthorizationProvider authorization provider in versions 0.5.0 or later of the ChromaDB Python project evaluates whether a user holds a given permission but never checks which tenant, database, or collection that permission applies to allowing users to perform cross tenant actions."
+    },
+    {
+      "package": "chromadb",
+      "version": "1.5.9",
+      "id": "PYSEC-2026-3813",
+      "fix_versions": [],
+      "aliases": [
+        "CVE-2026-45830",
+        "GHSA-2wm9-hf6c-p5cr"
+      ],
+      "description": "A lack of authorization validation in version 0.4.17 or later of the ChromaDB Python project allows any authenticated users to arbitrarily read, write, update, or delete data in any tenant's collection regardless of which tenant they belong to."
+    }
+  ],
+  "limitations": [
+    "Chroma advisories have not been patched; no vulnerability ignores were added.",
+    "Research freeze drift remains a separate failed experiment-admission gate.",
+    "Real provider acceptance, Docker images and remote CI/protection have not been verified.",
+    "Independent local review passed its recorded scope; it does not replace release acceptance."
+  ],
+  "committed": false,
+  "pushed": false,
+  "deployed": false
+}

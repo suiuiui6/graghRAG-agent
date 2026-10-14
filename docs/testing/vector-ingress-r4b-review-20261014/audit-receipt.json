@@ -1,0 +1,16 @@
+{
+  "utc": "2026-10-14T08:31:57.103019+00:00",
+  "manifest_sha256": "82dbe6ed1397bc348ecfa8c4429270d5942431ef0763bd5eedbbaa9f7dd6fbe6",
+  "frozen_files_verified": 110,
+  "old_r4_files_verified": 81,
+  "parser_sha256": "18a85b55345caa9ce4ac7ea2e344cedc9561cdda8c1c0eb6824499b3a629753d",
+  "helper_sha256": "ee9765916d41550a204dc39ec60dfd2cd0dc277b0db258199ebbc38b837e1df6",
+  "seed": 202610141731,
+  "parser_differentials": 9226,
+  "float_query_samples": 4096,
+  "float_record_samples": 4096,
+  "integer_samples": 1024,
+  "boundary_samples": 10,
+  "differences": [],
+  "helper_exit_code": 0
+}

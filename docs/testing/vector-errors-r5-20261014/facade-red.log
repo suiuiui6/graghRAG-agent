@@ -1,0 +1,43 @@
+test_huge_vector (__main__.Facade.test_huge_vector) ... ERROR
+test_scores (__main__.Facade.test_scores) ... FAIL
+
+======================================================================
+ERROR: test_huge_vector (__main__.Facade.test_huge_vector)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\graghRAG-agent\.tmp\vector-errors-r5-20261014\test_facade.py", line 14, in test_huge_vector
+    with self.assertRaises(VectorInputError) as e:s.search([10**309,0,0])
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\graghRAG-agent\.tmp\vector-errors-r5-20261014\probe_store.py", line 34, in search
+    validate_vector(query_vector,'search')
+  File "D:\graghRAG-agent\.tmp\vector-errors-r5-20261014\probe_store.py", line 14, in validate_vector
+    if any(type(v) not in (int,float) or not math.isfinite(v) for v in vector):raise VectorInputError('invalid_input',operation)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\graghRAG-agent\.tmp\vector-errors-r5-20261014\probe_store.py", line 14, in <genexpr>
+    if any(type(v) not in (int,float) or not math.isfinite(v) for v in vector):raise VectorInputError('invalid_input',operation)
+                                             ^^^^^^^^^^^^^^^^
+OverflowError: int too large to convert to float
+
+======================================================================
+FAIL: test_scores (__main__.Facade.test_scores)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\graghRAG-agent\.tmp\vector-errors-r5-20261014\test_facade.py", line 10, in test_scores
+    self.assertEqual([(x['chunk_id'],x['score']) for x in got],[('same',1.),('orthogonal',.5),('opposite',0.)])
+AssertionError: Lists differ: [('same', 1.0), ('orthogonal', 0.0), ('opposite', -1.0)] != [('same', 1.0), ('orthogonal', 0.5), ('opposite', 0.0)]
+
+First differing element 1:
+('orthogonal', 0.0)
+('orthogonal', 0.5)
+
+- [('same', 1.0), ('orthogonal', 0.0), ('opposite', -1.0)]
+?                                  ^                ^^
+
++ [('same', 1.0), ('orthogonal', 0.5), ('opposite', 0.0)]
+?                                  ^                ^
+
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.082s
+
+FAILED (failures=1, errors=1)

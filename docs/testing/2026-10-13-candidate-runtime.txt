@@ -1,0 +1,13 @@
+{
+  "python": "3.12.8 (tags/v3.12.8:2dc476b, Dec  3 2024, 19:30:04) [MSC v.1942 64 bit (AMD64)]",
+  "executable": "D:\\graghRAG-agent\\.tmp\\backend-quality-venv-20261012\\Scripts\\python.exe",
+  "packages": {
+    "pytest": "9.1.1",
+    "pytest-timeout": "2.4.0",
+    "coverage": "7.6.12",
+    "chromadb": "1.5.9",
+    "pyjwt": "2.15.1",
+    "multidict": "6.9.1",
+    "oauthlib": "4.0.0"
+  }
+}

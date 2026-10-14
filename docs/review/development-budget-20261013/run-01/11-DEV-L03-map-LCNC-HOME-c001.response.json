@@ -1,0 +1,35 @@
+{
+  "status": "SUCCESS",
+  "http_status": 200,
+  "usage_known": true,
+  "provider_response": {
+    "id": "724c0027-c85b-416a-8f20-1c7bd7fe4c35",
+    "object": "chat.completion",
+    "created": 1791851012,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "根据提供的文档片段，6.1 节（HOME_SEARCH_VEL）的完整内容未包含在本片段中，因此其单位和数值默认值无法从本片段确认。以下仅列出本片段中可确认的信息。\n\n| 参数 | 单位 | 数值默认值 | 未设置时的行为 |\n|---|---|---|---|\n| HOME_SEARCH_VEL | 文档中未提及此信息（6.1 节内容不在本片段内） | 文档中未提及此信息（6.1 节内容不在本片段内） | 文档中未提及此信息（6.1 节内容不在本片段内） |\n| HOME_LATCH_VEL | 文档中未提及此信息（6.2 节内容不在本片段内） | 默认值为零 [LCNC-HOME-c001] | 文档中未提及此信息（6.2 节内容不在本片段内） |\n| HOME_FINAL_VEL | machine-units per second [LCNC-HOME-c001] | 文档中未提及此信息（未给出数值默认值） | 若 INI 文件中缺少 HOME_FINAL_VEL，则使用关节最大速度完成该移动 [LCNC-HOME-c001] |\n\n关于 HOME_FINAL_VEL 的允许取值条件：该值必须为正数 [LCNC-HOME-c001]。\n\n关于 HOME_SEARCH_VEL 的零值对搜索阶段的影响：当 HOME_SEARCH_VEL 为零时，整个搜索/锁存阶段被跳过 [LCNC-HOME-c001]。因此此时不会出现因锁存位置停止而产生的微小过冲移动 [LCNC-HOME-c001]。\n\n补充说明：本片段中出现的“默认值为零”一句位于 6.2 节末尾，其上下文为“H_VEL is non-zero and this parameter is zero, it is an error and the homing operation will fail” [LCNC-HOME-c001]，该句所指参数名称在本片段中被截断，无法确认其确切归属 [LCNC-HOME-c001]。"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3001,
+      "completion_tokens": 432,
+      "total_tokens": 3433,
+      "prompt_tokens_details": {
+        "cached_tokens": 768
+      },
+      "prompt_cache_hit_tokens": 768,
+      "prompt_cache_miss_tokens": 2233
+    },
+    "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+  },
+  "send_status": "HTTP_RESPONSE_RECEIVED",
+  "worker_elapsed_seconds": 3.2339999999967404
+}

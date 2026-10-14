@@ -1,0 +1,215 @@
+# Few-shot examples for LangExtract enterprise project report extraction
+# Entity types: project_metadata, person_role, process_step, metric,
+#   milestone, deliverable, risk_item, regulation_ref, department, timeline_event
+
+examples:
+  - text: >
+      XX智慧园区建设项目。项目编号：PJ-2026-042，项目负责人：张伟，
+      所属部门：数字化事业部。项目总预算5000万元，计划周期2026年1月至2027年6月。
+      当前阶段：中期建设。项目整体进度65%，预算执行率58%。
+    extractions:
+      - extraction_class: project_metadata
+        extraction_text: "XX智慧园区建设项目"
+        attributes:
+          project_id: "PJ-2026-042"
+          type: "园区建设"
+      - extraction_class: project_metadata
+        extraction_text: "PJ-2026-042"
+        attributes:
+          field: "project_id"
+      - extraction_class: person_role
+        extraction_text: "张伟"
+        attributes:
+          role: "项目负责人"
+          department: "数字化事业部"
+      - extraction_class: department
+        extraction_text: "数字化事业部"
+        attributes:
+          dept_name: "数字化事业部"
+          head: "张伟"
+      - extraction_class: metric
+        extraction_text: "5000万元"
+        attributes:
+          name: "项目总预算"
+          value: "5000"
+          unit: "万元"
+      - extraction_class: metric
+        extraction_text: "65%"
+        attributes:
+          name: "项目整体进度"
+          value: "65"
+          unit: "%"
+      - extraction_class: metric
+        extraction_text: "58%"
+        attributes:
+          name: "预算执行率"
+          value: "58"
+          unit: "%"
+      - extraction_class: timeline_event
+        extraction_text: "2026年1月"
+        attributes:
+          event_name: "项目启动"
+          date: "2026-01"
+      - extraction_class: timeline_event
+        extraction_text: "2027年6月"
+        attributes:
+          event_name: "计划完工"
+          date: "2027-06"
+
+  - text: >
+      变更管理流程说明。项目变更须先由项目经理填写《变更申请表》，
+      提交至部门负责人审批。单项变更金额超过100万元或影响关键里程碑的，
+      还需报项目管理办公室（PMO）复核。变更批准后，项目组需在5个工作日
+      内更新项目计划并通知相关干系人。依据《项目管理变更管理办法V3.2》。
+      本流程适用于所有A类项目。
+    extractions:
+      - extraction_class: process_step
+        extraction_text: "项目经理填写《变更申请表》"
+        attributes:
+          step_name: "变更申请"
+          order: "1"
+          role: "项目经理"
+      - extraction_class: process_step
+        extraction_text: "部门负责人审批"
+        attributes:
+          step_name: "变更审批"
+          order: "2"
+          approver: "部门负责人"
+          condition: "变更金额≤100万元"
+      - extraction_class: process_step
+        extraction_text: "项目管理办公室（PMO）复核"
+        attributes:
+          step_name: "PMO复核"
+          order: "3"
+          approver: "PMO"
+          condition: "变更金额>100万元或影响关键里程碑"
+      - extraction_class: process_step
+        extraction_text: "更新项目计划并通知相关干系人"
+        attributes:
+          step_name: "通知与更新"
+          deadline_days: "5"
+      - extraction_class: person_role
+        extraction_text: "项目经理"
+        attributes:
+          role: "项目经理"
+          responsibility: "填写变更申请表"
+      - extraction_class: person_role
+        extraction_text: "部门负责人"
+        attributes:
+          role: "部门负责人"
+          responsibility: "审批变更申请"
+      - extraction_class: regulation_ref
+        extraction_text: "《项目管理变更管理办法V3.2》"
+        attributes:
+          title: "项目管理变更管理办法"
+          version: "V3.2"
+      - extraction_class: metric
+        extraction_text: "100万元"
+        attributes:
+          name: "审批阈值"
+          value: "100"
+          unit: "万元"
+
+  - text: >
+      项目风险登记表。风险编号：RSK-2026-018，风险描述：核心设备
+      供应商交付延期，可能影响项目里程碑"设备安装调试"。风险等级：高。
+      发生概率：60%，影响程度：严重（预计延期45天）。缓解措施：
+      ①已联系备选供应商B公司进行产能评估；②项目组每周跟进供应商
+      生产进度；③提前启动非设备依赖的软件集成工作。责任人：李明。
+    extractions:
+      - extraction_class: risk_item
+        extraction_text: "核心设备供应商交付延期"
+        attributes:
+          risk_id: "RSK-2026-018"
+          level: "高"
+          probability: "60%"
+          impact: "严重"
+          expected_delay_days: "45"
+      - extraction_class: milestone
+        extraction_text: "设备安装调试"
+        attributes:
+          name: "设备安装调试"
+          status: "受威胁"
+      - extraction_class: person_role
+        extraction_text: "李明"
+        attributes:
+          role: "风险责任人"
+          responsibility: "缓解措施执行"
+      - extraction_class: process_step
+        extraction_text: "每周跟进供应商生产进度"
+        attributes:
+          step_name: "进度跟踪"
+          frequency: "每周"
+      - extraction_class: process_step
+        extraction_text: "提前启动非设备依赖的软件集成工作"
+        attributes:
+          step_name: "软件集成"
+          type: "并行提前"
+      - extraction_class: deliverable
+        extraction_text: "备选供应商B公司产能评估报告"
+        attributes:
+          name: "产能评估报告"
+          type: "分析报告"
+
+  - text: >
+      项目验收报告。XX智慧园区项目于2026年12月15日完成终验。
+      验收委员会由王刚（组长，集团副总裁）、赵丽（外部专家）、
+      陈强（客户代表）组成。验收结论：项目达到合同约定建设目标，
+      交付物完整。遗留问题：①园区西区视频监控覆盖不足（8个盲区），
+      需在2027年3月前补装；②运维文档部分章节需完善。
+      项目综合评分92.5分，质量等级：优秀。预算执行率84.2%，
+      较预期节余约790万元。
+    extractions:
+      - extraction_class: project_metadata
+        extraction_text: "XX智慧园区项目"
+        attributes:
+          project_id: "PJ-2026-042"
+          status: "已验收"
+      - extraction_class: person_role
+        extraction_text: "王刚"
+        attributes:
+          role: "验收组长"
+          title: "集团副总裁"
+      - extraction_class: person_role
+        extraction_text: "赵丽"
+        attributes:
+          role: "外部专家"
+      - extraction_class: person_role
+        extraction_text: "陈强"
+        attributes:
+          role: "客户代表"
+      - extraction_class: deliverable
+        extraction_text: "项目综合评分92.5分"
+        attributes:
+          name: "项目综合评分"
+          value: "92.5"
+          grade: "优秀"
+      - extraction_class: metric
+        extraction_text: "84.2%"
+        attributes:
+          name: "预算执行率"
+          value: "84.2"
+          unit: "%"
+      - extraction_class: metric
+        extraction_text: "790万元"
+        attributes:
+          name: "预算节余"
+          value: "790"
+          unit: "万元"
+      - extraction_class: milestone
+        extraction_text: "2026年12月15日完成终验"
+        attributes:
+          name: "终验"
+          planned_date: "2026-12-15"
+          status: "完成"
+      - extraction_class: risk_item
+        extraction_text: "园区西区视频监控覆盖不足（8个盲区）"
+        attributes:
+          risk_desc: "视频监控覆盖不足"
+          level: "中"
+          detail: "8个盲区"
+      - extraction_class: timeline_event
+        extraction_text: "2027年3月前补装"
+        attributes:
+          event_name: "监控盲区补装"
+          deadline: "2027-03"

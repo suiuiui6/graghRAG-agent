@@ -1,0 +1,35 @@
+{
+  "status": "SUCCESS",
+  "http_status": 200,
+  "usage_known": true,
+  "provider_response": {
+    "id": "7f100c28-39e4-4a64-9a52-da16f7f09a37",
+    "object": "chat.completion",
+    "created": 1791851066,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "文档中未提及此信息。\n\n所提供的摘录（NIST-8091-c004，Unicode 范围 [32000,40000)）涵盖的是第 3 节末尾的示例讨论、第 4 节“Discussion”、第 5 节“Conclusions”以及参考文献开头部分 [NIST-8091-c004]。该摘录中并未出现“引出子系统所需度量的列表”或任何列出度量类别的清单 [NIST-8091-c004]。因此，无法从本摘录中提取所请求的类别、括号中的示例或判定要点，也无法判断该列表是否声称穷尽全部度量 [NIST-8091-c004]。\n\n注意：结构索引中列出的“3. Approach”等标题仅为导航元数据，不构成事实证据，且本摘录未包含第 3 节中可能存在的该类列表内容 [NIST-8091-c004]。"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2795,
+      "completion_tokens": 192,
+      "total_tokens": 2987,
+      "prompt_tokens_details": {
+        "cached_tokens": 896
+      },
+      "prompt_cache_hit_tokens": 896,
+      "prompt_cache_miss_tokens": 1899
+    },
+    "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+  },
+  "send_status": "HTTP_RESPONSE_RECEIVED",
+  "worker_elapsed_seconds": 2.5
+}

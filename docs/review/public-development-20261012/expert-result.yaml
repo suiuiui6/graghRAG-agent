@@ -1,0 +1,56 @@
+contract_version: '1.0'
+expert_skill: sci-skills-web-data-acquisition
+project_id: graphrag-paper-001
+paper_family: M
+stage_id: M2
+task_id: PUBLIC-DEV-SOURCES-20261012
+task_status: PROVISIONAL
+inputs_reviewed:
+- 既有材料授权/不足结论由协调者提供，未独立读企业正文
+- 本地专家SKILL/core/playbook/采集参考
+- Industrial-Instruction论文、HF卡片/QA预览/文件树、作者仓库、FAISS页面
+- TechManualQA Zenodo/包目录、仓库/脚本/生成提示及厂家链接小样
+- QASPER官方发布、Doc2Dial官方schema
+outputs:
+- 开放工业完整正文+补标优先，TechManualQA辅助，Industrial-Instruction工业片段对照。
+- 研究字段映射、3份完整来源12–18题pilot计划，尚未执行。
+- MCQ/短片段不等于集合穷尽Gold。
+evidence_status:
+- VERIFIED_SOURCE：官方网页/公开样本/包目录与作者代码，2026-10-12。
+- AI_INFERENCE：适配与路线排序，LinuxCNC/NIST由协调者核查。
+- PENDING_VERIFICATION：pana_v0_0目录与原PDF、真实文档分割重叠、厂家权利。
+- NOT_EXECUTED：原文件下载、实际JSONL审计、清洗、模型或统计实验。
+assumptions:
+- 维持制造与长范围结构目标，不以通用QA替代。
+- 任务只做来源筛选与网页schema检查。
+author_input_needed: []
+manual_actions: []
+quality_checks:
+- INSUFFICIENT针对缺失技术手册/开放可复现材料，非任意样本量门槛。
+- 未下载全库/运行模型/配置接口/读企业正文/写文件。
+- 随机QA分割不当文档隔离。
+- 700QA与20手册仅发布声明，不当独立核实记录。
+- 审计子集人工标签不当全量人工逐条认证。
+conflicts:
+- conflict_id: TMQ-MANUAL-COUNT
+  type: source_internal
+  claim: 源手册数量
+  source_or_locator: Zenodo description vs create_zenodo_archive.py generated README
+  competing_values_or_interpretations:
+  - '20'
+  - '10'
+  recommended_resolution: 核对发布JSONL doc_name与手册映射，原声明分别保留。
+- conflict_id: TMQ-LENOVO-IDENTITY
+  type: source_link_mismatch
+  claim: 手册标签与链接正文身份
+  source_or_locator: Covered Manuals ThinkPad X1 link -> tc_x1_ug_en.pdf
+  competing_values_or_interpretations:
+  - ThinkPad X1
+  - ThinkCentre X1
+  recommended_resolution: 以封面/版本与真实QA doc_name对齐。
+conflict_resolution_status: UNRESOLVED
+merge_permission: orchestrator_only
+recommended_next_action: 合并LinuxCNC/NIST核查后做原文pilot，不推进M2。
+stage_acceptance_recommendation: NOT_ASSESSED
+coordinator_acceptance: VERIFIED_FOR_SOURCE_SCREENING_ONLY; conflicts retained, neither
+  dataset admitted as primary corpus

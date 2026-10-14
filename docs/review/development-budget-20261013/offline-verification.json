@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "network_calls": 0,
+  "real_credentials_read": false,
+  "checks": [
+    {
+      "check": "foreign_origin_blocked",
+      "status": "PASS"
+    },
+    {
+      "check": "wrong_model_blocked",
+      "status": "PASS"
+    },
+    {
+      "check": "http_error_body_omitted",
+      "status": "PASS"
+    },
+    {
+      "check": "secret_in_success_rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "valid_usage_accepted",
+      "status": "PASS"
+    },
+    {
+      "check": "inconsistent_usage_rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "truncation_rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "exception_secret_omitted_and_delivery_unknown",
+      "status": "PASS"
+    }
+  ]
+}

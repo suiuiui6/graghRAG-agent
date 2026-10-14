@@ -1,0 +1,19 @@
+contract_version: "1.0"
+project_id: graphrag-paper-001
+paper_family: M
+stage_id: M2
+tasks:
+  - task_id: HOLDOUT-INVENTORY-20261012
+    expert_skill: sci-skills-data-availability
+    scope: 来源元数据、hash重复、许可及既有曝光记录；不读候选正文。
+    inputs: [backend/uploads, backend/output/mineru, mineru-mvp-test, backend/output/docs_store.json]
+    lifecycle: VERIFIED
+  - task_id: HOLDOUT-BUDGET-20261012
+    expert_skill: sci-skills-statistical-reporting
+    scope: 本地开发原文代理计数与旧真实usage，不推断生成器预算或方法效果。
+    inputs:
+      - docs/review/scope-holdout-20261012/audit_inventory_budget.py
+      - docs/review/scope-holdout-20261012/run-01/inventory-budget.json
+    lifecycle: VERIFIED_WITH_PROVENANCE_RECHECK
+stage_authority: sci-skills
+evidence_boundaries: [仅本地读取，不生成、不联网、不读取凭据、不修改原索引]

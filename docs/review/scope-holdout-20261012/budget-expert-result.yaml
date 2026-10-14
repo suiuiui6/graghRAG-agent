@@ -1,0 +1,53 @@
+contract_version: '1.0'
+expert_skill: sci-skills-statistical-reporting
+project_id: graphrag-paper-001
+paper_family: M
+stage_id: M2
+task_id: HOLDOUT-BUDGET-20261012
+task_status: PROVISIONAL
+inputs_reviewed:
+- docs/contracts/2026-10-12-heldout-scope-qa-validation.md
+- docs/review/scope-holdout-20261012/audit_inventory_budget.py
+- docs/review/scope-holdout-20261012/run-01/inventory-budget.json
+- docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/plan.json
+- 历史000..026-response.json，仅usage/身份/hash
+outputs:
+- 独立复核27条usage及原记录hash均一致，合计38733；prompt峰3754，completion峰507。
+- 代理计数不是生成token预算；没有新科学实验。
+- 报告时间渲染差异需核对，编排者保留原件并复跑核查。
+evidence_status:
+- EXECUTED_LOCAL：专家只读重算27条usage与hash。
+- NOT_EXECUTED：专家未重跑tokenizer或生成模型。
+- EXECUTED_LOCAL：编排者run-02复跑，仅created_utc与run-01不同。
+assumptions:
+- 旧D1/D2/D3及响应均属已曝光开发材料。
+- hash组不等同来源家族。
+author_input_needed:
+- 后续冻结前明确本地生成模型/tokenizer、完整调用图和资源上限。
+manual_actions: []
+quality_checks:
+- 27条prompt+completion=total，差异0。
+- 原plan/response身份、usage、response hash差异0。
+- 三臂总数27769/5830/5134；合计38733。
+- 脚本hash与报告一致。
+- 候选仅opaque字节hash，无正文提取或tokenization路径。
+conflicts:
+- conflict_id: TIME-PROVENANCE-01
+  type: execution_provenance
+  claim: 专家看到created_utc为+08:00，而脚本输出应为+00:00。
+  source_or_locator: run-01/inventory-budget.json.created_utc
+  competing_values_or_interpretations:
+  - 专家看到2026-10-12T18:13:56.650543+08:00
+  - 编排者直接读取原JSON为2026-10-12T10:13:56.650543+00:00
+  recommended_resolution: 保留原报告，直接读取核验并复跑；时区两写法表示同一时刻。
+conflict_resolution_status: COORDINATOR_RECHECKED_RAW_UTC_AND_REPRODUCED_NUMBERS_RENDERING_SOURCE_UNKNOWN
+merge_permission: orchestrator_only
+recommended_next_action: 曝光核实/更换候选及识别生成器后再冻结样本和预算。
+stage_acceptance_recommendation: NOT_ASSESSED
+coordinator_resolution:
+  original_report_unchanged: true
+  raw_utc: '2026-10-12T10:13:56.650543+00:00'
+  reproduction: run-02/verification.json
+  run_differences:
+  - created_utc
+  scope: 数值和当前原件UTC已核实；专家所见渲染来源未知，不声称查明原因。

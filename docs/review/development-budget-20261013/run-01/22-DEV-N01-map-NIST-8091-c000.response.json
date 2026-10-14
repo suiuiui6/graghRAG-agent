@@ -1,0 +1,35 @@
+{
+  "status": "SUCCESS",
+  "http_status": 200,
+  "usage_known": true,
+  "provider_response": {
+    "id": "af1bfa25-f795-4434-bf74-9459c6a57067",
+    "object": "chat.completion",
+    "created": 1791851054,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "文档中未提及此信息。\n\n所提供的摘录（NIST-8091-c000，Unicode 范围 [0,8000)）仅包含 NISTIR 8091 的标题页、摘要、关键词、免责声明、第1节（Introduction）的开头部分以及第2节（Related Work）的开头部分 [NIST-8091-c000]。该摘录中不包含第3节（Approach）的正文内容，因此无法从中提取第3节中引出子系统所需度量的列表、其类别、括号中的示例或判定要点，也无法判断该列表是否声称穷尽全部度量 [NIST-8091-c000]。\n\n结构索引中虽列出候选标题\"3. Approach\"（起始位置 13467），但该索引仅为导航元数据，并非事实证据，且相应正文未包含在本次提供的摘录范围内 [NIST-8091-c000]。"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2585,
+      "completion_tokens": 191,
+      "total_tokens": 2776,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 2457
+    },
+    "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+  },
+  "send_status": "HTTP_RESPONSE_RECEIVED",
+  "worker_elapsed_seconds": 2.062999999965541
+}

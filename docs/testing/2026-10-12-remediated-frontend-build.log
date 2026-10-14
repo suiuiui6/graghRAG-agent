@@ -1,0 +1,13 @@
+
+> graphrag-frontend@1.0.0 build D:\graghRAG-agent\frontend
+> tsc -b && vite build
+
+vite v6.4.4 building for production...
+transforming...
+✓ 1861 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.70 kB │ gzip:   0.45 kB
+dist/assets/index-2pjf4uc6.css   28.42 kB │ gzip:   6.29 kB
+dist/assets/index-Bso91IaD.js   466.89 kB │ gzip: 140.35 kB
+✓ built in 6.63s

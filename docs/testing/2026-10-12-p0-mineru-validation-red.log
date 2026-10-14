@@ -1,0 +1,185 @@
+FFFFFF.                                                                  [100%]
+================================== FAILURES ===================================
+_________ test_invalid_extracted_artifacts_never_publish[missing_md] __________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002205A2902C0>
+sandbox_tmp_path = WindowsPath('D:/graghRAG-agent/backend/tests/_sandbox_tmp/test_invalid_extracted_artifacts_never_publish_missing_md/7d5a184766c041229e9c79f92678c87d')
+bad_artifact = 'missing_md'
+
+    @pytest.mark.parametrize("bad_artifact", ["missing_md", "missing_list", "malformed", "non_list", "linked_md", "linked_list"])
+    def test_invalid_extracted_artifacts_never_publish(monkeypatch, sandbox_tmp_path, bad_artifact):
+        files = {"full.md": "��������", "paper_content_list.json": "[]"}
+        linked_name = None
+        if bad_artifact == "missing_md":
+            del files["full.md"]
+        elif bad_artifact == "missing_list":
+            del files["paper_content_list.json"]
+        elif bad_artifact == "malformed":
+            files["paper_content_list.json"] = "{invalid"
+        elif bad_artifact == "non_list":
+            files["paper_content_list.json"] = "{}"
+        elif bad_artifact.startswith("linked_"):
+            linked_name = "full.md" if bad_artifact == "linked_md" else "paper_content_list.json"
+        _use_local_result_zip(monkeypatch, sandbox_tmp_path, files, linked_name)
+        output = sandbox_tmp_path / "task"
+    
+>       with pytest.raises(StageMinerUError) as exc:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE <class 'errors.StageMinerUError'>
+
+tests\test_p0_mineru_isolation.py:199: Failed
+________ test_invalid_extracted_artifacts_never_publish[missing_list] _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002205B2BE8D0>
+sandbox_tmp_path = WindowsPath('D:/graghRAG-agent/backend/tests/_sandbox_tmp/test_invalid_extracted_artifacts_never_publish_missing_list/346264f40a604862980ac8f8de7a751a')
+bad_artifact = 'missing_list'
+
+    @pytest.mark.parametrize("bad_artifact", ["missing_md", "missing_list", "malformed", "non_list", "linked_md", "linked_list"])
+    def test_invalid_extracted_artifacts_never_publish(monkeypatch, sandbox_tmp_path, bad_artifact):
+        files = {"full.md": "��������", "paper_content_list.json": "[]"}
+        linked_name = None
+        if bad_artifact == "missing_md":
+            del files["full.md"]
+        elif bad_artifact == "missing_list":
+            del files["paper_content_list.json"]
+        elif bad_artifact == "malformed":
+            files["paper_content_list.json"] = "{invalid"
+        elif bad_artifact == "non_list":
+            files["paper_content_list.json"] = "{}"
+        elif bad_artifact.startswith("linked_"):
+            linked_name = "full.md" if bad_artifact == "linked_md" else "paper_content_list.json"
+        _use_local_result_zip(monkeypatch, sandbox_tmp_path, files, linked_name)
+        output = sandbox_tmp_path / "task"
+    
+>       with pytest.raises(StageMinerUError) as exc:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE <class 'errors.StageMinerUError'>
+
+tests\test_p0_mineru_isolation.py:199: Failed
+__________ test_invalid_extracted_artifacts_never_publish[malformed] __________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002205C2C18B0>
+sandbox_tmp_path = WindowsPath('D:/graghRAG-agent/backend/tests/_sandbox_tmp/test_invalid_extracted_artifacts_never_publish_malformed/aed582d88fe547398f07edd0cb374dd0')
+bad_artifact = 'malformed'
+
+    @pytest.mark.parametrize("bad_artifact", ["missing_md", "missing_list", "malformed", "non_list", "linked_md", "linked_list"])
+    def test_invalid_extracted_artifacts_never_publish(monkeypatch, sandbox_tmp_path, bad_artifact):
+        files = {"full.md": "��������", "paper_content_list.json": "[]"}
+        linked_name = None
+        if bad_artifact == "missing_md":
+            del files["full.md"]
+        elif bad_artifact == "missing_list":
+            del files["paper_content_list.json"]
+        elif bad_artifact == "malformed":
+            files["paper_content_list.json"] = "{invalid"
+        elif bad_artifact == "non_list":
+            files["paper_content_list.json"] = "{}"
+        elif bad_artifact.startswith("linked_"):
+            linked_name = "full.md" if bad_artifact == "linked_md" else "paper_content_list.json"
+        _use_local_result_zip(monkeypatch, sandbox_tmp_path, files, linked_name)
+        output = sandbox_tmp_path / "task"
+    
+>       with pytest.raises(StageMinerUError) as exc:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE <class 'errors.StageMinerUError'>
+
+tests\test_p0_mineru_isolation.py:199: Failed
+__________ test_invalid_extracted_artifacts_never_publish[non_list] ___________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002205C2C16D0>
+sandbox_tmp_path = WindowsPath('D:/graghRAG-agent/backend/tests/_sandbox_tmp/test_invalid_extracted_artifacts_never_publish_non_list/fb759006c0984f75a6496ec49ba6071e')
+bad_artifact = 'non_list'
+
+    @pytest.mark.parametrize("bad_artifact", ["missing_md", "missing_list", "malformed", "non_list", "linked_md", "linked_list"])
+    def test_invalid_extracted_artifacts_never_publish(monkeypatch, sandbox_tmp_path, bad_artifact):
+        files = {"full.md": "��������", "paper_content_list.json": "[]"}
+        linked_name = None
+        if bad_artifact == "missing_md":
+            del files["full.md"]
+        elif bad_artifact == "missing_list":
+            del files["paper_content_list.json"]
+        elif bad_artifact == "malformed":
+            files["paper_content_list.json"] = "{invalid"
+        elif bad_artifact == "non_list":
+            files["paper_content_list.json"] = "{}"
+        elif bad_artifact.startswith("linked_"):
+            linked_name = "full.md" if bad_artifact == "linked_md" else "paper_content_list.json"
+        _use_local_result_zip(monkeypatch, sandbox_tmp_path, files, linked_name)
+        output = sandbox_tmp_path / "task"
+    
+>       with pytest.raises(StageMinerUError) as exc:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE <class 'errors.StageMinerUError'>
+
+tests\test_p0_mineru_isolation.py:199: Failed
+__________ test_invalid_extracted_artifacts_never_publish[linked_md] __________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002205C2C1AC0>
+sandbox_tmp_path = WindowsPath('D:/graghRAG-agent/backend/tests/_sandbox_tmp/test_invalid_extracted_artifacts_never_publish_linked_md/5ca999ae814148f9bcf98cdb3a1ad7dd')
+bad_artifact = 'linked_md'
+
+    @pytest.mark.parametrize("bad_artifact", ["missing_md", "missing_list", "malformed", "non_list", "linked_md", "linked_list"])
+    def test_invalid_extracted_artifacts_never_publish(monkeypatch, sandbox_tmp_path, bad_artifact):
+        files = {"full.md": "��������", "paper_content_list.json": "[]"}
+        linked_name = None
+        if bad_artifact == "missing_md":
+            del files["full.md"]
+        elif bad_artifact == "missing_list":
+            del files["paper_content_list.json"]
+        elif bad_artifact == "malformed":
+            files["paper_content_list.json"] = "{invalid"
+        elif bad_artifact == "non_list":
+            files["paper_content_list.json"] = "{}"
+        elif bad_artifact.startswith("linked_"):
+            linked_name = "full.md" if bad_artifact == "linked_md" else "paper_content_list.json"
+        _use_local_result_zip(monkeypatch, sandbox_tmp_path, files, linked_name)
+        output = sandbox_tmp_path / "task"
+    
+>       with pytest.raises(StageMinerUError) as exc:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE <class 'errors.StageMinerUError'>
+
+tests\test_p0_mineru_isolation.py:199: Failed
+_________ test_invalid_extracted_artifacts_never_publish[linked_list] _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002205C2C3D10>
+sandbox_tmp_path = WindowsPath('D:/graghRAG-agent/backend/tests/_sandbox_tmp/test_invalid_extracted_artifacts_never_publish_linked_list/c44acafc5ab44410adaa5e61e33b3a07')
+bad_artifact = 'linked_list'
+
+    @pytest.mark.parametrize("bad_artifact", ["missing_md", "missing_list", "malformed", "non_list", "linked_md", "linked_list"])
+    def test_invalid_extracted_artifacts_never_publish(monkeypatch, sandbox_tmp_path, bad_artifact):
+        files = {"full.md": "��������", "paper_content_list.json": "[]"}
+        linked_name = None
+        if bad_artifact == "missing_md":
+            del files["full.md"]
+        elif bad_artifact == "missing_list":
+            del files["paper_content_list.json"]
+        elif bad_artifact == "malformed":
+            files["paper_content_list.json"] = "{invalid"
+        elif bad_artifact == "non_list":
+            files["paper_content_list.json"] = "{}"
+        elif bad_artifact.startswith("linked_"):
+            linked_name = "full.md" if bad_artifact == "linked_md" else "paper_content_list.json"
+        _use_local_result_zip(monkeypatch, sandbox_tmp_path, files, linked_name)
+        output = sandbox_tmp_path / "task"
+    
+>       with pytest.raises(StageMinerUError) as exc:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE <class 'errors.StageMinerUError'>
+
+tests\test_p0_mineru_isolation.py:199: Failed
+============================== warnings summary ===============================
+.venv\Lib\site-packages\_pytest\config\__init__.py:1434
+  D:\graghRAG-agent\backend\.venv\Lib\site-packages\_pytest\config\__init__.py:1434: PytestConfigWarning: Unknown config option: timeout
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_p0_mineru_isolation.py::test_invalid_extracted_artifacts_never_publish[missing_md]
+FAILED tests/test_p0_mineru_isolation.py::test_invalid_extracted_artifacts_never_publish[missing_list]
+FAILED tests/test_p0_mineru_isolation.py::test_invalid_extracted_artifacts_never_publish[malformed]
+FAILED tests/test_p0_mineru_isolation.py::test_invalid_extracted_artifacts_never_publish[non_list]
+FAILED tests/test_p0_mineru_isolation.py::test_invalid_extracted_artifacts_never_publish[linked_md]
+FAILED tests/test_p0_mineru_isolation.py::test_invalid_extracted_artifacts_never_publish[linked_list]
+6 failed, 1 passed, 21 deselected, 1 warning in 3.92s

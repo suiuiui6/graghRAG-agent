@@ -1,0 +1,11 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+______ test_lifecycle_removes_expired_kg_versions_under_configured_root _______
+D:\graghRAG-agent\backend\tests\test_service_readiness.py:335: in test_lifecycle_removes_expired_kg_versions_under_configured_root
+    assert manager._clean_kg_versions() == 2
+E   assert 0 == 2
+E    +  where 0 = _clean_kg_versions()
+E    +    where _clean_kg_versions = <services.lifecycle.DataLifecycleManager object at 0x00000192D5C7A600>._clean_kg_versions
+=========================== short test summary info ===========================
+FAILED backend\tests\test_service_readiness.py::test_lifecycle_removes_expired_kg_versions_under_configured_root
+1 failed, 9 deselected in 3.71s

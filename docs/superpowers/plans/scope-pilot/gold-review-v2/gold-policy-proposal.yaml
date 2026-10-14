@@ -1,0 +1,124 @@
+policy_version: "2.0-proposed"
+project_id: graphrag-paper-001
+recorded_on: 2026-10-07
+status: PROPOSED_PENDING_AUTHOR_APPROVAL_NOT_CANONICAL_GOLD
+independent_reviewer_model: gpt-6.1-sol
+review_kind: SEPARATE_AI_ANSWER_BLINDED_SOURCE_REVIEW_NOT_HUMAN_ADJUDICATION
+source_depth: REPOSITORY_MARKDOWN_NOT_PDF_VISUAL_VERIFICATION
+review: independent-sol-review.md
+old_gold:
+  path: docs/superpowers/plans/scope-pilot/gold.yaml
+  sha256: e732d568715d2b750d3c9ced4afa88a31df66f2db65c869ff4c2536d8e05d5f2
+  questions: 9
+  draft_items: 31
+  preserve_unchanged: true
+  no_rescoring_under_rewritten_questions: true
+old_experiment:
+  path: docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1
+  preserve_27_responses_and_original_adjudication: true
+  interpretation: HISTORICAL_EXPLORATORY_WITH_RECORDED_GOLD_AMBIGUITIES
+  aggregate_accuracy: NOT_REPORTED
+new_evaluation:
+  question_count_proposed: 9
+  core_item_count_proposed: 31
+  canonical_gold_file_created: false
+  compatibility: OLD_PILOT_RUNNER_NOT_AUTOMATICALLY_V2_COMPATIBLE
+  freeze_only_after: AUTHOR_APPROVAL_AND_SOURCE_ATTRIBUTE_VALIDATION
+  never_use_as: HELD_OUT_BLIND_TEST
+global_rules:
+  - 条目名或数值出现不是完整条目；数值、单位、条件、角色、范围、输入支持独立核对。
+  - 原文未明确的属性可以明确标为推断或未明示，不可以假装逐字有据。
+  - 文档事实正确和本次输入证据支持分开评分；正确记忆不能顶替输入证据。
+  - 目标范围未完整可核验时，空检索只能支持信息不足，不能证明原文空集合。
+  - 不修改旧问题语义再混算新旧回答，不事后放宽规则以增加成功数。
+questions:
+  - original_id: D1-FIG
+    proposed_id: D1-FIG-v2
+    action: VERSION_SCOPE_AND_TITLE_POLICY
+    proposed_query: 仅根据提供的Markdown文档，列出所有显式编号的图，按图号去重；以正文题注为主，附录B名称作为可接受别名。不把未编号图片文件算作额外图号。
+    expected_ids: [F1, F2, F3, F4, F5, F6]
+    scope_policy: WHOLE_DOCUMENT_NUMBERED_BODY_CAPTIONS_AND_APPENDIX_ALIASES
+    figure_2_condition: 36吨每日
+    accepted_aliases_source: independent-sol-review.md_D1_FIG_body_and_appendix_table
+    old_question_policy: 接受正文与附录的有据别名，六图集合不变；旧正则只抽附录，不冒称整篇完整性核验。
+  - original_id: D1-COST
+    proposed_id: D1-COST-v2
+    action: VERSION_EXPLICIT_NARROW_MEMBERSHIP
+    proposed_query: 仅根据摘要，列出直接报告的吨氨成本水平（单位元/吨）及对应问题、运行模式和产量或全年条件；不单独计入相对降幅或电网支撑价值。
+    expected_ids: [C1, C2, C3, C4, C5]
+    expected_values: [3554, 5820, 7111, 3669, 5652]
+    optional_C5_attribute: 相对离散制氨成本降低2.9%，有据且标明降幅，可作说明但不是额外成本水平。
+    C1_condition: 问题一满负荷连续运行基准；摘要未明确其36吨每日产能，不强制补入。
+    old_question_policy:
+      freeze_primary_exact_set_score: false
+      sensitivity_sets:
+        direct_cost_levels: [C1, C2, C3, C4, C5]
+        per_ton_economic_values: [C1, C2, C3, C4, C5, C6-proposed]
+        cost_related_indicators: [C1, C2, C3, C4, C5, C6-proposed, C7-proposed]
+      candidate_C6: 摘要1970元/吨电网支撑价值，经济比较角色，不当成虚构或强制归入直接成本。
+      candidate_C7: 摘要2.9%相对成本降幅，可独立指标或C5属性，必须声明计数方式。
+      disallow: 将正文168等视作摘要条目；从正文补入摘要未写出的1970减法公式。
+  - original_id: D1-LIMITS
+    proposed_id: D1-LIMITS-v2
+    action: VERSION_CATEGORY_PLUS_BINDINGS
+    proposed_query: 仅列6.2的四个编号模型不足，并简述每项所忽略的因素或风险；不要把改进建议当作已采用方法。
+    expected_ids: [L1, L2, L3, L4]
+    category_denominator: 4
+    required_bindings:
+      L1: 储能无限循环简化；未考虑充放电深度和循环次数对寿命影响。
+      L2: 风光场景有限；未考虑季节性常规负荷变化及电价政策季节调整。
+      L3: 当前吨氨成本未考虑绿氨替代灰氨的碳减排经济价值。
+      L4: 确定日前场景，未量化预测误差带来的运行风险。
+    old_question_policy: 四类不足计数不变；解释子属性单列，不能倒推增加原题条目分母。
+  - original_id: D1-FUTURE
+    proposed_id: D1-FUTURE-v2
+    action: RETAIN_QUERY_STRENGTHEN_ROLE_SUPPORT
+    expected_ids: [R1, R2]
+    relation: RO_OR_TWO_STAGE_SP_ALTERNATIVE_PROPOSALS
+    role: proposed_not_implemented
+    support_span: {doc: D1, start: 20059, end: 20157}
+    exclude: MILP、LP与第2项Monte_Carlo不属于第4项提出的优化方法集合。
+  - original_id: D2-ATTENTION
+    proposed_id: D2-ATTENTION-v2
+    action: VERSION_EXPLICIT_VS_INFERRED_ATTRIBUTE_RULE
+    proposed_query: List the three uses in section 3.2.3. Give Q/K/V sources where explicitly stated; for decoder self-attention describe the stated visibility and masking, and distinguish any inference about provenance.
+    expected_ids: [A1, A2, A3]
+    required_bindings:
+      A1: Q来自前一decoder层，K/V来自encoder输出，明确陈述。
+      A2: Q/K/V来自前一encoder层输出，明确陈述；使用完整支持句而非只验证存在性的短anchor。
+      A3: decoder位置仅能关注截至当前位置；非法连接对应的softmax输入被置为负无穷；精确前一decoder层来源在本范围未明确重述。
+    permitted_inference: 若解释decoder侧self-attention的Q/K/V，必须标语义推断，不伪装为范围内明确层来源。
+    old_question_policy: 三用途存在、QKV属性完成、明确来源支持分别裁决；不直接将三标签齐全当作原题所有字段完成。
+  - original_id: D2-DATA
+    proposed_id: D2-DATA-v2
+    action: RETAIN_QUERY_STRENGTHEN_SOURCE_BINDINGS
+    expected_ids: [T1, T2]
+    T1: WMT2014_English_German_about_4.5_million_sentence_pairs
+    T2: WMT2014_English_French_36M_sentences
+    require: 保留about限定及原文单位；不强制添加原文未说的翻译方向，不以batch或词表token规模代替数据集规模。
+  - original_id: D2-NONE
+    proposed_id: D2-NONE-v2
+    action: RETAIN_QUERY_ADD_EMPTY_SCOPE_PROOF_RULE
+    expected_ids: []
+    required_behavior: 只说3.2.3未声明optimizer名称，不说全文没有optimizer。
+    scope_proof: 完整核验目标范围才能证明源为空；给定输入不足时只承认无法确定。
+  - original_id: D3-TOOLS
+    proposed_id: D3-TOOLS-v2
+    action: RETAIN_QUERY
+    expected_ids: [K1, K2, K3, K4, K5]
+    required_bindings: 五工具及各自用途；角色是架构规范工具，不是现生产已实现事实。
+    optional: 表格输入输出不是原题必填属性。
+  - original_id: D3-SUPERVISOR
+    proposed_id: D3-SUPERVISOR-v2
+    action: RETAIN_QUERY
+    expected_ids: [S1, S2, S3, S4]
+    required_bindings: 解析参与Agent、分发到Specialist、合并结果、基于合并结果生成带引用答案。
+    exclude: 4.1范围外的路由图、离线建索引与通信schema不得充作该列表成员。
+conflict_disposition:
+  GIR-C01: 旧题歧义保留为敏感性规则；新题推荐限定五个直接成本水平，等待作者批准。
+  GIR-C02: 拒绝强制范围内不存在的明确层来源；新题明确区分陈述与推断。
+  GIR-C03: 六图编号不变，正文题注和附录别名可交叉接受；新范围须整篇核验。
+  GIR-C04: 保留四类别分母，子属性独立评分；新题明确要求解释绑定。
+  GIR-C05: 多属性分别保存支持跨度；不把anchor命中当语义回答正确。
+stage_status: M2_REMAINS_OPEN_NO_NOVELTY_OR_JOURNAL_GATE_PASS
+next_action: 作者确认本修订策略与验证协议后，创建可执行v2包并冻结，再按另行批准范围运行。

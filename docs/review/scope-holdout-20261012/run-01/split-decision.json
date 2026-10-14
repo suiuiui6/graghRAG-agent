@@ -1,0 +1,44 @@
+{
+  "project_id": "graphrag-paper-001",
+  "stage": "M2_OPEN",
+  "status": "BLOCKED_NOT_FROZEN",
+  "development": [
+    "D1",
+    "D2",
+    "D3"
+  ],
+  "holdout_H1": [],
+  "holdout_H2": [],
+  "quarantine": [
+    "C-0000e756b3ec",
+    "C-1163f36560f3",
+    "C-3c8382414415",
+    "C-4c5ea4fb6dd1",
+    "C-67e5e6baf375",
+    "C-7ce1735d7f94",
+    "C-b5e9ae1fdbf9",
+    "C-c03d4a040075"
+  ],
+  "candidate_count": 8,
+  "target_document_count": 12,
+  "target_shortfall_before_eligibility": 4,
+  "admitted_count": 0,
+  "local_permission": "USER_CONFIRMED_20261012",
+  "exposure_author_reply": "不确定，需要保留曝光待核实",
+  "family_relations": "NOT_VERIFIED",
+  "reason": [
+    "EXPOSURE_UNKNOWN",
+    "FAMILY_AND_NEAR_DUPLICATE_UNKNOWN",
+    "DOCUMENT_COUNT_BELOW_DESIGN_TARGET"
+  ],
+  "candidate_hashes": {
+    "C-0000e756b3ec": "0000e756b3ecff2902c8a11928d4972d1d764c765c4862186d7ee4db6a554c08",
+    "C-1163f36560f3": "1163f36560f327c353d8680bc74a965b7f8e1dc3816162f007e59289c540c602",
+    "C-3c8382414415": "3c8382414415118a8f2817669d7acc2496e3ca71353b61a3c4769571f30cfec2",
+    "C-4c5ea4fb6dd1": "4c5ea4fb6dd1ed5efb3b998d93b5d0c897e8d68717a76bc925c5f4bf6971413f",
+    "C-67e5e6baf375": "67e5e6baf375d9b745b7bfc4a86fd88873dc89addcdfed1530312596bb254f45",
+    "C-7ce1735d7f94": "7ce1735d7f94ebe73211903ac72eebe9de0b114ec7285f20e908ab3ea852a433",
+    "C-b5e9ae1fdbf9": "b5e9ae1fdbf903e3264d77496e1a2f62f3abd1e54ff220089bd0b9a797eef9c9",
+    "C-c03d4a040075": "c03d4a0400753aca3cbd8868b2341797aaba7ed5b36c913f236c74a90687d807"
+  }
+}

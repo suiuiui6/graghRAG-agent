@@ -1,0 +1,2670 @@
+{
+  "LCNC-HOME": {
+    "source_id": "LCNC-HOME",
+    "title": "Homing Configuration",
+    "url": "https://linuxcnc.org/docs/2.9/html/config/ini-homing.html",
+    "role": "development",
+    "coverage_kind": "platform_page_text_with_images_missing",
+    "observed_web_line_range": [
+      0,
+      245
+    ],
+    "observed_rows": 246,
+    "original_report_total_web_lines": null,
+    "full_scan_eligible": false,
+    "collected_on": "2026-10-12",
+    "rights_evidence_file": "web-visual-rights.json",
+    "rights_basis": "LinuxCNC Legal Section L9-11, GNU FDL1.1+",
+    "artifact_kind": "PLATFORM_TEXT_EXTRACTION_NOT_ORIGINAL",
+    "raw_file": null,
+    "raw_sha256": null,
+    "snapshot_file": "LCNC-HOME.snapshot.txt",
+    "snapshot_sha256": "8d1dc06a2591975c9df99a5e10acfd68ede957e80ca969583aee9c075420513a",
+    "version": "2.9 URL branch; exact release unverified",
+    "rows": [
+      {
+        "web_line": 0,
+        "pdf_page_zero_based": null,
+        "text": "# Homing Configuration",
+        "start": 0,
+        "end": 23
+      },
+      {
+        "web_line": 1,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 23,
+        "end": 24
+      },
+      {
+        "web_line": 2,
+        "pdf_page_zero_based": null,
+        "text": "Table of Contents",
+        "start": 24,
+        "end": 42
+      },
+      {
+        "web_line": 3,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 42,
+        "end": 43
+      },
+      {
+        "web_line": 4,
+        "pdf_page_zero_based": null,
+        "text": "JavaScript must be enabled in your browser to display the table of contents.",
+        "start": 43,
+        "end": 120
+      },
+      {
+        "web_line": 5,
+        "pdf_page_zero_based": null,
+        "text": "## 1. Overview",
+        "start": 120,
+        "end": 135
+      },
+      {
+        "web_line": 6,
+        "pdf_page_zero_based": null,
+        "text": "Homing sets the zero origin of the G53 machine coordinates. Soft limits are defined relative to the machine origin. The soft limits automatically decelerate and stop the axes before they hit the limits switches A properly configured and functioning machine will not move beyond soft(ware) limits and will have the machine origin set as repeatable as the home switch/index mechanism is.",
+        "start": 135,
+        "end": 521
+      },
+      {
+        "web_line": 7,
+        "pdf_page_zero_based": null,
+        "text": "Linuxcnc can be homed by eye (alignment marks), with switches, with switches and an encoder index, or by using absolute encoders. Homing seems simple enough - just move each joint to a known location, and set LinuxCNC’s internal variables accordingly. However, different machines have different requirements, and homing is actually quite complicated.",
+        "start": 521,
+        "end": 872
+      },
+      {
+        "web_line": 8,
+        "pdf_page_zero_based": null,
+        "text": "Note  | While it is possible to use LinuxCNC without homing switches/home procedures or limit switches, It defeats the extra security of the soft limits.",
+        "start": 872,
+        "end": 1026
+      },
+      {
+        "web_line": 9,
+        "pdf_page_zero_based": null,
+        "text": "## 2. Prerequisite",
+        "start": 1026,
+        "end": 1045
+      },
+      {
+        "web_line": 10,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 1045,
+        "end": 1046
+      },
+      {
+        "web_line": 11,
+        "pdf_page_zero_based": null,
+        "text": "Homing relies on some fundamental machine assumptions.",
+        "start": 1046,
+        "end": 1101
+      },
+      {
+        "web_line": 12,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 1101,
+        "end": 1102
+      },
+      {
+        "web_line": 13,
+        "pdf_page_zero_based": null,
+        "text": "  * The negative and positive directions are based on cite0†Tool Movement which can be different from the actual machine movement. I.e., on a mill typically the table moves rather then the tool.",
+        "start": 1102,
+        "end": 1300
+      },
+      {
+        "web_line": 14,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 1300,
+        "end": 1301
+      },
+      {
+        "web_line": 15,
+        "pdf_page_zero_based": null,
+        "text": "  * Everything is referenced from the G53 machine zero origin, the origin can be anywhere (even outside where you can move)",
+        "start": 1301,
+        "end": 1425
+      },
+      {
+        "web_line": 16,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 1425,
+        "end": 1426
+      },
+      {
+        "web_line": 17,
+        "pdf_page_zero_based": null,
+        "text": "  * The G53 machine zero origin is typically inside the soft limits area but not necessarily.",
+        "start": 1426,
+        "end": 1520
+      },
+      {
+        "web_line": 18,
+        "pdf_page_zero_based": null,
+        "text": "  * The homing switch offset sets where the origin is, but even it is referenced from the origin.",
+        "start": 1520,
+        "end": 1618
+      },
+      {
+        "web_line": 19,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 1618,
+        "end": 1619
+      },
+      {
+        "web_line": 20,
+        "pdf_page_zero_based": null,
+        "text": "  * When using encoder index homing, the home switch offset is calculated from the encoder reference position, after the home switch has been tripped.",
+        "start": 1619,
+        "end": 1770
+      },
+      {
+        "web_line": 21,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 1770,
+        "end": 1771
+      },
+      {
+        "web_line": 22,
+        "pdf_page_zero_based": null,
+        "text": "  * The negative soft(ware) limits are the most you can move in the negative direction after homing. (but they might not be negative in the absolute sense)",
+        "start": 1771,
+        "end": 1927
+      },
+      {
+        "web_line": 23,
+        "pdf_page_zero_based": null,
+        "text": "  * The positive soft(ware) limits are the most you can move in the positive direction after homing. (but they might not be positive in the absolute sense, though it is usual to set it as a positive number)",
+        "start": 1927,
+        "end": 2134
+      },
+      {
+        "web_line": 24,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 2134,
+        "end": 2135
+      },
+      {
+        "web_line": 25,
+        "pdf_page_zero_based": null,
+        "text": "  * Soft(ware) limits are inside the limit switch area.",
+        "start": 2135,
+        "end": 2191
+      },
+      {
+        "web_line": 26,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 2191,
+        "end": 2192
+      },
+      {
+        "web_line": 27,
+        "pdf_page_zero_based": null,
+        "text": "  * (Final) Homed Position is inside the soft limit area",
+        "start": 2192,
+        "end": 2249
+      },
+      {
+        "web_line": 28,
+        "pdf_page_zero_based": null,
+        "text": "  * (If using switch based homing) the homing switch(es) either utilize the limit switches (shared home / limit switch), or when using a separate home switch, are inside the limit switch area.",
+        "start": 2249,
+        "end": 2442
+      },
+      {
+        "web_line": 29,
+        "pdf_page_zero_based": null,
+        "text": "  * If using a separate homing switch, it is possible to start homing on the wrong side of the home switch, which combined with HOME_IGNORE_LIMITS option will lead to a hard crash. You can avoid this by making the home switch toggle its state when the trip dog is on a particular side until it returns passed the trip point again.",
+        "start": 2442,
+        "end": 2773
+      },
+      {
+        "web_line": 30,
+        "pdf_page_zero_based": null,
+        "text": "Said another way, the home switch state must represent the position of the dog relative to the switch (ie before or after the switch), and must stay that way even if the dog coasts past the switch in the same direction.",
+        "start": 2773,
+        "end": 2993
+      },
+      {
+        "web_line": 31,
+        "pdf_page_zero_based": null,
+        "text": "Note  | While it is possible to use LinuxCNC with the G53 machine origin outside the soft machine limits, if you use G28 or G30 without setting the parameters it goes to the origin by default. This would trip the limit switches before getting to position.",
+        "start": 2993,
+        "end": 3249
+      },
+      {
+        "web_line": 32,
+        "pdf_page_zero_based": null,
+        "text": "## 3. Separate Home Switch Example Layout",
+        "start": 3249,
+        "end": 3291
+      },
+      {
+        "web_line": 33,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 3291,
+        "end": 3292
+      },
+      {
+        "web_line": 34,
+        "pdf_page_zero_based": null,
+        "text": "This example shows minimum and maximum limit switches with a separate home switch.",
+        "start": 3292,
+        "end": 3375
+      },
+      {
+        "web_line": 35,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 3375,
+        "end": 3376
+      },
+      {
+        "web_line": 36,
+        "pdf_page_zero_based": null,
+        "text": "cite1†Image: Example Homing Switch layout Figure 1. Demonstrative Separate Switch Layout",
+        "start": 3376,
+        "end": 3468
+      },
+      {
+        "web_line": 37,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 3468,
+        "end": 3469
+      },
+      {
+        "web_line": 38,
+        "pdf_page_zero_based": null,
+        "text": "  * A is the negative soft limit",
+        "start": 3469,
+        "end": 3502
+      },
+      {
+        "web_line": 39,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 3502,
+        "end": 3503
+      },
+      {
+        "web_line": 40,
+        "pdf_page_zero_based": null,
+        "text": "  * B is the G53 machine coordinate Origin",
+        "start": 3503,
+        "end": 3546
+      },
+      {
+        "web_line": 41,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 3546,
+        "end": 3547
+      },
+      {
+        "web_line": 42,
+        "pdf_page_zero_based": null,
+        "text": "  * C is the home switch trip point",
+        "start": 3547,
+        "end": 3583
+      },
+      {
+        "web_line": 43,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 3583,
+        "end": 3584
+      },
+      {
+        "web_line": 44,
+        "pdf_page_zero_based": null,
+        "text": "  * D is the positive soft limit",
+        "start": 3584,
+        "end": 3617
+      },
+      {
+        "web_line": 45,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 3617,
+        "end": 3618
+      },
+      {
+        "web_line": 46,
+        "pdf_page_zero_based": null,
+        "text": "  * H is the final home position (HOME) = 0 units",
+        "start": 3618,
+        "end": 3668
+      },
+      {
+        "web_line": 47,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 3668,
+        "end": 3669
+      },
+      {
+        "web_line": 48,
+        "pdf_page_zero_based": null,
+        "text": "  * The -L and +L are the limit switches trip points",
+        "start": 3669,
+        "end": 3722
+      },
+      {
+        "web_line": 49,
+        "pdf_page_zero_based": null,
+        "text": "  * A<->B is the negative soft limits (MIN_LIMITS) = -3 units",
+        "start": 3722,
+        "end": 3784
+      },
+      {
+        "web_line": 50,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 3784,
+        "end": 3785
+      },
+      {
+        "web_line": 51,
+        "pdf_page_zero_based": null,
+        "text": "  * B<->C is the home_offset (HOME_OFFSET) = -2.3 units",
+        "start": 3785,
+        "end": 3841
+      },
+      {
+        "web_line": 52,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 3841,
+        "end": 3842
+      },
+      {
+        "web_line": 53,
+        "pdf_page_zero_based": null,
+        "text": "  * B<->D is the positive soft limits (MAX_LIMITS) = 7 units",
+        "start": 3842,
+        "end": 3903
+      },
+      {
+        "web_line": 54,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 3903,
+        "end": 3904
+      },
+      {
+        "web_line": 55,
+        "pdf_page_zero_based": null,
+        "text": "  * A<->D is the total travel = 10 units",
+        "start": 3904,
+        "end": 3945
+      },
+      {
+        "web_line": 56,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 3945,
+        "end": 3946
+      },
+      {
+        "web_line": 57,
+        "pdf_page_zero_based": null,
+        "text": "  * The distance between the limit switches and soft limits (-L<->A and D<-+L) is magnified in this example",
+        "start": 3946,
+        "end": 4054
+      },
+      {
+        "web_line": 58,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 4054,
+        "end": 4055
+      },
+      {
+        "web_line": 59,
+        "pdf_page_zero_based": null,
+        "text": "  * Note that there is distance between the limit switches and actual physical hard contact for coasting after the amplifier is disabled.",
+        "start": 4055,
+        "end": 4193
+      },
+      {
+        "web_line": 60,
+        "pdf_page_zero_based": null,
+        "text": "Note  | Homing sets the G53 coordinate system, while the machine origin (zero point) can be anywhere, setting the zero point at the negative soft limit makes all G53 coordinates positive, which is probably easiest to remember. Do this by setting MIN_LIMIT = 0 and make sure MAX_LIMIT is positive.",
+        "start": 4193,
+        "end": 4490
+      },
+      {
+        "web_line": 61,
+        "pdf_page_zero_based": null,
+        "text": "## 4. Shared Limit/Home Switch Example Layout",
+        "start": 4490,
+        "end": 4536
+      },
+      {
+        "web_line": 62,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 4536,
+        "end": 4537
+      },
+      {
+        "web_line": 63,
+        "pdf_page_zero_based": null,
+        "text": "This example shows a maximum limit switch and a combined minimum limit/home switch.",
+        "start": 4537,
+        "end": 4621
+      },
+      {
+        "web_line": 64,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 4621,
+        "end": 4622
+      },
+      {
+        "web_line": 65,
+        "pdf_page_zero_based": null,
+        "text": "cite2†Image: Example shared Home Limit Switch layout Figure 2. Demonstrative Shared Switch Layout",
+        "start": 4622,
+        "end": 4723
+      },
+      {
+        "web_line": 66,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 4723,
+        "end": 4724
+      },
+      {
+        "web_line": 67,
+        "pdf_page_zero_based": null,
+        "text": "  * A is the negative soft limit.",
+        "start": 4724,
+        "end": 4758
+      },
+      {
+        "web_line": 68,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 4758,
+        "end": 4759
+      },
+      {
+        "web_line": 69,
+        "pdf_page_zero_based": null,
+        "text": "  * B is the G53 machine coordinate Origin.",
+        "start": 4759,
+        "end": 4803
+      },
+      {
+        "web_line": 70,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 4803,
+        "end": 4804
+      },
+      {
+        "web_line": 71,
+        "pdf_page_zero_based": null,
+        "text": "  * C is the home switch trip point shared with (-L) minimum limit trip.",
+        "start": 4804,
+        "end": 4877
+      },
+      {
+        "web_line": 72,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 4877,
+        "end": 4878
+      },
+      {
+        "web_line": 73,
+        "pdf_page_zero_based": null,
+        "text": "  * D is the positive soft limit.",
+        "start": 4878,
+        "end": 4912
+      },
+      {
+        "web_line": 74,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 4912,
+        "end": 4913
+      },
+      {
+        "web_line": 75,
+        "pdf_page_zero_based": null,
+        "text": "  * H is the final home position (HOME) = 3 units.",
+        "start": 4913,
+        "end": 4964
+      },
+      {
+        "web_line": 76,
+        "pdf_page_zero_based": null,
+        "text": "  * The -L and +L are the limit switch trip points.",
+        "start": 4964,
+        "end": 5016
+      },
+      {
+        "web_line": 77,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 5016,
+        "end": 5017
+      },
+      {
+        "web_line": 78,
+        "pdf_page_zero_based": null,
+        "text": "  * A<->B is the negative soft limits (MIN_LIMITS) = 0 units.",
+        "start": 5017,
+        "end": 5079
+      },
+      {
+        "web_line": 79,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 5079,
+        "end": 5080
+      },
+      {
+        "web_line": 80,
+        "pdf_page_zero_based": null,
+        "text": "  * B<->C is the home_offset (HOME_OFFSET) = -0.7 units.",
+        "start": 5080,
+        "end": 5137
+      },
+      {
+        "web_line": 81,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 5137,
+        "end": 5138
+      },
+      {
+        "web_line": 82,
+        "pdf_page_zero_based": null,
+        "text": "  * B<->D is the positive soft limits (MAX_LIMITS) 10 units.",
+        "start": 5138,
+        "end": 5199
+      },
+      {
+        "web_line": 83,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 5199,
+        "end": 5200
+      },
+      {
+        "web_line": 84,
+        "pdf_page_zero_based": null,
+        "text": "  * A<->D is the total travel = 10 units.",
+        "start": 5200,
+        "end": 5242
+      },
+      {
+        "web_line": 85,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 5242,
+        "end": 5243
+      },
+      {
+        "web_line": 86,
+        "pdf_page_zero_based": null,
+        "text": "  * The distance between the limits switches and soft limits (-L<->A and D<->+L) is magnified in this example.",
+        "start": 5243,
+        "end": 5354
+      },
+      {
+        "web_line": 87,
+        "pdf_page_zero_based": null,
+        "text": "  * Note that there is distance between the limit switches and actual physical hard contact for coasting after the amplifier is disabled.",
+        "start": 5354,
+        "end": 5492
+      },
+      {
+        "web_line": 88,
+        "pdf_page_zero_based": null,
+        "text": "## 5. Homing Sequence",
+        "start": 5492,
+        "end": 5514
+      },
+      {
+        "web_line": 89,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 5514,
+        "end": 5515
+      },
+      {
+        "web_line": 90,
+        "pdf_page_zero_based": null,
+        "text": "There are four possible homing sequences defined by the sign of HOME_SEARCH_VEL and HOME_LATCH_VEL, along with the associated configuration parameters as shown in the following table. Two basic conditions exist, HOME_SEARCH_VEL and HOME_LATCH_VEL are the same sign or they are opposite signs. For a more detailed description of what each configuration parameter does, see the following section.",
+        "start": 5515,
+        "end": 5910
+      },
+      {
+        "web_line": 91,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 5910,
+        "end": 5911
+      },
+      {
+        "web_line": 92,
+        "pdf_page_zero_based": null,
+        "text": "cite3†Image: Homing Sequences Figure 3. Homing Sequences",
+        "start": 5911,
+        "end": 5971
+      },
+      {
+        "web_line": 93,
+        "pdf_page_zero_based": null,
+        "text": "## 6. Configuration",
+        "start": 5971,
+        "end": 5991
+      },
+      {
+        "web_line": 94,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 5991,
+        "end": 5992
+      },
+      {
+        "web_line": 95,
+        "pdf_page_zero_based": null,
+        "text": "The following determines exactly how the home sequence behaves. They are defined in an [JOINT_n] section of the INI file.",
+        "start": 5992,
+        "end": 6114
+      },
+      {
+        "web_line": 96,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 6114,
+        "end": 6115
+      },
+      {
+        "web_line": 97,
+        "pdf_page_zero_based": null,
+        "text": "Homing Type  | HOME_SEARCH_VEL  | HOME_LATCH_VEL  | HOME_USE_INDEX",
+        "start": 6115,
+        "end": 6182
+      },
+      {
+        "web_line": 98,
+        "pdf_page_zero_based": null,
+        "text": "--- | --- | --- | ---",
+        "start": 6182,
+        "end": 6204
+      },
+      {
+        "web_line": 99,
+        "pdf_page_zero_based": null,
+        "text": "Immediate  | 0  | 0  | NO",
+        "start": 6204,
+        "end": 6230
+      },
+      {
+        "web_line": 100,
+        "pdf_page_zero_based": null,
+        "text": "Index-only  | 0  | nonzero  | YES",
+        "start": 6230,
+        "end": 6264
+      },
+      {
+        "web_line": 101,
+        "pdf_page_zero_based": null,
+        "text": "Switch-only  | nonzero  | nonzero  | NO",
+        "start": 6264,
+        "end": 6304
+      },
+      {
+        "web_line": 102,
+        "pdf_page_zero_based": null,
+        "text": "Switch and Index  | nonzero  | nonzero  | YES",
+        "start": 6304,
+        "end": 6350
+      },
+      {
+        "web_line": 103,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 6350,
+        "end": 6351
+      },
+      {
+        "web_line": 104,
+        "pdf_page_zero_based": null,
+        "text": "Note  | Any other combinations may result in an error.",
+        "start": 6351,
+        "end": 6406
+      },
+      {
+        "web_line": 105,
+        "pdf_page_zero_based": null,
+        "text": "### 6.1. HOME_SEARCH_VEL",
+        "start": 6406,
+        "end": 6431
+      },
+      {
+        "web_line": 106,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 6431,
+        "end": 6432
+      },
+      {
+        "web_line": 107,
+        "pdf_page_zero_based": null,
+        "text": "This variable has units of machine-units per second.",
+        "start": 6432,
+        "end": 6485
+      },
+      {
+        "web_line": 108,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 6485,
+        "end": 6486
+      },
+      {
+        "web_line": 109,
+        "pdf_page_zero_based": null,
+        "text": "The default value is zero. A value of zero causes LinuxCNC to assume that there is no home switch; the search stage of homing is skipped.",
+        "start": 6486,
+        "end": 6624
+      },
+      {
+        "web_line": 110,
+        "pdf_page_zero_based": null,
+        "text": "If HOME_SEARCH_VEL is non-zero, then LinuxCNC assumes that there is a home switch. It begins by checking whether the home switch is already tripped. If tripped it backs off the switch at HOME_SEARCH_VEL. The direction of the back-off is opposite the sign of HOME_SEARCH_VEL. Then it searches for the home switch by moving in the direction specified by the sign of HOME_SEARCH_VEL, at a speed determined by its absolute value.",
+        "start": 6624,
+        "end": 7050
+      },
+      {
+        "web_line": 111,
+        "pdf_page_zero_based": null,
+        "text": "When the home switch is detected, the joint will stop as fast as possible, but there will always be some overshoot. The amount of overshoot depends on the speed. If it is too high, the joint might overshoot enough to hit a limit switch or crash into the end of travel. On the other hand, if HOME_SEARCH_VEL is too low, homing can take a long time.",
+        "start": 7050,
+        "end": 7398
+      },
+      {
+        "web_line": 112,
+        "pdf_page_zero_based": null,
+        "text": "### 6.2. HOME_LATCH_VEL",
+        "start": 7398,
+        "end": 7422
+      },
+      {
+        "web_line": 113,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 7422,
+        "end": 7423
+      },
+      {
+        "web_line": 114,
+        "pdf_page_zero_based": null,
+        "text": "This variable has units of machine-units per second.",
+        "start": 7423,
+        "end": 7476
+      },
+      {
+        "web_line": 115,
+        "pdf_page_zero_based": null,
+        "text": "Specifies the speed and direction that LinuxCNC uses when it makes its final accurate determination of the home switch (if present) and index pulse location (if present). It will usually be slower than the search velocity to maximize accuracy. If HOME_SEARCH_VEL and HOME_LATCH_VEL have the same sign, then the latch phase is done while moving in the same direction as the search phase.",
+        "start": 7476,
+        "end": 7863
+      },
+      {
+        "web_line": 116,
+        "pdf_page_zero_based": null,
+        "text": "(In that case, LinuxCNC first backs off the switch, before moving towards it again at the latch velocity.) If HOME_SEARCH_VEL and HOME_LATCH_VEL have opposite signs, the latch phase is done while moving in the opposite direction from the search phase. That means LinuxCNC will latch the first pulse after it moves off the switch. If HOME_SEARCH_VEL is zero (meaning there is no home switch), and this parameter is nonzero, LinuxCNC goes ahead to the index pulse search.",
+        "start": 7863,
+        "end": 8333
+      },
+      {
+        "web_line": 117,
+        "pdf_page_zero_based": null,
+        "text": "If HOME_SEARCH_VEL is non-zero and this parameter is zero, it is an error and the homing operation will fail. The default value is zero.",
+        "start": 8333,
+        "end": 8470
+      },
+      {
+        "web_line": 118,
+        "pdf_page_zero_based": null,
+        "text": "### 6.3. HOME_FINAL_VEL",
+        "start": 8470,
+        "end": 8494
+      },
+      {
+        "web_line": 119,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 8494,
+        "end": 8495
+      },
+      {
+        "web_line": 120,
+        "pdf_page_zero_based": null,
+        "text": "This variable has units of machine-units per second.",
+        "start": 8495,
+        "end": 8548
+      },
+      {
+        "web_line": 121,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 8548,
+        "end": 8549
+      },
+      {
+        "web_line": 122,
+        "pdf_page_zero_based": null,
+        "text": "It specifies the speed that LinuxCNC uses when it makes its move from HOME_OFFSET to the HOME position. If the HOME_FINAL_VEL is missing from the INI file, then the maximum joint speed is used to make this move. The value must be a positive number.",
+        "start": 8549,
+        "end": 8798
+      },
+      {
+        "web_line": 123,
+        "pdf_page_zero_based": null,
+        "text": "### 6.4. HOME_IGNORE_LIMITS",
+        "start": 8798,
+        "end": 8826
+      },
+      {
+        "web_line": 124,
+        "pdf_page_zero_based": null,
+        "text": "Can hold the values YES / NO. The default value for this parameter is NO. This flag determines whether LinuxCNC will ignore the limit switch input for this joint while homing. This setting will not ignore limit inputs for other joints. If you do not have a separate home switch set this to YES and connect the limit switch signal to the joint home switch input in HAL. LinuxCNC will ignore the limit switch input for this joint while homing.",
+        "start": 8826,
+        "end": 9268
+      },
+      {
+        "web_line": 125,
+        "pdf_page_zero_based": null,
+        "text": "To use only one input for all homing and limits you will have to block the limit signals of the joints not homing in HAL and home one joint at a time.",
+        "start": 9268,
+        "end": 9419
+      },
+      {
+        "web_line": 126,
+        "pdf_page_zero_based": null,
+        "text": "### 6.5. HOME_USE_INDEX",
+        "start": 9419,
+        "end": 9443
+      },
+      {
+        "web_line": 127,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 9443,
+        "end": 9444
+      },
+      {
+        "web_line": 128,
+        "pdf_page_zero_based": null,
+        "text": "Specifies whether or not there is an index pulse. If the flag is true (HOME_USE_INDEX = YES), LinuxCNC will latch on the rising edge of the index pulse. If false, LinuxCNC will latch on either the rising or falling edge of the home switch (depending on the signs of HOME_SEARCH_VEL and HOME_LATCH_VEL). The default value is NO.",
+        "start": 9444,
+        "end": 9772
+      },
+      {
+        "web_line": 129,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 9772,
+        "end": 9773
+      },
+      {
+        "web_line": 130,
+        "pdf_page_zero_based": null,
+        "text": "Note  | HOME_USE_INDEX requires connections in your HAL file to `joint.n.index-enable` from the `encoder.n.index-enable`.",
+        "start": 9773,
+        "end": 9895
+      },
+      {
+        "web_line": 131,
+        "pdf_page_zero_based": null,
+        "text": "### 6.6. HOME_INDEX_NO_ENCODER_RESET",
+        "start": 9895,
+        "end": 9932
+      },
+      {
+        "web_line": 132,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 9932,
+        "end": 9933
+      },
+      {
+        "web_line": 133,
+        "pdf_page_zero_based": null,
+        "text": "Default is NO. Use YES if the encoder used for this joint does not reset its counter when an index pulse is detected after assertion of the joint index_enable HAL pin. Applicable only for HOME_USE_INDEX = YES.",
+        "start": 9933,
+        "end": 10143
+      },
+      {
+        "web_line": 134,
+        "pdf_page_zero_based": null,
+        "text": "### 6.7. HOME_OFFSET",
+        "start": 10143,
+        "end": 10164
+      },
+      {
+        "web_line": 135,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 10164,
+        "end": 10165
+      },
+      {
+        "web_line": 136,
+        "pdf_page_zero_based": null,
+        "text": "This defines the location of the origin zero point of the G53 machine coordinate system. It is the distance (offset), in joint units, from the machine origin to the home switch trip point or index pulse. After detecting the switch trip point/index pulse, LinuxCNC sets the joint coordinate position to HOME_OFFSET, thus defining the origin, which the soft limits references from. The default value is zero.",
+        "start": 10165,
+        "end": 10572
+      },
+      {
+        "web_line": 137,
+        "pdf_page_zero_based": null,
+        "text": "Note  | The home switch location, as indicated by the HOME_OFFSET variable, can be inside or outside the soft limits. They will be shared with or inside the hard limit switches.",
+        "start": 10572,
+        "end": 10750
+      },
+      {
+        "web_line": 138,
+        "pdf_page_zero_based": null,
+        "text": "### 6.8. HOME",
+        "start": 10750,
+        "end": 10764
+      },
+      {
+        "web_line": 139,
+        "pdf_page_zero_based": null,
+        "text": "The position that the joint will go to upon completion of the homing sequence. After detecting the home switch or home switch then index pulse (depending on configuration), and setting the coordinate of that point to HOME_OFFSET, LinuxCNC makes a move to HOME as the final step of the homing process. The default value is zero. Note that even if this parameter is the same as HOME_OFFSET, the joint will slightly overshoot the latched position as it stops.",
+        "start": 10764,
+        "end": 11221
+      },
+      {
+        "web_line": 140,
+        "pdf_page_zero_based": null,
+        "text": "Therefore there will always be a small move at this time (unless HOME_SEARCH_VEL is zero, and the entire search/latch stage was skipped). This final move will be made at the joint’s maximum velocity unless HOME_FINAL_VEL has been set.",
+        "start": 11221,
+        "end": 11456
+      },
+      {
+        "web_line": 141,
+        "pdf_page_zero_based": null,
+        "text": "Note  | The distinction between HOME_OFFSET and HOME is that HOME_OFFSET first establishes the origin location and scale on the machine by applying the HOME_OFFSET value to the location where home was found, and then HOME says where the joint should move to on that scale.",
+        "start": 11456,
+        "end": 11729
+      },
+      {
+        "web_line": 142,
+        "pdf_page_zero_based": null,
+        "text": "### 6.9. HOME_IS_SHARED",
+        "start": 11729,
+        "end": 11753
+      },
+      {
+        "web_line": 143,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 11753,
+        "end": 11754
+      },
+      {
+        "web_line": 144,
+        "pdf_page_zero_based": null,
+        "text": "If there is not a separate home switch input for this joint, but a number of momentary switches wired to the same pin, set this value to 1 to prevent homing from starting if one of the shared switches is already closed. Set this value to 0 to permit homing even if the switch is already closed.",
+        "start": 11754,
+        "end": 12049
+      },
+      {
+        "web_line": 145,
+        "pdf_page_zero_based": null,
+        "text": "### 6.10. HOME_ABSOLUTE_ENCODER",
+        "start": 12049,
+        "end": 12081
+      },
+      {
+        "web_line": 146,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 12081,
+        "end": 12082
+      },
+      {
+        "web_line": 147,
+        "pdf_page_zero_based": null,
+        "text": "Use for absolute encoders. When a request is made to home the joint, the current joint position is set to the [JOINT_n]HOME_OFFSET value.",
+        "start": 12082,
+        "end": 12220
+      },
+      {
+        "web_line": 148,
+        "pdf_page_zero_based": null,
+        "text": "The final move to the [JOINT_n]HOME position is optional according to the HOME_ABSOLUTE_ENCODER setting:",
+        "start": 12220,
+        "end": 12325
+      },
+      {
+        "web_line": 149,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 12325,
+        "end": 12326
+      },
+      {
+        "web_line": 150,
+        "pdf_page_zero_based": null,
+        "text": "    `HOME_ABSOLUTE_ENCODER = 0 (Default) joint does not use an absolute encoder",
+        "start": 12326,
+        "end": 12406
+      },
+      {
+        "web_line": 151,
+        "pdf_page_zero_based": null,
+        "text": "    HOME_ABSOLUTE_ENCODER = 1 Absolute encoder, final move to [JOINT_n]HOME",
+        "start": 12406,
+        "end": 12482
+      },
+      {
+        "web_line": 152,
+        "pdf_page_zero_based": null,
+        "text": "    HOME_ABSOLUTE_ENCODER = 2 Absolute encoder, NO final move to [JOINT_n]HOME`",
+        "start": 12482,
+        "end": 12562
+      },
+      {
+        "web_line": 153,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 12562,
+        "end": 12563
+      },
+      {
+        "web_line": 154,
+        "pdf_page_zero_based": null,
+        "text": "Note  | A HOME_IS_SHARED setting is silently ignored.",
+        "start": 12563,
+        "end": 12617
+      },
+      {
+        "web_line": 155,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 12617,
+        "end": 12618
+      },
+      {
+        "web_line": 156,
+        "pdf_page_zero_based": null,
+        "text": "Note  | A request to rehome the joint is silently ignored.",
+        "start": 12618,
+        "end": 12677
+      },
+      {
+        "web_line": 157,
+        "pdf_page_zero_based": null,
+        "text": "### 6.11. HOME_SEQUENCE",
+        "start": 12677,
+        "end": 12701
+      },
+      {
+        "web_line": 158,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 12701,
+        "end": 12702
+      },
+      {
+        "web_line": 159,
+        "pdf_page_zero_based": null,
+        "text": "Used to define a multi-joint homing sequence HOME ALL and enforce homing order (e.g., Z may not be homed if X is not yet homed). A joint may be homed after all joints with a lower (absolute value) HOME_SEQUENCE have already been homed and are at the HOME_OFFSET. If two joints have the same HOME_SEQUENCE, they may be homed at the same time.",
+        "start": 12702,
+        "end": 13044
+      },
+      {
+        "web_line": 160,
+        "pdf_page_zero_based": null,
+        "text": "Note  | If HOME_SEQUENCE is not specified then the joint will not be homed by the HOME ALL sequence (but may be homed by individual joint-specific homing commands).",
+        "start": 13044,
+        "end": 13209
+      },
+      {
+        "web_line": 161,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 13209,
+        "end": 13210
+      },
+      {
+        "web_line": 162,
+        "pdf_page_zero_based": null,
+        "text": "The initial HOME_SEQUENCE number may be 0, 1 (or -1). The absolute value of sequence numbers must increment by one — skipping sequence numbers is not supported. If a sequence number is omitted, HOME ALL homing will stop upon completion of the last valid sequence number.",
+        "start": 13210,
+        "end": 13481
+      },
+      {
+        "web_line": 163,
+        "pdf_page_zero_based": null,
+        "text": "Negative HOME_SEQUENCE values indicate that joints in the sequence should synchronize the final move to [JOINT_n]HOME by waiting until all joints in the sequence are ready. If any joint has a negative HOME_SEQUENCE value, then all joints with the same absolute value (positive or negative) of the HOME_SEQUENCE item value will synchronize the final move.",
+        "start": 13481,
+        "end": 13836
+      },
+      {
+        "web_line": 164,
+        "pdf_page_zero_based": null,
+        "text": "A negative HOME_SEQUENCE also applies to commands to home a single joint. If the HOME_SEQUENCE value is negative, all joints having the same absolute value of that HOME_SEQUENCE will be homed together with a synchronized final move. If the HOME_SEQUENCE value is zero or positive, a command to home the joint will home only the specified joint.",
+        "start": 13836,
+        "end": 14181
+      },
+      {
+        "web_line": 165,
+        "pdf_page_zero_based": null,
+        "text": "Joint mode jogging of joints having a negative HOME_SEQUENCE is disallowed. In common gantry applications, such jogging can lead to misalignment (racking). Note that conventional jogging in world coordinates is always available once a machine is homed.",
+        "start": 14181,
+        "end": 14434
+      },
+      {
+        "web_line": 166,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 14434,
+        "end": 14435
+      },
+      {
+        "web_line": 167,
+        "pdf_page_zero_based": null,
+        "text": "Examples for a 3 joint system",
+        "start": 14435,
+        "end": 14465
+      },
+      {
+        "web_line": 168,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 14465,
+        "end": 14466
+      },
+      {
+        "web_line": 169,
+        "pdf_page_zero_based": null,
+        "text": "Two sequences (0,1), no synchronization",
+        "start": 14466,
+        "end": 14506
+      },
+      {
+        "web_line": 170,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 14506,
+        "end": 14507
+      },
+      {
+        "web_line": 171,
+        "pdf_page_zero_based": null,
+        "text": "    `[JOINT_0]HOME_SEQUENCE = 0",
+        "start": 14507,
+        "end": 14539
+      },
+      {
+        "web_line": 172,
+        "pdf_page_zero_based": null,
+        "text": "    [JOINT_1]HOME_SEQUENCE = 1",
+        "start": 14539,
+        "end": 14570
+      },
+      {
+        "web_line": 173,
+        "pdf_page_zero_based": null,
+        "text": "    [JOINT_2]HOME_SEQUENCE = 1`",
+        "start": 14570,
+        "end": 14602
+      },
+      {
+        "web_line": 174,
+        "pdf_page_zero_based": null,
+        "text": "Two sequences, joints 1 and 2 synchronized",
+        "start": 14602,
+        "end": 14645
+      },
+      {
+        "web_line": 175,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 14645,
+        "end": 14646
+      },
+      {
+        "web_line": 176,
+        "pdf_page_zero_based": null,
+        "text": "    `[JOINT_0]HOME_SEQUENCE =  0",
+        "start": 14646,
+        "end": 14679
+      },
+      {
+        "web_line": 177,
+        "pdf_page_zero_based": null,
+        "text": "    [JOINT_1]HOME_SEQUENCE = -1",
+        "start": 14679,
+        "end": 14711
+      },
+      {
+        "web_line": 178,
+        "pdf_page_zero_based": null,
+        "text": "    [JOINT_2]HOME_SEQUENCE = -1`",
+        "start": 14711,
+        "end": 14744
+      },
+      {
+        "web_line": 179,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 14744,
+        "end": 14745
+      },
+      {
+        "web_line": 180,
+        "pdf_page_zero_based": null,
+        "text": "With mixed positive and negative values, joints 1 and 2 synchronized",
+        "start": 14745,
+        "end": 14814
+      },
+      {
+        "web_line": 181,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 14814,
+        "end": 14815
+      },
+      {
+        "web_line": 182,
+        "pdf_page_zero_based": null,
+        "text": "    `[JOINT_0]HOME_SEQUENCE =  0",
+        "start": 14815,
+        "end": 14848
+      },
+      {
+        "web_line": 183,
+        "pdf_page_zero_based": null,
+        "text": "    [JOINT_1]HOME_SEQUENCE = -1",
+        "start": 14848,
+        "end": 14880
+      },
+      {
+        "web_line": 184,
+        "pdf_page_zero_based": null,
+        "text": "    [JOINT_2]HOME_SEQUENCE =  1`",
+        "start": 14880,
+        "end": 14913
+      },
+      {
+        "web_line": 185,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 14913,
+        "end": 14914
+      },
+      {
+        "web_line": 186,
+        "pdf_page_zero_based": null,
+        "text": "One sequence, no synchronization",
+        "start": 14914,
+        "end": 14947
+      },
+      {
+        "web_line": 187,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 14947,
+        "end": 14948
+      },
+      {
+        "web_line": 188,
+        "pdf_page_zero_based": null,
+        "text": "    `[JOINT_0]HOME_SEQUENCE =  0",
+        "start": 14948,
+        "end": 14981
+      },
+      {
+        "web_line": 189,
+        "pdf_page_zero_based": null,
+        "text": "    [JOINT_1]HOME_SEQUENCE =  0",
+        "start": 14981,
+        "end": 15013
+      },
+      {
+        "web_line": 190,
+        "pdf_page_zero_based": null,
+        "text": "    [JOINT_2]HOME_SEQUENCE =  0`",
+        "start": 15013,
+        "end": 15046
+      },
+      {
+        "web_line": 191,
+        "pdf_page_zero_based": null,
+        "text": "One sequence, all joints synchronized",
+        "start": 15046,
+        "end": 15084
+      },
+      {
+        "web_line": 192,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 15084,
+        "end": 15085
+      },
+      {
+        "web_line": 193,
+        "pdf_page_zero_based": null,
+        "text": "    `[JOINT_0]HOME_SEQUENCE = -1",
+        "start": 15085,
+        "end": 15118
+      },
+      {
+        "web_line": 194,
+        "pdf_page_zero_based": null,
+        "text": "    [JOINT_1]HOME_SEQUENCE = -1",
+        "start": 15118,
+        "end": 15150
+      },
+      {
+        "web_line": 195,
+        "pdf_page_zero_based": null,
+        "text": "    [JOINT_2]HOME_SEQUENCE = -1`",
+        "start": 15150,
+        "end": 15183
+      },
+      {
+        "web_line": 196,
+        "pdf_page_zero_based": null,
+        "text": "### 6.12. VOLATILE_HOME",
+        "start": 15183,
+        "end": 15207
+      },
+      {
+        "web_line": 197,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 15207,
+        "end": 15208
+      },
+      {
+        "web_line": 198,
+        "pdf_page_zero_based": null,
+        "text": "If this setting is true, this joint becomes unhomed whenever the machine transitions into the OFF state. This is appropriate for any joint that does not maintain position when the joint drive is off. Some stepper drives, especially microstep drives, may need this.",
+        "start": 15208,
+        "end": 15473
+      },
+      {
+        "web_line": 199,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 15473,
+        "end": 15474
+      },
+      {
+        "web_line": 200,
+        "pdf_page_zero_based": null,
+        "text": "### 6.13. LOCKING_INDEXER",
+        "start": 15474,
+        "end": 15500
+      },
+      {
+        "web_line": 201,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 15500,
+        "end": 15501
+      },
+      {
+        "web_line": 202,
+        "pdf_page_zero_based": null,
+        "text": "If this joint is a locking rotary indexer, it will unlock before homing, and lock afterward.",
+        "start": 15501,
+        "end": 15594
+      },
+      {
+        "web_line": 203,
+        "pdf_page_zero_based": null,
+        "text": "### 6.14. Immediate Homing",
+        "start": 15594,
+        "end": 15621
+      },
+      {
+        "web_line": 204,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 15621,
+        "end": 15622
+      },
+      {
+        "web_line": 205,
+        "pdf_page_zero_based": null,
+        "text": "If a joint does not have home switches or does not have a logical home position like a rotary joint and you want that joint to home at the current position when the \"Home All\" button is pressed in the AXIS GUI, then the following INI entries for that joint are needed.",
+        "start": 15622,
+        "end": 15891
+      },
+      {
+        "web_line": 206,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 15891,
+        "end": 15892
+      },
+      {
+        "web_line": 207,
+        "pdf_page_zero_based": null,
+        "text": "    `HOME_SEARCH_VEL = 0",
+        "start": 15892,
+        "end": 15917
+      },
+      {
+        "web_line": 208,
+        "pdf_page_zero_based": null,
+        "text": "    HOME_LATCH_VEL = 0",
+        "start": 15917,
+        "end": 15940
+      },
+      {
+        "web_line": 209,
+        "pdf_page_zero_based": null,
+        "text": "    HOME_USE_INDEX = NO",
+        "start": 15940,
+        "end": 15964
+      },
+      {
+        "web_line": 210,
+        "pdf_page_zero_based": null,
+        "text": "    HOME_OFFSET = 0 (Or the home position offset (HOME))",
+        "start": 15964,
+        "end": 16021
+      },
+      {
+        "web_line": 211,
+        "pdf_page_zero_based": null,
+        "text": "    HOME_SEQUENCE = 0 (or other valid sequence number)`",
+        "start": 16021,
+        "end": 16077
+      },
+      {
+        "web_line": 212,
+        "pdf_page_zero_based": null,
+        "text": "Note  | The default values for unspecified HOME_SEARCH_VEL, HOME_LATCH_VEL, HOME_USE_INDEX, HOME, and HOME_OFFSET are zero, so they may be omitted when requesting immediate homing. A valid HOME_SEQUENCE number should usually be included since omitting a HOME_SEQUENCE eliminates the joint from HOME ALL behavior as noted above.",
+        "start": 16077,
+        "end": 16405
+      },
+      {
+        "web_line": 213,
+        "pdf_page_zero_based": null,
+        "text": "### 6.15. Inhibiting Homing",
+        "start": 16405,
+        "end": 16433
+      },
+      {
+        "web_line": 214,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 16433,
+        "end": 16434
+      },
+      {
+        "web_line": 215,
+        "pdf_page_zero_based": null,
+        "text": "A HAL pin (motion.homing-inhibit) is provided to disallow homing initiation for both \"Home All\" and individual joint homing.",
+        "start": 16434,
+        "end": 16559
+      },
+      {
+        "web_line": 216,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 16559,
+        "end": 16560
+      },
+      {
+        "web_line": 217,
+        "pdf_page_zero_based": null,
+        "text": "Some systems take advantage of the provisions for synchronizing final joint homing moves as controlled by negative [JOINT_N]HOME_SEQUENCE= INI file items. By default, the synchronization provisions disallow joint jogging prior to homing in order to prevent joint jogs that could misalign the machine (gantry racking for example).",
+        "start": 16560,
+        "end": 16890
+      },
+      {
+        "web_line": 218,
+        "pdf_page_zero_based": null,
+        "text": "System integrator can allow joint jogging prior to homing with HAL logic that switches the [JOINT_N]HOME_SEQUENCE items. This logic should also assert the motion.homing-inhibit pin to ensure that homing is not inadvertently initiated when joint jogging is enabled.",
+        "start": 16890,
+        "end": 17155
+      },
+      {
+        "web_line": 219,
+        "pdf_page_zero_based": null,
+        "text": "Example: Synced joints 0,1 using negative sequence (-1) for synchronized homing with a switch (allow_jjog) that selects a positive sequence (1) for individual joint jogging prior to homing (partial HAL code):",
+        "start": 17155,
+        "end": 17364
+      },
+      {
+        "web_line": 220,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 17364,
+        "end": 17365
+      },
+      {
+        "web_line": 221,
+        "pdf_page_zero_based": null,
+        "text": "    `loadrt mux2           names=home_sequence_mux",
+        "start": 17365,
+        "end": 17416
+      },
+      {
+        "web_line": 222,
+        "pdf_page_zero_based": null,
+        "text": "    loadrt conv_float_s32 names=home_sequence_s32",
+        "start": 17416,
+        "end": 17466
+      },
+      {
+        "web_line": 223,
+        "pdf_page_zero_based": null,
+        "text": "    setp home_sequence_mux.in0 -1",
+        "start": 17466,
+        "end": 17500
+      },
+      {
+        "web_line": 224,
+        "pdf_page_zero_based": null,
+        "text": "    setp home_sequence_mux.in1  1",
+        "start": 17500,
+        "end": 17534
+      },
+      {
+        "web_line": 225,
+        "pdf_page_zero_based": null,
+        "text": "    addf home_sequence_mux servo-thread",
+        "start": 17534,
+        "end": 17574
+      },
+      {
+        "web_line": 226,
+        "pdf_page_zero_based": null,
+        "text": "    addf home_sequence_s32 servo-thread",
+        "start": 17574,
+        "end": 17614
+      },
+      {
+        "web_line": 227,
+        "pdf_page_zero_based": null,
+        "text": "    ...",
+        "start": 17614,
+        "end": 17622
+      },
+      {
+        "web_line": 228,
+        "pdf_page_zero_based": null,
+        "text": "    net home_seq_float <= home_sequence_mux.out",
+        "start": 17622,
+        "end": 17670
+      },
+      {
+        "web_line": 229,
+        "pdf_page_zero_based": null,
+        "text": "    net home_seq_float => home_sequence_s32.in",
+        "start": 17670,
+        "end": 17717
+      },
+      {
+        "web_line": 230,
+        "pdf_page_zero_based": null,
+        "text": "    net home_seq_s32   <= home_sequence_s32.out",
+        "start": 17717,
+        "end": 17765
+      },
+      {
+        "web_line": 231,
+        "pdf_page_zero_based": null,
+        "text": "    net home_seq_s32   => ini.0.home_sequence",
+        "start": 17765,
+        "end": 17811
+      },
+      {
+        "web_line": 232,
+        "pdf_page_zero_based": null,
+        "text": "    net home_seq_s32   => ini.1.home_sequence",
+        "start": 17811,
+        "end": 17857
+      },
+      {
+        "web_line": 233,
+        "pdf_page_zero_based": null,
+        "text": "    ...",
+        "start": 17857,
+        "end": 17865
+      },
+      {
+        "web_line": 234,
+        "pdf_page_zero_based": null,
+        "text": "    # allow_jjog: pin created by a virtual panel or hardware switch",
+        "start": 17865,
+        "end": 17933
+      },
+      {
+        "web_line": 235,
+        "pdf_page_zero_based": null,
+        "text": "    net hsequence_select <= allow_jjog",
+        "start": 17933,
+        "end": 17972
+      },
+      {
+        "web_line": 236,
+        "pdf_page_zero_based": null,
+        "text": "    net hsequence_select => home_sequence_mux.sel",
+        "start": 17972,
+        "end": 18022
+      },
+      {
+        "web_line": 237,
+        "pdf_page_zero_based": null,
+        "text": "    net hsequence_select => motion.homing-inhibit`",
+        "start": 18022,
+        "end": 18073
+      },
+      {
+        "web_line": 238,
+        "pdf_page_zero_based": null,
+        "text": "Note  | INI HAL pins (like ini.N.home_sequence) are not available until milltask starts so execution of the above HAL commands should be deferred using a postgui HAL file or a delayed [APPLICATION]APP= script.",
+        "start": 18073,
+        "end": 18283
+      },
+      {
+        "web_line": 239,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 18283,
+        "end": 18284
+      },
+      {
+        "web_line": 240,
+        "pdf_page_zero_based": null,
+        "text": "Note  | Realtime synchronization of joint jogging for multiple joints requires additional HAL connections for the Manual-Pulse-Generator (MPG) type jog pins (`joint.N.enable`, `joint.N.scale`, `joint.N.counts`).",
+        "start": 18284,
+        "end": 18496
+      },
+      {
+        "web_line": 241,
+        "pdf_page_zero_based": null,
+        "text": "An example simulation config (gantry_jjog.ini) that demonstrates joint jogging when using negative home sequences is located in the: configs/sim/axis/gantry/ directory.",
+        "start": 18496,
+        "end": 18665
+      },
+      {
+        "web_line": 242,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 18665,
+        "end": 18666
+      },
+      {
+        "web_line": 243,
+        "pdf_page_zero_based": null,
+        "text": "* * *",
+        "start": 18666,
+        "end": 18672
+      },
+      {
+        "web_line": 244,
+        "pdf_page_zero_based": null,
+        "text": "",
+        "start": 18672,
+        "end": 18673
+      },
+      {
+        "web_line": 245,
+        "pdf_page_zero_based": null,
+        "text": "Last updated 2026-10-11 09:59:50 UTC",
+        "start": 18673,
+        "end": 18710
+      }
+    ]
+  },
+  "NIST-8091": {
+    "source_id": "NIST-8091",
+    "title": "Predicting Robot System Performance by Measuring and Composing Subsystem Attributes",
+    "url": "https://nvlpubs.nist.gov/nistpubs/ir/2015/NIST.IR.8091.pdf",
+    "role": "development",
+    "coverage_kind": "partial_excerpt",
+    "observed_web_line_range": [
+      174,
+      301
+    ],
+    "observed_rows": 128,
+    "original_report_total_web_lines": 529,
+    "full_scan_eligible": false,
+    "collected_on": "2026-10-12",
+    "rights_evidence_file": "web-visual-rights.json",
+    "rights_basis": "NIST technical series policy L175-176; cover/front matter L0-15, third-party figure not used",
+    "artifact_kind": "PLATFORM_TEXT_EXTRACTION_NOT_ORIGINAL",
+    "raw_file": null,
+    "raw_sha256": null,
+    "snapshot_file": "NIST-8091.snapshot.txt",
+    "snapshot_sha256": "4de56b7f473e8fb1f980a651f16f3b1db137af14b56087dca416e45c94eaaca8",
+    "version": "NISTIR 8091, November 2015, DOI 10.6028/NIST.IR.8091",
+    "rows": [
+      {
+        "web_line": 174,
+        "pdf_page_zero_based": "6",
+        "text": "make use of Whitney’s methodology augmented with a taxonomy of assembly operations",
+        "start": 0,
+        "end": 83
+      },
+      {
+        "web_line": 175,
+        "pdf_page_zero_based": "6",
+        "text": "with associated performance metrics. Whitney describes the basic factors in system",
+        "start": 83,
+        "end": 166
+      },
+      {
+        "web_line": 176,
+        "pdf_page_zero_based": "6",
+        "text": "design as:",
+        "start": 166,
+        "end": 177
+      },
+      {
+        "web_line": 177,
+        "pdf_page_zero_based": "6",
+        "text": "1. Analyze the product and determine alternate assembly methods and sequences,",
+        "start": 177,
+        "end": 256
+      },
+      {
+        "web_line": 178,
+        "pdf_page_zero_based": "6",
+        "text": "including for subassemblies. Determine the assembly process requirements,",
+        "start": 256,
+        "end": 330
+      },
+      {
+        "web_line": 179,
+        "pdf_page_zero_based": "6",
+        "text": "flexibility requirements, and problematic assembly steps.",
+        "start": 330,
+        "end": 388
+      },
+      {
+        "web_line": 180,
+        "pdf_page_zero_based": "6",
+        "text": "2. Select an assembly sequence.",
+        "start": 388,
+        "end": 420
+      },
+      {
+        "web_line": 181,
+        "pdf_page_zero_based": "6",
+        "text": "3. Determine the required production capacity of the system.",
+        "start": 420,
+        "end": 481
+      },
+      {
+        "web_line": 182,
+        "pdf_page_zero_based": "6",
+        "text": "4. List the feasible assembly techniques for each operation and estimate cost and",
+        "start": 481,
+        "end": 563
+      },
+      {
+        "web_line": 183,
+        "pdf_page_zero_based": "6",
+        "text": "time for each.",
+        "start": 563,
+        "end": 578
+      },
+      {
+        "web_line": 184,
+        "pdf_page_zero_based": "6",
+        "text": "5. Select a set of equipment or people that can make the product at the required rate",
+        "start": 578,
+        "end": 664
+      },
+      {
+        "web_line": 185,
+        "pdf_page_zero_based": "6",
+        "text": "for a reasonable cost.",
+        "start": 664,
+        "end": 687
+      },
+      {
+        "web_line": 186,
+        "pdf_page_zero_based": "6",
+        "text": "6. Conduct an economic analysis and proceed to a detailed system design.",
+        "start": 687,
+        "end": 760
+      },
+      {
+        "web_line": 187,
+        "pdf_page_zero_based": "6",
+        "text": "Whitney then provides guidance for all the above steps, while acknowledging that there",
+        "start": 760,
+        "end": 847
+      },
+      {
+        "web_line": 188,
+        "pdf_page_zero_based": "6",
+        "text": "are no approaches that will work in all cases. The underlying assumption is that it is",
+        "start": 847,
+        "end": 934
+      },
+      {
+        "web_line": 189,
+        "pdf_page_zero_based": "6",
+        "text": "indeed possible to manufacture the assembly for a reasonable cost but a significant",
+        "start": 934,
+        "end": 1018
+      },
+      {
+        "web_line": 190,
+        "pdf_page_zero_based": "6",
+        "text": "amount of analysis, simulation, and approximation will be needed to determine the best",
+        "start": 1018,
+        "end": 1105
+      },
+      {
+        "web_line": 191,
+        "pdf_page_zero_based": "6",
+        "text": "approach. It is also expected that multiple iterations will be necessary, not just to",
+        "start": 1105,
+        "end": 1191
+      },
+      {
+        "web_line": 192,
+        "pdf_page_zero_based": "6",
+        "text": "converge on an initial system, but to improve the system over time after production",
+        "start": 1191,
+        "end": 1275
+      },
+      {
+        "web_line": 193,
+        "pdf_page_zero_based": "6",
+        "text": "begins.",
+        "start": 1275,
+        "end": 1283
+      },
+      {
+        "web_line": 194,
+        "pdf_page_zero_based": "6",
+        "text": "The role of a taxonomy of assembly operations and of the equipment that carries out",
+        "start": 1283,
+        "end": 1367
+      },
+      {
+        "web_line": 195,
+        "pdf_page_zero_based": "6",
+        "text": "those operations is to provide alternative techniques that can be combined to make the",
+        "start": 1367,
+        "end": 1454
+      },
+      {
+        "web_line": 196,
+        "pdf_page_zero_based": "6",
+        "text": "desired product. Such a taxonomy is the subject of an earlier paper, Shneier, et al. [11].",
+        "start": 1454,
+        "end": 1545
+      },
+      {
+        "web_line": 197,
+        "pdf_page_zero_based": "6",
+        "text": "The taxonomy provides a hierarchical structure that can be traversed to link different",
+        "start": 1545,
+        "end": 1632
+      },
+      {
+        "web_line": 198,
+        "pdf_page_zero_based": "6",
+        "text": "components of a manufacturing system together to achieve the required capabilities. It",
+        "start": 1632,
+        "end": 1719
+      },
+      {
+        "web_line": 199,
+        "pdf_page_zero_based": "6",
+        "text": "does not include a way of combining performance measures, nor does it resolve the",
+        "start": 1719,
+        "end": 1801
+      },
+      {
+        "web_line": 200,
+        "pdf_page_zero_based": "6",
+        "text": "problem of different measures being important at different levels of the hierarchy, but it",
+        "start": 1801,
+        "end": 1892
+      },
+      {
+        "web_line": 201,
+        "pdf_page_zero_based": "6-7",
+        "text": "does constrain which items can be considered at each stage and gives some idea of the 5",
+        "start": 1892,
+        "end": 1980
+      },
+      {
+        "web_line": 202,
+        "pdf_page_zero_based": "7",
+        "text": "costs incurred and capabilities added when a selection is made. This taxonomy needs to",
+        "start": 1980,
+        "end": 2067
+      },
+      {
+        "web_line": 203,
+        "pdf_page_zero_based": "7",
+        "text": "be augmented with assembly-relevant constraints to allow the performance of the",
+        "start": 2067,
+        "end": 2147
+      },
+      {
+        "web_line": 204,
+        "pdf_page_zero_based": "7",
+        "text": "combined system to be estimated.",
+        "start": 2147,
+        "end": 2180
+      },
+      {
+        "web_line": 205,
+        "pdf_page_zero_based": "7",
+        "text": "The performance criteria for an assembly system at the highest level are economic and",
+        "start": 2180,
+        "end": 2266
+      },
+      {
+        "web_line": 206,
+        "pdf_page_zero_based": "7",
+        "text": "include cost, product quality, flexibility, throughput, reliability, and ease of setup and use",
+        "start": 2266,
+        "end": 2361
+      },
+      {
+        "web_line": 207,
+        "pdf_page_zero_based": "7",
+        "text": "(and re-use) of the equipment. The criteria for individual subsystems include the same",
+        "start": 2361,
+        "end": 2448
+      },
+      {
+        "web_line": 208,
+        "pdf_page_zero_based": "7",
+        "text": "economic measures and, more importantly, characteristics that determine the suitability",
+        "start": 2448,
+        "end": 2536
+      },
+      {
+        "web_line": 209,
+        "pdf_page_zero_based": "7",
+        "text": "of the subsystem to contribute to making the product. Performance measures for a",
+        "start": 2536,
+        "end": 2617
+      },
+      {
+        "web_line": 210,
+        "pdf_page_zero_based": "7",
+        "text": "manipulator or a sensor must enable a decision to be made about whether or not it will",
+        "start": 2617,
+        "end": 2704
+      },
+      {
+        "web_line": 211,
+        "pdf_page_zero_based": "7",
+        "text": "contribute to a step in the assembly and, if so, what constraints it will impose on the",
+        "start": 2704,
+        "end": 2792
+      },
+      {
+        "web_line": 212,
+        "pdf_page_zero_based": "7",
+        "text": "solution and how adding it will affect the total system’s cost and performance. An",
+        "start": 2792,
+        "end": 2875
+      },
+      {
+        "web_line": 213,
+        "pdf_page_zero_based": "7",
+        "text": "incomplete list of the kinds of measures that are needed includes:",
+        "start": 2875,
+        "end": 2942
+      },
+      {
+        "web_line": 214,
+        "pdf_page_zero_based": "7",
+        "text": " Tolerances (e.g., variability by which a manipulator reaches a commanded position,",
+        "start": 2942,
+        "end": 3027
+      },
+      {
+        "web_line": 215,
+        "pdf_page_zero_based": "7",
+        "text": "uncertainty in the reported output of a sensor)",
+        "start": 3027,
+        "end": 3075
+      },
+      {
+        "web_line": 216,
+        "pdf_page_zero_based": "7",
+        "text": " Time needed for execution (e.g., a manipulator picking up a part, a sensor locating a",
+        "start": 3075,
+        "end": 3163
+      },
+      {
+        "web_line": 217,
+        "pdf_page_zero_based": "7",
+        "text": "part)",
+        "start": 3163,
+        "end": 3169
+      },
+      {
+        "web_line": 218,
+        "pdf_page_zero_based": "7",
+        "text": " Variability (e.g., in time, position)",
+        "start": 3169,
+        "end": 3209
+      },
+      {
+        "web_line": 219,
+        "pdf_page_zero_based": "7",
+        "text": " Weight (e.g., load capacity of a manipulator, constraints on capacity in different parts",
+        "start": 3209,
+        "end": 3300
+      },
+      {
+        "web_line": 220,
+        "pdf_page_zero_based": "7",
+        "text": "of its reachable volume)",
+        "start": 3300,
+        "end": 3325
+      },
+      {
+        "web_line": 221,
+        "pdf_page_zero_based": "7",
+        "text": " Size (e.g., the footprint of a machine or the field of view of a sensor, the largest-sized",
+        "start": 3325,
+        "end": 3418
+      },
+      {
+        "web_line": 222,
+        "pdf_page_zero_based": "7",
+        "text": "object a robot can pick up)",
+        "start": 3418,
+        "end": 3446
+      },
+      {
+        "web_line": 223,
+        "pdf_page_zero_based": "7",
+        "text": " Reachability of equipment (e.g., the working volume of a manipulator)",
+        "start": 3446,
+        "end": 3518
+      },
+      {
+        "web_line": 224,
+        "pdf_page_zero_based": "7",
+        "text": " Accuracy of equipment (e.g., Is a robot capable of mating parts well enough to",
+        "start": 3518,
+        "end": 3599
+      },
+      {
+        "web_line": 225,
+        "pdf_page_zero_based": "7",
+        "text": "achieve the assembly? Can a sensor measure to the required accuracy to acquire a",
+        "start": 3599,
+        "end": 3680
+      },
+      {
+        "web_line": 226,
+        "pdf_page_zero_based": "7",
+        "text": "part?)",
+        "start": 3680,
+        "end": 3687
+      },
+      {
+        "web_line": 227,
+        "pdf_page_zero_based": "7",
+        "text": " Speed of equipment (e.g., can the subsystem execute within the time allotted?)",
+        "start": 3687,
+        "end": 3768
+      },
+      {
+        "web_line": 228,
+        "pdf_page_zero_based": "7",
+        "text": " Part feeding (e.g., does the equipment need precise feeding? Does a sensor need to be",
+        "start": 3768,
+        "end": 3856
+      },
+      {
+        "web_line": 229,
+        "pdf_page_zero_based": "7",
+        "text": "added to locate the parts?)",
+        "start": 3856,
+        "end": 3884
+      },
+      {
+        "web_line": 230,
+        "pdf_page_zero_based": "7",
+        "text": " Required system capacity (e.g., can the system as configured achieve the necessary",
+        "start": 3884,
+        "end": 3969
+      },
+      {
+        "web_line": 231,
+        "pdf_page_zero_based": "7",
+        "text": "throughput?)",
+        "start": 3969,
+        "end": 3982
+      },
+      {
+        "web_line": 232,
+        "pdf_page_zero_based": "7",
+        "text": " Uptime of equipment (is the system reliable enough to ensure that the required",
+        "start": 3982,
+        "end": 4063
+      },
+      {
+        "web_line": 233,
+        "pdf_page_zero_based": "7",
+        "text": "capacity will be achieved? If a subsystem fails, what is the impact on the system as a",
+        "start": 4063,
+        "end": 4150
+      },
+      {
+        "web_line": 234,
+        "pdf_page_zero_based": "7",
+        "text": "whole?)",
+        "start": 4150,
+        "end": 4158
+      },
+      {
+        "web_line": 235,
+        "pdf_page_zero_based": "7",
+        "text": " Tool changes required (if tool changes are needed, can the order of operations be",
+        "start": 4158,
+        "end": 4242
+      },
+      {
+        "web_line": 236,
+        "pdf_page_zero_based": "7",
+        "text": "modified to minimize them?)",
+        "start": 4242,
+        "end": 4270
+      },
+      {
+        "web_line": 237,
+        "pdf_page_zero_based": "7",
+        "text": " Testing and inspection (can testing and inspection be incorporated in other steps or is",
+        "start": 4270,
+        "end": 4360
+      },
+      {
+        "web_line": 238,
+        "pdf_page_zero_based": "7",
+        "text": "a separate subsystem needed and, if so, how many?)",
+        "start": 4360,
+        "end": 4411
+      },
+      {
+        "web_line": 239,
+        "pdf_page_zero_based": "7",
+        "text": " Constraints—does adding this subsystem limit how other subsystems can be used",
+        "start": 4411,
+        "end": 4491
+      },
+      {
+        "web_line": 240,
+        "pdf_page_zero_based": "7",
+        "text": "(e.g., a manipulator requires a sensor to be able to locate a part to within a specific",
+        "start": 4491,
+        "end": 4579
+      },
+      {
+        "web_line": 241,
+        "pdf_page_zero_based": "7-8",
+        "text": "tolerance)6",
+        "start": 4579,
+        "end": 4591
+      },
+      {
+        "web_line": 242,
+        "pdf_page_zero_based": "8",
+        "text": "The taxonomy of subsystems must represent the information necessary for these",
+        "start": 4591,
+        "end": 4669
+      },
+      {
+        "web_line": 243,
+        "pdf_page_zero_based": "8",
+        "text": "measures to be computed for the given situation. This is the case not only for equipment",
+        "start": 4669,
+        "end": 4758
+      },
+      {
+        "web_line": 244,
+        "pdf_page_zero_based": "8",
+        "text": "such as manipulators, sensors, or transportation devices, but also for the software that",
+        "start": 4758,
+        "end": 4847
+      },
+      {
+        "web_line": 245,
+        "pdf_page_zero_based": "8",
+        "text": "controls those devices. Then, when step 5 of Whitney’s procedure is reached, it should be",
+        "start": 4847,
+        "end": 4937
+      },
+      {
+        "web_line": 246,
+        "pdf_page_zero_based": "8",
+        "text": "possible to compare the different options to be added for each step of the task and choose",
+        "start": 4937,
+        "end": 5028
+      },
+      {
+        "web_line": 247,
+        "pdf_page_zero_based": "8",
+        "text": "the best feasible alternative.",
+        "start": 5028,
+        "end": 5059
+      },
+      {
+        "web_line": 248,
+        "pdf_page_zero_based": "8-9",
+        "text": "Figure 1. The assembly taxonomy from Shneier, et al. [11].7",
+        "start": 5059,
+        "end": 5119
+      },
+      {
+        "web_line": 249,
+        "pdf_page_zero_based": "9",
+        "text": "Figure 1 shows the assembly taxonomy. For each action in the hierarchy, there may be",
+        "start": 5119,
+        "end": 5204
+      },
+      {
+        "web_line": 250,
+        "pdf_page_zero_based": "9",
+        "text": "several available pieces of equipment that can achieve the action. Each of them should",
+        "start": 5204,
+        "end": 5291
+      },
+      {
+        "web_line": 251,
+        "pdf_page_zero_based": "9",
+        "text": "have relevant parameters from the list above that characterizes its performance. The",
+        "start": 5291,
+        "end": 5376
+      },
+      {
+        "web_line": 252,
+        "pdf_page_zero_based": "9",
+        "text": "actions also have constraints that contain further parameters limiting the applicability of a",
+        "start": 5376,
+        "end": 5470
+      },
+      {
+        "web_line": 253,
+        "pdf_page_zero_based": "9",
+        "text": "given piece of equipment.",
+        "start": 5470,
+        "end": 5496
+      },
+      {
+        "web_line": 254,
+        "pdf_page_zero_based": "9",
+        "text": "3.1. Example",
+        "start": 5496,
+        "end": 5509
+      },
+      {
+        "web_line": 255,
+        "pdf_page_zero_based": "9",
+        "text": "To illustrate the approach, we present a simple example. Suppose the goal is to build a",
+        "start": 5509,
+        "end": 5597
+      },
+      {
+        "web_line": 256,
+        "pdf_page_zero_based": "9",
+        "text": "gearbox out of the set of parts shown in Figure 2. Assume that there are two robots",
+        "start": 5597,
+        "end": 5681
+      },
+      {
+        "web_line": 257,
+        "pdf_page_zero_based": "9",
+        "text": "available for this task together with two cameras and a mobile delivery vehicle",
+        "start": 5681,
+        "end": 5761
+      },
+      {
+        "web_line": 258,
+        "pdf_page_zero_based": "9",
+        "text": "(Automated Guided Vehicle, or AGV). One of the robots has force sensing, while the",
+        "start": 5761,
+        "end": 5844
+      },
+      {
+        "web_line": 259,
+        "pdf_page_zero_based": "9",
+        "text": "other does not. A person is also available to work on the assembly. The goal is to build",
+        "start": 5844,
+        "end": 5933
+      },
+      {
+        "web_line": 260,
+        "pdf_page_zero_based": "9",
+        "text": "the gearbox from the components, which will be delivered in a kit. A kit is a collection of",
+        "start": 5933,
+        "end": 6025
+      },
+      {
+        "web_line": 261,
+        "pdf_page_zero_based": "9",
+        "text": "the necessary parts, in this case placed in a flat tray but in unknown positions within the",
+        "start": 6025,
+        "end": 6117
+      },
+      {
+        "web_line": 262,
+        "pdf_page_zero_based": "9",
+        "text": "tray. The tray may be delivered to the work area by the vehicle and from the kit tray to",
+        "start": 6117,
+        "end": 6206
+      },
+      {
+        "web_line": 263,
+        "pdf_page_zero_based": "9",
+        "text": "the assembly area by one of the robots. Either or both robots may be selected to build the",
+        "start": 6206,
+        "end": 6297
+      },
+      {
+        "web_line": 264,
+        "pdf_page_zero_based": "9",
+        "text": "gearbox, but they have different capabilities. Similarly, any of the sensors may be used to",
+        "start": 6297,
+        "end": 6389
+      },
+      {
+        "web_line": 265,
+        "pdf_page_zero_based": "9",
+        "text": "locate the parts and inspect the results, but they have different fields of view and",
+        "start": 6389,
+        "end": 6474
+      },
+      {
+        "web_line": 266,
+        "pdf_page_zero_based": "9",
+        "text": "resolutions.",
+        "start": 6474,
+        "end": 6487
+      },
+      {
+        "web_line": 267,
+        "pdf_page_zero_based": "9",
+        "text": "Figure 2. A set of parts to be assembled into a gearbox.",
+        "start": 6487,
+        "end": 6544
+      },
+      {
+        "web_line": 268,
+        "pdf_page_zero_based": "9",
+        "text": "Figure 3. A view of the gearbox with all parts except the",
+        "start": 6544,
+        "end": 6602
+      },
+      {
+        "web_line": 269,
+        "pdf_page_zero_based": "9",
+        "text": "top cover assembled.",
+        "start": 6602,
+        "end": 6623
+      },
+      {
+        "web_line": 270,
+        "pdf_page_zero_based": "9",
+        "text": "1. Analyze the product and determine alternate assembly methods and sequences,",
+        "start": 6623,
+        "end": 6702
+      },
+      {
+        "web_line": 271,
+        "pdf_page_zero_based": "9",
+        "text": "including subassemblies. Determine the assembly process requirements,",
+        "start": 6702,
+        "end": 6772
+      },
+      {
+        "web_line": 272,
+        "pdf_page_zero_based": "9",
+        "text": "flexibility requirements, and problematic assembly steps.",
+        "start": 6772,
+        "end": 6830
+      },
+      {
+        "web_line": 273,
+        "pdf_page_zero_based": "9",
+        "text": "The assembly is challenging for several reasons. There are a number of small",
+        "start": 6830,
+        "end": 6907
+      },
+      {
+        "web_line": 274,
+        "pdf_page_zero_based": "9",
+        "text": "parts that may be difficult for a robot to pick up and manipulate; the gears fit",
+        "start": 6907,
+        "end": 6988
+      },
+      {
+        "web_line": 275,
+        "pdf_page_zero_based": "9",
+        "text": "tightly and require a strategy for meshing; they are also similar in size and color.",
+        "start": 6988,
+        "end": 7073
+      },
+      {
+        "web_line": 276,
+        "pdf_page_zero_based": "9-10",
+        "text": "Visual sensing may have trouble with the parts because internal features may be 8",
+        "start": 7073,
+        "end": 7155
+      },
+      {
+        "web_line": 277,
+        "pdf_page_zero_based": "10",
+        "text": "difficult to detect and there may not be enough contrast with the background. The",
+        "start": 7155,
+        "end": 7237
+      },
+      {
+        "web_line": 278,
+        "pdf_page_zero_based": "10",
+        "text": "base of the gearbox (the part on the right of Error! Reference source not found.)",
+        "start": 7237,
+        "end": 7319
+      },
+      {
+        "web_line": 279,
+        "pdf_page_zero_based": "10",
+        "text": "can move as other parts are attached to it unless it is held or fixtured. A tool is",
+        "start": 7319,
+        "end": 7403
+      },
+      {
+        "web_line": 280,
+        "pdf_page_zero_based": "10",
+        "text": "required to screw the top onto the base. The small parts must be removed from the",
+        "start": 7403,
+        "end": 7485
+      },
+      {
+        "web_line": 281,
+        "pdf_page_zero_based": "10",
+        "text": "bag before use.",
+        "start": 7485,
+        "end": 7501
+      },
+      {
+        "web_line": 282,
+        "pdf_page_zero_based": "10",
+        "text": "A good starting heuristic is to look for steps that can only be accomplished in one",
+        "start": 7501,
+        "end": 7585
+      },
+      {
+        "web_line": 283,
+        "pdf_page_zero_based": "10",
+        "text": "way. Several of the challenges must be addressed by having a person assist with",
+        "start": 7585,
+        "end": 7665
+      },
+      {
+        "web_line": 284,
+        "pdf_page_zero_based": "10",
+        "text": "the assembly. There seems no alternative to having the person remove the small",
+        "start": 7665,
+        "end": 7744
+      },
+      {
+        "web_line": 285,
+        "pdf_page_zero_based": "10",
+        "text": "parts from the bag and insert the pins into the assembly. The person will also have",
+        "start": 7744,
+        "end": 7828
+      },
+      {
+        "web_line": 286,
+        "pdf_page_zero_based": "10",
+        "text": "to insert the screws because the robots have no tools to accomplish this step.",
+        "start": 7828,
+        "end": 7907
+      },
+      {
+        "web_line": 287,
+        "pdf_page_zero_based": "10",
+        "text": "There also seems not to be a choice about using the robot with force sensing to",
+        "start": 7907,
+        "end": 7987
+      },
+      {
+        "web_line": 288,
+        "pdf_page_zero_based": "10",
+        "text": "insert the gears because of the tight fit and need for meshing. The vision system",
+        "start": 7987,
+        "end": 8069
+      },
+      {
+        "web_line": 289,
+        "pdf_page_zero_based": "10",
+        "text": "must be able to recognize the parts and locate them accurately enough to direct",
+        "start": 8069,
+        "end": 8149
+      },
+      {
+        "web_line": 290,
+        "pdf_page_zero_based": "10",
+        "text": "the manipulator to grasp them. It must also be able to confirm that each step of the",
+        "start": 8149,
+        "end": 8234
+      },
+      {
+        "web_line": 291,
+        "pdf_page_zero_based": "10",
+        "text": "assembly has been completed correctly before the system moves on to the next",
+        "start": 8234,
+        "end": 8311
+      },
+      {
+        "web_line": 292,
+        "pdf_page_zero_based": "10",
+        "text": "step. This may not be possible if the field of view of the sensor cannot cover both",
+        "start": 8311,
+        "end": 8395
+      },
+      {
+        "web_line": 293,
+        "pdf_page_zero_based": "10",
+        "text": "the location where the kit is delivered and the place where the assembly is carried",
+        "start": 8395,
+        "end": 8479
+      },
+      {
+        "web_line": 294,
+        "pdf_page_zero_based": "10",
+        "text": "out. Thus, two vision systems may be required. Given that the kit of parts is",
+        "start": 8479,
+        "end": 8557
+      },
+      {
+        "web_line": 295,
+        "pdf_page_zero_based": "10",
+        "text": "delivered by an AGV, two vision systems will be used.",
+        "start": 8557,
+        "end": 8611
+      },
+      {
+        "web_line": 296,
+        "pdf_page_zero_based": "10",
+        "text": "There are a few alternatives with respect to how to proceed with the assembly.",
+        "start": 8611,
+        "end": 8690
+      },
+      {
+        "web_line": 297,
+        "pdf_page_zero_based": "10",
+        "text": "One of the robots can fetch the parts while the other inserts them, or one of the",
+        "start": 8690,
+        "end": 8772
+      },
+      {
+        "web_line": 298,
+        "pdf_page_zero_based": "10",
+        "text": "robots can act as a fixture and hold the base while the other robot does all the",
+        "start": 8772,
+        "end": 8853
+      },
+      {
+        "web_line": 299,
+        "pdf_page_zero_based": "10",
+        "text": "other activities, or one robot can fetch a part and then hold the base while it is",
+        "start": 8853,
+        "end": 8936
+      },
+      {
+        "web_line": 300,
+        "pdf_page_zero_based": "10",
+        "text": "added. The person can insert the pins that act as axes for the two smaller gears",
+        "start": 8936,
+        "end": 9017
+      },
+      {
+        "web_line": 301,
+        "pdf_page_zero_based": "10",
+        "text": "before the robot inserts the large gear or afterwards or can insert each pin just",
+        "start": 9017,
+        "end": 9099
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+..................................F...F................                  [100%]
+================================== FAILURES ===================================
+_________ test_directory_descriptors_rename_and_env_reads_are_denied __________
+backend\tests\test_guard_readiness.py:102: in test_directory_descriptors_rename_and_env_reads_are_denied
+    audit(event, args)
+backend\research\isolated_guard.py:173: in audit
+    if not isinstance(path, int) and any(part.lower().startswith('.env') for part in Path(os.fsdecode(path)).parts):
+                                                                                          ^^^^^^^^^^^^^^^^^
+<frozen os>:859: in fsdecode
+    ???
+E   TypeError: expected str, bytes or os.PathLike object, not NoneType
+_ test_manifest_identity_is_strict_and_hardlinks_can_only_be_explicitly_allowed _
+backend\tests\test_guard_readiness.py:146: in test_manifest_identity_is_strict_and_hardlinks_can_only_be_explicitly_allowed
+    os.link(original, tmp_path / 'alias')
+E   PermissionError: [WinError 5] 拒绝访问。: 'D:\\graghRAG-agent\\backend\\tests\\_sandbox_tmp\\guard-readiness-20261013\\test_manifest_identity_is_stri0\\file' -> 'D:\\graghRAG-agent\\backend\\tests\\_sandbox_tmp\\guard-readiness-20261013\\test_manifest_identity_is_stri0\\alias'
+=========================== short test summary info ===========================
+FAILED backend\tests\test_guard_readiness.py::test_directory_descriptors_rename_and_env_reads_are_denied
+FAILED backend\tests\test_guard_readiness.py::test_manifest_identity_is_strict_and_hardlinks_can_only_be_explicitly_allowed
+2 failed, 53 passed in 5.46s

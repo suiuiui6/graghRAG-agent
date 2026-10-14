@@ -1,0 +1,550 @@
+........................................F............................... [  9%]
+........................................................................ [ 19%]
+.....................................FFFFFFFFFFFFFFFFFF................. [ 29%]
+...................................F.................................... [ 39%]
+........................................................................ [ 49%]
+........................................................................ [ 59%]
+........................................................................ [ 69%]
+...........................................FF.F......................... [ 79%]
+...................................................FF.FFFF..........F.FF [ 89%]
+............F........................................................... [ 99%]
+....                                                                     [100%]
+================================== FAILURES ===================================
+_____________________ test_library_modules_have_no_print ______________________
+backend\tests\test_error_handling_policy.py:45: in test_library_modules_have_no_print
+    assert not offenders, f"��������� print()��{offenders}"
+E   AssertionError: ��������� print()��['research/deepseek_scope_pilot.py:336', 'research/deepseek_scope_pilot.py:338', 'research/local_scope_v2.py:199', 'research/local_scope_v2.py:203']
+E   assert not ['research/deepseek_scope_pilot.py:336', 'research/deepseek_scope_pilot.py:338', 'research/local_scope_v2.py:199', 'research/local_scope_v2.py:203']
+________________ test_environment_does_not_inherit_credentials ________________
+backend\tests\test_isolated_guard.py:30: in test_environment_does_not_inherit_credentials
+    env = api().build_environment(tmp_path, manifest(tmp_path))
+          ^^^^^
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+_______________________ test_binding_and_unsafe_writes ________________________
+backend\tests\test_isolated_guard.py:40: in test_binding_and_unsafe_writes
+    module = api()
+             ^^^^^
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+______________ test_hook_blocks_in_fresh_child[socket.socket()] _______________
+backend\tests\test_isolated_guard.py:62: in test_hook_blocks_in_fresh_child
+    api()
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+_ test_hook_blocks_in_fresh_child[socket.getaddrinfo('example.invalid', 80)] __
+backend\tests\test_isolated_guard.py:62: in test_hook_blocks_in_fresh_child
+    api()
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+_ test_hook_blocks_in_fresh_child[subprocess.run([sys.executable, '-c', 'pass'])] _
+backend\tests\test_isolated_guard.py:62: in test_hook_blocks_in_fresh_child
+    api()
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+_________ test_hook_blocks_in_fresh_child[os.system('never_execute')] _________
+backend\tests\test_isolated_guard.py:62: in test_hook_blocks_in_fresh_child
+    api()
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+_____________ test_hook_blocks_in_fresh_child[open(outside, 'w')] _____________
+backend\tests\test_isolated_guard.py:62: in test_hook_blocks_in_fresh_child
+    api()
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+_____________ test_hook_blocks_in_fresh_child[os.mkdir(outside)] ______________
+backend\tests\test_isolated_guard.py:62: in test_hook_blocks_in_fresh_child
+    api()
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+_________ test_hook_blocks_in_fresh_child[os.rename(inside, outside)] _________
+backend\tests\test_isolated_guard.py:62: in test_hook_blocks_in_fresh_child
+    api()
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+____________ test_hook_blocks_in_fresh_child[ctypes.CDLL(outside)] ____________
+backend\tests\test_isolated_guard.py:62: in test_hook_blocks_in_fresh_child
+    api()
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+__________ test_hook_blocks_in_fresh_child[site.addsitedir(outside)] __________
+backend\tests\test_isolated_guard.py:62: in test_hook_blocks_in_fresh_child
+    api()
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+_____________ test_hook_blocks_in_fresh_child[os.remove(outside)] _____________
+backend\tests\test_isolated_guard.py:62: in test_hook_blocks_in_fresh_child
+    api()
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+__________ test_hook_blocks_in_fresh_child[os.link(inside, outside)] __________
+backend\tests\test_isolated_guard.py:62: in test_hook_blocks_in_fresh_child
+    api()
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+_______________________ test_hook_allows_snapshot_write _______________________
+backend\tests\test_isolated_guard.py:88: in test_hook_allows_snapshot_write
+    module = api()
+             ^^^^^
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+______________ test_environment_rejects_nonstandard_windows_root ______________
+backend\tests\test_isolated_guard.py:97: in test_environment_rejects_nonstandard_windows_root
+    api().build_environment(tmp_path, manifest(tmp_path))
+    ^^^^^
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+_ test_secret_reads_are_blocked_before_open[open(os.path.join(run, '.env'), 'r')] _
+backend\tests\test_isolated_guard.py:105: in test_secret_reads_are_blocked_before_open
+    test_hook_blocks_in_fresh_child(tmp_path, operation)
+backend\tests\test_isolated_guard.py:62: in test_hook_blocks_in_fresh_child
+    api()
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+_ test_secret_reads_are_blocked_before_open[open(os.path.join(run, '.env.local'), 'rb')] _
+backend\tests\test_isolated_guard.py:105: in test_secret_reads_are_blocked_before_open
+    test_hook_blocks_in_fresh_child(tmp_path, operation)
+backend\tests\test_isolated_guard.py:62: in test_hook_blocks_in_fresh_child
+    api()
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+____________ test_named_existing_system_dll_allowed_in_fresh_child ____________
+backend\tests\test_isolated_guard.py:111: in test_named_existing_system_dll_allowed_in_fresh_child
+    api()
+backend\tests\test_isolated_guard.py:15: in api
+    assert MODULE.exists(), 'isolated guard API must exist'
+E   AssertionError: isolated guard API must exist
+E   assert False
+E    +  where False = exists()
+E    +    where exists = WindowsPath('D:/graghRAG-agent/backend/research/isolated_guard.py').exists
+____________________ test_b0_preparation_is_not_execution _____________________
+backend\tests\test_local_scope_v2.py:31: in test_b0_preparation_is_not_execution
+    assert report['production_integrity']['all_match_freeze']
+E   assert False
+____________________ test_startup_restores_runtime_indexes ____________________
+backend\tests\test_runtime_recovery.py:323: in test_startup_restores_runtime_indexes
+    monkeypatch.setattr(routes.documents, "get_docs_snapshot", lambda: [])
+E   AttributeError: <module 'routes.documents' from 'D:\\graghRAG-agent\\backend\\routes\\documents.py'> has no attribute 'get_docs_snapshot'
+_____ test_startup_rebuilds_sparse_table_runtime_index_from_mineru_output _____
+backend\tests\test_runtime_recovery.py:387: in test_startup_rebuilds_sparse_table_runtime_index_from_mineru_output
+    monkeypatch.setattr(routes.documents, "get_docs_snapshot", lambda: [])
+E   AttributeError: <module 'routes.documents' from 'D:\\graghRAG-agent\\backend\\routes\\documents.py'> has no attribute 'get_docs_snapshot'
+_________________ test_lifespan_shuts_down_scheduler_on_exit __________________
+backend\tests\test_runtime_recovery.py:469: in test_lifespan_shuts_down_scheduler_on_exit
+    monkeypatch.setattr(routes.documents, "get_docs_snapshot", lambda: [])
+E   AttributeError: <module 'routes.documents' from 'D:\\graghRAG-agent\\backend\\routes\\documents.py'> has no attribute 'get_docs_snapshot'
+__________ test_real_local_deterministic_answer_records_mask[query] ___________
+backend\tests\test_source_control_integration.py:63: in test_real_local_deterministic_answer_records_mask
+    assert response.status_code == 200
+E   assert 401 == 200
+E    +  where 401 = <Response [401 Unauthorized]>.status_code
+---------------------------- Captured stderr call -----------------------------
+HTTP Request: POST http://testserver/api/v1/rag/query "HTTP/1.1 401 Unauthorized"
+------------------------------ Captured log call ------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/api/v1/rag/query "HTTP/1.1 401 Unauthorized"
+________ test_real_local_deterministic_answer_records_mask[summarize] _________
+backend\tests\test_source_control_integration.py:60: in test_real_local_deterministic_answer_records_mask
+    response = client.post("/api/v1/rag/" + endpoint, json={
+backend\.venv\Lib\site-packages\starlette\testclient.py:546: in post
+    return super().post(
+backend\.venv\Lib\site-packages\httpx\_client.py:1144: in post
+    return self.request(
+backend\.venv\Lib\site-packages\starlette\testclient.py:445: in request
+    return super().request(
+backend\.venv\Lib\site-packages\httpx\_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend\.venv\Lib\site-packages\httpx\_client.py:914: in send
+    response = self._send_handling_auth(
+backend\.venv\Lib\site-packages\httpx\_client.py:942: in _send_handling_auth
+    response = self._send_handling_redirects(
+backend\.venv\Lib\site-packages\httpx\_client.py:979: in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend\.venv\Lib\site-packages\httpx\_client.py:1014: in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend\.venv\Lib\site-packages\starlette\testclient.py:348: in handle_request
+    raise exc
+backend\.venv\Lib\site-packages\starlette\testclient.py:345: in handle_request
+    portal.call(self.app, scope, receive, send)
+backend\.venv\Lib\site-packages\anyio\from_thread.py:334: in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py:456: in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py:401: in __get_result
+    raise self._exception
+backend\.venv\Lib\site-packages\anyio\from_thread.py:259: in _call_func
+    retval = await retval_or_awaitable
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+backend\.venv\Lib\site-packages\fastapi\applications.py:1159: in __call__
+    await super().__call__(scope, receive, send)
+backend\.venv\Lib\site-packages\starlette\applications.py:90: in __call__
+    await self.middleware_stack(scope, receive, send)
+backend\.venv\Lib\site-packages\starlette\middleware\errors.py:186: in __call__
+    raise exc
+backend\.venv\Lib\site-packages\starlette\middleware\errors.py:164: in __call__
+    await self.app(scope, receive, _send)
+backend\.venv\Lib\site-packages\starlette\middleware\exceptions.py:63: in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+backend\.venv\Lib\site-packages\starlette\_exception_handler.py:53: in wrapped_app
+    raise exc
+backend\.venv\Lib\site-packages\starlette\_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+backend\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+backend\.venv\Lib\site-packages\starlette\routing.py:660: in __call__
+    await self.middleware_stack(scope, receive, send)
+backend\.venv\Lib\site-packages\starlette\routing.py:680: in app
+    await route.handle(scope, receive, send)
+backend\.venv\Lib\site-packages\starlette\routing.py:276: in handle
+    await self.app(scope, receive, send)
+backend\.venv\Lib\site-packages\fastapi\routing.py:134: in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+backend\.venv\Lib\site-packages\starlette\_exception_handler.py:53: in wrapped_app
+    raise exc
+backend\.venv\Lib\site-packages\starlette\_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+backend\.venv\Lib\site-packages\fastapi\routing.py:120: in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+backend\.venv\Lib\site-packages\fastapi\routing.py:674: in app
+    raw_response = await run_endpoint_function(
+backend\.venv\Lib\site-packages\fastapi\routing.py:328: in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend\routes\rag_query.py:510: in rag_summarize
+    return await rag_query(req)
+                 ^^^^^^^^^^^^^^
+E   TypeError: rag_query() missing 1 required positional argument: 'request'
+_____ test_real_local_default_mask_preserves_available_sources[options0] ______
+backend\tests\test_source_control_integration.py:90: in test_real_local_default_mask_preserves_available_sources
+    assert response.status_code == 200
+E   assert 401 == 200
+E    +  where 401 = <Response [401 Unauthorized]>.status_code
+---------------------------- Captured stderr call -----------------------------
+HTTP Request: POST http://testserver/api/v1/rag/query "HTTP/1.1 401 Unauthorized"
+------------------------------ Captured log call ------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/api/v1/rag/query "HTTP/1.1 401 Unauthorized"
+_____ test_real_local_default_mask_preserves_available_sources[options1] ______
+backend\tests\test_source_control_integration.py:90: in test_real_local_default_mask_preserves_available_sources
+    assert response.status_code == 200
+E   assert 401 == 200
+E    +  where 401 = <Response [401 Unauthorized]>.status_code
+---------------------------- Captured stderr call -----------------------------
+HTTP Request: POST http://testserver/api/v1/rag/query "HTTP/1.1 401 Unauthorized"
+------------------------------ Captured log call ------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/api/v1/rag/query "HTTP/1.1 401 Unauthorized"
+________________ test_real_api_optional_evidence_trace[query] _________________
+backend\tests\test_source_control_integration.py:103: in test_real_api_optional_evidence_trace
+    assert response.status_code == 200
+E   assert 401 == 200
+E    +  where 401 = <Response [401 Unauthorized]>.status_code
+---------------------------- Captured stderr call -----------------------------
+HTTP Request: POST http://testserver/api/v1/rag/query "HTTP/1.1 401 Unauthorized"
+------------------------------ Captured log call ------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/api/v1/rag/query "HTTP/1.1 401 Unauthorized"
+______________ test_real_api_optional_evidence_trace[summarize] _______________
+backend\tests\test_source_control_integration.py:102: in test_real_api_optional_evidence_trace
+    response = client.post("/api/v1/rag/" + endpoint, json=payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend\.venv\Lib\site-packages\starlette\testclient.py:546: in post
+    return super().post(
+backend\.venv\Lib\site-packages\httpx\_client.py:1144: in post
+    return self.request(
+backend\.venv\Lib\site-packages\starlette\testclient.py:445: in request
+    return super().request(
+backend\.venv\Lib\site-packages\httpx\_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend\.venv\Lib\site-packages\httpx\_client.py:914: in send
+    response = self._send_handling_auth(
+backend\.venv\Lib\site-packages\httpx\_client.py:942: in _send_handling_auth
+    response = self._send_handling_redirects(
+backend\.venv\Lib\site-packages\httpx\_client.py:979: in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend\.venv\Lib\site-packages\httpx\_client.py:1014: in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend\.venv\Lib\site-packages\starlette\testclient.py:348: in handle_request
+    raise exc
+backend\.venv\Lib\site-packages\starlette\testclient.py:345: in handle_request
+    portal.call(self.app, scope, receive, send)
+backend\.venv\Lib\site-packages\anyio\from_thread.py:334: in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py:456: in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py:401: in __get_result
+    raise self._exception
+backend\.venv\Lib\site-packages\anyio\from_thread.py:259: in _call_func
+    retval = await retval_or_awaitable
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+backend\.venv\Lib\site-packages\fastapi\applications.py:1159: in __call__
+    await super().__call__(scope, receive, send)
+backend\.venv\Lib\site-packages\starlette\applications.py:90: in __call__
+    await self.middleware_stack(scope, receive, send)
+backend\.venv\Lib\site-packages\starlette\middleware\errors.py:186: in __call__
+    raise exc
+backend\.venv\Lib\site-packages\starlette\middleware\errors.py:164: in __call__
+    await self.app(scope, receive, _send)
+backend\.venv\Lib\site-packages\starlette\middleware\exceptions.py:63: in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+backend\.venv\Lib\site-packages\starlette\_exception_handler.py:53: in wrapped_app
+    raise exc
+backend\.venv\Lib\site-packages\starlette\_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+backend\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+backend\.venv\Lib\site-packages\starlette\routing.py:660: in __call__
+    await self.middleware_stack(scope, receive, send)
+backend\.venv\Lib\site-packages\starlette\routing.py:680: in app
+    await route.handle(scope, receive, send)
+backend\.venv\Lib\site-packages\starlette\routing.py:276: in handle
+    await self.app(scope, receive, send)
+backend\.venv\Lib\site-packages\fastapi\routing.py:134: in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+backend\.venv\Lib\site-packages\starlette\_exception_handler.py:53: in wrapped_app
+    raise exc
+backend\.venv\Lib\site-packages\starlette\_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+backend\.venv\Lib\site-packages\fastapi\routing.py:120: in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+backend\.venv\Lib\site-packages\fastapi\routing.py:674: in app
+    raw_response = await run_endpoint_function(
+backend\.venv\Lib\site-packages\fastapi\routing.py:328: in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend\routes\rag_query.py:510: in rag_summarize
+    return await rag_query(req)
+                 ^^^^^^^^^^^^^^
+E   TypeError: rag_query() missing 1 required positional argument: 'request'
+_______ test_real_api_explicit_mask_blocks_unavailable_pipeline[query] ________
+backend\tests\test_source_control_integration.py:130: in test_real_api_explicit_mask_blocks_unavailable_pipeline
+    assert response.status_code == 503
+E   assert 401 == 503
+E    +  where 401 = <Response [401 Unauthorized]>.status_code
+---------------------------- Captured stderr call -----------------------------
+HTTP Request: POST http://testserver/api/v1/rag/query "HTTP/1.1 401 Unauthorized"
+------------------------------ Captured log call ------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/api/v1/rag/query "HTTP/1.1 401 Unauthorized"
+_____ test_real_api_explicit_mask_blocks_unavailable_pipeline[summarize] ______
+backend\tests\test_source_control_integration.py:129: in test_real_api_explicit_mask_blocks_unavailable_pipeline
+    response = client.post("/api/v1/rag/" + endpoint, json={"query": QUERY, "options": {"enabled_sources": ["bm25"]}})
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend\.venv\Lib\site-packages\starlette\testclient.py:546: in post
+    return super().post(
+backend\.venv\Lib\site-packages\httpx\_client.py:1144: in post
+    return self.request(
+backend\.venv\Lib\site-packages\starlette\testclient.py:445: in request
+    return super().request(
+backend\.venv\Lib\site-packages\httpx\_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend\.venv\Lib\site-packages\httpx\_client.py:914: in send
+    response = self._send_handling_auth(
+backend\.venv\Lib\site-packages\httpx\_client.py:942: in _send_handling_auth
+    response = self._send_handling_redirects(
+backend\.venv\Lib\site-packages\httpx\_client.py:979: in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend\.venv\Lib\site-packages\httpx\_client.py:1014: in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend\.venv\Lib\site-packages\starlette\testclient.py:348: in handle_request
+    raise exc
+backend\.venv\Lib\site-packages\starlette\testclient.py:345: in handle_request
+    portal.call(self.app, scope, receive, send)
+backend\.venv\Lib\site-packages\anyio\from_thread.py:334: in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py:456: in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py:401: in __get_result
+    raise self._exception
+backend\.venv\Lib\site-packages\anyio\from_thread.py:259: in _call_func
+    retval = await retval_or_awaitable
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+backend\.venv\Lib\site-packages\fastapi\applications.py:1159: in __call__
+    await super().__call__(scope, receive, send)
+backend\.venv\Lib\site-packages\starlette\applications.py:90: in __call__
+    await self.middleware_stack(scope, receive, send)
+backend\.venv\Lib\site-packages\starlette\middleware\errors.py:186: in __call__
+    raise exc
+backend\.venv\Lib\site-packages\starlette\middleware\errors.py:164: in __call__
+    await self.app(scope, receive, _send)
+backend\.venv\Lib\site-packages\starlette\middleware\exceptions.py:63: in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+backend\.venv\Lib\site-packages\starlette\_exception_handler.py:53: in wrapped_app
+    raise exc
+backend\.venv\Lib\site-packages\starlette\_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+backend\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+backend\.venv\Lib\site-packages\starlette\routing.py:660: in __call__
+    await self.middleware_stack(scope, receive, send)
+backend\.venv\Lib\site-packages\starlette\routing.py:680: in app
+    await route.handle(scope, receive, send)
+backend\.venv\Lib\site-packages\starlette\routing.py:276: in handle
+    await self.app(scope, receive, send)
+backend\.venv\Lib\site-packages\fastapi\routing.py:134: in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+backend\.venv\Lib\site-packages\starlette\_exception_handler.py:53: in wrapped_app
+    raise exc
+backend\.venv\Lib\site-packages\starlette\_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+backend\.venv\Lib\site-packages\fastapi\routing.py:120: in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+backend\.venv\Lib\site-packages\fastapi\routing.py:674: in app
+    raw_response = await run_endpoint_function(
+backend\.venv\Lib\site-packages\fastapi\routing.py:328: in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend\routes\rag_query.py:510: in rag_summarize
+    return await rag_query(req)
+                 ^^^^^^^^^^^^^^
+E   TypeError: rag_query() missing 1 required positional argument: 'request'
+___________ test_real_api_trace_requires_pipeline_even_without_mask ___________
+backend\tests\test_source_control_integration.py:138: in test_real_api_trace_requires_pipeline_even_without_mask
+    assert response.status_code == 503
+E   assert 401 == 503
+E    +  where 401 = <Response [401 Unauthorized]>.status_code
+---------------------------- Captured stderr call -----------------------------
+HTTP Request: POST http://testserver/api/v1/rag/query "HTTP/1.1 401 Unauthorized"
+------------------------------ Captured log call ------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/api/v1/rag/query "HTTP/1.1 401 Unauthorized"
+_______________________ test_code_imports_are_declared ________________________
+backend\tests\test_supply_chain.py:146: in test_code_imports_are_declared
+    assert not missing, (
+E   AssertionError: ���°������� import����δ�������嵥��������δ�Ǽǽ� _KNOWN_UNRESOLVED / _NAMESPACE_ROOTS����
+E       pytest  (research\test_deepseek_scope_pilot.py imports 'pytest')
+E   assert not {'pytest': "research\\test_deepseek_scope_pilot.py imports 'pytest'"}
+============================== warnings summary ===============================
+backend\.venv\Lib\site-packages\_pytest\config\__init__.py:1434
+  D:\graghRAG-agent\backend\.venv\Lib\site-packages\_pytest\config\__init__.py:1434: PytestConfigWarning: Unknown config option: timeout
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+tests/test_error_handling_policy.py::test_no_bare_except_outside_tests
+  <unknown>:2: SyntaxWarning: invalid escape sequence '\g'
+
+tests/test_hybrid_retrieval_trimming.py::test_bm25_query_uses_same_tokenizer_as_index
+  D:\graghRAG-agent\backend\.venv\Lib\site-packages\jieba\_compat.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+    import pkg_resources
+
+tests/test_supply_chain.py::test_code_imports_are_declared
+tests/test_supply_chain.py::test_known_unresolved_entries_are_load_bearing
+  D:\graghRAG-agent\backend\agentic_rag_mvp.py:2: SyntaxWarning: invalid escape sequence '\g'
+    """
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED backend\tests\test_error_handling_policy.py::test_library_modules_have_no_print
+FAILED backend\tests\test_isolated_guard.py::test_environment_does_not_inherit_credentials
+FAILED backend\tests\test_isolated_guard.py::test_binding_and_unsafe_writes
+FAILED backend\tests\test_isolated_guard.py::test_hook_blocks_in_fresh_child[socket.socket()]
+FAILED backend\tests\test_isolated_guard.py::test_hook_blocks_in_fresh_child[socket.getaddrinfo('example.invalid', 80)]
+FAILED backend\tests\test_isolated_guard.py::test_hook_blocks_in_fresh_child[subprocess.run([sys.executable, '-c', 'pass'])]
+FAILED backend\tests\test_isolated_guard.py::test_hook_blocks_in_fresh_child[os.system('never_execute')]
+FAILED backend\tests\test_isolated_guard.py::test_hook_blocks_in_fresh_child[open(outside, 'w')]
+FAILED backend\tests\test_isolated_guard.py::test_hook_blocks_in_fresh_child[os.mkdir(outside)]
+FAILED backend\tests\test_isolated_guard.py::test_hook_blocks_in_fresh_child[os.rename(inside, outside)]
+FAILED backend\tests\test_isolated_guard.py::test_hook_blocks_in_fresh_child[ctypes.CDLL(outside)]
+FAILED backend\tests\test_isolated_guard.py::test_hook_blocks_in_fresh_child[site.addsitedir(outside)]
+FAILED backend\tests\test_isolated_guard.py::test_hook_blocks_in_fresh_child[os.remove(outside)]
+FAILED backend\tests\test_isolated_guard.py::test_hook_blocks_in_fresh_child[os.link(inside, outside)]
+FAILED backend\tests\test_isolated_guard.py::test_hook_allows_snapshot_write
+FAILED backend\tests\test_isolated_guard.py::test_environment_rejects_nonstandard_windows_root
+FAILED backend\tests\test_isolated_guard.py::test_secret_reads_are_blocked_before_open[open(os.path.join(run, '.env'), 'r')]
+FAILED backend\tests\test_isolated_guard.py::test_secret_reads_are_blocked_before_open[open(os.path.join(run, '.env.local'), 'rb')]
+FAILED backend\tests\test_isolated_guard.py::test_named_existing_system_dll_allowed_in_fresh_child
+FAILED backend\tests\test_local_scope_v2.py::test_b0_preparation_is_not_execution
+FAILED backend\tests\test_runtime_recovery.py::test_startup_restores_runtime_indexes
+FAILED backend\tests\test_runtime_recovery.py::test_startup_rebuilds_sparse_table_runtime_index_from_mineru_output
+FAILED backend\tests\test_runtime_recovery.py::test_lifespan_shuts_down_scheduler_on_exit
+FAILED backend\tests\test_source_control_integration.py::test_real_local_deterministic_answer_records_mask[query]
+FAILED backend\tests\test_source_control_integration.py::test_real_local_deterministic_answer_records_mask[summarize]
+FAILED backend\tests\test_source_control_integration.py::test_real_local_default_mask_preserves_available_sources[options0]
+FAILED backend\tests\test_source_control_integration.py::test_real_local_default_mask_preserves_available_sources[options1]
+FAILED backend\tests\test_source_control_integration.py::test_real_api_optional_evidence_trace[query]
+FAILED backend\tests\test_source_control_integration.py::test_real_api_optional_evidence_trace[summarize]
+FAILED backend\tests\test_source_control_integration.py::test_real_api_explicit_mask_blocks_unavailable_pipeline[query]
+FAILED backend\tests\test_source_control_integration.py::test_real_api_explicit_mask_blocks_unavailable_pipeline[summarize]
+FAILED backend\tests\test_source_control_integration.py::test_real_api_trace_requires_pipeline_even_without_mask
+FAILED backend\tests\test_supply_chain.py::test_code_imports_are_declared - A...
+33 failed, 691 passed, 5 warnings in 48.56s

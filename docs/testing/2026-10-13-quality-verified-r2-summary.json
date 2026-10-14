@@ -1,0 +1,492 @@
+{
+  "status": "BLOCKED",
+  "snapshot_sha256": "118c5c607d512f4d3c3387e3f98a1d7a6ec6b2b0a87f314fe9df8f05642da914",
+  "source_and_test_snapshot_unchanged": true,
+  "production_file_count": 90,
+  "coverage_scope_exact_match": true,
+  "coverage_missing_files": [],
+  "coverage_unexpected_files": [],
+  "excluded_lines": 0,
+  "pytest_exit": 1,
+  "coverage_export_exit": 0,
+  "pytest_summary": [
+    "1 failed, 1065 passed, 14 warnings in 57.83s"
+  ],
+  "coverage": {
+    "line": {
+      "covered": 10985,
+      "total": 13387,
+      "percent": 82.05721969074476,
+      "passes_90_percent": false,
+      "additional_covered_needed_at_current_denominator": 1064
+    },
+    "branch": {
+      "covered": 3306,
+      "total": 4514,
+      "percent": 73.23881258307487,
+      "passes_90_percent": false,
+      "additional_covered_needed_at_current_denominator": 757
+    }
+  },
+  "candidate_dependency_metadata": {
+    "time_utc": "2026-10-13T00:06:58.040851+00:00",
+    "installed_count": 186,
+    "installed": {
+      "absl-py": "2.5.0",
+      "aiohappyeyeballs": "2.7.1",
+      "aiohttp": "3.14.3",
+      "aiosignal": "1.4.0",
+      "aliyun-python-sdk-core": "2.16.1",
+      "aliyun-python-sdk-kms": "2.16.5",
+      "annotated-doc": "0.0.5",
+      "annotated-types": "0.8.0",
+      "anyio": "4.15.1",
+      "apscheduler": "3.11.3",
+      "async-timeout": "5.0.1",
+      "attrs": "26.1.0",
+      "bandit": "1.9.4",
+      "bcrypt": "5.0.0",
+      "boolean-py": "5.0",
+      "build": "1.6.1",
+      "cachecontrol": "0.14.4",
+      "certifi": "2026.7.22",
+      "cffi": "2.1.1",
+      "charset-normalizer": "3.5.1",
+      "chromadb": "1.5.9",
+      "click": "8.5.0",
+      "cloudpickle": "3.1.2",
+      "colorama": "0.4.6",
+      "crcmod": "1.7",
+      "cryptography": "50.0.1",
+      "cyclonedx-python-lib": "11.12.0",
+      "defusedxml": "0.7.1",
+      "detect-secrets": "1.5.0",
+      "distro": "1.9.0",
+      "duckdb": "1.5.5",
+      "durationpy": "0.11",
+      "et-xmlfile": "2.0.0",
+      "exceptiongroup": "1.3.1",
+      "fastapi": "0.141.1",
+      "filelock": "3.32.7",
+      "flatbuffers": "25.12.19",
+      "frozenlist": "1.8.0",
+      "fsspec": "2026.7.0",
+      "googleapis-common-protos": "1.75.3",
+      "google-api-core": "2.37.0",
+      "google-auth": "2.58.0",
+      "google-cloud-core": "2.7.0",
+      "google-cloud-storage": "3.14.1",
+      "google-crc32c": "1.8.0",
+      "google-genai": "2.23.0",
+      "google-resumable-media": "2.10.2",
+      "grpcio": "1.84.0",
+      "h11": "0.16.0",
+      "hf-xet": "1.6.0",
+      "httpcore": "1.0.9",
+      "httpcore2": "2.13.0",
+      "httptools": "0.8.0",
+      "httpx": "0.28.1",
+      "httpx2": "2.13.0",
+      "huggingface-hub": "1.31.0",
+      "idna": "3.19",
+      "importlib-resources": "7.1.0",
+      "iniconfig": "2.3.0",
+      "jinja2": "3.1.6",
+      "jiter": "0.17.0",
+      "jmespath": "1.1.0",
+      "joblib": "1.6.0",
+      "jsonpatch": "1.33",
+      "jsonpointer": "3.1.1",
+      "jsonschema": "4.26.0",
+      "jsonschema-specifications": "2025.9.1",
+      "kubernetes": "36.0.3",
+      "langchain": "1.4.0",
+      "langchain-core": "1.6.3",
+      "langchain-openai": "1.6.2",
+      "langchain-protocol": "0.0.19",
+      "langextract": "1.5.0",
+      "langgraph": "1.2.11",
+      "langgraph-checkpoint": "4.2.0",
+      "langgraph-prebuilt": "1.1.0",
+      "langgraph-sdk": "0.4.4",
+      "langsmith": "0.12.5",
+      "license-expression": "30.4.4",
+      "lxml": "6.1.3",
+      "markdown-it-py": "4.2.0",
+      "markupsafe": "3.0.3",
+      "mdurl": "0.1.2",
+      "ml-collections": "1.1.0",
+      "mmh3": "5.3.0",
+      "more-itertools": "11.1.0",
+      "mpmath": "1.3.0",
+      "msgpack": "1.2.2",
+      "multidict": "6.9.1",
+      "narwhals": "2.26.0",
+      "networkx": "3.6.1",
+      "numpy": "2.5.3",
+      "oauthlib": "4.0.0",
+      "onnxruntime": "1.30.0",
+      "openai": "3.14.1",
+      "openpyxl": "3.1.5",
+      "opentelemetry-api": "1.44.0",
+      "opentelemetry-exporter-otlp-proto-common": "1.44.0",
+      "opentelemetry-exporter-otlp-proto-grpc": "1.44.0",
+      "opentelemetry-proto": "1.44.0",
+      "opentelemetry-sdk": "1.44.0",
+      "opentelemetry-semantic-conventions": "0.65b0",
+      "orjson": "3.12.0",
+      "ormsgpack": "1.12.2",
+      "oss2": "2.19.1",
+      "overrides": "7.7.0",
+      "packageurl-python": "0.17.6",
+      "packaging": "26.3",
+      "pandas": "3.0.5",
+      "pip": "26.2.1",
+      "pip-api": "0.0.35",
+      "pip-audit": "2.10.1",
+      "pip-requirements-parser": "32.0.1",
+      "platformdirs": "4.11.8",
+      "pluggy": "1.6.0",
+      "prometheus-client": "0.26.0",
+      "propcache": "0.5.4",
+      "protobuf": "7.36.1",
+      "proto-plus": "1.28.4",
+      "pyasn1": "0.6.4",
+      "pyasn1-modules": "0.4.2",
+      "pybase64": "1.5.0",
+      "pycparser": "3.0",
+      "pycryptodome": "3.23.0",
+      "pydantic": "2.13.5",
+      "pydantic-core": "2.46.5",
+      "pydantic-settings": "2.15.0",
+      "pygments": "2.21.0",
+      "pyjwt": "2.15.1",
+      "pyparsing": "3.3.2",
+      "pypika": "0.51.1",
+      "pyproject-hooks": "1.3.3",
+      "pytest": "9.1.1",
+      "pytest-timeout": "2.4.0",
+      "python-dateutil": "2.9.0.post0",
+      "python-docx": "1.2.0",
+      "python-dotenv": "1.2.3",
+      "python-multipart": "0.0.32",
+      "pyyaml": "6.0.3",
+      "py-serializable": "2.1.0",
+      "rank-bm25": "0.2.2",
+      "referencing": "0.37.0",
+      "regex": "2026.9.10",
+      "requests": "2.34.2",
+      "requests-oauthlib": "2.0.0",
+      "requests-toolbelt": "1.0.0",
+      "rich": "15.0.0",
+      "rpds-py": "2026.6.3",
+      "ruff": "0.17.0",
+      "safetensors": "0.8.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "sentence-transformers": "6.0.1",
+      "setuptools": "84.0.0",
+      "shellingham": "1.5.4",
+      "six": "1.17.0",
+      "sniffio": "1.3.1",
+      "sortedcontainers": "2.4.0",
+      "starlette": "1.6.0",
+      "stevedore": "5.9.1",
+      "structlog": "26.1.0",
+      "sympy": "1.14.0",
+      "tenacity": "9.1.4",
+      "threadpoolctl": "3.7.0",
+      "tiktoken": "0.14.0",
+      "tokenizers": "0.23.2",
+      "tomli": "2.4.1",
+      "tomli-w": "1.2.0",
+      "torch": "2.14.0",
+      "tqdm": "4.70.1",
+      "transformers": "5.17.0",
+      "truststore": "0.10.4",
+      "typer": "0.27.2",
+      "typing-extensions": "4.16.0",
+      "typing-inspection": "0.4.4",
+      "tzdata": "2026.4",
+      "tzlocal": "5.4.4",
+      "urllib3": "2.8.0",
+      "uuid-utils": "0.17.1",
+      "uvicorn": "0.53.0",
+      "watchfiles": "1.2.0",
+      "websockets": "16.1.1",
+      "websocket-client": "1.9.2",
+      "xxhash": "4.0.1",
+      "yarl": "1.25.1",
+      "zstandard": "0.25.0"
+    },
+    "registry_count": 185,
+    "version_drift": {},
+    "lock_not_installed": [
+      "cuda-bindings",
+      "cuda-pathfinder",
+      "cuda-toolkit",
+      "graphrag-agent-backend",
+      "httpx2-jsfetch",
+      "nvidia-cublas",
+      "nvidia-cuda-cupti",
+      "nvidia-cuda-nvrtc",
+      "nvidia-cuda-runtime",
+      "nvidia-cudnn-cu13",
+      "nvidia-cufft",
+      "nvidia-cufile",
+      "nvidia-curand",
+      "nvidia-cusolver",
+      "nvidia-cusparse",
+      "nvidia-cusparselt-cu13",
+      "nvidia-nccl-cu13",
+      "nvidia-nvjitlink",
+      "nvidia-nvshmem-cu13",
+      "nvidia-nvtx",
+      "triton",
+      "uvloop"
+    ],
+    "note": "Platform/optional lock entries need not be installed; every installed version must match."
+  },
+  "installed_audit": {
+    "affected_packages": 1,
+    "raw_records": 5,
+    "unique_ids": [
+      "PYSEC-2026-311",
+      "PYSEC-2026-3813",
+      "PYSEC-2026-3814",
+      "PYSEC-2026-3815"
+    ],
+    "packages": [
+      {
+        "name": "chromadb",
+        "version": "1.5.9",
+        "vulns": [
+          {
+            "id": "PYSEC-2026-311",
+            "fix_versions": [],
+            "aliases": [
+              "CVE-2026-45829",
+              "GHSA-f4j7-r4q5-qw2c"
+            ],
+            "description": "A pre-authentication, code injection vulnerability in version 1.0.0 or later of the ChromaDB Python project allows an unauthenticated attacker to run arbitrary code on the server by sending a malicious model repository and trust_remote_code set to true in the /api/v2/tenants/{tenant}/databases/{db}/collections endpoint."
+          },
+          {
+            "id": "PYSEC-2026-311",
+            "fix_versions": [],
+            "aliases": [
+              "CVE-2026-45829",
+              "GHSA-f4j7-r4q5-qw2c"
+            ],
+            "description": "A pre-authentication, code injection vulnerability in version 1.0.0 or later of the ChromaDB Python project allows an unauthenticated attacker to run arbitrary code on the server by sending a malicious model repository and trust_remote_code set to true in the /api/v2/tenants/{tenant}/databases/{db}/collections endpoint."
+          },
+          {
+            "id": "PYSEC-2026-3814",
+            "fix_versions": [],
+            "aliases": [
+              "CVE-2026-45833",
+              "GHSA-36p7-vc44-83pf"
+            ],
+            "description": "A code injection vulnerability in version 0.4.17 or later of the ChromaDB Python project allows an authenticated attacker to run arbitrary code on the server by sending a malicious model repository and trust_remote_code set to true in the /api/v2/tenants/default_tenant/databases/default_database/collections/{collection_id} if they have the UPDATE_COLLECTION permission."
+          },
+          {
+            "id": "PYSEC-2026-3815",
+            "fix_versions": [],
+            "aliases": [
+              "CVE-2026-45831",
+              "GHSA-xph7-9rjv-w5fr"
+            ],
+            "description": "The SimpleRBACAuthorizationProvider authorization provider in versions 0.5.0 or later of the ChromaDB Python project evaluates whether a user holds a given permission but never checks which tenant, database, or collection that permission applies to allowing users to perform cross tenant actions."
+          },
+          {
+            "id": "PYSEC-2026-3813",
+            "fix_versions": [],
+            "aliases": [
+              "GHSA-2wm9-hf6c-p5cr",
+              "CVE-2026-45830"
+            ],
+            "description": "A lack of authorization validation in version 0.4.17 or later of the ChromaDB Python project allows any authenticated users to arbitrarily read, write, update, or delete data in any tenant's collection regardless of which tenant they belong to."
+          }
+        ]
+      }
+    ]
+  },
+  "bandit": {
+    "findings": 141,
+    "metrics": {
+      "CONFIDENCE.HIGH": 133,
+      "CONFIDENCE.LOW": 3,
+      "CONFIDENCE.MEDIUM": 5,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 137,
+      "SEVERITY.MEDIUM": 4,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 20392,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "errors": []
+  },
+  "research_production_integrity": {
+    "all_match_freeze": false,
+    "files": {
+      "backend/routes/rag_query.py": {
+        "expected": "0f4f6f9aa490bff77ec6a444638f02be310efe3cc43fb391371c9ac4d0e0635f",
+        "actual": "178873090bb848a729ef7753f2461e1eec8971eb6657dd9074f99e13daae3899",
+        "match": false
+      },
+      "backend/models.py": {
+        "expected": "b599c0427134950432ae7e95052485ac7236976afa1b0adf58a16c1906f7143b",
+        "actual": "b8603e88ea3161de56a4a4bf3eb5c956bdc4bd15f7325be19acb197088d6d34c",
+        "match": false
+      },
+      "backend/retrieval.py": {
+        "expected": "7e1332a7bde6aff1d8d270397003567ccd72761f8a5b7fd25fd65851203f3e0b",
+        "actual": "7e1332a7bde6aff1d8d270397003567ccd72761f8a5b7fd25fd65851203f3e0b",
+        "match": true
+      },
+      "backend/generator.py": {
+        "expected": "18a35058c95e89934b92d1c3a7229271fd2e5fca9d6ecb85abb9815cca7de9b1",
+        "actual": "18a35058c95e89934b92d1c3a7229271fd2e5fca9d6ecb85abb9815cca7de9b1",
+        "match": true
+      },
+      "backend/prompt_builder.py": {
+        "expected": "f6a62fe8529b8909e7a1c2a59f097d8659aea64020547f04087837bc2e529b7c",
+        "actual": "f6a62fe8529b8909e7a1c2a59f097d8659aea64020547f04087837bc2e529b7c",
+        "match": true
+      },
+      "backend/config.py": {
+        "expected": "f0cf031aa0a8a3282199883f26a29816bf358d4a879a24085f313c3b9fb58e8c",
+        "actual": "f0cf031aa0a8a3282199883f26a29816bf358d4a879a24085f313c3b9fb58e8c",
+        "match": true
+      },
+      "backend/source_control.py": {
+        "expected": "b92d65ad4604207c0bdc65670197a3c63c37c668abacb8d6b38451d025001c25",
+        "actual": "b92d65ad4604207c0bdc65670197a3c63c37c668abacb8d6b38451d025001c25",
+        "match": true
+      },
+      "backend/evidence_trace.py": {
+        "expected": "07cc6a3cce87c788a9639510a6540639f6b6d57e93f639b10a2593254b18bf65",
+        "actual": "07cc6a3cce87c788a9639510a6540639f6b6d57e93f639b10a2593254b18bf65",
+        "match": true
+      },
+      "backend/vector_store.py": {
+        "expected": "18d8fc6ff90823186034f5f10c876981a0da814bba5bb57c9299400eec0a6c82",
+        "actual": "18d8fc6ff90823186034f5f10c876981a0da814bba5bb57c9299400eec0a6c82",
+        "match": true
+      },
+      "backend/index_registry.py": {
+        "expected": "129fd58ffc584ae9f21cb4587e91c8b1cd8174b71c3948d672c197d0592ef066",
+        "actual": "129fd58ffc584ae9f21cb4587e91c8b1cd8174b71c3948d672c197d0592ef066",
+        "match": true
+      },
+      "backend/doc_processor.py": {
+        "expected": "a9fb7bc4d3c3a5fd64a0e568bc3b8f6dbe05f154098495d2ce7de3016cf91306",
+        "actual": "0e9ccc941b101a5eb225aa40f0b596a3c6435cdc43c8ccc6ba4a0dd9dbfc654d",
+        "match": false
+      },
+      "backend/conversation.py": {
+        "expected": "002365d260d315f3dca00416b709e3f11a84a069d99048d4d45e61f4f9737270",
+        "actual": "002365d260d315f3dca00416b709e3f11a84a069d99048d4d45e61f4f9737270",
+        "match": true
+      },
+      "backend/embedding.py": {
+        "expected": "52b15ad92c396fa9f8b2d4d451ab255906feb330e56e7e3ff4db00c2859e780a",
+        "actual": "52b15ad92c396fa9f8b2d4d451ab255906feb330e56e7e3ff4db00c2859e780a",
+        "match": true
+      },
+      "backend/uv.lock": {
+        "expected": "31caa7407226490b13e1853875eb1ebbe8f895980da39f2b19f58c79f11c14a3",
+        "actual": "ba3d4b0fa5b8136f368c4da25e1c0178b366e7bbe14f83dbdae485c9f4278e38",
+        "match": false
+      },
+      "docs/superpowers/plans/scope-pilot/gold.yaml": {
+        "expected": "e732d568715d2b750d3c9ced4afa88a31df66f2db65c869ff4c2536d8e05d5f2",
+        "actual": "e732d568715d2b750d3c9ced4afa88a31df66f2db65c869ff4c2536d8e05d5f2",
+        "match": true
+      }
+    },
+    "interpretation": "On-disk hash comparison only, not loaded runtime identity."
+  },
+  "frontend_coverage": "NOT_MEASURED",
+  "other_subprojects_coverage": "NOT_MEASURED",
+  "enforcement": "audit-only-windows",
+  "commit_push_deploy": "NOT_EXECUTED",
+  "largest_remaining_gaps": [
+    {
+      "file": "backend\\retrieval.py",
+      "missing_lines": 180,
+      "missing_branches": 126
+    },
+    {
+      "file": "backend\\generator.py",
+      "missing_lines": 164,
+      "missing_branches": 133
+    },
+    {
+      "file": "backend\\services\\bot_handler.py",
+      "missing_lines": 114,
+      "missing_branches": 38
+    },
+    {
+      "file": "backend\\conversation.py",
+      "missing_lines": 88,
+      "missing_branches": 38
+    },
+    {
+      "file": "backend\\research\\isolated_guard.py",
+      "missing_lines": 87,
+      "missing_branches": 43
+    },
+    {
+      "file": "backend\\services\\catalog.py",
+      "missing_lines": 79,
+      "missing_branches": 39
+    },
+    {
+      "file": "backend\\doc_processor.py",
+      "missing_lines": 73,
+      "missing_branches": 56
+    },
+    {
+      "file": "backend\\services\\kg_service.py",
+      "missing_lines": 67,
+      "missing_branches": 30
+    },
+    {
+      "file": "backend\\services\\kg_exporter.py",
+      "missing_lines": 66,
+      "missing_branches": 32
+    },
+    {
+      "file": "backend\\routes\\bot.py",
+      "missing_lines": 56,
+      "missing_branches": 28
+    },
+    {
+      "file": "backend\\routes\\ingest.py",
+      "missing_lines": 55,
+      "missing_branches": 25
+    },
+    {
+      "file": "backend\\services\\lifecycle.py",
+      "missing_lines": 54,
+      "missing_branches": 24
+    },
+    {
+      "file": "backend\\index_registry.py",
+      "missing_lines": 53,
+      "missing_branches": 23
+    },
+    {
+      "file": "backend\\services\\auth_service.py",
+      "missing_lines": 53,
+      "missing_branches": 10
+    },
+    {
+      "file": "backend\\routes\\tenants.py",
+      "missing_lines": 52,
+      "missing_branches": 21
+    }
+  ]
+}

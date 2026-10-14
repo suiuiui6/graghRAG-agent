@@ -1,0 +1,269 @@
+{
+  "mode": "chroma",
+  "version": "1.5.9",
+  "synthetic_rows": [
+    {
+      "id": "a",
+      "source": "s1",
+      "page": 1,
+      "active": true
+    },
+    {
+      "id": "b",
+      "page": 2,
+      "active": false
+    },
+    {
+      "id": "c",
+      "source": "中文' OR 1=1 --",
+      "page": 3,
+      "active": true
+    },
+    {
+      "id": "d",
+      "source": "s2"
+    },
+    {
+      "id": "e",
+      "source": "s1",
+      "page": 0,
+      "active": false
+    },
+    {
+      "id": "f",
+      "source": "",
+      "page": 4,
+      "active": true
+    }
+  ],
+  "cases": [
+    {
+      "where": {
+        "source": "s1"
+      },
+      "ids": [
+        "a",
+        "e"
+      ],
+      "status": "OK"
+    },
+    {
+      "where": {
+        "source": {
+          "$eq": "中文' OR 1=1 --"
+        }
+      },
+      "ids": [
+        "c"
+      ],
+      "status": "OK"
+    },
+    {
+      "where": {
+        "source": {
+          "$ne": "s1"
+        }
+      },
+      "ids": [
+        "b",
+        "c",
+        "d",
+        "f"
+      ],
+      "status": "OK"
+    },
+    {
+      "where": {
+        "page": {
+          "$gt": 1
+        }
+      },
+      "ids": [
+        "b",
+        "c",
+        "f"
+      ],
+      "status": "OK"
+    },
+    {
+      "where": {
+        "page": {
+          "$gte": 2
+        }
+      },
+      "ids": [
+        "b",
+        "c",
+        "f"
+      ],
+      "status": "OK"
+    },
+    {
+      "where": {
+        "page": {
+          "$lt": 3
+        }
+      },
+      "ids": [
+        "a",
+        "b",
+        "e"
+      ],
+      "status": "OK"
+    },
+    {
+      "where": {
+        "page": {
+          "$lte": 2
+        }
+      },
+      "ids": [
+        "a",
+        "b",
+        "e"
+      ],
+      "status": "OK"
+    },
+    {
+      "where": {
+        "source": {
+          "$in": [
+            "s1",
+            "s2"
+          ]
+        }
+      },
+      "ids": [
+        "a",
+        "d",
+        "e"
+      ],
+      "status": "OK"
+    },
+    {
+      "where": {
+        "source": {
+          "$nin": [
+            "s1"
+          ]
+        }
+      },
+      "ids": [
+        "b",
+        "c",
+        "d",
+        "f"
+      ],
+      "status": "OK"
+    },
+    {
+      "where": {
+        "$and": [
+          {
+            "source": "s1"
+          },
+          {
+            "page": {
+              "$gt": 0
+            }
+          }
+        ]
+      },
+      "ids": [
+        "a"
+      ],
+      "status": "OK"
+    },
+    {
+      "where": {
+        "$or": [
+          {
+            "source": "s2"
+          },
+          {
+            "active": true
+          }
+        ]
+      },
+      "ids": [
+        "a",
+        "c",
+        "d",
+        "f"
+      ],
+      "status": "OK"
+    },
+    {
+      "where": {
+        "active": true
+      },
+      "ids": [
+        "a",
+        "c",
+        "f"
+      ],
+      "status": "OK"
+    },
+    {
+      "where": {
+        "active": 1
+      },
+      "ids": [],
+      "status": "OK"
+    },
+    {
+      "where": {
+        "page": true
+      },
+      "ids": [],
+      "status": "OK"
+    },
+    {
+      "where": {
+        "source": {
+          "$in": []
+        }
+      },
+      "status": "REJECTED",
+      "error": "ValueError: Expected where operand value to be a non-empty list, and all values to be of the same type got [] in get."
+    },
+    {
+      "where": {
+        "source": {
+          "$in": [
+            "s1",
+            1
+          ]
+        }
+      },
+      "status": "REJECTED",
+      "error": "ValueError: Expected where operand value to be a non-empty list, and all values to be of the same type got ['s1', 1] in get."
+    },
+    {
+      "where": {
+        "source": {
+          "$eq": "s1",
+          "$ne": "s2"
+        }
+      },
+      "status": "REJECTED",
+      "error": "ValueError: Expected operator expression to have exactly one operator, got {'$eq': 's1', '$ne': 's2'} in get."
+    },
+    {
+      "where": {
+        "missing_field": {
+          "$ne": "anything"
+        }
+      },
+      "ids": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f"
+      ],
+      "status": "OK"
+    }
+  ]
+}

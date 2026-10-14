@@ -1,0 +1,28 @@
+FF...FF                                                                  [100%]
+================================== FAILURES ===================================
+_ test_alias_definition_uses_ascii_identifier_boundaries[W4S1\u542b\u4e49-True] _
+backend\tests\test_retrieval_generation_readiness.py:539: in test_alias_definition_uses_ascii_identifier_boundaries
+    assert r._is_alias_definition_query(query) is expected
+E   AssertionError: assert False is True
+E    +  where False = <function _is_alias_definition_query at 0x000001E0EE4431A0>('W4S1含义')
+E    +    where <function _is_alias_definition_query at 0x000001E0EE4431A0> = r._is_alias_definition_query
+_ test_alias_definition_uses_ascii_identifier_boundaries[W4S1\u662f\u4ec0\u4e48-True] _
+backend\tests\test_retrieval_generation_readiness.py:539: in test_alias_definition_uses_ascii_identifier_boundaries
+    assert r._is_alias_definition_query(query) is expected
+E   AssertionError: assert False is True
+E    +  where False = <function _is_alias_definition_query at 0x000001E0EE4431A0>('W4S1是什么')
+E    +    where <function _is_alias_definition_query at 0x000001E0EE4431A0> = r._is_alias_definition_query
+_____________ test_completion_alias_meaning_is_readable_and_cited _____________
+backend\tests\test_retrieval_generation_readiness.py:546: in test_completion_alias_meaning_is_readable_and_cited
+    assert "最大弃电场景" in result and "173.7" in result and "[c00001]" in result
+E   AssertionError: assert ('最大弃电场景' in 'W4S1 maximum curtailment scenario 173.7 MWh/day curtailment [c00001]')
+____ test_completion_extrema_uses_real_chinese_query_and_cites_both_values ____
+backend\tests\test_retrieval_generation_readiness.py:552: in test_completion_extrema_uses_real_chinese_query_and_cites_both_values
+    assert "最低" in result and "3554" in result and "最高" in result and "7111" in result
+E   AssertionError: assert ('最低' in '仅有部分信息')
+=========================== short test summary info ===========================
+FAILED backend\tests\test_retrieval_generation_readiness.py::test_alias_definition_uses_ascii_identifier_boundaries[W4S1\u542b\u4e49-True]
+FAILED backend\tests\test_retrieval_generation_readiness.py::test_alias_definition_uses_ascii_identifier_boundaries[W4S1\u662f\u4ec0\u4e48-True]
+FAILED backend\tests\test_retrieval_generation_readiness.py::test_completion_alias_meaning_is_readable_and_cited
+FAILED backend\tests\test_retrieval_generation_readiness.py::test_completion_extrema_uses_real_chinese_query_and_cites_both_values
+4 failed, 3 passed, 109 deselected in 5.13s

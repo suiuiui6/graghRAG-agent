@@ -1,0 +1,13 @@
+........................................................................ [ 48%]
+..................................................F..................... [ 96%]
+.....                                                                    [100%]
+================================== FAILURES ===================================
+_______ test_summary_inventory_rescue_retains_page_one_metric_evidence ________
+backend\tests\test_retrieval_generation_readiness.py:585: in test_summary_inventory_rescue_retains_page_one_metric_evidence
+    assert r._has_summary_metric_inventory_rescue("摘要有哪些指标", contexts)
+E   AssertionError: assert False
+E    +  where False = <function _has_summary_metric_inventory_rescue at 0x000001600C613B00>('摘要有哪些指标', [{'chunk_id': 'c00001', 'text': 'summary', 'score': 1.0, 'source': 'table'}, {'chunk_id': 'n0001', 'text': 'ordinary', 'score': 1.0, 'source': 'kg', ...}, {'chunk_id': 'n0002', 'text': 'ordinary', 'score': 1.0, 'source': 'kg', ...}])
+E    +    where <function _has_summary_metric_inventory_rescue at 0x000001600C613B00> = r._has_summary_metric_inventory_rescue
+=========================== short test summary info ===========================
+FAILED backend\tests\test_retrieval_generation_readiness.py::test_summary_inventory_rescue_retains_page_one_metric_evidence
+1 failed, 148 passed in 7.49s

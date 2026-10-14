@@ -1,0 +1,10 @@
+.................F                                                       [100%]
+================================== FAILURES ===================================
+__________ test_lifecycle_filesystem_delete_failures_are_best_effort __________
+D:\graghRAG-agent\backend\tests\test_service_readiness.py:432: in test_lifecycle_filesystem_delete_failures_are_best_effort
+    assert conversation.resolve_coreference("继续", history) == "继续"
+                                                  ^^^^^^^
+E   NameError: name 'history' is not defined
+=========================== short test summary info ===========================
+FAILED backend\tests\test_service_readiness.py::test_lifecycle_filesystem_delete_failures_are_best_effort
+1 failed, 17 passed in 4.38s

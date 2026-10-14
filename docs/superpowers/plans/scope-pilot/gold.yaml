@@ -1,0 +1,114 @@
+version: "0.1"
+project_id: graphrag-paper-001
+annotation_status: SINGLE_AGENT_DRAFT_PENDING_INDEPENDENT_REVIEW
+source_depth: repository_markdown_not_PDF_visual_verification
+documents:
+  D1:
+    path: backend/output/mineru/ingest_2/full.md
+    sha256: f0e2b044ec0f8be55b1c00d9479830f6768a5da9970111a7db0353d59097a0d6
+    family: ammonia_optimization
+    split: development
+    sharing: author_rights_confirmation_required
+  D2:
+    path: backend/output/mineru/ingest_f/full.md
+    sha256: ab7cdd99e8cd85ddd61e3d65e4e747685a25a62d22f68bed3e2d79d015e90623
+    family: transformer_paper
+    split: exploratory_probe_not_blind_test
+    sharing: third_party_paper_do_not_republish_full_text
+    caution: likely_model_pretraining_exposure
+  D3:
+    path: integration/Agentic-RAG-Architecture.md
+    sha256: d0c64333bf10c761fef29bc1d9e002656f3968e720e176e92b8a18eb4a1e8e72
+    family: project_architecture_spec
+    split: exploratory_probe_not_blind_test
+    sharing: repository_internal_only
+    caution: specification_claims_not_current_implementation_facts
+questions:
+  - id: D1-FIG
+    historical_qid: Q15
+    doc: D1
+    query: 论文中所有的图(figure)有哪些？按图号去重，列出对应标题。
+    scope: {kind: figure_catalogue, start: null, end: null}
+    items:
+      - {id: F1, label: 问题一园区功率曲线, value: "1", unit: 图号, condition: 源荷对比及购售电功率, role: figure, anchor: "图 1— 问题一园区功率曲线（上：源荷对比；下：购售电功率）"}
+      - {id: F2, label: 问题二离散制氨最优调度, value: "2", unit: 图号, condition: 产量36吨/日, role: figure, anchor: "图 2— 问题二离散制氨最优调度（产量 36吨/日，蓝色为设备运行时段）"}
+      - {id: F3, label: 问题二全年吨氨成本分布, value: "3", unit: 图号, condition: 各产量箱线图及排序曲线, role: figure, anchor: "图 3— 问题二全年吨氨成本分布（左：各产量箱线图；右：排序分布曲线）"}
+      - {id: F4, label: 问题三离散与连续对比, value: "4", unit: 图号, condition: 成本分布及绿电指标, role: figure, anchor: "图 4— 问题三离散 vs连续对比（左：全年成本分布曲线；右：绿电指标雷达图）"}
+      - {id: F5, label: 问题四离网与储能分析, value: "5", unit: 图号, condition: 三模式经济性及充放电调度, role: figure, anchor: "图 5— 问题四离网与储能分析（左：三种模式经济性对比；右：储能充放电调度）"}
+      - {id: F6, label: 全问题综合汇总, value: "6", unit: 图号, condition: 四合一, role: figure, anchor: "图 6— 全问题综合汇总图（四合一：成本对比/指标雷达/成本分布/产量对比）"}
+    disallowed: [将final_comprehensive.png重复算为第七张图, 图2绑定54吨每日]
+  - id: D1-COST
+    historical_qid: Q16
+    doc: D1
+    query: 论文摘要中提到的吨氨成本类经济指标分别有哪些？列数值、单位及对应条件。
+    scope: {kind: section, start: "## 摘 要", end: "关键词："}
+    items:
+      - {id: C1, label: 吨氨成本, value: "3554", unit: 元/吨, condition: 问题一满负荷连续运行基准, role: result, anchor: "问题一建立了满负荷连续运行基准线模型，计算表明典型日总用电量558.72MWh，新能源发电量 603.45MWh，网购电量 172.04MWh，上网电量 216.77MWh；吨氨成本3554元/吨。"}
+      - {id: C2, label: 全年吨氨成本, value: "5820", unit: 元/吨, condition: 问题二离散调节全年, role: result, anchor: "全年吨氨成本 5820元/吨"}
+      - {id: C3, label: 高产量档吨氨成本, value: "7111", unit: 元/吨, condition: 问题二72吨每日离散, role: result, anchor: "72吨/日，18/24场景全满足，7111元/吨"}
+      - {id: C4, label: 低产量档吨氨成本, value: "3669", unit: 元/吨, condition: 问题二36吨每日离散, role: result, anchor: "36吨/日，0/24场景全满足，3669元/吨"}
+      - {id: C5, label: 全年吨氨成本, value: "5652", unit: 元/吨, condition: 问题三连续可调全年, role: result, anchor: "相比离散制氨，全年吨氨成本降至 5652元/吨（降低2.9%）"}
+    disallowed: [168元每吨作为摘要成本, 3682或3749作为摘要成本, 3554绑定问题二36吨每日]
+  - id: D1-LIMITS
+    doc: D1
+    query: 仅列6.2“模型不足与改进方向”中所有模型不足，不要把改进建议当作已采用方法。
+    scope: {kind: section, start: "## 6.2模型不足与改进方向", end: "## 参考文献"}
+    items:
+      - {id: L1, label: 忽略储能寿命衰减, value: null, unit: null, condition: 当前模型, role: limitation, anchor: "(1) 忽略储能寿命衰减。"}
+      - {id: L2, label: 场景覆盖度有限, value: null, unit: null, condition: 当前模型, role: limitation, anchor: "(2) 场景覆盖度有限。"}
+      - {id: L3, label: 未纳入碳交易收益, value: null, unit: null, condition: 当前成本计算, role: limitation, anchor: "(3) 未纳入碳交易收益。"}
+      - {id: L4, label: 确定性模型未处理预测不确定性, value: null, unit: null, condition: 当前模型, role: limitation, anchor: "(4) 确定性模型未处理预测不确定性。"}
+    disallowed: [将鲁棒优化或随机规划称为本文已采用的方法]
+  - id: D1-FUTURE
+    doc: D1
+    query: 仅根据6.2中第4项，为处理预测不确定性建议了哪些优化方法？说明这是建议而非已实施结果。
+    scope: {kind: section, start: "## 6.2模型不足与改进方向", end: "## 参考文献"}
+    items:
+      - {id: R1, label: 鲁棒优化, value: RO, unit: null, condition: 预测误差不确定性, role: proposed, anchor: "采用鲁棒优化（RO）"}
+      - {id: R2, label: 两阶段随机规划, value: SP, unit: null, condition: 预测误差不确定性, role: proposed, anchor: "两阶段随机规划（SP）方法"}
+    disallowed: [将MILP与LP计入此改进建议集合, 把RO或SP称为本文已实现方法]
+  - id: D2-ATTENTION
+    doc: D2
+    query: List all three uses of multi-head attention described in section 3.2.3, with the source of queries, keys and values.
+    scope: {kind: section, start: "## 3.2.3 Applications of Attention in our Model", end: "## 3.3 Position-wise Feed-Forward Networks"}
+    items:
+      - {id: A1, label: encoder-decoder attention, value: null, unit: null, condition: queries from previous decoder layer and keys/values from encoder output, role: mechanism, anchor: 'In "encoder-decoder attention" layers, the queries come from the previous decoder layer, and the memory keys and values come from the output of the encoder.'}
+      - {id: A2, label: encoder self-attention, value: null, unit: null, condition: queries/keys/values from previous encoder layer, role: mechanism, anchor: "The encoder contains self-attention layers."}
+      - {id: A3, label: decoder self-attention, value: null, unit: null, condition: attends only up to current position with masking, role: mechanism, anchor: "Similarly, self-attention layers in the decoder allow each position in the decoder to attend to all positions in the decoder up to and including that position."}
+    disallowed: [将Adam视为attention用途]
+  - id: D2-DATA
+    doc: D2
+    query: According to section 5.1 only, list every translation language pair and the corresponding reported training-set size, preserving the source units.
+    scope: {kind: section, start: "## 5.1 Training Data and Batching", end: "## 5.2 Hardware and Schedule"}
+    items:
+      - {id: T1, label: English-German, value: "about 4.5 million", unit: sentence pairs, condition: WMT2014, role: training_data, anchor: "English-German dataset consisting of about 4.5 million sentence pairs"}
+      - {id: T2, label: English-French, value: 36M, unit: sentences, condition: as worded in imported section 5.1, role: training_data, anchor: "English-French dataset consisting of 36M sentences"}
+    disallowed: [将25000tokens当作数据集规模, 将36M原文单位无说明改为sentence_pairs]
+  - id: D2-NONE
+    doc: D2
+    query: In section 3.2.3 only, which optimizer names are stated? If none are stated there, say so without importing information from other sections.
+    scope: {kind: section, start: "## 3.2.3 Applications of Attention in our Model", end: "## 3.3 Position-wise Feed-Forward Networks"}
+    items: []
+    expected_behavior: no_optimizer_stated_in_this_section_not_no_optimizer_in_paper
+    disallowed: [Adam_as_in_scope_item]
+  - id: D3-TOOLS
+    doc: D3
+    query: 根据架构规范3.2“Agent工具集”的表格，列出所有工具及用途，不要声称它们都已在当前代码中实现。
+    scope: {kind: section, start: "### 3.2 Agent 工具集", end: "### 3.3 路由逻辑 (Supervisor)"}
+    items:
+      - {id: K1, label: search_kg, value: null, unit: null, condition: 知识图谱结构化查询, role: specified_tool, anchor: "| `search_kg` | 知识图谱结构化查询"}
+      - {id: K2, label: search_vector, value: null, unit: null, condition: 语义相似度检索, role: specified_tool, anchor: "| `search_vector` | 语义相似度检索"}
+      - {id: K3, label: search_keyword, value: null, unit: null, condition: BM25关键词检索, role: specified_tool, anchor: "| `search_keyword` | BM25 关键词检索"}
+      - {id: K4, label: get_entity_detail, value: null, unit: null, condition: 获取实体完整信息, role: specified_tool, anchor: "| `get_entity_detail` | 获取实体完整信息"}
+      - {id: K5, label: get_page_context, value: null, unit: null, condition: 获取PDF页面上下文, role: specified_tool, anchor: "| `get_page_context` | 获取 PDF 页面上下文"}
+    disallowed: [把routing函数当作3.2表格中的工具]
+  - id: D3-SUPERVISOR
+    doc: D3
+    query: 仅按架构规范4.1，Supervisor有哪些职责？完整列出。
+    scope: {kind: section, start: "### 4.1 Supervisor 的职责", end: "### 4.2 Agent 间通信协议"}
+    items:
+      - {id: S1, label: 解析用户query, value: null, unit: null, condition: 识别参与Agent, role: specified_responsibility, anchor: "**解析用户 query**：识别需要哪些 Agent 参与"}
+      - {id: S2, label: 任务分发, value: null, unit: null, condition: 分发到Specialist Agent, role: specified_responsibility, anchor: "**任务分发**：将子任务路由到对应的 Specialist Agent"}
+      - {id: S3, label: 结果整合, value: null, unit: null, condition: 合并各Agent结果, role: specified_responsibility, anchor: "**结果整合**：合并各个 Agent 的返回结果"}
+      - {id: S4, label: 最终生成, value: null, unit: null, condition: 基于合并结果生成带引用答案, role: specified_responsibility, anchor: "**最终生成**：基于合并结果生成带引用的答案"}
+    disallowed: [把离线建索引计入4.1职责]

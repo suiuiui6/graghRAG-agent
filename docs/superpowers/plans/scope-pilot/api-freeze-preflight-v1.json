@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-07",
+  "experiment_type": "INDEPENDENT_API_CONTEXT_CONTROL_NOT_PRODUCTION_B0",
+  "author_approval": "27_requests_deepseek_v4_pro_approved_no_cost_cap_no_automatic_expansion",
+  "guard_files": {
+    "backend/retrieval.py": "7e1332a7bde6aff1d8d270397003567ccd72761f8a5b7fd25fd65851203f3e0b",
+    "backend/generator.py": "7fc16f1ec7f452f9fe74afa8feaed818cebef596b25c5b0b9480029925b8d196",
+    "backend/prompt_builder.py": "f6a62fe8529b8909e7a1c2a59f097d8659aea64020547f04087837bc2e529b7c",
+    "backend/source_control.py": "b92d65ad4604207c0bdc65670197a3c63c37c668abacb8d6b38451d025001c25",
+    "backend/routes/rag_query.py": "0f4f6f9aa490bff77ec6a444638f02be310efe3cc43fb391371c9ac4d0e0635f",
+    "backend/config.py": "f0cf031aa0a8a3282199883f26a29816bf358d4a879a24085f313c3b9fb58e8c",
+    "backend/uv.lock": "31caa7407226490b13e1853875eb1ebbe8f895980da39f2b19f58c79f11c14a3",
+    "docs/superpowers/plans/scope-pilot/pilot.py": "1fedb48fd811b276996666d7843a00e32232a8f949ad1d87142baa6d10b85f8c",
+    "docs/superpowers/plans/scope-pilot/gold.yaml": "e732d568715d2b750d3c9ced4afa88a31df66f2db65c869ff4c2536d8e05d5f2",
+    "docs/superpowers/plans/scope-pilot/inputs-B2.json": "032c3d6b27fb49581d5c9ede573afb335f634fde848440f1067f0218c6daed7c",
+    "backend/output/mineru/ingest_2/full.md": "f0e2b044ec0f8be55b1c00d9479830f6768a5da9970111a7db0353d59097a0d6",
+    "backend/output/mineru/ingest_f/full.md": "ab7cdd99e8cd85ddd61e3d65e4e747685a25a62d22f68bed3e2d79d015e90623",
+    "integration/Agentic-RAG-Architecture.md": "d0c64333bf10c761fef29bc1d9e002656f3968e720e176e92b8a18eb4a1e8e72"
+  },
+  "production_hash_drift": [
+    {
+      "path": "backend/retrieval.py",
+      "old_sha256": "fa3510aa4c894e9bb246a40dc1ab38ba12031544caa3f81fb1c1864c0e4d77b3",
+      "current_sha256": "7e1332a7bde6aff1d8d270397003567ccd72761f8a5b7fd25fd65851203f3e0b",
+      "changed": true
+    },
+    {
+      "path": "backend/generator.py",
+      "old_sha256": "03cd7c72cf903d4c381dfe9bf4b145dd7b5a233cd8351bc6b106d21602b6b5f8",
+      "current_sha256": "7fc16f1ec7f452f9fe74afa8feaed818cebef596b25c5b0b9480029925b8d196",
+      "changed": true
+    },
+    {
+      "path": "backend/prompt_builder.py",
+      "old_sha256": "ae5bfa9bc6f98048dbf474406cedcb605165818e898800459dfc7e48878fe165",
+      "current_sha256": "f6a62fe8529b8909e7a1c2a59f097d8659aea64020547f04087837bc2e529b7c",
+      "changed": true
+    },
+    {
+      "path": "backend/source_control.py",
+      "old_sha256": "6ff4fdfc93ea90849b50bc35ca4e838232b882303b7484c09d64a76a7435b5a1",
+      "current_sha256": "b92d65ad4604207c0bdc65670197a3c63c37c668abacb8d6b38451d025001c25",
+      "changed": true
+    },
+    {
+      "path": "backend/routes/rag_query.py",
+      "old_sha256": "5bfbd1e0b3243d614f37804f66c9c80f348a1934e565bce894ee19548e8f128f",
+      "current_sha256": "0f4f6f9aa490bff77ec6a444638f02be310efe3cc43fb391371c9ac4d0e0635f",
+      "changed": true
+    },
+    {
+      "path": "backend/config.py",
+      "old_sha256": "a85d747885594ae309a90c143ef470d8b90b343f446a6d697ba1b407a5e5d9f6",
+      "current_sha256": "f0cf031aa0a8a3282199883f26a29816bf358d4a879a24085f313c3b9fb58e8c",
+      "changed": true
+    },
+    {
+      "path": "backend/uv.lock",
+      "old_sha256": "31caa7407226490b13e1853875eb1ebbe8f895980da39f2b19f58c79f11c14a3",
+      "current_sha256": "31caa7407226490b13e1853875eb1ebbe8f895980da39f2b19f58c79f11c14a3",
+      "changed": false
+    }
+  ],
+  "run_spec": {
+    "model": "deepseek-v4-pro",
+    "baselines": [
+      "B1",
+      "B2",
+      "B3"
+    ],
+    "max_requests": 27,
+    "budget_utf8_bytes": 8192,
+    "thinking": {
+      "type": "disabled"
+    },
+    "temperature": 0,
+    "max_tokens": 2048,
+    "stream": false,
+    "automatic_retries": 0
+  },
+  "privacy_preprocessing": {
+    "excluded_source_line_pattern": "参赛编号",
+    "preserve_original_source_offsets": true,
+    "applies_to": "all_baselines"
+  },
+  "limits": [
+    "single_agent_gold_pending_independent_review",
+    "oracle_scope_B2_B3",
+    "B1_not_production_retrieval",
+    "no_model_probability_calibration_or_generalization_claim"
+  ]
+}

@@ -1,0 +1,728 @@
+project_id: graphrag-paper-001
+product_name: SCI-Skills
+product_version: 3.0.2
+contract_version: "1.0"
+assistant_name: 宝宝巴士
+invocation_aliases: [宝宝巴士, 山海]
+guidance_level: beginner
+entry_route: project_continue
+
+research_direction: 人工智能；中文复杂长文档 GraphRAG 问答
+working_title: 面向中文复杂长文档问答的生产一致性 GraphRAG：证据损耗、拒答与质量—成本评测
+working_title_status: PROVISIONAL_NOVELTY_REVIEW_REOPENED
+primary_paper_family: method-application
+secondary_attribute: system-and-evaluation
+family_confidence: high
+user_reported_stage: 已有代码、评测与多版论文草稿
+diagnosed_stage: M2
+stage_confidence: high
+execution_mode: REFINE_AND_PACKAGE
+engineering_routing: SCI_SKILLS_ONLY_NO_GOAL_BY_AUTHOR_REQUEST
+action_route: PROMPT
+active_expert_skills: []
+external_playbook: null
+
+expert_tasks:
+  lifecycle: [QUEUED, DISPATCHED, RETURNED, VERIFIED, REJECTED_FOR_REPAIR]
+  active: []
+  completed:
+    - task_id: GOLD-PACKAGE-20261008
+      expert_skill: sci-skills-data-availability
+      status: VERIFIED
+      result: local_v2_reference_frozen_9_questions_31_items_125_required_25_optional_172_evidence_associations_not_human_certification
+    - task_id: GOLD-INDEPENDENT-20261007
+      expert_skill: sci-skills-paper-deep-reading
+      status: VERIFIED
+      result: separate_gpt_6_1_sol_answer_blinded_source_review_9_questions_31_items_five_policy_conflicts_not_human_certification
+    - task_id: BASELINE-PROTOCOL-20261007
+      expert_skill: sci-skills-statistical-reporting
+      status: VERIFIED
+      result: two_track_native_and_controlled_scope_design_only_policy_and_execution_gates_pending
+    - task_id: M2-SCOPE-DATA-005
+      expert_skill: sci-skills-data-availability
+      status: VERIFIED
+      result: 3_source_9_question_31_item_gold_draft_and_source_hash_locators_independent_review_pending
+    - task_id: M2-SCOPE-STAT-005
+      expert_skill: sci-skills-statistical-reporting
+      status: VERIFIED
+      result: offline_evidence_pilot_executed_not_model_comparison
+    - task_id: M2-REPO-REVIEW-004
+      expert_skill: sci-skills-presubmission-review
+      status: VERIFIED
+      result: historical_scope_inventory_failures_and_current_pure_helper_gaps_not_endpoint_replay
+    - task_id: M2-REPO-JOURNAL-004
+      expert_skill: sci-skills-journal-recommendation
+      status: VERIFIED
+      result: BLOCKED_NOT_ASSESSED_NO_NAMED_JOURNALS_CONDITIONAL_POSITIONING_ONLY
+    - task_id: M2-CONFLICT-LIT-003
+      expert_skill: sci-skills-literature-search
+      status: VERIFIED
+      result: bounded_direct_competitor_overlap_review_partial_coverage
+    - task_id: M2-CONFLICT-READ-003
+      expert_skill: sci-skills-paper-deep-reading
+      status: VERIFIED
+      result: broad_contribution_rejected_repository_bundle_insufficient_for_conflict_calibration
+    - task_id: M2-RECENT-LIT-002
+      expert_skill: sci-skills-literature-search
+      status: VERIFIED
+      result: bounded_recent_journal_inventory_partial_gap_coverage
+    - task_id: M2-RECENT-READ-002
+      expert_skill: sci-skills-paper-deep-reading
+      status: VERIFIED
+      result: located_author_limitations_and_overlap_partial_novelty_review
+    - task_id: M4-DATA-001
+      expert_skill: sci-skills-data-availability
+      status: VERIFIED
+      result: local_reproducibility_inventory_and_execution_boundary
+    - task_id: M3-WRITE-001
+      expert_skill: sci-skills-manuscript-writing
+      status: VERIFIED
+      result: production_aligned_evidence_surface_method_contract
+    - task_id: M3-FIG-001
+      expert_skill: sci-skills-scientific-figures
+      status: VERIFIED
+      result: plan_ready_method_figure_architectures
+    - task_id: M2-LIT-001
+      expert_skill: sci-skills-literature-search
+      status: VERIFIED
+      result: verified_15_paper_landscape_and_competitor_matrix
+    - task_id: M1-ARTIFACT-REVIEW-001
+      expert_skill: sci-skills-presubmission-review
+      status: VERIFIED
+      result: manuscript_not_ready_and_canonical_chain_recommended
+  provisional: []
+
+expert_conflicts:
+  active:
+    - conflict_id: C-001
+      type: evidence-validity
+      issue: 历史可追溯/零幻觉表述与 grounding、source assembly 和 metric validity 风险冲突
+      status: UNRESOLVED
+    - conflict_id: C-002
+      type: evidence-version
+      issue: 控制台代码基线46b202c与旧pre-freeze manifest的727c009证据版本不一致
+      status: UNRESOLVED_UNTIL_NEW_FREEZE
+  resolved:
+    - conflict_id: C-003
+      type: terminology
+      issue: 四层证据治理存在两套定义
+      resolution: 顺序方法统一为path_hits到pre-rerank到final-context到answer claims四阶段证据链；release gate为正交工程通道
+      status: RESOLVED_BY_ORCHESTRATOR
+    - conflict_id: C-004
+      type: metric-interpretation
+      issue: node_id_validity被描述为anti-hallucination support
+      resolution: 统一解释为citation-ID validity；语义支持必须使用claim-level adjudication
+      status: RESOLVED_BY_ORCHESTRATOR
+  merge_owner: sci-skills
+
+manual_operations:
+  status: NOT_REQUIRED
+  active_operation_task_id: null
+  paused_stage: null
+  companion_prompt_generated: false
+  expected_return_materials: []
+  return_card_received: false
+  evidence_verified: false
+
+adapter_status:
+  local-python: AVAILABLE
+  local-r: UNAVAILABLE
+  local-file-import: AVAILABLE
+  manual-database-export: NOT_CHECKED
+  local-document-rendering: PARTIAL_NO_LIBREOFFICE
+  local-model-already-available: DISABLED
+
+target:
+  journal: null
+  article_type: system-and-application-research
+  language: Chinese-first
+  deadline: null
+  requirements_source: null
+  requirements_verified_on: null
+
+available_resources:
+  literature:
+    - Edge_et_al_2024_GraphRAG_arXiv_2404.16130
+    - Li_et_al_2024_GraphReader_10.18653_v1_2024.findings-emnlp.746
+    - Gutierrez_et_al_2024_HippoRAG_10.52202_079017-1902
+    - Zhu_et_al_2025_KG2RAG_10.18653_v1_2025.naacl-long.449
+    - Zhao_et_al_2024_LongRAG_10.18653_v1_2024.emnlp-main.1259
+    - Bai_et_al_2024_LongBench_10.18653_v1_2024.acl-long.172
+    - Zhu_et_al_2026_CFQA_10.63317_4e6fhrncfrbu
+    - Gao_et_al_2023_ALCE_10.18653_v1_2023.emnlp-main.398
+    - Niu_et_al_2024_RAGTruth_10.18653_v1_2024.acl-long.585
+    - Peng_et_al_2025_UAEval4RAG_10.18653_v1_2025.acl-long.415
+    - Muhamed_et_al_2026_RefusalBench_10.18653_v1_2026.eacl-long.321
+    - Jeong_et_al_2024_AdaptiveRAG_10.18653_v1_2024.naacl-long.389
+    - Li_et_al_2024_RAG_or_LongContext_10.18653_v1_2024.emnlp-industry.66
+    - SaadFalcon_et_al_2024_ARES_10.18653_v1_2024.naacl-long.20
+    - Ru_et_al_2024_RAGChecker_10.52202_079017-0692
+  data:
+    - iteration-2/eval-2-existing-components/rag_eval/ground_truth.json
+    - iteration-2/eval-2-existing-components/rag_eval/raw_runs.jsonl
+  primary_texts: []
+  code:
+    - backend/
+    - frontend/
+    - iteration-2/eval-2-existing-components/rag_eval/
+  experiments:
+    - historical_50_question_single_document_evaluation
+    - current_engineering_release_gate
+  results:
+    - iteration-2/eval-2-existing-components/rag_eval/REPORT_FINAL.md
+    - iteration-2/eval-2-existing-components/rag_eval/release_gate_report.md
+  manuscript:
+    - docs/superpowers/plans/2026-06-17-graphrag-paper-draft-v3-core-journal.md
+    - docs/superpowers/plans/2026-06-17-graphrag-paper-standard-manuscript-v1.md
+    - docs/superpowers/plans/2026-06-17-graphrag-paper-core-journal-with-figures-v1.docx
+  figures:
+    - four_embedded_docx_figures_provisional
+  reviewer_materials:
+    - GraphRAG(1).md
+    - GraphRAG_Enterprise_Assessment(1).md
+    - "【研发项目评估】· GraphRAG Agent 知识图谱.pdf"
+  external_requirements: []
+
+data_sufficiency:
+  status: SUFFICIENT
+  assessed_on: 2026-10-07
+  evidence_reviewed:
+    - repository_code
+    - historical_eval_bundle
+    - current_release_gate
+    - manuscript_versions
+  research_question_fit: sufficient_for_M4_implementation_preparation_only
+  unit_and_population_fit: single_document_50_question_scope_only
+  critical_fields_fit: partial_for_future_M5
+  time_geography_language_fit: Chinese_document_scope_verified
+  sample_and_method_fit: sufficient_for_M3_design_but_insufficient_for_M5_external_validity
+  provenance_and_rights_fit: pending_future_freeze
+  cleaning_repairable_issues: []
+  critical_unrepairable_gaps: []
+  acquisition_needed: false_for_M4_preparation
+  acquisition_type: null
+
+data_acquisition:
+  status: NOT_NEEDED_FOR_M4_PREPARATION
+  crawl_necessity: BLOCKED
+
+candidate_data_sufficiency:
+  assessed_on: 2026-10-07
+  scope: historical_50_question_bundle_for_conflict_probability_calibration
+  status: INSUFFICIENT
+  gaps: [real_source_conflict_labels, replayable_visible_context_text, predicted_probability]
+  whole_repository_status: UNKNOWN_PENDING_READ_ONLY_AUDIT
+  acquisition_authorized: false
+  evidence: docs/superpowers/plans/paper-conflict-calibration-competitor-review.md
+
+repository_problem_review:
+  assessed_on: 2026-10-07
+  author_selection_rule: real_recurrent_repository_problem_with_fair_comparisons_not_top_journal_limit_requirement
+  candidate: scope_constrained_exhaustive_inventory_question_answering
+  status: PROVISIONAL_NOT_NOVELTY_APPROVED
+  evidence: docs/superpowers/plans/paper-repository-problem-and-contribution-review.md
+  diagnostic: docs/superpowers/plans/audit_repository_question_scope.py
+  historical_cases: [Q15_figure_inventory, Q16_abstract_cost_inventory]
+  independent_document_count_for_cases: 1
+  current_endpoint_replay: NOT_EXECUTED
+  local_helper_diagnostic: EXECUTED_EXIT_0
+  data_sufficiency_for_case_discovery: SUFFICIENT
+  data_sufficiency_for_method_effect_claim: INSUFFICIENT
+  journal_readiness: NOT_READY
+  named_journal_recommendation: BLOCKED_NOT_ASSESSED
+  pilot_package: docs/superpowers/plans/scope-pilot/README.md
+  pilot_gold: 3_documents_9_questions_31_items_single_agent_draft
+  pilot_execution: 27_offline_context_preparations_9_software_checks_passed
+  pilot_finding: oracle_scope_B2_B3_reach_all_31_anchors_not_answer_accuracy
+  candidate_judgment: SIMPLE_SCOPE_ROUTING_FIRST_METHOD_NECESSITY_NOT_ESTABLISHED
+  pilot_generation: HISTORICAL_INDEPENDENT_API_27_EXECUTED_CURRENT_B0_AND_AUTO_NOT_EXECUTED
+  gold_independent_review:
+    requested_model: gpt-6.1-sol
+    status: COMPLETE_SEPARATE_AI_SOURCE_REVIEW_NOT_HUMAN_CERTIFICATION
+    questions: 9
+    core_items: 31
+    historical_review_conflicts: [GIR-C01, GIR-C02, GIR-C03, GIR-C04, GIR-C05]
+    v2_policy_conflict_status: RESOLVED_FOR_NEW_VERSION_OLD_QUESTION_AMBIGUITIES_RETAINED
+    canonical_gold_v2: LOCAL_SOURCE_BOUND_REFERENCE_FROZEN_NOT_HUMAN_CERTIFIED
+    gold_v2: docs/superpowers/plans/scope-pilot/gold-review-v2/gold-v2.yaml
+    freeze: docs/superpowers/plans/scope-pilot/gold-review-v2/local-freeze-v2-20261008.json
+    source_verification: 125_required_25_optional_attributes_172_exact_evidence_associations
+    policy: docs/superpowers/plans/scope-pilot/gold-review-v2/gold-policy-proposal.yaml
+    approval_record: docs/superpowers/plans/scope-pilot/gold-review-v2/approval-record-20261008.yaml
+  current_validation_design:
+    status: DESIGN_ACCEPTED_FOR_LOCAL_PREPARATION_NOT_EXECUTED
+    requested_model: gpt-6.1-sol
+    arms: [B0_NATIVE, C_NATIVE_CONTEXT, C_AUTO_SCOPE, C_ORACLE_SCOPE]
+    source_identity: GENUINE_USER_SELECTION_NOT_GOLD_KEYS
+    conditional_provider_call_cap_proposed: 54
+    cap_status: NOT_AUTHORIZED_REQUIRES_HIDDEN_CALL_BOUND_VERIFICATION
+    new_experiment_api_requests_this_review: 0
+    runtime_and_corpus: NOT_VERIFIED
+    local_preflight: docs/superpowers/plans/scope-pilot/gold-review-v2/local-preflight-20261008.md
+    corpus_observation: D1_31_exact_substring_chunks_1_stored_span_match_D2_D3_mapping_unverified_not_proven_absent
+    runtime_observation: NO_8001_LISTENER_OBSERVED_AT_PREFLIGHT_NOT_STARTED
+    v2_runtime_adapter: NOT_IMPLEMENTED_LEGACY_PILOT_NOT_COMPATIBLE
+    evidence: docs/superpowers/plans/scope-pilot/gold-review-v2/validation-protocol-sol.md
+  api_execution_authorization:
+    recorded_on: 2026-10-07
+    model: deepseek-v4-pro
+    approved_external_recipient: official_DeepSeek_API
+    approved_data_scope: existing_validation_fragments_not_whole_repository
+    author_cost_cap: NONE_SPECIFIED
+    execution_route: INDEPENDENT_API_EXPERIMENT_NOT_SCI_ZERO_API_COMPLIANT
+    actual_api_requests: 27
+    successful_responses: 27
+    automatic_retries: 0
+    execution_status: COMPLETE_BOUNDED_RUN_ACADEMIC_ADJUDICATION_PROVISIONAL
+    run: docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1
+    report: docs/superpowers/plans/scope-pilot/api-run-report.md
+    measured_total_tokens: 38733
+    gold_scope_ambiguity: D1_COST_1970_SUPPORT_VALUE_NO_RETROACTIVE_GOLD_EDIT
+    no_additional_remote_requests_authorized_by_this_run: true
+    design_status: APPROVED_BY_AUTHOR
+    proposed_run_limit: 27_requests_no_automatic_retries_or_expansion
+    credential_presence: EXISTING_PROJECT_ENV_OFFICIAL_HOST_AUTH_VERIFIED_BY_27_SUCCESS_RESPONSES
+    local_health: HTTP_200_UP_8001_NOT_QUERY_OR_MODEL_VERIFIED
+    current_freeze_drift: SIX_PRODUCTION_FILES_DIFFER_NEW_API_MANIFEST_RECORDED_NOT_AGENT_MUTATION
+    design: docs/superpowers/specs/2026-10-07-deepseek-scope-pilot-design.md
+
+figure_workflow:
+  readiness: PLAN_READY
+  active_figure_id: null
+  figure_map:
+    - figure_id: F-M3-01
+      class: EXPLANATORY
+      location: manuscript_section_3_2
+      role: production_aligned_end_to_end_overview
+      readiness: PLAN_READY
+    - figure_id: F-M3-02
+      class: EXPLANATORY
+      location: manuscript_section_3_7
+      role: four_stage_evidence_loss_and_claim_support
+      readiness: PLAN_READY
+    - figure_id: F-M3-03
+      class: EXPLANATORY
+      location: manuscript_section_4_2_or_supplement
+      role: budget_matched_baseline_validation_flow
+      readiness: PLAN_READY
+  proposed_locations:
+    - section_3_2_after_method_overview
+    - section_3_7_after_evidence_loss_definition
+    - section_4_2_after_metric_surface_contract
+  pending_user_choices:
+    - figure_architecture_option_before_rendering_nonblocking_for_method_acceptance
+  result_input_files: []
+  plotting_backend: null
+  plotting_source: null
+  execution_evidence: []
+  rendered_outputs: []
+  reference_images:
+    - docx_figure_1_system_architecture
+    - docx_figure_2_evidence_surface_layers
+    - docx_figure_3_historical_vs_release_gate
+    - docx_figure_4_cases_and_failures
+  reference_adaptation_mode: audit_only
+  qa_status: provisional
+  user_rendering_approval: false
+  user_final_approval: false
+  manuscript_insertion_status: blocked
+
+stage_status:
+  passed: [M1]
+  partially_passed: [M2]
+  reopened: [M2]
+  provisional_retained: [M3, M4]
+  historical_passed: [M1, M2, M3]
+  historical_partially_passed: [M4]
+  failed: []
+  not_assessed: [M5, M6, M7]
+
+field_status:
+  verified:
+    application_problem: 中文复杂长文档问答中的证据可追溯、拒答纠错和成本边界
+    resources: 完整代码仓库、历史评测、当前门禁、多版草稿和治理材料
+    evaluation_objectives: final-context到达性、回答支持性、行为可靠性、质量成本权衡
+    external_method_landscape: 15篇官方全文核验的代表性竞品与评价方法
+    baseline_feasibility: 当前生产接口只能执行部分预算和Cross-Encoder开关消融
+    M3_method_framework: 生产一致变体控制、七模块合同、四阶段证据链和冻结流程
+    implementation_feasibility: 现有主链可扩展；P1来源控制与P2身份上下文答案链已软件验证，语义claim裁决与manifest仍待P3
+    M3_evaluation_contract: 等价证据组、严格支持分母、无效运行报告和七变体归因设计已审查
+    M4_preparation: 实施计划、原型功能清单、流程文档、测试准备材料与本地复现清单已核查
+    M4_local_checks: Python3.12.8、PyYAML、50题和50条历史记录哈希、7项原helper离线测试通过
+  pending_verification:
+    current_novelty: REOPENED_RECENT_DIRECT_COMPETITOR_OVERLAP
+    conflict_calibration_direction: BROAD_CONTRIBUTION_REJECTED_NARROWER_HYPOTHESES_UNAPPROVED
+    method_figure_architecture_choice: PENDING_BEFORE_RENDERING_NONBLOCKING
+    M4_implementation: P1_P2_IMPLEMENTED_AND_SOFTWARE_VERIFIED_P3_PENDING
+  inferred:
+    preferred_route: production_parity_evidence_loss_evaluation_framework
+  missing_required: []
+  missing_optional:
+    - target_journal
+    - deadline
+  evidence_locked:
+    - current_frozen_results
+    - external_literature_claims
+    - baseline_advantage
+    - ablation_attribution
+    - cross_document_external_validity
+
+terminology_ledger:
+  - preferred: final-context
+    role: headline_retrieval_surface
+  - preferred: path_hits
+    role: diagnostic_surface
+  - preferred: pre-rerank
+    role: diagnostic_surface
+  - preferred: answer-support
+    role: claim_and_citation_support_surface
+  - preferred: four-stage-evidence-chain
+    definition: path_hits_to_pre-rerank_to_final-context_to_answer-claims
+  - preferred: citation-ID-validity
+    replaces_manuscript_interpretation: node_id_validity_as_anti_hallucination
+  - prohibited_as_unqualified_claim: zero_hallucination
+
+claim_evidence_ledger:
+  - claim: evaluation_now_uses_primary_production_endpoint
+    status: verified
+    evidence: iteration-2/eval-2-existing-components/rag_eval/run_inference.py
+  - claim: source_grounding_is_reliable
+    status: conflict_unresolved
+    evidence: backend/bridge.py; backend/grounding.py; backend/schema.py
+  - claim: current_system_is_submission_ready
+    status: rejected
+    evidence: iteration-2/eval-2-existing-components/rag_eval/release_gate_report.md
+  - claim: PAESA_GraphRAG_improves_quality_or_cost
+    status: NOT_EXECUTED
+    evidence: docs/superpowers/plans/paper-m3-method-contract.md
+
+completed_outputs:
+  M2_gold_v2: docs/superpowers/plans/scope-pilot/gold-review-v2/gold-v2.yaml
+  M2_gold_v2_reproduction: docs/superpowers/plans/scope-pilot/gold-review-v2/gold-v2-package.md
+  M2_gold_v2_expert_contract: docs/superpowers/plans/scope-pilot/gold-review-v2/gold-v2-package-contract.yaml
+  M2_gold_v2_local_freeze: docs/superpowers/plans/scope-pilot/gold-review-v2/local-freeze-v2-20261008.json
+  M2_gold_v2_verification: docs/superpowers/plans/scope-pilot/gold-review-v2/package-verification-20261008.json
+  M2_validation_local_preflight: docs/superpowers/plans/scope-pilot/gold-review-v2/local-preflight-20261008.md
+  M2_independent_gold_review: docs/superpowers/plans/scope-pilot/gold-review-v2/independent-sol-review.md
+  M2_gold_policy_proposal: docs/superpowers/plans/scope-pilot/gold-review-v2/gold-policy-proposal.yaml
+  M2_native_scope_validation_design: docs/superpowers/plans/scope-pilot/gold-review-v2/validation-protocol-sol.md
+  M2_gold_validation_expert_tasks: docs/superpowers/plans/scope-pilot/gold-review-v2/expert-tasks.yaml
+  independent_API_scope_pilot: docs/superpowers/plans/scope-pilot/api-run-report.md
+  M2_scope_pilot: docs/superpowers/plans/scope-pilot/README.md
+  M2_scope_pilot_contracts: docs/superpowers/plans/scope-pilot/expert-contracts.yaml
+  M2_scope_pilot_execution: docs/superpowers/plans/scope-pilot/execution-record.yaml
+  M2_repository_problem_review: docs/superpowers/plans/paper-repository-problem-and-contribution-review.md
+  M2_repository_diagnostic: docs/superpowers/plans/audit_repository_question_scope.py
+  M2_repository_expert_contracts: docs/superpowers/plans/paper-repository-expert-contracts.yaml
+  M2_repository_journal_gate: docs/superpowers/plans/paper-repository-journal-gate.yaml
+  M2_conflict_competitor_review: docs/superpowers/plans/paper-conflict-calibration-competitor-review.md
+  M2_conflict_expert_contracts: docs/superpowers/plans/paper-conflict-calibration-expert-contracts.yaml
+  M2_recent_journal_review: docs/superpowers/plans/paper-recent-journal-limitations-review.md
+  M2_recent_expert_contracts: docs/superpowers/plans/paper-recent-journal-expert-contracts.yaml
+  artifact_review: docs/superpowers/plans/paper-control-console.md
+  project_state: docs/superpowers/plans/sci-skills-project-state.yaml
+  M2_literature_ledger: docs/superpowers/plans/paper-m2-literature-ledger.md
+  M2_method_comparison: docs/superpowers/plans/paper-m2-method-comparison.md
+  M3_method_contract: docs/superpowers/plans/paper-m3-method-contract.md
+  M3_figure_proposal: docs/superpowers/plans/paper-m3-figure-proposal.md
+  M3_evaluation_contract: docs/superpowers/plans/paper-m3-evaluation-contract.md
+  M3_variant_plan: docs/superpowers/plans/paper-m3-variant-plan.yaml
+  M4_implementation_plan: docs/superpowers/plans/paper-m4-implementation-plan.md
+  M4_prototype_checklist: docs/superpowers/plans/paper-m4-prototype-checklist.md
+  M4_workflow: docs/superpowers/plans/paper-m4-workflow.md
+  M4_test_preparation: docs/superpowers/plans/paper-m4-test-preparation.md
+  M4_data_code_inventory: docs/superpowers/plans/paper-m4-data-code-inventory.md
+  M4_data_expert_task: docs/superpowers/plans/paper-m4-data-expert-task.yaml
+  M4_P1_verification: docs/superpowers/plans/paper-m4-p1-verification.md
+  M4_P2_verification: docs/superpowers/plans/paper-m4-p2-verification.md
+  M4_P2_execution_plan: docs/superpowers/plans/paper-m4-p2-execution-plan.md
+
+manual_verification_items:
+  - target_journal_database_search_and_export_before_submission
+  - author_method_figure_architecture_choice
+current_blockers:
+  - real_project_runtime_and_same_version_native_context_not_verified_or_captured
+  - current_production_B0_and_automatic_scope_routing_not_executed
+  - scope_inventory_candidate_direct_prior_work_and_current_frozen_baselines_pending
+  - production_runtime_corpus_identity_and_exact_source_coordinates_not_verified
+  - original_contribution_overlaps_recent_direct_competitors
+  - broad_conflict_calibration_contribution_overlaps_direct_competitors
+  - narrower_source_applicability_failure_and_novelty_not_established
+  - evidence_conflict_C-001_unresolved
+  - frozen_variant_runner_and_budget_validation_P3_pending
+  - held_out_or_cross_document_evaluation_set_not_frozen
+
+next_action:
+  type: PROMPT
+  stage: M2
+  prompt_generated: true
+  operation_guide_generated: false
+  expected_return_materials:
+    - runtime_identity_validated_corpus_source_selection_and_enforced_call_counter_before_separate_API_batch_approval
+
+author_requested_engineering_batch:
+  stage: M4
+  academic_status: PROVISIONAL_PENDING_M2_REVIEW
+  current_batch: P2
+  status: SOFTWARE_VERIFIED_NOT_MODEL_EXPERIMENT
+  evidence: docs/superpowers/plans/paper-m4-p2-verification.md
+  next_batch: P3_FROZEN_VARIANT_RUNNER_AND_OFFLINE_ADJUDICATION
+  execution_route: SCI_SKILLS_ONLY_NO_GOAL_NO_REMOTE_API
+
+stage_review_notes:
+  M2:
+    decision: REOPENED_PARTIAL_NOVELTY_NOT_ESTABLISHED
+    reviewed_on: 2026-10-07
+    evidence:
+      - docs/superpowers/plans/paper-recent-journal-limitations-review.md
+      - docs/superpowers/plans/paper-recent-journal-expert-contracts.yaml
+      - docs/superpowers/plans/paper-conflict-calibration-competitor-review.md
+      - docs/superpowers/plans/paper-conflict-calibration-expert-contracts.yaml
+    candidate_direction: SCOPE_CONSTRAINED_INVENTORY_QA_PROVISIONAL
+    prior_direction: BROAD_CONFLICT_CALIBRATION_CONTRIBUTION_REJECTED
+    narrower_candidates: SCOPE_COVERAGE_CHECK_METHOD_UNAPPROVED
+    next_batch: REAL_B0_RUNTIME_CORPUS_IDENTITY_AND_SOURCE_MAPPING_GATES
+    gold_review_status: COMPLETE_INDEPENDENT_AI_REVIEW_LOCAL_V2_REFERENCE_FROZEN_NOT_HUMAN_CERTIFIED
+    current_validation_status: LOCAL_V2_TOOLS_SOFTWARE_VERIFIED_PRODUCTION_AND_CONTROLLED_NOT_EXECUTED
+    independent_api_pilot_status: EXECUTED_27_SUCCESS_ANNOTATIONS_PROVISIONAL_NOT_STAGE_PASS
+  M4:
+    current_academic_status: PROVISIONAL_PENDING_M2_REVIEW
+    decision: PARTIAL_P1_P2_SOFTWARE_PASS_P3_PENDING
+    reviewed_on: 2026-10-07
+    evidence:
+      - docs/superpowers/plans/paper-m4-implementation-plan.md
+      - docs/superpowers/plans/paper-m4-prototype-checklist.md
+      - docs/superpowers/plans/paper-m4-workflow.md
+      - docs/superpowers/plans/paper-m4-test-preparation.md
+      - docs/superpowers/plans/paper-m4-data-code-inventory.md
+      - docs/superpowers/plans/paper-m4-data-expert-task.yaml
+      - docs/superpowers/plans/paper-m4-p1-verification.md
+      - docs/superpowers/plans/paper-m4-p2-verification.md
+    local_checks: TARGETED_189_TESTS_PASSED_WITH_2_EXISTING_WARNINGS
+    integration_tests_status: LOCAL_BM25_CHROMA_FASTAPI_SQLITE_23_PASSED_MODEL_INTEGRATION_NOT_EXECUTED
+    implementation_status: P1_P2_IMPLEMENTED_AND_SOFTWARE_VERIFIED_P3_PENDING
+    experiments_status: NOT_EXECUTED
+    next_batch: P3_FROZEN_VARIANT_RUNNER_AND_OFFLINE_ADJUDICATION
+  M3:
+    current_academic_status: PROVISIONAL_PENDING_M2_REVIEW
+    decision: PASS_DESIGN_ONLY
+    reviewed_on: 2026-10-07
+    evidence:
+      - docs/superpowers/plans/paper-m3-method-contract.md
+      - docs/superpowers/plans/paper-m3-evaluation-contract.md
+      - docs/superpowers/plans/paper-m3-variant-plan.yaml
+      - docs/superpowers/plans/paper-m3-figure-proposal.md
+    figure_gate: approval_required_before_rendering_or_insertion_only
+    implementation_status: NOT_EXECUTED
+    experiments_status: NOT_EXECUTED
+
+local_v2_engineering_checkpoint:
+  recorded_on: 2026-10-08
+  status: SOFTWARE_VERIFIED_NOT_MODEL_EXPERIMENT
+  academic_stage_advanced: false
+  verification: docs/superpowers/plans/scope-pilot/local-v2-tools/verification-20261008.md
+  b0_readiness: docs/superpowers/plans/scope-pilot/local-v2-tools/b0-readiness-20261008.json
+  software_tests: 102
+  existing_warnings: 1
+  independent_spec_review: PASS
+  independent_code_quality_review: PASS
+  native_B0: BLOCKED_NOT_EXECUTED
+  new_API_calls: 0
+  human_gold_certification: false
+  M4_P2_preserved: true
+
+runtime_corpus_identity_checkpoint:
+  recorded_on: 2026-10-08
+  status: PARTIAL_RUNTIME_AND_CONTEXT_BLOCKED
+  academic_stage_advanced: false
+  scientific_stage: M2_OPEN
+  verification: docs/superpowers/plans/scope-pilot/local-v2-tools/runtime-corpus-audit-20261008.md
+  metadata: docs/superpowers/plans/scope-pilot/local-v2-tools/runtime-corpus-audit-20261008.json
+  port_8001: FOREIGN_OCR_PROJECT_NOT_GRAPHRAG
+  project_runtime: UNKNOWN
+  disk_freeze: PASS_15_PRODUCTION_3_SOURCES_62_HISTORY
+  D1_text_mapping: UNIQUE_31_CHUNKS_STORED_ORIGINAL_SPANS_VALID_1_INVALID_30
+  coordinate_diagnosis: STORED_SPANS_MATCH_CONCAT_TEXT_NOT_ORIGINAL_NO_GLOBAL_PLUS_ONE_FIX
+  canonical_KG_correction: DOC_INGEST_F7AF6ADA_EXISTS_GOLD_SOURCE_HASH_BINDING_UNKNOWN
+  native_model_context: NOT_CAPTURED
+  native_B0: NOT_RUN
+  new_API_calls: 0
+  original_index_repaired: false
+  M4_P2_preserved: true
+  next_action: DIAGNOSE_ACTIVE_FIREWALL_RECEIPT_FAILURE_THEN_REPEAT_IDENTITY_ONLY_GATE
+
+isolated_capture_engineering_checkpoint:
+  recorded_on: 2026-10-12
+  status: BLOCKED_ACTIVE_FIREWALL_RECEIPT_NOT_ISSUED_RULE_REMOVED_VERIFIED
+  scientific_stage: M2_OPEN
+  academic_stage_advanced: false
+  verification: docs/superpowers/plans/scope-pilot/local-v2-tools/isolated-capture-verification-20261011.md
+  physical_snapshot_files: 36299
+  local_model_copy_files: 32
+  control_copy_files: 5
+  actual_capture: NOT_EXECUTED
+  dedicated_child_started: false
+  new_API_calls: 0
+  temporary_rule_residual: NONE_VERIFIED_BOTH_STORES
+  M4_P2_preserved: true
+
+heldout_protocol_checkpoint:
+  recorded_on: 2026-10-12
+  status: DESIGN_REVIEW_CLOSED_NOT_EXECUTION_FROZEN
+  scientific_stage: M2_OPEN
+  academic_stage_advanced: false
+  protocol: docs/contracts/2026-10-12-heldout-scope-qa-validation.md
+  review_task: docs/review/2026-10-12-heldout-scope-qa-review-task.yaml
+  review_result: docs/review/2026-10-12-heldout-scope-qa-protocol-review.md
+  recheck_result: docs/review/2026-10-12-heldout-scope-qa-recheck-result.yaml
+  data_pool: NOT_INVENTORIED
+  target_document_count: 12
+  target_count_status: DESIGN_TARGET_NOT_OBSERVED_NOT_POWER_JUSTIFIED
+  execution_budget: PENDING_DEVELOPMENT_PROFILE
+  model_experiment: NOT_EXECUTED
+  new_API_calls: 0
+  human_gold_certification: false
+  next_action: READ_ONLY_CANDIDATE_INVENTORY_AND_DEVELOPMENT_BUDGET_PROFILE_REGISTRATION
+
+heldout_inventory_budget_checkpoint:
+  recorded_on: 2026-10-12
+  status: INVENTORIED_MEASURED_NOT_FROZEN
+  scientific_stage: M2_OPEN
+  academic_stage_advanced: false
+  report: docs/review/2026-10-12-heldout-inventory-budget.md
+  local_research_authorization: USER_CONFIRMED
+  prior_development_exposure: USER_UNCERTAIN_PENDING_VERIFICATION
+  inventory_files: 62
+  exact_hash_groups: 27
+  candidate_documents: 8
+  candidate_copies: 33
+  admitted_documents: 0
+  H1: []
+  H2: []
+  design_target_documents: 12
+  shortfall_even_if_all_candidates_cleared: 4
+  development_proxy_profile: MEASURED_REPRODUCED_NOT_GENERATOR_TOKENS
+  historical_usage_records: 27
+  historical_total_tokens: 38733
+  generator_budget: BLOCKED_MISSING_GENERATOR_PROFILE
+  new_API_calls: 0
+  model_experiment: NOT_EXECUTED
+  next_action: VERIFY_EXPOSURE_OR_REPLACE_CANDIDATES_AND_IDENTIFY_LOCAL_GENERATOR_BEFORE_FREEZE
+
+heldout_exposure_audit_checkpoint:
+  recorded_on: 2026-10-12
+  status: PARTIAL_EXPOSURE_EVIDENCE_NO_HOLDOUT_CLEARANCE
+  scientific_stage: M2_OPEN
+  academic_stage_advanced: false
+  report: docs/review/2026-10-12-heldout-exposure-audit.md
+  evidence: docs/review/scope-holdout-20261012/exposure-01/exposure-ledger.json
+  candidate_documents: 8
+  prior_QA_source_label_risk: 3
+  other_documents_exposure: UNKNOWN_5
+  exact_historical_hash_and_model_input: NOT_VERIFIED
+  paper_specific_development_use: UNKNOWN_ALL_8
+  H1: []
+  H2: []
+  guarded_input_files: 2738
+  candidate_copies_rehashed: 33
+  source_drift: 0
+  new_API_calls: 0
+  model_experiment: NOT_EXECUTED
+  next_action: KEEP_QUARANTINE_OBTAIN_HISTORICAL_RECEIPTS_OR_USE_NEW_SOURCES
+
+public_development_source_checkpoint:
+  recorded_on: 2026-10-12
+  status: SOURCE_SCREENED_NOT_COLLECTED
+  scientific_stage: M2_OPEN
+  academic_stage_advanced: false
+  report: docs/review/2026-10-12-public-development-sources.md
+  source_shortlist: docs/review/public-development-20261012/source-shortlist.json
+  existing_8_current_role: DEVELOPMENT_AUTHORIZED_BY_USER
+  primary_route: LINUXCNC_FIXED_VERSION_PLUS_NIST_MANUFACTURING_REPORTS
+  NIST_report_candidates: 6
+  LinuxCNC_manual_families: 1
+  raw_downloads: 0
+  collection_pilot: NOT_EXECUTED
+  plan_validator: PASS_FIELDS_ONLY
+  cleaning_handoff: NOT_READY
+  heldout_H1: []
+  heldout_H2: []
+  generator_budget: STILL_NOT_FROZEN
+  new_API_calls: 0
+  next_action: SMALL_OFFICIAL_RAW_FILE_PILOT_VERSION_RIGHTS_STRUCTURE_BEFORE_DEVELOPMENT_GOLD
+
+last_updated: 2026-10-12
+
+public_development_pilot_checkpoint:
+  recorded_on: 2026-10-12
+  status: TEXT_DRAFT_ONLY_RAW_AND_VISUAL_BLOCKED
+  scientific_stage: M2_OPEN
+  academic_stage_advanced: false
+  report: docs/review/2026-10-12-public-development-pilot.md
+  text_snapshot_units: 2
+  raw_files_frozen: 0
+  visual_checks_passed: 0
+  development_draft_questions: 6
+  draft_gold_items: 36
+  human_gold_verified: false
+  title_correction: NISTIR_8091_Predicting_Robot_System_Performance
+  future_holdout_H1: []
+  future_holdout_H2: []
+  generator_budget: STILL_NOT_FROZEN
+  new_API_calls: 0
+  next_action: OBTAIN_TWO_DEVELOPMENT_ORIGINALS_THEN_VALIDATE_LAYOUT_AND_REMAP_GOLD
+
+public_development_original_download_checkpoint:
+  recorded_on: 2026-10-12
+  status: ORIGINALS_DOWNLOADED_BASIC_IDENTITY_PASS
+  scientific_stage: M2_OPEN
+  academic_stage_advanced: false
+  manifest: docs/review/public-development-20261012/pilot/raw/download-manifest.json
+  primary_original_files: 2
+  license_original_files: 1
+  nist_pdf_pages_verified: 17
+  raw_file_hashes_recorded: true
+  visual_validation: PENDING
+  gold_rebinding: PENDING
+  user_manual_download_needed: false
+  future_holdout_H1: []
+  future_holdout_H2: []
+  new_API_calls: 0
+  next_action: VALIDATE_ORIGINAL_LAYOUT_AND_PARSING_THEN_REBIND_DEVELOPMENT_GOLD
+
+public_development_gold_v1_checkpoint:
+  recorded_on: 2026-10-12
+  status: DEVELOPMENT_GOLD_V1_AI_REVIEWED
+  scientific_stage: M2_OPEN
+  academic_stage_advanced: false
+  report: docs/review/2026-10-12-public-development-gold-validation.md
+  freeze_manifest: docs/review/public-development-20261012/pilot/validated/freeze-manifest.json
+  primary_source_units: 2
+  development_questions: 6
+  gold_items: 36
+  attribute_scoring_units: 81
+  required_qualifiers: 1
+  target_region_visual_reviews: 9
+  independent_AI_review: PASS_CANDIDATE_ACCEPTED_FOR_LOCAL_DEVELOPMENT
+  human_gold_verified: false
+  scope_condition: scope_given_only
+  NIST_list_pdf_page_one_based: 8
+  NIST_list_printed_page: 5
+  future_holdout_H1: []
+  future_holdout_H2: []
+  generator_budget: STILL_NOT_FROZEN
+  new_API_calls: 0
+  next_action: IDENTIFY_ACTUAL_GENERATOR_AND_MEASURE_DEVELOPMENT_BUDGET_BEFORE_BASELINE_RUNS
+
+public_development_gold_final_verification:
+  verified_on: 2026-10-13
+  status: PASS_FOR_LOCAL_DEVELOPMENT_GOLD_V1
+  report: docs/review/public-development-20261012/pilot/validated/final-verification.json
+  frozen_files_checked: 35
+  independent_review_hashes_checked: 12
+  evidence_bindings_checked: 145
+  reviewed_answer_content_unchanged: true
+  human_gold_verified: false
+  scientific_stage: M2_OPEN
+  academic_stage_advanced: false
+  model_experiment: NOT_EXECUTED

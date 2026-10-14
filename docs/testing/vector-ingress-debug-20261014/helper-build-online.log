@@ -1,0 +1,11 @@
+ Downloading crates ...
+  Downloaded zmij v1.0.21
+  Downloaded serde_core v1.0.228
+  Downloaded serde_json v1.0.149
+   Compiling serde_core v1.0.228
+   Compiling zmij v1.0.21
+   Compiling serde_json v1.0.149
+   Compiling itoa v1.0.11
+   Compiling memchr v2.7.4
+   Compiling ingress-oracle v0.1.0 (D:\graghRAG-agent\.tmp\vector-ingress-debug-20261014\helper)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 12.46s

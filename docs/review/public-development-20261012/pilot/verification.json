@@ -1,0 +1,13 @@
+{
+  "questions": 6,
+  "gold_items": 36,
+  "units": 2,
+  "original_files_frozen": 0,
+  "visual_checks_passed": 0,
+  "checks": [
+    "All scopes and item evidence map to contiguous observed web lines",
+    "All offsets index LF-normalized Unicode code points, half-open",
+    "Snapshot hashes computed from bytes; raw hashes deliberately null"
+  ],
+  "status": "STRUCTURAL_PASS_ONLY_RAW_AND_VISUAL_GATE_BLOCKED"
+}

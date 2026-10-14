@@ -1,0 +1,50 @@
+{
+  "expectations": [
+    {
+      "text": "响应中指导如何在项目下创建.claude/agents/目录并部署agent配置",
+      "passed": true,
+      "evidence": "Section 一 identifies the exact directory path (`D:\\graghRAG-agent\\.claude\\agents\\`), lists the three required agent files (chatbot-planner.md, chatbot-coder.md, chatbot-reviewer.md), and Section 二 provides detailed per-file configuration adjustments (color scheme, HTTP library, document paths) that constitute the deployment guidance."
+    },
+    {
+      "text": "响应中说明三个Agent的调用顺序：planner → coder → reviewer",
+      "passed": true,
+      "evidence": "Section 三 includes an explicit flow diagram: `chatbot-planner ──► 实现计划 → chatbot-coder ──► 代码实现 → chatbot-reviewer ──► 审查报告 → chatbot-coder ──► 修复代码`. Section 7.2 further states: 'Planner-Coder-Reviewer 的正确调用顺序' and warns '不要跳过 planner 直接让 coder 写代码'."
+    },
+    {
+      "text": "响应中给出具体的Agent工具调用示例（至少包含subagent_type参数）",
+      "passed": false,
+      "evidence": "All agent invocation examples throughout the response use natural language prompts such as '使用 chatbot-planner agent，基于以下三份规范文档...' and '使用 chatbot-coder agent，实现 Phase 1...'. No example includes the `subagent_type` parameter in a structured tool-call format. The response describes *what* to ask each agent but never demonstrates the actual tool invocation syntax with `subagent_type`."
+    },
+    {
+      "text": "响应中说明chatbot-planner只做规划不写代码，chatbot-coder按规划实现，chatbot-reviewer做审查",
+      "passed": true,
+      "evidence": "Section 三 flow diagram assigns: planner → '实现计划', coder → '代码实现', reviewer → '审查报告'. Section 八 quick reference table defines planner output as '分步骤的实施方案', coder output as '可运行的代码文件', reviewer output as '分级问题清单 + 修复建议'. Table §2.4 explicitly notes `permission_mode: plan` for planner (read-only) vs `permission_mode: acceptEdits` for coder."
+    },
+    {
+      "text": "响应中强调代码应严格遵循已有的规范文档（Layer 5的蓝图）",
+      "passed": true,
+      "evidence": "Section 7.1 is titled '规范文档是唯一真相源' and states: '驾驭工程的核心理念：**代码必须符合规范文档**' and 'reviewer 审查时，必须对照三份蓝图文档（PRD + Backend API Spec + Frontend Design Spec）逐项比对'. Section 7.3 mandates that every coder prompt includes spec document paths. Section 二 explicitly aligns agent configurations to spec-defined colors, APIs, and document locations."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 1,
+    "total": 5,
+    "pass_rate": 0.80
+  },
+  "claims": [],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [
+      "Expectation 3 failed: the response's agent invocation examples are all natural-language prompts, none demonstrate the structured tool-call format with an explicit `subagent_type` parameter. To pass, at least one code block should show the actual Agent tool invocation including `subagent_type: \"chatbot-planner\"` or equivalent."
+    ],
+    "workarounds": []
+  },
+  "eval_feedback": {
+    "suggestions": [
+      "Add a concrete tool-call code example showing the Agent tool with `subagent_type` parameter, e.g. a JSON block or formatted tool invocation that includes `\"subagent_type\": \"chatbot-planner\"`.",
+      "Consider adding explicit mkdir/copy instructions for creating `.claude/agents/` from scratch, rather than assuming the directory already exists."
+    ],
+    "overall": "The response is thorough and well-structured, covering the full planner→coder→reviewer workflow with concrete Phase-by-Phase guidance for both frontend and backend. The main gap is that all agent invocation examples are written as natural-language prompts rather than showing the actual tool-call format with the `subagent_type` parameter, which caused expectation 3 to fail."
+  }
+}

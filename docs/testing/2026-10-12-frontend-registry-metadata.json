@@ -1,0 +1,1146 @@
+{
+  "vite": {
+    "name": "vite",
+    "version": "6.4.4",
+    "keywords": [
+      "frontend",
+      "framework",
+      "hmr",
+      "dev-server",
+      "build-tool",
+      "vite"
+    ],
+    "author": {
+      "name": "Evan You"
+    },
+    "license": "MIT",
+    "_id": "vite@6.4.4",
+    "maintainers": [
+      {
+        "name": "yyx990803",
+        "email": "yyx990803@gmail.com"
+      },
+      {
+        "name": "vitebot",
+        "email": "vite@voidzero.dev"
+      }
+    ],
+    "homepage": "https://vite.dev",
+    "bugs": {
+      "url": "https://github.com/vitejs/vite/issues"
+    },
+    "//": "READ CONTRIBUTING.md to understand what to put under deps vs. devDeps!",
+    "bin": {
+      "vite": "bin/vite.js"
+    },
+    "dist": {
+      "shasum": "ddcfd2e568dd4904a9154d8763f2d78a3e9bf443",
+      "tarball": "https://registry.npmjs.org/vite/-/vite-6.4.4.tgz",
+      "fileCount": 35,
+      "integrity": "sha512-xGjU/SyjeNyb0E4KxXBvYz/1C+3JXuujvf2hXNOtnlcE+58o5ajd9N2/n2VhkiJvpCP2qQasnUpx5PXNeI+p1Q==",
+      "signatures": [
+        {
+          "sig": "MEUCIF5hzfileaNmKpE+v+je8Ukk00XJygzrqSjDgkX1BdQXAiEA77xa+LCYee/7uqYWuUVnUbSvPu0+MJBXsV+dznZtDII=",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        },
+        {
+          "sig": "MEQCIGbSnGhvPYmjAx+8IT/xJl0joD97nmPlyluI9s2vICD8AiBy19QoLMAvsXojcFN7kOaBrBtszvYhIRJpFc4w5s6grg==",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        }
+      ],
+      "attestations": {
+        "url": "https://registry.npmjs.org/-/npm/v1/attestations/vite@6.4.4",
+        "provenance": {
+          "predicateType": "https://slsa.dev/provenance/v1"
+        }
+      },
+      "unpackedSize": 2663435
+    },
+    "main": "./dist/node/index.js",
+    "type": "module",
+    "_from": "file:vite-6.4.4.tgz",
+    "types": "./dist/node/index.d.ts",
+    "engines": {
+      "node": "^18.0.0 || ^20.0.0 || >=22.0.0"
+    },
+    "exports": {
+      ".": {
+        "import": "./dist/node/index.js",
+        "require": "./index.cjs",
+        "module-sync": "./dist/node/index.js"
+      },
+      "./client": {
+        "types": "./client.d.ts"
+      },
+      "./types/*": {
+        "types": "./types/*"
+      },
+      "./package.json": "./package.json",
+      "./dist/client/*": "./dist/client/*",
+      "./module-runner": "./dist/node/module-runner.js",
+      "./types/internal/*": null
+    },
+    "funding": "https://github.com/vitejs/vite?sponsor=1",
+    "imports": {
+      "#module-sync-enabled": {
+        "default": "./misc/false.js",
+        "module-sync": "./misc/true.js"
+      }
+    },
+    "scripts": {
+      "dev": "tsx scripts/dev.ts",
+      "lint": "eslint --cache --ext .ts src/**",
+      "build": "premove dist && pnpm build-bundle && pnpm build-types",
+      "format": "prettier --write --cache --parser typescript \"src/**/*.ts\"",
+      "typecheck": "tsc --noEmit && tsc --noEmit -p src/node",
+      "build-types": "pnpm build-types-temp && pnpm build-types-roll && pnpm build-types-check",
+      "build-bundle": "rollup --config rollup.config.ts --configPlugin esbuild",
+      "build-types-roll": "rollup --config rollup.dts.config.ts --configPlugin esbuild && premove temp",
+      "build-types-temp": "tsc --emitDeclarationOnly --outDir temp -p src/node/tsconfig.build.json",
+      "build-types-check": "tsc --project tsconfig.check.json"
+    },
+    "_npmUser": {
+      "name": "GitHub Actions",
+      "email": "npm-oidc-no-reply@github.com",
+      "trustedPublisher": {
+        "id": "github",
+        "oidcConfigId": "a2e674b1-239b-4e35-a07f-7b43debc0a8c"
+      }
+    },
+    "_resolved": "/tmp/e15237b94bb29759f7ff1823f4fc0eb3/vite-6.4.4.tgz",
+    "_integrity": "sha512-xGjU/SyjeNyb0E4KxXBvYz/1C+3JXuujvf2hXNOtnlcE+58o5ajd9N2/n2VhkiJvpCP2qQasnUpx5PXNeI+p1Q==",
+    "repository": {
+      "url": "git+https://github.com/vitejs/vite.git",
+      "type": "git",
+      "directory": "packages/vite"
+    },
+    "_npmVersion": "11.21.0",
+    "description": "Native-ESM powered web dev build tool",
+    "directories": {},
+    "_nodeVersion": "24.21.0",
+    "dependencies": {
+      "fdir": "^6.4.4",
+      "rollup": "^4.34.9",
+      "esbuild": "^0.25.0",
+      "postcss": "^8.5.3",
+      "picomatch": "^4.0.2",
+      "tinyglobby": "^0.2.13"
+    },
+    "typesVersions": {
+      "*": {
+        "module-runner": [
+          "dist/node/module-runner.d.ts"
+        ]
+      }
+    },
+    "_hasShrinkwrap": false,
+    "readmeFilename": "README.md",
+    "devDependencies": {
+      "ws": "^8.18.1",
+      "cac": "^6.7.14",
+      "ufo": "^1.6.1",
+      "cors": "^2.8.5",
+      "etag": "^1.8.1",
+      "mlly": "^1.7.4",
+      "open": "^10.1.1",
+      "sass": "^1.86.3",
+      "sirv": "^3.0.2",
+      "debug": "^4.4.0",
+      "pathe": "^2.0.3",
+      "tslib": "^2.8.1",
+      "types": "link:./types",
+      "dotenv": "^16.5.0",
+      "mrmime": "^2.0.1",
+      "nanoid": "^5.1.5",
+      "parse5": "^7.2.1",
+      "terser": "^5.39.0",
+      "connect": "^3.7.0",
+      "chokidar": "^3.6.0",
+      "tsconfck": "^3.1.5",
+      "dep-types": "link:./src/types",
+      "artichokie": "^0.3.1",
+      "http-proxy": "^1.18.1",
+      "periscopic": "^4.0.2",
+      "picocolors": "^1.1.1",
+      "cross-spawn": "^7.0.6",
+      "escape-html": "^1.0.3",
+      "lightningcss": "^1.29.3",
+      "magic-string": "^0.30.17",
+      "@babel/parser": "^7.27.0",
+      "@types/pnpapi": "^0.0.5",
+      "dotenv-expand": "^12.0.2",
+      "estree-walker": "^3.0.3",
+      "sass-embedded": "^1.86.3",
+      "strip-literal": "^3.0.0",
+      "postcss-import": "^16.1.0",
+      "es-module-lexer": "^1.6.0",
+      "postcss-modules": "^6.0.1",
+      "resolve.exports": "^2.0.3",
+      "rollup-plugin-dts": "^6.2.1",
+      "@polka/compression": "^1.0.0-next.25",
+      "@types/escape-html": "^1.0.4",
+      "convert-source-map": "^2.0.0",
+      "source-map-support": "^0.5.21",
+      "@rollup/plugin-json": "^6.1.0",
+      "@rollup/pluginutils": "^5.1.4",
+      "postcss-load-config": "^6.0.1",
+      "@rollup/plugin-alias": "^5.1.1",
+      "@ampproject/remapping": "^2.3.0",
+      "rollup-plugin-esbuild": "^6.2.1",
+      "rollup-plugin-license": "^3.6.0",
+      "@rollup/plugin-commonjs": "^28.0.3",
+      "launch-editor-middleware": "^2.14.2",
+      "@jridgewell/trace-mapping": "^0.3.25",
+      "@rollup/plugin-node-resolve": "16.0.1",
+      "@rollup/plugin-dynamic-import-vars": "2.1.4"
+    },
+    "peerDependencies": {
+      "tsx": "^4.8.1",
+      "jiti": ">=1.21.0",
+      "less": "*",
+      "sass": "*",
+      "yaml": "^2.4.2",
+      "stylus": "*",
+      "terser": "^5.16.0",
+      "sugarss": "*",
+      "@types/node": "^18.0.0 || ^20.0.0 || >=22.0.0",
+      "lightningcss": "^1.21.0",
+      "sass-embedded": "*"
+    },
+    "optionalDependencies": {
+      "fsevents": "~2.3.3"
+    },
+    "peerDependenciesMeta": {
+      "tsx": {
+        "optional": true
+      },
+      "jiti": {
+        "optional": true
+      },
+      "less": {
+        "optional": true
+      },
+      "sass": {
+        "optional": true
+      },
+      "yaml": {
+        "optional": true
+      },
+      "stylus": {
+        "optional": true
+      },
+      "terser": {
+        "optional": true
+      },
+      "sugarss": {
+        "optional": true
+      },
+      "@types/node": {
+        "optional": true
+      },
+      "lightningcss": {
+        "optional": true
+      },
+      "sass-embedded": {
+        "optional": true
+      }
+    },
+    "_npmOperationalInternal": {
+      "tmp": "tmp/vite_6.4.4_1791265746984_0.37096262989458695",
+      "host": "s3://npm-registry-packages-npm-production"
+    }
+  },
+  "tailwindcss": {
+    "name": "tailwindcss",
+    "version": "3.4.19",
+    "license": "MIT",
+    "_id": "tailwindcss@3.4.19",
+    "maintainers": [
+      {
+        "name": "malfaitrobin",
+        "email": "malfait.robin@gmail.com"
+      },
+      {
+        "name": "adamwathan",
+        "email": "adam@adamwathan.me"
+      },
+      {
+        "name": "reinink",
+        "email": "jonathan@reinink.ca"
+      }
+    ],
+    "homepage": "https://tailwindcss.com",
+    "bugs": {
+      "url": "https://github.com/tailwindlabs/tailwindcss/issues"
+    },
+    "bin": {
+      "tailwind": "lib/cli.js",
+      "tailwindcss": "lib/cli.js"
+    },
+    "dist": {
+      "shasum": "af2a0a4ae302d52ebe078b6775e799e132500ee2",
+      "tarball": "https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.4.19.tgz",
+      "fileCount": 253,
+      "integrity": "sha512-3ofp+LL8E+pK/JuPLPggVAIaEuhvIz4qNcf3nA1Xn2o/7fb7s/TYpHhwGDv1ZU3PkBluUVaF8PyCHcm48cKLWQ==",
+      "signatures": [
+        {
+          "sig": "MEYCIQC9KKcXY94P+5BK9qt+1fJr0MroqYhNcZtUiD3BPQUyrwIhAImm7GL8rwp/SVIWP1fATlyZqjMlqbVY34DNCu7Xt7bs",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        }
+      ],
+      "attestations": {
+        "url": "https://registry.npmjs.org/-/npm/v1/attestations/tailwindcss@3.4.19",
+        "provenance": {
+          "predicateType": "https://slsa.dev/provenance/v1"
+        }
+      },
+      "unpackedSize": 5590081
+    },
+    "jest": {
+      "transform": {
+        "\\.js$": "@swc/jest",
+        "\\.ts$": "@swc/jest"
+      },
+      "testTimeout": 30000,
+      "setupFilesAfterEnv": [
+        "<rootDir>/jest/customMatchers.js"
+      ],
+      "testPathIgnorePatterns": [
+        "/node_modules/",
+        "/integrations/",
+        "/standalone-cli/",
+        "\\.test\\.skip\\.js$"
+      ],
+      "transformIgnorePatterns": [
+        "node_modules/(?!lightningcss)"
+      ]
+    },
+    "main": "lib/index.js",
+    "types": "types/index.d.ts",
+    "engines": {
+      "node": ">=14.0.0"
+    },
+    "gitHead": "f38be227df384504a170409c2131ca5ca8bfe025",
+    "scripts": {
+      "test": "jest",
+      "build": "swc src --out-dir lib --copy-files",
+      "style": "eslint .",
+      "pretest": "npm run generate",
+      "generate": "npm run generate:plugin-list && npm run generate:types",
+      "prebuild": "npm run generate && rimraf lib",
+      "postbuild": "esbuild lib/cli-peer-dependencies.js --bundle --platform=node --outfile=peers/index.js --define:process.env.CSS_TRANSFORMER_WASM=false",
+      "release-notes": "node ./scripts/release-notes.js",
+      "generate:types": "node -r @swc/register scripts/generate-types.js",
+      "prepublishOnly": "npm install --force && npm run build",
+      "release-channel": "node ./scripts/release-channel.js",
+      "rebuild-fixtures": "npm run build && node -r @swc/register scripts/rebuildFixtures.js",
+      "test:integrations": "npm run test --prefix ./integrations",
+      "generate:plugin-list": "node -r @swc/register scripts/create-plugin-list.js",
+      "install:integrations": "node scripts/install-integrations.js"
+    },
+    "_npmUser": {
+      "name": "malfaitrobin",
+      "email": "malfait.robin@gmail.com"
+    },
+    "repository": {
+      "url": "git+https://github.com/tailwindlabs/tailwindcss.git#v3",
+      "type": "git"
+    },
+    "_npmVersion": "10.8.2",
+    "description": "A utility-first CSS framework for rapidly building custom user interfaces.",
+    "directories": {},
+    "_nodeVersion": "20.19.6",
+    "browserslist": [
+      "> 1%",
+      "not edge <= 18",
+      "not ie 11",
+      "not op_mini all"
+    ],
+    "dependencies": {
+      "arg": "^5.0.2",
+      "dlv": "^1.1.3",
+      "jiti": "^1.21.7",
+      "is-glob": "^4.0.3",
+      "postcss": "^8.4.47",
+      "resolve": "^1.22.8",
+      "sucrase": "^3.35.0",
+      "chokidar": "^3.6.0",
+      "fast-glob": "^3.3.2",
+      "lilconfig": "^3.1.3",
+      "didyoumean": "^1.2.2",
+      "micromatch": "^4.0.8",
+      "picocolors": "^1.1.1",
+      "postcss-js": "^4.0.1",
+      "glob-parent": "^6.0.2",
+      "object-hash": "^3.0.0",
+      "normalize-path": "^3.0.0",
+      "postcss-import": "^15.1.0",
+      "postcss-nested": "^6.2.0",
+      "@alloc/quick-lru": "^5.2.0",
+      "postcss-load-config": "^4.0.2 || ^5.0 || ^6.0",
+      "postcss-selector-parser": "^6.1.2"
+    },
+    "publishConfig": {
+      "provenance": true
+    },
+    "_hasShrinkwrap": false,
+    "readmeFilename": "README.md",
+    "devDependencies": {
+      "jest": "^29.7.0",
+      "turbo": "^1.13.4",
+      "eslint": "^8.57.1",
+      "rimraf": "^5.0.10",
+      "cssnano": "^6.1.2",
+      "esbuild": "^0.24.0",
+      "@swc/cli": "0.1.62",
+      "prettier": "^2.8.8",
+      "@swc/core": "1.3.55",
+      "@swc/jest": "0.2.26",
+      "jest-diff": "^29.7.0",
+      "autoprefixer": "^10.4.20",
+      "browserslist": "^4.24.0",
+      "concurrently": "^8.2.2",
+      "lightningcss": "1.27.0",
+      "@swc/register": "0.1.10",
+      "source-map-js": "^1.2.1",
+      "eslint-config-prettier": "^8.10.0",
+      "eslint-plugin-prettier": "^4.2.1"
+    },
+    "_npmOperationalInternal": {
+      "tmp": "tmp/tailwindcss_3.4.19_1765392042195_0.7074929587585723",
+      "host": "s3://npm-registry-packages-npm-production"
+    }
+  },
+  "react-router-dom": {
+    "name": "react-router-dom",
+    "version": "6.30.6",
+    "keywords": [
+      "react",
+      "router",
+      "route",
+      "routing",
+      "history",
+      "link"
+    ],
+    "author": {
+      "name": "Remix Software",
+      "email": "hello@remix.run"
+    },
+    "license": "MIT",
+    "_id": "react-router-dom@6.30.6",
+    "maintainers": [
+      {
+        "name": "brophdawg11",
+        "email": "matt@brophy.org"
+      },
+      {
+        "name": "mjackson",
+        "email": "mjijackson+npm@gmail.com"
+      }
+    ],
+    "homepage": "https://github.com/remix-run/react-router#readme",
+    "bugs": {
+      "url": "https://github.com/remix-run/react-router/issues"
+    },
+    "dist": {
+      "shasum": "acaf0db65efeddabd0840616243c97f578b3baf3",
+      "tarball": "https://registry.npmjs.org/react-router-dom/-/react-router-dom-6.30.6.tgz",
+      "fileCount": 23,
+      "integrity": "sha512-0RHKZz7wwffvkU+2MFVT2NnjK44ssLEV+m0CAJaS2Ksmorrwj7WxH00jO0SOCW26/tINUnJHToXblDs33I38YQ==",
+      "signatures": [
+        {
+          "sig": "MEUCIEBUGHR9CgRULI8NGXHywpooDkJAaMsi/yD8GXuLHaWOAiEAutvNuFGoyTEo8Vfj9fFXL8pItZW7v/WIqL3JiVUSy48=",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        },
+        {
+          "sig": "MEYCIQC4/2VQUHkmaSJQxTQZsGrEfBtojY0r6pW0cM3GsTaePQIhAIgnnubkkcWHhHJgbMCmrKox5RWurldNTbBBbCMXDa7s",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        }
+      ],
+      "attestations": {
+        "url": "https://registry.npmjs.org/-/npm/v1/attestations/react-router-dom@6.30.6",
+        "provenance": {
+          "predicateType": "https://slsa.dev/provenance/v1"
+        }
+      },
+      "unpackedSize": 902176
+    },
+    "main": "./dist/main.js",
+    "_from": "file:react-router-dom-6.30.6.tgz",
+    "types": "./dist/index.d.ts",
+    "unpkg": "./dist/umd/react-router-dom.production.min.js",
+    "module": "./dist/index.js",
+    "engines": {
+      "node": ">=14.0.0"
+    },
+    "scripts": {
+      "start": "node server.js"
+    },
+    "_npmUser": {
+      "name": "GitHub Actions",
+      "email": "npm-oidc-no-reply@github.com",
+      "trustedPublisher": {
+        "id": "github",
+        "oidcConfigId": "oidc:73c5f91d-9b75-44a5-83e3-0981a0f92690"
+      }
+    },
+    "_resolved": "/tmp/580e76ff2671de0faf5a0f96f8e4e2db/react-router-dom-6.30.6.tgz",
+    "_integrity": "sha512-0RHKZz7wwffvkU+2MFVT2NnjK44ssLEV+m0CAJaS2Ksmorrwj7WxH00jO0SOCW26/tINUnJHToXblDs33I38YQ==",
+    "repository": {
+      "url": "git+https://github.com/remix-run/react-router.git",
+      "type": "git",
+      "directory": "packages/react-router-dom"
+    },
+    "_npmVersion": "11.17.0",
+    "description": "Declarative routing for React web applications",
+    "directories": {},
+    "sideEffects": false,
+    "_nodeVersion": "24.19.0",
+    "dependencies": {
+      "react-router": "6.30.6",
+      "@remix-run/router": "1.23.4"
+    },
+    "_hasShrinkwrap": false,
+    "readmeFilename": "README.md",
+    "devDependencies": {
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0"
+    },
+    "peerDependencies": {
+      "react": ">=16.8",
+      "react-dom": ">=16.8"
+    },
+    "_npmOperationalInternal": {
+      "tmp": "tmp/react-router-dom_6.30.6_1787065012769_0.014756244262596141",
+      "host": "s3://npm-registry-packages-npm-production"
+    }
+  },
+  "postcss": {
+    "_id": "postcss@8.5.29",
+    "bugs": {
+      "url": "https://github.com/postcss/postcss/issues"
+    },
+    "dist": {
+      "shasum": "086a0ded2c0257c71efb8c68776b477774714b4a",
+      "tarball": "https://registry.npmjs.org/postcss/-/postcss-8.5.29.tgz",
+      "integrity": "sha512-49cGhUbXj8Qenv0iTMxA1cFBzxXoctpC9Ujd77t1WcbJIr6nF/eI7g/8MgxrYldFRuAXvja7xQRwavoW7kgrxQ==",
+      "fileCount": 55,
+      "unpackedSize": 220365,
+      "attestations": {
+        "url": "https://registry.npmjs.org/-/npm/v1/attestations/postcss@8.5.29",
+        "provenance": {
+          "predicateType": "https://slsa.dev/provenance/v1"
+        }
+      },
+      "signatures": [
+        {
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+          "sig": "MEYCIQD1PkwqNJ8yP8sFjDz1KfdgPSeLWaUtPxgazuU5YsouvAIhAJVwlsV9G13pf6jZOs3cipZkB7bA385UvjNYenN+tT4q"
+        }
+      ]
+    },
+    "main": "./lib/postcss.js",
+    "name": "postcss",
+    "types": "./lib/postcss.d.ts",
+    "author": {
+      "name": "Andrey Sitnik",
+      "email": "andrey@sitnik.es"
+    },
+    "browser": {
+      "fs": false,
+      "url": false,
+      "path": false,
+      "source-map-js": false,
+      "./lib/terminal-highlight": false
+    },
+    "engines": {
+      "node": "^10 || ^12 || >=14"
+    },
+    "exports": {
+      ".": {
+        "import": "./lib/postcss.mjs",
+        "require": "./lib/postcss.js"
+      },
+      "./lib/list": "./lib/list.js",
+      "./lib/node": "./lib/node.js",
+      "./lib/root": "./lib/root.js",
+      "./lib/rule": "./lib/rule.js",
+      "./lib/input": "./lib/input.js",
+      "./lib/parse": "./lib/parse.js",
+      "./lib/parser": "./lib/parser.js",
+      "./lib/result": "./lib/result.js",
+      "./lib/at-rule": "./lib/at-rule.js",
+      "./lib/comment": "./lib/comment.js",
+      "./lib/postcss": "./lib/postcss.js",
+      "./lib/symbols": "./lib/symbols.js",
+      "./lib/warning": "./lib/warning.js",
+      "./lib/fromJSON": "./lib/fromJSON.js",
+      "./lib/tokenize": "./lib/tokenize.js",
+      "./package.json": "./package.json",
+      "./lib/container": "./lib/container.js",
+      "./lib/processor": "./lib/processor.js",
+      "./lib/stringify": "./lib/stringify.js",
+      "./lib/warn-once": "./lib/warn-once.js",
+      "./lib/declaration": "./lib/declaration.js",
+      "./lib/lazy-result": "./lib/lazy-result.js",
+      "./lib/stringifier": "./lib/stringifier.js",
+      "./lib/previous-map": "./lib/previous-map.js",
+      "./lib/map-generator": "./lib/map-generator.js",
+      "./lib/no-work-result": "./lib/no-work-result.js",
+      "./lib/css-syntax-error": "./lib/css-syntax-error.js",
+      "./lib/terminal-highlight": "./lib/terminal-highlight.js"
+    },
+    "funding": [
+      {
+        "url": "https://opencollective.com/postcss/",
+        "type": "opencollective"
+      },
+      {
+        "url": "https://tidelift.com/funding/github/npm/postcss",
+        "type": "tidelift"
+      },
+      {
+        "url": "https://github.com/sponsors/ai",
+        "type": "github"
+      }
+    ],
+    "gitHead": "a7a1f3476177d689dff722d3f9f72190ddf93f7e",
+    "license": "MIT",
+    "version": "8.5.29",
+    "_npmUser": {
+      "name": "GitHub Actions",
+      "email": "npm-oidc-no-reply@github.com",
+      "trustedPublisher": {
+        "id": "github",
+        "oidcConfigId": "7015bb61-bff0-419f-9d41-14aac5a5ec5c"
+      },
+      "approver": {
+        "name": "ai",
+        "email": "andrey@sitnik.es"
+      }
+    },
+    "homepage": "https://postcss.org/",
+    "keywords": [
+      "css",
+      "manipulation",
+      "parser",
+      "postcss",
+      "preprocessor",
+      "rework",
+      "source map",
+      "transform",
+      "transpiler"
+    ],
+    "repository": {
+      "url": "git+https://github.com/postcss/postcss.git",
+      "type": "git"
+    },
+    "_npmVersion": "11.19.1",
+    "description": "Tool for transforming styles with JS plugins",
+    "directories": {},
+    "maintainers": [
+      {
+        "name": "ai",
+        "email": "andrey@sitnik.es"
+      }
+    ],
+    "_nodeVersion": "26.10.0",
+    "dependencies": {
+      "nanoid": "^3.3.19",
+      "picocolors": "^1.1.1",
+      "source-map-js": "^1.2.2"
+    },
+    "_npmOperationalInternal": {
+      "host": "s3://npm-registry-packages-npm-production",
+      "tmp": "tmp/postcss_8.5.29_1791192535687_0.6096428678674051"
+    },
+    "_hasShrinkwrap": false
+  },
+  "braces": {
+    "name": "braces",
+    "version": "3.0.3",
+    "keywords": [
+      "alpha",
+      "alphabetical",
+      "bash",
+      "brace",
+      "braces",
+      "expand",
+      "expansion",
+      "filepath",
+      "fill",
+      "fs",
+      "glob",
+      "globbing",
+      "letter",
+      "match",
+      "matches",
+      "matching",
+      "number",
+      "numerical",
+      "path",
+      "range",
+      "ranges",
+      "sh"
+    ],
+    "author": {
+      "url": "https://github.com/jonschlinkert",
+      "name": "Jon Schlinkert"
+    },
+    "license": "MIT",
+    "_id": "braces@3.0.3",
+    "maintainers": [
+      {
+        "name": "es128",
+        "email": "elan.shanker+npm@gmail.com"
+      },
+      {
+        "name": "paulmillr",
+        "email": "paul@paulmillr.com"
+      },
+      {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      {
+        "name": "doowb",
+        "email": "brian.woodward@gmail.com"
+      }
+    ],
+    "contributors": [
+      {
+        "url": "https://twitter.com/doowb",
+        "name": "Brian Woodward"
+      },
+      {
+        "url": "https://github.com/es128",
+        "name": "Elan Shanker"
+      },
+      {
+        "url": "https://github.com/eush77",
+        "name": "Eugene Sharygin"
+      },
+      {
+        "url": "http://h3manth.com",
+        "name": "hemanth.hm"
+      },
+      {
+        "url": "http://twitter.com/jonschlinkert",
+        "name": "Jon Schlinkert"
+      }
+    ],
+    "homepage": "https://github.com/micromatch/braces",
+    "bugs": {
+      "url": "https://github.com/micromatch/braces/issues"
+    },
+    "dist": {
+      "shasum": "490332f40919452272d55a8480adc0c441358789",
+      "tarball": "https://registry.npmjs.org/braces/-/braces-3.0.3.tgz",
+      "fileCount": 10,
+      "integrity": "sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==",
+      "signatures": [
+        {
+          "sig": "MEQCICfWLKNcFCGtU07ikrPJ+s1dTDH3VZTE+vQZzC22s6o+AiAEVUE/YXRqHYgctcwHqNawvsOviSDFZPvgNm8+SUXD3w==",
+          "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
+        }
+      ],
+      "unpackedSize": 44635
+    },
+    "main": "index.js",
+    "verb": {
+      "toc": false,
+      "lint": {
+        "reflinks": true
+      },
+      "tasks": [
+        "readme"
+      ],
+      "layout": "default",
+      "plugins": [
+        "gulp-format-md"
+      ]
+    },
+    "engines": {
+      "node": ">=8"
+    },
+    "gitHead": "74b2db2938fad48a2ea54a9c8bf27a37a62c350d",
+    "scripts": {
+      "test": "mocha",
+      "benchmark": "node benchmark"
+    },
+    "_npmUser": {
+      "name": "jonschlinkert",
+      "email": "github@sellside.com"
+    },
+    "repository": {
+      "url": "git+https://github.com/micromatch/braces.git",
+      "type": "git"
+    },
+    "_npmVersion": "10.7.0",
+    "description": "Bash-like brace expansion, implemented in JavaScript. Safer than other brace expansion libs, with complete support for the Bash 4.3 braces specification, without sacrificing speed.",
+    "directories": {},
+    "_nodeVersion": "20.12.1",
+    "dependencies": {
+      "fill-range": "^7.1.1"
+    },
+    "_hasShrinkwrap": false,
+    "devDependencies": {
+      "mocha": "^6.1.1",
+      "bash-path": "^2.0.1",
+      "ansi-colors": "^3.2.4",
+      "gulp-format-md": "^2.0.0"
+    },
+    "_npmOperationalInternal": {
+      "tmp": "tmp/braces_3.0.3_1716281951275_0.19583852040362504",
+      "host": "s3://npm-registry-packages"
+    }
+  },
+  "postcss-selector-parser": {
+    "_id": "postcss-selector-parser@7.1.6",
+    "bugs": {
+      "url": "https://github.com/postcss/postcss-selector-parser/issues"
+    },
+    "dist": {
+      "shasum": "45e970f2d93d4547d6754167ed1132f43012c4bf",
+      "tarball": "https://registry.npmjs.org/postcss-selector-parser/-/postcss-selector-parser-7.1.6.tgz",
+      "fileCount": 37,
+      "integrity": "sha512-7qASPzhKF2l2KLboRZux8CCTRMdGiV08vWmyKzPz22qZ7ZjQBOeY7rNzNoCLSUiftJ7HUq0GERHmxw/t0dCdMw==",
+      "signatures": [
+        {
+          "sig": "MEUCIARvTjM5MvisOcYdgtg4+teinUMCEMbWTigr+w/V7tvzAiEAxeE+X+IHLAlTmRn53zg+ojvC0x4gikJ78G1DfRKfJZg=",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        },
+        {
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+          "sig": "MEYCIQDxnJJ31lCe5d/BEXkYm2ExC1wSkGJ24+qfFUQ62u8yuAIhALDUNyvN/kI7BTSqXQUzS5+/ORkpGQt+i87ttC0LWPLq"
+        }
+      ],
+      "unpackedSize": 215009
+    },
+    "main": "dist/index.js",
+    "name": "postcss-selector-parser",
+    "types": "postcss-selector-parser.d.ts",
+    "engines": {
+      "node": ">=4"
+    },
+    "gitHead": "4eb3468e754f9f94d2092d103767bae98aa41438",
+    "license": "MIT",
+    "scripts": {
+      "lint": "oxlint",
+      "test": "npm run lint && npm run typecheck && npm run coverage",
+      "build": "npm run clean && tsc",
+      "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+      "tests": "node --test src/__tests__/*.mjs",
+      "format": "oxfmt src",
+      "prepare": "npm run build",
+      "release": "npx npmpub",
+      "coverage": "node --enable-source-maps --test --experimental-test-coverage --test-coverage-exclude=\"**/__tests__/**\" --test-coverage-lines=94 --test-coverage-branches=94 --test-coverage-functions=96 --test-reporter=spec src/__tests__/*.mjs",
+      "lint:fix": "oxlint --fix",
+      "pretests": "npm run build",
+      "typecheck": "tsc --noEmit --strict postcss-selector-parser.d.ts postcss-selector-parser.test.ts",
+      "precoverage": "npm run build",
+      "format:check": "oxfmt --check src"
+    },
+    "version": "7.1.6",
+    "_npmUser": {
+      "name": "moox",
+      "email": "npm@moox.io"
+    },
+    "homepage": "https://github.com/postcss/postcss-selector-parser",
+    "repository": {
+      "url": "git+https://github.com/postcss/postcss-selector-parser.git",
+      "type": "git"
+    },
+    "_npmVersion": "11.16.0",
+    "description": "Selector parser with built in methods for working with selector strings.",
+    "directories": {},
+    "maintainers": [
+      {
+        "name": "moox",
+        "email": "npm@moox.io"
+      },
+      {
+        "name": "ai",
+        "email": "andrey@sitnik.es"
+      },
+      {
+        "name": "chriseppstein",
+        "email": "chris@eppsteins.net"
+      },
+      {
+        "name": "jonathantneal",
+        "email": "jonathantneal@hotmail.com"
+      },
+      {
+        "name": "evilebottnawi",
+        "email": "sheo13666q@gmail.com"
+      }
+    ],
+    "_nodeVersion": "26.3.1",
+    "contributors": [
+      {
+        "url": "https://moox.io",
+        "name": "Maxime Thirouin"
+      },
+      {
+        "url": "http://beneb.info",
+        "name": "Ben Briggs",
+        "email": "beneb.info@gmail.com"
+      },
+      {
+        "name": "Chris Eppstein",
+        "email": "chris@eppsteins.net"
+      }
+    ],
+    "dependencies": {
+      "cssesc": "^3.0.0",
+      "util-deprecate": "^1.0.2"
+    },
+    "_hasShrinkwrap": false,
+    "devDependencies": {
+      "oxfmt": "^0.54.0",
+      "oxlint": "^1.69.0",
+      "postcss": "^8.4.31",
+      "typescript": "^5.4.0"
+    },
+    "_npmOperationalInternal": {
+      "host": "s3://npm-registry-packages-npm-production",
+      "tmp": "tmp/postcss-selector-parser_7.1.6_1788425941878_0.9876363964308417"
+    }
+  },
+  "pnpm": {
+    "_id": "pnpm@10.34.7",
+    "bin": {
+      "pnpm": "bin/pnpm.cjs",
+      "pnpx": "bin/pnpx.cjs"
+    },
+    "bugs": {
+      "url": "https://github.com/pnpm/pnpm/issues"
+    },
+    "dist": {
+      "shasum": "54f237ad700cd54e4f0bd1b1a916fdba40101ef5",
+      "tarball": "https://registry.npmjs.org/pnpm/-/pnpm-10.34.7.tgz",
+      "integrity": "sha512-upirxYVTmTM3W1lx9LxtbHOhtLftxKh559EC/lQj0eAjCdZ8YKEfBJVQk6luUhrZw7E4zdZUylvlY/N4s65IvQ==",
+      "fileCount": 1072,
+      "unpackedSize": 19974354,
+      "attestations": {
+        "url": "https://registry.npmjs.org/-/npm/v1/attestations/pnpm@10.34.7",
+        "provenance": {
+          "predicateType": "https://slsa.dev/provenance/v1"
+        }
+      },
+      "signatures": [
+        {
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+          "sig": "MEUCIQCfVtpsoJXTsaponuHiaFdpyvdtOCSydYfovz3CHEeYIgIgcoGQ+r/MKLbGodEK7Ph9/aVbXA/wRph6/P9O0p9xNbU="
+        }
+      ]
+    },
+    "jest": {
+      "preset": "@pnpm/jest-config/with-registry"
+    },
+    "main": "bin/pnpm.cjs",
+    "name": "pnpm",
+    "type": "commonjs",
+    "unpkg": "dist/pnpm.cjs",
+    "engines": {
+      "node": ">=18.12"
+    },
+    "exports": {
+      ".": "./package.json"
+    },
+    "funding": "https://opencollective.com/pnpm",
+    "license": "MIT",
+    "scripts": {
+      "lint": "eslint \"src/**/*.ts\" \"test/**/*.ts\"",
+      "test": "pnpm run compile && pnpm run _test",
+      "_test": "jest",
+      "start": "tsc --watch",
+      "bundle": "ts-node bundle.ts",
+      "compile": "tsc --build && pnpm run lint --fix && rimraf dist bin/nodes && pnpm run bundle && shx cp -r node-gyp-bin dist/node-gyp-bin && shx cp -r node_modules/@pnpm/tabtab/lib/templates dist/templates && shx cp -r node_modules/ps-list/vendor dist/vendor && shx cp pnpmrc dist/pnpmrc",
+      "_compile": "tsc --build",
+      "pretest:e2e": "rimraf node_modules/.bin/pnpm"
+    },
+    "version": "10.34.7",
+    "_npmUser": {
+      "name": "GitHub Actions",
+      "email": "npm-oidc-no-reply@github.com",
+      "trustedPublisher": {
+        "id": "github",
+        "oidcConfigId": "ab8ea4e6-5e14-45ea-9aad-652283679069"
+      },
+      "approver": {
+        "name": "zkochan",
+        "email": "z@kochan.io"
+      }
+    },
+    "homepage": "https://pnpm.io",
+    "keywords": [
+      "pnpm",
+      "pnpm10",
+      "dependencies",
+      "dependency manager",
+      "efficient",
+      "fast",
+      "hardlinks",
+      "install",
+      "installer",
+      "link",
+      "lockfile",
+      "modules",
+      "monorepo",
+      "multi-package",
+      "npm",
+      "package manager",
+      "package.json",
+      "packages",
+      "prune",
+      "rapid",
+      "remove",
+      "shrinkwrap",
+      "symlinks",
+      "uninstall",
+      "workspace"
+    ],
+    "repository": {
+      "url": "git+https://github.com/pnpm/pnpm.git",
+      "type": "git",
+      "directory": "pnpm"
+    },
+    "description": "Fast, disk space efficient package manager",
+    "directories": {
+      "test": "test"
+    },
+    "maintainers": [
+      {
+        "name": "zkochan",
+        "email": "z@kochan.io"
+      },
+      {
+        "name": "pnpmuser",
+        "email": "publish-bot@pnpm.io"
+      }
+    ],
+    "preferGlobal": true,
+    "publishConfig": {
+      "tag": "next-10",
+      "executableFiles": [
+        "./dist/node-gyp-bin/node-gyp",
+        "./dist/node-gyp-bin/node-gyp.cmd",
+        "./dist/node_modules/node-gyp/bin/node-gyp.js"
+      ]
+    },
+    "__dependencies": {
+      "v8-compile-cache": "2.4.0"
+    },
+    "__devDependencies": {
+      "chalk": "catalog:",
+      "delay": "catalog:",
+      "execa": "catalog:",
+      "ramda": "catalog:",
+      "tempy": "catalog:",
+      "semver": "catalog:",
+      "ci-info": "catalog:",
+      "esbuild": "catalog:",
+      "p-defer": "catalog:",
+      "pidtree": "catalog:",
+      "ps-list": "catalog:",
+      "get-port": "catalog:",
+      "path-name": "catalog:",
+      "split-cmd": "catalog:",
+      "tree-kill": "catalog:",
+      "write-pkg": "catalog:",
+      "@pnpm/nopt": "catalog:",
+      "is-windows": "catalog:",
+      "@pnpm/error": "workspace:*",
+      "@pnpm/types": "workspace:*",
+      "cross-spawn": "catalog:",
+      "exists-link": "catalog:",
+      "render-help": "catalog:",
+      "symlink-dir": "catalog:",
+      "@pnpm/byline": "catalog:",
+      "@pnpm/client": "workspace:*",
+      "@pnpm/config": "workspace:*",
+      "@pnpm/logger": "workspace:*",
+      "@pnpm/tabtab": "catalog:",
+      "@pnpm/worker": "workspace:*",
+      "@types/ramda": "catalog:",
+      "@jest/globals": "catalog:",
+      "@pnpm/command": "workspace:*",
+      "@pnpm/prepare": "workspace:*",
+      "@pnpm/run-npm": "workspace:*",
+      "@types/semver": "catalog:",
+      "@pnpm/cli-meta": "workspace:*",
+      "@pnpm/env.path": "workspace:*",
+      "@zkochan/retry": "catalog:",
+      "load-json-file": "catalog:",
+      "loud-rejection": "catalog:",
+      "read-yaml-file": "catalog:",
+      "@pnpm/cli-utils": "workspace:*",
+      "@pnpm/constants": "workspace:*",
+      "@zkochan/rimraf": "catalog:",
+      "write-json-file": "catalog:",
+      "write-yaml-file": "catalog:",
+      "@pnpm/store.cafs": "workspace:*",
+      "@pnpm/tools.path": "workspace:*",
+      "deep-require-cwd": "catalog:",
+      "@pnpm/crypto.hash": "workspace:*",
+      "@types/is-windows": "catalog:",
+      "normalize-newline": "catalog:",
+      "@pnpm/core-loggers": "workspace:*",
+      "@pnpm/modules-yaml": "workspace:*",
+      "@types/cross-spawn": "catalog:",
+      "@pnpm/registry-mock": "catalog:",
+      "@pnpm/test-fixtures": "workspace:*",
+      "@types/pnpm__byline": "catalog:",
+      "@pnpm/assert-project": "workspace:*",
+      "@pnpm/cache.commands": "workspace:*",
+      "@pnpm/lockfile.types": "workspace:*",
+      "@pnpm/parse-cli-args": "workspace:*",
+      "@pnpm/dependency-path": "workspace:*",
+      "@pnpm/test-ipc-server": "workspace:*",
+      "@pnpm/workspace.state": "workspace:*",
+      "dir-is-case-sensitive": "catalog:",
+      "@pnpm/default-reporter": "workspace:*",
+      "@pnpm/read-package-json": "workspace:*",
+      "@pnpm/find-workspace-dir": "workspace:*",
+      "@pnpm/exec.build-commands": "workspace:*",
+      "@pnpm/plugin-commands-env": "workspace:*",
+      "@pnpm/plugin-commands-init": "workspace:*",
+      "@pnpm/workspace.pkgs-graph": "workspace:*",
+      "@pnpm/config.version-policy": "workspace:*",
+      "@pnpm/plugin-commands-audit": "workspace:*",
+      "@pnpm/plugin-commands-setup": "workspace:*",
+      "@pnpm/plugin-commands-store": "workspace:*",
+      "@pnpm/read-project-manifest": "workspace:*",
+      "@pnpm/plugin-commands-config": "workspace:*",
+      "@pnpm/plugin-commands-deploy": "workspace:*",
+      "@pnpm/plugin-commands-doctor": "workspace:*",
+      "@pnpm/plugin-commands-server": "workspace:*",
+      "@pnpm/write-project-manifest": "workspace:*",
+      "@pnpm/common-cli-options-help": "workspace:*",
+      "@pnpm/plugin-commands-listing": "workspace:*",
+      "@pnpm/plugin-commands-rebuild": "workspace:*",
+      "@pnpm/workspace.find-packages": "workspace:*",
+      "@pnpm/workspace.read-manifest": "workspace:*",
+      "@pnpm/plugin-commands-licenses": "workspace:*",
+      "@pnpm/plugin-commands-outdated": "workspace:*",
+      "@pnpm/plugin-commands-patching": "workspace:*",
+      "@pnpm/filter-workspace-packages": "workspace:*",
+      "@pnpm/plugin-commands-completion": "workspace:*",
+      "@pnpm/plugin-commands-publishing": "workspace:*",
+      "@pnpm/plugin-commands-installation": "workspace:*",
+      "@pnpm/plugin-commands-script-runners": "workspace:*",
+      "@pnpm/plugin-commands-store-inspecting": "workspace:*",
+      "@pnpm/tools.plugin-commands-self-updater": "workspace:*"
+    },
+    "__optionalDependencies": {
+      "node-gyp": "^11.5.0"
+    },
+    "_npmOperationalInternal": {
+      "host": "s3://npm-registry-packages-npm-production",
+      "tmp": "tmp/pnpm_10.34.7_1791785115224_0.8070413646839683"
+    },
+    "_hasShrinkwrap": false
+  }
+}

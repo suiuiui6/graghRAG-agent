@@ -1,0 +1,23 @@
+{
+  "browser": "147.0.7727.15",
+  "scenarios": [
+    {
+      "scenario": "upload-desktop",
+      "style": {
+        "padding": "32px",
+        "maxWidth": "900px"
+      }
+    },
+    {
+      "scenario": "document-table"
+    },
+    {
+      "scenario": "query-markdown-source-detail"
+    },
+    {
+      "scenario": "mobile-breakpoint"
+    }
+  ],
+  "page_errors": [],
+  "api_boundary": "local fixtures, no backend/provider calls"
+}

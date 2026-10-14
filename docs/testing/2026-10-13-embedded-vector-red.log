@@ -1,0 +1,16 @@
+FF..                                                                     [100%]
+================================== FAILURES ===================================
+______ test_default_compose_does_not_start_an_unused_chroma_http_server _______
+backend\tests\test_embedded_vector_readiness.py:18: in test_default_compose_does_not_start_an_unused_chroma_http_server
+    assert 'chromadb' not in compose['services']
+E   AssertionError: assert 'chromadb' not in {'backend': {'build': {'context': '.', 'dockerfile': 'Dockerfile.backend'}, 'container_name': 'graphrag-backend', 'env...rometheus/alerts.yml:/etc/prometheus/alerts.yml:ro', 'prometheus_data:/prometheus'], 'ports': ['9090:9090'], ...}, ...}
+__ test_ci_uses_the_same_embedded_topology_without_an_external_chroma_server __
+backend\tests\test_embedded_vector_readiness.py:30: in test_ci_uses_the_same_embedded_topology_without_an_external_chroma_server
+    assert 'chromadb' not in job.get('services', {})
+E   AssertionError: assert 'chromadb' not in {'chromadb': {'image': 'chromadb/chroma:0.5.23', 'env': {'IS_PERSISTENT': 'TRUE', 'ANONYMIZED_TELEMETRY': 'FALSE'}, 'ports': ['8000:8000']}}
+E    +  where {'chromadb': {'image': 'chromadb/chroma:0.5.23', 'env': {'IS_PERSISTENT': 'TRUE', 'ANONYMIZED_TELEMETRY': 'FALSE'}, 'ports': ['8000:8000']}} = <built-in method get of dict object at 0x0000023D814B1700>('services', {})
+E    +    where <built-in method get of dict object at 0x0000023D814B1700> = {'needs': 'lint', 'runs-on': 'ubuntu-latest', 'services': {'chromadb': {'image': 'chromadb/chroma:0.5.23', 'env': {'IS...ars'}, 'run': 'uv run --no-sync pytest tests/ research/test_deepseek_scope_pilot.py -v --tb=short --timeout=60'}, ...]}.get
+=========================== short test summary info ===========================
+FAILED backend\tests\test_embedded_vector_readiness.py::test_default_compose_does_not_start_an_unused_chroma_http_server
+FAILED backend\tests\test_embedded_vector_readiness.py::test_ci_uses_the_same_embedded_topology_without_an_external_chroma_server
+2 failed, 2 passed in 11.16s

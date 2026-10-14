@@ -1,0 +1,22 @@
+{
+  "source_freeze_sha256": "43d38e03549f64762734d1d0339c7c87c3c4361346b1cb390983c3b293269d4c",
+  "files": {
+    "independent-result-snapshot-final.json": "9e8c23a896d55d19f98e834f4cbf074ed429f1757d0c9cf5072b63ad16ca9a6e",
+    "independent-result.json": "16cdb90a24a893b7d35d4c510f9ff2dba7ba5621189cc4663243d0e84ce8689a",
+    "independent.py": "236585dfc17d1b13ec0c4ce69ee52e8cb7568be95abe8435ab51b910e2311641",
+    "preparation.md": "2b04f39634604021c379d7edb438318882ab115f4e3f543db23bffcea080215a",
+    "prepare_snapshot.py": "9cc4584b8aae248fd5bcdb1e6154c239d62e462c6be5372e908858b28f685a62",
+    "snapshot-final-receipt.json": "11bfc50974ab2f73a4529c3e31e060b25bad8ad14ca366e94036a8bcafb607ae",
+    "snapshot-receipt.json": "17e5b875048408fb4cf912917db1c7f7d64a2c10a1bf910ca93299c5b9f26109",
+    "actual-logs/app.log": "9f43bead4463aa4afdd416406cb71243ad877b70e102b7dbb70608dfddeb6ccc",
+    "actual-logs-snapshot-final/app.log": "2354081429647626747f9290204f743eed2930b807b58ee39672d3b0c8aad574",
+    "snapshot/probe_store.py": "29d5415e48d96f5c2096623849db7e9475b208be4aa64084e7d7f7ef84395fed",
+    "snapshot/generic_filter.py": "33e1de11241f0884e1853c6fdbec71c9ed79a9351b2c8275c2524f8ff6fb49b8",
+    "snapshot/parser_port.py": "18a85b55345caa9ce4ac7ea2e344cedc9561cdda8c1c0eb6824499b3a629753d",
+    "snapshot/vector_errors.py": "b9a23b941eb84a7b50c866716e0c9dbcff3b1248be7c9daf2f9f594dc7ed4661",
+    "snapshot-final/probe_store.py": "5cef32dcc4e5c595c71ddbc686158dc52899a9333b6af5a1e5f329cf793df51b",
+    "snapshot-final/generic_filter.py": "33e1de11241f0884e1853c6fdbec71c9ed79a9351b2c8275c2524f8ff6fb49b8",
+    "snapshot-final/parser_port.py": "18a85b55345caa9ce4ac7ea2e344cedc9561cdda8c1c0eb6824499b3a629753d",
+    "snapshot-final/vector_errors.py": "b9a23b941eb84a7b50c866716e0c9dbcff3b1248be7c9daf2f9f594dc7ed4661"
+  }
+}

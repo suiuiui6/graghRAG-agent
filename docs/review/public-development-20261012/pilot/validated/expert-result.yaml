@@ -1,0 +1,56 @@
+contract_version: '1.0'
+expert_skill: sci-skills-web-data-acquisition
+project_id: graphrag-paper-001
+paper_family: M
+stage_id: M2
+task_id: PUBLIC-DEV-GOLD-20261012
+task_status: COMPLETE
+inputs_reviewed:
+  - questions-gold.candidate.json
+  - sources.json
+  - LCNC-HOME.blocks.json
+  - NIST-8091.pages.json
+  - browser-dom.json
+  - verification.candidate.json
+  - build_validated_gold.py
+  - render/全部9张图片
+  - ../raw/原件及download-manifest.json
+outputs:
+  - 独立AI原件/视觉/开发Gold复核及文件hash证据
+  - 6题36项81评分单元及1限定的支持与坐标检查
+evidence_status:
+  - EXECUTED_LOCAL：只读hash、quote/offset、scope包含、127 XPath、17页映射通过
+  - EXECUTED_LOCAL：实际查看全部9张图片，核对表格/代码/列表
+  - VERIFIED_SOURCE：冻结原件支持当前题目，NIST印刷页5
+  - AI_INFERENCE：语义等价、穷尽边界与评分充分性
+  - NOT_EXECUTED：独立人工Gold、模型基准、全17页视觉审计、多模态验证
+assumptions:
+  - 本轮仅text-only scope_given开发校准
+  - 复核版本由原件/canonical/candidate hash限定
+author_input_needed:
+  - 专家建议作者确认开发用途；协调者依据用户已明确授权开发与确认答案的任务接受本地开发版，不声称作者逐条人工审核
+manual_actions: []
+quality_checks:
+  - 原件与canonical绑定、目标区域视觉与解析、逐题条目完整性与属性支持：通过AI复核
+  - 81为评分单元，部分字段复合语义须全部满足，不能称全部为最小原子
+  - 原文件下载manifest中PENDING为历史下载时状态；新验证记录具有后续效力
+  - Gold支持不证明运行时实际输入支持，需另查input receipts
+  - 人工Gold、隐藏范围难度、泛化与留出冻结未完成
+conflicts: []
+conflict_resolution_status: NOT_REQUIRED
+merge_permission: orchestrator_only
+recommended_next_action: 保存hash证据并由协调者登记当前开发Gold版本；M2不推进
+stage_acceptance_recommendation: PASS_CANDIDATE
+reviewed_sha256:
+  questions-gold.candidate.json: 31c50d0600b0b686d2045645c6f326ec05e35325876a0e331b18f8e1c91a937f
+  sources.json: d8049b9c29705853e5558a8f92587f17f9f50c46b4854c5e2bd74f5f9275fc84
+  LCNC-HOME.blocks.json: 564e248e7e5ddeb1fdece690887166d5a26fdd84edefaa10240f6cf661e313c5
+  NIST-8091.pages.json: 4fb6635fecad2654ed3636000a973c48614ca6dc0d2893dea839e98d18c2694b
+  browser-dom.json: 6471422b609ce5bd9543b7d6616a078162abe4294d5af9d174c16ea1c6e39316
+  verification.candidate.json: 19b24e3d63c667e7ee4e8779b7555087169440ee32cda3beb34922b878f2c413
+  build_validated_gold.py: 7c46876bd2c320b1aa67ffde1cef7373695c47e12bf38081d678b3e1578d862f
+  ../raw/download-manifest.json: ca88863da10ac2a53ab6f196e7596c4bb922158fd4da72cf084955e1ff12ff08
+  ../raw/ini-homing.html: 59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05
+  ../raw/NIST.IR.8091.pdf: 656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093
+  render/nist-page-8.png: 1bcb443370094c5ef95a7d9312e691d61da28a7580838417eb92ba6a01ed5fb7
+  render/linux-table.png: 462f3ad83de17e10726751fb52f335cf5c918772c69f367a3f36ca0012668ef1

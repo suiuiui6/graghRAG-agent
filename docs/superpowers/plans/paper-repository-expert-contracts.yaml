@@ -1,0 +1,97 @@
+contract_version: "1.0"
+execution_owner: main_agent_using_independent_expert_skills
+delegated_agents: false
+recorded_on: 2026-10-07
+tasks:
+  - contract_version: "1.0"
+    project_id: graphrag-paper-001
+    paper_family: method-application
+    stage_id: M2
+    task_id: M2-REPO-REVIEW-004
+    expert_skill: sci-skills-presubmission-review
+    task_summary: 从真实重复失败定位可证伪贡献，不实施业务修复
+    inputs: [historical_raw_bundles, ground_truth, parsed_original_text_and_content_json, current_retrieval_generator, prior_competitor_reviews]
+    expected_outputs: [case_ledger_and_source_locators, local_helper_diagnostic, fair_baselines, three_lens_review, falsification_rules]
+    evidence_boundaries: [no_model_calls, no_business_code_change, no_independent_sample_claim_for_repeated_questions, no_novelty_pass_without_direct_literature]
+    acceptance_checks: [original_scope_verified, working_controls_included, version_and_GT_limits_disclosed, strong_simple_baselines_present]
+    known_missing_items: [current_endpoint_replay, historical_context_and_corpus_identity, held_out_document_gold, candidate_specific_recent_literature_review]
+    manual_operation_allowed: false
+    optional_adapters_allowed: [local-python, local-file-import]
+    stage_authority: sci-skills
+  - contract_version: "1.0"
+    project_id: graphrag-paper-001
+    paper_family: method-application
+    stage_id: M2
+    task_id: M2-REPO-JOURNAL-004
+    expert_skill: sci-skills-journal-recommendation
+    task_summary: 质量优先的条件性投稿层次判断，缺结果不列具体期刊
+    inputs: [repository_case_review, prior_manuscripts, candidate_evaluation_plan]
+    expected_outputs: [quality_profile, material_gate_result, conditional_positioning]
+    evidence_boundaries: [no_named_candidates_with_incomplete_package, no_quartile_or_acceptance_promises, no_mutable_journal_facts]
+    acceptance_checks: [blocking_essentials_explicit, candidates_empty, tier_not_presented_as_verified_recommendation]
+    known_missing_items: [validated_central_contribution, frozen_main_results, complete_candidate_manuscript]
+    manual_operation_allowed: false
+    optional_adapters_allowed: [local-file-import]
+    stage_authority: sci-skills
+results:
+  - contract_version: "1.0"
+    expert_skill: sci-skills-presubmission-review
+    project_id: graphrag-paper-001
+    paper_family: method-application
+    stage_id: M2
+    task_id: M2-REPO-REVIEW-004
+    task_status: PARTIAL
+    inputs_reviewed: [13_raw_run_bundles, ground_truth, mineru_ingest_2_full_md_and_content_json, current_pure_helpers, existing_prompt_tests, prior_reviews]
+    outputs: [docs/superpowers/plans/paper-repository-problem-and-contribution-review.md, docs/superpowers/plans/audit_repository_question_scope.py]
+    evidence_status:
+      - label: VERIFIED_USER_MATERIAL
+        scope: Q15_Q16_historical_answers_and_parsed_original_source
+        locator: report_section_2
+      - label: EXECUTED_LOCAL
+        scope: read_only_case_audit_and_AST_helper_diagnostics_exit_0
+        locator: report_section_3
+      - label: AI_INFERENCE
+        scope: candidate_problem_mechanism_and_contribution
+      - label: PENDING_VERIFICATION
+        scope: current_endpoint_reproduction_cross_document_prevalence_and_novelty
+      - label: NOT_EXECUTED
+        scope: proposed_baselines_and_method_experiments
+    assumptions: [parsed_text_is_not_PDF_visual_verification, current_source_not_proven_historical_byte_identity]
+    author_input_needed: [document_rights_before_publication]
+    manual_actions: []
+    quality_checks: [working_controls_present, old_GT_defect_explicit, invalid_runs_separated_not_hidden, no_regex_as_semantic_accuracy, strong_baselines_and_stop_rules]
+    conflicts: []
+    conflict_resolution_status: NOT_REQUIRED
+    merge_permission: orchestrator_only
+    recommended_next_action: scope_gold_and_strong_baseline_pilot_package
+    stage_acceptance_recommendation: REPAIR
+  - contract_version: "1.0"
+    expert_skill: sci-skills-journal-recommendation
+    project_id: graphrag-paper-001
+    paper_family: method-application
+    stage_id: M2
+    task_id: M2-REPO-JOURNAL-004
+    task_status: BLOCKED
+    inputs_reviewed: [repository_problem_review, existing_manuscript_inventory, proposed_evaluation_design]
+    outputs: [docs/superpowers/plans/paper-repository-problem-and-contribution-review.md, docs/superpowers/plans/paper-repository-journal-gate.yaml]
+    evidence_status:
+      - label: VERIFIED_USER_MATERIAL
+        scope: historical_single_document_cases
+      - label: AI_INFERENCE
+        scope: conditional_application_system_SCI_planning_route
+      - label: NOT_EXECUTED
+        scope: new_main_results_and_named_journal_recommendation
+    assumptions: [old_manuscripts_do_not_establish_new_candidate_main_results]
+    author_input_needed: []
+    manual_actions: []
+    quality_checks: [NOT_READY, empty_candidates, no_fabricated_metrics, incomplete_material_gate]
+    conflicts: []
+    conflict_resolution_status: NOT_REQUIRED
+    merge_permission: orchestrator_only
+    recommended_next_action: scope_gold_and_strong_baseline_pilot_package
+    stage_acceptance_recommendation: NOT_ASSESSED
+orchestrator_review:
+  stage_decision: M2_PARTIAL_REPOSITORY_PROBLEM_FOUND_NOVELTY_AND_EFFECT_PENDING
+  scope: historical_recurrence_and_local_helper_diagnostics_not_current_endpoint_replay
+  downstream_assets: PROVISIONAL_RETAINED
+  next_action: scope_gold_and_strong_baseline_pilot_package

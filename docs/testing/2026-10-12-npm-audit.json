@@ -1,0 +1,10 @@
+npm warn audit request to https://registry.npmmirror.com/-/npm/v1/security/audits/quick failed, reason: read ECONNRESET
+npm error audit endpoint returned an error
+{
+  "message": "request to https://registry.npmmirror.com/-/npm/v1/security/audits/quick failed, reason: read ECONNRESET",
+  "error": {
+    "summary": "",
+    "detail": ""
+  }
+}
+npm error A complete log of this run can be found in: C:\Users\14156\AppData\Local\npm-cache\_logs\2026-10-12T10_20_00_224Z-debug-0.log

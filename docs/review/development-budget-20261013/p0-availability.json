@@ -1,0 +1,7 @@
+{
+  "status": "BOUNDED_ON_DISK_REGISTRY_CHECK",
+  "registry_records": 91,
+  "new_public_source_label_matches": [],
+  "runtime_index_identity": "UNKNOWN",
+  "note": "No runtime query or corpus repair; label absence alone not exhaustive content identity proof."
+}

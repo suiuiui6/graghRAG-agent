@@ -1,0 +1,949 @@
+{
+  "annotation_status": "SINGLE_AGENT_PROVISIONAL_PENDING_INDEPENDENT_REVIEW",
+  "method": "MAIN_AGENT_READ_ALL_27_ANSWERS_AND_ORIGINAL_TARGET_SCOPES_NO_API_JUDGE",
+  "gold_unchanged": true,
+  "no_aggregate_accuracy": "Gold成本类别歧义与attention字段蕴含待审；不报告总体正确率。",
+  "rows": [
+    {
+      "index": 0,
+      "qid": "D1-FIG",
+      "baseline": "B1",
+      "status": "OK",
+      "scope_review_complete": true,
+      "claims": [],
+      "exhaustive_claim": false,
+      "empty_scope_correct": false,
+      "notes": [
+        "输入缺六个图标题；回答限定提供内容未找到，不将其编码为全文假穷尽，但未完成六图列表。"
+      ],
+      "answer_file": "000-response.json"
+    },
+    {
+      "index": 1,
+      "qid": "D1-FIG",
+      "baseline": "B2",
+      "status": "OK",
+      "scope_review_complete": true,
+      "claims": [
+        {
+          "gold_id": "F1",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "F2",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "F3",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "F4",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "F5",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "F6",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        }
+      ],
+      "exhaustive_claim": false,
+      "empty_scope_correct": false,
+      "notes": [],
+      "answer_file": "001-response.json"
+    },
+    {
+      "index": 2,
+      "qid": "D1-FIG",
+      "baseline": "B3",
+      "status": "OK",
+      "scope_review_complete": true,
+      "claims": [
+        {
+          "gold_id": "F1",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "F2",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "F3",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "F4",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "F5",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "F6",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        }
+      ],
+      "exhaustive_claim": false,
+      "empty_scope_correct": false,
+      "notes": [],
+      "answer_file": "002-response.json"
+    },
+    {
+      "index": 3,
+      "qid": "D1-COST",
+      "baseline": "B1",
+      "status": "GOLD_SCOPE_AMBIGUOUS",
+      "scope_review_complete": true,
+      "claims": [
+        {
+          "gold_id": "C1",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "C2",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "C3",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "C4",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "C5",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        }
+      ],
+      "exhaustive_claim": false,
+      "empty_scope_correct": false,
+      "notes": [
+        "1970元/吨电网支撑价值位于摘要，但gold只定义五项吨氨成本。保留原gold，不对1970作false positive判定，不计整题exact-set分数。",
+        "额外的6166、2226、4473、3682、约3500、约8500、168均不在摘要目标范围；3682与1970也未在本次B1输入中找到文本支持。五项核心成本仍完整。"
+      ],
+      "answer_file": "003-response.json"
+    },
+    {
+      "index": 4,
+      "qid": "D1-COST",
+      "baseline": "B2",
+      "status": "GOLD_SCOPE_AMBIGUOUS",
+      "scope_review_complete": true,
+      "claims": [
+        {
+          "gold_id": "C1",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "C2",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "C3",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "C4",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "C5",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        }
+      ],
+      "exhaustive_claim": false,
+      "empty_scope_correct": false,
+      "notes": [
+        "1970元/吨电网支撑价值位于摘要，但gold只定义五项吨氨成本。保留原gold，不对1970作false positive判定，不计整题exact-set分数。",
+        "列全五项核心成本及来源支持的1970；没有混入正文168。"
+      ],
+      "answer_file": "004-response.json"
+    },
+    {
+      "index": 5,
+      "qid": "D1-COST",
+      "baseline": "B3",
+      "status": "GOLD_SCOPE_AMBIGUOUS",
+      "scope_review_complete": true,
+      "claims": [
+        {
+          "gold_id": "C1",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "C2",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "C3",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "C4",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "C5",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        }
+      ],
+      "exhaustive_claim": false,
+      "empty_scope_correct": false,
+      "notes": [
+        "1970元/吨电网支撑价值位于摘要，但gold只定义五项吨氨成本。保留原gold，不对1970作false positive判定，不计整题exact-set分数。",
+        "列全五项核心成本及来源支持的1970；没有混入正文168。"
+      ],
+      "answer_file": "005-response.json"
+    },
+    {
+      "index": 6,
+      "qid": "D1-LIMITS",
+      "baseline": "B1",
+      "status": "OK",
+      "scope_review_complete": true,
+      "claims": [
+        {
+          "gold_id": "L1",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "L2",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "L3",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "L4",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        }
+      ],
+      "exhaustive_claim": false,
+      "empty_scope_correct": false,
+      "notes": [],
+      "answer_file": "006-response.json"
+    },
+    {
+      "index": 7,
+      "qid": "D1-LIMITS",
+      "baseline": "B2",
+      "status": "OK",
+      "scope_review_complete": true,
+      "claims": [
+        {
+          "gold_id": "L1",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "L2",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "L3",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "L4",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        }
+      ],
+      "exhaustive_claim": false,
+      "empty_scope_correct": false,
+      "notes": [],
+      "answer_file": "007-response.json"
+    },
+    {
+      "index": 8,
+      "qid": "D1-LIMITS",
+      "baseline": "B3",
+      "status": "OK",
+      "scope_review_complete": true,
+      "claims": [
+        {
+          "gold_id": "L1",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "L2",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "L3",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "L4",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        }
+      ],
+      "exhaustive_claim": false,
+      "empty_scope_correct": false,
+      "notes": [],
+      "answer_file": "008-response.json"
+    },
+    {
+      "index": 9,
+      "qid": "D1-FUTURE",
+      "baseline": "B1",
+      "status": "OK",
+      "scope_review_complete": true,
+      "claims": [
+        {
+          "gold_id": "R1",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "R2",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        }
+      ],
+      "exhaustive_claim": false,
+      "empty_scope_correct": false,
+      "notes": [],
+      "answer_file": "009-response.json"
+    },
+    {
+      "index": 10,
+      "qid": "D1-FUTURE",
+      "baseline": "B2",
+      "status": "OK",
+      "scope_review_complete": true,
+      "claims": [
+        {
+          "gold_id": "R1",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "R2",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        }
+      ],
+      "exhaustive_claim": false,
+      "empty_scope_correct": false,
+      "notes": [],
+      "answer_file": "010-response.json"
+    },
+    {
+      "index": 11,
+      "qid": "D1-FUTURE",
+      "baseline": "B3",
+      "status": "OK",
+      "scope_review_complete": true,
+      "claims": [
+        {
+          "gold_id": "R1",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "R2",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        }
+      ],
+      "exhaustive_claim": false,
+      "empty_scope_correct": false,
+      "notes": [],
+      "answer_file": "011-response.json"
+    },
+    {
+      "index": 12,
+      "qid": "D2-ATTENTION",
+      "baseline": "B1",
+      "status": "OK",
+      "scope_review_complete": true,
+      "claims": [
+        {
+          "gold_id": "A1",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "A2",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "A3",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        }
+      ],
+      "exhaustive_claim": false,
+      "empty_scope_correct": false,
+      "notes": [
+        "三个用途核心集合/QK来自匹配。decoder QKV来源在本节未像前两种明确逐项给出，回答基于self-attention语义推断；B2显式承认推断。此细字段须独立复核，不声称严格逐句蕴含已通过。"
+      ],
+      "answer_file": "012-response.json"
+    },
+    {
+      "index": 13,
+      "qid": "D2-ATTENTION",
+      "baseline": "B2",
+      "status": "OK",
+      "scope_review_complete": true,
+      "claims": [
+        {
+          "gold_id": "A1",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "A2",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "A3",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        }
+      ],
+      "exhaustive_claim": false,
+      "empty_scope_correct": false,
+      "notes": [
+        "三个用途核心集合/QK来自匹配。decoder QKV来源在本节未像前两种明确逐项给出，回答基于self-attention语义推断；B2显式承认推断。此细字段须独立复核，不声称严格逐句蕴含已通过。"
+      ],
+      "answer_file": "013-response.json"
+    },
+    {
+      "index": 14,
+      "qid": "D2-ATTENTION",
+      "baseline": "B3",
+      "status": "OK",
+      "scope_review_complete": true,
+      "claims": [
+        {
+          "gold_id": "A1",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "A2",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "A3",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        }
+      ],
+      "exhaustive_claim": false,
+      "empty_scope_correct": false,
+      "notes": [
+        "三个用途核心集合/QK来自匹配。decoder QKV来源在本节未像前两种明确逐项给出，回答基于self-attention语义推断；B2显式承认推断。此细字段须独立复核，不声称严格逐句蕴含已通过。"
+      ],
+      "answer_file": "014-response.json"
+    },
+    {
+      "index": 15,
+      "qid": "D2-DATA",
+      "baseline": "B1",
+      "status": "OK",
+      "scope_review_complete": true,
+      "claims": [
+        {
+          "gold_id": "T1",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": false,
+          "in_scope": true
+        },
+        {
+          "gold_id": "T2",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        }
+      ],
+      "exhaustive_claim": false,
+      "empty_scope_correct": false,
+      "notes": [
+        "输出4.5 million sentence pairs在原文正确，但输入片段完全没有4.5；引用的原句不在payload。不能把表面gold命中作为基于证据的成功；潜在预训练记忆机制未经证明。about限定词也省略。"
+      ],
+      "answer_file": "015-response.json"
+    },
+    {
+      "index": 16,
+      "qid": "D2-DATA",
+      "baseline": "B2",
+      "status": "OK",
+      "scope_review_complete": true,
+      "claims": [
+        {
+          "gold_id": "T1",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "T2",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        }
+      ],
+      "exhaustive_claim": false,
+      "empty_scope_correct": false,
+      "notes": [],
+      "answer_file": "016-response.json"
+    },
+    {
+      "index": 17,
+      "qid": "D2-DATA",
+      "baseline": "B3",
+      "status": "OK",
+      "scope_review_complete": true,
+      "claims": [
+        {
+          "gold_id": "T1",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "T2",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        }
+      ],
+      "exhaustive_claim": false,
+      "empty_scope_correct": false,
+      "notes": [],
+      "answer_file": "017-response.json"
+    },
+    {
+      "index": 18,
+      "qid": "D2-NONE",
+      "baseline": "B1",
+      "status": "OK",
+      "scope_review_complete": true,
+      "claims": [],
+      "exhaustive_claim": false,
+      "empty_scope_correct": true,
+      "notes": [],
+      "answer_file": "018-response.json"
+    },
+    {
+      "index": 19,
+      "qid": "D2-NONE",
+      "baseline": "B2",
+      "status": "OK",
+      "scope_review_complete": true,
+      "claims": [],
+      "exhaustive_claim": false,
+      "empty_scope_correct": true,
+      "notes": [],
+      "answer_file": "019-response.json"
+    },
+    {
+      "index": 20,
+      "qid": "D2-NONE",
+      "baseline": "B3",
+      "status": "OK",
+      "scope_review_complete": true,
+      "claims": [],
+      "exhaustive_claim": false,
+      "empty_scope_correct": true,
+      "notes": [],
+      "answer_file": "020-response.json"
+    },
+    {
+      "index": 21,
+      "qid": "D3-TOOLS",
+      "baseline": "B1",
+      "status": "OK",
+      "scope_review_complete": true,
+      "claims": [],
+      "exhaustive_claim": false,
+      "empty_scope_correct": false,
+      "notes": [
+        "输入缺目标表格五行；模型拒列用途并区分路线图五个名称。属于检索缺证据/未完成，不是捏造已实现工具。"
+      ],
+      "answer_file": "021-response.json"
+    },
+    {
+      "index": 22,
+      "qid": "D3-TOOLS",
+      "baseline": "B2",
+      "status": "OK",
+      "scope_review_complete": true,
+      "claims": [
+        {
+          "gold_id": "K1",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "K2",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "K3",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "K4",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "K5",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        }
+      ],
+      "exhaustive_claim": false,
+      "empty_scope_correct": false,
+      "notes": [],
+      "answer_file": "022-response.json"
+    },
+    {
+      "index": 23,
+      "qid": "D3-TOOLS",
+      "baseline": "B3",
+      "status": "OK",
+      "scope_review_complete": true,
+      "claims": [
+        {
+          "gold_id": "K1",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "K2",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "K3",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "K4",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "K5",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        }
+      ],
+      "exhaustive_claim": false,
+      "empty_scope_correct": false,
+      "notes": [],
+      "answer_file": "023-response.json"
+    },
+    {
+      "index": 24,
+      "qid": "D3-SUPERVISOR",
+      "baseline": "B1",
+      "status": "OK",
+      "scope_review_complete": true,
+      "claims": [
+        {
+          "gold_id": "S1",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "S4",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": null,
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": false,
+          "claim": "路由决策：type of question → tool selection",
+          "cited_span": [
+            1805,
+            1878
+          ]
+        }
+      ],
+      "exhaustive_claim": true,
+      "empty_scope_correct": false,
+      "notes": [
+        "遗漏任务分发和结果整合；把范围外1805–1878内容声称属于11015–11170范围，并声称仅三项。"
+      ],
+      "answer_file": "024-response.json"
+    },
+    {
+      "index": 25,
+      "qid": "D3-SUPERVISOR",
+      "baseline": "B2",
+      "status": "OK",
+      "scope_review_complete": true,
+      "claims": [
+        {
+          "gold_id": "S1",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "S2",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "S3",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "S4",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        }
+      ],
+      "exhaustive_claim": false,
+      "empty_scope_correct": false,
+      "notes": [],
+      "answer_file": "025-response.json"
+    },
+    {
+      "index": 26,
+      "qid": "D3-SUPERVISOR",
+      "baseline": "B3",
+      "status": "OK",
+      "scope_review_complete": true,
+      "claims": [
+        {
+          "gold_id": "S1",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "S2",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "S3",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        },
+        {
+          "gold_id": "S4",
+          "condition_correct": true,
+          "role_correct": true,
+          "support_correct": true,
+          "in_scope": true
+        }
+      ],
+      "exhaustive_claim": false,
+      "empty_scope_correct": false,
+      "notes": [],
+      "answer_file": "026-response.json"
+    }
+  ]
+}

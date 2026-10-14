@@ -1,0 +1,24 @@
+contract_version: "1.0"
+project_id: graphrag-paper-001
+paper_family: M
+stage_id: M2
+recorded_on: 2026-10-08
+author_message: 继续
+interpretation: CONTINUE_ACCEPTED_PREVIOUSLY_PROPOSED_POLICY_AND_DESIGN_FOR_LOCAL_PACKAGE_PREPARATION
+reference_response: 上轮要求确认Gold修订政策与验证设计，确认后准备可执行v2包及执行前核验。
+accepted_policy_source: docs/superpowers/plans/scope-pilot/gold-review-v2/gold-policy-proposal.yaml
+accepted_policy_version: "2.0-proposed"
+accepted_design: docs/superpowers/plans/scope-pilot/gold-review-v2/validation-protocol-sol.md
+authorized_this_turn:
+  - 创建新的本地v2条目与属性Gold包，精确核对原文支持和跨度。
+  - 只读核查本项目代码、现存索引元数据、运行身份和隐含调用边界。
+  - 独立专家协作与本地验证，不代表独立人工标注。
+not_authorized_this_turn:
+  - 新API批次、上传额外文档或远程模型生成。
+  - 读取凭据、修改生产配置、修生产行为、导入文档或重建索引。
+  - 改写旧Gold、旧27份回答与旧裁决或触及其他项目。
+new_canonical_package_status: PENDING_SOURCE_BINDING_VALIDATION_AND_ORCHESTRATOR_ACCEPTANCE
+historical_policy_conflicts: RESOLVED_FOR_NEW_QUESTION_POLICY_ONLY_OLD_AMBIGUITIES_RETAINED
+monetary_preference: NO_MONETARY_CAP_PREVIOUSLY_STATED
+future_provider_cap_54: CONDITIONAL_PROPOSAL_NOT_NEW_BATCH_AUTHORIZATION
+stage_acceptance: M2_REMAINS_OPEN

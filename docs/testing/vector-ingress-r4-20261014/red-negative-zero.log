@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "D:\graghRAG-agent\.tmp\vector-ingress-r4-20261014\fresh_matrix.py", line 48, in <module>
+    if type(v) is float: assert struct.pack('>d',compat[rid][key])==struct.pack('>d',v),(rid,v,compat[rid][key])
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('special0', 0.0, -0.0)

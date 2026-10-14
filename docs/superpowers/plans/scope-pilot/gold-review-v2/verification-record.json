@@ -1,0 +1,23 @@
+{
+  "verified_on": "2026-10-07",
+  "status": "PASS_ARTIFACT_INTEGRITY_AND_DESIGN_ONLY",
+  "expert_contracts": [
+    {"file": "independent-sol-contract.yaml", "fields": 19, "conflicts": 5, "status": "PASS"},
+    {"file": "validation-protocol-sol-contract.yaml", "fields": 19, "conflicts": 5, "status": "PASS"}
+  ],
+  "yaml_files_parsed": ["expert-tasks.yaml", "gold-policy-proposal.yaml", "independent-sol-contract.yaml", "validation-protocol-sol-contract.yaml"],
+  "questions": 9,
+  "core_items": 31,
+  "old_gold_hash_unchanged": true,
+  "three_source_hashes_unchanged": true,
+  "production_audit_file_count": 15,
+  "production_hash_drift": [],
+  "historical_successful_responses": 27,
+  "historical_total_tokens": 38733,
+  "run_directories": ["20261007-dryrun-final", "20261007-dryrun-v1", "20261007-live-v1"],
+  "concurrent_M4_P2_status_preserved": true,
+  "new_experiment_api_calls": 0,
+  "runtime_validation": "NOT_EXECUTED",
+  "canonical_gold_v2": "NOT_CREATED_POLICY_PENDING_AUTHOR_APPROVAL",
+  "verification_boundary": "Fresh local integrity and design checks; response count/usage is not proof of historical byte equality without earlier response hash manifest."
+}

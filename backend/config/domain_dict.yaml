@@ -1,0 +1,591 @@
+# HSE 领域词典 — 种子数据 v1.0
+# 企业级演进蓝图 §10.1
+# 四类: safety(安全作业) / equipment(设备设施) / ppe(防护用品) / regulation(制度法规)
+
+# ═══════════════════════════════════════════════════════
+# 安全作业类 (safety)
+# ═══════════════════════════════════════════════════════
+
+- term: "动火作业"
+  synonyms: ["热工作业", "火种作业", "明火作业"]
+  abbreviations: ["Hot Work"]
+  related: ["消防器材", "可燃气体检测", "动火许可证", "监护人", "灭火器", "防火毯", "隔离措施"]
+  entity_type: "process_step"
+  category: "safety"
+  description: "在具有火灾爆炸危险场所内进行的可能产生火焰、火花和赤热表面的非常规作业"
+
+- term: "高处作业"
+  synonyms: ["高空作业", "登高作业", "临边作业"]
+  abbreviations: []
+  related: ["安全带", "脚手架", "安全网", "坠落防护", "安全绳", "升降平台", "作业平台"]
+  entity_type: "process_step"
+  category: "safety"
+  description: "在坠落高度基准面2米以上有可能坠落的高处进行的作业"
+
+- term: "受限空间作业"
+  synonyms: ["有限空间", "密闭空间", "受限区域"]
+  abbreviations: []
+  related: ["气体检测", "通风", "救援预案", "作业许可", "空气呼吸器", "监护", "有毒有害气体"]
+  entity_type: "process_step"
+  category: "safety"
+  description: "进入封闭或部分封闭，进出口受限，自然通风不良的空间进行的作业"
+
+- term: "临时用电作业"
+  synonyms: ["施工用电", "临时供电", "临时接电"]
+  abbreviations: []
+  related: ["配电箱", "漏电保护", "接地保护", "电缆敷设", "电工", "临时用电许可证"]
+  entity_type: "process_step"
+  category: "safety"
+  description: "在正式运行的供电系统上，临时敷设用电线路或安装用电设备的作业"
+
+- term: "吊装作业"
+  synonyms: ["起重吊装", "起重作业", "吊运作业"]
+  abbreviations: []
+  related: ["起重机", "吊索具", "钢丝绳", "吊钩", "指挥信号", "警戒区", "荷载计算"]
+  entity_type: "process_step"
+  category: "safety"
+  description: "利用起重机械或起重设备对设备或构件进行吊运的作业"
+
+- term: "动土作业"
+  synonyms: ["挖掘作业", "开挖作业"]
+  abbreviations: []
+  related: ["地下管线探测", "边坡支护", "放坡", "基坑支护", "安全通道", "警示标识"]
+  entity_type: "process_step"
+  category: "safety"
+  description: "在地面开挖、掘进、钻孔、打桩等涉及地表以下施工的作业"
+
+- term: "断路作业"
+  synonyms: ["道路封闭作业", "占道作业"]
+  abbreviations: []
+  related: ["交通警示", "警示灯", "锥形桶", "围挡", "夜间警示", "交通疏导方案"]
+  entity_type: "process_step"
+  category: "safety"
+  description: "在厂区道路或通道上进行施工需临时占用或封闭道路的作业"
+
+- term: "盲板抽堵作业"
+  synonyms: ["盲板作业", "法兰盲板"]
+  abbreviations: []
+  related: ["管线隔离", "泄压", "吹扫", "置换", "可燃气体检测", "盲板编号"]
+  entity_type: "process_step"
+  category: "safety"
+  description: "在设备或管道上用盲板实现隔离的作业"
+
+- term: "设备检修作业"
+  synonyms: ["设备维修", "设备保养", "检维修作业"]
+  abbreviations: []
+  related: ["停机确认", "能量隔离", "上锁挂牌", "试车", "检修方案", "风险辨识"]
+  entity_type: "process_step"
+  category: "safety"
+  description: "对生产设备进行检查、维修、保养、更换零件的作业"
+
+- term: "射线作业"
+  synonyms: ["射线探伤", "放射作业", "无损检测"]
+  abbreviations: ["RT", "Radiographic Testing"]
+  related: ["辐射防护", "警戒区", "个人剂量计", "辐射警示", "作业时间控制"]
+  entity_type: "process_step"
+  category: "safety"
+  description: "使用放射性同位素或射线装置进行工业探伤的作业"
+
+- term: "JSA"
+  synonyms: ["工作安全分析", "作业安全分析", "工作危害分析"]
+  abbreviations: ["JSA", "Job Safety Analysis", "JHA"]
+  related: ["风险辨识", "控制措施", "作业步骤", "危害因素", "风险等级"]
+  entity_type: "process_step"
+  category: "safety"
+  description: "将作业活动分解为若干步骤，识别每一步的危害因素并制定控制措施的方法"
+
+- term: "LOTO"
+  synonyms: ["上锁挂牌", "能量隔离", "锁定挂牌"]
+  abbreviations: ["LOTO", "Lockout/Tagout"]
+  related: ["隔离确认", "试车确认", "锁具", "挂牌", "危险能量", "残余能量释放"]
+  entity_type: "process_step"
+  category: "safety"
+  description: "在设备检修或维护时，通过上锁和挂牌方式隔离危险能量的安全程序"
+
+- term: "PTW"
+  synonyms: ["作业许可", "作业票", "安全工作许可"]
+  abbreviations: ["PTW", "Permit to Work"]
+  related: ["风险辨识", "安全措施确认", "审批流程", "监护人", "作业票关闭"]
+  entity_type: "process_step"
+  category: "safety"
+  description: "对高风险作业活动实施书面审批管理的制度"
+
+- term: "HSE交底"
+  synonyms: ["安全技术交底", "安全交底", "作业交底"]
+  abbreviations: []
+  related: ["施工方案", "风险告知", "签字确认", "班前会", "交底记录"]
+  entity_type: "process_step"
+  category: "safety"
+  description: "在施工或作业前，将作业过程中的安全技术要求向作业人员详细说明的程序"
+
+- term: "应急救援"
+  synonyms: ["应急处置", "抢险救援", "事故响应"]
+  abbreviations: ["Emergency Response"]
+  related: ["应急预案", "应急演练", "逃生路线", "集合点", "应急物资", "急救", "消防"]
+  entity_type: "process_step"
+  category: "safety"
+  description: "在发生事故或紧急情况时，为减少人员伤亡和财产损失而采取的有组织的响应行动"
+
+- term: "隐患排查"
+  synonyms: ["安全检查", "隐患排查治理", "安全巡查"]
+  abbreviations: []
+  related: ["隐患台账", "整改通知", "整改闭环", "重大隐患", "一般隐患", "排查清单"]
+  entity_type: "process_step"
+  category: "safety"
+  description: "对生产经营活动中存在的人的不安全行为、物的不安全状态和管理缺陷进行识别和消除的活动"
+
+- term: "安全培训"
+  synonyms: ["安全教育", "安全教育培训", "三级教育"]
+  abbreviations: []
+  related: ["入场教育", "特种作业人员", "培训档案", "持证上岗", "复训", "学时要求"]
+  entity_type: "process_step"
+  category: "safety"
+  description: "对从业人员进行安全生产知识和技能的教育培训活动"
+
+- term: "高处坠落"
+  synonyms: ["高空坠落", "坠落事故"]
+  abbreviations: []
+  related: ["安全带", "安全网", "临边防护", "洞口防护", "脚手架", "高处作业"]
+  entity_type: "risk_item"
+  category: "safety"
+  description: "人员从高处跌落的事故类型，是建筑施工领域的五大伤害之一"
+
+- term: "物体打击"
+  synonyms: ["落物打击", "坠物伤人"]
+  abbreviations: []
+  related: ["安全帽", "交叉作业", "工具袋", "安全通道", "防护棚", "物料堆放"]
+  entity_type: "risk_item"
+  category: "safety"
+  description: "由失控物体的惯性力造成的人身伤亡事故"
+
+- term: "机械伤害"
+  synonyms: ["机械伤害事故", "机械卷入"]
+  abbreviations: []
+  related: ["防护罩", "急停按钮", "联锁装置", "操作规程", "旋转部件", "传动部件"]
+  entity_type: "risk_item"
+  category: "safety"
+  description: "机械设备的运动部件直接与人体接触引发的挤压、碰撞、卷入等伤害"
+
+- term: "触电事故"
+  synonyms: ["电击事故", "触电伤亡", "电气事故"]
+  abbreviations: []
+  related: ["漏电保护", "接地保护", "绝缘", "安全电压", "配电箱", "临时用电"]
+  entity_type: "risk_item"
+  category: "safety"
+  description: "人体接触带电体或电弧而受到伤害的事故"
+
+- term: "火灾爆炸"
+  synonyms: ["火患", "火灾险情", "燃爆"]
+  abbreviations: []
+  related: ["动火作业", "消防器材", "可燃气体", "灭火器", "烟感", "防火分区", "消防通道"]
+  entity_type: "risk_item"
+  category: "safety"
+  description: "可燃物在时间和空间上失去控制燃烧或爆炸而造成人员伤亡和财产损失的事故"
+
+- term: "应急演练"
+  synonyms: ["应急预案演练", "安全演练", "模拟演练"]
+  abbreviations: []
+  related: ["应急预案", "逃生路线", "集合点", "演练记录", "桌面演练", "实战演练"]
+  entity_type: "process_step"
+  category: "safety"
+  description: "按照应急预案模拟突发事件发生时的响应流程进行的训练活动"
+
+# ═══════════════════════════════════════════════════════
+# 设备设施类 (equipment)
+# ═══════════════════════════════════════════════════════
+
+- term: "起重机"
+  synonyms: ["行车", "天车", "桥式起重机", "龙门吊", "汽车吊"]
+  abbreviations: []
+  related: ["限位器", "钢丝绳", "吊钩", "荷载试验", "安全制动器", "操作证", "定期检验"]
+  entity_type: "deliverable"
+  category: "equipment"
+  description: "用于垂直升降和水平移动重物的机电设备，属于特种设备"
+
+- term: "压力容器"
+  synonyms: ["储气罐", "压缩罐", "承压设备"]
+  abbreviations: []
+  related: ["安全阀", "压力表", "定期检验", "超压保护", "壳体腐蚀", "检验合格证"]
+  entity_type: "deliverable"
+  category: "equipment"
+  description: "盛装气体或液体并承载一定压力的密闭设备，属于特种设备"
+
+- term: "脚手架"
+  synonyms: ["脚手架工程", "架体", "施工架"]
+  abbreviations: []
+  related: ["钢管", "扣件", "连墙件", "脚手板", "剪刀撑", "基础垫板", "验收合格牌"]
+  entity_type: "deliverable"
+  category: "equipment"
+  description: "为建筑施工作业人员提供操作平台和安全防护的临时性结构"
+
+- term: "配电箱"
+  synonyms: ["配电柜", "配电盘", "开关箱"]
+  abbreviations: []
+  related: ["漏电保护器", "断路器", "接地线", "电缆", "标识牌", "防雨措施", "定期检测"]
+  entity_type: "deliverable"
+  category: "equipment"
+  description: "将电源分配到多个用电设备的配电装置"
+
+- term: "灭火器"
+  synonyms: ["消防灭火器", "手提灭火器"]
+  abbreviations: []
+  related: ["干粉灭火器", "CO2灭火器", "泡沫灭火器", "压力表", "年检", "消防器材检查卡"]
+  entity_type: "deliverable"
+  category: "equipment"
+  description: "用于扑救初起火灾的便携式灭火工具"
+
+- term: "气体检测仪"
+  synonyms: ["气体检测报警仪", "测爆仪", "有毒气体检测"]
+  abbreviations: []
+  related: ["可燃气体", "硫化氢", "氧气含量", "一氧化碳", "受限空间", "定期校准"]
+  entity_type: "deliverable"
+  category: "equipment"
+  description: "检测作业环境中有毒有害气体和可燃气体浓度的仪器"
+
+- term: "通风设备"
+  synonyms: ["风机", "排风扇", "送风设备"]
+  abbreviations: []
+  related: ["受限空间", "防爆风机", "风管", "通风记录", "空气置换"]
+  entity_type: "deliverable"
+  category: "equipment"
+  description: "用于改善作业场所空气质量的机械通风装置"
+
+- term: "安全网"
+  synonyms: ["防护网", "平网", "立网", "密目式安全网"]
+  abbreviations: []
+  related: ["脚手架", "高处作业", "坠落防护", "阻燃", "检测报告", "张挂规范"]
+  entity_type: "deliverable"
+  category: "equipment"
+  description: "用于防止人员或物体从高处坠落的网状防护用品"
+
+- term: "配电室"
+  synonyms: ["变配电室", "配电间", "配电房"]
+  abbreviations: []
+  related: ["绝缘垫", "高压警示", "值班制度", "温度监控", "电缆沟", "防鼠措施"]
+  entity_type: "deliverable"
+  category: "equipment"
+  description: "安装配电设备和进行供配电操作的建(构)筑物"
+
+- term: "应急照明"
+  synonyms: ["应急灯", "疏散照明", "事故照明"]
+  abbreviations: []
+  related: ["安全出口", "疏散通道", "备用电源", "定期测试", "照度"]
+  entity_type: "deliverable"
+  category: "equipment"
+  description: "在正常照明中断时自动启动的应急安全照明设备"
+
+- term: "焊机"
+  synonyms: ["电焊机", "焊接设备", "焊割设备"]
+  abbreviations: []
+  related: ["动火作业", "绝缘", "接地保护", "防护面罩", "焊接手套", "防火"]
+  entity_type: "deliverable"
+  category: "equipment"
+  description: "产生焊接电流或火焰进行金属焊接的设备"
+
+# ═══════════════════════════════════════════════════════
+# 防护用品类 (ppe)
+# ═══════════════════════════════════════════════════════
+
+- term: "安全帽"
+  synonyms: ["头部防护", "安全头盔"]
+  abbreviations: ["PPE-Head"]
+  related: ["帽衬", "帽壳", "有效期", "冲击吸收", "耐穿刺", "下颌带"]
+  entity_type: "deliverable"
+  category: "ppe"
+  description: "用于保护头部免受坠落物、碰撞等因素伤害的个体防护装备"
+
+- term: "安全带"
+  synonyms: ["坠落悬挂安全带", "全身式安全带", "安全绳"]
+  abbreviations: ["PPE-Fall"]
+  related: ["缓冲器", "挂点", "高挂低用", "速差防坠器", "系挂点", "定期检测"]
+  entity_type: "deliverable"
+  category: "ppe"
+  description: "防止高处作业人员发生坠落或坠落后将人员安全悬挂的个体防护装备"
+
+- term: "防护眼镜"
+  synonyms: ["护目镜", "防冲击眼镜", "防护眼罩"]
+  abbreviations: []
+  related: ["防飞溅", "防冲击", "防紫外线", "侧翼防护", "防雾"]
+  entity_type: "deliverable"
+  category: "ppe"
+  description: "保护眼睛免受飞溅物、粉尘、辐射等伤害的防护用具"
+
+- term: "防护手套"
+  synonyms: ["安全手套", "劳保手套"]
+  abbreviations: []
+  related: ["耐切割", "绝缘手套", "耐高温手套", "耐化学手套", "焊接手套"]
+  entity_type: "deliverable"
+  category: "ppe"
+  description: "保护双手免受机械、化学、电击、热等危害的防护手套"
+
+- term: "防护面罩"
+  synonyms: ["面部防护", "防飞溅面罩", "焊工面罩"]
+  abbreviations: []
+  related: ["焊接", "打磨", "化学品操作", "防冲击"]
+  entity_type: "deliverable"
+  category: "ppe"
+  description: "保护整个面部免受飞溅物、有害光辐射等伤害的防护装备"
+
+- term: "呼吸防护用品"
+  synonyms: ["防毒面具", "防尘口罩", "呼吸器"]
+  abbreviations: ["RPE", "Respiratory Protective Equipment"]
+  related: ["过滤式", "送风式", "半面罩", "全面罩", "滤毒盒", "滤棉", "适合性检验"]
+  entity_type: "deliverable"
+  category: "ppe"
+  description: "用于保护呼吸系统免受粉尘、有毒气体、缺氧环境等危害的防护装备"
+
+- term: "防护服"
+  synonyms: ["安全防护服", "劳保服"]
+  abbreviations: []
+  related: ["防静电服", "阻燃服", "防化服", "高可见度服装", "反光背心"]
+  entity_type: "deliverable"
+  category: "ppe"
+  description: "用于保护身体免受作业环境中各种危害因素伤害的服装"
+
+- term: "安全鞋"
+  synonyms: ["防护鞋", "劳保鞋", "防砸鞋"]
+  abbreviations: []
+  related: ["钢头", "防穿刺", "防滑", "绝缘鞋", "防静电鞋"]
+  entity_type: "deliverable"
+  category: "ppe"
+  description: "保护足部免受砸伤、刺伤、打滑等伤害的专用鞋"
+
+- term: "耳塞"
+  synonyms: ["听力防护", "防噪音耳塞", "隔音耳罩"]
+  abbreviations: []
+  related: ["噪音检测", "降噪值NRR", "一次性", "可重复使用"]
+  entity_type: "deliverable"
+  category: "ppe"
+  description: "降低噪声对听力损害的防护用品"
+
+- term: "救生衣"
+  synonyms: ["水上救生衣", "救生装备"]
+  abbreviations: []
+  related: ["水上作业", "码头", "临水作业", "浮力", "反光条"]
+  entity_type: "deliverable"
+  category: "ppe"
+  description: "提供浮力使落水者头部保持在水面以上的防护装备"
+
+# ═══════════════════════════════════════════════════════
+# 制度法规类 (regulation)
+# ═══════════════════════════════════════════════════════
+
+- term: "安全生产法"
+  synonyms: ["《安全生产法》", "安法"]
+  abbreviations: []
+  related: ["主要负责人职责", "三管三必须", "违法处罚", "全员安全生产责任制", "安全投入", "双重预防机制"]
+  entity_type: "regulation_ref"
+  category: "regulation"
+  description: "《中华人民共和国安全生产法》——我国安全生产领域的基本法律"
+
+- term: "HSE管理体系"
+  synonyms: ["安全管理体系", "职业健康安全管理体系", "EHS管理体系"]
+  abbreviations: ["HSE-MS", "ISO 45001"]
+  related: ["方针目标", "危险源辨识", "合规性评价", "内部审核", "管理评审", "PDCA循环"]
+  entity_type: "regulation_ref"
+  category: "regulation"
+  description: "对健康、安全和环境进行系统化管理的组织架构、策划、职责、程序和资源"
+
+- term: "安全生产责任制"
+  synonyms: ["安全生产责任制度", "安全责任制"]
+  abbreviations: []
+  related: ["一岗双责", "党政同责", "责任书", "责任清单", "考核", "失职追责"]
+  entity_type: "regulation_ref"
+  category: "regulation"
+  description: "明确各级各类人员在安全生产中应负责任的制度体系"
+
+- term: "危险源辨识"
+  synonyms: ["危害识别", "危险源识别", "危险有害因素辨识"]
+  abbreviations: ["HAZID"]
+  related: ["风险评价", "LEC法", "风险矩阵", "辨识清单", "重大危险源"]
+  entity_type: "process_step"
+  category: "regulation"
+  description: "识别危险源的存在并确定其特性的过程"
+
+- term: "特种作业"
+  synonyms: ["特种作业操作", "特殊作业"]
+  abbreviations: []
+  related: ["特种作业操作证", "持证上岗", "电工", "焊工", "高处作业", "起重机司机", "资格复审"]
+  entity_type: "regulation_ref"
+  category: "regulation"
+  description: "容易发生事故，对操作者本人、他人的安全健康及设备设施的安全可能造成重大危害的作业"
+
+- term: "职业病防治法"
+  synonyms: ["《职业病防治法》", "职业病防护"]
+  abbreviations: []
+  related: ["职业病危害因素", "职业健康检查", "职业病诊断", "职业病报告", "申报", "告知"]
+  entity_type: "regulation_ref"
+  category: "regulation"
+  description: "《中华人民共和国职业病防治法》——预防、控制和消除职业病危害的法律"
+
+- term: "安全生产标准化"
+  synonyms: ["安全标准化"]
+  abbreviations: []
+  related: ["达标", "自评", "评审", "证书", "持续改进", "要素", "台账"]
+  entity_type: "regulation_ref"
+  category: "regulation"
+  description: "通过建立安全生产责任制和管理制度，规范生产行为，使各环节符合安全生产法律法规和标准规范要求"
+
+- term: "双重预防机制"
+  synonyms: ["双重预防体系", "风险分级管控和隐患排查治理双重预防机制"]
+  abbreviations: []
+  related: ["风险分级", "隐患排查", "四色图", "管控措施", "告知牌"]
+  entity_type: "regulation_ref"
+  category: "regulation"
+  description: "风险分级管控和隐患排查治理两道防线组成的安全生产预防工作机制"
+
+- term: "应急预案"
+  synonyms: ["应急救援预案", "应急预案体系"]
+  abbreviations: []
+  related: ["综合预案", "专项预案", "现场处置方案", "备案", "评估", "修订"]
+  entity_type: "regulation_ref"
+  category: "regulation"
+  description: "针对可能发生的突发事件，预先制定的应对方案和行动计划"
+
+- term: "三同时"
+  synonyms: ["安全设施三同时", "三同时制度"]
+  abbreviations: []
+  related: ["安全预评价", "安全设施设计", "竣工验收", "同时设计", "同时施工", "同时投入使用"]
+  entity_type: "regulation_ref"
+  category: "regulation"
+  description: "建设项目的安全设施必须与主体工程同时设计、同时施工、同时投入生产和使用"
+
+- term: "四不放过"
+  synonyms: ["事故处理四不放过"]
+  abbreviations: []
+  related: ["事故调查", "原因分析", "责任追究", "整改措施"]
+  entity_type: "regulation_ref"
+  category: "regulation"
+  description: "事故原因未查清不放过、责任人未受处理不放过、整改措施未落实不放过、有关人员未受教育不放过"
+
+- term: "三级安全教育"
+  synonyms: ["三级教育", "三级培训"]
+  abbreviations: []
+  related: ["公司级", "项目级", "班组级", "入场教育", "教育档案", "教育卡"]
+  entity_type: "regulation_ref"
+  category: "regulation"
+  description: "新入厂从业人员必须经过公司、项目、班组三级安全教育培训合格后方可上岗"
+
+- term: "八大危险作业"
+  synonyms: ["八大作业", "高风险作业"]
+  abbreviations: []
+  related: ["动火作业", "受限空间", "高处作业", "临时用电", "吊装作业", "动土作业", "断路作业", "盲板抽堵作业"]
+  entity_type: "regulation_ref"
+  category: "regulation"
+  description: "化工和建筑施工企业常见的八类需要办理作业许可证的高风险作业"
+
+- term: "职业健康检查"
+  synonyms: ["职业健康体检", "岗前体检", "岗中体检", "离岗体检"]
+  abbreviations: []
+  related: ["职业病危害因素", "体检机构资质", "体检报告", "禁忌证", "健康监护档案"]
+  entity_type: "process_step"
+  category: "regulation"
+  description: "按照职业病防治法要求，对接触职业病危害因素的劳动者进行的健康检查"
+
+- term: "事故报告"
+  synonyms: ["事故上报", "安全事故报告", "事件报告"]
+  abbreviations: []
+  related: ["一般事故", "较大事故", "重大事故", "特大事故", "报告时限", "事故快报", "调查报告"]
+  entity_type: "regulation_ref"
+  category: "regulation"
+  description: "发生生产安全事故后按规定向有关部门进行报告的制度"
+
+- term: "班组安全活动"
+  synonyms: ["班前会", "安全早会", "班后总结"]
+  abbreviations: ["TBM", "Toolbox Meeting"]
+  related: ["安全交底", "风险提示", "出勤记录", "签字确认", "当日工作内容"]
+  entity_type: "process_step"
+  category: "regulation"
+  description: "班组每日开工前进行的简短安全会议，明确当日工作内容和安全注意事项"
+
+# ═══════════════════════════════════════════════════════
+# 工具与库类 (tool) — 方案 B 补充
+# ═══════════════════════════════════════════════════════
+
+- term: "Matplotlib"
+  synonyms: ["matplotlib", "可视化库", "绘图库", "作图工具"]
+  abbreviations: []
+  related: ["可视化", "图表", "Python", "Figure", "plot"]
+  entity_type: "tool"
+  category: "tool"
+  description: "Python 数据可视化绘图库"
+
+- term: "Pandas"
+  synonyms: ["pandas", "数据处理库", "数据分析库"]
+  abbreviations: []
+  related: ["DataFrame", "数据处理", "数据分析", "Python", "NumPy"]
+  entity_type: "tool"
+  category: "tool"
+  description: "Python 数据分析与数据处理库"
+
+- term: "PuLP"
+  synonyms: ["pulp", "线性规划求解器接口"]
+  abbreviations: []
+  related: ["LP", "MILP", "线性规划", "CBC", "优化求解"]
+  entity_type: "tool"
+  category: "tool"
+  description: "Python 线性规划建模接口库"
+
+- term: "CBC求解器"
+  synonyms: ["CBC Solver", "COIN-OR CBC", "开源求解器"]
+  abbreviations: ["CBC"]
+  related: ["MILP", "LP", "PuLP", "优化求解", "线性规划"]
+  entity_type: "tool"
+  category: "tool"
+  description: "COIN-OR 开源数学规划求解器"
+
+- term: "Python"
+  synonyms: ["Python 3.10", "Python3", "python"]
+  abbreviations: []
+  related: ["Matplotlib", "Pandas", "PuLP", "NumPy", "CBC"]
+  entity_type: "tool"
+  category: "tool"
+  description: "论文代码实现的编程语言环境"
+
+- term: "NumPy"
+  synonyms: ["numpy", "数值计算库"]
+  abbreviations: []
+  related: ["Python", "Pandas", "数组", "矩阵运算"]
+  entity_type: "tool"
+  category: "tool"
+  description: "Python 数值计算基础库"
+
+# ═══════════════════════════════════════════════════════
+# 文档结构类 (structure) — 方案 B 补充
+# ═══════════════════════════════════════════════════════
+
+- term: "图表引用"
+  synonyms: ["图引用", "表引用", "图表编号", "figure引用", "table引用"]
+  abbreviations: []
+  related: ["图2", "图5", "图6", "表1", "可视化", "图表"]
+  entity_type: "document_element"
+  category: "structure"
+  description: "论文中引用的图表编号及位置信息"
+
+# ═══════════════════════════════════════════════════════
+# 经济指标类 (metric) — 方案 B 补充
+# ═══════════════════════════════════════════════════════
+
+- term: "吨氨成本"
+  synonyms: ["合成氨成本", "制氨成本", "单位氨成本", "每吨氨成本"]
+  abbreviations: []
+  related: ["3554", "5820", "7111", "3669", "5652", "经济指标", "成本分析"]
+  entity_type: "metric"
+  category: "metric"
+  description: "合成氨生产的单位经济成本指标（元/吨）"
+
+- term: "绿电指标合规率"
+  synonyms: ["绿电合规率", "绿电全满足率", "可再生能源指标合规率"]
+  abbreviations: []
+  related: ["39.2%", "69.2%", "绿电直连", "可再生能源", "合规"]
+  entity_type: "metric"
+  category: "metric"
+  description: "园区可再生能源发电量满足绿电指标的合规比例"
+
+- term: "储能配置"
+  synonyms: ["储能容量", "储能功率", "储能系统配置"]
+  abbreviations: []
+  related: ["210.4MWh", "30MW", "储能", "离网", "电池"]
+  entity_type: "metric"
+  category: "metric"
+  description: "离网场景下储能系统的容量与功率配置参数"

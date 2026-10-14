@@ -1,0 +1,11 @@
+{
+  "status": "PASS_LOCAL_AUDIT_ONLY",
+  "source_files_rehashed": 62,
+  "candidate_groups": 8,
+  "candidate_copies": 33,
+  "historical_usage_records": 27,
+  "historical_total_tokens": 38733,
+  "source_mutations_detected": 0,
+  "new_model_calls": 0,
+  "generator_budget_frozen": false
+}

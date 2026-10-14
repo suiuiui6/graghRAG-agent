@@ -1,0 +1,97 @@
+{
+  "project_id": "graphrag-paper-001",
+  "checked_on": "2026-10-12",
+  "status": "TWO_SOURCE_TEXT_PILOT_ADMITTED_OTHER_CANDIDATES_NOT_COLLECTED",
+  "existing_8_role": "DEVELOPMENT_AUTHORIZED_BY_USER_NOT_HOLDOUT",
+  "holdout_H1": [],
+  "holdout_H2": [],
+  "sources": [
+    {
+      "source_id": "PUB-DEV-LCNC",
+      "title": "LinuxCNC固定2.9文档家族",
+      "url": "https://linuxcnc.org/docs/2.9/html/",
+      "screening_observation": "完整官方手册家族；HTML与PDF版本不一致需固定，章节/译本不独立计数",
+      "admission_status": "当前冻结原件的文字开发题核验通过；不是完整家族或多模态准入",
+      "role": "development",
+      "local_raw_file": "docs/review/public-development-20261012/pilot/raw/ini-homing.html",
+      "source_sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05"
+    },
+    {
+      "source_id": "PUB-DEV-N1",
+      "title": "Guide to Industrial Wireless Systems Deployments, AMS 300-4",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ams/NIST.AMS.300-4.pdf",
+      "screening_observation": "62页；正文、目录、附录清单已打开",
+      "admission_status": "公开PDF可读，逐文权利待终核",
+      "role": "development_candidate",
+      "local_raw_file": null,
+      "source_sha256": null
+    },
+    {
+      "source_id": "PUB-DEV-N2",
+      "title": "Predicting Robot System Performance by Measuring and Composing Subsystem Attributes, NISTIR 8091",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ir/2015/NIST.IR.8091.pdf",
+      "screening_observation": "17页；正文有装配流程/性能参数，部分列表明确不穷尽",
+      "admission_status": "当前冻结原件的文字开发题核验通过；不是完整家族或多模态准入",
+      "role": "development",
+      "local_raw_file": "docs/review/public-development-20261012/pilot/raw/NIST.IR.8091.pdf",
+      "source_sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+      "previous_title_unverified": "Measuring and Representing the Performance of Manufacturing Assembly Robots, IR8091",
+      "title_correction_evidence": "Official PDF cover/front matter observed 2026-10-12; pilot/web-visual-rights.json"
+    },
+    {
+      "source_id": "PUB-DEV-N3",
+      "title": "Enabling FAIR Data in Additive Manufacturing to Accelerate Industrialization, AMS500-1",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ams/NIST.AMS.500-1.pdf",
+      "screening_observation": "20页；目录与模块属性正文可读，图文关系需核",
+      "admission_status": "公开PDF可读，多机构作者/第三方内容待终核",
+      "role": "development_candidate",
+      "local_raw_file": null,
+      "source_sha256": null
+    },
+    {
+      "source_id": "PUB-DEV-N4",
+      "title": "Measurement Science Roadmap for Prognostics and Health Management for Smart Manufacturing Systems, AMS100-2",
+      "url": "https://www.nist.gov/publications/measurement-science-roadmap-prognostics-and-health-management-smart-manufacturing",
+      "screening_observation": "官方元数据与DOI 10.6028/NIST.AMS.100-2已核；PDF未打开",
+      "admission_status": "候选，版权/解析待核",
+      "role": "development_candidate",
+      "local_raw_file": null,
+      "source_sha256": null
+    },
+    {
+      "source_id": "PUB-DEV-N5",
+      "title": "Metrics and Key Performance Indicators for Robotic Cybersecurity Performance Analysis, IR8177",
+      "url": "https://csrc.nist.gov/pubs/ir/8177/final",
+      "screening_observation": "官方作者与下载入口已核，PDF未打开",
+      "admission_status": "候选，版权/解析待核",
+      "role": "development_candidate",
+      "local_raw_file": null,
+      "source_sha256": null
+    },
+    {
+      "source_id": "PUB-DEV-N6",
+      "title": "Guide to Operational Technology Security, SP800-82r3",
+      "url": "https://csrc.nist.gov/pubs/sp/800/82/r3/final",
+      "screening_observation": "固定r3；网站显示r4已有初稿，不能混用；PDF未打开",
+      "admission_status": "候选，多机构作者版权待核",
+      "role": "development_candidate",
+      "local_raw_file": null,
+      "source_sha256": null
+    }
+  ],
+  "structure_probe_pages": [
+    {
+      "url": "https://linuxcnc.org/docs/2.9/html/gcode/g-code.html",
+      "observed": "重复报错小节、代码参数与条件；开发曝光已登记"
+    },
+    {
+      "url": "https://linuxcnc.org/docs/2.9/html/config/ini-config.html",
+      "observed": "配置节及参数属性；开发曝光已登记"
+    },
+    {
+      "url": "https://nvlpubs.nist.gov/nistpubs/ams/NIST.AMS.300-4.pdf",
+      "observed": "目录含A1-A6清单；有表格，原字节和parser未核"
+    }
+  ],
+  "scope": "三项网页结构探查不等于下载试采通过；所有候选未入库。"
+}

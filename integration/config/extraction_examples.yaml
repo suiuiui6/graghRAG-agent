@@ -1,0 +1,110 @@
+# Few-shot examples for LangExtract academic paper extraction
+# Each example: text + list of Extraction objects
+
+examples:
+  - text: >
+      BERT: Pre-training of Deep Bidirectional Transformers for Language
+      Understanding. Jacob Devlin, Ming-Wei Chang, Kenton Lee, Kristina
+      Toutanova. Google AI Language. We introduce BERT, a new language
+      representation model. BERT achieves 93.2% F1 on SQuAD v1.1.
+    extractions:
+      - extraction_class: paper_metadata
+        extraction_text: "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding"
+        attributes:
+          field: title
+      - extraction_class: paper_metadata
+        extraction_text: "Jacob Devlin"
+        attributes:
+          field: author
+      - extraction_class: paper_metadata
+        extraction_text: "Google AI Language"
+        attributes:
+          field: affiliation
+      - extraction_class: model_component
+        extraction_text: "BERT"
+        attributes:
+          component_type: model
+          description: "Bidirectional Transformer language model"
+      - extraction_class: metric
+        extraction_text: "93.2% F1"
+        attributes:
+          name: "F1"
+          value: "93.2"
+      - extraction_class: dataset
+        extraction_text: "SQuAD v1.1"
+        attributes:
+          name: "SQuAD"
+          version: "v1.1"
+          task: "question answering"
+
+  - text: >
+      The Transformer uses multi-head attention with h=8 parallel heads.
+      We train with Adam optimizer (beta1=0.9, beta2=0.98) and dropout
+      rate of 0.1. On WMT 2014 English-to-German, we achieve 28.4 BLEU.
+    extractions:
+      - extraction_class: model_component
+        extraction_text: "multi-head attention"
+        attributes:
+          component_type: mechanism
+          parameter: "h=8"
+      - extraction_class: method
+        extraction_text: "Adam optimizer"
+        attributes:
+          category: training
+          parameter: "beta1=0.9, beta2=0.98"
+      - extraction_class: method
+        extraction_text: "dropout rate of 0.1"
+        attributes:
+          category: regularization
+          value: "0.1"
+      - extraction_class: metric
+        extraction_text: "28.4 BLEU"
+        attributes:
+          name: "BLEU"
+          value: "28.4"
+          task: "translation"
+      - extraction_class: dataset
+        extraction_text: "WMT 2014 English-to-German"
+        attributes:
+          name: "WMT 2014"
+          task: "machine translation"
+          language_pair: "EN-DE"
+
+  - text: >
+      Self-attention maps a query and a set of key-value pairs to an output.
+      Attention(Q,K,V) = softmax(QK^T/sqrt(d_k))V. The Feed-Forward network
+      consists of two linear transformations with a ReLU activation.
+    extractions:
+      - extraction_class: definition
+        extraction_text: "Self-attention maps a query and a set of key-value pairs to an output"
+        attributes:
+          concept: "Self-attention"
+      - extraction_class: equation
+        extraction_text: "Attention(Q,K,V) = softmax(QK^T/sqrt(d_k))V"
+        attributes:
+          name: "Scaled Dot-Product Attention"
+      - extraction_class: model_component
+        extraction_text: "Feed-Forward network"
+        attributes:
+          component_type: layer
+          description: "Two linear transformations with ReLU"
+
+  - text: >
+      Compared to recurrent models, the Transformer requires constant O(1)
+      operations to relate distant positions. We evaluate on WMT 2014
+      English-to-French achieving 41.8 BLEU, a new state-of-the-art.
+    extractions:
+      - extraction_class: claim
+        extraction_text: "Transformer requires constant O(1) operations to relate distant positions"
+        attributes:
+          claim_type: observation
+      - extraction_class: metric
+        extraction_text: "41.8 BLEU"
+        attributes:
+          name: "BLEU"
+          value: "41.8"
+          task: "translation"
+      - extraction_class: claim
+        extraction_text: "a new state-of-the-art"
+        attributes:
+          claim_type: conclusion

@@ -1,0 +1,39 @@
+FFFF                                                                     [100%]
+================================== FAILURES ===================================
+_________ test_current_user_roles_and_disable_revoke_existing_access __________
+D:\graghRAG-agent\backend\tests\test_p0_authorization.py:213: in test_current_user_roles_and_disable_revoke_existing_access
+    assert client.get("/api/v1/documents", headers=headers).json()["roles"] == ["viewer"]
+E   AssertionError: assert ['admin'] == ['viewer']
+E     
+E     At index 0 diff: 'admin' != 'viewer'
+E     Use -v to get more diff
+______________________ test_missing_access_type_rejected ______________________
+D:\graghRAG-agent\backend\tests\test_p0_authorization.py:225: in test_missing_access_type_rejected
+    assert client.get("/api/v1/documents", headers={"Authorization":f"Bearer {token}"}).status_code == 401
+E   AssertionError: assert 200 == 401
+E    +  where 200 = <Response [200 OK]>.status_code
+E    +    where <Response [200 OK]> = get('/api/v1/documents', headers={'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhbGljZSIsImV4cCI6MTc5MTc5OTY0NS4wODMwNjEsImlzcyI6ImdyYXBocmFnLWJhY2tlbmQifQ.h68SOK9KGNn2FbcWjll5AARpFAyiOLYqhp7Dbya_quA'})
+E    +      where get = <starlette.testclient.TestClient object at 0x0000024C1386E810>.get
+_________ test_no_authorized_data_never_reaches_model[/api/v1/query] __________
+backend\tests\test_p0_resource_routes.py:291: in test_no_authorized_data_never_reaches_model
+    assert response.status_code == 200
+E   assert 500 == 200
+E    +  where 500 = <Response [500 Internal Server Error]>.status_code
+_______ test_no_authorized_data_never_reaches_model[/api/v1/rag/query] ________
+backend\tests\test_p0_resource_routes.py:291: in test_no_authorized_data_never_reaches_model
+    assert response.status_code == 200
+E   assert 500 == 200
+E    +  where 500 = <Response [500 Internal Server Error]>.status_code
+============================== warnings summary ===============================
+backend\.venv\Lib\site-packages\_pytest\config\__init__.py:1434
+  D:\graghRAG-agent\backend\.venv\Lib\site-packages\_pytest\config\__init__.py:1434: PytestConfigWarning: Unknown config option: timeout
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED backend\tests\test_p0_authorization.py::test_current_user_roles_and_disable_revoke_existing_access
+FAILED backend\tests\test_p0_authorization.py::test_missing_access_type_rejected
+FAILED backend\tests\test_p0_resource_routes.py::test_no_authorized_data_never_reaches_model[/api/v1/query]
+FAILED backend\tests\test_p0_resource_routes.py::test_no_authorized_data_never_reaches_model[/api/v1/rag/query]
+4 failed, 38 deselected, 1 warning in 7.42s

@@ -1,0 +1,160 @@
+........................................................................ [  6%]
+........................................................................ [ 13%]
+........................................................................ [ 20%]
+........................................................................ [ 27%]
+........................................................................ [ 33%]
+..................................F..................................... [ 40%]
+........................................................................ [ 47%]
+........................................................................ [ 54%]
+...............................................................FFFFF.... [ 60%]
+...F.................................................................... [ 67%]
+.EEEEEEEE............................................................... [ 74%]
+........................................................................ [ 81%]
+..........................................F............................. [ 87%]
+........................................................................ [ 94%]
+........................................................                 [100%]
+=================================== ERRORS ====================================
+_ ERROR at setup of test_legacy_search_filters_grounded_type_properties_and_limit _
+backend\tests\test_query_quality_behaviors.py:336: in legacy_kg
+    monkeypatch.setattr(langchain.agents, "create_agent", lambda **kwargs: SimpleNamespace(config=kwargs))
+                        ^^^^^^^^^^^^^^^^
+E   AttributeError: module 'langchain' has no attribute 'agents'
+_ ERROR at setup of test_legacy_neighbors_use_real_graph_hops_relations_and_grounding _
+backend\tests\test_query_quality_behaviors.py:336: in legacy_kg
+    monkeypatch.setattr(langchain.agents, "create_agent", lambda **kwargs: SimpleNamespace(config=kwargs))
+                        ^^^^^^^^^^^^^^^^
+E   AttributeError: module 'langchain' has no attribute 'agents'
+_ ERROR at setup of test_legacy_entity_details_include_only_grounded_relationships _
+backend\tests\test_query_quality_behaviors.py:336: in legacy_kg
+    monkeypatch.setattr(langchain.agents, "create_agent", lambda **kwargs: SimpleNamespace(config=kwargs))
+                        ^^^^^^^^^^^^^^^^
+E   AttributeError: module 'langchain' has no attribute 'agents'
+_ ERROR at setup of test_legacy_statistics_distinguish_grounded_subgraph_from_full_graph _
+backend\tests\test_query_quality_behaviors.py:336: in legacy_kg
+    monkeypatch.setattr(langchain.agents, "create_agent", lambda **kwargs: SimpleNamespace(config=kwargs))
+                        ^^^^^^^^^^^^^^^^
+E   AttributeError: module 'langchain' has no attribute 'agents'
+_ ERROR at setup of test_legacy_query_display_extracts_final_answer_and_handles_empty_failure[content] _
+backend\tests\test_query_quality_behaviors.py:336: in legacy_kg
+    monkeypatch.setattr(langchain.agents, "create_agent", lambda **kwargs: SimpleNamespace(config=kwargs))
+                        ^^^^^^^^^^^^^^^^
+E   AttributeError: module 'langchain' has no attribute 'agents'
+_ ERROR at setup of test_legacy_query_display_extracts_final_answer_and_handles_empty_failure[string] _
+backend\tests\test_query_quality_behaviors.py:336: in legacy_kg
+    monkeypatch.setattr(langchain.agents, "create_agent", lambda **kwargs: SimpleNamespace(config=kwargs))
+                        ^^^^^^^^^^^^^^^^
+E   AttributeError: module 'langchain' has no attribute 'agents'
+_ ERROR at setup of test_legacy_query_display_extracts_final_answer_and_handles_empty_failure[empty] _
+backend\tests\test_query_quality_behaviors.py:336: in legacy_kg
+    monkeypatch.setattr(langchain.agents, "create_agent", lambda **kwargs: SimpleNamespace(config=kwargs))
+                        ^^^^^^^^^^^^^^^^
+E   AttributeError: module 'langchain' has no attribute 'agents'
+_ ERROR at setup of test_legacy_query_display_extracts_final_answer_and_handles_empty_failure[error] _
+backend\tests\test_query_quality_behaviors.py:336: in legacy_kg
+    monkeypatch.setattr(langchain.agents, "create_agent", lambda **kwargs: SimpleNamespace(config=kwargs))
+                        ^^^^^^^^^^^^^^^^
+E   AttributeError: module 'langchain' has no attribute 'agents'
+================================== FAILURES ===================================
+____________________ test_b0_preparation_is_not_execution _____________________
+backend\tests\test_local_scope_v2.py:31: in test_b0_preparation_is_not_execution
+    assert report['production_integrity']['all_match_freeze']
+E   assert False
+___ test_extraction_normalizes_provider_results_and_forwards_options[False] ___
+backend\tests\test_pipeline_cli_behaviors.py:82: in test_extraction_normalizes_provider_results_and_forwards_options
+    monkeypatch.setattr(pipeline.lx, "extract", provider)
+E   AttributeError: <module 'langextract' (namespace) from ['D:\\graghRAG-agent\\langextract']> has no attribute 'extract'
+---------------------------- Captured stdout call -----------------------------
+
+[Stage 2] Building format bridge...
+  full.md:     D:\graghRAG-agent\backend\tests\_sandbox_tmp\quality-final-20261013\test_extraction_normalizes_pro0\cached\full.md
+  content_list:sample_content_list.json
+  Content items: 2
+  Full.md chars: 15
+  PositionMap segments: 2
+  Sections: 1
+    [sec_0_��Ŀ] L1 "��Ŀ" (13 chars)
+  Documents built: 1
+___ test_extraction_normalizes_provider_results_and_forwards_options[True] ____
+backend\tests\test_pipeline_cli_behaviors.py:82: in test_extraction_normalizes_provider_results_and_forwards_options
+    monkeypatch.setattr(pipeline.lx, "extract", provider)
+E   AttributeError: <module 'langextract' (namespace) from ['D:\\graghRAG-agent\\langextract']> has no attribute 'extract'
+---------------------------- Captured stdout call -----------------------------
+
+[Stage 2] Building format bridge...
+  full.md:     D:\graghRAG-agent\backend\tests\_sandbox_tmp\quality-final-20261013\test_extraction_normalizes_pro1\cached\full.md
+  content_list:sample_content_list.json
+  Content items: 2
+  Full.md chars: 15
+  PositionMap segments: 2
+  Sections: 1
+    [sec_0_��Ŀ] L1 "��Ŀ" (13 chars)
+  Documents built: 1
+______ test_main_writes_roundtrippable_jsonl_and_grounded_graph[cached] _______
+backend\tests\test_pipeline_cli_behaviors.py:101: in test_main_writes_roundtrippable_jsonl_and_grounded_graph
+    monkeypatch.setattr(pipeline.lx, "extract", extract_documents)
+E   AttributeError: <module 'langextract' (namespace) from ['D:\\graghRAG-agent\\langextract']> has no attribute 'extract'
+________ test_main_writes_roundtrippable_jsonl_and_grounded_graph[pdf] ________
+backend\tests\test_pipeline_cli_behaviors.py:101: in test_main_writes_roundtrippable_jsonl_and_grounded_graph
+    monkeypatch.setattr(pipeline.lx, "extract", extract_documents)
+E   AttributeError: <module 'langextract' (namespace) from ['D:\\graghRAG-agent\\langextract']> has no attribute 'extract'
+________ test_main_writes_roundtrippable_jsonl_and_grounded_graph[url] ________
+backend\tests\test_pipeline_cli_behaviors.py:101: in test_main_writes_roundtrippable_jsonl_and_grounded_graph
+    monkeypatch.setattr(pipeline.lx, "extract", extract_documents)
+E   AttributeError: <module 'langextract' (namespace) from ['D:\\graghRAG-agent\\langextract']> has no attribute 'extract'
+_______ test_mineru_polling_download_cleanup_and_failure_contract[done] _______
+backend\tests\test_pipeline_cli_behaviors.py:184: in test_mineru_polling_download_cleanup_and_failure_contract
+    assert (result / "full.md").read_text() == "��ʵ���ز���"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1028: in read_text
+    return f.read()
+           ^^^^^^^^
+E   UnicodeDecodeError: 'gbk' codec can't decode byte 0xac in position 8: illegal multibyte sequence
+---------------------------- Captured stdout call -----------------------------
+[Stage 1] Submitting: https://example.invalid/pdf...
+  task_id: 123456789
+
+  [running] 0s | Pages: ?/?  
+  [done] 1s | Pages: ?/?  
+  Output: D:\graghRAG-agent\backend\tests\_sandbox_tmp\quality-final-20261013\test_mineru_polling_download_c0\output\mineru\12345678
+_______________ test_known_unresolved_entries_are_load_bearing ________________
+backend\tests\test_supply_chain.py:202: in test_known_unresolved_entries_are_load_bearing
+    assert not inert, (
+E   AssertionError: _KNOWN_UNRESOLVED ���ڶ�����Ŀ����ɾ���������嵥ֻװ load-bearing ��Ŀ����
+E       jieba������Ϊ����/δ֪ģ�飬����ȱʧ�ж���
+E   assert not ['jieba������Ϊ����/δ֪ģ�飬����ȱʧ�ж���']
+============================== warnings summary ===============================
+.tmp\backend-quality-venv-20261012\Lib\site-packages\starlette\testclient.py:53
+  D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\starlette\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]
+
+backend\tests\test_error_handling_policy.py:66
+  D:\graghRAG-agent\backend\tests\test_error_handling_policy.py:66: SyntaxWarning: invalid escape sequence '\s'
+    """ÿ�� # noqa: BLE001 ����� `#` ���ɣ���������޴���ơ�
+
+tests/test_error_handling_policy.py::test_no_bare_except_outside_tests
+  <unknown>:2: SyntaxWarning: invalid escape sequence '\g'
+
+tests/test_supply_chain.py::test_code_imports_are_declared
+tests/test_supply_chain.py::test_known_unresolved_entries_are_load_bearing
+  D:\graghRAG-agent\backend\agentic_rag_mvp.py:2: SyntaxWarning: invalid escape sequence '\g'
+    """
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED backend\tests\test_local_scope_v2.py::test_b0_preparation_is_not_execution
+FAILED backend\tests\test_pipeline_cli_behaviors.py::test_extraction_normalizes_provider_results_and_forwards_options[False]
+FAILED backend\tests\test_pipeline_cli_behaviors.py::test_extraction_normalizes_provider_results_and_forwards_options[True]
+FAILED backend\tests\test_pipeline_cli_behaviors.py::test_main_writes_roundtrippable_jsonl_and_grounded_graph[cached]
+FAILED backend\tests\test_pipeline_cli_behaviors.py::test_main_writes_roundtrippable_jsonl_and_grounded_graph[pdf]
+FAILED backend\tests\test_pipeline_cli_behaviors.py::test_main_writes_roundtrippable_jsonl_and_grounded_graph[url]
+FAILED backend\tests\test_pipeline_cli_behaviors.py::test_mineru_polling_download_cleanup_and_failure_contract[done]
+FAILED backend\tests\test_supply_chain.py::test_known_unresolved_entries_are_load_bearing
+ERROR backend\tests\test_query_quality_behaviors.py::test_legacy_search_filters_grounded_type_properties_and_limit
+ERROR backend\tests\test_query_quality_behaviors.py::test_legacy_neighbors_use_real_graph_hops_relations_and_grounding
+ERROR backend\tests\test_query_quality_behaviors.py::test_legacy_entity_details_include_only_grounded_relationships
+ERROR backend\tests\test_query_quality_behaviors.py::test_legacy_statistics_distinguish_grounded_subgraph_from_full_graph
+ERROR backend\tests\test_query_quality_behaviors.py::test_legacy_query_display_extracts_final_answer_and_handles_empty_failure[content]
+ERROR backend\tests\test_query_quality_behaviors.py::test_legacy_query_display_extracts_final_answer_and_handles_empty_failure[string]
+ERROR backend\tests\test_query_quality_behaviors.py::test_legacy_query_display_extracts_final_answer_and_handles_empty_failure[empty]
+ERROR backend\tests\test_query_quality_behaviors.py::test_legacy_query_display_extracts_final_answer_and_handles_empty_failure[error]
+8 failed, 1048 passed, 5 warnings, 8 errors in 102.97s (0:01:42)

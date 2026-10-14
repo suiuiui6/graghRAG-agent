@@ -1,0 +1,105 @@
+contract_version: "1.0"
+expert_skill: sci-skills-data-availability
+project_id: graphrag-paper-001
+paper_family: M
+stage_id: M2
+task_id: GOLD-PACKAGE-20261008
+task_status: COMPLETE
+inputs_reviewed:
+  - docs/superpowers/plans/scope-pilot/gold-review-v2/gold-package-task-20261008.yaml
+  - docs/superpowers/plans/scope-pilot/gold-review-v2/approval-record-20261008.yaml
+  - docs/superpowers/plans/scope-pilot/gold-review-v2/gold-policy-proposal.yaml
+  - docs/superpowers/plans/scope-pilot/gold-review-v2/independent-sol-review.md
+  - docs/superpowers/plans/scope-pilot/gold-review-v2/independent-sol-contract.yaml
+  - docs/superpowers/plans/scope-pilot/gold.yaml
+  - backend/output/mineru/ingest_2/full.md
+  - backend/output/mineru/ingest_f/full.md
+  - integration/Agentic-RAG-Architecture.md
+outputs:
+  - path: docs/superpowers/plans/scope-pilot/gold-review-v2/gold-v2.yaml
+    artifact_type: source_bound_attribute_gold
+    status: LOCAL_PACKAGE_PASS_CANDIDATE
+    question_count: 9
+    core_item_count: 31
+  - path: docs/superpowers/plans/scope-pilot/gold-review-v2/gold-v2-package.md
+    artifact_type: local_reproduction_and_availability_notes
+    status: COMPLETE
+  - path: docs/superpowers/plans/scope-pilot/gold-review-v2/gold-v2-package-contract.yaml
+    artifact_type: exact_19_field_expert_result
+    status: COMPLETE
+evidence_status:
+  - label: VERIFIED_USER_MATERIAL
+    finding: accepted_versioned_policy_bound_to_nine_complete_Markdown_scopes_and_31_core_items
+  - label: VERIFIED_USER_MATERIAL
+    finding: complete_D1_scan_six_numbered_body_captions_and_six_appendix_aliases
+    full_original_interval: [0, 22366]
+    provider_transfer_authorized: false
+  - label: VERIFIED_USER_MATERIAL
+    finding: attribute_evidence_explicitly_associated_and_exact_source_slices_checked
+    required_plus_optional_attributes: 150
+    required_attributes: 125
+    optional_attributes: 25
+    exact_evidence_associations_verified: 172
+  - label: VERIFIED_USER_MATERIAL
+    finding: A3_exact_Q_K_V_layer_source_not_explicitly_restated_and_D2_NONE_empty_optimizer_set_supported_only_by_complete_section_review
+  - label: AI_INFERENCE
+    finding: optional_A3_decoder_side_provenance_from_self_attention_analogy_is_not_explicit
+  - label: EXECUTED_LOCAL
+    finding: three_original_and_normalized_source_hashes_six_upstream_hashes_nine_scope_hashes_and_all_attribute_spans_verified
+    command_locator: gold-v2-package.md_evidence_and_execution_status_PowerShell_inline_Python
+    interpreter: backend/.venv/Scripts/python.exe
+    exit_code: 0
+    created_on_utc: 2026-10-08
+    clock_evidence: 2026-10-08 00:06:46 UTC
+  - label: PENDING_VERIFICATION
+    finding: original_PDF_visual_review_independent_human_annotation_runtime_identity_corpus_mapping_and_redacted_export_mapping
+  - label: NOT_EXECUTED
+    activities: [new_API_batch, model_generation, retrieval_experiment, semantic_answer_scoring, legacy_runner_adaptation, indexing, external_deposit, public_release, stage_acceptance]
+assumptions:
+  - Author_continue_message_accepts_recorded_new_question_policy_for_bounded_local_preparation_only.
+  - Supplied_Markdown_is_the_exclusive_answer_source_and_does_not_certify_PDF_OCR_or_numerical_derivations.
+  - Old_question_ambiguities_remain_historical_sensitivities_and_old_answers_are_not_rescored_under_v2.
+  - Complete_local_oracle_scope_and_actual_provider_visible_context_coverage_are_distinct.
+  - D1_FUTURE_coverage_adjudication_target_is_only_complete_item_4_at_20059_20157_and_the_wider_section_is_optional_context.
+  - Optional_detail_omissions_do_not_fail_core_completeness_and_roles_are_semantic_not_literal_enum_output_requirements.
+  - PASS_CANDIDATE_applies_only_to_the_local_package_not_M2_stage_acceptance_or_API_authorization.
+author_input_needed:
+  - context: future_execution_only
+    needed: separate_new_batch_permission_and_any_provider_transmission_authority_for_an_approved_redacted_source
+  - context: future_certification_only
+    needed: original_PDF_visual_review_and_independent_human_annotation_if_required_by_later_acceptance
+manual_actions: []
+quality_checks:
+  - check: source_fingerprints_and_upstream_provenance_hashes_match
+    status: PASS
+  - check: nine_versioned_queries_and_31_original_core_ID_crosswalks
+    status: PASS
+  - check: complete_numeric_scope_ranges_and_exact_section_scope_text
+    status: PASS
+  - check: all_150_required_plus_optional_attributes_have_explicit_evidence_associations
+    status: PASS
+  - check: all_172_evidence_associations_exact_LF_Unicode_codepoint_slices_with_in_scope_offsets
+    status: PASS
+  - check: six_unique_figures_body_titles_appendix_aliases_and_full_original_scan
+    status: PASS
+  - check: privacy_frontmatter_not_copied_and_whole_scope_does_not_grant_transfer_permission
+    status: PASS
+  - check: C6_C7_historical_sensitivity_only_and_four_LIMITS_category_denominator_retained
+    status: PASS
+  - check: A3_inference_and_absence_labels_NONE_complete_scope_proof_and_original_source_units_preserved
+    status: PASS
+  - check: human_content_support_scope_citation_negative_and_role_adjudication_boundaries
+    status: PASS
+  - check: future_assembler_scan_coverage_and_legacy_runner_incompatibility_explicit
+    status: PASS
+  - check: D1_FUTURE_semantic_target_hash_and_COMPLETE_coverage_independent_of_other_three_limitations
+    status: PASS
+  - check: exact_19_field_contract_identity_three_outputs_and_seven_specialist_sections
+    status: PASS
+  - check: original_PDF_visual_review_independent_human_annotation_and_provider_execution
+    status: NOT_EXECUTED
+conflicts: []
+conflict_resolution_status: NOT_REQUIRED
+merge_permission: orchestrator_only
+recommended_next_action: The orchestrator should review and accept this local source-bound v2 package with the execution preflight while retaining M2 as open and requiring separate authorization for any new API batch.
+stage_acceptance_recommendation: PASS_CANDIDATE

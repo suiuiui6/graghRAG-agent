@@ -1,0 +1,95 @@
+{
+  "utc": "2026-10-14T03:37:52.707035+00:00",
+  "inputs_before": {
+    ".tmp/vector-replacement-mvp-20261013/r2/boundary_probe-l2-history.py": "afd6125ca5bd02753b3e79bed7f03c11063b8c6bfdfaa86fcabee626e185b66c",
+    ".tmp/vector-replacement-mvp-20261013/r2/boundary_probe.py": "d19dda4d65841ec4c586fd4e7d1c8b7747216665db701cdf03e13327dce44087",
+    ".tmp/vector-replacement-mvp-20261013/r2/chroma_truth.py": "fa6cae06d8ceaa3b8c3660c10d44e072b193b7b77d101265e63f0f2442443b1e",
+    ".tmp/vector-replacement-mvp-20261013/r2/freeze_r2.py": "bd652e9125c9cc09514b93377a52981ed44706727534a6ced9d76737ecdaf17d",
+    ".tmp/vector-replacement-mvp-20261013/r2/generic_filter.py": "cf45530dd8eab3013fb86f9c180bd2919300f2747893f721c1621c3bb5066f95",
+    ".tmp/vector-replacement-mvp-20261013/r2/lance_truth.py": "e4089b75ca9889e0dea8150fe8ae3b4450846016e6bb490000276a7e5dbb41ef",
+    ".tmp/vector-replacement-mvp-20261013/r2/prepare_fixtures-current.py": "6ce74edcb3031febd6377db110a8a469fda28635c3e8d58da3bdfc945d4d27aa",
+    ".tmp/vector-replacement-mvp-20261013/r2/prepare_fixtures.py": "6ce74edcb3031febd6377db110a8a469fda28635c3e8d58da3bdfc945d4d27aa",
+    ".tmp/vector-replacement-mvp-20261013/r2/fixtures.json": "3723ab816a7bc0ae212af88c8776f52518cd32a419620df61935e676a39b681a",
+    ".tmp/vector-replacement-mvp-20261013/uv.lock": "ab27e2d7dc601aeff7b004502382ef329128115f7812b76f26e72699fe99986d",
+    ".tmp/vector-replacement-mvp-20261013/pyproject.toml": "dd65f24ee90f96fed44e6fa3ff938612d02c190610d85bd6d7fe3b7bad4aa034"
+  },
+  "inputs_after": {
+    ".tmp/vector-replacement-mvp-20261013/r2/boundary_probe-l2-history.py": "afd6125ca5bd02753b3e79bed7f03c11063b8c6bfdfaa86fcabee626e185b66c",
+    ".tmp/vector-replacement-mvp-20261013/r2/boundary_probe.py": "d19dda4d65841ec4c586fd4e7d1c8b7747216665db701cdf03e13327dce44087",
+    ".tmp/vector-replacement-mvp-20261013/r2/chroma_truth.py": "fa6cae06d8ceaa3b8c3660c10d44e072b193b7b77d101265e63f0f2442443b1e",
+    ".tmp/vector-replacement-mvp-20261013/r2/freeze_r2.py": "bd652e9125c9cc09514b93377a52981ed44706727534a6ced9d76737ecdaf17d",
+    ".tmp/vector-replacement-mvp-20261013/r2/generic_filter.py": "cf45530dd8eab3013fb86f9c180bd2919300f2747893f721c1621c3bb5066f95",
+    ".tmp/vector-replacement-mvp-20261013/r2/lance_truth.py": "e4089b75ca9889e0dea8150fe8ae3b4450846016e6bb490000276a7e5dbb41ef",
+    ".tmp/vector-replacement-mvp-20261013/r2/prepare_fixtures-current.py": "6ce74edcb3031febd6377db110a8a469fda28635c3e8d58da3bdfc945d4d27aa",
+    ".tmp/vector-replacement-mvp-20261013/r2/prepare_fixtures.py": "6ce74edcb3031febd6377db110a8a469fda28635c3e8d58da3bdfc945d4d27aa",
+    ".tmp/vector-replacement-mvp-20261013/r2/fixtures.json": "3723ab816a7bc0ae212af88c8776f52518cd32a419620df61935e676a39b681a",
+    ".tmp/vector-replacement-mvp-20261013/uv.lock": "ab27e2d7dc601aeff7b004502382ef329128115f7812b76f26e72699fe99986d",
+    ".tmp/vector-replacement-mvp-20261013/pyproject.toml": "dd65f24ee90f96fed44e6fa3ff938612d02c190610d85bd6d7fe3b7bad4aa034"
+  },
+  "unchanged": true,
+  "commands": [
+    {
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\vector-replacement-mvp-20261013\\.venv\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-replacement-mvp-20261013\\r2\\lance_truth.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\backend-quality-venv-20261012\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-replacement-mvp-20261013\\r2\\boundary_probe.py",
+        "chroma"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\vector-replacement-mvp-20261013\\.venv\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-replacement-mvp-20261013\\r2\\boundary_probe.py",
+        "lance"
+      ],
+      "exit_code": 1
+    }
+  ],
+  "files": {
+    "boundary-chroma.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "boundary-chroma.exit.l2-history": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "boundary-chroma.json": "e2578f9cf55df4e7b7445a74940ddbcf4ae46defb93a259b8d14fa24badeb1ba",
+    "boundary-chroma.json.l2-history": "94b960557936a8ab4189e004cc5c5c7be18e3ddf1c4fd89404d333c212de9b79",
+    "boundary-chroma.log": "bb2c548efcf06d1a7b54c066d75289c73d9b4d5fa4bbb8e2548a662c1e57a0ec",
+    "boundary-chroma.log.l2-history": "fd57ac73294d80c708319323e2c1b5c08b772de31f4249a5e3ab5e992cd79ab2",
+    "boundary-lance.exit": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04",
+    "boundary-lance.exit.l2-history": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "boundary-lance.json": "8cf4907d4916315cac65e09df7038fa802e514ffe8573597cfabe1b5b124acac",
+    "boundary-lance.json.l2-history": "0163cf9b382c9e10fdedb69d1756f9850fc157a212a724fb55b92a7ba15e7595",
+    "boundary-lance.log": "b630866d320fc8076720d7346255c7e4157300d770242bd7b47835236efd2da7",
+    "boundary-lance.log.l2-history": "fd57ac73294d80c708319323e2c1b5c08b772de31f4249a5e3ab5e992cd79ab2",
+    "boundary_chroma.exit": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+    "boundary_chroma.log": "bb2c548efcf06d1a7b54c066d75289c73d9b4d5fa4bbb8e2548a662c1e57a0ec",
+    "boundary_lance.exit": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+    "boundary_lance.log": "b630866d320fc8076720d7346255c7e4157300d770242bd7b47835236efd2da7",
+    "boundary_probe-l2-history.py": "afd6125ca5bd02753b3e79bed7f03c11063b8c6bfdfaa86fcabee626e185b66c",
+    "boundary_probe.py": "d19dda4d65841ec4c586fd4e7d1c8b7747216665db701cdf03e13327dce44087",
+    "chroma-truth-01.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "chroma-truth-01.log": "f7d2a53fd999eae7993fc3e9a595c4db33579887cc4b07c9da99e7ee020312fc",
+    "chroma-truth-02.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "chroma-truth-02.log": "56247e7704423d948a0165829a2805aaee02f5d823dd0e442096428d2bbbbd7d",
+    "chroma-truth-1791897284786268200.json": "4deea42ae3570cae1e7b7072dacf17463afa7428478fcacf830f0d2f3a8e9211",
+    "chroma-truth-1791897325903702500.json": "9f714ff93b3ddd4fa49f1396691274014ed6bf954747eaba98ff428418f39f1f",
+    "chroma_truth.py": "fa6cae06d8ceaa3b8c3660c10d44e072b193b7b77d101265e63f0f2442443b1e",
+    "fixtures-01-python-equality-dedup.json": "2aa12b43a829da187075c37608478dbe549d265fde2afc010c0cef0c518902ad",
+    "fixtures.json": "3723ab816a7bc0ae212af88c8776f52518cd32a419620df61935e676a39b681a",
+    "freeze_r2.py": "bd652e9125c9cc09514b93377a52981ed44706727534a6ced9d76737ecdaf17d",
+    "generic_filter.py": "cf45530dd8eab3013fb86f9c180bd2919300f2747893f721c1621c3bb5066f95",
+    "lance-truth-01.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "lance-truth-01.log": "6fccd2abb9d0b2b5cd88c2fca814fc7cc5906b6d6f221a3772a56fc8c9898482",
+    "lance-truth-1791897604023123000.json": "7eccb7cdaa4a95be5157cf80b2da94219ef6dd4880935abde1eb5d5262f1ef62",
+    "lance-truth-1791949068156038600.json": "7eccb7cdaa4a95be5157cf80b2da94219ef6dd4880935abde1eb5d5262f1ef62",
+    "lance_truth.py": "e4089b75ca9889e0dea8150fe8ae3b4450846016e6bb490000276a7e5dbb41ef",
+    "original76.exit": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+    "original76.log": "7976cefbb2077fd708e5492f3fdb99826f70e4706be1d547bfd25a4915b78057",
+    "prepare_fixtures-current.py": "6ce74edcb3031febd6377db110a8a469fda28635c3e8d58da3bdfc945d4d27aa",
+    "prepare_fixtures.py": "6ce74edcb3031febd6377db110a8a469fda28635c3e8d58da3bdfc945d4d27aa"
+  }
+}

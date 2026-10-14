@@ -1,0 +1,222 @@
+FFF.FFFF.                                                                [100%]
+================================== FAILURES ===================================
+_________ test_new_published_result_and_legacy_sources_remain_ordered _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000019637C95610>
+sandbox_tmp_path = WindowsPath('D:/graghRAG-agent/backend/tests/_sandbox_tmp/test_new_published_result_and_legacy_sources_remain_ordered/84637c712af74cde9f1f6b4019f28126')
+
+    def test_new_published_result_and_legacy_sources_remain_ordered(monkeypatch, sandbox_tmp_path):
+        root = sandbox_tmp_path / "mineru"
+        legacy = _write_source(root / "legacy")
+        task = root / "ingest_complete_task_id"
+        published = _write_source(task / "result")
+        os.utime(legacy, (100, 100))
+        os.utime(task, (200, 200))
+        monkeypatch.setattr(server, "MINERU_OUTPUT_DIR", root)
+    
+>       assert server._iter_mineru_runtime_sources() == [
+            (published, "ingest_complete_task_id.pdf"), (legacy, "legacy.pdf"),
+        ]
+E       AssertionError: assert [(WindowsPath...'legacy.pdf')] == [(WindowsPath...'legacy.pdf')]
+E         
+E         At index 0 diff: (WindowsPath('D:/graghRAG-agent/backend/tests/_sandbox_tmp/test_new_published_result_and_legacy_sources_remain_ordered/84637c712af74cde9f1f6b4019f28126/mineru/legacy'), 'legacy.pdf') != (WindowsPath('D:/graghRAG-agent/backend/tests/_sandbox_tmp/test_new_published_result_and_legacy_sources_remain_ordered/84637c712af74cde9f1f6b4019f28126/mineru/ingest_complete_task_id/result'), 'ingest_complete_task_id.pdf')
+E         Right contains one more item: (WindowsPath('D:/graghRAG-agent/backend/tests/_sandbox_tmp/test_new_published_result_and_legacy_sources_remain_ordered/8...
+E         
+E         ...Full output truncated (2 lines hidden), use '-vv' to show
+
+tests\test_p0_runtime_sources.py:28: AssertionError
+___________ test_unpublished_working_directories_are_never_sources ____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000019637DC4E60>
+sandbox_tmp_path = WindowsPath('D:/graghRAG-agent/backend/tests/_sandbox_tmp/test_unpublished_working_directories_are_never_sources/5fee80cf4fb34104b45bc4a4ba3b3868')
+
+    def test_unpublished_working_directories_are_never_sources(monkeypatch, sandbox_tmp_path):
+        root = sandbox_tmp_path / "mineru"
+        _write_source(root / "task" / ".working-secret")
+        _write_source(root / ".working-top-level")
+        _write_source(root / "partial" / "result")
+        (root / "partial" / "result" / "full.md").unlink()
+        monkeypatch.setattr(server, "MINERU_OUTPUT_DIR", root)
+    
+>       assert server._iter_mineru_runtime_sources() == []
+E       AssertionError: assert [(WindowsPath...p-level.pdf')] == []
+E         
+E         Left contains one more item: (WindowsPath('D:/graghRAG-agent/backend/tests/_sandbox_tmp/test_unpublished_working_directories_are_never_sources/5fee80cf4fb34104b45bc4a4ba3b3868/mineru/.working-top-level'), '.working-top-level.pdf')
+E         Use -v to get more diff
+
+tests\test_p0_runtime_sources.py:42: AssertionError
+______________ test_sources_reject_symlinks_outside_output[task] ______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000019637DC5D60>
+sandbox_tmp_path = WindowsPath('D:/graghRAG-agent/backend/tests/_sandbox_tmp/test_sources_reject_symlinks_outside_output_task/68f98145f9fe4808b4af9943265eb203')
+linked_part = 'task'
+
+    @pytest.mark.parametrize("linked_part", ["task", "result", "markdown", "content_list", "root"])
+    def test_sources_reject_symlinks_outside_output(monkeypatch, sandbox_tmp_path, linked_part):
+        root = sandbox_tmp_path / "mineru"
+        outside = _write_source(sandbox_tmp_path / "outside")
+        root.mkdir()
+        if linked_part == "root":
+            root.rmdir()
+            target = sandbox_tmp_path / "outside_root"
+            _write_source(target / "legacy")
+            root.symlink_to(target, target_is_directory=True)
+        elif linked_part == "task":
+            (root / "task").symlink_to(outside, target_is_directory=True)
+        elif linked_part == "result":
+            (root / "task").mkdir()
+            (root / "task" / "result").symlink_to(outside, target_is_directory=True)
+        else:
+            legacy = _write_source(root / "legacy")
+            name = "full.md" if linked_part == "markdown" else "paper_content_list.json"
+            (legacy / name).unlink()
+            (legacy / name).symlink_to(outside / name)
+        monkeypatch.setattr(server, "MINERU_OUTPUT_DIR", root)
+    
+>       assert server._iter_mineru_runtime_sources() == []
+E       AssertionError: assert [(WindowsPath..., 'task.pdf')] == []
+E         
+E         Left contains one more item: (WindowsPath('D:/graghRAG-agent/backend/tests/_sandbox_tmp/test_sources_reject_symlinks_outside_output_task/68f98145f9fe4808b4af9943265eb203/mineru/task'), 'task.pdf')
+E         Use -v to get more diff
+
+tests\test_p0_runtime_sources.py:67: AssertionError
+____________ test_sources_reject_symlinks_outside_output[markdown] ____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000019637DC6A20>
+sandbox_tmp_path = WindowsPath('D:/graghRAG-agent/backend/tests/_sandbox_tmp/test_sources_reject_symlinks_outside_output_markdown/1b8895ea0d2c4dc3baa9618987ad5cf2')
+linked_part = 'markdown'
+
+    @pytest.mark.parametrize("linked_part", ["task", "result", "markdown", "content_list", "root"])
+    def test_sources_reject_symlinks_outside_output(monkeypatch, sandbox_tmp_path, linked_part):
+        root = sandbox_tmp_path / "mineru"
+        outside = _write_source(sandbox_tmp_path / "outside")
+        root.mkdir()
+        if linked_part == "root":
+            root.rmdir()
+            target = sandbox_tmp_path / "outside_root"
+            _write_source(target / "legacy")
+            root.symlink_to(target, target_is_directory=True)
+        elif linked_part == "task":
+            (root / "task").symlink_to(outside, target_is_directory=True)
+        elif linked_part == "result":
+            (root / "task").mkdir()
+            (root / "task" / "result").symlink_to(outside, target_is_directory=True)
+        else:
+            legacy = _write_source(root / "legacy")
+            name = "full.md" if linked_part == "markdown" else "paper_content_list.json"
+            (legacy / name).unlink()
+            (legacy / name).symlink_to(outside / name)
+        monkeypatch.setattr(server, "MINERU_OUTPUT_DIR", root)
+    
+>       assert server._iter_mineru_runtime_sources() == []
+E       AssertionError: assert [(WindowsPath...'legacy.pdf')] == []
+E         
+E         Left contains one more item: (WindowsPath('D:/graghRAG-agent/backend/tests/_sandbox_tmp/test_sources_reject_symlinks_outside_output_markdown/1b8895ea0d2c4dc3baa9618987ad5cf2/mineru/legacy'), 'legacy.pdf')
+E         Use -v to get more diff
+
+tests\test_p0_runtime_sources.py:67: AssertionError
+__________ test_sources_reject_symlinks_outside_output[content_list] __________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000019637DC6D50>
+sandbox_tmp_path = WindowsPath('D:/graghRAG-agent/backend/tests/_sandbox_tmp/test_sources_reject_symlinks_outside_output_content_list/011f4e3e382d4803ac4a59b4ed241aac')
+linked_part = 'content_list'
+
+    @pytest.mark.parametrize("linked_part", ["task", "result", "markdown", "content_list", "root"])
+    def test_sources_reject_symlinks_outside_output(monkeypatch, sandbox_tmp_path, linked_part):
+        root = sandbox_tmp_path / "mineru"
+        outside = _write_source(sandbox_tmp_path / "outside")
+        root.mkdir()
+        if linked_part == "root":
+            root.rmdir()
+            target = sandbox_tmp_path / "outside_root"
+            _write_source(target / "legacy")
+            root.symlink_to(target, target_is_directory=True)
+        elif linked_part == "task":
+            (root / "task").symlink_to(outside, target_is_directory=True)
+        elif linked_part == "result":
+            (root / "task").mkdir()
+            (root / "task" / "result").symlink_to(outside, target_is_directory=True)
+        else:
+            legacy = _write_source(root / "legacy")
+            name = "full.md" if linked_part == "markdown" else "paper_content_list.json"
+            (legacy / name).unlink()
+            (legacy / name).symlink_to(outside / name)
+        monkeypatch.setattr(server, "MINERU_OUTPUT_DIR", root)
+    
+>       assert server._iter_mineru_runtime_sources() == []
+E       AssertionError: assert [(WindowsPath...'legacy.pdf')] == []
+E         
+E         Left contains one more item: (WindowsPath('D:/graghRAG-agent/backend/tests/_sandbox_tmp/test_sources_reject_symlinks_outside_output_content_list/011f4e3e382d4803ac4a59b4ed241aac/mineru/legacy'), 'legacy.pdf')
+E         Use -v to get more diff
+
+tests\test_p0_runtime_sources.py:67: AssertionError
+______________ test_sources_reject_symlinks_outside_output[root] ______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000019637DC79B0>
+sandbox_tmp_path = WindowsPath('D:/graghRAG-agent/backend/tests/_sandbox_tmp/test_sources_reject_symlinks_outside_output_root/7e781db271314eccbfb8d17945091012')
+linked_part = 'root'
+
+    @pytest.mark.parametrize("linked_part", ["task", "result", "markdown", "content_list", "root"])
+    def test_sources_reject_symlinks_outside_output(monkeypatch, sandbox_tmp_path, linked_part):
+        root = sandbox_tmp_path / "mineru"
+        outside = _write_source(sandbox_tmp_path / "outside")
+        root.mkdir()
+        if linked_part == "root":
+            root.rmdir()
+            target = sandbox_tmp_path / "outside_root"
+            _write_source(target / "legacy")
+            root.symlink_to(target, target_is_directory=True)
+        elif linked_part == "task":
+            (root / "task").symlink_to(outside, target_is_directory=True)
+        elif linked_part == "result":
+            (root / "task").mkdir()
+            (root / "task" / "result").symlink_to(outside, target_is_directory=True)
+        else:
+            legacy = _write_source(root / "legacy")
+            name = "full.md" if linked_part == "markdown" else "paper_content_list.json"
+            (legacy / name).unlink()
+            (legacy / name).symlink_to(outside / name)
+        monkeypatch.setattr(server, "MINERU_OUTPUT_DIR", root)
+    
+>       assert server._iter_mineru_runtime_sources() == []
+E       AssertionError: assert [(WindowsPath...'legacy.pdf')] == []
+E         
+E         Left contains one more item: (WindowsPath('D:/graghRAG-agent/backend/tests/_sandbox_tmp/test_sources_reject_symlinks_outside_output_root/7e781db271314eccbfb8d17945091012/mineru/legacy'), 'legacy.pdf')
+E         Use -v to get more diff
+
+tests\test_p0_runtime_sources.py:67: AssertionError
+_______________ test_artifact_directories_do_not_count_as_files _______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000019637DC57F0>
+sandbox_tmp_path = WindowsPath('D:/graghRAG-agent/backend/tests/_sandbox_tmp/test_artifact_directories_do_not_count_as_files/ebc66178bc0449518d6ef4dabfc0c09a')
+
+    def test_artifact_directories_do_not_count_as_files(monkeypatch, sandbox_tmp_path):
+        root = sandbox_tmp_path / "mineru"
+        legacy = root / "legacy"
+        (legacy / "full.md").mkdir(parents=True)
+        (legacy / "paper_content_list.json").mkdir()
+        monkeypatch.setattr(server, "MINERU_OUTPUT_DIR", root)
+    
+>       assert server._iter_mineru_runtime_sources() == []
+E       AssertionError: assert [(WindowsPath...'legacy.pdf')] == []
+E         
+E         Left contains one more item: (WindowsPath('D:/graghRAG-agent/backend/tests/_sandbox_tmp/test_artifact_directories_do_not_count_as_files/ebc66178bc0449518d6ef4dabfc0c09a/mineru/legacy'), 'legacy.pdf')
+E         Use -v to get more diff
+
+tests\test_p0_runtime_sources.py:77: AssertionError
+============================== warnings summary ===============================
+.venv\Lib\site-packages\_pytest\config\__init__.py:1434
+  D:\graghRAG-agent\backend\.venv\Lib\site-packages\_pytest\config\__init__.py:1434: PytestConfigWarning: Unknown config option: timeout
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_p0_runtime_sources.py::test_new_published_result_and_legacy_sources_remain_ordered
+FAILED tests/test_p0_runtime_sources.py::test_unpublished_working_directories_are_never_sources
+FAILED tests/test_p0_runtime_sources.py::test_sources_reject_symlinks_outside_output[task]
+FAILED tests/test_p0_runtime_sources.py::test_sources_reject_symlinks_outside_output[markdown]
+FAILED tests/test_p0_runtime_sources.py::test_sources_reject_symlinks_outside_output[content_list]
+FAILED tests/test_p0_runtime_sources.py::test_sources_reject_symlinks_outside_output[root]
+FAILED tests/test_p0_runtime_sources.py::test_artifact_directories_do_not_count_as_files
+7 failed, 2 passed, 1 warning in 10.39s

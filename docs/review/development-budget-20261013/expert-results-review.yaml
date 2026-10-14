@@ -1,0 +1,68 @@
+contract_version: "1.0"
+expert_skill: sci-skills-statistical-reporting
+project_id: graphrag-paper-001
+paper_family: M
+stage_id: M2
+task_id: DEV-BUDGET-20261013
+task_status: COMPLETE
+inputs_reviewed:
+  - docs/review/development-budget-20261013/profile.py
+  - docs/review/development-budget-20261013/plan.md
+  - docs/review/development-budget-20261013/manifest.json
+  - docs/review/development-budget-20261013/summarize.py
+  - "docs/review/development-budget-20261013/run-01/ledger.json; SHA256 cf33709f6f66edbadca5b58127955f336765f6164de60563daa3cbf532cde5e3"
+  - "docs/review/development-budget-20261013/run-01/summary.json; SHA256 65f7fcedb07616c5431fb4d9fa14ba92acc79d78da09edcb8786e97ea1a64f0d"
+  - "docs/review/development-budget-20261013/resource-summary.json; SHA256 0be53dffa65c95622498b8296867a09215f54016f128af6a5bd6d2f0e9e9bea8"
+  - "All 29 saved request and 29 response files listed in run-01/ledger.json."
+  - "Canonical public development sources and input files identified by manifest.inputs_sha256; no Gold files."
+outputs:
+  - docs/review/development-budget-20261013/expert-results-review.yaml
+  - "Independent descriptive receipt and input-chain audit; no semantic scoring or scientific inference."
+evidence_status:
+  - "EXECUTED_LOCAL: reviewer ran read-only Python 3.12 from backend/.venv/Scripts/python.exe -B - via PowerShell here-string; every assertion passed, exit 0. Command and compact output are retained in the current task tool transcript."
+  - "VERIFIED_USER_MATERIAL: 29 distinct provider response IDs, all SUCCESS/HTTP_RESPONSE_RECEIVED, complete valid usage and finish_reason stop."
+  - "VERIFIED_USER_MATERIAL: all saved requests ask for deepseek-chat; all responses report deepseek-flash and fingerprint aeb56401ca74e127821c4f9126dcb669."
+  - "VERIFIED_USER_MATERIAL: independently recomputed input 65125, output 11221, total 76346 tokens."
+  - "VERIFIED_USER_MATERIAL: S_SCAN_ALL 27 requests, input 60984, output 10916, total 71900; diagnostic 2 requests, input 4141, output 305, total 4446."
+  - "VERIFIED_USER_MATERIAL: cumulative serialized messages 268279 bytes; max local call 5.953000000037719 seconds; recorded overall local time 96.40600000001723 seconds."
+  - "VERIFIED_USER_MATERIAL: S input cache-hit tokens 13440, diagnostic cache-hit tokens 0; cache-hit plus cache-miss equals prompt tokens for every response."
+  - "NOT_EXECUTED: reviewer did not read .env or credentials, call network, rerun model requests, score answers against Gold, or modify scientific stage."
+  - "PENDING_VERIFICATION: provider alias mapping, stable weight identity, semantic extraction completeness and any cross-arm fairness claim."
+assumptions:
+  - "Usage numbers are supplier-reported token measurements; they are not invoice amounts or monetary-cost estimates."
+  - "The 6 questions are correlated development observations nested in 2 source units, each profiled once; requests and map chunks are not independent scientific samples."
+  - "Common fingerprint is an observed provider field, not proof of identical fixed weights."
+  - "P0_NATIVE remains CORPUS_UNAVAILABLE/NOT_RUN and unmeasured; P0_PROMPT_ONLY_DIAGNOSTIC cannot substitute for native production retrieval."
+  - "A_AUTO_READ remains 6 UNRESOLVED with 0 generation calls and answer budget unmeasured."
+  - "Complete canonical input traversal does not establish semantic item completeness or lossless map/reduce aggregation."
+  - "Observed maxima on these inputs are development measurements, not a safe universal allocation or frozen shared three-arm budget."
+author_input_needed: []
+manual_actions: []
+quality_checks:
+  - "PASS: ledger order/identity matches all 29 manifest units: 2 diagnostics, 21 maps, 6 reduces."
+  - "PASS: independently checked every request/response file SHA256 and serialized messages SHA256/byte count."
+  - "PASS: every request model, temperature and declared max_tokens matches registration (deepseek-chat, 0, 2048)."
+  - "PASS: every raw provider usage object exactly matches ledger usage; nonnegative integer counts, prompt plus completion equals total, completion no greater than 2048."
+  - "PASS: every provider model, ID and fingerprint exactly matches ledger metadata; all 29 provider IDs distinct."
+  - "PASS: non-dynamic request messages exactly match prepared manifest messages."
+  - "PASS: all 21 map excerpt suffixes exactly match canonical Unicode slices specified by source/start/end, without printing or scoring answer content."
+  - "PASS: for every question, map intervals start at zero and cover its entire canonical source continuously without overlap/gaps. LCNC length 18101 codepoints, NIST length 41704."
+  - "PASS: all six reduce requests exactly match registered reduce instruction/question plus the complete ordered array of that question's raw map outputs, chunk IDs and call IDs."
+  - "PASS: independent token and byte sums equal both runtime summary and resource-summary; all known usage, no unknown-cost events in this run."
+  - "PASS: recorded times and cumulative message bytes are below registered guards; this is observed compliance, not proof of general real-time enforcement."
+  - "PASS: current code/source/input/script hashes match frozen manifest and runtime post-code hashes."
+  - "BOUNDARY: cache use was observed rather than disabled or balanced; timings and token totals do not establish a cache-controlled comparison."
+  - "BOUNDARY: independent audit certifies descriptive receipts and input chain only; no accuracy, method superiority, power, p-value or confidence-interval conclusion."
+conflicts:
+  - conflict_id: DEV-PROVIDER-IDENTITY-01
+    type: model_identity
+    claim: "The executed generator can be described as a verified deepseek-chat fixed model version."
+    source_or_locator: "29 request.model fields and 29 provider_response.model/system_fingerprint fields in run-01."
+    competing_values_or_interpretations:
+      - "Requested alias deepseek-chat in all 29 requests."
+      - "Reported model deepseek-flash in all 29 responses; one shared fingerprint."
+    recommended_resolution: "Report requested alias and returned model separately with the observed fingerprint. Do not infer why the provider resolved the alias, identify fixed weights, equate it with old historical usage, or silently relabel it as a verified deepseek-chat snapshot. No additional API call is necessary for this bounded descriptive profile."
+conflict_resolution_status: UNRESOLVED
+merge_permission: orchestrator_only
+recommended_next_action: "Root agent incorporates the independently verified descriptive totals, requested-versus-returned model identity and cache limitations into the development profile report, retaining M2_OPEN and three_baseline_budget_frozen=false."
+stage_acceptance_recommendation: PASS_CANDIDATE

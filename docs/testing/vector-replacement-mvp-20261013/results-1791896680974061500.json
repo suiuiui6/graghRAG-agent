@@ -1,0 +1,160 @@
+{
+  "python": "3.12.8 (tags/v3.12.8:2dc476b, Dec  3 2024, 19:30:04) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "versions": {
+    "lancedb": "0.40.0",
+    "numpy": "2.5.4",
+    "pyarrow": "26.0.0"
+  },
+  "probe_sha256": "9d9983bb0085cda1a4d92f535d8e74faac55b84c987df15179d0a333de355e79",
+  "checks": [
+    {
+      "name": "small_real_io_metadata",
+      "status": "PASS",
+      "seconds": 0.08143549994565547,
+      "detail": {
+        "count": 3,
+        "metadata": {
+          "n": 1,
+          "flag": true,
+          "float": 1.25,
+          "nested": {
+            "x": [
+              "中文",
+              null
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "binary64_original_and_derived_precision",
+      "status": "PASS",
+      "seconds": 0.04119470005389303,
+      "detail": {
+        "original_bytes_sha256": "59bf08d7ab9c2933d220196ab581881bdf378244fc4193b9d67ef685c5286a19",
+        "raw_binary_roundtrip_exact": true,
+        "float32_derived_loss_max": 7.247487388006846e-09,
+        "original_dtype": "<f8",
+        "float32_is_not_lossless": true
+      }
+    },
+    {
+      "name": "bounded_expr_filters",
+      "status": "PASS",
+      "seconds": 0.02670749998651445,
+      "detail": {
+        "cases": 7,
+        "unsafe_rejected": 8,
+        "typed_fields": true,
+        "chroma_differential_not_run": true
+      }
+    },
+    {
+      "name": "cosine_score_mapping",
+      "status": "PASS",
+      "seconds": 0.005656399996951222,
+      "detail": [
+        {
+          "id": "a",
+          "distance": 0.0,
+          "score": 1.0
+        },
+        {
+          "id": "b",
+          "distance": 1.0,
+          "score": 0.5
+        },
+        {
+          "id": "c",
+          "distance": 2.0,
+          "score": 0.0
+        }
+      ]
+    },
+    {
+      "name": "duplicate_native_boundary",
+      "status": "PASS",
+      "seconds": 0.15005549998022616,
+      "detail": {
+        "native_add_allows_duplicates": true,
+        "adapter_must_preserve_unique_id": true
+      }
+    },
+    {
+      "name": "failed_batch_atomicity_recovery",
+      "status": "PASS",
+      "seconds": 0.09655380004551262,
+      "detail": {
+        "errors": [
+          "ValueError: lance error: LanceError(Arrow): Cast error: Cannot cast to FixedSizeList(3): value at index 1 has length 2, C:\\Users\\runneradmin\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\lance-datafusion-13.0.0\\src\\utils.rs:51:31",
+          "ArrowInvalid: Could not convert 'not-an-int' with type str: tried to convert to int64"
+        ],
+        "count_stable": 3
+      }
+    },
+    {
+      "name": "invalid_query_dimension",
+      "status": "PASS",
+      "seconds": 0.017656599986366928,
+      "detail": {
+        "dimension_rejected": "ValueError: There is no vector column in the data. Please specify the vector column name for vector search"
+      }
+    },
+    {
+      "name": "new_process_persistence",
+      "status": "PASS",
+      "seconds": 1.4247718999395147,
+      "detail": {
+        "count": 3,
+        "ids": [
+          "a",
+          "b",
+          "c"
+        ]
+      }
+    },
+    {
+      "name": "cross_process_visibility",
+      "status": "PASS",
+      "seconds": 1.4538234999636188,
+      "detail": {
+        "existing_connection_observes_child_commit": true,
+        "read_consistency_interval_seconds": 0
+      }
+    },
+    {
+      "name": "deletion_clear_restore",
+      "status": "PASS",
+      "seconds": 0.16983709996566176,
+      "detail": {
+        "id_source_clear_restore": true
+      }
+    },
+    {
+      "name": "concurrent_append",
+      "status": "PASS",
+      "seconds": 0.608703300007619,
+      "detail": {
+        "independent_connections": 12,
+        "threads": 4,
+        "count": 15,
+        "not_proof_of_multi_process_or_kill_atomicity": true
+      }
+    },
+    {
+      "name": "synthetic_5000x512",
+      "status": "PASS",
+      "seconds": 0.5384606999577954,
+      "detail": {
+        "rows": 5000,
+        "dimensions": 512,
+        "write_seconds": 0.026996799977496266,
+        "queries": 30,
+        "query_ms_p50": 12.152699928265065,
+        "query_ms_p95": 17.744414962362494,
+        "exact_scan_no_ann": true
+      }
+    }
+  ]
+}

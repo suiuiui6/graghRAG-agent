@@ -1,0 +1,43 @@
+........................................................................ [ 37%]
+............................F.FFF.............F......................... [ 75%]
+................................................                         [100%]
+================================== FAILURES ===================================
+_______________________ TestCatalog.test_build_catalog ________________________
+D:\graghRAG-agent\backend\tests\test_phase2.py:190: in test_build_catalog
+    assert result["summary"]["total_entities"] >= 3
+E   assert 0 >= 3
+______________________ TestCatalog.test_search_entities _______________________
+D:\graghRAG-agent\backend\tests\test_phase2.py:203: in test_search_entities
+    assert any("Ԥ��" in r.get("label", "") for r in results)
+E   assert False
+E    +  where False = any(<generator object TestCatalog.test_search_entities.<locals>.<genexpr> at 0x000001C21686EC00>)
+___________________ TestCatalog.test_list_entities_by_type ____________________
+D:\graghRAG-agent\backend\tests\test_phase2.py:209: in test_list_entities_by_type
+    assert result["total"] >= 1
+E   assert 0 >= 1
+_____________________ TestKgExporter.test_export_kg_json ______________________
+D:\graghRAG-agent\backend\tests\test_phase2.py:222: in test_export_kg_json
+    assert result["counts"]["nodes"] >= 3
+E   assert 0 >= 3
+___________________ TestQualityMonitor.test_compute_quality ___________________
+D:\graghRAG-agent\backend\tests\test_phase2.py:331: in test_compute_quality
+    assert report.extraction_quality["grounding_rate"] > 0
+E   assert 0.0 > 0
+---------------------------- Captured stdout call -----------------------------
+2026-10-12 17:58:00 [debug    ] event_published                event_id=f61bb2379fa0 event_type=quality.alert
+2026-10-12 17:58:00 [debug    ] event_published                event_id=96c9f317745d event_type=quality.alert
+2026-10-12 17:58:00 [info     ] quality_report_generated       alerts=2 score=15.0
+============================== warnings summary ===============================
+.venv\Lib\site-packages\_pytest\config\__init__.py:1434
+  D:\graghRAG-agent\backend\.venv\Lib\site-packages\_pytest\config\__init__.py:1434: PytestConfigWarning: Unknown config option: timeout
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_phase2.py::TestCatalog::test_build_catalog - assert 0 >= 3
+FAILED tests/test_phase2.py::TestCatalog::test_search_entities - assert False
+FAILED tests/test_phase2.py::TestCatalog::test_list_entities_by_type - assert...
+FAILED tests/test_phase2.py::TestKgExporter::test_export_kg_json - assert 0 >= 3
+FAILED tests/test_phase2.py::TestQualityMonitor::test_compute_quality - asser...
+5 failed, 187 passed, 1 warning in 39.00s

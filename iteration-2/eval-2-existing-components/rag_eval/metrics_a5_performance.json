@@ -1,0 +1,364 @@
+{
+  "_meta": {
+    "raw_runs_path": "D:\\graghRAG-agent\\iteration-2\\eval-2-existing-components\\rag_eval\\raw_runs.jsonl",
+    "n_runs": 50,
+    "generated_at": "2026-07-04T15:22:02.805192+00:00",
+    "pricing_usd_per_m_input": 0.27,
+    "pricing_usd_per_m_output": 1.1,
+    "pricing_note": "DeepSeek-chat (V3) 2025 public price, cache-miss conservative upper bound. Cache-hit input is $0.07/M which would lower costs by ~75% on hits.",
+    "percentile_method": "nearest-rank (rounding up)"
+  },
+  "global": {
+    "total_runs": 50,
+    "total_latency_ms": 83730,
+    "total_input_tokens": 50808,
+    "total_output_tokens": 2755,
+    "total_tokens": 53563,
+    "total_tool_calls": 201,
+    "total_cost_usd": 0.016748660000000002,
+    "mean_cost_usd_per_question": 0.00033497320000000003
+  },
+  "latency_ms": {
+    "global": {
+      "n": 50,
+      "min": 39,
+      "max": 4891,
+      "mean": 1674.6,
+      "median": 1606.5,
+      "p50": 1590,
+      "p75": 2303,
+      "p90": 2951,
+      "p95": 3274,
+      "p99": 4891,
+      "stdev": 1077.8637390690903
+    },
+    "by_category": {
+      "T1": {
+        "mean": 1625.3333333333333,
+        "median": 1514.5,
+        "p95": 2435,
+        "n": 12
+      },
+      "T2": {
+        "mean": 3308.625,
+        "median": 3072.5,
+        "p95": 4891,
+        "n": 8
+      },
+      "T3": {
+        "mean": 1737.5,
+        "median": 1673.5,
+        "p95": 2708,
+        "n": 8
+      },
+      "T4": {
+        "mean": 2230.5,
+        "median": 2099.5,
+        "p95": 2784,
+        "n": 4
+      },
+      "T5": {
+        "mean": 300.8,
+        "median": 55.0,
+        "p95": 1504,
+        "n": 10
+      },
+      "T6": {
+        "mean": 1966.6,
+        "median": 1696,
+        "p95": 2734,
+        "n": 5
+      },
+      "T7": {
+        "mean": 698.0,
+        "median": 75,
+        "p95": 1954,
+        "n": 3
+      }
+    },
+    "by_tool_call_bucket": {
+      "4-10": {
+        "n": 39,
+        "mean": 1777.0,
+        "median": 1623
+      },
+      "1-3": {
+        "n": 11,
+        "mean": 1311.5454545454545,
+        "median": 1522
+      }
+    }
+  },
+  "tokens": {
+    "input": {
+      "n": 50,
+      "min": 0,
+      "max": 2102,
+      "mean": 1016.16,
+      "median": 1150.5,
+      "p50": 1147,
+      "p75": 1310,
+      "p90": 1782,
+      "p95": 1818,
+      "p99": 2102,
+      "stdev": 608.217407182662
+    },
+    "output": {
+      "n": 50,
+      "min": 0,
+      "max": 311,
+      "mean": 55.1,
+      "median": 25.0,
+      "p50": 25,
+      "p75": 65,
+      "p90": 127,
+      "p95": 273,
+      "p99": 311,
+      "stdev": 75.4122669066512
+    },
+    "total": {
+      "n": 50,
+      "min": 0,
+      "max": 2183,
+      "mean": 1071.26,
+      "median": 1187.5,
+      "p50": 1179,
+      "p75": 1523,
+      "p90": 1826,
+      "p95": 2088,
+      "p99": 2183,
+      "stdev": 647.4371879958704
+    },
+    "input_over_output_ratio": {
+      "n": 50,
+      "min": 0.0,
+      "max": 179.71428571428572,
+      "mean": 33.72931907979524,
+      "median": 24.569148936170215,
+      "p50": 23.638297872340427,
+      "p75": 46.16,
+      "p90": 68.21052631578948,
+      "p95": 147.0,
+      "p99": 179.71428571428572,
+      "stdev": 40.01494234975989
+    }
+  },
+  "tokens_total_by_category": {
+    "T1": {
+      "mean": 1287.4166666666667,
+      "median": 1187.5,
+      "p95": 1826,
+      "n": 12
+    },
+    "T2": {
+      "mean": 1673.0,
+      "median": 1594.0,
+      "p95": 2088,
+      "n": 8
+    },
+    "T3": {
+      "mean": 1187.375,
+      "median": 1258.5,
+      "p95": 1369,
+      "n": 8
+    },
+    "T4": {
+      "mean": 1700.5,
+      "median": 1693.0,
+      "p95": 2183,
+      "n": 4
+    },
+    "T5": {
+      "mean": 114.9,
+      "median": 0.0,
+      "p95": 1149,
+      "n": 10
+    },
+    "T6": {
+      "mean": 1233.4,
+      "median": 1265,
+      "p95": 1718,
+      "n": 5
+    },
+    "T7": {
+      "mean": 371.0,
+      "median": 0,
+      "p95": 1113,
+      "n": 3
+    }
+  },
+  "tool_calls": {
+    "distribution": {
+      "n": 50,
+      "min": 3,
+      "max": 5,
+      "mean": 4.02,
+      "median": 4.0,
+      "p50": 4,
+      "p75": 4,
+      "p90": 5,
+      "p95": 5,
+      "p99": 5,
+      "stdev": 0.6779380502671317
+    },
+    "bucket_counts": {
+      "4-10": 39,
+      "1-3": 11
+    }
+  },
+  "cost": {
+    "total_usd": 0.016748660000000002,
+    "per_question_mean_usd": 0.00033497320000000003,
+    "top5_most_expensive": [
+      {
+        "qid": "Q20",
+        "category": "T2",
+        "input": 1782,
+        "output": 306,
+        "total": 2088,
+        "cost_usd": 0.00081774,
+        "latency_ms": 4891,
+        "num_tool_calls": 5
+      },
+      {
+        "qid": "Q13",
+        "category": "T2",
+        "input": 1310,
+        "output": 311,
+        "total": 1621,
+        "cost_usd": 0.0006958000000000001,
+        "latency_ms": 4076,
+        "num_tool_calls": 4
+      },
+      {
+        "qid": "Q32",
+        "category": "T4",
+        "input": 2102,
+        "output": 81,
+        "total": 2183,
+        "cost_usd": 0.0006566400000000001,
+        "latency_ms": 2108,
+        "num_tool_calls": 5
+      },
+      {
+        "qid": "Q14",
+        "category": "T2",
+        "input": 1294,
+        "output": 273,
+        "total": 1567,
+        "cost_usd": 0.00064968,
+        "latency_ms": 3274,
+        "num_tool_calls": 4
+      },
+      {
+        "qid": "Q15",
+        "category": "T2",
+        "input": 1818,
+        "output": 143,
+        "total": 1961,
+        "cost_usd": 0.00064816,
+        "latency_ms": 2829,
+        "num_tool_calls": 5
+      }
+    ],
+    "by_category": {
+      "T1": {
+        "n": 12,
+        "mean_usd": 0.00037416250000000005,
+        "total_usd": 0.00448995
+      },
+      "T2": {
+        "n": 8,
+        "mean_usd": 0.00060909875,
+        "total_usd": 0.00487279
+      },
+      "T3": {
+        "n": 8,
+        "mean_usd": 0.00034154875000000004,
+        "total_usd": 0.0027323900000000003
+      },
+      "T4": {
+        "n": 4,
+        "mean_usd": 0.0005294775,
+        "total_usd": 0.00211791
+      },
+      "T5": {
+        "n": 10,
+        "mean_usd": 3.1604000000000004e-05,
+        "total_usd": 0.00031604000000000007
+      },
+      "T6": {
+        "n": 5,
+        "mean_usd": 0.000376842,
+        "total_usd": 0.00188421
+      },
+      "T7": {
+        "n": 3,
+        "mean_usd": 0.00011179,
+        "total_usd": 0.00033537
+      }
+    },
+    "monthly_projection": {
+      "per_question_mean_usd": 0.00033497320000000003,
+      "daily_1000_questions_usd": 0.3349732,
+      "monthly_1000_per_day_usd": 10.049196,
+      "daily_10000_questions_usd": 3.3497320000000004,
+      "monthly_10000_per_day_usd": 100.49196
+    }
+  },
+  "outliers_p95": {
+    "thresholds": {
+      "latency_ms_p95": 3274,
+      "total_tokens_p95": 2088,
+      "tool_calls_p95": 5
+    },
+    "latency_over_p95": [
+      {
+        "qid": "Q13",
+        "category": "T2",
+        "latency_ms": 4076,
+        "input": 1310,
+        "output": 311,
+        "total": 1621,
+        "num_tool_calls": 4
+      },
+      {
+        "qid": "Q20",
+        "category": "T2",
+        "latency_ms": 4891,
+        "input": 1782,
+        "output": 306,
+        "total": 2088,
+        "num_tool_calls": 5
+      }
+    ],
+    "tokens_over_p95": [
+      {
+        "qid": "Q31",
+        "category": "T4",
+        "latency_ms": 1939,
+        "input": 2052,
+        "output": 60,
+        "total": 2112,
+        "num_tool_calls": 5
+      },
+      {
+        "qid": "Q32",
+        "category": "T4",
+        "latency_ms": 2108,
+        "input": 2102,
+        "output": 81,
+        "total": 2183,
+        "num_tool_calls": 5
+      }
+    ],
+    "tool_calls_over_p95": [],
+    "triple_outlier_qids": []
+  },
+  "correlations_pearson": {
+    "pearson_calls_vs_latency": 0.3306141877316757,
+    "pearson_calls_vs_total_tokens": 0.49210258305062826,
+    "pearson_input_vs_output_tokens": 0.4748450655287903,
+    "pearson_latency_vs_total_tokens": 0.8145256185735235
+  }
+}

@@ -1,0 +1,1309 @@
+{
+  "record_kind": "READ_ONLY_ENGINEERING_IDENTITY_AUDIT_NOT_MODEL_EXPERIMENT",
+  "recorded_on": "2026-10-08",
+  "scientific_stage": "M2_OPEN",
+  "academic_stage_advanced": false,
+  "status": "PARTIAL_RUNTIME_AND_CONTEXT_BLOCKED",
+  "runtime": {
+    "observed_utc": "2026-10-08T02:31:16.7181879Z",
+    "processes": [
+      {
+        "pid": 1772,
+        "parent_pid": 43352,
+        "executable": "C:\\Users\\14156\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "created_utc": "2026-10-08T00:26:57.9220020Z",
+        "entry": "app.main:app",
+        "commandline_sha256": "11af63409693babe72ef93afff29935236e6e7d769d8086d13a0c71ec5387ee5"
+      },
+      {
+        "pid": 43352,
+        "parent_pid": 21284,
+        "executable": "D:\\puzzlegame\\Engine-Vue-master-mature\\services\\ocr-provider\\.venv\\Scripts\\python.exe",
+        "created_utc": "2026-10-08T00:26:57.8206900Z",
+        "entry": "app.main:app",
+        "commandline_sha256": "b8a79cdae8bd15b26b3fd7fa910ba4316eda97609476db8a8930d31f8caa4dfd"
+      }
+    ],
+    "raw_commandline_exported": false,
+    "netstat": {
+      "observed_utc": "2026-10-08T02:30:38.3810900Z",
+      "exit_code": 0,
+      "listeners": [
+        {
+          "address": "127.0.0.1",
+          "port": 8001,
+          "pid": 1772
+        }
+      ],
+      "port_8000": "NO_LISTENER_OBSERVED"
+    },
+    "attribution": "FOREIGN_OCR_PROJECT_PROCESS_CHAIN_NOT_GRAPHRAG_RUNTIME",
+    "project_loaded_identity": "UNKNOWN",
+    "loaded_model_prompt_configuration": "UNKNOWN",
+    "fallback_note": "Sandbox Get-NetTCPConnection/CIM was unavailable; empty output was not treated as absence. Successful netstat and approved read-only CIM used instead."
+  },
+  "readiness_snapshot": {
+    "status": "BLOCKED_NOT_EXECUTED",
+    "api_execution": "NOT_EXECUTED",
+    "scientific_stage": "M2_OPEN",
+    "gold_version": "2.0",
+    "gold_sha256": "1b5aa18287aa6f39160acf580082a460b054b77b7b29e75bc9e566b8280a3619",
+    "human_certified": false,
+    "arms": [
+      "B0_NATIVE",
+      "C_NATIVE_CONTEXT",
+      "C_AUTO_SCOPE",
+      "C_ORACLE_SCOPE"
+    ],
+    "git": {
+      "commit": "46b202c3e400741fd569f024412c0745f224a538",
+      "tracked_diff_sha256": "52d73eac118e6032b1e8ec4ccdcf34fad064a472989657e9af75005a90b7ea12",
+      "status_inventory_sha256": "2d4599ba82c77294e13e363245915371a8f3f4c376a423a17badc4ae74af3127",
+      "untracked_content_in_diff_hash": false,
+      "loaded_runtime_identity": "UNKNOWN"
+    },
+    "adapter_sha256": {
+      "backend/research/gold_v2.py": "5e430411fcb530edd8f6aa077316b528a0c59b1f24b3b0c1800f3be56aa4579f",
+      "backend/research/scope_v2.py": "5f02c5a0cce6ddb73778e7a64331277382e95549036afef77e91652ac7d67848",
+      "backend/research/source_mapping_v2.py": "23efc8a11c7b3e630e068d73ffd5723b82f8d2d21548e621022c7994835bbfc6",
+      "backend/research/local_scope_v2.py": "bc0e994fa953622b1c897d96a61139c8db2b110b4d804d3c5f25fbb9e5af8bbd"
+    },
+    "production_integrity": {
+      "all_match_freeze": true,
+      "files": {
+        "backend/routes/rag_query.py": {
+          "expected": "0f4f6f9aa490bff77ec6a444638f02be310efe3cc43fb391371c9ac4d0e0635f",
+          "actual": "0f4f6f9aa490bff77ec6a444638f02be310efe3cc43fb391371c9ac4d0e0635f",
+          "match": true
+        },
+        "backend/models.py": {
+          "expected": "b599c0427134950432ae7e95052485ac7236976afa1b0adf58a16c1906f7143b",
+          "actual": "b599c0427134950432ae7e95052485ac7236976afa1b0adf58a16c1906f7143b",
+          "match": true
+        },
+        "backend/retrieval.py": {
+          "expected": "7e1332a7bde6aff1d8d270397003567ccd72761f8a5b7fd25fd65851203f3e0b",
+          "actual": "7e1332a7bde6aff1d8d270397003567ccd72761f8a5b7fd25fd65851203f3e0b",
+          "match": true
+        },
+        "backend/generator.py": {
+          "expected": "18a35058c95e89934b92d1c3a7229271fd2e5fca9d6ecb85abb9815cca7de9b1",
+          "actual": "18a35058c95e89934b92d1c3a7229271fd2e5fca9d6ecb85abb9815cca7de9b1",
+          "match": true
+        },
+        "backend/prompt_builder.py": {
+          "expected": "f6a62fe8529b8909e7a1c2a59f097d8659aea64020547f04087837bc2e529b7c",
+          "actual": "f6a62fe8529b8909e7a1c2a59f097d8659aea64020547f04087837bc2e529b7c",
+          "match": true
+        },
+        "backend/config.py": {
+          "expected": "f0cf031aa0a8a3282199883f26a29816bf358d4a879a24085f313c3b9fb58e8c",
+          "actual": "f0cf031aa0a8a3282199883f26a29816bf358d4a879a24085f313c3b9fb58e8c",
+          "match": true
+        },
+        "backend/source_control.py": {
+          "expected": "b92d65ad4604207c0bdc65670197a3c63c37c668abacb8d6b38451d025001c25",
+          "actual": "b92d65ad4604207c0bdc65670197a3c63c37c668abacb8d6b38451d025001c25",
+          "match": true
+        },
+        "backend/evidence_trace.py": {
+          "expected": "07cc6a3cce87c788a9639510a6540639f6b6d57e93f639b10a2593254b18bf65",
+          "actual": "07cc6a3cce87c788a9639510a6540639f6b6d57e93f639b10a2593254b18bf65",
+          "match": true
+        },
+        "backend/vector_store.py": {
+          "expected": "18d8fc6ff90823186034f5f10c876981a0da814bba5bb57c9299400eec0a6c82",
+          "actual": "18d8fc6ff90823186034f5f10c876981a0da814bba5bb57c9299400eec0a6c82",
+          "match": true
+        },
+        "backend/index_registry.py": {
+          "expected": "129fd58ffc584ae9f21cb4587e91c8b1cd8174b71c3948d672c197d0592ef066",
+          "actual": "129fd58ffc584ae9f21cb4587e91c8b1cd8174b71c3948d672c197d0592ef066",
+          "match": true
+        },
+        "backend/doc_processor.py": {
+          "expected": "a9fb7bc4d3c3a5fd64a0e568bc3b8f6dbe05f154098495d2ce7de3016cf91306",
+          "actual": "a9fb7bc4d3c3a5fd64a0e568bc3b8f6dbe05f154098495d2ce7de3016cf91306",
+          "match": true
+        },
+        "backend/conversation.py": {
+          "expected": "002365d260d315f3dca00416b709e3f11a84a069d99048d4d45e61f4f9737270",
+          "actual": "002365d260d315f3dca00416b709e3f11a84a069d99048d4d45e61f4f9737270",
+          "match": true
+        },
+        "backend/embedding.py": {
+          "expected": "52b15ad92c396fa9f8b2d4d451ab255906feb330e56e7e3ff4db00c2859e780a",
+          "actual": "52b15ad92c396fa9f8b2d4d451ab255906feb330e56e7e3ff4db00c2859e780a",
+          "match": true
+        },
+        "backend/uv.lock": {
+          "expected": "31caa7407226490b13e1853875eb1ebbe8f895980da39f2b19f58c79f11c14a3",
+          "actual": "31caa7407226490b13e1853875eb1ebbe8f895980da39f2b19f58c79f11c14a3",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/gold.yaml": {
+          "expected": "e732d568715d2b750d3c9ced4afa88a31df66f2db65c869ff4c2536d8e05d5f2",
+          "actual": "e732d568715d2b750d3c9ced4afa88a31df66f2db65c869ff4c2536d8e05d5f2",
+          "match": true
+        }
+      },
+      "interpretation": "On-disk hash comparison only, not loaded runtime identity."
+    },
+    "source_integrity": {
+      "all_match_freeze": true,
+      "files": {
+        "backend/output/mineru/ingest_2/full.md": {
+          "expected": "f0e2b044ec0f8be55b1c00d9479830f6768a5da9970111a7db0353d59097a0d6",
+          "actual": "f0e2b044ec0f8be55b1c00d9479830f6768a5da9970111a7db0353d59097a0d6",
+          "match": true
+        },
+        "backend/output/mineru/ingest_f/full.md": {
+          "expected": "ab7cdd99e8cd85ddd61e3d65e4e747685a25a62d22f68bed3e2d79d015e90623",
+          "actual": "ab7cdd99e8cd85ddd61e3d65e4e747685a25a62d22f68bed3e2d79d015e90623",
+          "match": true
+        },
+        "integration/Agentic-RAG-Architecture.md": {
+          "expected": "d0c64333bf10c761fef29bc1d9e002656f3968e720e176e92b8a18eb4a1e8e72",
+          "actual": "d0c64333bf10c761fef29bc1d9e002656f3968e720e176e92b8a18eb4a1e8e72",
+          "match": true
+        }
+      },
+      "interpretation": "On-disk hash comparison only, not loaded runtime identity."
+    },
+    "historical_integrity": {
+      "all_match_freeze": true,
+      "files": {
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/000-metadata.json": {
+          "expected": "968701e457e81d0aa0a67d38629a480460ffa46668ffcb8c0dc946ec9f58627e",
+          "actual": "968701e457e81d0aa0a67d38629a480460ffa46668ffcb8c0dc946ec9f58627e",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/000-response.json": {
+          "expected": "fd6840ce07781c502e59b265a1395c709a8d0bc2020b2bdea7d33fb2853c95fa",
+          "actual": "fd6840ce07781c502e59b265a1395c709a8d0bc2020b2bdea7d33fb2853c95fa",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/001-metadata.json": {
+          "expected": "c58d6c0d446e9a6ec08423a822b609837de3171ce3ff8b9aa2a1eb8e61345e1e",
+          "actual": "c58d6c0d446e9a6ec08423a822b609837de3171ce3ff8b9aa2a1eb8e61345e1e",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/001-response.json": {
+          "expected": "9e43833e108e7753d658d0c044cdda6591b7ddf60be1bfd616b9bd2da667f6dc",
+          "actual": "9e43833e108e7753d658d0c044cdda6591b7ddf60be1bfd616b9bd2da667f6dc",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/002-metadata.json": {
+          "expected": "2076447bfa89ebc00547dcb5a8dd7471e35cc80c2e9e27e8c49249b7fe639c4d",
+          "actual": "2076447bfa89ebc00547dcb5a8dd7471e35cc80c2e9e27e8c49249b7fe639c4d",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/002-response.json": {
+          "expected": "751c71e5d4b467d3251febe55c633d44f5b91babb4fb8300d3d827c0c2436768",
+          "actual": "751c71e5d4b467d3251febe55c633d44f5b91babb4fb8300d3d827c0c2436768",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/003-metadata.json": {
+          "expected": "59ffcfa8c09a90955c8424ef1737d67f49c222789bcdfa7f12f3a945dbef85fc",
+          "actual": "59ffcfa8c09a90955c8424ef1737d67f49c222789bcdfa7f12f3a945dbef85fc",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/003-response.json": {
+          "expected": "b65df1fade287fa5c7213695ddde469e1c5309bfd1b3d350db09a037c1467d7c",
+          "actual": "b65df1fade287fa5c7213695ddde469e1c5309bfd1b3d350db09a037c1467d7c",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/004-metadata.json": {
+          "expected": "b921afbb2ab387699f9cbe90ea2eee11a946ceddaaf4da98c23b96a94f5a2edc",
+          "actual": "b921afbb2ab387699f9cbe90ea2eee11a946ceddaaf4da98c23b96a94f5a2edc",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/004-response.json": {
+          "expected": "91aeabc16d2e20c65bdf0bb961caffe7d4d5db2c84ae8e4e947d7525689524ba",
+          "actual": "91aeabc16d2e20c65bdf0bb961caffe7d4d5db2c84ae8e4e947d7525689524ba",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/005-metadata.json": {
+          "expected": "dd12cb55207180507189eb33d5bd819f891044d17a6104cd229e4dce3e658528",
+          "actual": "dd12cb55207180507189eb33d5bd819f891044d17a6104cd229e4dce3e658528",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/005-response.json": {
+          "expected": "470b2feb1e1a7e289bc983fb71591181da4c518a9e9a2e23b202348e8587ec02",
+          "actual": "470b2feb1e1a7e289bc983fb71591181da4c518a9e9a2e23b202348e8587ec02",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/006-metadata.json": {
+          "expected": "5315dc8ae62de91d449d7a9a50577f8ae41c39eb53cd9b268b821006e0ac0bcc",
+          "actual": "5315dc8ae62de91d449d7a9a50577f8ae41c39eb53cd9b268b821006e0ac0bcc",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/006-response.json": {
+          "expected": "bad724591ae56152d45fcec83fa8b2f5597dd0e72b42fcc138eee5af2a473bcb",
+          "actual": "bad724591ae56152d45fcec83fa8b2f5597dd0e72b42fcc138eee5af2a473bcb",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/007-metadata.json": {
+          "expected": "a1ff7aa22e5db9e818104149f4e4d6ab88ecd0a8f7704c1ed9ad35f755fc51d9",
+          "actual": "a1ff7aa22e5db9e818104149f4e4d6ab88ecd0a8f7704c1ed9ad35f755fc51d9",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/007-response.json": {
+          "expected": "d07ad71937d33b93fa55ffe7d25cb47e1c95b4a96f20d74b710d959f613d1a6e",
+          "actual": "d07ad71937d33b93fa55ffe7d25cb47e1c95b4a96f20d74b710d959f613d1a6e",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/008-metadata.json": {
+          "expected": "7f03b8ba321a3a6d296ed0674b77342714d5eaa7b54b85a542201c75544ffb5e",
+          "actual": "7f03b8ba321a3a6d296ed0674b77342714d5eaa7b54b85a542201c75544ffb5e",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/008-response.json": {
+          "expected": "11ff83861f885ac1a9267416100daae0de5dd89efaab61de56190537551187c3",
+          "actual": "11ff83861f885ac1a9267416100daae0de5dd89efaab61de56190537551187c3",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/009-metadata.json": {
+          "expected": "be410bc9bad5ebcc8f5d9091ac0b2e042fa3a7995eb2531bebd0e0ab4dd1b971",
+          "actual": "be410bc9bad5ebcc8f5d9091ac0b2e042fa3a7995eb2531bebd0e0ab4dd1b971",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/009-response.json": {
+          "expected": "7ca42016263134ea8afd1729b468f0dd81d3f5f269036256256e292bcb34ba3c",
+          "actual": "7ca42016263134ea8afd1729b468f0dd81d3f5f269036256256e292bcb34ba3c",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/010-metadata.json": {
+          "expected": "2e2617da1c7c4de4361444497bdaa910df23e140c0a15bfeac6da5ecc99d4257",
+          "actual": "2e2617da1c7c4de4361444497bdaa910df23e140c0a15bfeac6da5ecc99d4257",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/010-response.json": {
+          "expected": "ab7d06fcda27040a5cec01ba76b96eb348190981cd2e5d4c36e54497374a0d1c",
+          "actual": "ab7d06fcda27040a5cec01ba76b96eb348190981cd2e5d4c36e54497374a0d1c",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/011-metadata.json": {
+          "expected": "5481fd4b4fc3fc342a063634b9223135855c671f5c7f82c292eee3f1690ba7a0",
+          "actual": "5481fd4b4fc3fc342a063634b9223135855c671f5c7f82c292eee3f1690ba7a0",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/011-response.json": {
+          "expected": "c27d4836acfde979c9ebd871033024a17b023570248d2f9839b7e3a0f49f1538",
+          "actual": "c27d4836acfde979c9ebd871033024a17b023570248d2f9839b7e3a0f49f1538",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/012-metadata.json": {
+          "expected": "caeb280a5af6854e735ca660aa0f96de0da838be3e18bf3be50277d27a6f1c31",
+          "actual": "caeb280a5af6854e735ca660aa0f96de0da838be3e18bf3be50277d27a6f1c31",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/012-response.json": {
+          "expected": "b88668c6fc9a87fbfa3e9f287495d054a1d5076b48dc72c7efd0cc10777432ff",
+          "actual": "b88668c6fc9a87fbfa3e9f287495d054a1d5076b48dc72c7efd0cc10777432ff",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/013-metadata.json": {
+          "expected": "3b9b784bb37593106cc85fb46a989731775638ece40cb4d29cfe741b479602d0",
+          "actual": "3b9b784bb37593106cc85fb46a989731775638ece40cb4d29cfe741b479602d0",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/013-response.json": {
+          "expected": "c7ea3c9970434b7af8bb177337393892c14607a97dffbabf8a01a99e7fddf5a7",
+          "actual": "c7ea3c9970434b7af8bb177337393892c14607a97dffbabf8a01a99e7fddf5a7",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/014-metadata.json": {
+          "expected": "1f3ffa46cc5cc6ff2db61710a360e16d5d0f91dc3c5009f64b6e3c923deeedf1",
+          "actual": "1f3ffa46cc5cc6ff2db61710a360e16d5d0f91dc3c5009f64b6e3c923deeedf1",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/014-response.json": {
+          "expected": "42ce8671cc11620372cc50504d69120daffd08ce27e32784e992dcdab014d5eb",
+          "actual": "42ce8671cc11620372cc50504d69120daffd08ce27e32784e992dcdab014d5eb",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/015-metadata.json": {
+          "expected": "a62965d80a3c7979168f11a7a73d589233050b650bddbb1a685e44731e458791",
+          "actual": "a62965d80a3c7979168f11a7a73d589233050b650bddbb1a685e44731e458791",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/015-response.json": {
+          "expected": "f16d8d412b94be3e4751e991eb22c9dcb09ef05806e64b1276bd986f1c4d8ea9",
+          "actual": "f16d8d412b94be3e4751e991eb22c9dcb09ef05806e64b1276bd986f1c4d8ea9",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/016-metadata.json": {
+          "expected": "097c60fede976ed90e1e326439f91c6efbbc05fa0a2eebbe0e2af1cf8f8e656b",
+          "actual": "097c60fede976ed90e1e326439f91c6efbbc05fa0a2eebbe0e2af1cf8f8e656b",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/016-response.json": {
+          "expected": "dc1583adea62cb03325f9246d58ffd6fe2b587897c91e7b04310d521e823e527",
+          "actual": "dc1583adea62cb03325f9246d58ffd6fe2b587897c91e7b04310d521e823e527",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/017-metadata.json": {
+          "expected": "c2a9f441ec3c2eaf3d301a4b94fa06579fa92a8ce712c20a7bf2cfddb27b0ef6",
+          "actual": "c2a9f441ec3c2eaf3d301a4b94fa06579fa92a8ce712c20a7bf2cfddb27b0ef6",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/017-response.json": {
+          "expected": "bc7b45d40830e8ad860935b6e072add34be5a8bdc91b84c4199cc2273900aa35",
+          "actual": "bc7b45d40830e8ad860935b6e072add34be5a8bdc91b84c4199cc2273900aa35",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/018-metadata.json": {
+          "expected": "ab73f4575147a3bec2409caa82792c1079f520b3d6a529c8be3ff722617d1865",
+          "actual": "ab73f4575147a3bec2409caa82792c1079f520b3d6a529c8be3ff722617d1865",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/018-response.json": {
+          "expected": "564a65fc555de3d57fee3a91e56a9d332e42801b6a47e5c96b74ab7836a30c4c",
+          "actual": "564a65fc555de3d57fee3a91e56a9d332e42801b6a47e5c96b74ab7836a30c4c",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/019-metadata.json": {
+          "expected": "3ca99aa7e11554c88f2626b5cc46218de2bb0b0e9d7a3ddf04e6dd603f52086b",
+          "actual": "3ca99aa7e11554c88f2626b5cc46218de2bb0b0e9d7a3ddf04e6dd603f52086b",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/019-response.json": {
+          "expected": "53126f55d560f3026aa17d041c7e296e2a410f30c4629f060db5bb031ae8654e",
+          "actual": "53126f55d560f3026aa17d041c7e296e2a410f30c4629f060db5bb031ae8654e",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/020-metadata.json": {
+          "expected": "2bd5b67398d59ad594cd7c81e072f30028e55298666524989e7168ab0a0034c7",
+          "actual": "2bd5b67398d59ad594cd7c81e072f30028e55298666524989e7168ab0a0034c7",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/020-response.json": {
+          "expected": "31afcad2de3c452e97a9ba65850fec0c2ca5e3a9c0bee23c5d23b004ff96b94e",
+          "actual": "31afcad2de3c452e97a9ba65850fec0c2ca5e3a9c0bee23c5d23b004ff96b94e",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/021-metadata.json": {
+          "expected": "03a44f55a8f07efb1064b9fbeb3d8ec9c1730fed78215d1000036f289cd6808a",
+          "actual": "03a44f55a8f07efb1064b9fbeb3d8ec9c1730fed78215d1000036f289cd6808a",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/021-response.json": {
+          "expected": "1a286fe89001ba7d82d05f82729e003ad33cb6c0b6e6043ea619b99dccce3ac9",
+          "actual": "1a286fe89001ba7d82d05f82729e003ad33cb6c0b6e6043ea619b99dccce3ac9",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/022-metadata.json": {
+          "expected": "44db4acc2cb56fc5cd92388f53419873fdcbd16e6ee265b6754c75a3ea3936a8",
+          "actual": "44db4acc2cb56fc5cd92388f53419873fdcbd16e6ee265b6754c75a3ea3936a8",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/022-response.json": {
+          "expected": "8cf06d73af898369948b25691f48587d52eab25b8bb7c89542c071cf1e44085d",
+          "actual": "8cf06d73af898369948b25691f48587d52eab25b8bb7c89542c071cf1e44085d",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/023-metadata.json": {
+          "expected": "db19da24dd088849f1102965e1978225ddf03a17779e92f851f8519566d597d9",
+          "actual": "db19da24dd088849f1102965e1978225ddf03a17779e92f851f8519566d597d9",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/023-response.json": {
+          "expected": "7612bf4e7aebb94d50d11653b6fa8b95518107dd0969803adeee299ebcd9b0e8",
+          "actual": "7612bf4e7aebb94d50d11653b6fa8b95518107dd0969803adeee299ebcd9b0e8",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/024-metadata.json": {
+          "expected": "11db523d54786b29de35336c1d00f87580d3a36b284bd1e3afbd19dbbd735c74",
+          "actual": "11db523d54786b29de35336c1d00f87580d3a36b284bd1e3afbd19dbbd735c74",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/024-response.json": {
+          "expected": "61b93d92a9f009e5b74d93d10c3373defd5f3047c70d2fa5eb6183c5b5bd98a8",
+          "actual": "61b93d92a9f009e5b74d93d10c3373defd5f3047c70d2fa5eb6183c5b5bd98a8",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/025-metadata.json": {
+          "expected": "cf4e7201df601598377bc9d5a3c7435d562eeaddd2b57c7bbfaff5531742fd8f",
+          "actual": "cf4e7201df601598377bc9d5a3c7435d562eeaddd2b57c7bbfaff5531742fd8f",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/025-response.json": {
+          "expected": "13231055e1a444cfac725db1cae7ea13dfb41c3a1828c09abfc977e3ae1c58c1",
+          "actual": "13231055e1a444cfac725db1cae7ea13dfb41c3a1828c09abfc977e3ae1c58c1",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/026-metadata.json": {
+          "expected": "d2f092f0770ccfbffa4bc35ef88763f433154241924b9b91e6a5a1b06ddce4d4",
+          "actual": "d2f092f0770ccfbffa4bc35ef88763f433154241924b9b91e6a5a1b06ddce4d4",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/026-response.json": {
+          "expected": "bb5204f4093d833a227a9fdc2d526e255a6d8f33a0301507c58835a18a2d76da",
+          "actual": "bb5204f4093d833a227a9fdc2d526e255a6d8f33a0301507c58835a18a2d76da",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/final-statuses.json": {
+          "expected": "57ebbb08c30d3be007e0ced9eef4d70bb2030b1751247732dab18cd463f25e84",
+          "actual": "57ebbb08c30d3be007e0ced9eef4d70bb2030b1751247732dab18cd463f25e84",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/initial-statuses.json": {
+          "expected": "ab2551bd4c60671d7ad8a9eb126d8a12dfe5941fa0ef9a52f2fc569060558f82",
+          "actual": "ab2551bd4c60671d7ad8a9eb126d8a12dfe5941fa0ef9a52f2fc569060558f82",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/journal.jsonl": {
+          "expected": "49830ffa1a0b657859aabe2edba6dc4c59810b7b1ef5ffd682fb1e6464531512",
+          "actual": "49830ffa1a0b657859aabe2edba6dc4c59810b7b1ef5ffd682fb1e6464531512",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/plan.json": {
+          "expected": "82d15a0ce8f687b40c6bb50d854f8933382c7478bc8a1b2bb6b4a556bfa13efe",
+          "actual": "82d15a0ce8f687b40c6bb50d854f8933382c7478bc8a1b2bb6b4a556bfa13efe",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/provenance-audit.json": {
+          "expected": "8a78687f51e3724796c135e163d6e5faa5ee668c8d069b2cb9e8cb6198b5b9c3",
+          "actual": "8a78687f51e3724796c135e163d6e5faa5ee668c8d069b2cb9e8cb6198b5b9c3",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/provisional-adjudication.json": {
+          "expected": "76cb1f6a5f1abf3521b5fa20b9e8ab5f4e79f45c2e5a30a8d7db8ff77c1362bc",
+          "actual": "76cb1f6a5f1abf3521b5fa20b9e8ab5f4e79f45c2e5a30a8d7db8ff77c1362bc",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/provisional-item-scores.json": {
+          "expected": "293aa613827215851f643c6052f767e8caddec531e0cf309905ecf8d1e60cca3",
+          "actual": "293aa613827215851f643c6052f767e8caddec531e0cf309905ecf8d1e60cca3",
+          "match": true
+        },
+        "docs/superpowers/plans/scope-pilot/api-runs/20261007-live-v1/summary.json": {
+          "expected": "517bc341a7645fb6148eed2354681c00a2016d6b62fd7dd1e75701d8f2472a9c",
+          "actual": "517bc341a7645fb6148eed2354681c00a2016d6b62fd7dd1e75701d8f2472a9c",
+          "match": true
+        }
+      },
+      "interpretation": "On-disk hash comparison only, not loaded runtime identity."
+    },
+    "local_artifact_metadata": {
+      "bm25": {
+        "status": "LOCAL_METADATA_READ",
+        "path": "backend/output/runtime/bm25_artifact.json",
+        "sha256": "167db23567a6f8b5a5de52f4011fac21ff1858e5fc8c18b30b73f02a59c3dee0",
+        "records": 3,
+        "runtime_loaded": "UNKNOWN"
+      },
+      "tables": {
+        "status": "LOCAL_METADATA_READ",
+        "path": "backend/output/runtime/table_artifact.json",
+        "sha256": "43f7ce0b32bcf9c2d942403676d2f4a382fddcbe4967662e58231bb73415e12c",
+        "records": 2,
+        "runtime_loaded": "UNKNOWN"
+      },
+      "docs_store": {
+        "status": "LOCAL_METADATA_READ",
+        "path": "backend/output/docs_store.json",
+        "sha256": "6d038cb567d794753164456131140de4878d6b641bfe60fbe0b5f2c888b7ef15",
+        "records": 83,
+        "runtime_loaded": "UNKNOWN"
+      }
+    },
+    "corpus_snapshot": {
+      "status": "READ_ONLY_SNAPSHOT_AUDIT",
+      "database_unchanged": true,
+      "hashes_before": {
+        "database": "4002a5d8aeec839c85dc9affb1550cd481a1f1fb119d14c470de409d43347746",
+        "-wal": null,
+        "-shm": null
+      },
+      "hashes_after": {
+        "database": "4002a5d8aeec839c85dc9affb1550cd481a1f1fb119d14c470de409d43347746",
+        "-wal": null,
+        "-shm": null
+      },
+      "collections": [
+        {
+          "name": "rag_docs",
+          "dimension": 512
+        }
+      ],
+      "selected_collection": "rag_docs",
+      "chunk_records": 1440,
+      "checked_nonempty_chunks": 1235,
+      "min_chars": 20,
+      "sources": {
+        "D1": {
+          "exact_substring_chunks": 31,
+          "unique_substring_chunks": 31,
+          "ambiguous_substring_chunks": 0,
+          "stored_span_verified_chunks": 1,
+          "invalid_stored_span_chunks": 30
+        },
+        "D2": {
+          "exact_substring_chunks": 0,
+          "unique_substring_chunks": 0,
+          "ambiguous_substring_chunks": 0,
+          "stored_span_verified_chunks": 0,
+          "invalid_stored_span_chunks": 0
+        },
+        "D3": {
+          "exact_substring_chunks": 0,
+          "unique_substring_chunks": 0,
+          "ambiguous_substring_chunks": 0,
+          "stored_span_verified_chunks": 0,
+          "invalid_stored_span_chunks": 0
+        }
+      },
+      "runtime_membership": "UNKNOWN",
+      "interpretation": "Text matches are not corpus identity; zero matches are not absence proof. Invalid stored offsets are never repaired by this tool."
+    },
+    "gates": {
+      "gold_local_source_binding": "PASS",
+      "on_disk_production_freeze": "PASS",
+      "runtime_identity": "UNKNOWN",
+      "local_embedding_runtime_ready": "UNKNOWN",
+      "native_corpus_document_identity": "UNKNOWN",
+      "index_coordinate_gate": "UNVERIFIED",
+      "production_source_selection": "SOURCE_UNRESOLVED",
+      "same_version_native_context_capture": "NOT_CAPTURED",
+      "prompt_and_request_envelope_freeze": "NOT_CAPTURED",
+      "call_graph_and_retry_bound": "UNVERIFIED",
+      "provider_transfer_authorization": "NOT_GRANTED_FOR_THIS_BATCH",
+      "redacted_export_and_original_mapping": "NOT_PREPARED",
+      "finite_batch_authorization": "NOT_GRANTED_FOR_THIS_BATCH",
+      "state_cache_session_plan": "NOT_FROZEN",
+      "human_gold_certification": "PENDING_SEPARATE_REVIEW"
+    },
+    "conditional_call_proposal": {
+      "upper_bound": 54,
+      "authorized": false,
+      "formula": "9 * (1 native preprocessing + 2 native generation attempts + 3 controlled calls)",
+      "condition": "Only if complete call graph proves no additional model calls. Otherwise BLOCKED_CALL_BOUND; no monetary cap inferred."
+    },
+    "questions": [
+      {
+        "id": "D1-FIG-v2",
+        "query_version": "2.0",
+        "query_sha256": "ad7616d40e9e5b3f3bcbe4858e538541d703c7a289f455f254dea40782d66828",
+        "source_selection": "SOURCE_UNRESOLVED",
+        "native_context_capture": "NOT_CAPTURED",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "D1-COST-v2",
+        "query_version": "2.0",
+        "query_sha256": "e6fa4b128e40b6d56e35d7608d2d5ecd5984452eac4bf55db8c1852fbd77effa",
+        "source_selection": "SOURCE_UNRESOLVED",
+        "native_context_capture": "NOT_CAPTURED",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "D1-LIMITS-v2",
+        "query_version": "2.0",
+        "query_sha256": "44d583e803cccd75f53200dacd831545a2cd08561083a583d0a17c5f94d11914",
+        "source_selection": "SOURCE_UNRESOLVED",
+        "native_context_capture": "NOT_CAPTURED",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "D1-FUTURE-v2",
+        "query_version": "2.0",
+        "query_sha256": "37fa93a65e1b3b6f00fafceeb5d906be606892577d604c8e94f2bf24901cdf8b",
+        "source_selection": "SOURCE_UNRESOLVED",
+        "native_context_capture": "NOT_CAPTURED",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "D2-ATTENTION-v2",
+        "query_version": "2.0",
+        "query_sha256": "8cdc180c2d194da9cd251b65b3f432f75c780961fc36b07f68b8d73c725be665",
+        "source_selection": "SOURCE_UNRESOLVED",
+        "native_context_capture": "NOT_CAPTURED",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "D2-DATA-v2",
+        "query_version": "2.0",
+        "query_sha256": "179045baa8c219e2ada2e6687ca6faa00ad2e5d03c8e7c78a413118eefb58bcf",
+        "source_selection": "SOURCE_UNRESOLVED",
+        "native_context_capture": "NOT_CAPTURED",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "D2-NONE-v2",
+        "query_version": "2.0",
+        "query_sha256": "5a5ffd6164b4833f2af3050dd5a537213526196c57a23c89d86a98b69c2a0297",
+        "source_selection": "SOURCE_UNRESOLVED",
+        "native_context_capture": "NOT_CAPTURED",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "D3-TOOLS-v2",
+        "query_version": "2.0",
+        "query_sha256": "ad11cd83df0de14bbebdd38ce02c083f66bc86f8e978314a4aa45dcf23c4f742",
+        "source_selection": "SOURCE_UNRESOLVED",
+        "native_context_capture": "NOT_CAPTURED",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "D3-SUPERVISOR-v2",
+        "query_version": "2.0",
+        "query_sha256": "d274f06f905495c485869cec8c1879e7264664c8d0d1f9dbe4ad9f403c7c6052",
+        "source_selection": "SOURCE_UNRESOLVED",
+        "native_context_capture": "NOT_CAPTURED",
+        "status": "NOT_RUN"
+      }
+    ],
+    "native_preservation_contract": [
+      "Preserve production retrieval, rescues, reranking, prompt, postprocessing and provider envelope.",
+      "Keep extra_body thinking and max_retries=1 (up to two sends); never silently fix native B0.",
+      "Record actual preprocessing model; v4-pro generation identity requires runtime evidence.",
+      "document_id echo is not source filtering; keep actual native mixed-corpus behavior.",
+      "include_evidence_trace changes unavailable-pipeline fallback; record capture options as instrumentation.",
+      "Record raw output, staged output and API-visible 4000-character truncation separately.",
+      "Controlled adapter is not B0. Reuse captured same-query-version preprocessing/context only.",
+      "No old answers rescored; missing/transformed/unmapped corpus is not a model failure."
+    ],
+    "required_capture_fields": [
+      "loaded_runtime_identity",
+      "dependency_lock_hashes",
+      "model_actual_id",
+      "source_selection_provenance",
+      "index_snapshot_hashes",
+      "prompt_hash",
+      "redacted_request_body_hash",
+      "query_version",
+      "preprocessed_query",
+      "actual_serialized_context",
+      "context_source_mappings",
+      "raw_answer",
+      "staged_answer",
+      "api_visible_answer",
+      "usage",
+      "retry_attempts",
+      "cache_state",
+      "session_state",
+      "controlled_arm_order_seed",
+      "shared_budget_and_truncation_policy",
+      "review_disagreements"
+    ],
+    "one_next_action": "Verify runtime/corpus identity and source mapping without modifying native B0; then register and authorize a finite new batch separately."
+  },
+  "source_mapping": {
+    "database_hashes_before": {
+      "database": "4002a5d8aeec839c85dc9affb1550cd481a1f1fb119d14c470de409d43347746",
+      "-wal": null,
+      "-shm": null
+    },
+    "database_hashes_after": {
+      "database": "4002a5d8aeec839c85dc9affb1550cd481a1f1fb119d14c470de409d43347746",
+      "-wal": null,
+      "-shm": null
+    },
+    "metadata_keys": [
+      "char_end",
+      "char_start",
+      "chroma:document",
+      "content_type",
+      "entity_ids",
+      "entity_types",
+      "page_idx",
+      "project_id",
+      "section_path",
+      "source_file",
+      "source_format",
+      "token_count"
+    ],
+    "d1_mapping": [
+      {
+        "stored": [
+          0,
+          57
+        ],
+        "candidate_original": [
+          0,
+          57
+        ],
+        "chunk_sha256": "363a462177510c153556ed6da08a03122b89cc134dbe9725b6ac0e61e12cb9f3",
+        "stored_span_verified": true,
+        "diagnostic_label": "matched_01",
+        "start_delta": 0
+      },
+      {
+        "stored": [
+          57,
+          1141
+        ],
+        "candidate_original": [
+          58,
+          1142
+        ],
+        "chunk_sha256": "7d0a7c533815c9e70ab63574fc5459819b56454e73857cc0b072c3d023e8daf7",
+        "stored_span_verified": false,
+        "diagnostic_label": "matched_02",
+        "start_delta": 1
+      },
+      {
+        "stored": [
+          1141,
+          1685
+        ],
+        "candidate_original": [
+          1154,
+          1698
+        ],
+        "chunk_sha256": "38b160157cd3a259fe6b1c84dac76cd51e380ce4262fa817fb01df12841aed63",
+        "stored_span_verified": false,
+        "diagnostic_label": "matched_03",
+        "start_delta": 13
+      },
+      {
+        "stored": [
+          1685,
+          2027
+        ],
+        "candidate_original": [
+          1699,
+          2041
+        ],
+        "chunk_sha256": "aa849e3b3456a0a7da268c55a925b5c69e36ef9047c2be4720cc65ae4a9355c5",
+        "stored_span_verified": false,
+        "diagnostic_label": "matched_04",
+        "start_delta": 14
+      },
+      {
+        "stored": [
+          2027,
+          2333
+        ],
+        "candidate_original": [
+          2053,
+          2359
+        ],
+        "chunk_sha256": "575a8b9e8a5bc2c290a82133c7699f7e013659763d158fa6be08386105a591e1",
+        "stored_span_verified": false,
+        "diagnostic_label": "matched_05",
+        "start_delta": 26
+      },
+      {
+        "stored": [
+          2333,
+          2895
+        ],
+        "candidate_original": [
+          2360,
+          2922
+        ],
+        "chunk_sha256": "33b91e8bfdf416e7b067e5d958551db409c120c688477cda3185575ebe9c12c0",
+        "stored_span_verified": false,
+        "diagnostic_label": "matched_06",
+        "start_delta": 27
+      },
+      {
+        "stored": [
+          2895,
+          3322
+        ],
+        "candidate_original": [
+          2923,
+          3350
+        ],
+        "chunk_sha256": "635b8cc2de0fbfa8694670610ed3fec1cd59945d4a618a68f724536e9f679c73",
+        "stored_span_verified": false,
+        "diagnostic_label": "matched_07",
+        "start_delta": 28
+      },
+      {
+        "stored": [
+          3322,
+          4160
+        ],
+        "candidate_original": [
+          3362,
+          4200
+        ],
+        "chunk_sha256": "175c8a768ca5d22091bc401a49c550a4941dce94a97d21d1e612b1340c9343e7",
+        "stored_span_verified": false,
+        "diagnostic_label": "matched_08",
+        "start_delta": 40
+      },
+      {
+        "stored": [
+          4160,
+          4761
+        ],
+        "candidate_original": [
+          4201,
+          4802
+        ],
+        "chunk_sha256": "a595106b75a543924af4f46d5a9fc712de77e74cb2cdcef9f8fed55b81205d7a",
+        "stored_span_verified": false,
+        "diagnostic_label": "matched_09",
+        "start_delta": 41
+      },
+      {
+        "stored": [
+          4761,
+          5092
+        ],
+        "candidate_original": [
+          4803,
+          5134
+        ],
+        "chunk_sha256": "e25c4177ea43ee97be644ca661383ca7ed8fd859413d449d1a3100d4df3ad997",
+        "stored_span_verified": false,
+        "diagnostic_label": "matched_10",
+        "start_delta": 42
+      },
+      {
+        "stored": [
+          5092,
+          6709
+        ],
+        "candidate_original": [
+          5135,
+          6752
+        ],
+        "chunk_sha256": "eb9635065dbc51a8e3799bd7efa37fbedcc619045f59b268deb08f773fc90fb6",
+        "stored_span_verified": false,
+        "diagnostic_label": "matched_11",
+        "start_delta": 43
+      },
+      {
+        "stored": [
+          6709,
+          7639
+        ],
+        "candidate_original": [
+          6753,
+          7683
+        ],
+        "chunk_sha256": "093160c47ab692bcab7ff8b2b12ea8cb276732330782ecb2292e48fee0ed6265",
+        "stored_span_verified": false,
+        "diagnostic_label": "matched_12",
+        "start_delta": 44
+      },
+      {
+        "stored": [
+          7639,
+          8033
+        ],
+        "candidate_original": [
+          7684,
+          8078
+        ],
+        "chunk_sha256": "081e5700b63d37764531b9328f1a298df1ac6cbbaa6b90c5ad1f5a72fe87f669",
+        "stored_span_verified": false,
+        "diagnostic_label": "matched_13",
+        "start_delta": 45
+      },
+      {
+        "stored": [
+          8033,
+          9702
+        ],
+        "candidate_original": [
+          8079,
+          9748
+        ],
+        "chunk_sha256": "d7eb29d2a92311ab8db1974d50e5c4e774eef4c3a969670caa5663ae5090364e",
+        "stored_span_verified": false,
+        "diagnostic_label": "matched_14",
+        "start_delta": 46
+      },
+      {
+        "stored": [
+          9702,
+          10772
+        ],
+        "candidate_original": [
+          9749,
+          10819
+        ],
+        "chunk_sha256": "4d365179845700fef793d5d30664cb4576955e9399490ac612cf9befc9c0301b",
+        "stored_span_verified": false,
+        "diagnostic_label": "matched_15",
+        "start_delta": 47
+      },
+      {
+        "stored": [
+          10772,
+          11893
+        ],
+        "candidate_original": [
+          10820,
+          11941
+        ],
+        "chunk_sha256": "c52eaca1d097280ff5fd2c7dd75824e60ff75a9831f5376eed45bdaf640efe5c",
+        "stored_span_verified": false,
+        "diagnostic_label": "matched_16",
+        "start_delta": 48
+      },
+      {
+        "stored": [
+          11893,
+          12806
+        ],
+        "candidate_original": [
+          11942,
+          12855
+        ],
+        "chunk_sha256": "8725930105e4031024e7a11b32b0c7c4d00d26dd0536d52ea3605e926e38dfb8",
+        "stored_span_verified": false,
+        "diagnostic_label": "matched_17",
+        "start_delta": 49
+      },
+      {
+        "stored": [
+          12806,
+          13438
+        ],
+        "candidate_original": [
+          12856,
+          13488
+        ],
+        "chunk_sha256": "c6ce99aba087c66e4e13e156d3443a0a1f40ac08dd588ee262a6d6d5dfaf39fa",
+        "stored_span_verified": false,
+        "diagnostic_label": "matched_18",
+        "start_delta": 50
+      },
+      {
+        "stored": [
+          13438,
+          13709
+        ],
+        "candidate_original": [
+          13489,
+          13760
+        ],
+        "chunk_sha256": "7c5c805930c75f46bb90f819d8feff2725e8ecc1a709e83b34c7787d01d45ef9",
+        "stored_span_verified": false,
+        "diagnostic_label": "matched_19",
+        "start_delta": 51
+      },
+      {
+        "stored": [
+          13709,
+          14733
+        ],
+        "candidate_original": [
+          13761,
+          14785
+        ],
+        "chunk_sha256": "5cee9c96b42d979639925bbf62a8cb989f2270da3500c3de18b8b550005a275f",
+        "stored_span_verified": false,
+        "diagnostic_label": "matched_20",
+        "start_delta": 52
+      },
+      {
+        "stored": [
+          14733,
+          15557
+        ],
+        "candidate_original": [
+          14786,
+          15610
+        ],
+        "chunk_sha256": "add33f444484dbb4e6c56a2d6a2544cb383dac0814c63584be7e5885e833a7c3",
+        "stored_span_verified": false,
+        "diagnostic_label": "matched_21",
+        "start_delta": 53
+      },
+      {
+        "stored": [
+          15557,
+          16307
+        ],
+        "candidate_original": [
+          15611,
+          16361
+        ],
+        "chunk_sha256": "efa3a1cf043f15c7cf22062246e1acfad4a2e3fe145095b69373b0bb47c02662",
+        "stored_span_verified": false,
+        "diagnostic_label": "matched_22",
+        "start_delta": 54
+      },
+      {
+        "stored": [
+          16307,
+          16867
+        ],
+        "candidate_original": [
+          16362,
+          16922
+        ],
+        "chunk_sha256": "1f23904eb016031afc69f6b99535ec3d290a7a944cf1643e9b39cd910c8794aa",
+        "stored_span_verified": false,
+        "diagnostic_label": "matched_23",
+        "start_delta": 55
+      },
+      {
+        "stored": [
+          16867,
+          17305
+        ],
+        "candidate_original": [
+          16923,
+          17361
+        ],
+        "chunk_sha256": "f669224fc304509f1c8543da1aaf540ab8eb1787c40c51c02002c465f67d5914",
+        "stored_span_verified": false,
+        "diagnostic_label": "matched_24",
+        "start_delta": 56
+      },
+      {
+        "stored": [
+          17305,
+          17984
+        ],
+        "candidate_original": [
+          17362,
+          18041
+        ],
+        "chunk_sha256": "ffd1b5d4adcc41739e0576aeb9b51021aaaa8b7ea1d4f9bf869e692165982ede",
+        "stored_span_verified": false,
+        "diagnostic_label": "matched_25",
+        "start_delta": 57
+      },
+      {
+        "stored": [
+          17984,
+          19177
+        ],
+        "candidate_original": [
+          18042,
+          19235
+        ],
+        "chunk_sha256": "6ee2708650f17ee761903190a749b5c3cdeecd686bf1fc9381174fd0076257b2",
+        "stored_span_verified": false,
+        "diagnostic_label": "matched_26",
+        "start_delta": 58
+      },
+      {
+        "stored": [
+          19177,
+          19623
+        ],
+        "candidate_original": [
+          19250,
+          19696
+        ],
+        "chunk_sha256": "d88e29e0ae1d400bef213cad586be0441ca2439772b6ef0cb8d0471fadf3839b",
+        "stored_span_verified": false,
+        "diagnostic_label": "matched_27",
+        "start_delta": 73
+      },
+      {
+        "stored": [
+          19623,
+          20087
+        ],
+        "candidate_original": [
+          19697,
+          20161
+        ],
+        "chunk_sha256": "fac4627aab446f570f05426302e805fd290bd2fc4b32ccc85a7f6f4ce3b30990",
+        "stored_span_verified": false,
+        "diagnostic_label": "matched_28",
+        "start_delta": 74
+      },
+      {
+        "stored": [
+          20087,
+          21001
+        ],
+        "candidate_original": [
+          20162,
+          21076
+        ],
+        "chunk_sha256": "3ce03b1ecb044219e86c5627232a893970d920d41379e29a277ef47e13bef829",
+        "stored_span_verified": false,
+        "diagnostic_label": "matched_29",
+        "start_delta": 75
+      },
+      {
+        "stored": [
+          21001,
+          21632
+        ],
+        "candidate_original": [
+          21084,
+          21715
+        ],
+        "chunk_sha256": "2e949c92c4cd40fcf5f12484541b96bf33d7715b3702b135536e0b96fae56762",
+        "stored_span_verified": false,
+        "diagnostic_label": "matched_30",
+        "start_delta": 83
+      },
+      {
+        "stored": [
+          21632,
+          22282
+        ],
+        "candidate_original": [
+          21716,
+          22366
+        ],
+        "chunk_sha256": "567b3050b5c1d93d8cfd2614fa91d558a84aee67559da54ed0b7b2f5806f829a",
+        "stored_span_verified": false,
+        "diagnostic_label": "matched_31",
+        "start_delta": 84
+      }
+    ],
+    "d1_coordinate_summary": {
+      "original_length": 22366,
+      "concat_length": 22282,
+      "concat_stored_spans_verified": 31,
+      "gap_intervals": 30,
+      "gap_codepoints": 84,
+      "gap_unicode_categories": {
+        "Zs": 35,
+        "Lo": 25,
+        "Po": 14,
+        "Cc": 10
+      },
+      "whitespace_only_gap_intervals": 25,
+      "non_whitespace_gap_intervals": 5,
+      "distinct_start_deltas": 31
+    },
+    "source_file_namespaces": [
+      {
+        "source_file_sha256": "056c935e4dfa223cbf0827a8ff2b43fc768869d129c80d83ee56c07445bb1dd8",
+        "chunks": 31,
+        "filename_join_count": 0,
+        "join_evidence": "LABEL_JOIN_ONLY_NOT_HASH_VERIFIED"
+      },
+      {
+        "source_file_sha256": "fb96632d678daa19501e5340c0a25e02fdf6a6cef51ad8c333c8dc345575bf24",
+        "chunks": 38,
+        "filename_join_count": 0,
+        "join_evidence": "LABEL_JOIN_ONLY_NOT_HASH_VERIFIED"
+      },
+      {
+        "source_file_sha256": "9c66be4ff7a3b6ab7a8326917e1bd8ce5522afca41335f27450be2a288fc03e1",
+        "chunks": 309,
+        "filename_join_count": 1,
+        "join_evidence": "LABEL_JOIN_ONLY_NOT_HASH_VERIFIED"
+      },
+      {
+        "source_file_sha256": "95b70b194076f0e343b5016e83eaebb1d4cb828f5c9c8b4157ecfa4239d19252",
+        "chunks": 1062,
+        "filename_join_count": 1,
+        "join_evidence": "LABEL_JOIN_ONLY_NOT_HASH_VERIFIED"
+      }
+    ],
+    "mineru_full_md_hash_matches": {
+      "D1": [
+        "backend/output/mineru/ingest_2/full.md"
+      ],
+      "D2": [
+        "backend/output/mineru/ingest_f/full.md"
+      ],
+      "D3": []
+    },
+    "kg_prefix_check": [
+      {
+        "document_id": "doc_ingest_f7af6ada",
+        "nodes_exists": true,
+        "edges_exists": true,
+        "docs_store_id_join": 1,
+        "gold_source_hash_binding": "UNKNOWN"
+      }
+    ],
+    "kg_prefix_check_scope": "directory name prefix only, not proof of Gold source identity or corpus membership",
+    "cache_metadata": {
+      "runtime_cache.sqlite3": {
+        "hashes": {
+          "database": "efae450125593b0e29fd64f1ac16acbae3ee5ae7df3773d6b3e2fb90fd041abf",
+          "-wal": null,
+          "-shm": null
+        },
+        "rows": 5,
+        "value_lengths": [
+          18,
+          11,
+          15,
+          14,
+          15
+        ],
+        "serialized_context_occurrences": 0
+      },
+      "rewrite-cache.sqlite3": {
+        "hashes": {
+          "database": "4c33408e4190ce45c7ac0613ba39f54a240532c6777c74f8fc36440dc3a57701",
+          "-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb"
+        },
+        "rows": 151,
+        "exact_v2_queries": 0,
+        "serialized_context_fields": 0
+      }
+    }
+  },
+  "context": {
+    "status": "NOT_CAPTURED",
+    "query_version": "2.0",
+    "queries": 9,
+    "search_scope": "Existing scope-pilot/backend-output candidate filenames and specified local cache tables only; not exhaustive filesystem absence proof",
+    "actual_model_visible_context": "UNKNOWN",
+    "old_27_answers": "PRESERVED_NOT_RESCORED"
+  },
+  "coordinate_cause": {
+    "status": "AI_INFERENCE_NOT_HISTORICAL_PRODUCER_PROOF",
+    "source": "backend/worker.py:603-633",
+    "description": "Current source strips item text and accumulates len(text) for offsets; consistent with reconstructed-text coordinate observation, but historical producer not established."
+  },
+  "startup": {
+    "status": "NOT_AUTHORIZED_NOT_EXECUTED",
+    "read_only": false,
+    "risks": [
+      "Sparse table recovery threshold 5 vs persisted 2 rows can rebuild and persist indexes",
+      "Runtime warm-up may load/download models and touch vector stores",
+      "Scheduler can perform backup, cleanup and health probes"
+    ],
+    "source_locators": [
+      "backend/server.py:73",
+      "backend/server.py:194",
+      "backend/server.py:201",
+      "backend/server.py:220",
+      "backend/server.py:243",
+      "backend/worker.py:328",
+      "backend/worker.py:332"
+    ]
+  },
+  "corrections": [
+    "Exact absence of truncated doc_ingest_2/doc_ingest_f paths cannot establish full canonical document absence. Actual doc_ingest_f7af6ada has nodes/edges and one docs-store ID join; binding to frozen D2 original remains UNKNOWN."
+  ],
+  "effects": {
+    "production_code_changed": false,
+    "original_gold_changed": false,
+    "historical_answers_changed": false,
+    "index_repair_or_ingestion": false,
+    "model_api_calls": 0,
+    "http_requests": 0,
+    "services_started": 0,
+    "services_stopped": 0,
+    "other_project_files_accessed_or_modified": false,
+    "sqlite_note": "mode=ro, query_only, BEGIN. Chroma DB and sidecars match before/after. Cache hash values are observation snapshots, not full-turn before/after mutation proof."
+  },
+  "review": {
+    "independent_runtime_role": "chatbot-debugger",
+    "independent_source_role": "chatbot-reviewer",
+    "engineering_conclusions": "CORROBORATED_WITH_CANONICAL_PATH_CORRECTION",
+    "academic_expert_stage_review": "NOT_PERFORMED",
+    "M4_P2_189_test_record": "PRESERVED_NOT_RERUN"
+  },
+  "gates": {
+    "project_runtime": "UNKNOWN_BLOCKED",
+    "disk_freeze": "PASS_15_PRODUCTION_3_SOURCES_62_HISTORY",
+    "native_corpus_identity": "PARTIAL_TEXT_MATCH_ONLY",
+    "D1_original_coordinates": "FAIL_30_OF_31_STORED_SPANS",
+    "D2_D3_text_match": "ZERO_NOT_ABSENCE_PROOF",
+    "same_version_model_context": "NOT_CAPTURED",
+    "real_B0": "NOT_RUN",
+    "M2": "OPEN"
+  },
+  "next_action": "Obtain approval for a scoped isolated offline runtime identity/capture plan, preserving original indexes and blocking external calls. An isolated copy must be explicitly labelled, not silently represented as the original running native B0. No generation/API batch is authorized by this audit."
+}
+

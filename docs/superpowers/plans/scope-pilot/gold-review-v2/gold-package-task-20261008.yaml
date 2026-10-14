@@ -1,0 +1,37 @@
+contract_version: "1.0"
+project_id: graphrag-paper-001
+paper_family: M
+stage_id: M2
+task_id: GOLD-PACKAGE-20261008
+expert_skill: sci-skills-data-availability
+requested_model: gpt-6.1-sol
+task_summary: 将作者接受的版本化政策转为新的机器可读9题31核心条目属性Gold与本地复现说明，不评旧回答。
+inputs:
+  - approval-record-20261008.yaml
+  - gold-policy-proposal.yaml
+  - independent-sol-review.md
+  - independent-sol-contract.yaml
+  - ../gold.yaml
+  - backend/output/mineru/ingest_2/full.md
+  - backend/output/mineru/ingest_f/full.md
+  - integration/Agentic-RAG-Architecture.md
+expected_outputs:
+  - gold-v2.yaml
+  - gold-v2-package.md
+  - gold-v2-package-contract.yaml
+evidence_boundaries:
+  - 仅Markdown原文，非人工认证或PDF视觉验证。
+  - 新问题新版本，不回改旧Gold或回答，不把公开或传输权限视作已确认。
+  - Gold范围仅oracle与裁决使用，不给AUTO resolver或模型请求。
+  - 输出源跨度保存LF归一化Unicode codepoint及exact_text，无凭据或参与者标识。
+acceptance_checks:
+  - 9题31核心条目与旧ID映射，不把C6/C7计为新直接成本水平。
+  - 每个必填属性具独立支持和explicit/inferred/absence判据，原文位置必须逐字可验证。
+  - scope含完整明确区间/类型，NONE为空范围证明，FIG整篇范围与正文/附录别名区分。
+  - 新query版本和来源指纹、评分边界、保密/许可及兼容性清楚。
+  - exact 19-field专家返回，不更改项目stage/state。
+known_missing_items: [runtime_identity, corpus_mapping, new_API_batch_permission, human_annotation, original_PDF_visual_check]
+manual_operation_allowed: false
+optional_adapters_allowed: [local-python, local-file-import]
+stage_authority: sci-skills
+status: DISPATCHED

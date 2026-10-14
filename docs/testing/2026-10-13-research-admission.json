@@ -1,0 +1,81 @@
+{
+  "status": "DRIFT_REQUIRES_REVIEW",
+  "research_execution_authorized": false,
+  "files": {
+    "backend/routes/rag_query.py": {
+      "expected": "0f4f6f9aa490bff77ec6a444638f02be310efe3cc43fb391371c9ac4d0e0635f",
+      "actual": "178873090bb848a729ef7753f2461e1eec8971eb6657dd9074f99e13daae3899",
+      "match": false
+    },
+    "backend/models.py": {
+      "expected": "b599c0427134950432ae7e95052485ac7236976afa1b0adf58a16c1906f7143b",
+      "actual": "b8603e88ea3161de56a4a4bf3eb5c956bdc4bd15f7325be19acb197088d6d34c",
+      "match": false
+    },
+    "backend/retrieval.py": {
+      "expected": "7e1332a7bde6aff1d8d270397003567ccd72761f8a5b7fd25fd65851203f3e0b",
+      "actual": "7e1332a7bde6aff1d8d270397003567ccd72761f8a5b7fd25fd65851203f3e0b",
+      "match": true
+    },
+    "backend/generator.py": {
+      "expected": "18a35058c95e89934b92d1c3a7229271fd2e5fca9d6ecb85abb9815cca7de9b1",
+      "actual": "5e6e33e3288a61f08b2c6271cfa246d19c0c635780fec7f0e26fdf9eb59f6990",
+      "match": false
+    },
+    "backend/prompt_builder.py": {
+      "expected": "f6a62fe8529b8909e7a1c2a59f097d8659aea64020547f04087837bc2e529b7c",
+      "actual": "f6a62fe8529b8909e7a1c2a59f097d8659aea64020547f04087837bc2e529b7c",
+      "match": true
+    },
+    "backend/config.py": {
+      "expected": "f0cf031aa0a8a3282199883f26a29816bf358d4a879a24085f313c3b9fb58e8c",
+      "actual": "f0cf031aa0a8a3282199883f26a29816bf358d4a879a24085f313c3b9fb58e8c",
+      "match": true
+    },
+    "backend/source_control.py": {
+      "expected": "b92d65ad4604207c0bdc65670197a3c63c37c668abacb8d6b38451d025001c25",
+      "actual": "b92d65ad4604207c0bdc65670197a3c63c37c668abacb8d6b38451d025001c25",
+      "match": true
+    },
+    "backend/evidence_trace.py": {
+      "expected": "07cc6a3cce87c788a9639510a6540639f6b6d57e93f639b10a2593254b18bf65",
+      "actual": "07cc6a3cce87c788a9639510a6540639f6b6d57e93f639b10a2593254b18bf65",
+      "match": true
+    },
+    "backend/vector_store.py": {
+      "expected": "18d8fc6ff90823186034f5f10c876981a0da814bba5bb57c9299400eec0a6c82",
+      "actual": "18d8fc6ff90823186034f5f10c876981a0da814bba5bb57c9299400eec0a6c82",
+      "match": true
+    },
+    "backend/index_registry.py": {
+      "expected": "129fd58ffc584ae9f21cb4587e91c8b1cd8174b71c3948d672c197d0592ef066",
+      "actual": "129fd58ffc584ae9f21cb4587e91c8b1cd8174b71c3948d672c197d0592ef066",
+      "match": true
+    },
+    "backend/doc_processor.py": {
+      "expected": "a9fb7bc4d3c3a5fd64a0e568bc3b8f6dbe05f154098495d2ce7de3016cf91306",
+      "actual": "0e9ccc941b101a5eb225aa40f0b596a3c6435cdc43c8ccc6ba4a0dd9dbfc654d",
+      "match": false
+    },
+    "backend/conversation.py": {
+      "expected": "002365d260d315f3dca00416b709e3f11a84a069d99048d4d45e61f4f9737270",
+      "actual": "002365d260d315f3dca00416b709e3f11a84a069d99048d4d45e61f4f9737270",
+      "match": true
+    },
+    "backend/embedding.py": {
+      "expected": "52b15ad92c396fa9f8b2d4d451ab255906feb330e56e7e3ff4db00c2859e780a",
+      "actual": "52b15ad92c396fa9f8b2d4d451ab255906feb330e56e7e3ff4db00c2859e780a",
+      "match": true
+    },
+    "backend/uv.lock": {
+      "expected": "31caa7407226490b13e1853875eb1ebbe8f895980da39f2b19f58c79f11c14a3",
+      "actual": "ba3d4b0fa5b8136f368c4da25e1c0178b366e7bbe14f83dbdae485c9f4278e38",
+      "match": false
+    },
+    "docs/superpowers/plans/scope-pilot/gold.yaml": {
+      "expected": "e732d568715d2b750d3c9ced4afa88a31df66f2db65c869ff4c2536d8e05d5f2",
+      "actual": "e732d568715d2b750d3c9ced4afa88a31df66f2db65c869ff4c2536d8e05d5f2",
+      "match": true
+    }
+  }
+}

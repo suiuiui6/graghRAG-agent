@@ -1,0 +1,7 @@
+error: Request failed after 3 retries in 5.2s
+  Caused by: Failed to fetch: `https://pypi.org/simple/lancedb/`
+  Caused by: error sending request for url (https://pypi.org/simple/lancedb/)
+  Caused by: client error (Connect)
+  Caused by: tunnel error: failed to create underlying connection
+  Caused by: tcp connect error
+  Caused by: 以一种访问权限不允许的方式做了一个访问套接字的尝试。 (os error 10013)

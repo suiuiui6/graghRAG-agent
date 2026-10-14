@@ -1,0 +1,226 @@
+contract_version: "1.0"
+expert_skill: sci-skills-paper-deep-reading
+project_id: graphrag-paper-001
+paper_family: M
+stage_id: M2
+task_id: GOLD-INDEPENDENT-20261007
+task_status: PROVISIONAL
+inputs_reviewed:
+  - path: docs/superpowers/plans/scope-pilot/gold.yaml
+    sha256: e732d568715d2b750d3c9ced4afa88a31df66f2db65c869ff4c2536d8e05d5f2
+    extent: all_nine_questions_and_31_draft_items
+  - path: docs/superpowers/plans/scope-pilot/pilot.py
+    sha256: 1fedb48fd811b276996666d7843a00e32232a8f949ad1d87142baa6d10b85f8c
+    extent: scope_source_locator_anchor_and_scoring_definitions_read_only_not_executed
+  - doc: D1
+    path: backend/output/mineru/ingest_2/full.md
+    sha256: f0e2b044ec0f8be55b1c00d9479830f6768a5da9970111a7db0353d59097a0d6
+    extent: entire_402_line_markdown_and_complete_abstract_and_section_6_2
+    scopes:
+      - qid: D1-FIG
+        scope: complete_markdown_numbered_figures
+      - qid: D1-COST
+        lines: [7, 22]
+        char_span: [55, 1097]
+      - qid: D1-LIMITS
+        lines: [314, 323]
+        char_span: [19694, 20159]
+      - qid: D1-FUTURE
+        context_lines: [314, 323]
+        context_char_span: [19694, 20159]
+        target_item_line: 322
+        target_char_span: [20059, 20157]
+  - doc: D2
+    path: backend/output/mineru/ingest_f/full.md
+    sha256: ab7cdd99e8cd85ddd61e3d65e4e747685a25a62d22f68bed3e2d79d015e90623
+    extent: complete_sections_3_2_3_and_5_1_plus_context_lines_83_118_and_150_174
+    scopes:
+      - qids: [D2-ATTENTION, D2-NONE]
+        lines: [97, 106]
+        char_span: [12251, 13474]
+      - qid: D2-DATA
+        lines: [156, 159]
+        char_span: [20861, 21487]
+  - doc: D3
+    path: integration/Agentic-RAG-Architecture.md
+    sha256: d0c64333bf10c761fef29bc1d9e002656f3968e720e176e92b8a18eb4a1e8e72
+    extent: complete_sections_3_2_and_4_1_plus_context_lines_158_217_and_293_342
+    scopes:
+      - qid: D3-TOOLS
+        lines: [188, 197]
+        char_span: [6399, 6809]
+      - qid: D3-SUPERVISOR
+        lines: [316, 322]
+        char_span: [11015, 11170]
+outputs:
+  - path: docs/superpowers/plans/scope-pilot/gold-review-v2/independent-sol-review.md
+    artifact_type: bounded_independent_gold_source_review
+    status: PROVISIONAL
+    coverage: nine_questions_31_draft_items_and_candidate_membership_sensitivities
+  - path: docs/superpowers/plans/scope-pilot/gold-review-v2/independent-sol-contract.yaml
+    artifact_type: expert_result_contract
+    status: PROVISIONAL
+evidence_status:
+  - label: VERIFIED_USER_MATERIAL
+    finding: all_nine_target_scopes_read_and_all_31_draft_items_source_checked
+    source_depth: repository_markdown_not_PDF_visual_verification
+  - label: EXECUTED_LOCAL
+    finding: SHA256_of_all_three_original_sources_matches_gold_and_input_hashes_recorded
+  - label: EXECUTED_LOCAL
+    finding: line_and_unicode_code_point_locators_computed_from_LF_normalized_source
+    locator_convention: one_based_lines_zero_based_half_open_code_point_spans
+  - label: VERIFIED_USER_MATERIAL
+    qid: D1-FIG
+    expected_set: [F1, F2, F3, F4, F5, F6]
+    policy: six_unique_numbered_figures_body_titles_and_appendix_aliases_distinguished
+  - label: VERIFIED_USER_MATERIAL
+    qid: D1-COST
+    direct_cost_level_set: [C1, C2, C3, C4, C5]
+    additional_source_supported_candidates: [C6-proposed, C7-proposed]
+    unresolved_policy: grid_support_value_and_relative_cost_reduction_membership
+  - label: VERIFIED_USER_MATERIAL
+    qid: D1-LIMITS
+    expected_numbered_category_set: [L1, L2, L3, L4]
+    note: explanatory_subconditions_retained_in_report
+  - label: VERIFIED_USER_MATERIAL
+    qid: D1-FUTURE
+    expected_set: [R1, R2]
+    relation: alternative_proposals_not_joint_implementation
+  - label: VERIFIED_USER_MATERIAL
+    qid: D2-ATTENTION
+    expected_use_set: [A1, A2, A3]
+    explicit_provenance: A1_and_A2_Q_K_V_sources
+    explicit_A3_binding: decoder_attention_through_current_position_and_softmax_input_masking
+  - label: AI_INFERENCE
+    qid: D2-ATTENTION
+    item: A3
+    finding: decoder_side_Q_K_V_origin_inferred_from_Similarly_and_self_attention
+    boundary: previous_decoder_layer_not_explicitly_restated_in_section_3_2_3
+  - label: VERIFIED_USER_MATERIAL
+    qid: D2-DATA
+    expected_set: [T1, T2]
+    units: [sentence_pairs, sentences]
+  - label: VERIFIED_USER_MATERIAL
+    qid: D2-NONE
+    expected_set: []
+    finding: no_optimizer_name_stated_in_section_3_2_3
+    boundary: not_a_global_no_optimizer_claim
+  - label: VERIFIED_USER_MATERIAL
+    qid: D3-TOOLS
+    expected_set: [K1, K2, K3, K4, K5]
+    role: specified_tool_not_verified_current_implementation
+  - label: VERIFIED_USER_MATERIAL
+    qid: D3-SUPERVISOR
+    expected_set: [S1, S2, S3, S4]
+    role: specified_responsibility_not_verified_live_system_behavior
+  - label: PENDING_VERIFICATION
+    finding: original_PDF_figures_tables_and_visual_completeness_not_reviewed
+  - label: NOT_EXECUTED
+    activities: [model_answer_review, pilot_execution, retrieval_quality_experiment, external_verification, statistical_analysis, human_adjudication, canonical_gold_freeze, stage_advancement]
+assumptions:
+  - Provided_Markdown_is_the_exclusive_answer_evidence_for_this_bounded_review.
+  - Source_hash_stability_does_not_verify_the_original_PDF_or_reported_numerical_derivations.
+  - Independent_review_means_a_separate_AI_reviewer_not_a_human_reviewer.
+  - Draft_item_IDs_are_retained_as_crosswalks_and_not_as_the_source_of_expected_membership.
+  - Candidate_C6_C7_are_review_proposals_and_do_not_mutate_the_canonical_Gold.
+  - Null_values_and_units_are_appropriate_for_non_numeric_items_but_conditions_and_roles_still_require_attribute_support.
+author_input_needed:
+  - decision_owner: orchestrator_or_evaluation_owner
+    decision: choose_and_version_D1_COST_membership_policy_before_scoring
+    conflict_id: GIR-C01
+  - decision_owner: orchestrator_or_evaluation_owner
+    decision: choose_and_version_D2_ATTENTION_explicit_vs_inferred_provenance_policy
+    conflict_id: GIR-C02
+  - decision_owner: orchestrator_or_evaluation_owner
+    decision: clarify_D1_FIG_title_authority_and_D1_LIMITS_granularity
+    conflict_ids: [GIR-C03, GIR-C04]
+manual_actions: []
+quality_checks:
+  - check: nine_questions_and_31_draft_items_independently_source_reviewed
+    status: PASS
+  - check: complete_target_scopes_and_D1_full_Markdown_read
+    status: PASS
+  - check: all_three_source_hashes_match_gold
+    status: PASS
+  - check: every_expected_item_has_original_text_line_and_character_support
+    status: PASS
+  - check: numeric_values_source_units_conditions_roles_and_empty_scope_boundary_checked
+    status: PASS
+  - check: explicit_text_and_AI_inference_distinguished
+    status: PASS
+  - check: blind_phase_excludes_prior_answers_adjudications_reports_and_console
+    status: PASS
+  - check: no_private_frontmatter_participant_identifiers_or_credentials_in_deliverables
+    status: PASS
+  - check: output_mutations_limited_to_two_authorized_independent_review_files
+    status: PASS
+  - check: valid_YAML_exact_19_field_contract_task_identity_nine_question_sections_and_five_complete_conflicts
+    status: PASS
+  - check: original_PDF_visual_verification
+    status: NOT_EXECUTED
+  - check: canonical_membership_and_provenance_policies_unambiguous
+    status: REPAIR
+conflicts:
+  - conflict_id: GIR-C01
+    conflict_type: question_ontology_membership_ambiguity
+    claim: D1_COST_original_wording_uniquely_requires_only_five_items
+    sources:
+      - locator: D1_L11_to_L17_abstract_char_173_967
+      - locator: D1_L15_char_657_663
+        source_text: 降低2.9%
+      - locator: D1_L17_char_927_941
+        source_text: 电网支撑价值为1970元/吨
+    competing_interpretations:
+      - direct_cost_levels_only_C1_to_C5
+      - per_ton_economic_values_also_include_C6_grid_support_value
+      - cost_related_indicators_also_include_C7_relative_reduction_as_item_or_C5_attribute
+    recommended_resolution: preserve_old_question_five_six_seven_membership_sensitivities_and_version_any_narrow_or_broad_rewrite_before_canonical_merging
+  - conflict_id: GIR-C02
+    conflict_type: requested_attribute_not_explicitly_stated_in_scope
+    claim: D2_ATTENTION_A3_has_explicit_previous_decoder_layer_Q_K_V_source_in_section_3_2_3
+    sources:
+      - locator: D2_L105_char_13027_13472
+    competing_interpretations:
+      - require_only_explicit_sources_and_state_A3_layer_origin_not_explicit
+      - permit_decoder_side_self_attention_provenance_as_labelled_semantic_inference
+      - silently_import_previous_decoder_layer_from_prior_knowledge_or_other_sections
+    recommended_resolution: reject_silent_import_accept_labelled_inference_or_source_absence_caveat_and_version_question_to_ask_sources_where_explicitly_stated
+  - conflict_id: GIR-C03
+    conflict_type: title_authority_and_operational_scope_projection
+    claim: appendix_only_figure_projection_is_identical_to_all_body_titles_and_full_document_completeness
+    sources:
+      - locator: D1_L114_163_179_222_254_298_body_captions
+      - locator: D1_L374_to_L384_char_21775_22001_appendix_aliases
+      - locator: pilot.py_scoped_parts_figure_catalogue_regex
+    competing_interpretations:
+      - full_Markdown_numbered_figures_with_body_titles_primary
+      - appendix_B_catalogue_titles_only
+    recommended_resolution: retain_six_number_set_accept_both_source_supported_aliases_for_old_question_and_version_any_appendix_only_or_body_primary_scope_rule
+  - conflict_id: GIR-C04
+    conflict_type: category_vs_subcondition_completeness
+    claim: D1_LIMITS_four_short_headings_alone_establish_all_explanatory_omissions
+    sources:
+      - locator: D1_L316_char_19711_19829
+      - locator: D1_L318_char_19831_19950
+      - locator: D1_L320_char_19952_20057
+      - locator: D1_L322_char_20059_20157
+    competing_interpretations:
+      - four_numbered_limitation_categories_suffice
+      - complete_substantive_limitation_descriptions_require_named_omitted_factors_and_risks
+    recommended_resolution: retain_four_category_denominator_and_audit_explanatory_subbindings_separately_or_version_the_question_to_require_those_explanations
+  - conflict_id: GIR-C05
+    conflict_type: exact_anchor_vs_attribute_support_mismatch
+    claim: A2_short_existence_anchor_and_A3_short_visibility_anchor_verify_all_requested_attributes
+    sources:
+      - locator: D2_L103_char_12780_12930_complete_Q_K_V_sentence
+      - locator: D2_L105_char_13027_13472_complete_visibility_masking_bullet
+      - locator: gold.yaml_D2_ATTENTION_A2_A3_anchors_and_conditions
+      - locator: pilot.py_anchor_coverage_and_score_adjudication
+    competing_interpretations:
+      - short_anchor_presence_is_only_item_existence_evidence
+      - full_condition_provenance_requires_attribute_specific_spans_and_explicit_inference_status
+    recommended_resolution: supplement_A2_and_A3_anchors_and_define_attribute_level_adjudication_without_treating_anchor_presence_as_answer_correctness
+conflict_resolution_status: UNRESOLVED
+merge_permission: orchestrator_only
+recommended_next_action: "The orchestrator should adjudicate GIR-C01 through GIR-C05 and record a versioned Gold/question policy before canonical merging or subsequent answer scoring."
+stage_acceptance_recommendation: REPAIR

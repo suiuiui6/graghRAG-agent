@@ -1,0 +1,128 @@
+.................................................+++++++++++++++++++++++++++++++++++ Timeout +++++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~ Stack of Thread-51 (run_blocking_portal) (28440) ~~~~~~~~~~~~~~~
+  File "C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\anyio\from_thread.py", line 538, in run_blocking_portal
+    run_eventloop(
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\anyio\_core\_eventloop.py", line 83, in run
+    return async_backend.run(func, args, {}, backend_options)
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\anyio\_backends\_asyncio.py", line 2547, in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+  File "C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 58, in __enter__
+    self._lazy_init()
+  File "C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 137, in _lazy_init
+    self._loop = events.new_event_loop()
+  File "C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 823, in new_event_loop
+    return get_event_loop_policy().new_event_loop()
+  File "C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 720, in new_event_loop
+    return self._loop_factory()
+  File "C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py", line 316, in __init__
+    super().__init__(proactor)
+  File "C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\asyncio\proactor_events.py", line 640, in __init__
+    self._make_self_pipe()
+  File "C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\asyncio\proactor_events.py", line 787, in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+  File "C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 627, in _fallback_socketpair
+    ssock, _ = lsock.accept()
+  File "C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 295, in accept
+    fd, addr = self._accept()
+~~~~~~~~~~~~~~~~~~~~~~~~~ Stack of MainThread (2404) ~~~~~~~~~~~~~~~~~~~~~~~~~~
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\pytest\__main__.py", line 9, in <module>
+    raise SystemExit(_console_main())
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\_pytest\config\__init__.py", line 253, in _console_main
+    code = _main(prog=_get_prog_name(sys.argv))
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\_pytest\config\__init__.py", line 229, in _main
+    ret: ExitCode | int = config.hook.pytest_cmdline_main(config=config)
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\pluggy\_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\pluggy\_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\_pytest\main.py", line 377, in pytest_cmdline_main
+    return wrap_session(config, _main)
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\_pytest\main.py", line 330, in wrap_session
+    session.exitstatus = doit(config, session) or 0
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\_pytest\main.py", line 384, in _main
+    config.hook.pytest_runtestloop(session=session)
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\pluggy\_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\pluggy\_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\_pytest\main.py", line 408, in pytest_runtestloop
+    item.config.hook.pytest_runtest_protocol(item=item, nextitem=nextitem)
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\pluggy\_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\pluggy\_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\_pytest\runner.py", line 118, in pytest_runtest_protocol
+    runtestprotocol(item, nextitem=nextitem)
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\_pytest\runner.py", line 139, in runtestprotocol
+    reports.append(call_and_report(item, "call", log))
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\_pytest\runner.py", line 249, in call_and_report
+    call = CallInfo.from_call(
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\_pytest\runner.py", line 361, in from_call
+    result: TResult | None = func()
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\_pytest\runner.py", line 250, in <lambda>
+    lambda: runtest_hook(item=item, **kwds),
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\pluggy\_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\pluggy\_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\_pytest\runner.py", line 184, in pytest_runtest_call
+    item.runtest()
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\_pytest\python.py", line 1707, in runtest
+    self.ihook.pytest_pyfunc_call(pyfuncitem=self)
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\pluggy\_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\pluggy\_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\_pytest\python.py", line 167, in pytest_pyfunc_call
+    result = testfunction(**testargs)
+  File "D:\graghRAG-agent\backend\tests\test_phase2.py", line 389, in test_catalog_summary
+    r = client.get("/api/v1/catalog/summary")
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\starlette\testclient.py", line 483, in get
+    return super().get(
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\httpx2\_client.py", line 1113, in get
+    return self.request(
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\starlette\testclient.py", line 455, in request
+    return super().request(
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\httpx2\_client.py", line 797, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\httpx2\_client.py", line 980, in send
+    response = self._send_handling_auth(
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\httpx2\_client.py", line 1008, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\httpx2\_client.py", line 1043, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\httpx2\_client.py", line 1076, in _send_single_request
+    response = transport.handle_request(request)
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\starlette\testclient.py", line 349, in handle_request
+    with self.portal_factory() as portal:
+  File "C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\starlette\testclient.py", line 427, in _portal_factory
+    with anyio.from_thread.start_blocking_portal(**self.async_backend) as portal:
+  File "C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+  File "D:\graghRAG-agent\.tmp\backend-quality-venv-20261012\Lib\site-packages\anyio\from_thread.py", line 554, in start_blocking_portal
+    portal = future.result()
+  File "C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 451, in result
+    self._condition.wait(timeout)
+  File "C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 355, in wait
+    waiter.acquire()
++++++++++++++++++++++++++++++++++++ Timeout +++++++++++++++++++++++++++++++++++

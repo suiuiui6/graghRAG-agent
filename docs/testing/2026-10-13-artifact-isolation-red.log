@@ -1,0 +1,20 @@
+FF                                                                       [100%]
+================================== FAILURES ===================================
+_____ test_runtime_artifact_defaults_remain_isolated_after_module_reload ______
+backend\tests\test_runtime_artifact_isolation.py:14: in test_runtime_artifact_defaults_remain_isolated_after_module_reload
+    assert registry.BM25_ARTIFACT_PATH.is_relative_to(tmp_path)
+E   AssertionError: assert False
+E    +  where False = is_relative_to(WindowsPath('D:/graghRAG-agent/backend/tests/_sandbox_tmp/artifact-isolation-red-20261013/test_runtime_artifact_defaults0'))
+E    +    where is_relative_to = WindowsPath('D:/graghRAG-agent/backend/output/runtime/bm25_artifact.json').is_relative_to
+E    +      where WindowsPath('D:/graghRAG-agent/backend/output/runtime/bm25_artifact.json') = <module 'index_registry' from 'D:\\graghRAG-agent\\backend\\index_registry.py'>.BM25_ARTIFACT_PATH
+__________ test_snapshot_failure_preserves_previously_valid_artifact __________
+backend\tests\test_runtime_artifact_isolation.py:30: in test_snapshot_failure_preserves_previously_valid_artifact
+    assert index_registry.snapshot_table_index(index=UnavailableTable()) is None
+E   AssertionError: assert {'rows': []} is None
+E    +  where {'rows': []} = <function snapshot_table_index at 0x00000257ADAFA8E0>(index=<tests.test_runtime_artifact_isolation.test_snapshot_failure_preserves_previously_valid_artifact.<locals>.UnavailableTable object at 0x00000257ADB996D0>)
+E    +    where <function snapshot_table_index at 0x00000257ADAFA8E0> = index_registry.snapshot_table_index
+E    +    and   <tests.test_runtime_artifact_isolation.test_snapshot_failure_preserves_previously_valid_artifact.<locals>.UnavailableTable object at 0x00000257ADB996D0> = <class 'tests.test_runtime_artifact_isolation.test_snapshot_failure_preserves_previously_valid_artifact.<locals>.UnavailableTable'>()
+=========================== short test summary info ===========================
+FAILED backend\tests\test_runtime_artifact_isolation.py::test_runtime_artifact_defaults_remain_isolated_after_module_reload
+FAILED backend\tests\test_runtime_artifact_isolation.py::test_snapshot_failure_preserves_previously_valid_artifact
+2 failed in 1.52s

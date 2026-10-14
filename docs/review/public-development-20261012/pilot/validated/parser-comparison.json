@@ -1,0 +1,15 @@
+{
+  "status": "PASS_BODY_CONTENT_WITH_CONFIRMED_DEFAULT_LIST_STRUCTURE_FAILURE",
+  "pdf_page_one_based": 8,
+  "printed_page": "5",
+  "body_equal_after_whitespace_and_bullet_position_ignored": true,
+  "bullet_count_both": 14,
+  "default_mode": "14 detached bullet-only lines before body items",
+  "layout_mode": "14 bullets attached to item opening lines",
+  "adopted": "pdftotext 25.07.0 -layout after visual review",
+  "scientific_interpretation": "parser configuration issue, not new-method evidence",
+  "inputs": {
+    "NIST-8091.canonical.txt": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589",
+    "NIST-8091.default.txt": "9f447eb8adca99e5043db5f8f4ddd2df88b1ac90e080e99c2a184827b6fd03c9"
+  }
+}

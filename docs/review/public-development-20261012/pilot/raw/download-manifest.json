@@ -1,0 +1,52 @@
+{
+  "status": "ORIGINALS_DOWNLOADED_BYTE_HASHED_BASIC_IDENTITY_PASS",
+  "recorded_at_utc": "2026-10-12T11:34:49.561127+00:00",
+  "records": [
+    {
+      "file": "NIST.IR.8091.pdf",
+      "official_url": "https://nvlpubs.nist.gov/nistpubs/ir/2015/NIST.IR.8091.pdf",
+      "bytes": 467253,
+      "sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093",
+      "role": "development",
+      "artifact_kind": "ORIGINAL_OFFICIAL_FILE",
+      "download_route": "curl.exe ordinary public HTTPS file; no API/credentials",
+      "downloaded_on": "2026-10-12",
+      "local_mtime_utc": "2026-10-12T11:32:59.541345+00:00"
+    },
+    {
+      "file": "ini-homing.html",
+      "official_url": "https://linuxcnc.org/docs/2.9/html/config/ini-homing.html",
+      "bytes": 33689,
+      "sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+      "role": "development",
+      "artifact_kind": "ORIGINAL_OFFICIAL_FILE",
+      "download_route": "curl.exe ordinary public HTTPS file; no API/credentials",
+      "downloaded_on": "2026-10-12",
+      "local_mtime_utc": "2026-10-12T11:33:25.248509+00:00"
+    },
+    {
+      "file": "gpld-copyright.html",
+      "official_url": "https://linuxcnc.org/docs/2.9/html/common/gpld-copyright.html",
+      "bytes": 22447,
+      "sha256": "063eabefc4aee2726e963f1758e64ae6f6e3ab8550701b40ff92a53943cbd56a",
+      "role": "development",
+      "artifact_kind": "ORIGINAL_OFFICIAL_FILE",
+      "download_route": "curl.exe ordinary public HTTPS file; no API/credentials",
+      "downloaded_on": "2026-10-12",
+      "local_mtime_utc": "2026-10-12T11:33:24.628020+00:00"
+    }
+  ],
+  "nist_pdf_pages_from_local_text": 17,
+  "derivative_files": [
+    {
+      "file": "NIST.IR.8091.layout.txt",
+      "kind": "LOCAL_PDFTOTEXT_LAYOUT_DERIVATIVE_NOT_RAW"
+    }
+  ],
+  "visual_validation": "PENDING",
+  "gold_rebinding": "PENDING",
+  "linux_release": "2.9 URL branch, byte snapshot frozen; exact release not established",
+  "linux_external_images": "NOT_DOWNLOADED_NOT_USED_IN_GOLD",
+  "heldout_H1": [],
+  "heldout_H2": []
+}

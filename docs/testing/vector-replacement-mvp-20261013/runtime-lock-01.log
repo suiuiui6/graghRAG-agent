@@ -1,0 +1,28 @@
+Using CPython 3.12.8 interpreter at: C:\Users\14156\AppData\Local\Programs\Python\Python312\python.exe
+Resolved 18 packages in 30ms
+Removed boolean-py v5.0
+Removed cachecontrol v0.14.4
+Removed certifi v2026.7.22
+Removed charset-normalizer v3.5.2
+Removed cyclonedx-python-lib v11.12.0
+Removed defusedxml v0.7.1
+Removed filelock v4.1.1
+Removed idna v3.20
+Removed license-expression v30.4.4
+Removed markdown-it-py v4.2.0
+Removed mdurl v0.1.2
+Removed msgpack v1.2.3
+Removed packageurl-python v0.17.6
+Removed pip v26.2.1
+Removed pip-api v0.0.35
+Removed pip-audit v2.10.1
+Removed pip-requirements-parser v32.0.1
+Removed platformdirs v4.13.0
+Removed py-serializable v2.1.0
+Removed pygments v2.21.0
+Removed pyparsing v3.3.3
+Removed requests v2.34.2
+Removed rich v15.0.0
+Removed sortedcontainers v2.4.0
+Removed tomli v2.5.0
+Removed tomli-w v1.2.0

@@ -1,0 +1,11 @@
+{
+  "browser": "147.0.7727.15",
+  "scenarios": [
+    "shipped-public-script",
+    "inert-answer-label-type",
+    "source-expand",
+    "feedback"
+  ],
+  "page_errors": [],
+  "api_boundary": "local fixtures, no backend/provider calls"
+}

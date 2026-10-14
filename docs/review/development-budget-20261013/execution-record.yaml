@@ -1,0 +1,46 @@
+{
+  "contract_version": "1.0",
+  "execution_status": "EXECUTED_LOCAL",
+  "scope": "Local receipt validation; generation separately EXECUTED_REMOTE_USER_AUTHORIZED",
+  "remote_generation_status": "EXECUTED_REMOTE_USER_AUTHORIZED",
+  "sample_unit": "development question; 6 questions nested in 2 source units, one profile per question",
+  "input_files": [
+    "docs\\review\\development-budget-20261013\\manifest.json",
+    "docs\\review\\development-budget-20261013\\run-01\\ledger.json",
+    "docs\\review\\development-budget-20261013\\run-01\\summary.json"
+  ],
+  "analysis_source": [
+    "docs\\review\\development-budget-20261013\\summarize.py",
+    "docs\\review\\development-budget-20261013\\verify_offline.py"
+  ],
+  "software_version": {
+    "Python": "3.12.8",
+    "requests": "2.34.2",
+    "python-dotenv": "1.2.2"
+  },
+  "environment_notes": [
+    "Existing backend .venv; no dependency installation",
+    "No production service startup or index changes",
+    "API key only read in remote worker memory; not included in artifacts"
+  ],
+  "random_seed": null,
+  "execution_log": [
+    "docs\\review\\development-budget-20261013\\run-01\\ledger.json",
+    "docs\\review\\development-budget-20261013\\run-01\\summary.json"
+  ],
+  "output_files": [
+    "docs\\review\\development-budget-20261013\\resource-summary.json",
+    "docs\\review\\development-budget-20261013\\offline-verification.json",
+    "docs\\review\\development-budget-20261013\\expert-results-review.yaml"
+  ],
+  "assumptions_checked": [
+    "All 29 provider usages present and sum correctly",
+    "Input-chain and continuous map coverage independently verified",
+    "Source/code hashes unchanged",
+    "Gold not loaded by runner; semantic scoring not performed"
+  ],
+  "deviations_from_plan": [],
+  "executed_on": "2026-10-13",
+  "three_baseline_budget_frozen": false,
+  "scientific_stage": "M2_OPEN"
+}

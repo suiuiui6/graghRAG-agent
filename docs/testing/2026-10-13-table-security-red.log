@@ -1,0 +1,104 @@
+FFFFFFFFFFFFF.F.                                                         [100%]
+================================== FAILURES ===================================
+_ test_limit_requires_nonnegative_integer_without_executing_sql[1; DROP TABLE table_rows] _
+backend\tests\test_table_security_readiness.py:24: in test_limit_requires_nonnegative_integer_without_executing_sql
+    with pytest.raises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+______ test_limit_requires_nonnegative_integer_without_executing_sql[1] _______
+backend\tests\test_table_security_readiness.py:24: in test_limit_requires_nonnegative_integer_without_executing_sql
+    with pytest.raises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+______ test_limit_requires_nonnegative_integer_without_executing_sql[-1] ______
+backend\tests\test_table_security_readiness.py:25: in test_limit_requires_nonnegative_integer_without_executing_sql
+    table.query(top_k=limit)
+backend\table_index.py:143: in query
+    return self._recent_rows(top_k)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+backend\table_index.py:182: in _recent_rows
+    result = self.conn.execute(sql).fetchall()
+             ^^^^^^^^^^^^^^^^^^^^^^
+E   _duckdb.BinderException: Binder Error: LIMIT/OFFSET cannot be negative
+E   
+E   LINE 6:             LIMIT -1
+E                             ^
+_____ test_limit_requires_nonnegative_integer_without_executing_sql[True] _____
+backend\tests\test_table_security_readiness.py:24: in test_limit_requires_nonnegative_integer_without_executing_sql
+    with pytest.raises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+_____ test_limit_requires_nonnegative_integer_without_executing_sql[None] _____
+backend\tests\test_table_security_readiness.py:25: in test_limit_requires_nonnegative_integer_without_executing_sql
+    table.query(top_k=limit)
+backend\table_index.py:143: in query
+    return self._recent_rows(top_k)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+backend\table_index.py:182: in _recent_rows
+    result = self.conn.execute(sql).fetchall()
+             ^^^^^^^^^^^^^^^^^^^^^^
+E   _duckdb.BinderException: Binder Error: Referenced column "None" was not found because the FROM clause is missing
+E   
+E   LINE 6:             LIMIT None
+E                             ^
+_____ test_limit_requires_nonnegative_integer_without_executing_sql[1.5] ______
+backend\tests\test_table_security_readiness.py:24: in test_limit_requires_nonnegative_integer_without_executing_sql
+    with pytest.raises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+_ test_conditions_reject_sql_programs_functions_comments_and_unknown_fields[column_value_numeric > 0; DROP TABLE table_rows] _
+backend\tests\test_table_security_readiness.py:36: in test_conditions_reject_sql_programs_functions_comments_and_unknown_fields
+    with pytest.raises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+_ test_conditions_reject_sql_programs_functions_comments_and_unknown_fields[column_name = '\u9884\u7b97' OR 1=1] _
+backend\tests\test_table_security_readiness.py:36: in test_conditions_reject_sql_programs_functions_comments_and_unknown_fields
+    with pytest.raises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+_ test_conditions_reject_sql_programs_functions_comments_and_unknown_fields[column_name = '\u9884\u7b97' -- comment] _
+backend\tests\test_table_security_readiness.py:36: in test_conditions_reject_sql_programs_functions_comments_and_unknown_fields
+    with pytest.raises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+_ test_conditions_reject_sql_programs_functions_comments_and_unknown_fields[column_name = (SELECT '\u9884\u7b97')] _
+backend\tests\test_table_security_readiness.py:36: in test_conditions_reject_sql_programs_functions_comments_and_unknown_fields
+    with pytest.raises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+_ test_conditions_reject_sql_programs_functions_comments_and_unknown_fields[read_csv('untrusted.csv') IS NOT NULL] _
+backend\tests\test_table_security_readiness.py:36: in test_conditions_reject_sql_programs_functions_comments_and_unknown_fields
+    with pytest.raises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+_ test_conditions_reject_sql_programs_functions_comments_and_unknown_fields[column_name = '\u9884\u7b97' /*comment*/] _
+backend\tests\test_table_security_readiness.py:36: in test_conditions_reject_sql_programs_functions_comments_and_unknown_fields
+    with pytest.raises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+_ test_conditions_reject_sql_programs_functions_comments_and_unknown_fields[unknown_column = 1] _
+backend\tests\test_table_security_readiness.py:36: in test_conditions_reject_sql_programs_functions_comments_and_unknown_fields
+    with pytest.raises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+______________ test_wide_fallback_and_preference_are_observable _______________
+backend\tests\test_table_security_readiness.py:51: in test_wide_fallback_and_preference_are_observable
+    assert len(result) == 1 and result[0]['sheet_name'] == 'report'
+E   assert (0 == 1)
+E    +  where 0 = len([])
+=========================== short test summary info ===========================
+FAILED backend\tests\test_table_security_readiness.py::test_limit_requires_nonnegative_integer_without_executing_sql[1; DROP TABLE table_rows]
+FAILED backend\tests\test_table_security_readiness.py::test_limit_requires_nonnegative_integer_without_executing_sql[1]
+FAILED backend\tests\test_table_security_readiness.py::test_limit_requires_nonnegative_integer_without_executing_sql[-1]
+FAILED backend\tests\test_table_security_readiness.py::test_limit_requires_nonnegative_integer_without_executing_sql[True]
+FAILED backend\tests\test_table_security_readiness.py::test_limit_requires_nonnegative_integer_without_executing_sql[None]
+FAILED backend\tests\test_table_security_readiness.py::test_limit_requires_nonnegative_integer_without_executing_sql[1.5]
+FAILED backend\tests\test_table_security_readiness.py::test_conditions_reject_sql_programs_functions_comments_and_unknown_fields[column_value_numeric > 0; DROP TABLE table_rows]
+FAILED backend\tests\test_table_security_readiness.py::test_conditions_reject_sql_programs_functions_comments_and_unknown_fields[column_name = '\u9884\u7b97' OR 1=1]
+FAILED backend\tests\test_table_security_readiness.py::test_conditions_reject_sql_programs_functions_comments_and_unknown_fields[column_name = '\u9884\u7b97' -- comment]
+FAILED backend\tests\test_table_security_readiness.py::test_conditions_reject_sql_programs_functions_comments_and_unknown_fields[column_name = (SELECT '\u9884\u7b97')]
+FAILED backend\tests\test_table_security_readiness.py::test_conditions_reject_sql_programs_functions_comments_and_unknown_fields[read_csv('untrusted.csv') IS NOT NULL]
+FAILED backend\tests\test_table_security_readiness.py::test_conditions_reject_sql_programs_functions_comments_and_unknown_fields[column_name = '\u9884\u7b97' /*comment*/]
+FAILED backend\tests\test_table_security_readiness.py::test_conditions_reject_sql_programs_functions_comments_and_unknown_fields[unknown_column = 1]
+FAILED backend\tests\test_table_security_readiness.py::test_wide_fallback_and_preference_are_observable
+14 failed, 2 passed in 4.38s

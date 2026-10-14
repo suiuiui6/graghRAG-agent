@@ -1,0 +1,21 @@
+[project]
+name = "graphrag-rag-eval"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = ["fastapi>=0.115", "httpx>=0.28", "python-dotenv>=1.0"]
+
+[dependency-groups]
+dev = ["pytest>=8.3", "coverage>=7.6"]
+
+[tool.pytest.ini_options]
+testpaths = ["."]
+pythonpath = ["."]
+norecursedirs = [".venv", ".git", "__pycache__", "output", "_tmp*", "pytest-cache*", "graghRAG-agent.pytest-tmp"]
+
+[tool.coverage.run]
+branch = true
+source = ["."]
+omit = ["test_*.py", "*/tests/*", "*/.venv/*"]
+
+[tool.coverage.report]
+show_missing = true

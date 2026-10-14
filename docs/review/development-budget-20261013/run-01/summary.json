@@ -1,0 +1,27 @@
+{
+  "status": "PROFILE_COMPLETE",
+  "attempted_workers": 29,
+  "known_usage_subtotal": {
+    "prompt_tokens": 65125,
+    "completion_tokens": 11221,
+    "total_tokens": 76346
+  },
+  "total_cost_complete": true,
+  "messages_utf8_bytes": 268279,
+  "elapsed_seconds": 96.40600000001723,
+  "code_after_sha256": {
+    "backend/generator.py": "18a35058c95e89934b92d1c3a7229271fd2e5fca9d6ecb85abb9815cca7de9b1",
+    "backend/prompt_builder.py": "f6a62fe8529b8909e7a1c2a59f097d8659aea64020547f04087837bc2e529b7c",
+    "backend/retrieval.py": "7e1332a7bde6aff1d8d270397003567ccd72761f8a5b7fd25fd65851203f3e0b",
+    "backend/routes/rag_query.py": "178873090bb848a729ef7753f2461e1eec8971eb6657dd9074f99e13daae3899",
+    "backend/routes/query.py": "cbac6ef40b939a9519987d4317017ae71cf11825c3dde0dd4a8dc33c548e5780",
+    "backend/server.py": "bcd443b7fb6d32584e298af614d6936e14fdb58d20925d81c539af0b7105344e",
+    "backend/config.py": "f0cf031aa0a8a3282199883f26a29816bf358d4a879a24085f313c3b9fb58e8c",
+    "backend/models.py": "b8603e88ea3161de56a4a4bf3eb5c956bdc4bd15f7325be19acb197088d6d34c",
+    "backend/research/scope_v2.py": "5f02c5a0cce6ddb73778e7a64331277382e95549036afef77e91652ac7d67848"
+  },
+  "code_unchanged": true,
+  "three_baseline_budget_frozen": false,
+  "semantic_scoring": "NOT_EXECUTED",
+  "scientific_stage": "M2_OPEN"
+}

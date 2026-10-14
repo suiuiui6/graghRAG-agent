@@ -1,0 +1,30 @@
+{
+  "utc": "2026-10-14T09:13:53.737368+00:00",
+  "source_freeze_sha256": "43d38e03549f64762734d1d0339c7c87c3c4361346b1cb390983c3b293269d4c",
+  "frozen_files_verified": 284,
+  "core": {
+    "vector_errors.py": "b9a23b941eb84a7b50c866716e0c9dbcff3b1248be7c9daf2f9f594dc7ed4661",
+    "generic_filter.py": "33e1de11241f0884e1853c6fdbec71c9ed79a9351b2c8275c2524f8ff6fb49b8",
+    "parser_port.py": "18a85b55345caa9ce4ac7ea2e344cedc9561cdda8c1c0eb6824499b3a629753d",
+    "probe_store.py": "5cef32dcc4e5c595c71ddbc686158dc52899a9333b6af5a1e5f329cf793df51b",
+    "test_errors.py": "f66e246ace9a9fde1dcc0a6d0aef9055097eea1c7f35582d4c36dda26f323eaa",
+    "test_facade.py": "e47c1220d455d623517e55eb604bd4e91dfa4d7270c815de44ab5f2517f1f037"
+  },
+  "commands": [
+    {
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-errors-r5-rootverify-20261014\\test_errors.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-errors-r5-rootverify-20261014\\test_facade.py"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "scope": "root copied final snapshot, not independent reviewer"
+}

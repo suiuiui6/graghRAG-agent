@@ -1,0 +1,74 @@
+contract_version: "1.0"
+project_id: graphrag-paper-001
+paper_family: M
+stage_id: M2
+route: PROMPT_NATIVE_AGENT_AND_LOCAL_FILE_REVIEW
+data_sufficiency_for_gold_review: SUFFICIENT
+data_sufficiency_for_generalization_claim: INSUFFICIENT
+new_experiment_api_requests: 0
+primary_experts:
+  - task_id: GOLD-INDEPENDENT-20261007
+    expert_skill: sci-skills-paper-deep-reading
+    requested_model: gpt-6.1-sol
+    status: VERIFIED
+    task_summary: 独立盲法复核旧9题31条Gold及原文范围，重建条目/条件/角色，保留类别争议和新旧题版本边界。
+    inputs:
+      - docs/superpowers/plans/scope-pilot/gold.yaml
+      - backend/output/mineru/ingest_2/full.md
+      - backend/output/mineru/ingest_f/full.md
+      - integration/Agentic-RAG-Architecture.md
+    expected_outputs:
+      - independent-sol-review.md
+      - independent-sol-contract.yaml
+    evidence_boundaries:
+      - 禁读先前模型回答、旧裁决和报告，先冻结来源复核。
+      - Markdown原文核对不是原PDF视觉核验。
+      - 独立AI审查不等于独立人工标注或论文阶段通过。
+      - 不覆盖旧Gold或旧API实验，不读取凭据，不执行新API调用。
+    acceptance_checks:
+      - 全9题范围/集合完整性与31项绑定均核对。
+      - 争议有原文定位、竞争解释与建议，不按模型回答倒推Gold。
+      - 返回精确任务身份与全部专家合同字段。
+  - task_id: BASELINE-PROTOCOL-20261007
+    expert_skill: sci-skills-statistical-reporting
+    requested_model: gpt-6.1-sol
+    status: VERIFIED
+    acceptance_scope: DESIGN_ONLY_NOT_PRODUCTION_OR_CONTROLLED_EXECUTION
+    task_summary: 复核后制定生产B0、自动范围路由与oracle上界的可证伪验证方案，不运行实验。
+    inputs:
+      - independent-sol-review.md
+      - production-readiness-audit.md
+      - production-readiness-audit.json
+    expected_outputs:
+      - validation-protocol-sol.md
+      - validation-protocol-sol-contract.yaml
+    evidence_boundaries:
+      - 当前3文档为探索pilot，不能当作盲测或显著性证明。
+      - 真实生产基线和受控请求适配器必须分开命名。
+      - 新自动路由不能读取Gold范围、条目、答案和人工选择。
+      - 只设计，不实现、不导入新文档、不追加远程调用。
+    acceptance_checks:
+      - 明确范围决策/证据覆盖/答案绑定/引用支持/空范围五类指标。
+      - 明确语料身份、部署版本、缓存、隐藏调用、预算及后处理控制。
+      - 明确简单方法已足够时停止新算法包装的判据。
+  - task_id: GOLD-PACKAGE-20261008
+    expert_skill: sci-skills-data-availability
+    requested_model: gpt-6.1-sol
+    status: VERIFIED
+    task_summary: 新v2本地属性Gold包及复现命令验收；不改旧31项和27份回答，不通过M2。
+    inputs:
+      - gold-package-task-20261008.yaml
+      - approval-record-20261008.yaml
+      - gold-policy-proposal.yaml
+      - independent-sol-review.md
+    expected_outputs:
+      - gold-v2.yaml
+      - gold-v2-package.md
+      - gold-v2-package-contract.yaml
+    evidence_boundaries:
+      - 仅本地Markdown源文绑定；不是人工Gold认证、PDF核验或模型效果验证。
+      - 本地全范围不是向provider上传全文许可；AUTO不得接触Gold。
+    acceptance_checks:
+      - 九题31条、125必填25可选属性和172证据关联核验通过。
+      - 父重跑说明中命令，与文档JSON输出相同，精准19字段身份通过。
+      - FUTURE覆盖只要求第4项；FIG别名可接受，未询问细节不强制。

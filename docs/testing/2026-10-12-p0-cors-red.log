@@ -1,0 +1,31 @@
+FF                                                                       [100%]
+================================== FAILURES ===================================
+__ test_real_server_cors_preflight_preserves_authenticated_request_boundary ___
+backend\tests\test_p0_resource_routes.py:258: in test_real_server_cors_preflight_preserves_authenticated_request_boundary
+    assert preflight.status_code == 200
+E   assert 401 == 200
+E    +  where 401 = <Response [401 Unauthorized]>.status_code
+---------------------------- Captured stderr call -----------------------------
+HTTP Request: OPTIONS http://testserver/api/v1/documents "HTTP/1.1 401 Unauthorized"
+_______________ test_public_widget_script_is_exact_public_route _______________
+backend\tests\test_p0_resource_routes.py:268: in test_public_widget_script_is_exact_public_route
+    assert client.get("/static/chat-widget.js").status_code == 200
+E   AssertionError: assert 401 == 200
+E    +  where 401 = <Response [401 Unauthorized]>.status_code
+E    +    where <Response [401 Unauthorized]> = get('/static/chat-widget.js')
+E    +      where get = <starlette.testclient.TestClient object at 0x00000242AE6F9B50>.get
+---------------------------- Captured stderr call -----------------------------
+HTTP Request: GET http://testserver/static/chat-widget.js "HTTP/1.1 401 Unauthorized"
+------------------------------ Captured log call ------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/static/chat-widget.js "HTTP/1.1 401 Unauthorized"
+============================== warnings summary ===============================
+backend\.venv\Lib\site-packages\_pytest\config\__init__.py:1434
+  D:\graghRAG-agent\backend\.venv\Lib\site-packages\_pytest\config\__init__.py:1434: PytestConfigWarning: Unknown config option: timeout
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED backend\tests\test_p0_resource_routes.py::test_real_server_cors_preflight_preserves_authenticated_request_boundary
+FAILED backend\tests\test_p0_resource_routes.py::test_public_widget_script_is_exact_public_route
+2 failed, 16 deselected, 1 warning in 6.73s

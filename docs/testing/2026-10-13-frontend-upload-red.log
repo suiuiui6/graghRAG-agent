@@ -1,0 +1,21 @@
+
+ RUN  v5.0.4 D:/graghRAG-agent/frontend
+
+ ❯ tests/pages.test.tsx (28 tests | 1 failed | 27 skipped) 31ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/pages.test.tsx > leaving upload stops polling and remount creates exactly one independent timer
+AssertionError: expected "getStatus" to be called 1 times, but got 3 times
+ ❯ tests/pages.test.tsx:55:359
+   × leaving upload stops polling and remount creates exactly one independent timer 30ms
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 27 skipped (28)
+   Start at  08:46:52
+   Duration  4.97s (environment 54%, import 25%, setup 16%, transform 5%, tests 1%)
+

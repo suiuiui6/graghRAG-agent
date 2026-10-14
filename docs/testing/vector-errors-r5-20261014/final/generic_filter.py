@@ -1,0 +1,141 @@
+"""Isolated static-generation metadata projection, not a product adapter."""
+import functools
+import json
+import math
+import operator
+
+import pyarrow as pa
+from lancedb.expr import col, lit
+from parser_port import parse
+from vector_errors import VectorStoreError, VectorInputError, VectorStorageError, VectorCapabilityError
+
+def numeric_parse(value, query=False):
+    try: return parse(json.dumps(value))
+    except (ValueError, OverflowError) as exc:
+        raise VectorInputError("invalid_filter" if query else "invalid_input", "compile" if query else "encode") from exc
+
+def ingress(value, query=False):
+    if type(value) not in (int,float): return value
+    tag, parsed=numeric_parse(value, query=query)
+    if query and tag=='u64' and parsed>=2**63:
+        raise VectorInputError('invalid_filter','compile')
+    # SQLite REAL readback canonicalizes either signed zero; query parser retains sign.
+    if not query and type(parsed) is float and parsed==0.0: return 0.0
+    return parsed
+
+SCALARS={bool:'bool',int:'int',float:'float',str:'str'}
+OPS={'$eq':'eq','$ne':'ne','$gt':'gt','$gte':'gte','$lt':'lt','$lte':'lte'}
+NUMERIC_RULES={'ingress':'serde_json 1.0.149 default numeric parser port; record formatter bounded approximation','query':'parsed i64/f64; u64 above I64 rejected; long integer overflow follows parser finite f64 conversion','set':'original Python homogeneous types, then first parsed f64 uses as_f64; first i64 requires all as_i64','int_record_float_query':'parsed finite float truncate toward zero then saturate signed int64','payload':'raw metadata_json separate from compat_metadata_json and parsed comparison columns'}
+
+class StaticProjection:
+    @staticmethod
+    def _validate_record(record):
+        if not isinstance(record,dict) or type(record.get('id')) is not str or not isinstance(record.get('metadata'),dict):
+            raise VectorInputError('invalid_input','encode')
+        for key,value in record['metadata'].items():
+            if type(key) is not str or type(value) not in SCALARS:
+                raise VectorInputError('invalid_input','encode')
+            if type(value) is int and not -(2**63)<=value<2**63:
+                raise VectorInputError('invalid_input','encode')
+            if type(value) is float and not math.isfinite(value):
+                raise VectorInputError('invalid_input','encode')
+
+    def __init__(self, records):
+        for record in records: self._validate_record(record)
+        keys=sorted({key for record in records for key in record['metadata']})
+        self.mapping={key:f'm{index}' for index,key in enumerate(keys)}
+        fields=[('id',pa.string()),('metadata_json',pa.string()),('compat_metadata_json',pa.string()),('vector',pa.list_(pa.float32(),3))]
+        for prefix in self.mapping.values():
+            fields.extend([(prefix+'_present',pa.bool_()),(prefix+'_type',pa.string()),(prefix+'_bool',pa.bool_()),(prefix+'_int',pa.int64()),(prefix+'_float',pa.float64()),(prefix+'_str',pa.string())])
+        self.schema=pa.schema(fields)
+        # The same immutable-generation mapping is embedded in the table schema.
+        self.schema=self.schema.with_metadata({b'metadata_projection':json.dumps(self.mapping,ensure_ascii=False,sort_keys=True).encode('utf-8')})
+
+    def encode(self, record, vector=None):
+        self._validate_record(record)
+        unknown=set(record['metadata'])-set(self.mapping)
+        if unknown: raise VectorCapabilityError('unsupported_capability','encode')
+        meta=record['metadata']
+        out={'id':record['id'],'metadata_json':json.dumps(meta,ensure_ascii=False,sort_keys=True),'compat_metadata_json':json.dumps({k:ingress(v) for k,v in meta.items()},ensure_ascii=False,sort_keys=True),'vector':vector or [1.,0.,0.]}
+        for key,prefix in self.mapping.items():
+            value=meta.get(key)
+            present=key in meta
+            tag=SCALARS.get(type(value),'missing') if present else 'missing'
+            if present and tag=='missing': raise VectorInputError('invalid_input','encode')
+            if tag=='int' and not -(2**63)<=value<2**63: raise VectorInputError('invalid_input','encode')
+            if tag=='float' and not math.isfinite(value): raise VectorInputError('invalid_input','encode')
+            value=ingress(value)
+            out.update({prefix+'_present':present,prefix+'_type':tag,prefix+'_bool':value if tag=='bool' else False,prefix+'_int':value if tag=='int' else 0,prefix+'_float':value if tag=='float' else 0.,prefix+'_str':value if tag=='str' else ''})
+        return out
+
+    def _scalar(self,key,op,value,parsed=False):
+        tag=SCALARS.get(type(value))
+        if tag is None or (tag=='float' and not math.isfinite(value)): raise VectorInputError('invalid_filter','compile')
+        if op in ('$gt','$gte','$lt','$lte') and tag not in ('int','float'): raise VectorInputError('invalid_filter','compile')
+        if not parsed: value=ingress(value,query=True)
+        tag=SCALARS.get(type(value))
+        prefix=self.mapping.get(key)
+        if prefix is None: return lit(op=='$ne')
+        present=col(prefix+'_present')
+        dtype=col(prefix+'_type')
+        method=OPS[op]
+        if tag in ('int','float'):
+            # Chroma truth shows query literals are converted to the stored type.
+            integer=value if tag=='int' else min(2**63-1,max(-(2**63),math.trunc(value)))
+            as_float=float(value)
+            cmp_int=getattr(col(prefix+'_int'),method)(lit(integer))
+            cmp_float=getattr(col(prefix+'_float'),method)(lit(as_float))
+            comparable=((dtype==lit('int'))&cmp_int)|((dtype==lit('float'))&cmp_float)
+            if op=='$ne':
+                return (~present)|((dtype!=lit('int'))&(dtype!=lit('float')))|comparable
+            return present&comparable
+        comparable=(dtype==lit(tag))&getattr(col(prefix+'_'+tag),method)(lit(value))
+        if op=='$ne': return (~present)|(dtype!=lit(tag))|comparable
+        return present&comparable
+
+    def compile(self,where):
+        # These new resource limits are isolated-probe limits, not an accepted public contract.
+        budget=[0]
+        def visit(node,depth=0):
+            budget[0]+=1
+            if depth>16 or budget[0]>512: raise VectorInputError('invalid_filter','compile')
+            if not isinstance(node,dict) or len(node)!=1: raise VectorInputError('invalid_filter','compile')
+            key,value=next(iter(node.items()))
+            if type(key) is not str: raise VectorInputError('invalid_filter','compile')
+            if key in ('$and','$or'):
+                if not isinstance(value,list) or not 2<=len(value)<=64: raise VectorInputError('invalid_filter','compile')
+                return functools.reduce(operator.and_ if key=='$and' else operator.or_,[visit(x,depth+1) for x in value])
+            if key.startswith('$'): raise VectorInputError('invalid_filter','compile')
+            if not isinstance(value,dict): value={'$eq':value}
+            if len(value)!=1: raise VectorInputError('invalid_filter','compile')
+            op,arg=next(iter(value.items()))
+            if op in ('$in','$nin'):
+                if not isinstance(arg,list) or not 1<=len(arg)<=64 or any(type(v) is not type(arg[0]) for v in arg): raise VectorInputError('invalid_filter','compile')
+                if type(arg[0]) not in SCALARS: raise VectorInputError('invalid_filter','compile')
+                if type(arg[0]) in (int,float):
+                    values=[numeric_parse(v, query=True) for v in arg]
+                    first_tag,first=values[0]
+                    if first_tag=='f64': arg=[float(v) for _,v in values]
+                    else:
+                        if first>=2**63 or any(t=='f64' or v>=2**63 for t,v in values): raise VectorInputError('invalid_filter','compile')
+                        arg=[v for _,v in values]
+                    return functools.reduce(operator.or_ if op=='$in' else operator.and_,[self._scalar(key,'$eq' if op=='$in' else '$ne',v,parsed=True) for v in arg])
+                # Explicit OR of eq / AND of ne uses independently measured negative semantics.
+                return functools.reduce(operator.or_ if op=='$in' else operator.and_,[self._scalar(key,'$eq' if op=='$in' else '$ne',v) for v in arg])
+            if op not in OPS: raise VectorInputError('invalid_filter','compile')
+            return self._scalar(key,op,arg)
+        return visit(where)
+
+
+def _public_boundary(operation):
+    def decorate(fn):
+        @functools.wraps(fn)
+        def call(*args, **kwargs):
+            try: return fn(*args, **kwargs)
+            except VectorStoreError: raise
+            except Exception as exc: raise VectorStorageError('storage_unavailable',operation) from exc
+        return call
+    return decorate
+StaticProjection.__init__ = _public_boundary('open')(StaticProjection.__init__)
+StaticProjection.encode = _public_boundary('encode')(StaticProjection.encode)
+StaticProjection.compile = _public_boundary('compile')(StaticProjection.compile)

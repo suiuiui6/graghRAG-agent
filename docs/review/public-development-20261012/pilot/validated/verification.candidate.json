@@ -1,0 +1,23 @@
+{
+  "status": "LOCAL_SOURCE_BINDING_CHECKS_PASS_PENDING_INDEPENDENT_REVIEW",
+  "questions": 6,
+  "items": 36,
+  "attribute_atoms": 81,
+  "qualifiers": 1,
+  "nist_pages": 17,
+  "nist_list_bullets": 14,
+  "nist_list_pdf_page": 8,
+  "nist_list_printed_page": "5",
+  "browser_table_matrix_exact": true,
+  "raw_hash_guard": true,
+  "parser": "Python stdlib ElementTree + Poppler pdftotext 25.07.0 -layout",
+  "pdftotext_stderr": "",
+  "source_sha256": {
+    "LCNC-HOME": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05",
+    "NIST-8091": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093"
+  },
+  "canonical_sha256": {
+    "LCNC-HOME": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff",
+    "NIST-8091": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589"
+  }
+}

@@ -1,0 +1,128 @@
+make use of Whitney’s methodology augmented with a taxonomy of assembly operations
+with associated performance metrics. Whitney describes the basic factors in system
+design as:
+1. Analyze the product and determine alternate assembly methods and sequences,
+including for subassemblies. Determine the assembly process requirements,
+flexibility requirements, and problematic assembly steps.
+2. Select an assembly sequence.
+3. Determine the required production capacity of the system.
+4. List the feasible assembly techniques for each operation and estimate cost and
+time for each.
+5. Select a set of equipment or people that can make the product at the required rate
+for a reasonable cost.
+6. Conduct an economic analysis and proceed to a detailed system design.
+Whitney then provides guidance for all the above steps, while acknowledging that there
+are no approaches that will work in all cases. The underlying assumption is that it is
+indeed possible to manufacture the assembly for a reasonable cost but a significant
+amount of analysis, simulation, and approximation will be needed to determine the best
+approach. It is also expected that multiple iterations will be necessary, not just to
+converge on an initial system, but to improve the system over time after production
+begins.
+The role of a taxonomy of assembly operations and of the equipment that carries out
+those operations is to provide alternative techniques that can be combined to make the
+desired product. Such a taxonomy is the subject of an earlier paper, Shneier, et al. [11].
+The taxonomy provides a hierarchical structure that can be traversed to link different
+components of a manufacturing system together to achieve the required capabilities. It
+does not include a way of combining performance measures, nor does it resolve the
+problem of different measures being important at different levels of the hierarchy, but it
+does constrain which items can be considered at each stage and gives some idea of the 5
+costs incurred and capabilities added when a selection is made. This taxonomy needs to
+be augmented with assembly-relevant constraints to allow the performance of the
+combined system to be estimated.
+The performance criteria for an assembly system at the highest level are economic and
+include cost, product quality, flexibility, throughput, reliability, and ease of setup and use
+(and re-use) of the equipment. The criteria for individual subsystems include the same
+economic measures and, more importantly, characteristics that determine the suitability
+of the subsystem to contribute to making the product. Performance measures for a
+manipulator or a sensor must enable a decision to be made about whether or not it will
+contribute to a step in the assembly and, if so, what constraints it will impose on the
+solution and how adding it will affect the total system’s cost and performance. An
+incomplete list of the kinds of measures that are needed includes:
+ Tolerances (e.g., variability by which a manipulator reaches a commanded position,
+uncertainty in the reported output of a sensor)
+ Time needed for execution (e.g., a manipulator picking up a part, a sensor locating a
+part)
+ Variability (e.g., in time, position)
+ Weight (e.g., load capacity of a manipulator, constraints on capacity in different parts
+of its reachable volume)
+ Size (e.g., the footprint of a machine or the field of view of a sensor, the largest-sized
+object a robot can pick up)
+ Reachability of equipment (e.g., the working volume of a manipulator)
+ Accuracy of equipment (e.g., Is a robot capable of mating parts well enough to
+achieve the assembly? Can a sensor measure to the required accuracy to acquire a
+part?)
+ Speed of equipment (e.g., can the subsystem execute within the time allotted?)
+ Part feeding (e.g., does the equipment need precise feeding? Does a sensor need to be
+added to locate the parts?)
+ Required system capacity (e.g., can the system as configured achieve the necessary
+throughput?)
+ Uptime of equipment (is the system reliable enough to ensure that the required
+capacity will be achieved? If a subsystem fails, what is the impact on the system as a
+whole?)
+ Tool changes required (if tool changes are needed, can the order of operations be
+modified to minimize them?)
+ Testing and inspection (can testing and inspection be incorporated in other steps or is
+a separate subsystem needed and, if so, how many?)
+ Constraints—does adding this subsystem limit how other subsystems can be used
+(e.g., a manipulator requires a sensor to be able to locate a part to within a specific
+tolerance)6
+The taxonomy of subsystems must represent the information necessary for these
+measures to be computed for the given situation. This is the case not only for equipment
+such as manipulators, sensors, or transportation devices, but also for the software that
+controls those devices. Then, when step 5 of Whitney’s procedure is reached, it should be
+possible to compare the different options to be added for each step of the task and choose
+the best feasible alternative.
+Figure 1. The assembly taxonomy from Shneier, et al. [11].7
+Figure 1 shows the assembly taxonomy. For each action in the hierarchy, there may be
+several available pieces of equipment that can achieve the action. Each of them should
+have relevant parameters from the list above that characterizes its performance. The
+actions also have constraints that contain further parameters limiting the applicability of a
+given piece of equipment.
+3.1. Example
+To illustrate the approach, we present a simple example. Suppose the goal is to build a
+gearbox out of the set of parts shown in Figure 2. Assume that there are two robots
+available for this task together with two cameras and a mobile delivery vehicle
+(Automated Guided Vehicle, or AGV). One of the robots has force sensing, while the
+other does not. A person is also available to work on the assembly. The goal is to build
+the gearbox from the components, which will be delivered in a kit. A kit is a collection of
+the necessary parts, in this case placed in a flat tray but in unknown positions within the
+tray. The tray may be delivered to the work area by the vehicle and from the kit tray to
+the assembly area by one of the robots. Either or both robots may be selected to build the
+gearbox, but they have different capabilities. Similarly, any of the sensors may be used to
+locate the parts and inspect the results, but they have different fields of view and
+resolutions.
+Figure 2. A set of parts to be assembled into a gearbox.
+Figure 3. A view of the gearbox with all parts except the
+top cover assembled.
+1. Analyze the product and determine alternate assembly methods and sequences,
+including subassemblies. Determine the assembly process requirements,
+flexibility requirements, and problematic assembly steps.
+The assembly is challenging for several reasons. There are a number of small
+parts that may be difficult for a robot to pick up and manipulate; the gears fit
+tightly and require a strategy for meshing; they are also similar in size and color.
+Visual sensing may have trouble with the parts because internal features may be 8
+difficult to detect and there may not be enough contrast with the background. The
+base of the gearbox (the part on the right of Error! Reference source not found.)
+can move as other parts are attached to it unless it is held or fixtured. A tool is
+required to screw the top onto the base. The small parts must be removed from the
+bag before use.
+A good starting heuristic is to look for steps that can only be accomplished in one
+way. Several of the challenges must be addressed by having a person assist with
+the assembly. There seems no alternative to having the person remove the small
+parts from the bag and insert the pins into the assembly. The person will also have
+to insert the screws because the robots have no tools to accomplish this step.
+There also seems not to be a choice about using the robot with force sensing to
+insert the gears because of the tight fit and need for meshing. The vision system
+must be able to recognize the parts and locate them accurately enough to direct
+the manipulator to grasp them. It must also be able to confirm that each step of the
+assembly has been completed correctly before the system moves on to the next
+step. This may not be possible if the field of view of the sensor cannot cover both
+the location where the kit is delivered and the place where the assembly is carried
+out. Thus, two vision systems may be required. Given that the kit of parts is
+delivered by an AGV, two vision systems will be used.
+There are a few alternatives with respect to how to proceed with the assembly.
+One of the robots can fetch the parts while the other inserts them, or one of the
+robots can act as a fixture and hold the base while the other robot does all the
+other activities, or one robot can fetch a part and then hold the base while it is
+added. The person can insert the pins that act as axes for the two smaller gears
+before the robot inserts the large gear or afterwards or can insert each pin just

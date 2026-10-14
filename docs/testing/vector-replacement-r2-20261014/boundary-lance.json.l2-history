@@ -1,0 +1,1024 @@
+{
+  "mode": "lance",
+  "fixture_sha256": "a6b2d750437ba52f732a24e9dd7f0a88ed3242cb30482bce74588f9f8deffccc",
+  "fixture": {
+    "rows": [
+      {
+        "id": "boundary-0",
+        "metadata": {
+          "number": -9223372036854775808,
+          "group": "other"
+        },
+        "vector": [
+          1.0,
+          1.0,
+          0.0
+        ]
+      },
+      {
+        "id": "boundary-1",
+        "metadata": {
+          "number": -9223372036854775807,
+          "group": "selected"
+        },
+        "vector": [
+          2.0,
+          1.0,
+          0.0
+        ]
+      },
+      {
+        "id": "boundary-2",
+        "metadata": {
+          "number": -2,
+          "group": "other"
+        },
+        "vector": [
+          3.0,
+          1.0,
+          0.0
+        ]
+      },
+      {
+        "id": "boundary-3",
+        "metadata": {
+          "number": -1,
+          "group": "selected"
+        },
+        "vector": [
+          4.0,
+          1.0,
+          0.0
+        ]
+      },
+      {
+        "id": "boundary-4",
+        "metadata": {
+          "number": 0,
+          "group": "other"
+        },
+        "vector": [
+          5.0,
+          1.0,
+          0.0
+        ]
+      },
+      {
+        "id": "boundary-5",
+        "metadata": {
+          "number": 9223372036854775806,
+          "group": "selected"
+        },
+        "vector": [
+          6.0,
+          1.0,
+          0.0
+        ]
+      },
+      {
+        "id": "boundary-6",
+        "metadata": {
+          "number": 9223372036854775807,
+          "group": "other"
+        },
+        "vector": [
+          7.0,
+          1.0,
+          0.0
+        ]
+      },
+      {
+        "id": "float-negative",
+        "metadata": {
+          "number": -1.5,
+          "group": "selected"
+        },
+        "vector": [
+          8.0,
+          1.0,
+          0.0
+        ]
+      },
+      {
+        "id": "missing-number",
+        "metadata": {
+          "group": "other"
+        },
+        "vector": [
+          9.0,
+          1.0,
+          0.0
+        ]
+      }
+    ],
+    "cases": [
+      {
+        "number": {
+          "$eq": -9223372036854775808
+        }
+      },
+      {
+        "number": {
+          "$ne": -9223372036854775808
+        }
+      },
+      {
+        "number": {
+          "$gt": -9223372036854775808
+        }
+      },
+      {
+        "number": {
+          "$gte": -9223372036854775808
+        }
+      },
+      {
+        "number": {
+          "$lt": -9223372036854775808
+        }
+      },
+      {
+        "number": {
+          "$lte": -9223372036854775808
+        }
+      },
+      {
+        "number": {
+          "$eq": -9223372036854775807
+        }
+      },
+      {
+        "number": {
+          "$ne": -9223372036854775807
+        }
+      },
+      {
+        "number": {
+          "$gt": -9223372036854775807
+        }
+      },
+      {
+        "number": {
+          "$gte": -9223372036854775807
+        }
+      },
+      {
+        "number": {
+          "$lt": -9223372036854775807
+        }
+      },
+      {
+        "number": {
+          "$lte": -9223372036854775807
+        }
+      },
+      {
+        "number": {
+          "$eq": -1.5
+        }
+      },
+      {
+        "number": {
+          "$ne": -1.5
+        }
+      },
+      {
+        "number": {
+          "$gt": -1.5
+        }
+      },
+      {
+        "number": {
+          "$gte": -1.5
+        }
+      },
+      {
+        "number": {
+          "$lt": -1.5
+        }
+      },
+      {
+        "number": {
+          "$lte": -1.5
+        }
+      },
+      {
+        "number": {
+          "$eq": -1
+        }
+      },
+      {
+        "number": {
+          "$ne": -1
+        }
+      },
+      {
+        "number": {
+          "$gt": -1
+        }
+      },
+      {
+        "number": {
+          "$gte": -1
+        }
+      },
+      {
+        "number": {
+          "$lt": -1
+        }
+      },
+      {
+        "number": {
+          "$lte": -1
+        }
+      },
+      {
+        "number": {
+          "$eq": 9223372036854775806
+        }
+      },
+      {
+        "number": {
+          "$ne": 9223372036854775806
+        }
+      },
+      {
+        "number": {
+          "$gt": 9223372036854775806
+        }
+      },
+      {
+        "number": {
+          "$gte": 9223372036854775806
+        }
+      },
+      {
+        "number": {
+          "$lt": 9223372036854775806
+        }
+      },
+      {
+        "number": {
+          "$lte": 9223372036854775806
+        }
+      },
+      {
+        "number": {
+          "$eq": 9223372036854775807
+        }
+      },
+      {
+        "number": {
+          "$ne": 9223372036854775807
+        }
+      },
+      {
+        "number": {
+          "$gt": 9223372036854775807
+        }
+      },
+      {
+        "number": {
+          "$gte": 9223372036854775807
+        }
+      },
+      {
+        "number": {
+          "$lt": 9223372036854775807
+        }
+      },
+      {
+        "number": {
+          "$lte": 9223372036854775807
+        }
+      },
+      {
+        "number": {
+          "$in": [
+            -2,
+            -1
+          ]
+        }
+      },
+      {
+        "number": {
+          "$nin": [
+            -2,
+            -1
+          ]
+        }
+      },
+      {
+        "group": "selected"
+      },
+      {
+        "group": "absent"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "where": {
+        "number": {
+          "$eq": -9223372036854775808
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-0"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$ne": -9223372036854775808
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-1",
+        "boundary-2",
+        "boundary-3",
+        "boundary-4",
+        "boundary-5",
+        "boundary-6",
+        "float-negative",
+        "missing-number"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$gt": -9223372036854775808
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-1",
+        "boundary-2",
+        "boundary-3",
+        "boundary-4",
+        "boundary-5",
+        "boundary-6",
+        "float-negative"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$gte": -9223372036854775808
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-0",
+        "boundary-1",
+        "boundary-2",
+        "boundary-3",
+        "boundary-4",
+        "boundary-5",
+        "boundary-6",
+        "float-negative"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$lt": -9223372036854775808
+        }
+      },
+      "status": "OK",
+      "ids": []
+    },
+    {
+      "where": {
+        "number": {
+          "$lte": -9223372036854775808
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-0"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$eq": -9223372036854775807
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-1"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$ne": -9223372036854775807
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-0",
+        "boundary-2",
+        "boundary-3",
+        "boundary-4",
+        "boundary-5",
+        "boundary-6",
+        "float-negative",
+        "missing-number"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$gt": -9223372036854775807
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-2",
+        "boundary-3",
+        "boundary-4",
+        "boundary-5",
+        "boundary-6",
+        "float-negative"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$gte": -9223372036854775807
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-1",
+        "boundary-2",
+        "boundary-3",
+        "boundary-4",
+        "boundary-5",
+        "boundary-6",
+        "float-negative"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$lt": -9223372036854775807
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-0"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$lte": -9223372036854775807
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-0",
+        "boundary-1"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$eq": -1.5
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-3",
+        "float-negative"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$ne": -1.5
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-0",
+        "boundary-1",
+        "boundary-2",
+        "boundary-4",
+        "boundary-5",
+        "boundary-6",
+        "missing-number"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$gt": -1.5
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-4",
+        "boundary-5",
+        "boundary-6"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$gte": -1.5
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-3",
+        "boundary-4",
+        "boundary-5",
+        "boundary-6",
+        "float-negative"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$lt": -1.5
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-0",
+        "boundary-1",
+        "boundary-2"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$lte": -1.5
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-0",
+        "boundary-1",
+        "boundary-2",
+        "boundary-3",
+        "float-negative"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$eq": -1
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-3"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$ne": -1
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-0",
+        "boundary-1",
+        "boundary-2",
+        "boundary-4",
+        "boundary-5",
+        "boundary-6",
+        "float-negative",
+        "missing-number"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$gt": -1
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-4",
+        "boundary-5",
+        "boundary-6"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$gte": -1
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-3",
+        "boundary-4",
+        "boundary-5",
+        "boundary-6"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$lt": -1
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-0",
+        "boundary-1",
+        "boundary-2",
+        "float-negative"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$lte": -1
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-0",
+        "boundary-1",
+        "boundary-2",
+        "boundary-3",
+        "float-negative"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$eq": 9223372036854775806
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-5"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$ne": 9223372036854775806
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-0",
+        "boundary-1",
+        "boundary-2",
+        "boundary-3",
+        "boundary-4",
+        "boundary-6",
+        "float-negative",
+        "missing-number"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$gt": 9223372036854775806
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-6"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$gte": 9223372036854775806
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-5",
+        "boundary-6"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$lt": 9223372036854775806
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-0",
+        "boundary-1",
+        "boundary-2",
+        "boundary-3",
+        "boundary-4",
+        "float-negative"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$lte": 9223372036854775806
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-0",
+        "boundary-1",
+        "boundary-2",
+        "boundary-3",
+        "boundary-4",
+        "boundary-5",
+        "float-negative"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$eq": 9223372036854775807
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-6"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$ne": 9223372036854775807
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-0",
+        "boundary-1",
+        "boundary-2",
+        "boundary-3",
+        "boundary-4",
+        "boundary-5",
+        "float-negative",
+        "missing-number"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$gt": 9223372036854775807
+        }
+      },
+      "status": "OK",
+      "ids": []
+    },
+    {
+      "where": {
+        "number": {
+          "$gte": 9223372036854775807
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-6"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$lt": 9223372036854775807
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-0",
+        "boundary-1",
+        "boundary-2",
+        "boundary-3",
+        "boundary-4",
+        "boundary-5",
+        "float-negative"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$lte": 9223372036854775807
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-0",
+        "boundary-1",
+        "boundary-2",
+        "boundary-3",
+        "boundary-4",
+        "boundary-5",
+        "boundary-6",
+        "float-negative"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$in": [
+            -2,
+            -1
+          ]
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-2",
+        "boundary-3"
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$nin": [
+            -2,
+            -1
+          ]
+        }
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-0",
+        "boundary-1",
+        "boundary-4",
+        "boundary-5",
+        "boundary-6",
+        "float-negative",
+        "missing-number"
+      ]
+    },
+    {
+      "where": {
+        "group": "selected"
+      },
+      "status": "OK",
+      "ids": [
+        "boundary-1",
+        "boundary-3",
+        "boundary-5",
+        "float-negative"
+      ]
+    },
+    {
+      "where": {
+        "group": "absent"
+      },
+      "status": "OK",
+      "ids": []
+    }
+  ],
+  "differences": [],
+  "checks": [
+    "fresh_connection_schema_mapping_restore",
+    "metadata_exact_values_and_types"
+  ],
+  "rejected": [
+    "depth",
+    "width",
+    "nodes",
+    "list_size",
+    "new_key",
+    "int_overflow",
+    "nonfinite"
+  ],
+  "vector_checks": [
+    {
+      "where": {
+        "group": "selected"
+      },
+      "k": 1,
+      "ids": [
+        "boundary-1"
+      ],
+      "distances": [
+        4.0
+      ]
+    },
+    {
+      "where": {
+        "group": "selected"
+      },
+      "k": 3,
+      "ids": [
+        "boundary-1",
+        "boundary-3",
+        "boundary-5"
+      ],
+      "distances": [
+        4.0,
+        16.0,
+        36.0
+      ]
+    },
+    {
+      "where": {
+        "group": "selected"
+      },
+      "k": 20,
+      "ids": [
+        "boundary-1",
+        "boundary-3",
+        "boundary-5",
+        "float-negative"
+      ],
+      "distances": [
+        4.0,
+        16.0,
+        36.0,
+        64.0
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$lt": -1
+        }
+      },
+      "k": 1,
+      "ids": [
+        "boundary-0"
+      ],
+      "distances": [
+        1.0
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$lt": -1
+        }
+      },
+      "k": 3,
+      "ids": [
+        "boundary-0",
+        "boundary-1",
+        "boundary-2"
+      ],
+      "distances": [
+        1.0,
+        4.0,
+        9.0
+      ]
+    },
+    {
+      "where": {
+        "number": {
+          "$lt": -1
+        }
+      },
+      "k": 20,
+      "ids": [
+        "boundary-0",
+        "boundary-1",
+        "boundary-2",
+        "float-negative"
+      ],
+      "distances": [
+        1.0,
+        4.0,
+        9.0,
+        64.0
+      ]
+    },
+    {
+      "where": {
+        "group": "absent"
+      },
+      "k": 1,
+      "ids": [],
+      "distances": []
+    },
+    {
+      "where": {
+        "group": "absent"
+      },
+      "k": 3,
+      "ids": [],
+      "distances": []
+    },
+    {
+      "where": {
+        "group": "absent"
+      },
+      "k": 20,
+      "ids": [],
+      "distances": []
+    }
+  ],
+  "version": "0.40.0",
+  "status": "PASS",
+  "script_sha256": "afd6125ca5bd02753b3e79bed7f03c11063b8c6bfdfaa86fcabee626e185b66c"
+}

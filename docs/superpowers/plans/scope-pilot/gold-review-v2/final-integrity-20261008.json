@@ -1,0 +1,40 @@
+{
+  "status": "PASS_FINAL_LOCAL_INTEGRITY",
+  "readme_reproduction": {
+    "result": "PASS",
+    "questions": 9,
+    "core_items": 31,
+    "attributes_required_plus_optional": 150,
+    "required_attributes": 125,
+    "optional_attributes": 25,
+    "evidence_classes": {
+      "explicit": 146,
+      "absence": 3,
+      "inferred": 1
+    },
+    "exact_evidence_associations_verified": 172,
+    "source_hashes_verified": 3,
+    "input_hashes_verified": 6,
+    "scopes_verified": 9,
+    "D1_FIG_original_interval": [
+      0,
+      22366
+    ],
+    "D1_numbered_caption_lines": 12,
+    "D1_unique_numbered_figures": 6,
+    "D2_NONE_complete_scope_verified": true,
+    "model_or_API_execution": false
+  },
+  "frozen_artifacts_verified": 7,
+  "production_fingerprints_verified": 15,
+  "original_sources_verified": 3,
+  "old_run_files_unchanged_since_checkpoint": 62,
+  "sqlite_fingerprints_unchanged": 3,
+  "runtime_json_artifacts_unchanged": 3,
+  "historical_responses": 27,
+  "M2_still_open": true,
+  "M4_P2_preserved": true,
+  "new_API_calls": 0,
+  "production_replay": "NOT_EXECUTED",
+  "controlled_adapter": "NOT_IMPLEMENTED"
+}

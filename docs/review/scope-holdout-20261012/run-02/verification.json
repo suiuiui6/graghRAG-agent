@@ -1,0 +1,16 @@
+{
+  "status": "PASS_REPRODUCED_LOCAL_AUDIT_ONLY",
+  "source_files_rehashed": 62,
+  "candidate_groups": 8,
+  "candidate_copies": 33,
+  "historical_usage_records": 27,
+  "historical_total_tokens": 38733,
+  "source_mutations_detected": 0,
+  "run01_run02_differing_keys": [
+    "created_utc"
+  ],
+  "run01_created_utc_raw": "2026-10-12T10:13:56.650543+00:00",
+  "run02_created_utc_raw": "2026-10-12T10:20:18.060008+00:00",
+  "new_model_calls": 0,
+  "generator_budget_frozen": false
+}

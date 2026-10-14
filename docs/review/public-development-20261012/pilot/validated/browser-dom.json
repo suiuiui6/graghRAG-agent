@@ -1,0 +1,77 @@
+{
+  "browser": "155.0.4283.45",
+  "javaScriptEnabled": false,
+  "network": "file only, all remote requests blocked",
+  "blocked": [],
+  "dom": {
+    "title": "Homing Configuration",
+    "table": [
+      [
+        "Homing Type",
+        "HOME_SEARCH_VEL",
+        "HOME_LATCH_VEL",
+        "HOME_USE_INDEX"
+      ],
+      [
+        "Immediate",
+        "0",
+        "0",
+        "NO"
+      ],
+      [
+        "Index-only",
+        "0",
+        "nonzero",
+        "YES"
+      ],
+      [
+        "Switch-only",
+        "nonzero",
+        "nonzero",
+        "NO"
+      ],
+      [
+        "Switch and Index",
+        "nonzero",
+        "nonzero",
+        "YES"
+      ]
+    ],
+    "sections": {
+      "_home_search_vel": {
+        "text": "6.1. HOME_SEARCH_VEL\n\nThis variable has units of machine-units per second.\n\nThe default value is zero. A value of zero causes LinuxCNC to assume that there is no home switch; the search stage of homing is skipped.\n\nIf HOME_SEARCH_VEL is non-zero, then LinuxCNC assumes that there is a home switch. It begins by checking whether the home switch is already tripped. If tripped it backs off the switch at HOME_SEARCH_VEL. The direction of the back-off is opposite the sign of HOME_SEARCH_VEL. Then it searches for the home switch by moving in the direction specified by the sign of HOME_SEARCH_VEL, at a speed determined by its absolute value. When the home switch is detected, the joint will stop as fast as possible, but there will always be some overshoot. The amount of overshoot depends on the speed. If it is too high, the joint might overshoot enough to hit a limit switch or crash into the end of travel. On the other hand, if HOME_SEARCH_VEL is too low, homing can take a long time.",
+        "pre": []
+      },
+      "_home_latch_vel": {
+        "text": "6.2. HOME_LATCH_VEL\n\nThis variable has units of machine-units per second.\n\nSpecifies the speed and direction that LinuxCNC uses when it makes its final accurate determination of the home switch (if present) and index pulse location (if present). It will usually be slower than the search velocity to maximize accuracy. If HOME_SEARCH_VEL and HOME_LATCH_VEL have the same sign, then the latch phase is done while moving in the same direction as the search phase. (In that case, LinuxCNC first backs off the switch, before moving towards it again at the latch velocity.) If HOME_SEARCH_VEL and HOME_LATCH_VEL have opposite signs, the latch phase is done while moving in the opposite direction from the search phase. That means LinuxCNC will latch the first pulse after it moves off the switch. If HOME_SEARCH_VEL is zero (meaning there is no home switch), and this parameter is nonzero, LinuxCNC goes ahead to the index pulse search. If HOME_SEARCH_VEL is non-zero and this parameter is zero, it is an error and the homing operation will fail. The default value is zero.",
+        "pre": []
+      },
+      "_home_final_vel": {
+        "text": "6.3. HOME_FINAL_VEL\n\nThis variable has units of machine-units per second.\n\nIt specifies the speed that LinuxCNC uses when it makes its move from HOME_OFFSET to the HOME position. If the HOME_FINAL_VEL is missing from the INI file, then the maximum joint speed is used to make this move. The value must be a positive number.",
+        "pre": []
+      },
+      "_home_absolute_encoder": {
+        "text": "6.10. HOME_ABSOLUTE_ENCODER\n\nUse for absolute encoders. When a request is made to home the joint, the current joint position is set to the [JOINT_n]HOME_OFFSET value.\n\nThe final move to the [JOINT_n]HOME position is optional according to the HOME_ABSOLUTE_ENCODER setting:\n\nHOME_ABSOLUTE_ENCODER = 0 (Default) joint does not use an absolute encoder\nHOME_ABSOLUTE_ENCODER = 1 Absolute encoder, final move to [JOINT_n]HOME\nHOME_ABSOLUTE_ENCODER = 2 Absolute encoder, NO final move to [JOINT_n]HOME\nNote\n\tA HOME_IS_SHARED setting is silently ignored.\nNote\n\tA request to rehome the joint is silently ignored.",
+        "pre": [
+          "HOME_ABSOLUTE_ENCODER = 0 (Default) joint does not use an absolute encoder\nHOME_ABSOLUTE_ENCODER = 1 Absolute encoder, final move to [JOINT_n]HOME\nHOME_ABSOLUTE_ENCODER = 2 Absolute encoder, NO final move to [JOINT_n]HOME"
+        ]
+      },
+      "sec:homing-section": {
+        "text": "6.11. HOME_SEQUENCE\n\nUsed to define a multi-joint homing sequence HOME ALL and enforce homing order (e.g., Z may not be homed if X is not yet homed). A joint may be homed after all joints with a lower (absolute value) HOME_SEQUENCE have already been homed and are at the HOME_OFFSET. If two joints have the same HOME_SEQUENCE, they may be homed at the same time.\n\nNote\n\tIf HOME_SEQUENCE is not specified then the joint will not be homed by the HOME ALL sequence (but may be homed by individual joint-specific homing commands).\n\nThe initial HOME_SEQUENCE number may be 0, 1 (or -1). The absolute value of sequence numbers must increment by one — skipping sequence numbers is not supported. If a sequence number is omitted, HOME ALL homing will stop upon completion of the last valid sequence number.\n\nNegative HOME_SEQUENCE values indicate that joints in the sequence should synchronize the final move to [JOINT_n]HOME by waiting until all joints in the sequence are ready. If any joint has a negative HOME_SEQUENCE value, then all joints with the same absolute value (positive or negative) of the HOME_SEQUENCE item value will synchronize the final move.\n\nA negative HOME_SEQUENCE also applies to commands to home a single joint. If the HOME_SEQUENCE value is negative, all joints having the same absolute value of that HOME_SEQUENCE will be homed together with a synchronized final move. If the HOME_SEQUENCE value is zero or positive, a command to home the joint will home only the specified joint.\n\nJoint mode jogging of joints having a negative HOME_SEQUENCE is disallowed. In common gantry applications, such jogging can lead to misalignment (racking). Note that conventional jogging in world coordinates is always available once a machine is homed.\n\nExamples for a 3 joint system\n\nTwo sequences (0,1), no synchronization\n\n[JOINT_0]HOME_SEQUENCE = 0\n[JOINT_1]HOME_SEQUENCE = 1\n[JOINT_2]HOME_SEQUENCE = 1\n\nTwo sequences, joints 1 and 2 synchronized\n\n[JOINT_0]HOME_SEQUENCE =  0\n[JOINT_1]HOME_SEQUENCE = -1\n[JOINT_2]HOME_SEQUENCE = -1\n\nWith mixed positive and negative values, joints 1 and 2 synchronized\n\n[JOINT_0]HOME_SEQUENCE =  0\n[JOINT_1]HOME_SEQUENCE = -1\n[JOINT_2]HOME_SEQUENCE =  1\n\nOne sequence, no synchronization\n\n[JOINT_0]HOME_SEQUENCE =  0\n[JOINT_1]HOME_SEQUENCE =  0\n[JOINT_2]HOME_SEQUENCE =  0\n\nOne sequence, all joints synchronized\n\n[JOINT_0]HOME_SEQUENCE = -1\n[JOINT_1]HOME_SEQUENCE = -1\n[JOINT_2]HOME_SEQUENCE = -1",
+        "pre": [
+          "[JOINT_0]HOME_SEQUENCE = 0\n[JOINT_1]HOME_SEQUENCE = 1\n[JOINT_2]HOME_SEQUENCE = 1",
+          "[JOINT_0]HOME_SEQUENCE =  0\n[JOINT_1]HOME_SEQUENCE = -1\n[JOINT_2]HOME_SEQUENCE = -1",
+          "[JOINT_0]HOME_SEQUENCE =  0\n[JOINT_1]HOME_SEQUENCE = -1\n[JOINT_2]HOME_SEQUENCE =  1",
+          "[JOINT_0]HOME_SEQUENCE =  0\n[JOINT_1]HOME_SEQUENCE =  0\n[JOINT_2]HOME_SEQUENCE =  0",
+          "[JOINT_0]HOME_SEQUENCE = -1\n[JOINT_1]HOME_SEQUENCE = -1\n[JOINT_2]HOME_SEQUENCE = -1"
+        ]
+      },
+      "_immediate_homing": {
+        "text": "6.14. Immediate Homing\n\nIf a joint does not have home switches or does not have a logical home position like a rotary joint and you want that joint to home at the current position when the \"Home All\" button is pressed in the AXIS GUI, then the following INI entries for that joint are needed.\n\nHOME_SEARCH_VEL = 0\nHOME_LATCH_VEL = 0\nHOME_USE_INDEX = NO\nHOME_OFFSET = 0 (Or the home position offset (HOME))\nHOME_SEQUENCE = 0 (or other valid sequence number)\nNote\n\tThe default values for unspecified HOME_SEARCH_VEL, HOME_LATCH_VEL, HOME_USE_INDEX, HOME, and HOME_OFFSET are zero, so they may be omitted when requesting immediate homing. A valid HOME_SEQUENCE number should usually be included since omitting a HOME_SEQUENCE eliminates the joint from HOME ALL behavior as noted above.",
+        "pre": [
+          "HOME_SEARCH_VEL = 0\nHOME_LATCH_VEL = 0\nHOME_USE_INDEX = NO\nHOME_OFFSET = 0 (Or the home position offset (HOME))\nHOME_SEQUENCE = 0 (or other valid sequence number)"
+        ]
+      }
+    }
+  }
+}

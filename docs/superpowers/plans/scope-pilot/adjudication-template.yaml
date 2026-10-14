@@ -1,0 +1,34 @@
+template_only: true
+status: NOT_EXECUTED
+question_id: null
+baseline: null
+replicate_id: null
+model_identity_and_version: null
+runtime_effective_config: null
+visible_context_sha256: null
+source_document_sha256: null
+actual_input_tokens: null
+actual_output_tokens: null
+latency_ms: null
+generation_record:
+  status: null  # actual OK/ERROR/TIMEOUT, never fill without a real run
+  final_answer: null
+annotation:
+  annotator_1: null
+  annotator_2: null
+  disagreement_and_resolution: null
+  scope_review_complete: null
+  exhaustive_claim: null
+  empty_scope_correct: null
+  duplicate_item_count: null
+  claims: []
+claim_fields_required:
+  - verbatim_answer_span
+  - gold_id  # null for an extra/unsupported item
+  - condition_correct
+  - role_correct
+  - support_correct
+  - in_scope
+  - source_char_start
+  - source_char_end
+review_warning: do_not_derive_semantic_correctness_from_numeric_presence

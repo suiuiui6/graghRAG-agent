@@ -1,0 +1,15 @@
+{
+  "model": "deepseek-chat",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledge-based QA assistant for enterprise project documents.\nFollow these rules strictly:\n\n1. Answer ONLY using the provided context below. Do NOT fabricate information.\n2. EVERY factual statement MUST end with a source citation marker like [c00042] or [n0019].\n   - One citation per sentence minimum. Do NOT batch citations at the end of paragraphs.\n   - Example: \"The system uses 20MW electrolyzers [c00014]. Hydrogen production rate is 280kg/h [c00017].\"\n3. If the context is insufficient, clearly state: \"文档中未提及此信息\" (for Chinese queries) or \"This information is not mentioned in the documents\" (for English queries).\n4. For numerical/quantitative answers, use Markdown tables for clarity.\n   - Each table cell containing a fact must also include its citation marker.\n5. Respond in the same language as the user's question.\n6. Prioritize the most recent/production data when multiple sources conflict.\n"
+    },
+    {
+      "role": "user",
+      "content": "Merge the following map outputs for the question. Preserve\nall distinct supported items and required attributes, conditions and caveats;\ndeduplicate only semantically identical entries. Retain original chunk citations.\nDo not invent missing information or claim semantic exhaustiveness merely because\nall chunks were scanned. Map summaries may have omissions. Answer in Chinese.\n[QUESTION]\n在6.10 HOME_ABSOLUTE_ENCODER 中，列出枚举代码中的设置值及其行为，并列出该节Note说明的静默忽略行为。\n[MAP OUTPUTS]\n[{\"chunk_id\": \"LCNC-HOME-c000\", \"map_call_id\": \"DEV-L02-map-LCNC-HOME-c000\", \"output\": \"## 6.10 HOME_ABSOLUTE_ENCODER\\n\\n提供的摘录（Unicode 范围 [0,8000)）仅覆盖到 6.2 HOME_LATCH_VEL 一节，**未包含 6.10 HOME_ABSOLUTE_ENCODER 一节的内容**。\\n\\n因此：\\n\\n- 文档中未提及此信息（枚举代码中的设置值及其行为）。\\n- 文档中未提及此信息（该节 Note 说明的静默忽略行为）。\\n\\n根据结构索引，6.10 HOME_ABSOLUTE_ENCODER 位于 [11680, 11707)，超出本分块范围 [0,8000)，需查阅后续分块方可提取相关内容。\"}, {\"chunk_id\": \"LCNC-HOME-c001\", \"map_call_id\": \"DEV-L02-map-LCNC-HOME-c001\", \"output\": \"## 6.10 HOME_ABSOLUTE_ENCODER\\n\\n### 枚举代码中的设置值及其行为\\n\\n| 设置值 | 行为 | 来源 |\\n|---|---|---|\\n| `HOME_ABSOLUTE_ENCODER = 0` | 默认值，关节不使用绝对编码器 | [LCNC-HOME-c001] |\\n| `HOME_ABSOLUTE_ENCODER = 1` | 绝对编码器，执行到 `[JOINT_n]HOME` 的最终移动 | [LCNC-HOME-c001] |\\n| `HOME_ABSOLUTE_ENCODER = 2` | 绝对编码器，不执行到 `[JOINT_n]HOME` 的最终移动 | [LCNC-HOME-c001] |\\n\\n该参数用于绝对编码器 [LCNC-HOME-c001]。当请求对关节进行回零时，当前关节位置被设置为 `[JOINT_n]HOME_OFFSET` 值 [LCNC-HOME-c001]。到 `[JOINT_n]HOME` 位置的最终移动是否执行取决于 `HOME_ABSOLUTE_ENCODER` 的设置 [LCNC-HOME-c001]。\\n\\n### Note 说明的静默忽略行为\\n\\n| 静默忽略的行为 | 来源 |\\n|---|---|\\n| `HOME_IS_SHARED` 设置被静默忽略 | [LCNC-HOME-c001] |\\n| 对关节重新回零（rehome）的请求被静默忽略 | [LCNC-HOME-c001] |\"}, {\"chunk_id\": \"LCNC-HOME-c002\", \"map_call_id\": \"DEV-L02-map-LCNC-HOME-c002\", \"output\": \"文档中未提及此信息。\\n\\n提供的摘录内容涉及 `HOME_SEQUENCE` 的同步归零、关节点动（joint jogging）以及 HAL 逻辑示例，但并未包含 6.10 `HOME_ABSOLUTE_ENCODER` 节的内容，因此无法列出该节枚举代码中的设置值及其行为，也无法列出该节 Note 说明的静默忽略行为。\"}]"
+    }
+  ],
+  "temperature": 0.0,
+  "max_tokens": 2048
+}

@@ -1,0 +1,28 @@
+contract_version: '1.0'
+project_id: graphrag-paper-001
+paper_family: M
+stage_id: M2
+task_id: PUBLIC-DEV-SOURCES-20261012
+expert_skill: sci-skills-web-data-acquisition
+task_summary: 核查现成工业/技术手册QA发布的原文、许可、分割与范围集合Gold适配，协调者另查LinuxCNC/NIST。
+inputs:
+- 用户授权8份现有材料作开发并要求自主找公开开发来源
+- 当前三臂协议及既有盘点不足结论
+- TechManualQA/Industrial-Instruction官方链接
+expected_outputs:
+- 2–3路线排序、来源证据深度、研究字段映射、小试方案与完整合同
+evidence_boundaries:
+- 仅原生浏览、官方预览及作者代码；不配置外部接口、不下载全库、不调用模型、不读取企业正文
+- 源数据许可不覆盖第三方原手册；随机QA分割不等于文档分割
+acceptance_checks:
+- 身份匹配
+- 完整正文可得与许可分层
+- Gold粒度与三臂适配
+- 事实与推断区分
+known_missing_items:
+- 原文文件hash与本地parser验证
+- 全量JSONL doc_name审计及原手册权利
+manual_operation_allowed: false
+optional_adapters_allowed: []
+stage_authority: sci-skills
+lifecycle: VERIFIED

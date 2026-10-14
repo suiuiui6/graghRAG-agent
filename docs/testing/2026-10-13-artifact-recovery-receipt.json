@@ -1,0 +1,10 @@
+{
+  "time_utc": "2026-10-13T08:37:20.690936+00:00",
+  "path": "backend/output/runtime/table_artifact.json",
+  "before_sha256": "bc4e79720219f061278c91f7e2782d951eede5e508fc5f833fffa946341c6327",
+  "after_sha256": "43f7ce0b32bcf9c2d942403676d2f4a382fddcbe4967662e58231bb73415e12c",
+  "original_evidence": "2026-10-08 preflight metadata plus immutable 2026-10-11 capture copy",
+  "recovered_rows": 2,
+  "historical_copy_unchanged": true,
+  "research_freeze_updated": false
+}

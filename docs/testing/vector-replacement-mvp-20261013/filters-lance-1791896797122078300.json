@@ -1,0 +1,260 @@
+{
+  "mode": "lance",
+  "version": "0.40.0",
+  "synthetic_rows": [
+    {
+      "id": "a",
+      "source": "s1",
+      "page": 1,
+      "active": true
+    },
+    {
+      "id": "b",
+      "page": 2,
+      "active": false
+    },
+    {
+      "id": "c",
+      "source": "中文' OR 1=1 --",
+      "page": 3,
+      "active": true
+    },
+    {
+      "id": "d",
+      "source": "s2"
+    },
+    {
+      "id": "e",
+      "source": "s1",
+      "page": 0,
+      "active": false
+    },
+    {
+      "id": "f",
+      "source": "",
+      "page": 4,
+      "active": true
+    }
+  ],
+  "cases": [
+    {
+      "where": {
+        "source": "s1"
+      },
+      "ids": [
+        "a",
+        "e"
+      ],
+      "status": "OK"
+    },
+    {
+      "where": {
+        "source": {
+          "$eq": "中文' OR 1=1 --"
+        }
+      },
+      "ids": [
+        "c"
+      ],
+      "status": "OK"
+    },
+    {
+      "where": {
+        "source": {
+          "$ne": "s1"
+        }
+      },
+      "ids": [
+        "c",
+        "d",
+        "f"
+      ],
+      "status": "OK"
+    },
+    {
+      "where": {
+        "page": {
+          "$gt": 1
+        }
+      },
+      "ids": [
+        "b",
+        "c",
+        "f"
+      ],
+      "status": "OK"
+    },
+    {
+      "where": {
+        "page": {
+          "$gte": 2
+        }
+      },
+      "ids": [
+        "b",
+        "c",
+        "f"
+      ],
+      "status": "OK"
+    },
+    {
+      "where": {
+        "page": {
+          "$lt": 3
+        }
+      },
+      "ids": [
+        "a",
+        "b",
+        "e"
+      ],
+      "status": "OK"
+    },
+    {
+      "where": {
+        "page": {
+          "$lte": 2
+        }
+      },
+      "ids": [
+        "a",
+        "b",
+        "e"
+      ],
+      "status": "OK"
+    },
+    {
+      "where": {
+        "source": {
+          "$in": [
+            "s1",
+            "s2"
+          ]
+        }
+      },
+      "ids": [
+        "a",
+        "d",
+        "e"
+      ],
+      "status": "OK"
+    },
+    {
+      "where": {
+        "source": {
+          "$nin": [
+            "s1"
+          ]
+        }
+      },
+      "ids": [
+        "c",
+        "d",
+        "f"
+      ],
+      "status": "OK"
+    },
+    {
+      "where": {
+        "$and": [
+          {
+            "source": "s1"
+          },
+          {
+            "page": {
+              "$gt": 0
+            }
+          }
+        ]
+      },
+      "ids": [
+        "a"
+      ],
+      "status": "OK"
+    },
+    {
+      "where": {
+        "$or": [
+          {
+            "source": "s2"
+          },
+          {
+            "active": true
+          }
+        ]
+      },
+      "ids": [
+        "a",
+        "c",
+        "d",
+        "f"
+      ],
+      "status": "OK"
+    },
+    {
+      "where": {
+        "active": true
+      },
+      "ids": [
+        "a",
+        "c",
+        "f"
+      ],
+      "status": "OK"
+    },
+    {
+      "where": {
+        "active": 1
+      },
+      "status": "REJECTED",
+      "error": "ValueError: literal type"
+    },
+    {
+      "where": {
+        "page": true
+      },
+      "status": "REJECTED",
+      "error": "ValueError: literal type"
+    },
+    {
+      "where": {
+        "source": {
+          "$in": []
+        }
+      },
+      "status": "REJECTED",
+      "error": "ValueError: membership"
+    },
+    {
+      "where": {
+        "source": {
+          "$in": [
+            "s1",
+            1
+          ]
+        }
+      },
+      "status": "REJECTED",
+      "error": "ValueError: membership"
+    },
+    {
+      "where": {
+        "source": {
+          "$eq": "s1",
+          "$ne": "s2"
+        }
+      },
+      "status": "REJECTED",
+      "error": "ValueError: comparison shape"
+    },
+    {
+      "where": {
+        "missing_field": {
+          "$ne": "anything"
+        }
+      },
+      "status": "REJECTED",
+      "error": "ValueError: unknown field"
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "version": "DEV-GOLD-1",
+  "recorded_on": "2026-10-12",
+  "status": "DEVELOPMENT_ONLY_AI_REVIEWED",
+  "questions": 6,
+  "items": 36,
+  "attribute_scoring_units": 81,
+  "required_qualifiers": 1,
+  "independent_source_units": 2,
+  "human_gold_verified": false,
+  "reviewed_candidate_sha256": "31c50d0600b0b686d2045645c6f326ec05e35325876a0e331b18f8e1c91a937f",
+  "heldout_H1": [],
+  "heldout_H2": [],
+  "files": [
+    {
+      "path": "questions-gold.v1.json",
+      "bytes": 178671,
+      "sha256": "7ef8422dc92224d0065f3150361a2f61164432e01e378d01d1e789265312b47d"
+    },
+    {
+      "path": "answers.v1.md",
+      "bytes": 6904,
+      "sha256": "28ddd7b4647f12f644774b234d02dc8a16339f454ab53461fb69d23ab93244b6"
+    },
+    {
+      "path": "questions.input.json",
+      "bytes": 1803,
+      "sha256": "14da3a3e049c3acbc3e84121f77132d81a6e4c3477f417db926942db0cb29d07"
+    },
+    {
+      "path": "sources.json",
+      "bytes": 1276,
+      "sha256": "d8049b9c29705853e5558a8f92587f17f9f50c46b4854c5e2bd74f5f9275fc84"
+    },
+    {
+      "path": "expert-result.yaml",
+      "bytes": 3151,
+      "sha256": "a493c5a0536ffff145f779562b2321e22f0c7e0c2c8096ebd9905ea145d1b149"
+    },
+    {
+      "path": "data-dictionary.md",
+      "bytes": 3184,
+      "sha256": "47ed13bb6fe613ada5b3d93ae774e4ca32fcb77d1f41b930692e6e8bc18a064b"
+    },
+    {
+      "path": "visual-review.json",
+      "bytes": 1854,
+      "sha256": "c8b5d6eb39ae1bae118fdb68d6b5dab38f2a6eb9a262cdbc78abb10c736f6d23"
+    },
+    {
+      "path": "parser-comparison.json",
+      "bytes": 734,
+      "sha256": "b091f1af877dc2500c034b32536115e59aa43b96bbddb6cf2b0ad1682c3b16de"
+    },
+    {
+      "path": "build_validated_gold.py",
+      "bytes": 13115,
+      "sha256": "7c46876bd2c320b1aa67ffde1cef7373695c47e12bf38081d678b3e1578d862f"
+    },
+    {
+      "path": "render_original.cjs",
+      "bytes": 2193,
+      "sha256": "f7576f020f250aee4082d9c076d452f16902c3d0a5a317a986bfa634fa65d9d1"
+    },
+    {
+      "path": "compare_parsers.py",
+      "bytes": 1479,
+      "sha256": "fcbbdcbd21442cfececab44195f4eafe9ecf80e5f040c48d033c3749f1e994e1"
+    },
+    {
+      "path": "questions-gold.candidate.json",
+      "bytes": 178097,
+      "sha256": "31c50d0600b0b686d2045645c6f326ec05e35325876a0e331b18f8e1c91a937f"
+    },
+    {
+      "path": "verification.candidate.json",
+      "bytes": 845,
+      "sha256": "19b24e3d63c667e7ee4e8779b7555087169440ee32cda3beb34922b878f2c413"
+    },
+    {
+      "path": "browser-dom.json",
+      "bytes": 8383,
+      "sha256": "6471422b609ce5bd9543b7d6616a078162abe4294d5af9d174c16ea1c6e39316"
+    },
+    {
+      "path": "LCNC-HOME.canonical.txt",
+      "bytes": 18107,
+      "sha256": "4c7715be8bc294e93f3235343932e2f0c0d8c333230b57867188b17a06f08bff"
+    },
+    {
+      "path": "LCNC-HOME.blocks.json",
+      "bytes": 43810,
+      "sha256": "564e248e7e5ddeb1fdece690887166d5a26fdd84edefaa10240f6cf661e313c5"
+    },
+    {
+      "path": "NIST-8091.canonical.txt",
+      "bytes": 41766,
+      "sha256": "f087ac2280868164c688f26b07fe5b792542adc07dd22eed75265735eb2c1589"
+    },
+    {
+      "path": "NIST-8091.pages.json",
+      "bytes": 44604,
+      "sha256": "4fb6635fecad2654ed3636000a973c48614ca6dc0d2893dea839e98d18c2694b"
+    },
+    {
+      "path": "NIST-8091.default.txt",
+      "bytes": 40037,
+      "sha256": "9f447eb8adca99e5043db5f8f4ddd2df88b1ac90e080e99c2a184827b6fd03c9"
+    },
+    {
+      "path": "html/asciidoc.css",
+      "bytes": 9247,
+      "sha256": "12dcbb225c085b405c0618a460d46eb8f6a8192177159c14fab39f5347e0a925"
+    },
+    {
+      "path": "html/linuxcnc.css",
+      "bytes": 1740,
+      "sha256": "e35232c8291cebb1408cd9a3b5dc58e5e2d9f255642bd18958b4f22e3f4b6c0d"
+    },
+    {
+      "path": "html/config/ini-homing.html",
+      "bytes": 33689,
+      "sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05"
+    },
+    {
+      "path": "../raw/NIST.IR.8091.pdf",
+      "bytes": 467253,
+      "sha256": "656ee0fc6ede6701825f56d2c7124d8de71936dcb1e5bca493715f63fe037093"
+    },
+    {
+      "path": "../raw/ini-homing.html",
+      "bytes": 33689,
+      "sha256": "59640c6dffcb4aba389e3711eaebad4b007996be017ad1f2d6124b0516f1df05"
+    },
+    {
+      "path": "../raw/gpld-copyright.html",
+      "bytes": 22447,
+      "sha256": "063eabefc4aee2726e963f1758e64ae6f6e3ab8550701b40ff92a53943cbd56a"
+    },
+    {
+      "path": "../raw/download-manifest.json",
+      "bytes": 2126,
+      "sha256": "ca88863da10ac2a53ab6f196e7596c4bb922158fd4da72cf084955e1ff12ff08"
+    },
+    {
+      "path": "render/linux-absolute.png",
+      "bytes": 32838,
+      "sha256": "ad9ff5c7cccb7f863cc76396636b7f11e6393db89f24ad8c669ecc2fae68dac2"
+    },
+    {
+      "path": "render/linux-final.png",
+      "bytes": 13260,
+      "sha256": "8487d8e6e5e82e9e3587865829b1ac46734516987fd469ffb748417461e25365"
+    },
+    {
+      "path": "render/linux-immediate.png",
+      "bytes": 37758,
+      "sha256": "0306344f2a22fab97dd78baa55ea0b9aec29f8f2bc928219c002218cd2a99e6a"
+    },
+    {
+      "path": "render/linux-latch.png",
+      "bytes": 38618,
+      "sha256": "6fd22f63b38a69f9f1384464687d75ae599d3514ba9f883f9d85959184e3074d"
+    },
+    {
+      "path": "render/linux-search.png",
+      "bytes": 35980,
+      "sha256": "bac7fb567c54902b22badccba41d1f2534a751ba085a2879bed9796fed083dab"
+    },
+    {
+      "path": "render/linux-sequence.png",
+      "bytes": 115326,
+      "sha256": "634d2b394abaea23cdb9486e0e92b22c48159f1d89cfeb60b9d5979a971a2c93"
+    },
+    {
+      "path": "render/linux-table.png",
+      "bytes": 11015,
+      "sha256": "462f3ad83de17e10726751fb52f335cf5c918772c69f367a3f36ca0012668ef1"
+    },
+    {
+      "path": "render/nist-cover.png",
+      "bytes": 58698,
+      "sha256": "d6f82e25217dafab0e0a5cfa22ee7a1776c1196fd2918148a007bd56fdcb9d7e"
+    },
+    {
+      "path": "render/nist-page-8.png",
+      "bytes": 269603,
+      "sha256": "1bcb443370094c5ef95a7d9312e691d61da28a7580838417eb92ba6a01ed5fb7"
+    }
+  ]
+}

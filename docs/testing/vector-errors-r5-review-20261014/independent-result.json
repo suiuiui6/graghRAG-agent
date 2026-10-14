@@ -1,0 +1,57 @@
+{
+  "checks": [
+    {
+      "label": "invalid {'p': {'$in': [False, 0]}}",
+      "class": "VectorInputError",
+      "code": "invalid_filter"
+    },
+    {
+      "label": "invalid {'unknown': {'$eq': 9223372036854775808}}",
+      "class": "VectorInputError",
+      "code": "invalid_filter"
+    },
+    {
+      "label": "invalid {'$and': [{'p': 1}]}",
+      "class": "VectorInputError",
+      "code": "invalid_filter"
+    },
+    {
+      "label": "native_compile_ValueError",
+      "class": "VectorStorageError",
+      "code": "storage_unavailable"
+    },
+    {
+      "label": "native_compile_TypeError",
+      "class": "VectorStorageError",
+      "code": "storage_unavailable"
+    },
+    {
+      "label": "consumer_TypeError",
+      "trace": {
+        "status": "failed",
+        "reason": "recall_failed",
+        "candidate_count": null
+      },
+      "calls": 1
+    },
+    {
+      "label": "consumer_ValueError",
+      "trace": {
+        "status": "failed",
+        "reason": "recall_failed",
+        "candidate_count": null
+      },
+      "calls": 1
+    },
+    {
+      "label": "oversize_integer_vector",
+      "class": "OverflowError",
+      "code": null
+    },
+    {
+      "open_finding": "('oversize_integer_vector', <class 'OverflowError'>, 'int too large to convert to float')"
+    }
+  ],
+  "marker_residual": true,
+  "key_redacted": true
+}

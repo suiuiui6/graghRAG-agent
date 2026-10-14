@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-12",
+  "route": "platform_native_browser_search",
+  "scope": "bounded_source_screening_not_systematic_review",
+  "coordinator_queries": [
+    "QASPER dataset official license full text github allenai",
+    "Doc2Dial dataset official documents license",
+    "industrial technical manuals question answering dataset maintenance manuals benchmark open license",
+    "NIST robotics manufacturing technical publications public domain handbook",
+    "site.linuxcnc.org docs 2.9 pdf documentation license",
+    "site.nist.gov copyright technical series publications public domain",
+    "site.github.com allenai qasper dataset CC BY 4.0",
+    "site.docs.ros.org copyright CC BY 4.0 documentation",
+    "site.nist.gov/publications \"Manufacturing\" \"Guide\" \"AMS\"",
+    "site.nist.gov/publications robot systems performance test methods NISTIR",
+    "site.nist.gov/publications \"prognostics\" \"smart manufacturing\" roadmap",
+    "site.nist.gov/publications \"robot\" \"Guide\" \"NIST\"",
+    "site.nist.gov/publications \"manufacturing\" \"NISTIR\" \"requirements\""
+  ],
+  "hit_count": "NOT_AVAILABLE; not claimed complete",
+  "source_restriction_for_claims": "official sources/authors only; discovery results from third parties not used as primary evidence",
+  "files_downloaded": 0,
+  "new_model_calls": 0,
+  "third_party_integration_calls": 0,
+  "expert_search_trace": "expert-result.yaml; independent exact queries not exported, no complete search reproduction claim"
+}

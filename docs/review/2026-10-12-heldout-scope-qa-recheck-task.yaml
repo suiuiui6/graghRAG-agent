@@ -1,0 +1,18 @@
+contract_version: "1.0"
+project_id: graphrag-paper-001
+paper_family: M
+stage_id: M2
+task_id: HOLDOUT-PROTOCOL-20261012-RECHECK
+expert_skill: sci-skills-statistical-reporting
+task_summary: 独立定点复核首轮完整性裁决与评分者盲化两项修订。
+inputs:
+  - docs/contracts/2026-10-12-heldout-scope-qa-validation.md
+  - docs/review/2026-10-12-heldout-scope-qa-protocol-review.md
+expected_outputs:
+  - 两项问题关闭与否及完整专家合同。
+evidence_boundaries: [只读设计检查，不执行模型、网络或产品]
+acceptance_checks: [范围穷尽裁决可重复，评分盲化与分阶段锁定明确]
+known_missing_items: [实际样本、预算与执行登记]
+manual_operation_allowed: false
+optional_adapters_allowed: []
+stage_authority: sci-skills

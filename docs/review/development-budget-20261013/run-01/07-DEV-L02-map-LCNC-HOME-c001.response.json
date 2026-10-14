@@ -1,0 +1,35 @@
+{
+  "status": "SUCCESS",
+  "http_status": 200,
+  "usage_known": true,
+  "provider_response": {
+    "id": "7e9dddc4-34a5-413c-8725-b92b3ed441a9",
+    "object": "chat.completion",
+    "created": 1791850998,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "## 6.10 HOME_ABSOLUTE_ENCODER\n\n### 枚举代码中的设置值及其行为\n\n| 设置值 | 行为 | 来源 |\n|---|---|---|\n| `HOME_ABSOLUTE_ENCODER = 0` | 默认值，关节不使用绝对编码器 | [LCNC-HOME-c001] |\n| `HOME_ABSOLUTE_ENCODER = 1` | 绝对编码器，执行到 `[JOINT_n]HOME` 的最终移动 | [LCNC-HOME-c001] |\n| `HOME_ABSOLUTE_ENCODER = 2` | 绝对编码器，不执行到 `[JOINT_n]HOME` 的最终移动 | [LCNC-HOME-c001] |\n\n该参数用于绝对编码器 [LCNC-HOME-c001]。当请求对关节进行回零时，当前关节位置被设置为 `[JOINT_n]HOME_OFFSET` 值 [LCNC-HOME-c001]。到 `[JOINT_n]HOME` 位置的最终移动是否执行取决于 `HOME_ABSOLUTE_ENCODER` 的设置 [LCNC-HOME-c001]。\n\n### Note 说明的静默忽略行为\n\n| 静默忽略的行为 | 来源 |\n|---|---|\n| `HOME_IS_SHARED` 设置被静默忽略 | [LCNC-HOME-c001] |\n| 对关节重新回零（rehome）的请求被静默忽略 | [LCNC-HOME-c001] |"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2975,
+      "completion_tokens": 320,
+      "total_tokens": 3295,
+      "prompt_tokens_details": {
+        "cached_tokens": 768
+      },
+      "prompt_cache_hit_tokens": 768,
+      "prompt_cache_miss_tokens": 2207
+    },
+    "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+  },
+  "send_status": "HTTP_RESPONSE_RECEIVED",
+  "worker_elapsed_seconds": 2.577999999979511
+}

@@ -1,0 +1,16 @@
+Name                              Stmts   Miss Branch BrPart  Cover   Missing
+-----------------------------------------------------------------------------
+backend_validation.py                72      1     14      1    98%   130
+build_ground_truth.py                91      2     18      2    96%   180, 182
+conversation_rewrite_metrics.py     127      1     30      1    99%   299
+conversation_validation.py           22      1      4      1    92%   39
+metrics_a1_retrieval.py             102      1     32      1    99%   313
+metrics_a2_faithfulness.py          251      5     64      2    97%   115-118, 289->293, 602
+metrics_a3_robustness.py            221      1     34      1    99%   478
+metrics_a4_multihop.py              304      2     72      4    98%   364->366, 366->368, 446, 549
+metrics_a5_performance.py           164      2     48      2    98%   128, 412
+release_gate.py                     136      1     44      2    98%   343->348, 379
+run_inference.py                    195      3     46      5    97%   26, 112, 138->exit, 318->320, 348
+run_inference_helpers.py             57      0     34      1    99%   65->69
+-----------------------------------------------------------------------------
+TOTAL                              1742     20    440     23    98%

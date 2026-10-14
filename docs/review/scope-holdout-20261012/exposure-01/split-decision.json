@@ -1,0 +1,18 @@
+{
+  "project_id": "graphrag-paper-001",
+  "status": "BLOCKED_NOT_FROZEN",
+  "H1": [],
+  "H2": [],
+  "quarantined_candidates": 8,
+  "prior_qa_source_label_risk_candidates": [
+    "C-1163f36560f3",
+    "C-3c8382414415",
+    "C-67e5e6baf375"
+  ],
+  "other_candidates_exposure": "UNKNOWN_NOT_CLEARED",
+  "paper_specific_development": "UNKNOWN_ALL_8",
+  "exact_historical_source_hash_and_input": "NOT_VERIFIED",
+  "evidence": "exposure-ledger.json",
+  "supersedes_admission": false,
+  "old_runs_preserved": true
+}

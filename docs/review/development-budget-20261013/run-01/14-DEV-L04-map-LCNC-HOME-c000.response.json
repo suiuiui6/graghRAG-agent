@@ -1,0 +1,35 @@
+{
+  "status": "SUCCESS",
+  "http_status": 200,
+  "usage_known": true,
+  "provider_response": {
+    "id": "5e06ff62-7980-4639-8cf9-1b5595a7118c",
+    "object": "chat.completion",
+    "created": 1791851023,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "## 6.11 HOME_SEQUENCE 相关示例\n\n**文档中未提及此信息。**\n\n所提供的摘录（LCNC-HOME-c000，Unicode 范围 [0,8000)）仅覆盖到第 6.2 节 HOME_LATCH_VEL 为止，尚未包含第 6.11 节 HOME_SEQUENCE 的内容 [c000]。因此，无法从本摘录中提取 6.11 节为三关节系统给出的任何示例、三个 HOME_SEQUENCE 值，或关于哪些关节同步最终移动的说明 [c000]。\n\n### 摘录覆盖范围说明\n\n| 章节 | 标题 | 是否在摘录内 |\n|------|------|--------------|\n| 1 | Overview | 是 [c000] |\n| 2 | Prerequisite | 是 [c000] |\n| 3 | Separate Home Switch Example Layout | 是 [c000] |\n| 4 | Shared Limit/Home Switch Example Layout | 是 [c000] |\n| 5 | Homing Sequence | 是 [c000] |\n| 6 | Configuration | 是 [c000] |\n| 6.1 | HOME_SEARCH_VEL | 是 [c000] |\n| 6.2 | HOME_LATCH_VEL | 部分（在摘录末尾被截断）[c000] |\n| 6.11 | HOME_SEQUENCE | 否 [c000] |\n\n根据结构索引，6.11 HOME_SEQUENCE 位于偏移量 12290–12309 处，超出了本摘录的 [0,8000) 范围 [c000]。结构索引仅为导航元数据，不能作为事实证据 [c000]。要回答该问题，需要包含 6.11 节内容的后续分块。"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2767,
+      "completion_tokens": 383,
+      "total_tokens": 3150,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 2639
+    },
+    "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+  },
+  "send_status": "HTTP_RESPONSE_RECEIVED",
+  "worker_elapsed_seconds": 3.26500000001397
+}

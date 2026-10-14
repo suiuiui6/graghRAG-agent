@@ -1,0 +1,8 @@
+[main]	INFO	profile include tests: None
+[main]	INFO	profile exclude tests: None
+[main]	INFO	cli include tests: None
+[main]	INFO	cli exclude tests: None
+[warnings]	WARNING	invalid escape sequence '\g'
+
+Working... ---------------------------------------- 100% 0:00:01
+[json]	INFO	JSON output written to file: docs/testing/2026-10-13-to90-bandit-medium-gate.json

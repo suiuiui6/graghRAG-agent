@@ -1,0 +1,275 @@
+{
+  "gold_status": "SINGLE_AGENT_DRAFT_PENDING_INDEPENDENT_REVIEW",
+  "locators": [
+    {
+      "qid": "D1-FIG",
+      "doc": "D1",
+      "source_path": "backend/output/mineru/ingest_2/full.md",
+      "source_sha256": "f0e2b044ec0f8be55b1c00d9479830f6768a5da9970111a7db0353d59097a0d6",
+      "items": [
+        {
+          "id": "F1",
+          "char_start": 21775,
+          "char_end": 21805,
+          "line": 374
+        },
+        {
+          "id": "F2",
+          "char_start": 21807,
+          "char_end": 21843,
+          "line": 376
+        },
+        {
+          "id": "F3",
+          "char_start": 21845,
+          "char_end": 21880,
+          "line": 378
+        },
+        {
+          "id": "F4",
+          "char_start": 21882,
+          "char_end": 21921,
+          "line": 380
+        },
+        {
+          "id": "F5",
+          "char_start": 21923,
+          "char_end": 21961,
+          "line": 382
+        },
+        {
+          "id": "F6",
+          "char_start": 21963,
+          "char_end": 22001,
+          "line": 384
+        }
+      ],
+      "absence_scope": null
+    },
+    {
+      "qid": "D1-COST",
+      "doc": "D1",
+      "source_path": "backend/output/mineru/ingest_2/full.md",
+      "source_sha256": "f0e2b044ec0f8be55b1c00d9479830f6768a5da9970111a7db0353d59097a0d6",
+      "items": [
+        {
+          "id": "C1",
+          "char_start": 173,
+          "char_end": 272,
+          "line": 11
+        },
+        {
+          "id": "C2",
+          "char_start": 449,
+          "char_end": 463,
+          "line": 13
+        },
+        {
+          "id": "C3",
+          "char_start": 495,
+          "char_end": 519,
+          "line": 13
+        },
+        {
+          "id": "C4",
+          "char_start": 528,
+          "char_end": 551,
+          "line": 13
+        },
+        {
+          "id": "C5",
+          "char_start": 633,
+          "char_end": 664,
+          "line": 15
+        }
+      ],
+      "absence_scope": null
+    },
+    {
+      "qid": "D1-LIMITS",
+      "doc": "D1",
+      "source_path": "backend/output/mineru/ingest_2/full.md",
+      "source_sha256": "f0e2b044ec0f8be55b1c00d9479830f6768a5da9970111a7db0353d59097a0d6",
+      "items": [
+        {
+          "id": "L1",
+          "char_start": 19711,
+          "char_end": 19724,
+          "line": 316
+        },
+        {
+          "id": "L2",
+          "char_start": 19831,
+          "char_end": 19843,
+          "line": 318
+        },
+        {
+          "id": "L3",
+          "char_start": 19952,
+          "char_end": 19965,
+          "line": 320
+        },
+        {
+          "id": "L4",
+          "char_start": 20059,
+          "char_end": 20078,
+          "line": 322
+        }
+      ],
+      "absence_scope": null
+    },
+    {
+      "qid": "D1-FUTURE",
+      "doc": "D1",
+      "source_path": "backend/output/mineru/ingest_2/full.md",
+      "source_sha256": "f0e2b044ec0f8be55b1c00d9479830f6768a5da9970111a7db0353d59097a0d6",
+      "items": [
+        {
+          "id": "R1",
+          "char_start": 20114,
+          "char_end": 20124,
+          "line": 322
+        },
+        {
+          "id": "R2",
+          "char_start": 20125,
+          "char_end": 20138,
+          "line": 322
+        }
+      ],
+      "absence_scope": null
+    },
+    {
+      "qid": "D2-ATTENTION",
+      "doc": "D2",
+      "source_path": "backend/output/mineru/ingest_f/full.md",
+      "source_sha256": "ab7cdd99e8cd85ddd61e3d65e4e747685a25a62d22f68bed3e2d79d015e90623",
+      "items": [
+        {
+          "id": "A1",
+          "char_start": 12370,
+          "char_end": 12526,
+          "line": 101
+        },
+        {
+          "id": "A2",
+          "char_start": 12736,
+          "char_end": 12779,
+          "line": 103
+        },
+        {
+          "id": "A3",
+          "char_start": 13029,
+          "char_end": 13188,
+          "line": 105
+        }
+      ],
+      "absence_scope": null
+    },
+    {
+      "qid": "D2-DATA",
+      "doc": "D2",
+      "source_path": "backend/output/mineru/ingest_f/full.md",
+      "source_sha256": "ab7cdd99e8cd85ddd61e3d65e4e747685a25a62d22f68bed3e2d79d015e90623",
+      "items": [
+        {
+          "id": "T1",
+          "char_start": 20932,
+          "char_end": 21001,
+          "line": 158
+        },
+        {
+          "id": "T2",
+          "char_start": 21184,
+          "char_end": 21234,
+          "line": 158
+        }
+      ],
+      "absence_scope": null
+    },
+    {
+      "qid": "D2-NONE",
+      "doc": "D2",
+      "source_path": "backend/output/mineru/ingest_f/full.md",
+      "source_sha256": "ab7cdd99e8cd85ddd61e3d65e4e747685a25a62d22f68bed3e2d79d015e90623",
+      "items": [],
+      "absence_scope": {
+        "kind": "section",
+        "start": "## 3.2.3 Applications of Attention in our Model",
+        "end": "## 3.3 Position-wise Feed-Forward Networks"
+      }
+    },
+    {
+      "qid": "D3-TOOLS",
+      "doc": "D3",
+      "source_path": "integration/Agentic-RAG-Architecture.md",
+      "source_sha256": "d0c64333bf10c761fef29bc1d9e002656f3968e720e176e92b8a18eb4a1e8e72",
+      "items": [
+        {
+          "id": "K1",
+          "char_start": 6458,
+          "char_end": 6483,
+          "line": 192
+        },
+        {
+          "id": "K2",
+          "char_start": 6528,
+          "char_end": 6555,
+          "line": 193
+        },
+        {
+          "id": "K3",
+          "char_start": 6603,
+          "char_end": 6634,
+          "line": 194
+        },
+        {
+          "id": "K4",
+          "char_start": 6673,
+          "char_end": 6705,
+          "line": 195
+        },
+        {
+          "id": "K5",
+          "char_start": 6735,
+          "char_end": 6770,
+          "line": 196
+        }
+      ],
+      "absence_scope": null
+    },
+    {
+      "qid": "D3-SUPERVISOR",
+      "doc": "D3",
+      "source_path": "integration/Agentic-RAG-Architecture.md",
+      "source_sha256": "d0c64333bf10c761fef29bc1d9e002656f3968e720e176e92b8a18eb4a1e8e72",
+      "items": [
+        {
+          "id": "S1",
+          "char_start": 11042,
+          "char_end": 11072,
+          "line": 318
+        },
+        {
+          "id": "S2",
+          "char_start": 11076,
+          "char_end": 11112,
+          "line": 319
+        },
+        {
+          "id": "S3",
+          "char_start": 11116,
+          "char_end": 11141,
+          "line": 320
+        },
+        {
+          "id": "S4",
+          "char_start": 11145,
+          "char_end": 11168,
+          "line": 321
+        }
+      ],
+      "absence_scope": null
+    }
+  ]
+}

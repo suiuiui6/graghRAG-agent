@@ -1,0 +1,6 @@
+<unknown>:2: SyntaxWarning: invalid escape sequence '\g'
+D:\graghRAG-agent\backend\agentic_rag_mvp.py:2: SyntaxWarning: invalid escape sequence '\g'
+  """
+<unknown>:2: SyntaxWarning: invalid escape sequence '\g'
+<unknown>:2: SyntaxWarning: invalid escape sequence '\g'
+Wrote JSON report to backend/tests/_sandbox_tmp/guard-readiness-r2-20261013.json

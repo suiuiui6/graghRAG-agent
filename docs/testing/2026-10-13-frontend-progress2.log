@@ -1,0 +1,49 @@
+
+ RUN  v5.0.4 D:/graghRAG-agent/frontend
+      Coverage enabled with v8
+
+Not implemented: navigation to another Document
+Not implemented: navigation to another Document
+Not implemented: navigation to another Document
+Not implemented: navigation to another Document
+Not implemented: navigation to another Document
+Not implemented: navigation to another Document
+Not implemented: navigation to another Document
+
+ Test Files  6 passed (6)
+      Tests  96 passed (96)
+   Start at  08:42:57
+   Duration  10.00s (environment 68%, setup 19%, tests 7%, import 5%, transform 1%, worker 1%)
+
+ % Coverage report from v8
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |   94.87 |    91.89 |   94.32 |   95.65 |                   
+ src               |       0 |      100 |       0 |       0 |                   
+  App.tsx          |       0 |      100 |       0 |       0 | 20                
+  main.tsx         |       0 |      100 |     100 |       0 | 8                 
+ src/components    |   97.82 |    96.13 |   97.14 |   98.75 |                   
+  ChatWidget.tsx   |   95.83 |    93.75 |      96 |   98.24 | 184               
+  ...tailPanel.tsx |      90 |    96.87 |    87.5 |      90 | 47                
+  ...GroupList.tsx |     100 |    97.36 |     100 |     100 | 53                
+  ...turedView.tsx |     100 |       75 |     100 |     100 | 55                
+ ...ponents/layout |      80 |    77.77 |   73.33 |   77.77 |                   
+  AppShell.tsx     |      80 |    77.77 |   73.33 |   77.77 | 20,74-76          
+ src/pages         |   93.85 |    89.75 |   93.33 |   94.67 |                   
+  CatalogPage.tsx  |     100 |    96.42 |     100 |     100 | 163               
+  ...mentsPage.tsx |   97.14 |    89.28 |     100 |      95 | 28                
+  GraphPage.tsx    |   71.73 |    77.92 |   64.28 |   74.64 | ...61,174-179,199 
+  LoginPage.tsx    |   97.29 |      100 |     100 |   97.14 | 44                
+  NotFoundPage.tsx |       0 |      100 |       0 |       0 | 4                 
+  ...tingsPage.tsx |   98.59 |    98.71 |     100 |     100 | 77                
+  QueryPage.tsx    |   95.83 |    83.67 |     100 |   96.72 | 25,43             
+  UploadPage.tsx   |   92.95 |    76.05 |   94.11 |   93.65 | 66-67,85,104      
+-------------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 94.87% ( 908/957 )
+Branches     : 91.89% ( 748/814 )
+Functions    : 94.32% ( 316/335 )
+Lines        : 95.65% ( 770/805 )
+================================================================================

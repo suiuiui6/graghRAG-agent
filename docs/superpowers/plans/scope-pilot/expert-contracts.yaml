@@ -1,0 +1,97 @@
+contract_version: "1.0"
+execution_owner: main_agent_using_independent_expert_skills
+delegated_agents: false
+recorded_on: 2026-10-07
+tasks:
+  - contract_version: "1.0"
+    project_id: graphrag-paper-001
+    paper_family: method-application
+    stage_id: M2
+    task_id: M2-SCOPE-DATA-005
+    expert_skill: sci-skills-data-availability
+    task_summary: 重建条目级标准答案和本项目复核包，不发布或覆盖旧GT
+    inputs: [D1_parsed_paper, D2_parsed_paper, D3_architecture_spec, repository_case_audit]
+    expected_outputs: [item_gold, source_locators_and_hashes, current_code_hash_guard, inventory_and_reuse_boundaries]
+    evidence_boundaries: [single_agent_draft_not_double_annotation, no_PDF_visual_claim, no_deposit_or_license_invention]
+    acceptance_checks: [31_items_in_9_questions_and_3_sources, anchors_in_scope, data_vs_spec_roles, no_PII_or_credentials_in_pack]
+    known_missing_items: [independent_annotation_review, source_rights_for_release, runtime_model_and_corpus_freeze]
+    manual_operation_allowed: false
+    optional_adapters_allowed: [local-python, local-file-import]
+    stage_authority: sci-skills
+  - contract_version: "1.0"
+    project_id: graphrag-paper-001
+    paper_family: method-application
+    stage_id: M2
+    task_id: M2-SCOPE-STAT-005
+    expert_skill: sci-skills-statistical-reporting
+    task_summary: 离线强基线证据可达性pilot和公平计分设计，不冒充模型效果
+    inputs: [item_gold, source_texts, current_code_hash_guard, baseline_design]
+    expected_outputs: [offline_pilot_source_and_tests, actual_evidence_run_and_log, scoring_rules_and_analysis_plan, limits_and_decision_rules]
+    evidence_boundaries: [no_remote_or_local_model_run, no_independent_samples_from_repeats, no_p_values_or_answer_accuracy_from_anchors]
+    acceptance_checks: [budget_used_without_fixed_top3, oracle_scope_labeled, negative_and_failure_scores_null, reproducible_real_outputs]
+    known_missing_items: [current_production_answers, local_model_execution_route, automatic_scope_resolution_test, document_holdout]
+    manual_operation_allowed: false
+    optional_adapters_allowed: [local-python, local-file-import]
+    stage_authority: sci-skills
+results:
+  - contract_version: "1.0"
+    expert_skill: sci-skills-data-availability
+    project_id: graphrag-paper-001
+    paper_family: method-application
+    stage_id: M2
+    task_id: M2-SCOPE-DATA-005
+    task_status: PARTIAL
+    inputs_reviewed: [D1_source_and_previous_content_JSON_verification, D2_selected_sections, D3_selected_sections, prior_case_report]
+    outputs: [docs/superpowers/plans/scope-pilot/gold.yaml, docs/superpowers/plans/scope-pilot/gold-locators.json, docs/superpowers/plans/scope-pilot/freeze.yaml, docs/superpowers/plans/scope-pilot/README.md]
+    evidence_status:
+      - label: VERIFIED_USER_MATERIAL
+        scope: repository_text_and_specification_anchors
+      - label: EXECUTED_LOCAL
+        scope: source_hash_and_anchor_scope_validation
+      - label: PENDING_VERIFICATION
+        scope: independent_gold_annotation_PDF_visual_and_release_rights
+      - label: NOT_EXECUTED
+        scope: public_release_and_runtime_model_freeze
+    assumptions: [three_source_families_not_random_sample, specification_not_implementation, parsed_text_not_PDF_visual_proof]
+    author_input_needed: [rights_before_publication, independent_reviewer_if_available]
+    manual_actions: []
+    quality_checks: [new_gold_does_not_overwrite_historical_GT, no_personal_identity_fields_or_secrets_in_pack, locators_and_source_hashes_present]
+    conflicts: []
+    conflict_resolution_status: NOT_REQUIRED
+    merge_permission: orchestrator_only
+    recommended_next_action: independent_gold_review_and_local_execution_route_intake
+    stage_acceptance_recommendation: REPAIR
+  - contract_version: "1.0"
+    expert_skill: sci-skills-statistical-reporting
+    project_id: graphrag-paper-001
+    paper_family: method-application
+    stage_id: M2
+    task_id: M2-SCOPE-STAT-005
+    task_status: PARTIAL
+    inputs_reviewed: [9_question_31_item_gold_draft, real_repository_source_texts, B1_B2_B3_offline_contexts]
+    outputs: [docs/superpowers/plans/scope-pilot/pilot.py, docs/superpowers/plans/scope-pilot/test_pilot.py, docs/superpowers/plans/scope-pilot/evidence-run.json, docs/superpowers/plans/scope-pilot/execution.log, docs/superpowers/plans/scope-pilot/execution-record.yaml, docs/superpowers/plans/scope-pilot/inputs-B2.json, docs/superpowers/plans/scope-pilot/inputs-B3.json, docs/superpowers/plans/scope-pilot/adjudication-template.yaml, docs/superpowers/plans/scope-pilot/README.md]
+    evidence_status:
+      - label: EXECUTED_LOCAL
+        scope: 27_offline_context_preparations_and_9_software_checks
+        locator: execution_record_and_log
+      - label: AI_INFERENCE
+        scope: prioritize_simple_scope_routing_before_new_algorithm
+      - label: NOT_EXECUTED
+        scope: B0_production_replay_any_model_generation_or_semantic_answer_adjudication
+      - label: PENDING_VERIFICATION
+        scope: generalizable_failure_and_method_increment
+    assumptions: [byte_budget_not_token_budget, oracle_scope_not_automatic_routing, exact_anchors_not_complete_semantic_support]
+    author_input_needed: [available_local_model_or_verifiable_author_run_exports]
+    manual_actions: []
+    quality_checks: [no_fixed_k_strawman, no_empty_gold_perfect_recall, duplicate_recall_deduplication, condition_role_support_required, no_significance_or_generalization_claim]
+    conflicts: []
+    conflict_resolution_status: NOT_REQUIRED
+    merge_permission: orchestrator_only
+    recommended_next_action: independent_gold_review_and_local_execution_route_intake
+    stage_acceptance_recommendation: REPAIR
+orchestrator_review:
+  package_status: OFFLINE_PILOT_COMPLETE_GOLD_DRAFT_PENDING_REVIEW
+  stage_decision: M2_PARTIAL_NO_METHOD_EFFECT_OR_NOVELTY_PASS
+  main_finding: simple_oracle_scope_baselines_reach_all_31_anchors_in_8_positive_questions
+  limitation: no_current_production_or_generation_comparison
+  next_action: independent_gold_review_and_local_execution_route_intake

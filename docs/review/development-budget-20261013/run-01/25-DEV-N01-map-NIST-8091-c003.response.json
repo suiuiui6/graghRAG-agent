@@ -1,0 +1,35 @@
+{
+  "status": "SUCCESS",
+  "http_status": 200,
+  "usage_known": true,
+  "provider_response": {
+    "id": "678c5a0b-a866-41ca-a038-79084d459ae2",
+    "object": "chat.completion",
+    "created": 1791851063,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "文档中未提及此信息。\n\n具体而言，所提供的摘录（NIST-8091-c003，Unicode [24000,32000)）仅包含第3节示例的后续部分（装配序列描述）、第3步\"确定系统所需产能\"、第4步\"列出可行装配技术\"以及第5步的开头部分 [NIST-8091-c003]。该摘录中并未出现\"引出子系统所需度量的列表\"或任何列出度量类别的清单 [NIST-8091-c003]。因此，无法从本摘录中提取所请求的类别、括号中的示例或判定要点，也无法判断该列表是否声称穷尽全部度量 [NIST-8091-c003]。\n\n注意：本摘录为部分内容，不能据此证明该列表在完整文档中不存在 [NIST-8091-c003]。"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2913,
+      "completion_tokens": 179,
+      "total_tokens": 3092,
+      "prompt_tokens_details": {
+        "cached_tokens": 896
+      },
+      "prompt_cache_hit_tokens": 896,
+      "prompt_cache_miss_tokens": 2017
+    },
+    "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+  },
+  "send_status": "HTTP_RESPONSE_RECEIVED",
+  "worker_elapsed_seconds": 2.5619999999762513
+}

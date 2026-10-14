@@ -1,0 +1,12 @@
+{
+  "eval_id": 2,
+  "eval_name": "existing-components",
+  "prompt": "我已经有两个现成的服务：MinerU文档解析服务和LangExtract实体抽取服务，MinerU能把PDF转成Markdown加图片，LangExtract能从文本中抽取结构化实体。现在我需要把它们整合成一个RAG问答系统。这个项目应该怎么组织目录结构？先做什么后做什么？需要哪些规范文档？",
+  "assertions": [
+    "响应中识别出已有组件已完成MVP验证，不需要重新测试",
+    "响应中正确评估了MinerU与LangExtract之间的桥接状态：若桥接尚未完成则建议先建立BridgePipeline（Layer 3），若桥接已完成则确认状态并引导进入产品蓝图阶段（Layer 5）",
+    "响应中建议在写产品代码之前生成PRD和后端API规范（Layer 5）",
+    "响应中建议确立项目目录结构和开发规范（Layer 6）：frontend/、backend/、.env管理、uv虚拟环境",
+    "响应中提及三个Agent（planner/coder/reviewer）的协作流程"
+  ]
+}

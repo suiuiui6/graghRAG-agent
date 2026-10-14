@@ -1,0 +1,56 @@
+# Environment & Secrets
+# 注：`.env` 只匹配字面量，挡不住 .env.backup / .env_local_test / .env.old 等变体。
+# 用 `.env*` 全量覆盖，再显式放行示例文件（2026-09-17 安全事件教训）。
+.env
+.env*
+!.env.example
+!.env.*.example
+
+# 运行日志（可能含请求路径/URL，2026-09-17 安全事件）
+*.log
+!*.log.example
+
+# Virtual Environments
+.venv/
+env/
+venv/
+ENV/
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+
+# Node / Frontend
+node_modules/
+dist/
+
+# Build output
+output/
+
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Uploaded files (runtime data, not source code)
+backend/uploads/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# 第三方克隆（本地参考用，非本项目源码）
+developer-kit/
+
+# pytest 临时目录
+.pytest-tmp/
+
+# 评测脚本的临时产物（iteration-2 下带随机后缀的目录）
+iteration-2/**/_tmp_*

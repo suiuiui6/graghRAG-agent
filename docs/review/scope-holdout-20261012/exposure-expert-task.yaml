@@ -1,0 +1,29 @@
+contract_version: '1.0'
+project_id: graphrag-paper-001
+paper_family: M
+stage_id: M2
+task_id: EXPOSURE-REVIEW-20261012
+expert_skill: sci-skills-data-availability
+task_summary: 只读核实8候选历史QA/Gold/检索提示路由调试曝光
+inputs:
+- run-02/inventory-budget.json
+- 仓库研究文档、代码及可达Git历史
+- exposure-01/exposure-ledger.json
+- exposure-01/verification.json
+expected_outputs:
+- 逐组曝光证据类型、来源locator、准入建议及完整结果合同
+evidence_boundaries:
+- 不读候选正文与答案内容；不读取凭据，不联网，不运行模型，不修索引
+- 当前标签join不当历史精确hash身份；查无引用不作未曝光证明
+acceptance_checks:
+- 项目/任务/专家身份匹配
+- 区分入库、主题QA、来源标签、精确上下文及论文开发
+- 8逐组裁决可追溯，时间不兼容join不计正向证明
+known_missing_items:
+- 历史索引hash冻结和模型输入收据
+- 用户既有曝光记忆不确定
+manual_operation_allowed: false
+optional_adapters_allowed:
+- 只读本地Python/rg/Git
+stage_authority: sci-skills
+lifecycle: VERIFIED

@@ -1,0 +1,21 @@
+{
+  "status": "PASS_FOR_LOCAL_DEVELOPMENT_GOLD_V1",
+  "verified_on": "2026-10-13",
+  "frozen_files_checked": 35,
+  "independent_review_hashes_checked": 12,
+  "source_units": 2,
+  "questions": 6,
+  "items": 36,
+  "attribute_scoring_units": 81,
+  "required_qualifiers": 1,
+  "evidence_bindings_checked": 145,
+  "reviewed_answer_content_unchanged": true,
+  "model_input_has_no_gold": true,
+  "human_gold_verified": false,
+  "heldout_H1": [],
+  "heldout_H2": [],
+  "stage": "M2_OPEN",
+  "model_experiment": "NOT_EXECUTED",
+  "gold_sha256": "7ef8422dc92224d0065f3150361a2f61164432e01e378d01d1e789265312b47d",
+  "freeze_manifest_sha256": "a2ddd247ee7c86fa8bef253d00445293f1f5aafb4b4878685a5d972946829022"
+}

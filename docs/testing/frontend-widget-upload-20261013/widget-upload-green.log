@@ -1,0 +1,9 @@
+
+ RUN  v5.0.4 D:/graghRAG-agent/frontend
+
+
+ Test Files  2 passed (2)
+      Tests  4 passed (4)
+   Start at  17:47:38
+   Duration  3.99s (environment 69%, setup 19%, import 5%, tests 4%, transform 2%)
+

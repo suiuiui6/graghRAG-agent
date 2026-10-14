@@ -1,0 +1,16 @@
+.F.........                                                              [100%]
+================================== FAILURES ===================================
+____________________ test_b0_preparation_is_not_execution _____________________
+backend\tests\test_local_scope_v2.py:35: in test_b0_preparation_is_not_execution
+    .read_text(encoding='utf-8'))['production_files_sha256']
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1027: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: 'D:\\graghRAG-agent\\docs\\superpowers\\plans\\scope-pilot\\local-freeze-v2-20261008.json'
+=========================== short test summary info ===========================
+FAILED backend\tests\test_local_scope_v2.py::test_b0_preparation_is_not_execution
+1 failed, 10 passed in 5.94s

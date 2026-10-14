@@ -1,0 +1,70 @@
+{
+  "utc": "2026-10-14T05:47:45.369173+00:00",
+  "phase": "red",
+  "inputs_before": {
+    ".tmp\\vector-numeric-r3-20261014\\boundary_probe.py": "d19dda4d65841ec4c586fd4e7d1c8b7747216665db701cdf03e13327dce44087",
+    ".tmp\\vector-numeric-r3-20261014\\generic_filter.py": "cf45530dd8eab3013fb86f9c180bd2919300f2747893f721c1621c3bb5066f95",
+    ".tmp\\vector-numeric-r3-20261014\\lance_truth.py": "e4089b75ca9889e0dea8150fe8ae3b4450846016e6bb490000276a7e5dbb41ef",
+    ".tmp\\vector-numeric-r3-20261014\\numeric_matrix.py": "cd8e3652b25e824793b0c0bf5b09c7850f4bef9790b54673eb301db38a5095d5",
+    ".tmp\\vector-numeric-r3-20261014\\run_checks.py": "b69e1bfaef245d80ca549e16b29c392d2b4f6bbc249352009fcea71182095b60",
+    ".tmp\\vector-numeric-r3-20261014\\fixtures.json": "3723ab816a7bc0ae212af88c8776f52518cd32a419620df61935e676a39b681a",
+    ".tmp\\vector-numeric-r3-20261014\\chroma-truth-1791897325903702500.json": "9f714ff93b3ddd4fa49f1396691274014ed6bf954747eaba98ff428418f39f1f",
+    ".tmp\\vector-replacement-mvp-20261013\\uv.lock": "ab27e2d7dc601aeff7b004502382ef329128115f7812b76f26e72699fe99986d",
+    "backend\\uv.lock": "0b9618aede31fd0553ff10b845a2feb5a388d1e153c8e38549d769a3074dacf6",
+    "docs\\contracts\\2026-10-14-vector-numeric-semantics.md": "62329adbdef8a229851a4685a24ed11a8a8ba5b0965f1e6d5bf5cb3749805c3c"
+  },
+  "inputs_after": {
+    ".tmp\\vector-numeric-r3-20261014\\boundary_probe.py": "d19dda4d65841ec4c586fd4e7d1c8b7747216665db701cdf03e13327dce44087",
+    ".tmp\\vector-numeric-r3-20261014\\generic_filter.py": "cf45530dd8eab3013fb86f9c180bd2919300f2747893f721c1621c3bb5066f95",
+    ".tmp\\vector-numeric-r3-20261014\\lance_truth.py": "e4089b75ca9889e0dea8150fe8ae3b4450846016e6bb490000276a7e5dbb41ef",
+    ".tmp\\vector-numeric-r3-20261014\\numeric_matrix.py": "cd8e3652b25e824793b0c0bf5b09c7850f4bef9790b54673eb301db38a5095d5",
+    ".tmp\\vector-numeric-r3-20261014\\run_checks.py": "b69e1bfaef245d80ca549e16b29c392d2b4f6bbc249352009fcea71182095b60",
+    ".tmp\\vector-numeric-r3-20261014\\fixtures.json": "3723ab816a7bc0ae212af88c8776f52518cd32a419620df61935e676a39b681a",
+    ".tmp\\vector-numeric-r3-20261014\\chroma-truth-1791897325903702500.json": "9f714ff93b3ddd4fa49f1396691274014ed6bf954747eaba98ff428418f39f1f",
+    ".tmp\\vector-replacement-mvp-20261013\\uv.lock": "ab27e2d7dc601aeff7b004502382ef329128115f7812b76f26e72699fe99986d",
+    "backend\\uv.lock": "0b9618aede31fd0553ff10b845a2feb5a388d1e153c8e38549d769a3074dacf6",
+    "docs\\contracts\\2026-10-14-vector-numeric-semantics.md": "62329adbdef8a229851a4685a24ed11a8a8ba5b0965f1e6d5bf5cb3749805c3c"
+  },
+  "unchanged": true,
+  "commands": [
+    {
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\vector-replacement-mvp-20261013\\.venv\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-numeric-r3-20261014\\lance_truth.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\backend-quality-venv-20261012\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-numeric-r3-20261014\\boundary_probe.py",
+        "chroma"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\vector-replacement-mvp-20261013\\.venv\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-numeric-r3-20261014\\boundary_probe.py",
+        "lance"
+      ],
+      "exit_code": 1
+    },
+    {
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\backend-quality-venv-20261012\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-numeric-r3-20261014\\numeric_matrix.py",
+        "chroma"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\vector-replacement-mvp-20261013\\.venv\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-numeric-r3-20261014\\numeric_matrix.py",
+        "lance"
+      ],
+      "exit_code": 1
+    }
+  ]
+}

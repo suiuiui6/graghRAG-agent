@@ -1,0 +1,85 @@
+contract_version: "1.0"
+project_id: graphrag-paper-001
+paper_family: method-application
+stage_id: M4
+task_id: M4-DATA-001
+expert_skill: sci-skills-data-availability
+task_summary: 核查本地复现材料、运行边界和缺失项，不上传、不创建持久标识、不虚构实验
+inputs:
+  - docs/superpowers/plans/paper-m3-method-contract.md
+  - docs/superpowers/plans/paper-m3-variant-plan.yaml
+  - docs/superpowers/plans/paper-evidence-freeze-note.md
+  - iteration-2/eval-2-existing-components/rag_eval/ground_truth.json
+  - iteration-2/eval-2-existing-components/rag_eval/raw_runs.jsonl
+  - iteration-2/eval-2-existing-components/rag_eval/run_inference.py
+  - iteration-2/eval-2-existing-components/rag_eval/run_inference_helpers.py
+  - backend/uv.lock
+expected_outputs:
+  - local_inventory_and_availability_draft
+  - reproducibility_package_plan
+  - evidence_and_permission_gaps
+evidence_boundaries:
+  - 不运行远程推理、不读出凭据、不联网下载模型
+  - 本地字节哈希不是历史来源或新冻结实验的证明
+  - 文件可读不是可公开授权
+acceptance_checks:
+  - 清单有文件落点和观察状态
+  - 历史材料与未来产物分开
+  - 无虚构持久标识或公开承诺
+known_missing_items:
+  - corpus_and_weight_permissions
+  - current_frozen_run_bundle
+manual_operation_allowed: false
+optional_adapters_allowed: [local-python, local-file-import]
+stage_authority: sci-skills
+lifecycle: [QUEUED, DISPATCHED, RETURNED, VERIFIED]
+execution_route: current_session_skill_execution_no_subagent
+result:
+  contract_version: "1.0"
+  expert_skill: sci-skills-data-availability
+  project_id: graphrag-paper-001
+  paper_family: method-application
+  stage_id: M4
+  task_id: M4-DATA-001
+  task_status: COMPLETE
+  inputs_reviewed:
+    - backend/models.py
+    - backend/config.py
+    - backend/routes/rag_query.py
+    - backend/retrieval.py
+    - backend/prompt_builder.py
+    - backend/generator.py
+    - iteration-2/eval-2-existing-components/rag_eval/run_inference.py
+    - iteration-2/eval-2-existing-components/rag_eval/run_inference_helpers.py
+    - iteration-2/eval-2-existing-components/rag_eval/ground_truth.json
+    - iteration-2/eval-2-existing-components/rag_eval/raw_runs.jsonl
+    - docs/superpowers/plans/paper-evidence-freeze-note.md
+    - docs/superpowers/plans/paper-m3-variant-plan.yaml
+  outputs:
+    - docs/superpowers/plans/paper-m4-data-code-inventory.md
+    - docs/superpowers/plans/paper-m4-test-preparation.md
+  evidence_status:
+    - VERIFIED_USER_MATERIAL_local_source_and_historical_files
+    - EXECUTED_LOCAL_7_existing_helper_tests
+    - EXECUTED_LOCAL_file_counts_and_sha256
+    - NOT_EXECUTED_new_prototype_and_model_experiments
+  assumptions: []
+  author_input_needed:
+    - 本地模型与语料公开许可须在后续实际实验或分享前核实
+  manual_actions: []
+  quality_checks:
+    - 真实运行与计划分开
+    - 许可未核实不许公开承诺
+    - 未建立存储或持久标识
+    - helper通过不冒充端点集成通过
+  conflicts: []
+  conflict_resolution_status: NOT_REQUIRED
+  merge_permission: orchestrator_only
+  recommended_next_action: 实现P1来源控制与有效配置并验证
+  stage_acceptance_recommendation: REPAIR
+orchestrator_verification:
+  identity_match: true
+  contract_fields_present: true
+  outputs_reviewed: true
+  specialist_task_status: VERIFIED
+  stage_decision: PARTIAL_IMPLEMENTATION_PENDING

@@ -1,0 +1,21 @@
+........................................F......................          [100%]
+================================== FAILURES ===================================
+_________ test_no_authorized_data_never_reaches_model[/api/v1/query] __________
+backend\tests\test_p0_resource_routes.py:291: in test_no_authorized_data_never_reaches_model
+    assert response.status_code == 200
+E   assert 500 == 200
+E    +  where 500 = <Response [500 Internal Server Error]>.status_code
+---------------------------- Captured stderr call -----------------------------
+HTTP Request: POST http://testserver/api/v1/query "HTTP/1.1 500 Internal Server Error"
+------------------------------ Captured log call ------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/api/v1/query "HTTP/1.1 500 Internal Server Error"
+============================== warnings summary ===============================
+backend\.venv\Lib\site-packages\_pytest\config\__init__.py:1434
+  D:\graghRAG-agent\backend\.venv\Lib\site-packages\_pytest\config\__init__.py:1434: PytestConfigWarning: Unknown config option: timeout
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED backend\tests\test_p0_resource_routes.py::test_no_authorized_data_never_reaches_model[/api/v1/query]
+1 failed, 62 passed, 1 warning in 8.55s

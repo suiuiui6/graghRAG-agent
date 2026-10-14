@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "sqlite_version": "3.45.3",
+  "numpy_version": "2.5.4",
+  "checks": [
+    "parameter_binding",
+    "metadata_type_fidelity",
+    "vector_blob_fidelity",
+    "duplicate_primary_key",
+    "transaction_rollback",
+    "backup_clear_restore",
+    "child_process_reopen",
+    "exact_cosine_5000x512"
+  ],
+  "rows": 5000,
+  "dimensions": 512,
+  "write_seconds": 0.08620030002202839,
+  "read_blob_seconds": 0.021008100011385977,
+  "warm_query_ms_p50": 0.5492500495165586,
+  "warm_query_ms_p95": 4.236930009210481,
+  "boundaries": [
+    "full_adapter_not_implemented",
+    "cross_process_cache_invalidation_not_run",
+    "parallel_process_writes_not_run",
+    "kill_power_loss_not_run"
+  ],
+  "script_sha256": "106f244e652b2497fd9eb55dedd9bc629dc61561990ff0d4d4f5223bf0011ea3"
+}

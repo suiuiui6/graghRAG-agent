@@ -1,0 +1,15 @@
+.....................................................................    [100%]
+============================== warnings summary ===============================
+tests/test_query_quality_behaviors.py::test_legacy_search_filters_grounded_type_properties_and_limit
+tests/test_query_quality_behaviors.py::test_legacy_neighbors_use_real_graph_hops_relations_and_grounding
+tests/test_query_quality_behaviors.py::test_legacy_entity_details_include_only_grounded_relationships
+tests/test_query_quality_behaviors.py::test_legacy_statistics_distinguish_grounded_subgraph_from_full_graph
+tests/test_query_quality_behaviors.py::test_legacy_query_display_extracts_final_answer_and_handles_empty_failure[content]
+tests/test_query_quality_behaviors.py::test_legacy_query_display_extracts_final_answer_and_handles_empty_failure[string]
+tests/test_query_quality_behaviors.py::test_legacy_query_display_extracts_final_answer_and_handles_empty_failure[empty]
+tests/test_query_quality_behaviors.py::test_legacy_query_display_extracts_final_answer_and_handles_empty_failure[error]
+  D:\graghRAG-agent\backend\agentic_rag_mvp.py:2: SyntaxWarning: invalid escape sequence '\g'
+    """
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+69 passed, 8 warnings in 22.17s

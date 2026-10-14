@@ -1,0 +1,26 @@
+
+> graphrag-frontend@1.0.0 test D:\graghRAG-agent\frontend
+> vitest run "tests/pages.test.tsx" "-t" "leaving upload"
+
+
+ RUN  v5.0.4 D:/graghRAG-agent/frontend
+
+ ❯ tests/pages.test.tsx (28 tests | 1 failed | 27 skipped) 42ms
+   × leaving upload stops polling and remount creates exactly one independent timer 40ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/pages.test.tsx > leaving upload stops polling and remount creates exactly one independent timer
+AssertionError: expected "getStatus" to be called 1 times, but got 3 times
+ ❯ tests/pages.test.tsx:55:359
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 27 skipped (28)
+   Start at  13:24:55
+   Duration  48.64s (environment 58%, import 21%, setup 19%, transform 2%)
+
+ ELIFECYCLE  Test failed. See above for more details.

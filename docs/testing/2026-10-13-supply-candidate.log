@@ -1,0 +1,13 @@
+......                                                                   [100%]
+============================== warnings summary ===============================
+tests/test_supply_chain.py::test_code_imports_are_declared
+tests/test_supply_chain.py::test_optional_jieba_is_guarded_and_falls_back_when_absent
+  <unknown>:2: SyntaxWarning: invalid escape sequence '\g'
+
+tests/test_supply_chain.py::test_code_imports_are_declared
+tests/test_supply_chain.py::test_known_unresolved_entries_are_load_bearing
+  D:\graghRAG-agent\backend\agentic_rag_mvp.py:2: SyntaxWarning: invalid escape sequence '\g'
+    """
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+6 passed, 4 warnings in 18.31s

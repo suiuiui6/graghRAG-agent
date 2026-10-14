@@ -1,0 +1,33 @@
+contract_version: "1.0"
+execution_status: EXECUTED_LOCAL
+sample_unit: document_source_family_with_nested_exploratory_questions
+input_files:
+  - gold.yaml
+  - freeze.yaml
+  - ../../../../backend/output/mineru/ingest_2/full.md
+  - ../../../../backend/output/mineru/ingest_f/full.md
+  - ../../../../integration/Agentic-RAG-Architecture.md
+analysis_source:
+  - pilot.py
+  - test_pilot.py
+software_version: Python_3.12.8_PyYAML_see_evidence_run_provenance
+environment_notes:
+  - existing_backend_venv_no_install_no_network
+  - text_anchors_not_semantic_answer_scores
+random_seed: null
+execution_log: [execution.log]
+output_files:
+  - evidence-run.json
+  - gold-locators.json
+  - inputs-B2.json
+  - inputs-B3.json
+assumptions_checked:
+  - source_and_current_code_hash_guards
+  - gold_anchors_inside_declared_scopes
+  - budget_exceeded_not_silent_truncation
+  - negative_gold_and_error_scores_not_perfect_recall
+deviations_from_plan:
+  - production_B0_model_generation_not_executed_no_approved_local_model_route
+  - B2_B3_oracle_scope_not_automatic_routing
+executed_on: 2026-10-07
+scope: offline_evidence_feasibility_only_not_model_comparative_statistics

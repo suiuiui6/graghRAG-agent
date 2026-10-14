@@ -1,0 +1,12 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+______ test_lifecycle_removes_expired_kg_versions_under_configured_root _______
+D:\graghRAG-agent\backend\tests\test_service_readiness.py:334: in test_lifecycle_removes_expired_kg_versions_under_configured_root
+    assert manager._find_expired_versions() == ["doc_1/v0", "doc_1/v1"]
+E   AssertionError: assert ['doc_1\\v0', 'doc_1\\v1'] == ['doc_1/v0', 'doc_1/v1']
+E     
+E     At index 0 diff: 'doc_1\\v0' != 'doc_1/v0'
+E     Use -v to get more diff
+=========================== short test summary info ===========================
+FAILED backend\tests\test_service_readiness.py::test_lifecycle_removes_expired_kg_versions_under_configured_root
+1 failed, 9 deselected in 4.13s

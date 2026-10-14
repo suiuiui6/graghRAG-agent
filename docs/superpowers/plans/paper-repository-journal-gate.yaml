@@ -1,0 +1,21 @@
+contract_version: "1.0"
+materials_complete: false
+materials_reviewed:
+  - paper-repository-problem-and-contribution-review.md
+  - historical_single_document_evaluation
+  - existing_manuscripts_for_previous_claim
+missing_essentials:
+  - validated_candidate_contribution_and_direct_prior_work_comparison
+  - frozen_fair_baseline_main_results
+  - complete_manuscript_for_the_new_candidate_question
+task_status: BLOCKED
+stage_acceptance_recommendation: NOT_ASSESSED
+quality_assessment_status: PROVISIONAL
+quality_blockers:
+  - single_document_repeated_cases_not_external_validity
+  - incomplete_gold_and_nonreplayable_historical_context
+  - current_method_advantage_not_executed
+candidates: []
+verification_ledger: []
+ledger_status: NOT_APPLICABLE_NO_NAMED_CANDIDATES_OR_MUTABLE_JOURNAL_FACTS
+readiness: NOT_READY

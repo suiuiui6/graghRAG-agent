@@ -1,0 +1,49 @@
+
+> graphrag-frontend@1.0.0 test:coverage D:\graghRAG-agent\frontend
+> vitest run --coverage
+
+
+ RUN  v5.0.4 D:/graghRAG-agent/frontend
+      Coverage enabled with v8
+
+Not implemented: navigation to another Document
+Not implemented: navigation to another Document
+Not implemented: navigation to another Document
+Not implemented: navigation to another Document
+Not implemented: navigation to another Document
+Not implemented: navigation to another Document
+Not implemented: navigation to another Document
+
+ Test Files  7 passed (7)
+      Tests  103 passed (103)
+   Start at  08:44:52
+   Duration  9.77s (environment 65%, setup 20%, import 7%, tests 7%, worker 1%, transform 1%)
+
+ % Coverage report from v8
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |   95.08 |    92.26 |   94.62 |   96.02 |                   
+ src/components    |   97.28 |    96.13 |   95.71 |   98.75 |                   
+  ChatWidget.tsx   |   94.44 |    93.75 |      92 |   98.24 | 184               
+  ...tailPanel.tsx |      90 |    96.87 |    87.5 |      90 | 47                
+  ...GroupList.tsx |     100 |    97.36 |     100 |     100 | 53                
+  ...turedView.tsx |     100 |       75 |     100 |     100 | 55                
+ ...ponents/layout |      80 |    88.88 |   73.33 |   77.77 |                   
+  AppShell.tsx     |      80 |    88.88 |   73.33 |   77.77 | 20,74-76          
+ src/pages         |   94.01 |    89.94 |   93.88 |   94.87 |                   
+  CatalogPage.tsx  |     100 |    96.42 |     100 |     100 | 163               
+  ...mentsPage.tsx |   97.14 |    89.28 |     100 |      95 | 28                
+  GraphPage.tsx    |   71.73 |    79.22 |   64.28 |   74.64 | ...61,174-179,199 
+  LoginPage.tsx    |   97.29 |      100 |     100 |   97.14 | 44                
+  ...tingsPage.tsx |   98.59 |    98.71 |     100 |     100 | 77                
+  QueryPage.tsx    |   95.83 |    83.67 |     100 |   96.72 | 25,43             
+  UploadPage.tsx   |   92.95 |    76.05 |   94.11 |   93.65 | 66-67,85,104      
+-------------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 95.08% ( 910/957 )
+Branches     : 92.26% ( 751/814 )
+Functions    : 94.62% ( 317/335 )
+Lines        : 96.02% ( 773/805 )
+================================================================================

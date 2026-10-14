@@ -1,0 +1,496 @@
+{
+  "rows": [
+    {
+      "id": "a",
+      "source": "s1",
+      "page": 1,
+      "active": true,
+      "mixed": 1,
+      "big": 9007199254740992,
+      "新字段'; DROP TABLE t; --": "中文值"
+    },
+    {
+      "id": "b",
+      "page": 2,
+      "active": false,
+      "mixed": 1.0,
+      "big": 9007199254740993,
+      "新字段'; DROP TABLE t; --": "另一值"
+    },
+    {
+      "id": "c",
+      "source": "中文' OR 1=1 --",
+      "page": 3,
+      "active": true,
+      "mixed": true,
+      "big": 9007199254740994
+    },
+    {
+      "id": "d",
+      "source": "s2",
+      "mixed": "1",
+      "big": 2
+    },
+    {
+      "id": "e",
+      "source": "s1",
+      "page": 0,
+      "active": false,
+      "mixed": 1.5,
+      "big": 3
+    },
+    {
+      "id": "f",
+      "source": "",
+      "page": 4,
+      "active": true,
+      "big": 4
+    }
+  ],
+  "cases": [
+    {
+      "source": "s1"
+    },
+    {
+      "source": {
+        "$eq": "中文' OR 1=1 --"
+      }
+    },
+    {
+      "source": {
+        "$ne": "s1"
+      }
+    },
+    {
+      "page": {
+        "$gt": 1
+      }
+    },
+    {
+      "page": {
+        "$gte": 2
+      }
+    },
+    {
+      "page": {
+        "$lt": 3
+      }
+    },
+    {
+      "page": {
+        "$lte": 2
+      }
+    },
+    {
+      "source": {
+        "$in": [
+          "s1",
+          "s2"
+        ]
+      }
+    },
+    {
+      "source": {
+        "$nin": [
+          "s1"
+        ]
+      }
+    },
+    {
+      "$and": [
+        {
+          "source": "s1"
+        },
+        {
+          "page": {
+            "$gt": 0
+          }
+        }
+      ]
+    },
+    {
+      "$or": [
+        {
+          "source": "s2"
+        },
+        {
+          "active": true
+        }
+      ]
+    },
+    {
+      "active": true
+    },
+    {
+      "active": 1
+    },
+    {
+      "page": true
+    },
+    {
+      "source": {
+        "$in": []
+      }
+    },
+    {
+      "source": {
+        "$in": [
+          "s1",
+          1
+        ]
+      }
+    },
+    {
+      "source": {
+        "$eq": "s1",
+        "$ne": "s2"
+      }
+    },
+    {
+      "missing_field": {
+        "$ne": "anything"
+      }
+    },
+    {
+      "active": {
+        "$eq": 1
+      }
+    },
+    {
+      "active": {
+        "$ne": 1
+      }
+    },
+    {
+      "active": {
+        "$in": [
+          1
+        ]
+      }
+    },
+    {
+      "active": {
+        "$nin": [
+          1
+        ]
+      }
+    },
+    {
+      "page": {
+        "$eq": true
+      }
+    },
+    {
+      "page": {
+        "$ne": true
+      }
+    },
+    {
+      "page": {
+        "$in": [
+          true
+        ]
+      }
+    },
+    {
+      "page": {
+        "$nin": [
+          true
+        ]
+      }
+    },
+    {
+      "missing_field": {
+        "$eq": "anything"
+      }
+    },
+    {
+      "missing_field": {
+        "$in": [
+          "anything"
+        ]
+      }
+    },
+    {
+      "missing_field": {
+        "$nin": [
+          "anything"
+        ]
+      }
+    },
+    {
+      "mixed": {
+        "$eq": 1
+      }
+    },
+    {
+      "mixed": {
+        "$ne": 1
+      }
+    },
+    {
+      "mixed": {
+        "$in": [
+          1
+        ]
+      }
+    },
+    {
+      "mixed": {
+        "$nin": [
+          1
+        ]
+      }
+    },
+    {
+      "mixed": {
+        "$eq": 1.0
+      }
+    },
+    {
+      "mixed": {
+        "$ne": 1.0
+      }
+    },
+    {
+      "mixed": {
+        "$in": [
+          1.0
+        ]
+      }
+    },
+    {
+      "mixed": {
+        "$nin": [
+          1.0
+        ]
+      }
+    },
+    {
+      "mixed": {
+        "$eq": true
+      }
+    },
+    {
+      "mixed": {
+        "$ne": true
+      }
+    },
+    {
+      "mixed": {
+        "$in": [
+          true
+        ]
+      }
+    },
+    {
+      "mixed": {
+        "$nin": [
+          true
+        ]
+      }
+    },
+    {
+      "mixed": {
+        "$eq": "1"
+      }
+    },
+    {
+      "mixed": {
+        "$ne": "1"
+      }
+    },
+    {
+      "mixed": {
+        "$in": [
+          "1"
+        ]
+      }
+    },
+    {
+      "mixed": {
+        "$nin": [
+          "1"
+        ]
+      }
+    },
+    {
+      "page": {
+        "$eq": 1.5
+      }
+    },
+    {
+      "page": {
+        "$ne": 1.5
+      }
+    },
+    {
+      "page": {
+        "$gt": 1.5
+      }
+    },
+    {
+      "page": {
+        "$gte": 1.5
+      }
+    },
+    {
+      "page": {
+        "$lt": 1.5
+      }
+    },
+    {
+      "page": {
+        "$lte": 1.5
+      }
+    },
+    {
+      "mixed": {
+        "$gt": 1
+      }
+    },
+    {
+      "mixed": {
+        "$gte": 1
+      }
+    },
+    {
+      "mixed": {
+        "$lt": 1
+      }
+    },
+    {
+      "mixed": {
+        "$lte": 1
+      }
+    },
+    {
+      "mixed": {
+        "$gt": 1.0
+      }
+    },
+    {
+      "mixed": {
+        "$gte": 1.0
+      }
+    },
+    {
+      "mixed": {
+        "$lt": 1.0
+      }
+    },
+    {
+      "mixed": {
+        "$lte": 1.0
+      }
+    },
+    {
+      "big": {
+        "$eq": 9007199254740993
+      }
+    },
+    {
+      "big": {
+        "$ne": 9007199254740993
+      }
+    },
+    {
+      "big": {
+        "$gt": 9007199254740993
+      }
+    },
+    {
+      "big": {
+        "$gte": 9007199254740993
+      }
+    },
+    {
+      "big": {
+        "$lt": 9007199254740993
+      }
+    },
+    {
+      "big": {
+        "$lte": 9007199254740993
+      }
+    },
+    {
+      "big": {
+        "$eq": 9007199254740992.0
+      }
+    },
+    {
+      "big": {
+        "$ne": 9007199254740992.0
+      }
+    },
+    {
+      "big": {
+        "$gt": 9007199254740992.0
+      }
+    },
+    {
+      "big": {
+        "$gte": 9007199254740992.0
+      }
+    },
+    {
+      "big": {
+        "$lt": 9007199254740992.0
+      }
+    },
+    {
+      "big": {
+        "$lte": 9007199254740992.0
+      }
+    },
+    {
+      "新字段'; DROP TABLE t; --": "中文值"
+    },
+    {
+      "新字段'; DROP TABLE t; --": {
+        "$ne": "中文值"
+      }
+    },
+    {
+      "mixed": {
+        "$in": [
+          1,
+          1.5
+        ]
+      }
+    },
+    {
+      "mixed": {
+        "$in": [
+          true,
+          1
+        ]
+      }
+    },
+    {
+      "$and": [
+        {
+          "mixed": {
+            "$ne": 1
+          }
+        },
+        {
+          "$or": [
+            {
+              "source": {
+                "$nin": [
+                  "s1"
+                ]
+              }
+            },
+            {
+              "page": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "purpose": "Fixed six synthetic rows, original18 plus bounded type/numeric/missing/quoted-key truth cases; no provider or product imports."
+}

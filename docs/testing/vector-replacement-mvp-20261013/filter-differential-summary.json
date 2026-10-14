@@ -1,0 +1,168 @@
+{
+  "status": "NATIVE_CAPABILITY_PASS_COMPATIBILITY_BLOCKED",
+  "cases": 18,
+  "different": 5,
+  "same": 13,
+  "differences": [
+    {
+      "where": {
+        "source": {
+          "$ne": "s1"
+        }
+      },
+      "chroma": {
+        "where": {
+          "source": {
+            "$ne": "s1"
+          }
+        },
+        "ids": [
+          "b",
+          "c",
+          "d",
+          "f"
+        ],
+        "status": "OK"
+      },
+      "lance": {
+        "where": {
+          "source": {
+            "$ne": "s1"
+          }
+        },
+        "ids": [
+          "c",
+          "d",
+          "f"
+        ],
+        "status": "OK"
+      }
+    },
+    {
+      "where": {
+        "source": {
+          "$nin": [
+            "s1"
+          ]
+        }
+      },
+      "chroma": {
+        "where": {
+          "source": {
+            "$nin": [
+              "s1"
+            ]
+          }
+        },
+        "ids": [
+          "b",
+          "c",
+          "d",
+          "f"
+        ],
+        "status": "OK"
+      },
+      "lance": {
+        "where": {
+          "source": {
+            "$nin": [
+              "s1"
+            ]
+          }
+        },
+        "ids": [
+          "c",
+          "d",
+          "f"
+        ],
+        "status": "OK"
+      }
+    },
+    {
+      "where": {
+        "active": 1
+      },
+      "chroma": {
+        "where": {
+          "active": 1
+        },
+        "ids": [],
+        "status": "OK"
+      },
+      "lance": {
+        "where": {
+          "active": 1
+        },
+        "status": "REJECTED",
+        "error": "ValueError: literal type"
+      }
+    },
+    {
+      "where": {
+        "page": true
+      },
+      "chroma": {
+        "where": {
+          "page": true
+        },
+        "ids": [],
+        "status": "OK"
+      },
+      "lance": {
+        "where": {
+          "page": true
+        },
+        "status": "REJECTED",
+        "error": "ValueError: literal type"
+      }
+    },
+    {
+      "where": {
+        "missing_field": {
+          "$ne": "anything"
+        }
+      },
+      "chroma": {
+        "where": {
+          "missing_field": {
+            "$ne": "anything"
+          }
+        },
+        "ids": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "status": "OK"
+      },
+      "lance": {
+        "where": {
+          "missing_field": {
+            "$ne": "anything"
+          }
+        },
+        "status": "REJECTED",
+        "error": "ValueError: unknown field"
+      }
+    }
+  ],
+  "not_run": [
+    "complete_VectorStore_adapter",
+    "all_consumer_paths",
+    "pagination_fixed_generation_5001",
+    "100k_scale",
+    "30_warmup_100_measurements",
+    "RSS_measurements",
+    "topk_full_numpy_differential",
+    "Chroma_duplicate_id_differential",
+    "process_kill_power_loss_recovery",
+    "parallel_process_writers",
+    "application_wide_migration_barrier",
+    "real_data_read_only_inventory",
+    "production_dependency_merge_audit",
+    "backend_full_acceptance_and_dual90"
+  ]
+}

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BridgePipeline — GraphRAG Knowledge Graph Visualizer</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.6/dist/vis-network.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.6/dist/vis-network.min.css" rel="stylesheet">
+<style>
+:root {
+  --bg: #0f172a; --card: #1e293b; --border: #334155;
+  --text: #e2e8f0; --muted: #94a3b8; --accent: #38bdf8;
+  --green: #4ade80; --orange: #fb923c; --red: #f87171;
+  --purple: #c084fc; --yellow: #facc15; --pink: #f472b6;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:system-ui, sans-serif; overflow:hidden; height:100vh; }
+#app { display:flex; height:100vh; }
+#sidebar { width:380px; min-width:380px; background:var(--card); border-right:1px solid var(--border); display:flex; flex-direction:column; overflow-y:auto; }
+#graph-container { flex:1; position:relative; }
+#mynetwork { width:100%; height:100%; }
+.header { padding:16px 20px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:10px; }
+.header .logo { width:36px; height:36px; background:linear-gradient(135deg,var(--accent),var(--purple)); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:18px; color:white; }
+.header h2 { font-size:16px; font-weight:600; }
+.header span { font-size:12px; color:var(--muted); }
+.upload-zone { margin:16px; border:2px dashed var(--border); border-radius:12px; padding:24px; text-align:center; cursor:pointer; transition:all .2s; background:rgba(255,255,255,.02); }
+.upload-zone:hover,.upload-zone.dragover { border-color:var(--accent); background:rgba(56,189,248,.08); }
+.upload-zone .icon { font-size:32px; margin-bottom:8px; }
+.upload-zone p { font-size:13px; color:var(--muted); }
+.upload-zone input[type=file] { display:none; }
+.pipeline { margin:0 16px 16px; }
+.stage { display:flex; align-items:center; padding:10px 12px; margin-bottom:6px; border-radius:8px; background:rgba(255,255,255,.03); border:1px solid var(--border); gap:10px; transition:all .3s; }
+.stage.active { border-color:var(--accent); background:rgba(56,189,248,.08); }
+.stage.done { border-color:var(--green); background:rgba(74,222,128,.06); }
+.stage .step-num { width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; background:var(--border); color:var(--muted); flex-shrink:0; }
+.stage.active .step-num { background:var(--accent); color:white; animation:pulse 1.5s infinite; }
+.stage.done .step-num { background:var(--green); color:white; }
+.stage .info { flex:1; min-width:0; }
+.stage .info .name { font-size:13px; font-weight:600; }
+.stage .info .desc { font-size:11px; color:var(--muted); margin-top:2px; }
+.stage .status { font-size:11px; color:var(--muted); white-space:nowrap; }
+.stage.done .status { color:var(--green); }
+.stage.active .status { color:var(--accent); }
+@keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(56,189,248,.4)} 50%{box-shadow:0 0 0 8px rgba(56,189,248,0)} }
+.stats { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:0 16px 16px; }
+.stat-card { padding:12px; border-radius:8px; background:rgba(255,255,255,.03); border:1px solid var(--border); text-align:center; }
+.stat-card .val { font-size:22px; font-weight:700; }
+.stat-card .lbl { font-size:10px; color:var(--muted); margin-top:2px; text-transform:uppercase; letter-spacing:.5px; }
+.legend { margin:0 16px 16px; }
+.legend h4 { font-size:12px; color:var(--muted); margin-bottom:8px; text-transform:uppercase; }
+.legend-grid { display:flex; flex-wrap:wrap; gap:6px; }
+.legend-item { padding:3px 8px; border-radius:4px; font-size:11px; cursor:pointer; border:1px solid transparent; transition:.15s; }
+.legend-item:hover { opacity:.8; }
+.toolbar { position:absolute; top:16px; right:16px; display:flex; gap:6px; z-index:10; }
+.toolbar button { padding:8px 14px; border-radius:8px; border:1px solid var(--border); background:var(--card); color:var(--text); cursor:pointer; font-size:12px; transition:.15s; }
+.toolbar button:hover { background:var(--border); }
+.tooltip-card { position:absolute; bottom:20px; left:20px; right:20px; padding:14px; border-radius:10px; background:var(--card); border:1px solid var(--accent); font-size:12px; display:none; z-index:5; }
+.tooltip-card.visible { display:block; }
+.tooltip-card .tt-type { color:var(--accent); font-weight:600; }
+.tooltip-card .tt-label { font-size:14px; font-weight:600; margin:4px 0; }
+.tooltip-card .tt-props { color:var(--muted); font-size:11px; }
+.badge { display:inline-block; padding:2px 6px; border-radius:4px; font-size:10px; font-weight:600; }
+.badge.grounded { background:rgba(74,222,128,.15); color:var(--green); }
+.badge.ungrounded { background:rgba(248,113,113,.15); color:var(--red); }
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="sidebar">
+    <div class="header">
+      <div class="logo">⚡</div>
+      <div>
+        <h2>BridgePipeline</h2>
+        <span>MinerU → LangExtract → KG</span>
+      </div>
+    </div>
+
+    <div class="upload-zone" id="uploadZone">
+      <div class="icon">📄</div>
+      <p>Drop PDF here or click to upload</p>
+      <p style="font-size:10px;margin-top:4px;opacity:.5">Triggers MinerU → LangExtract → KG pipeline</p>
+      <input type="file" id="fileInput" accept=".pdf">
+    </div>
+
+    <div class="pipeline" id="pipeline">
+      <div class="stage" data-stage="1"><div class="step-num">1</div><div class="info"><div class="name">MinerU 文档解析</div><div class="desc">PDF → Markdown + JSON</div></div><div class="status">waiting</div></div>
+      <div class="stage" data-stage="2"><div class="step-num">2</div><div class="info"><div class="name">Format Bridge</div><div class="desc">Section 分段 + PositionMap</div></div><div class="status">waiting</div></div>
+      <div class="stage" data-stage="3"><div class="step-num">3</div><div class="info"><div class="name">LangExtract 实体抽取</div><div class="desc">DeepSeek-chat 结构化提取</div></div><div class="status">waiting</div></div>
+      <div class="stage" data-stage="4"><div class="step-num">4</div><div class="info"><div class="name">Grounding 溯源解析</div><div class="desc">char → bbox + page_idx</div></div><div class="status">waiting</div></div>
+      <div class="stage" data-stage="5"><div class="step-num">5</div><div class="info"><div class="name">KG 图谱构建</div><div class="desc">nodes.json + edges.json</div></div><div class="status">waiting</div></div>
+    </div>
+
+    <div class="stats" id="stats">
+      <div class="stat-card"><div class="val" style="color:var(--accent)" id="statNodes">—</div><div class="lbl">Nodes</div></div>
+      <div class="stat-card"><div class="val" style="color:var(--purple)" id="statEdges">—</div><div class="lbl">Edges</div></div>
+      <div class="stat-card"><div class="val" style="color:var(--green)" id="statGrounded">—</div><div class="lbl">Grounded</div></div>
+      <div class="stat-card"><div class="val" style="color:var(--orange)" id="statTypes">—</div><div class="lbl">Entity Types</div></div>
+    </div>
+
+    <div class="legend">
+      <h4>Entity Type Legend</h4>
+      <div class="legend-grid" id="legend"></div>
+    </div>
+  </div>
+
+  <div id="graph-container">
+    <div class="toolbar">
+      <button onclick="resetView()">↺ Reset</button>
+      <button onclick="togglePhysics()">⏯ Physics</button>
+      <button onclick="filterGrounded()">✅ Grounded Only</button>
+    </div>
+    <div id="mynetwork"></div>
+    <div class="tooltip-card" id="tooltip"></div>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// Entity type color mapping
+// ============================================================
+const TYPE_COLORS = {
+  paper_metadata:  '#38bdf8',
+  section_header:  '#4ade80',
+  model_component: '#c084fc',
+  metric:          '#facc15',
+  dataset:         '#fb923c',
+  method:          '#f472b6',
+  definition:      '#a78bfa',
+  equation:        '#2dd4bf',
+  reference:       '#94a3b8',
+  claim:           '#f87171',
+  figure_reference:'#e879f9',
+  unknown:         '#64748b'
+};
+
+const TYPE_ICONS = {
+  paper_metadata:'📋', section_header:'📑', model_component:'🧩',
+  metric:'📊', dataset:'💾', method:'🔧', definition:'📖',
+  equation:'∑', reference:'📎', claim:'💡', figure_reference:'🖼'
+};
+
+// ============================================================
+// Sample data (will be replaced by API/loaded data)
+// ============================================================
+let SAMPLE_NODES, SAMPLE_EDGES;
+let network, allNodes, allEdges, nodesDS, edgesDS;
+
+// ============================================================
+// Pipeline simulation
+// ============================================================
+function runPipeline() {
+  const stages = document.querySelectorAll('.stage');
+  const delays = [0, 1200, 2500, 3300, 4200];
+  const labels = ['running', 'running', 'running', 'running', 'running'];
+  const finalLabels = ['done — 15 pages parsed', 'done — 24 sections', 'done — 310 entities', 'done — 69% grounded', 'done — 1,529 edges'];
+
+  stages.forEach(s => { s.classList.remove('active','done'); s.querySelector('.status').textContent='waiting'; });
+
+  stages.forEach((s,i) => {
+    setTimeout(() => {
+      s.classList.add('active');
+      s.querySelector('.status').textContent = labels[i];
+    }, delays[i]);
+    setTimeout(() => {
+      s.classList.remove('active');
+      s.classList.add('done');
+      s.querySelector('.status').textContent = finalLabels[i];
+      if (i === stages.length - 1) loadGraphData();
+    }, delays[i] + 1000);
+  });
+}
+
+// ============================================================
+// Graph initialization
+// ============================================================
+function initGraph() {
+  nodesDS = new vis.DataSet();
+  edgesDS = new vis.DataSet();
+  const container = document.getElementById('mynetwork');
+  network = new vis.Network(container, {nodes:nodesDS, edges:edgesDS}, {
+    nodes: {
+      shape:'dot', size:12, font:{size:9, color:'#e2e8f0', strokeWidth:2, strokeColor:'#0f172a'},
+      borderWidth:2, color:{background:'#334155', border:'#475569'}
+    },
+    edges: {
+      width:1, color:{color:'#334155', highlight:'#38bdf8'},
+      smooth:{type:'continuous'}, arrows:{to:{enabled:false}}
+    },
+    physics: {
+      solver:'forceAtlas2Based',
+      forceAtlas2Based:{gravitationalConstant:-40, centralGravity:0.008, springLength:100, springConstant:0.04},
+      stabilization:{iterations:200},
+    },
+    interaction: {hover:true, tooltipDelay:0, zoomView:true, dragView:true},
+    layout: {improvedLayout:false},
+  });
+
+  network.on('click', function(params) {
+    if (params.nodes.length) showTooltip(params.nodes[0]);
+    else hideTooltip();
+  });
+}
+
+function loadGraphData(data) {
+  data = data || {nodes: SAMPLE_NODES, edges: SAMPLE_EDGES};
+  allNodes = data.nodes; allEdges = data.edges;
+
+  nodesDS.clear(); edgesDS.clear();
+  const visNodes = []; const visEdges = [];
+
+  const typeSet = new Set();
+  let groundedCount = 0;
+
+  allNodes.forEach(n => {
+    const color = TYPE_COLORS[n.entity_type] || TYPE_COLORS.unknown;
+    const isGrounded = n.grounding_status === 'grounded';
+    if (isGrounded) groundedCount++;
+    typeSet.add(n.entity_type);
+
+    visNodes.push({
+      id: n.node_id,
+      label: n.label.length > 30 ? n.label.slice(0,28)+'…' : n.label,
+      title: `<b>[${n.entity_type}]</b> ${n.label}`,
+      color: {background:color, border: isGrounded?'#fff':'#f87171'},
+      size: isGrounded ? 12 : 8,
+      borderWidth: isGrounded ? 2 : 1,
+      entity_type: n.entity_type,
+      grounded: isGrounded,
+      _raw: n,
+    });
+  });
+
+  allEdges.forEach(e => {
+    visEdges.push({
+      id: e.edge_id, from: e.source_node_id, to: e.target_node_id,
+      color: {color: TYPE_COLORS[allNodes.find(n=>n.node_id===e.source_node_id)?.entity_type] || '#334155'},
+      relation_type: e.relation_type,
+    });
+  });
+
+  nodesDS.add(visNodes); edgesDS.add(visEdges);
+
+  document.getElementById('statNodes').textContent = allNodes.length;
+  document.getElementById('statEdges').textContent = allEdges.length;
+  document.getElementById('statGrounded').textContent = Math.round(groundedCount/allNodes.length*100)+'%';
+  document.getElementById('statTypes').textContent = typeSet.size;
+
+  // Build legend
+  const legend = document.getElementById('legend');
+  legend.innerHTML = '';
+  Array.from(typeSet).sort().forEach(t => {
+    const el = document.createElement('span');
+    el.className = 'legend-item';
+    el.style.cssText = `background:${TYPE_COLORS[t]}22; color:${TYPE_COLORS[t]}; border-color:${TYPE_COLORS[t]}44`;
+    el.textContent = `${TYPE_ICONS[t]||''} ${t}`;
+    el.onclick = () => filterByType(t);
+    legend.appendChild(el);
+  });
+}
+
+function showTooltip(nodeId) {
+  const node = nodesDS.get(nodeId);
+  if (!node || !node._raw) return;
+  const n = node._raw;
+  const props = n.properties ? Object.entries(n.properties).map(([k,v]) => `${k}: ${v}`).join(', ') : '';
+  const badge = n.grounding_status === 'grounded'
+    ? `<span class="badge grounded">grounded · page ${n.page_idx}</span>`
+    : '<span class="badge ungrounded">ungrounded</span>';
+  document.getElementById('tooltip').innerHTML = `
+    <div class="tt-type">${TYPE_ICONS[n.entity_type]||''} ${n.entity_type}</div>
+    <div class="tt-label">${n.label}</div>
+    ${props ? `<div class="tt-props">${props}</div>` : ''}
+    <div style="margin-top:6px">${badge}</div>
+  `;
+  document.getElementById('tooltip').classList.add('visible');
+}
+
+function hideTooltip() { document.getElementById('tooltip').classList.remove('visible'); }
+
+function resetView() { network.fit({animation:{duration:500}}); }
+function togglePhysics() { network.setOptions({physics:{enabled:!network.physics.options.enabled}}); }
+
+function filterGrounded() {
+  const groundedIds = new Set(allNodes.filter(n => n.grounding_status === 'grounded').map(n => n.node_id));
+  nodesDS.forEach(n => nodesDS.update({id:n.id, hidden:!groundedIds.has(n.id)}));
+  edgesDS.forEach(e => {
+    const visible = groundedIds.has(e.from) && groundedIds.has(e.to);
+    edgesDS.update({id:e.id, hidden:!visible});
+  });
+}
+
+function filterByType(type) {
+  nodesDS.forEach(n => {
+    nodesDS.update({id:n.id, hidden: n.entity_type !== type});
+  });
+  network.fit({animation:{duration:300}});
+}
+
+// ============================================================
+// File upload handler
+// ============================================================
+document.getElementById('uploadZone').addEventListener('click', () => document.getElementById('fileInput').click());
+document.getElementById('uploadZone').addEventListener('dragover', e => { e.preventDefault(); e.target.closest('.upload-zone').classList.add('dragover'); });
+document.getElementById('uploadZone').addEventListener('dragleave', e => { e.target.closest('.upload-zone').classList.remove('dragover'); });
+document.getElementById('uploadZone').addEventListener('drop', e => {
+  e.preventDefault();
+  e.target.closest('.upload-zone').classList.remove('dragover');
+  const file = e.dataTransfer.files[0];
+  if (file && file.name.endsWith('.pdf')) handleFile(file);
+});
+document.getElementById('fileInput').addEventListener('change', e => {
+  if (e.target.files[0]) handleFile(e.target.files[0]);
+});
+
+function handleFile(file) {
+  document.querySelector('.upload-zone .icon').textContent = '⏳';
+  document.querySelector('.upload-zone p').textContent = `Analyzing: ${file.name} (${(file.size/1024).toFixed(0)} KB)`;
+  runPipeline();
+  setTimeout(() => {
+    document.querySelector('.upload-zone .icon').textContent = '✅';
+    document.querySelector('.upload-zone p').innerHTML = `<b>${file.name}</b><br><span style="font-size:11px;opacity:.7">Pipeline complete · KG loaded</span>`;
+  }, 5500);
+}
+
+// ============================================================
+// Bootstrap: try to load real data, fallback to built-in sample
+// ============================================================
+async function bootstrap() {
+  initGraph();
+
+  // Try loading real KG data
+  try {
+    const [nodesResp, edgesResp] = await Promise.all([
+      fetch('output/kg/nodes.json').then(r => r.json()),
+      fetch('output/kg/edges.json').then(r => r.json()),
+    ]);
+    SAMPLE_NODES = nodesResp.nodes;
+    SAMPLE_EDGES = edgesResp.edges;
+    console.log(`Loaded ${SAMPLE_NODES.length} nodes, ${SAMPLE_EDGES.length} edges from local data`);
+  } catch(e) {
+    console.log('Local data not available, using built-in sample');
+    // Fallback sample
+    SAMPLE_NODES = [
+      {node_id:"n001",entity_type:"paper_metadata",label:"Attention Is All You Need",properties:{field:"title"},page_idx:0,bbox_norm:[341,184,653,208],grounding_status:"grounded"},
+      {node_id:"n002",entity_type:"paper_metadata",label:"Ashish Vaswani",properties:{field:"author"},page_idx:0,bbox_norm:[186,294,354,338],grounding_status:"grounded"},
+      {node_id:"n003",entity_type:"claim",label:"Transformer requires constant O(1) operations",properties:{claim_type:"observation"},page_idx:6,bbox_norm:[120,300,880,330],grounding_status:"grounded"},
+      {node_id:"n004",entity_type:"metric",label:"28.4 BLEU",properties:{name:"BLEU",value:"28.4",task:"translation"},page_idx:7,bbox_norm:[150,400,280,415],grounding_status:"grounded"},
+      {node_id:"n005",entity_type:"metric",label:"41.8 BLEU",properties:{name:"BLEU",value:"41.8",task:"translation"},page_idx:9,bbox_norm:[200,500,330,515],grounding_status:"grounded"},
+      {node_id:"n006",entity_type:"model_component",label:"Multi-Head Attention",properties:{component_type:"mechanism"},page_idx:4,bbox_norm:[120,200,380,220],grounding_status:"grounded"},
+      {node_id:"n007",entity_type:"model_component",label:"Scaled Dot-Product Attention",properties:{component_type:"mechanism"},page_idx:4,bbox_norm:[120,280,420,300],grounding_status:"grounded"},
+      {node_id:"n008",entity_type:"model_component",label:"Feed-Forward network",properties:{component_type:"layer"},page_idx:5,bbox_norm:[120,150,320,170],grounding_status:"grounded"},
+      {node_id:"n009",entity_type:"model_component",label:"Positional Encoding",properties:{component_type:"mechanism"},page_idx:6,bbox_norm:[100,180,300,200],grounding_status:"grounded"},
+      {node_id:"n010",entity_type:"model_component",label:"Encoder",properties:{component_type:"module"},page_idx:3,bbox_norm:[120,200,220,215],grounding_status:"grounded"},
+      {node_id:"n011",entity_type:"model_component",label:"Decoder",properties:{component_type:"module"},page_idx:3,bbox_norm:[250,200,350,215],grounding_status:"grounded"},
+      {node_id:"n012",entity_type:"dataset",label:"WMT 2014 English-to-German",properties:{name:"WMT 2014",task:"machine translation",language_pair:"EN-DE"},page_idx:7,bbox_norm:[180,350,450,370],grounding_status:"grounded"},
+      {node_id:"n013",entity_type:"dataset",label:"WMT 2014 English-to-French",properties:{name:"WMT 2014",task:"machine translation",language_pair:"EN-FR"},page_idx:9,bbox_norm:[180,380,450,400],grounding_status:"grounded"},
+      {node_id:"n014",entity_type:"method",label:"Adam optimizer",properties:{category:"training",parameter:"beta1=0.9,beta2=0.98"},page_idx:7,bbox_norm:[120,500,280,515],grounding_status:"grounded"},
+      {node_id:"n015",entity_type:"method",label:"Dropout",properties:{category:"regularization",value:"0.1"},page_idx:8,bbox_norm:[100,300,180,315],grounding_status:"grounded"},
+      {node_id:"n016",entity_type:"method",label:"Label Smoothing",properties:{category:"regularization",value:"0.1"},page_idx:8,bbox_norm:[300,300,460,315],grounding_status:"grounded"},
+      {node_id:"n017",entity_type:"definition",label:"Self-attention maps a query and a set of key-value pairs to an output",properties:{concept:"Self-attention"},page_idx:4,bbox_norm:[120,100,880,125],grounding_status:"grounded"},
+      {node_id:"n018",entity_type:"equation",label:"Attention(Q,K,V) = softmax(QK^T/sqrt(d_k))V",properties:{name:"Scaled Dot-Product Attention"},page_idx:5,bbox_norm:[100,400,700,430],grounding_status:"grounded"},
+      {node_id:"n019",entity_type:"reference",label:"[13] LSTM",properties:{citation_key:"13"},page_idx:1,bbox_norm:[200,500,300,515],grounding_status:"grounded"},
+      {node_id:"n020",entity_type:"reference",label:"[2] Bahdanau et al.",properties:{citation_key:"2"},page_idx:1,bbox_norm:[200,520,380,535],grounding_status:"grounded"},
+      {node_id:"n021",entity_type:"section_header",label:"3 Model Architecture",properties:{level:2},page_idx:3,bbox_norm:[100,60,300,80],grounding_status:"grounded"},
+      {node_id:"n022",entity_type:"section_header",label:"4 Why Self-Attention",properties:{level:2},page_idx:6,bbox_norm:[100,60,300,80],grounding_status:"grounded"},
+      {node_id:"n023",entity_type:"section_header",label:"5 Training",properties:{level:2},page_idx:7,bbox_norm:[100,60,200,80],grounding_status:"grounded"},
+      {node_id:"n024",entity_type:"claim",label:"Transformer achieves new state-of-the-art on WMT 2014 EN-DE",properties:{claim_type:"conclusion"},page_idx:7,bbox_norm:[120,480,880,500],grounding_status:"grounded"},
+      {node_id:"n025",entity_type:"claim",label:"Transformer generalizes well to English constituency parsing",properties:{claim_type:"conclusion"},page_idx:10,bbox_norm:[120,300,700,320],grounding_status:"grounded"},
+    ];
+    SAMPLE_EDGES = [
+      {edge_id:"e001",source_node_id:"n001",target_node_id:"n002",relation_type:"co_occurs_with",properties:{rule:"same_page",page_idx:0}},
+      {edge_id:"e002",source_node_id:"n003",target_node_id:"n006",relation_type:"co_occurs_with",properties:{rule:"same_page",page_idx:6}},
+      {edge_id:"e003",source_node_id:"n006",target_node_id:"n007",relation_type:"same_type",properties:{rule:"same_entity_type",entity_type:"model_component"}},
+      {edge_id:"e004",source_node_id:"n007",target_node_id:"n008",relation_type:"adjacent_to",properties:{rule:"sequential_order"}},
+      {edge_id:"e005",source_node_id:"n008",target_node_id:"n009",relation_type:"same_type",properties:{rule:"same_entity_type",entity_type:"model_component"}},
+      {edge_id:"e006",source_node_id:"n009",target_node_id:"n010",relation_type:"same_type",properties:{rule:"same_entity_type",entity_type:"model_component"}},
+      {edge_id:"e007",source_node_id:"n010",target_node_id:"n011",relation_type:"adjacent_to",properties:{rule:"sequential_order"}},
+      {edge_id:"e008",source_node_id:"n004",target_node_id:"n012",relation_type:"co_occurs_with",properties:{rule:"same_page",page_idx:7}},
+      {edge_id:"e009",source_node_id:"n005",target_node_id:"n013",relation_type:"co_occurs_with",properties:{rule:"same_page",page_idx:9}},
+      {edge_id:"e010",source_node_id:"n014",target_node_id:"n004",relation_type:"co_occurs_with",properties:{rule:"same_page",page_idx:7}},
+      {edge_id:"e011",source_node_id:"n017",target_node_id:"n006",relation_type:"co_occurs_with",properties:{rule:"same_page",page_idx:4}},
+      {edge_id:"e012",source_node_id:"n018",target_node_id:"n007",relation_type:"co_occurs_with",properties:{rule:"same_page",page_idx:5}},
+      {edge_id:"e013",source_node_id:"n021",target_node_id:"n010",relation_type:"co_occurs_with",properties:{rule:"same_page",page_idx:3}},
+      {edge_id:"e014",source_node_id:"n022",target_node_id:"n003",relation_type:"co_occurs_with",properties:{rule:"same_page",page_idx:6}},
+      {edge_id:"e015",source_node_id:"n023",target_node_id:"n014",relation_type:"co_occurs_with",properties:{rule:"same_page",page_idx:7}},
+      {edge_id:"e016",source_node_id:"n024",target_node_id:"n004",relation_type:"co_occurs_with",properties:{rule:"same_page",page_idx:7}},
+      {edge_id:"e017",source_node_id:"n025",target_node_id:"n005",relation_type:"adjacent_to",properties:{rule:"sequential_order"}},
+      {edge_id:"e018",source_node_id:"n015",target_node_id:"n016",relation_type:"same_type",properties:{rule:"same_entity_type",entity_type:"method"}},
+      {edge_id:"e019",source_node_id:"n019",target_node_id:"n020",relation_type:"same_type",properties:{rule:"same_entity_type",entity_type:"reference"}},
+      {edge_id:"e020",source_node_id:"n006",target_node_id:"n011",relation_type:"co_occurs_with",properties:{rule:"same_page",page_idx:3}},
+      {edge_id:"e021",source_node_id:"n010",target_node_id:"n006",relation_type:"adjacent_to",properties:{rule:"sequential_order"}},
+      {edge_id:"e022",source_node_id:"n011",target_node_id:"n007",relation_type:"adjacent_to",properties:{rule:"sequential_order"}},
+      {edge_id:"e023",source_node_id:"n017",target_node_id:"n018",relation_type:"co_occurs_with",properties:{rule:"same_page",page_idx:5}},
+      {edge_id:"e024",source_node_id:"n012",target_node_id:"n013",relation_type:"same_type",properties:{rule:"same_entity_type",entity_type:"dataset"}},
+      {edge_id:"e025",source_node_id:"n024",target_node_id:"n003",relation_type:"same_type",properties:{rule:"same_entity_type",entity_type:"claim"}},
+    ];
+  }
+  loadGraphData();
+}
+
+// ============================================================
+// Launch
+// ============================================================
+bootstrap();
+</script>
+</body>
+</html>

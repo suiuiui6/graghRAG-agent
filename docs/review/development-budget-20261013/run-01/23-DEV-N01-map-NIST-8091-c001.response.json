@@ -1,0 +1,35 @@
+{
+  "status": "SUCCESS",
+  "http_status": 200,
+  "usage_known": true,
+  "provider_response": {
+    "id": "91c7c12c-ec66-4b8d-acdd-0bf5765b2170",
+    "object": "chat.completion",
+    "created": 1791851057,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "文档中未提及此信息。\n\n所提供摘录仅包含 NISTIR 8091 第 3 节的开头部分，其中列出了 Whitney 系统设计的六个基本步骤（分析产品并确定装配方法与顺序、选择装配顺序、确定所需产能、列出可行装配技术并估算成本与时间、选择设备或人员、进行经济分析并进入详细系统设计）[NIST-8091-c001]。摘录中并未出现\"引出子系统所需度量的列表\"及其类别、括号中的示例或判定要点，也未出现关于该列表是否声称穷尽的任何说明。因此，无法从本片段中提取所请求的类别列表或穷尽性声明。"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2616,
+      "completion_tokens": 142,
+      "total_tokens": 2758,
+      "prompt_tokens_details": {
+        "cached_tokens": 896
+      },
+      "prompt_cache_hit_tokens": 896,
+      "prompt_cache_miss_tokens": 1720
+    },
+    "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+  },
+  "send_status": "HTTP_RESPONSE_RECEIVED",
+  "worker_elapsed_seconds": 2.0459999999729916
+}

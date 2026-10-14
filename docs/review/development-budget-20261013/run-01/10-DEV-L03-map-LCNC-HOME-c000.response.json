@@ -1,0 +1,35 @@
+{
+  "status": "SUCCESS",
+  "http_status": 200,
+  "usage_known": true,
+  "provider_response": {
+    "id": "1163583b-d53c-44cb-aa24-cb58cc2bc2b7",
+    "object": "chat.completion",
+    "created": 1791851007,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "# 6.1–6.3 速度参数汇总\n\n## 三个速度参数的单位与默认值\n\n| 参数 | 单位 | 数值默认值 | 未设置/为零时的行为 |\n|------|------|-----------|-------------------|\n| HOME_SEARCH_VEL | machine-units per second [LCNC-HOME-c000] | 默认值为零 [LCNC-HOME-c000] | 值为零时，LinuxCNC 假定没有 home switch，搜索阶段被跳过 [LCNC-HOME-c000] |\n| HOME_LATCH_VEL | machine-units per second [LCNC-HOME-c000] | 文档中未提及此信息 | 文档中未提及此信息 |\n| HOME_FINAL_VEL | 文档中未提及此信息 | 文档中未提及此信息 | 文档中未提及此信息 |\n\n## HOME_FINAL_VEL 的允许取值条件\n\n文档中未提及此信息（所提供摘录在 6.3 节处被截断，未包含 HOME_FINAL_VEL 的正文内容）[LCNC-HOME-c000]。\n\n## HOME_SEARCH_VEL 零值对搜索阶段的影响\n\nHOME_SEARCH_VEL 的默认值为零 [LCNC-HOME-c000]。值为零会导致 LinuxCNC 假定不存在 home switch，从而跳过 homing 的搜索阶段 [LCNC-HOME-c000]。若 HOME_SEARCH_VEL 为零（即没有 home switch）而 HOME_LATCH_VEL 非零，LinuxCNC 会直接进入 index pulse 搜索 [LCNC-HOME-c000]。\n\n## 补充说明（HOME_SEARCH_VEL 非零时的行为）\n\n若 HOME_SEARCH_VEL 非零，LinuxCNC 假定存在 home switch [LCNC-HOME-c000]。它首先检查 home switch 是否已被触发；若已触发，则以 HOME_SEARCH_VEL 反向退离开关，退离方向与 HOME_SEARCH_VEL 的符号相反 [LCNC-HOME-c000]。随后按 HOME_SEARCH_VEL 符号指定的方向、以其绝对值为速度搜索 home switch [LCNC-HOME-c000]。检测到 home switch 后，关节会尽快停止，但总会存在一定过冲 [LCNC-HOME-c000]。过冲量取决于速度；速度过高可能撞到限位开关或行程末端，速度过低则 homing 耗时过长 [LCNC-HOME-c000]。\n\n## 补充说明（HOME_LATCH_VEL 行为）\n\nHOME_LATCH_VEL 指定 LinuxCNC 最终精确确定 home switch（若存在）和 index pulse 位置（若存在）时使用的速度与方向 [LCNC-HOME-c000]。它通常比搜索速度慢，以提高精度 [LCNC-HOME-c000]。若 HOME_SEARCH_VEL 与 HOME_LATCH_VEL 同号，latch 阶段与搜索阶段同向进行（此时 LinuxCNC 先退离开关，再以 latch 速度移向开关）[LCNC-HOME-c000]。若两者异号，latch 阶段与搜索阶段反向进行，即 LinuxCNC 会在离开开关后锁存第一个脉冲 [LCNC-HOME-c000]。\n\n> 注：所提供摘录在 6.2 节末尾（\"If HOME_SEARC\"）处截断，6.3 节 HOME_FINAL_VEL 的正文未包含在内，因此无法从本片段确定其单位、默认值或取值条件 [LCNC-HOME-c000]。"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2798,
+      "completion_tokens": 747,
+      "total_tokens": 3545,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 2670
+    },
+    "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+  },
+  "send_status": "HTTP_RESPONSE_RECEIVED",
+  "worker_elapsed_seconds": 4.64100000000326
+}

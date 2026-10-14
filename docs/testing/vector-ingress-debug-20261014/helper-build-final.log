@@ -1,0 +1,7 @@
+warn: could not canonicalize path D:\graghRAG-agent
+warn: could not canonicalize path D:\
+   Compiling ingress-oracle v0.1.0 (D:\graghRAG-agent\.tmp\vector-ingress-debug-20261014\helper)
+warning: hard linking files in the incremental compilation cache failed. copying files instead. consider moving the cache directory to a file system which supports hard linking in session dir `D:\graghRAG-agent\.tmp\vector-ingress-debug-20261014\target\debug\incremental\ingress_oracle-1p0dl0gthsw88\s-hn73upjmq5-01tjhhv-working`
+
+warning: `ingress-oracle` (bin "ingress-oracle") generated 1 warning
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 2.95s

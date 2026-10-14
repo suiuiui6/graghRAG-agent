@@ -1,0 +1,25 @@
+.........F..........................................................     [100%]
+================================== FAILURES ===================================
+_____________ test_fixed_chunks_overlap_and_offsets_match_source ______________
+backend\tests\test_doc_processor_behaviors.py:103: in test_fixed_chunks_overlap_and_offsets_match_source
+    section = Section("Text", 1, text, char_start=100, char_end=126)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: Section.__init__() missing 1 required positional argument: 'content_type'
+============================== warnings summary ===============================
+backend\.venv\Lib\site-packages\_pytest\config\__init__.py:1434
+  D:\graghRAG-agent\backend\.venv\Lib\site-packages\_pytest\config\__init__.py:1434: PytestConfigWarning: Unknown config option: timeout
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+tests/test_supply_chain.py::test_code_imports_are_declared
+tests/test_supply_chain.py::test_known_unresolved_entries_are_load_bearing
+  D:\graghRAG-agent\backend\agentic_rag_mvp.py:2: SyntaxWarning: invalid escape sequence '\g'
+    """
+
+tests/test_error_handling_policy.py::test_no_bare_except_outside_tests
+  <unknown>:2: SyntaxWarning: invalid escape sequence '\g'
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED backend\tests\test_doc_processor_behaviors.py::test_fixed_chunks_overlap_and_offsets_match_source
+1 failed, 67 passed, 4 warnings in 11.34s

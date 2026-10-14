@@ -1,0 +1,45 @@
+Timeout (0:00:40)!
+Thread 0x00008ff0 (most recent call first):
+  File "C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 295 in accept
+  File "C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 627 in _fallback_socketpair
+  File "C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\asyncio\proactor_events.py", line 787 in _make_self_pipe
+  File "C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\asyncio\proactor_events.py", line 640 in __init__
+  File "C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py", line 316 in __init__
+  File "C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 720 in new_event_loop
+  File "C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 823 in new_event_loop
+  File "C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 137 in _lazy_init
+  File "C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 58 in __enter__
+  File "C:\Users\14156\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 193 in run
+  File "D:\graghRAG-agent\backend\tests\test_conversation_rewrite.py", line 81 in test_followup_question_persists_rewritten_query_and_reason
+  File "D:\graghRAG-agent\backend\.venv\Lib\site-packages\_pytest\python.py", line 166 in pytest_pyfunc_call
+  File "D:\graghRAG-agent\backend\.venv\Lib\site-packages\pluggy\_callers.py", line 121 in _multicall
+  File "D:\graghRAG-agent\backend\.venv\Lib\site-packages\pluggy\_manager.py", line 120 in _hookexec
+  File "D:\graghRAG-agent\backend\.venv\Lib\site-packages\pluggy\_hooks.py", line 512 in __call__
+  File "D:\graghRAG-agent\backend\.venv\Lib\site-packages\_pytest\python.py", line 1720 in runtest
+  File "D:\graghRAG-agent\backend\.venv\Lib\site-packages\_pytest\runner.py", line 179 in pytest_runtest_call
+  File "D:\graghRAG-agent\backend\.venv\Lib\site-packages\pluggy\_callers.py", line 121 in _multicall
+  File "D:\graghRAG-agent\backend\.venv\Lib\site-packages\pluggy\_manager.py", line 120 in _hookexec
+  File "D:\graghRAG-agent\backend\.venv\Lib\site-packages\pluggy\_hooks.py", line 512 in __call__
+  File "D:\graghRAG-agent\backend\.venv\Lib\site-packages\_pytest\runner.py", line 245 in <lambda>
+  File "D:\graghRAG-agent\backend\.venv\Lib\site-packages\_pytest\runner.py", line 353 in from_call
+  File "D:\graghRAG-agent\backend\.venv\Lib\site-packages\_pytest\runner.py", line 244 in call_and_report
+  File "D:\graghRAG-agent\backend\.venv\Lib\site-packages\_pytest\runner.py", line 137 in runtestprotocol
+  File "D:\graghRAG-agent\backend\.venv\Lib\site-packages\_pytest\runner.py", line 118 in pytest_runtest_protocol
+  File "D:\graghRAG-agent\backend\.venv\Lib\site-packages\pluggy\_callers.py", line 121 in _multicall
+  File "D:\graghRAG-agent\backend\.venv\Lib\site-packages\pluggy\_manager.py", line 120 in _hookexec
+  File "D:\graghRAG-agent\backend\.venv\Lib\site-packages\pluggy\_hooks.py", line 512 in __call__
+  File "D:\graghRAG-agent\backend\.venv\Lib\site-packages\_pytest\main.py", line 396 in pytest_runtestloop
+  File "D:\graghRAG-agent\backend\.venv\Lib\site-packages\pluggy\_callers.py", line 121 in _multicall
+  File "D:\graghRAG-agent\backend\.venv\Lib\site-packages\pluggy\_manager.py", line 120 in _hookexec
+  File "D:\graghRAG-agent\backend\.venv\Lib\site-packages\pluggy\_hooks.py", line 512 in __call__
+  File "D:\graghRAG-agent\backend\.venv\Lib\site-packages\_pytest\main.py", line 372 in _main
+  File "D:\graghRAG-agent\backend\.venv\Lib\site-packages\_pytest\main.py", line 318 in wrap_session
+  File "D:\graghRAG-agent\backend\.venv\Lib\site-packages\_pytest\main.py", line 365 in pytest_cmdline_main
+  File "D:\graghRAG-agent\backend\.venv\Lib\site-packages\pluggy\_callers.py", line 121 in _multicall
+  File "D:\graghRAG-agent\backend\.venv\Lib\site-packages\pluggy\_manager.py", line 120 in _hookexec
+  File "D:\graghRAG-agent\backend\.venv\Lib\site-packages\pluggy\_hooks.py", line 512 in __call__
+  File "D:\graghRAG-agent\backend\.venv\Lib\site-packages\_pytest\config\__init__.py", line 199 in main
+  File "D:\graghRAG-agent\backend\.venv\Lib\site-packages\_pytest\config\__init__.py", line 223 in console_main
+  File "D:\graghRAG-agent\backend\.venv\Lib\site-packages\pytest\__main__.py", line 9 in <module>
+  File "<frozen runpy>", line 88 in _run_code
+  File "<frozen runpy>", line 198 in _run_module_as_main

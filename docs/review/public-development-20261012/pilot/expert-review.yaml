@@ -1,0 +1,49 @@
+contract_version: '1.0'
+expert_skill: sci-skills-web-data-acquisition
+project_id: graphrag-paper-001
+paper_family: M
+stage_id: M2
+task_id: PUBLIC-DEV-SOURCES-20261012
+task_status: PROVISIONAL
+inputs_reviewed:
+  - units.json
+  - questions-gold.draft.json
+  - web-open.json
+  - web-rights-find.json
+  - web-visual-rights.json
+  - web-screenshot-retry.json
+  - build_pilot.py
+  - verification.json
+outputs:
+  - 独立AI只读复核6题36条目的枚举/参数/行号/字符偏移/hash吻合；非独立人工Gold
+  - NIST仅128行局部上下文；原件/视觉阻塞
+  - 范围已给定、数量提示、属性合并、N01判断未结构化等修复建议
+evidence_status:
+  - EXECUTED_LOCAL：专家只读JSON/hash/offset校验通过，未运行写文件构建脚本
+  - VERIFIED_SOURCE：本地平台文本内核查，未重做网络核验
+  - NOT_EXECUTED：原件核验、视觉核验、人工Gold、模型基准
+assumptions:
+  - 保留开发草案，不执行正式基准
+author_input_needed: []
+manual_actions:
+  - 原始文件普通下载，见manual-download.md
+quality_checks:
+  - 阶段M2保持开放
+  - 本轮题目全部scope_given，不证明自动范围选择难度
+conflicts:
+  - conflict_id: PILOT-NIST-COVERAGE
+    type: coverage_boundary
+    claim: 局部文本可代表完整S扫描
+    source_or_locator: units.json
+    competing_values_or_interpretations: [128行局部文本, 529行17页原报告]
+    recommended_resolution: 部分覆盖明确登记，正式S等待完整原件
+  - conflict_id: PILOT-N01-SCORING
+    type: gold_contract_gap
+    claim: 题干要求判断穷尽性但结构化Gold遗漏
+    source_or_locator: DEV-N01
+    competing_values_or_interpretations: [14类别, 非穷尽判断另需计分]
+    recommended_resolution: 绑定L213为独立required_answer_qualifiers
+conflict_resolution_status: TARGETED_RECHECK_CONFIRMED_EXCEPT_ATOMS_THEN_ORCHESTRATOR_SPLIT_ATOMS_PENDING_FINAL_RECHECK
+merge_permission: orchestrator_only
+recommended_next_action: 获取两来源原件后核版面和重新解析坐标
+stage_acceptance_recommendation: REPAIR

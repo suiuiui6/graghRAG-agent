@@ -1,0 +1,20 @@
+[
+  {
+    "case": "filter",
+    "class": "ValueError",
+    "expected": "invalid_filter",
+    "actual": null
+  },
+  {
+    "case": "mixed_keys",
+    "class": "TypeError",
+    "expected": "invalid_input",
+    "actual": null
+  },
+  {
+    "case": "record",
+    "class": "ValueError",
+    "expected": "invalid_input",
+    "actual": null
+  }
+]

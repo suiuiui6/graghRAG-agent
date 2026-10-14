@@ -1,0 +1,35 @@
+{
+  "status": "SUCCESS",
+  "http_status": 200,
+  "usage_known": true,
+  "provider_response": {
+    "id": "51c6d4ca-9267-4910-9eb5-07a6b854f11d",
+    "object": "chat.completion",
+    "created": 1791850990,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "文档中未提及此信息。\n\n所提供的内容片段（LCNC-HOME-c002，Unicode [16000,18101)）仅涉及负值 `HOME_SEQUENCE` 同步、回零前关节点动（joint jogging）的 HAL 逻辑示例，以及相关注意事项 [LCNC-HOME-c002]。该片段中不包含第 6 节 Configuration 开头的表格，也未列出任何回零类型，更未给出 `HOME_SEARCH_VEL`、`HOME_LATCH_VEL`、`HOME_USE_INDEX` 的取值 [LCNC-HOME-c002]。"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1494,
+      "completion_tokens": 130,
+      "total_tokens": 1624,
+      "prompt_tokens_details": {
+        "cached_tokens": 768
+      },
+      "prompt_cache_hit_tokens": 768,
+      "prompt_cache_miss_tokens": 726
+    },
+    "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+  },
+  "send_status": "HTTP_RESPONSE_RECEIVED",
+  "worker_elapsed_seconds": 2.0469999999622814
+}

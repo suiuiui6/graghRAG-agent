@@ -1,0 +1,8 @@
+[project]
+name = "vector-error-contract-test"
+version = "0.1.0"
+requires-python = "==3.12.*"
+dependencies = ["annotated-types==0.8.0", "colorama==0.4.6", "deprecation==2.1.0", "lance-namespace==0.13.0", "lance-namespace-urllib3-client==0.13.0", "lancedb==0.40.0", "numpy==2.5.4", "packaging==26.3", "pyarrow==26.0.0", "pydantic==2.14.1", "pydantic-core==2.50.1", "python-dateutil==2.9.0.post0", "six==1.17.0", "tqdm==4.70.1", "typing-extensions==4.16.0", "typing-inspection==0.4.4", "urllib3==2.8.0"]
+
+[dependency-groups]
+test = ["structlog==26.1.0"]

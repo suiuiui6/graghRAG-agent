@@ -1,0 +1,11 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+____________ test_lifecycle_refuses_version_paths_outside_kg_root _____________
+D:\graghRAG-agent\backend\tests\test_service_readiness.py:345: in test_lifecycle_refuses_version_paths_outside_kg_root
+    assert manager._clean_kg_versions() == 0
+E   assert 1 == 0
+E    +  where 1 = _clean_kg_versions()
+E    +    where _clean_kg_versions = <services.lifecycle.DataLifecycleManager object at 0x0000019D9089D5E0>._clean_kg_versions
+=========================== short test summary info ===========================
+FAILED backend\tests\test_service_readiness.py::test_lifecycle_refuses_version_paths_outside_kg_root
+1 failed, 17 deselected in 2.88s

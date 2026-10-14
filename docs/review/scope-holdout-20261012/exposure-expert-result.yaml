@@ -1,0 +1,42 @@
+contract_version: '1.0'
+expert_skill: sci-skills-data-availability
+project_id: graphrag-paper-001
+paper_family: M
+stage_id: M2
+task_id: EXPOSURE-REVIEW-20261012
+task_status: PROVISIONAL
+inputs_reviewed:
+- 8候选副本ID/hash/标题
+- 仓库docs/tests/research/iteration-2/plans/integration/scripts及后端代码
+- 130个可达Git commit常见文本变更
+- exposure-01/exposure-ledger.json
+- exposure-01/verification.json
+outputs:
+- 仓库QA/Gold/调试及Git搜索无正文级开发正证；f7af6ada只有历史元数据审计。
+- 补充复核认可3候选标签QA风险、5未知、8不准入。
+- 2026-07-08会话c00099/c00139→危化法标签，c00051→吉林标签，c01141→GBT标签；无历史hash冻结不能证明同sha。
+evidence_status:
+- EXECUTED_LOCAL：限定仓库文本及130可达commit搜索。
+- VERIFIED_USER_MATERIAL：现有会话与当前来源metadata匹配。
+- PENDING_VERIFICATION：历史精确版本与完整输入、论文开发用途、调试角色。
+- VERIFIED_USER_MATERIAL：专家复核会话扫描与hash记录，没有独立重跑全量扫描/重哈希。
+- VERIFIED_USER_MATERIAL：时间兼容source连接3/14/1，不兼容33/228/1，单位不同于turn标签join。
+assumptions:
+- 查无引用不证明未曝光。
+- sources/citations不等于精确模型输入收据。
+- SQLite created_at无时区，时间比较需明确UTC假设。
+- qa_turn_label_join_count与source连接数统计单位不同，不能相互替代。
+author_input_needed:
+- 若继续清除曝光未知，需要原历史输入/索引冻结及作者开发角色账本。
+manual_actions: []
+quality_checks:
+- 不读取候选原文/chunks/实体正文/回答正文。
+- 无网络/生成/凭据读取或生产修改。
+- 34/220/2跨时点turn标签join不得当曝光次数；存在时间不兼容反例。
+- 不将动态dN节点前缀按当前目录顺序倒推历史来源。
+conflicts: []
+conflict_resolution_status: NOT_REQUIRED
+merge_permission: orchestrator_only
+recommended_next_action: 保留8候选隔离；有原收据则核对，否则换用未参与开发新来源。
+stage_acceptance_recommendation: NOT_ASSESSED
+coordinator_acceptance: VERIFIED_FOR_BOUNDED_EXPOSURE_AUDIT_ONLY_NOT_STAGE_PASS

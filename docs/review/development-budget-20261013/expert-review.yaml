@@ -1,0 +1,75 @@
+contract_version: "1.0"
+expert_skill: sci-skills-statistical-reporting
+project_id: graphrag-paper-001
+paper_family: M
+stage_id: M2
+task_id: DEV-BUDGET-20261013
+task_status: COMPLETE
+inputs_reviewed:
+  - docs/review/development-budget-20261013/plan.md
+  - docs/review/development-budget-20261013/profile.py
+  - docs/review/development-budget-20261013/manifest.json
+  - docs/review/public-development-20261012/pilot/validated/questions.input.json
+  - backend/research/scope_v2.py
+outputs:
+  - docs/review/development-budget-20261013/expert-review.yaml
+  - "Pre-execution independent static review; no API execution or scientific validation."
+evidence_status:
+  - "VERIFIED_USER_MATERIAL: manifest has 2 diagnostic, 21 map, 6 reduce requests; total 29."
+  - "VERIFIED_USER_MATERIAL: manifest declares 59392 output tokens, 600000 serialized-message bytes, 900 local seconds, 45 seconds per worker."
+  - "VERIFIED_USER_MATERIAL: six input questions contain only question_id, source_id, question, range_condition; all six manifest AUTO resolutions are UNRESOLVED."
+  - "VERIFIED_USER_MATERIAL: reviewed scope_v2 imports only local standard-library logic; profile does not load Gold or answer files."
+  - "NOT_EXECUTED: reviewer did not read .env, run prepare, call network, start models/services, or execute inference."
+  - "VERIFIED_USER_MATERIAL: repaired profile SHA256 b3ec16586f4bdfb2abcdcdaed1d7ce6cbba6796c08fdcf7bdb8dfdd93b60851f matches regenerated manifest; status PREPARED_NOT_EXECUTED, 29 units, 59392 declared output tokens, six AUTO UNRESOLVED."
+  - "PENDING_VERIFICATION: actual API outcomes and runtime enforcement; static review does not prove execution."
+assumptions:
+  - "User remote authorization is limited to these public development materials, not quarantined held-out candidates."
+  - "P0_PROMPT_ONLY_DIAGNOSTIC is a supplied-context template diagnostic, not P0_NATIVE."
+  - "Character chunking and declared completion bounds are not measured generator-token budgets."
+  - "No semantic scoring, arm ranking, scientific stage change, or common three-arm budget freeze is supported."
+author_input_needed: []
+manual_actions: []
+quality_checks:
+  - "PASS: source SHA checks, code/script snapshot checks, new-run directory requirement, no retry, redirects disabled, official HTTPS endpoint allowlist."
+  - "PASS: continuous canonical chunk coverage and six no-Gold input fields are checked in prepare."
+  - "PASS: dynamic reduce includes actual map outputs; full serialized messages are checked against cumulative byte allowance before requests."
+  - "PASS: credentials are read only inside worker; non-200 response bodies and exception text are not persisted; raw responses containing literal key are rejected."
+  - "PASS: first non-success response stops the batch; missing/failed usage is not zero-filled."
+  - "PASS: P0 corpus unavailable, AUTO unresolved, and unfrozen three-baseline budget are explicitly labelled."
+  - "PASS_RECHECK: no unconditional sent flag; CONFIG_MISMATCH is NOT_ATTEMPTED, parent timeout/crash UNKNOWN, normal HTTP responses HTTP_RESPONSE_RECEIVED. Transport/parse errors conservatively preserve unknown cost."
+  - "PASS_RECHECK: both resource-cap breaks persist ledger before leaving the loop."
+  - "PASS_RECHECK: remaining request-window time is recomputed after request-file write immediately before spawn; plan explicitly excludes final receipt cleanup from the 900-second claim."
+  - "PASS_RECHECK: total_cost_complete permits genuinely NOT_ATTEMPTED events without fabricating usage, while unknown attempted costs keep it false."
+  - "LIMITATION: operating-system process startup/termination latency is not a real-time guarantee; this is a guarded local request window, not supplier cancellation or guaranteed billing deadline."
+conflicts:
+  - conflict_id: DEV-LEDGER-SEND-01
+    type: measurement_scope
+    claim: "Every attempted worker has sent an HTTP request."
+    source_or_locator: "profile.py:158 and 222-223 (reviewed initial version)"
+    competing_values_or_interpretations:
+      - "CONFIG_MISMATCH returns before requests.post."
+      - "Parent records sent=True for all worker results, including configuration rejection and timeout."
+    recommended_resolution: "Return an explicit request-attempt flag for normal worker results; record false for configuration rejection and UNKNOWN for worker timeout/crash when transmission cannot be established. Keep worker attempts distinct from HTTP request attempts and unknown server cost."
+    resolution_verified: "Root repaired send_status accounting; independently rechecked current source and regenerated manifest."
+  - conflict_id: DEV-LEDGER-STOP-01
+    type: evidence_persistence
+    claim: "Ledger retains the resource-cap stopping event."
+    source_or_locator: "profile.py:203-205 and 234 (reviewed initial version)"
+    competing_values_or_interpretations:
+      - "Stopping event is added to in-memory calls."
+      - "break bypasses ledger save; summary may include an event missing from persisted ledger."
+    recommended_resolution: "Save the final ledger unconditionally before summary, including all not-sent stop records."
+    resolution_verified: "Root saves ledger at both stopping branches; independently rechecked."
+  - conflict_id: DEV-DEADLINE-01
+    type: resource_bound
+    claim: "Worker request execution is bounded by remaining global 900-second allowance."
+    source_or_locator: "profile.py:202 and 207-213 (reviewed initial version)"
+    competing_values_or_interpretations:
+      - "remaining is sampled before serialization/write and worker startup."
+      - "subprocess timeout reuses stale allowance; summary writes and snapshot checks are also outside the nominal cutoff."
+    recommended_resolution: "Use an absolute monotonic deadline, recompute immediately before spawn, refuse spawn if expired, and distinguish bounded request-execution window from finite receipt-writing cleanup. Do not claim local termination cancels remote billing."
+    resolution_verified: "Root recomputes the equivalent MAX_SECONDS minus elapsed allowance immediately before spawn and refuses expired starts; plan distinguishes request window from final cleanup. Independently rechecked."
+conflict_resolution_status: RESOLVED_BY_ORCHESTRATOR
+merge_permission: orchestrator_only
+recommended_next_action: "Root agent may execute the already authorized bounded public-development profile against the reviewed script/manifest, then return receipts for independent results audit without advancing M2."
+stage_acceptance_recommendation: PASS_CANDIDATE

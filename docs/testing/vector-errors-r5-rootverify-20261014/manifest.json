@@ -1,0 +1,11 @@
+{
+  "source_freeze_sha256": "43d38e03549f64762734d1d0339c7c87c3c4361346b1cb390983c3b293269d4c",
+  "files": {
+    "root-receipt.json": "da9680fb159413e4516a76d8311bc4009df5535d3fbdba359a334e7f04d348a8",
+    "root-test_errors.py.log": "ec69c288abe3f42e3c68e1c79f317a474151dacc4b3a478f47522e9e9f2a0b0e",
+    "root-test_facade.py.log": "902fa65fb90f61ecf206232fb73e683b908865711b80f566715fd98ae2f3c4cc",
+    "consumer-receipt.json": "c7a600e984a4890cbb0793e734002c79dc6cfd50120914a080e7d52118fa5486",
+    "consumer-final.log": "cc5a286ee5b1289b352a92951851657bde4aedde12c0f7a985f309a46eb84242",
+    "verify_vector_errors_r5.py": "017b594052027177a3266e0ffe82607a2722290fef008ecce0adaa5d8c8631bd"
+  }
+}

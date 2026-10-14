@@ -1,0 +1,497 @@
+[
+  {
+    "name": "absl-py",
+    "installed": "2.4.0",
+    "locked": "2.5.0"
+  },
+  {
+    "name": "aiohappyeyeballs",
+    "installed": "2.6.2",
+    "locked": "2.7.1"
+  },
+  {
+    "name": "aiohttp",
+    "installed": "3.13.5",
+    "locked": "3.14.3"
+  },
+  {
+    "name": "aliyun-python-sdk-core",
+    "installed": "2.16.0",
+    "locked": "2.16.1"
+  },
+  {
+    "name": "annotated-doc",
+    "installed": "0.0.4",
+    "locked": "0.0.5"
+  },
+  {
+    "name": "annotated-types",
+    "installed": "0.7.0",
+    "locked": "0.8.0"
+  },
+  {
+    "name": "anyio",
+    "installed": "4.13.0",
+    "locked": "4.15.1"
+  },
+  {
+    "name": "apscheduler",
+    "installed": "3.11.2",
+    "locked": "3.11.3"
+  },
+  {
+    "name": "build",
+    "installed": "1.5.0",
+    "locked": "1.6.1"
+  },
+  {
+    "name": "certifi",
+    "installed": "2026.5.20",
+    "locked": "2026.7.22"
+  },
+  {
+    "name": "cffi",
+    "installed": "2.0.0",
+    "locked": "2.1.1"
+  },
+  {
+    "name": "charset-normalizer",
+    "installed": "3.4.7",
+    "locked": "3.5.1"
+  },
+  {
+    "name": "click",
+    "installed": "8.4.1",
+    "locked": "8.5.0"
+  },
+  {
+    "name": "cryptography",
+    "installed": "48.0.0",
+    "locked": "50.0.1"
+  },
+  {
+    "name": "duckdb",
+    "installed": "1.5.3",
+    "locked": "1.5.5"
+  },
+  {
+    "name": "durationpy",
+    "installed": "0.10",
+    "locked": "0.11"
+  },
+  {
+    "name": "fastapi",
+    "installed": "0.136.3",
+    "locked": "0.141.1"
+  },
+  {
+    "name": "filelock",
+    "installed": "3.29.1",
+    "locked": "3.32.7"
+  },
+  {
+    "name": "fsspec",
+    "installed": "2026.4.0",
+    "locked": "2026.7.0"
+  },
+  {
+    "name": "google-api-core",
+    "installed": "2.30.3",
+    "locked": "2.37.0"
+  },
+  {
+    "name": "google-auth",
+    "installed": "2.53.0",
+    "locked": "2.58.0"
+  },
+  {
+    "name": "google-cloud-core",
+    "installed": "2.6.0",
+    "locked": "2.7.0"
+  },
+  {
+    "name": "google-cloud-storage",
+    "installed": "3.10.1",
+    "locked": "3.14.1"
+  },
+  {
+    "name": "google-genai",
+    "installed": "2.6.0",
+    "locked": "2.23.0"
+  },
+  {
+    "name": "google-resumable-media",
+    "installed": "2.9.0",
+    "locked": "2.10.2"
+  },
+  {
+    "name": "googleapis-common-protos",
+    "installed": "1.75.0",
+    "locked": "1.75.3"
+  },
+  {
+    "name": "grpcio",
+    "installed": "1.81.0",
+    "locked": "1.84.0"
+  },
+  {
+    "name": "hf-xet",
+    "installed": "1.5.0",
+    "locked": "1.6.0"
+  },
+  {
+    "name": "huggingface-hub",
+    "installed": "1.16.1",
+    "locked": "1.31.0"
+  },
+  {
+    "name": "idna",
+    "installed": "3.16",
+    "locked": "3.19"
+  },
+  {
+    "name": "jiter",
+    "installed": "0.15.0",
+    "locked": "0.17.0"
+  },
+  {
+    "name": "jmespath",
+    "installed": "0.10.0",
+    "locked": "1.1.0"
+  },
+  {
+    "name": "joblib",
+    "installed": "1.5.3",
+    "locked": "1.6.0"
+  },
+  {
+    "name": "kubernetes",
+    "installed": "36.0.2",
+    "locked": "36.0.3"
+  },
+  {
+    "name": "langchain",
+    "installed": "1.3.1",
+    "locked": "1.4.0"
+  },
+  {
+    "name": "langchain-core",
+    "installed": "1.4.0",
+    "locked": "1.6.3"
+  },
+  {
+    "name": "langchain-openai",
+    "installed": "1.2.2",
+    "locked": "1.6.2"
+  },
+  {
+    "name": "langchain-protocol",
+    "installed": "0.0.15",
+    "locked": "0.0.19"
+  },
+  {
+    "name": "langgraph",
+    "installed": "1.2.1",
+    "locked": "1.2.11"
+  },
+  {
+    "name": "langgraph-checkpoint",
+    "installed": "4.1.1",
+    "locked": "4.2.0"
+  },
+  {
+    "name": "langgraph-sdk",
+    "installed": "0.3.15",
+    "locked": "0.4.4"
+  },
+  {
+    "name": "langsmith",
+    "installed": "0.8.5",
+    "locked": "0.12.5"
+  },
+  {
+    "name": "lxml",
+    "installed": "6.1.1",
+    "locked": "6.1.3"
+  },
+  {
+    "name": "mmh3",
+    "installed": "5.2.1",
+    "locked": "5.3.0"
+  },
+  {
+    "name": "multidict",
+    "installed": "6.7.1",
+    "locked": "6.8.0"
+  },
+  {
+    "name": "narwhals",
+    "installed": "2.22.1",
+    "locked": "2.26.0"
+  },
+  {
+    "name": "numpy",
+    "installed": "2.4.6",
+    "locked": "2.5.3"
+  },
+  {
+    "name": "onnxruntime",
+    "installed": "1.26.0",
+    "locked": "1.30.0"
+  },
+  {
+    "name": "openai",
+    "installed": "2.38.0",
+    "locked": "3.14.1"
+  },
+  {
+    "name": "opentelemetry-api",
+    "installed": "1.42.1",
+    "locked": "1.44.0"
+  },
+  {
+    "name": "opentelemetry-exporter-otlp-proto-common",
+    "installed": "1.42.1",
+    "locked": "1.44.0"
+  },
+  {
+    "name": "opentelemetry-exporter-otlp-proto-grpc",
+    "installed": "1.42.1",
+    "locked": "1.44.0"
+  },
+  {
+    "name": "opentelemetry-proto",
+    "installed": "1.42.1",
+    "locked": "1.44.0"
+  },
+  {
+    "name": "opentelemetry-sdk",
+    "installed": "1.42.1",
+    "locked": "1.44.0"
+  },
+  {
+    "name": "opentelemetry-semantic-conventions",
+    "installed": "0.63b1",
+    "locked": "0.65b0"
+  },
+  {
+    "name": "orjson",
+    "installed": "3.11.9",
+    "locked": "3.12.0"
+  },
+  {
+    "name": "packaging",
+    "installed": "26.2",
+    "locked": "26.3"
+  },
+  {
+    "name": "pandas",
+    "installed": "3.0.3",
+    "locked": "3.0.5"
+  },
+  {
+    "name": "prometheus-client",
+    "installed": "0.25.0",
+    "locked": "0.26.0"
+  },
+  {
+    "name": "propcache",
+    "installed": "0.5.2",
+    "locked": "0.5.4"
+  },
+  {
+    "name": "proto-plus",
+    "installed": "1.28.0",
+    "locked": "1.28.4"
+  },
+  {
+    "name": "protobuf",
+    "installed": "6.33.6",
+    "locked": "7.36.1"
+  },
+  {
+    "name": "pyasn1",
+    "installed": "0.6.3",
+    "locked": "0.6.4"
+  },
+  {
+    "name": "pybase64",
+    "installed": "1.4.3",
+    "locked": "1.5.0"
+  },
+  {
+    "name": "pydantic",
+    "installed": "2.13.4",
+    "locked": "2.13.5"
+  },
+  {
+    "name": "pydantic-core",
+    "installed": "2.46.4",
+    "locked": "2.46.5"
+  },
+  {
+    "name": "pydantic-settings",
+    "installed": "2.14.1",
+    "locked": "2.15.0"
+  },
+  {
+    "name": "pygments",
+    "installed": "2.20.0",
+    "locked": "2.21.0"
+  },
+  {
+    "name": "pyjwt",
+    "installed": "2.13.0",
+    "locked": "2.14.0"
+  },
+  {
+    "name": "pyproject-hooks",
+    "installed": "1.2.0",
+    "locked": "1.3.3"
+  },
+  {
+    "name": "pytest",
+    "installed": "9.0.3",
+    "locked": "9.1.1"
+  },
+  {
+    "name": "python-dotenv",
+    "installed": "1.2.2",
+    "locked": "1.2.3"
+  },
+  {
+    "name": "python-multipart",
+    "installed": "0.0.29",
+    "locked": "0.0.32"
+  },
+  {
+    "name": "regex",
+    "installed": "2026.5.9",
+    "locked": "2026.9.10"
+  },
+  {
+    "name": "rpds-py",
+    "installed": "2026.5.1",
+    "locked": "2026.6.3"
+  },
+  {
+    "name": "safetensors",
+    "installed": "0.7.0",
+    "locked": "0.8.0"
+  },
+  {
+    "name": "scikit-learn",
+    "installed": "1.9.0",
+    "locked": "1.9.1"
+  },
+  {
+    "name": "scipy",
+    "installed": "1.17.1",
+    "locked": "1.18.1"
+  },
+  {
+    "name": "sentence-transformers",
+    "installed": "5.5.1",
+    "locked": "6.0.1"
+  },
+  {
+    "name": "setuptools",
+    "installed": "81.0.0",
+    "locked": "84.0.0"
+  },
+  {
+    "name": "starlette",
+    "installed": "1.1.0",
+    "locked": "1.6.0"
+  },
+  {
+    "name": "threadpoolctl",
+    "installed": "3.6.0",
+    "locked": "3.7.0"
+  },
+  {
+    "name": "tiktoken",
+    "installed": "0.13.0",
+    "locked": "0.14.0"
+  },
+  {
+    "name": "tokenizers",
+    "installed": "0.22.2",
+    "locked": "0.23.2"
+  },
+  {
+    "name": "torch",
+    "installed": "2.12.0",
+    "locked": "2.14.0"
+  },
+  {
+    "name": "tqdm",
+    "installed": "4.67.3",
+    "locked": "4.70.1"
+  },
+  {
+    "name": "transformers",
+    "installed": "5.10.2",
+    "locked": "5.17.0"
+  },
+  {
+    "name": "typer",
+    "installed": "0.26.7",
+    "locked": "0.27.2"
+  },
+  {
+    "name": "typing-extensions",
+    "installed": "4.15.0",
+    "locked": "4.16.0"
+  },
+  {
+    "name": "typing-inspection",
+    "installed": "0.4.2",
+    "locked": "0.4.4"
+  },
+  {
+    "name": "tzdata",
+    "installed": "2026.2",
+    "locked": "2026.4"
+  },
+  {
+    "name": "tzlocal",
+    "installed": "5.3.1",
+    "locked": "5.4.4"
+  },
+  {
+    "name": "urllib3",
+    "installed": "2.7.0",
+    "locked": "2.8.0"
+  },
+  {
+    "name": "uuid-utils",
+    "installed": "0.16.0",
+    "locked": "0.17.1"
+  },
+  {
+    "name": "uvicorn",
+    "installed": "0.47.0",
+    "locked": "0.53.0"
+  },
+  {
+    "name": "websocket-client",
+    "installed": "1.9.0",
+    "locked": "1.9.2"
+  },
+  {
+    "name": "websockets",
+    "installed": "16.0",
+    "locked": "16.1.1"
+  },
+  {
+    "name": "xxhash",
+    "installed": "3.7.0",
+    "locked": "4.0.1"
+  },
+  {
+    "name": "yarl",
+    "installed": "1.24.2",
+    "locked": "1.25.1"
+  }
+]

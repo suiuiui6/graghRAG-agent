@@ -1,0 +1,46 @@
+{
+  "status": "PASS_LOCAL_PACKAGE_REPRODUCED_AND_ACCEPTANCE_CHECKS",
+  "recorded_on": "2026-10-08",
+  "readme_command_exit_code": 0,
+  "readme_report_matches_actual": true,
+  "source_binding": {
+    "result": "PASS",
+    "questions": 9,
+    "core_items": 31,
+    "attributes_required_plus_optional": 150,
+    "required_attributes": 125,
+    "optional_attributes": 25,
+    "evidence_classes": {
+      "explicit": 146,
+      "absence": 3,
+      "inferred": 1
+    },
+    "exact_evidence_associations_verified": 172,
+    "source_hashes_verified": 3,
+    "input_hashes_verified": 6,
+    "scopes_verified": 9,
+    "D1_FIG_original_interval": [
+      0,
+      22366
+    ],
+    "D1_numbered_caption_lines": 12,
+    "D1_unique_numbered_figures": 6,
+    "D2_NONE_complete_scope_verified": true,
+    "model_or_API_execution": false
+  },
+  "expert_contract_fields": 19,
+  "contract_identity_verified": true,
+  "optional_details_not_mandatory": true,
+  "future_only_item_4_coverage_target": true,
+  "private_frontmatter_not_embedded": true,
+  "artifact_sha256": {
+    "gold-v2.yaml": "1b5aa18287aa6f39160acf580082a460b054b77b7b29e75bc9e566b8280a3619",
+    "gold-v2-package.md": "64cdb08d71f24b880cbb95a6b8a4cc8bb7f2320cd206b6fad05f7c3ef1c681df",
+    "gold-v2-package-contract.yaml": "8de13380d5751ef4b315645311966d3ceab6a2edec0209c0771d0ad546f28ec3",
+    "approval-record-20261008.yaml": "340fe92828b19432b32c20726fb0209fef16042af45612aec698e58d7a5e13c8",
+    "gold-package-task-20261008.yaml": "c92887f18bcb37fc66ef07559864130a3eff7c57805a9584b5042b3d3985e3ed",
+    "local-preflight-20261008.json": "7d3d4a254d1ad81799611872501e77c35a7ebea26fae8176addc8f7152ded362",
+    "local-preflight-20261008.md": "cdca760459be119bfcaaee57252b05c5afcde24c2242b4cf45edf2cf042dc34d"
+  },
+  "boundary": "Local source-bound Gold acceptance only; not human certification, semantic scoring, production replay, provider authorization or M2 pass."
+}

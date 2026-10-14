@@ -1,0 +1,19 @@
+# Backend
+# 注：`.env` 只匹配字面量，挡不住 .env.backup / .env_local_test 等变体（2026-09-17 安全事件）
+.env
+.env*
+!.env.example
+!*.env.example
+*.log
+.venv/
+__pycache__/
+*.pyc
+output/
+input/
+.DS_Store
+
+# 测试沙箱残留：tests/conftest.py 的 sandbox_tmp_path 与各测试自建临时目录
+# 每个带 8 位随机后缀，跑一轮测试就会堆积（实测已积压约 250 个）。
+# 前缀与 conftest.py 的 _TEST_ARTIFACT_PREFIXES 保持一致。
+tests/_tmp_*
+tests/_sandbox_*
