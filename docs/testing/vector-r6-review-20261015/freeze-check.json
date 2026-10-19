@@ -1,0 +1,9 @@
+{
+  "manifest_sha256": "37a4ca29ce343e1621235b1bb8fdbee52beb120b67134fc3b32d1e6c1d1fbac5",
+  "files": 186,
+  "validated_inputs": 38,
+  "drift": [],
+  "input_drift": [],
+  "private_copy": "D:\\graghRAG-agent\\.tmp\\vector-r6-review-20261015\\frozen",
+  "private_copy_drift": []
+}

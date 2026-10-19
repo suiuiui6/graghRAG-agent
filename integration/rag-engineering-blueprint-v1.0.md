@@ -1,5 +1,11 @@
 # RAG 系统工程蓝图 v1.1
 
+## 2026-10-15 模型配置维护补充
+
+现役远程模型在调用时解析`LANGEXTRACT_MODEL_ID`，缺省`deepseek-flash`；显式函数模型参数仍优先，改写/共指缓存按实际模型分区。下文旧`deepseek-v4-pro`选型与代码示例不再代表当前默认配置。缺省沿用非思考行为：requests JSON使用顶层`thinking={"type":"disabled"}`，ChatOpenAI/OpenAI SDK以`extra_body`展开；原生LangExtract provider通过支持的`reasoning_effort="none"`传递。不向自定义其他模型附DeepSeek供应商字段。`extra_body`不是requests JSON的嵌套字段。
+
+公开开发隔离入库与预算边界见[开发适配契约](../docs/contracts/2026-10-14-development-isolation-adapters.md)。指定文档当前仍走授权KG入口，此次模型配置维护不更改检索/授权/提示/输出限额；历史实验请求名不回写。
+
 ## 2026-10-13 维护契约补充
 
 本节覆盖下文旧SQL示例及部署示例的冲突部分。表格条件采用有界语法编译为DuckDB表达式，仅支持已知字段的比较、AND/OR、括号与IS [NOT] NULL；禁止拼接条件SQL、函数、子查询、注释及未知字段。查询limit须为0至1000的整数且拒绝bool；条件1至32条，每条最多2048字符、256 token、16层括号，数值必须有限。宽表与EAV采用相同安全边界。

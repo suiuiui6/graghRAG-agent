@@ -1,0 +1,5 @@
+{
+  "typed_subclass_sanitized": false,
+  "candidate_event_passthrough": true,
+  "scope": "pure processor probe, not console/file test"
+}

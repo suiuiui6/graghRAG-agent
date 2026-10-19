@@ -1,0 +1,2654 @@
+{
+  "lancedb": {
+    "sha256": "96f7bac683f2f951dd46f05e5081da8f66deae65d3cb7bee8ff4fc264c9190e2",
+    "components": 800,
+    "metadata": {
+      "timestamp": "2026-10-07T09:18:31.006933500Z",
+      "tools": [
+        {
+          "vendor": "CycloneDX",
+          "name": "cargo-cyclonedx",
+          "version": "0.5.7"
+        }
+      ],
+      "component": {
+        "type": "library",
+        "bom-ref": "path+file:///C:/a/lancedb/lancedb/python#lancedb-python@0.40.0",
+        "name": "lancedb-python",
+        "version": "0.40.0",
+        "description": "Python bindings for LanceDB",
+        "scope": "required",
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/lancedb-python@0.40.0?download_url=file://.",
+        "externalReferences": [
+          {
+            "type": "vcs",
+            "url": "https://github.com/lancedb/lancedb"
+          }
+        ],
+        "components": [
+          {
+            "type": "library",
+            "bom-ref": "path+file:///C:/a/lancedb/lancedb/python#lancedb-python@0.40.0 bin-target-0",
+            "name": "_lancedb",
+            "version": "0.40.0",
+            "purl": "pkg:cargo/lancedb-python@0.40.0?download_url=file://.#src/lib.rs"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "cdx:rustc:sbom:target:all_targets",
+          "value": "true"
+        }
+      ]
+    },
+    "selected": [
+      {
+        "type": "library",
+        "bom-ref": "path+file:///C:/a/lancedb/lancedb/rust/lancedb#0.40.0",
+        "name": "lancedb",
+        "version": "0.40.0",
+        "description": "LanceDB: A serverless, low-latency vector database for AI applications",
+        "scope": "required",
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/lancedb@0.40.0?download_url=file://..\\rust\\lancedb",
+        "externalReferences": [
+          {
+            "type": "vcs",
+            "url": "https://github.com/lancedb/lancedb"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#arrow-arith@58.4.0",
+        "author": "Apache Arrow <dev@arrow.apache.org>",
+        "name": "arrow-arith",
+        "version": "58.4.0",
+        "description": "Arrow arithmetic kernels",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "0a41203398f0eaa6f7ec8e62c0da742a21abf282c148fc157f6c35c90e29981a"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/arrow-arith@58.4.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://github.com/apache/arrow-rs"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/arrow-rs"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#arrow-array@58.4.0",
+        "author": "Apache Arrow <dev@arrow.apache.org>",
+        "name": "arrow-array",
+        "version": "58.4.0",
+        "description": "Array abstractions for Apache Arrow",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "ae33dad492b7df00a217563a7b0ef2874df68a0deea1b1a3acf628152f7f7a69"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0 AND MIT"
+          }
+        ],
+        "purl": "pkg:cargo/arrow-array@58.4.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://github.com/apache/arrow-rs"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/arrow-rs"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#arrow-buffer@58.4.0",
+        "author": "Apache Arrow <dev@arrow.apache.org>",
+        "name": "arrow-buffer",
+        "version": "58.4.0",
+        "description": "Buffer abstractions for Apache Arrow",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "b9552f96391c005e6ab449fa941420935e7e062489b12b8b1b08879b2163f5b5"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/arrow-buffer@58.4.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://github.com/apache/arrow-rs"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/arrow-rs"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#arrow-cast@58.4.0",
+        "author": "Apache Arrow <dev@arrow.apache.org>",
+        "name": "arrow-cast",
+        "version": "58.4.0",
+        "description": "Cast kernel and utilities for Apache Arrow",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "3a8a327c9649f30d8406995f27642b68df354713cca3baaaf100f076f18d5f34"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/arrow-cast@58.4.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://github.com/apache/arrow-rs"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/arrow-rs"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#arrow-csv@58.4.0",
+        "author": "Apache Arrow <dev@arrow.apache.org>",
+        "name": "arrow-csv",
+        "version": "58.4.0",
+        "description": "Support for parsing CSV format to and from the Arrow format",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "af0dd6d90d1955e9f9a014c1e563ee8aeffc21909085d25623e1da44d96eca26"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/arrow-csv@58.4.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://github.com/apache/arrow-rs"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/arrow-rs"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#arrow-data@58.4.0",
+        "author": "Apache Arrow <dev@arrow.apache.org>",
+        "name": "arrow-data",
+        "version": "58.4.0",
+        "description": "Array data abstractions for Apache Arrow",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "2b24852db04738907e06c04ea61e42fe7fda962a34513022dc0d0e754fb7976b"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/arrow-data@58.4.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://github.com/apache/arrow-rs"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/arrow-rs"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#arrow-flight@58.4.0",
+        "author": "Apache Arrow <dev@arrow.apache.org>",
+        "name": "arrow-flight",
+        "version": "58.4.0",
+        "description": "Apache Arrow Flight",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "b2dbe34824c639e43136af8f106992792ab456540d54b880bc320a3192502d2e"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/arrow-flight@58.4.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://github.com/apache/arrow-rs"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/arrow-rs"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#arrow-ipc@58.4.0",
+        "author": "Apache Arrow <dev@arrow.apache.org>",
+        "name": "arrow-ipc",
+        "version": "58.4.0",
+        "description": "Support for the Arrow IPC format",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "29a908a11fcfb3fb2f6730f4ac15e367bc644e419155e96238f68cf3adde572b"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/arrow-ipc@58.4.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://github.com/apache/arrow-rs"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/arrow-rs"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#arrow-json@58.4.0",
+        "author": "Apache Arrow <dev@arrow.apache.org>",
+        "name": "arrow-json",
+        "version": "58.4.0",
+        "description": "Support for parsing JSON format to and from the Arrow format",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "b8a96aed3931c076adee39ec2a40d8219fc7f09e79bcdaca1df16272993e1e14"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/arrow-json@58.4.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://github.com/apache/arrow-rs"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/arrow-rs"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#arrow-ord@58.4.0",
+        "author": "Apache Arrow <dev@arrow.apache.org>",
+        "name": "arrow-ord",
+        "version": "58.4.0",
+        "description": "Ordering kernels for arrow arrays",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "63a083ec750f5c043f02946b4baf05fcdbb55f4560a3277055caca5cc99f3eb0"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/arrow-ord@58.4.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://github.com/apache/arrow-rs"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/arrow-rs"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#arrow-pyarrow@58.4.0",
+        "author": "Apache Arrow <dev@arrow.apache.org>",
+        "name": "arrow-pyarrow",
+        "version": "58.4.0",
+        "description": "Pyarrow bindings",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "3ffb9be5a873590f825aef50df20e0f8dff5fd42a77058e28bbe7bd44bb53dec"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/arrow-pyarrow@58.4.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://github.com/apache/arrow-rs"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/arrow-rs"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#arrow-row@58.4.0",
+        "author": "Apache Arrow <dev@arrow.apache.org>",
+        "name": "arrow-row",
+        "version": "58.4.0",
+        "description": "Arrow row format",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "514ba0ef0d4c5896202dae736251ce415abb43a950bed570fb7981b8716c0e4c"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/arrow-row@58.4.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://github.com/apache/arrow-rs"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/arrow-rs"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#arrow-schema@58.4.0",
+        "author": "Apache Arrow <dev@arrow.apache.org>",
+        "name": "arrow-schema",
+        "version": "58.4.0",
+        "description": "Defines the logical types for arrow arrays",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "21ca356ad6425cecb6eb7b28e4f659f1ee7880fbb1a16127de7dd62901efee9e"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/arrow-schema@58.4.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://github.com/apache/arrow-rs"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/arrow-rs"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#arrow-select@58.4.0",
+        "author": "Apache Arrow <dev@arrow.apache.org>",
+        "name": "arrow-select",
+        "version": "58.4.0",
+        "description": "Selection kernels for arrow arrays",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "c58da39eb3d8350ad4a549e5c2bc49284dac554016c69829310350f1731b0aad"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/arrow-select@58.4.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://github.com/apache/arrow-rs"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/arrow-rs"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#arrow-string@58.4.0",
+        "author": "Apache Arrow <dev@arrow.apache.org>",
+        "name": "arrow-string",
+        "version": "58.4.0",
+        "description": "String kernels for arrow arrays",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "b6789b388467525e3271326b6b4915666ecfdf5142aef09779445c954b67543c"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/arrow-string@58.4.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://github.com/apache/arrow-rs"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/arrow-rs"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#arrow@58.4.0",
+        "author": "Apache Arrow <dev@arrow.apache.org>",
+        "name": "arrow",
+        "version": "58.4.0",
+        "description": "Rust implementation of Apache Arrow",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "6cfdd0833e32a9874d2b55089333ad310c0be208aafa277385ce2461dec90be3"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/arrow@58.4.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://github.com/apache/arrow-rs"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/arrow-rs"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#datafusion-catalog-listing@54.1.0",
+        "author": "Apache DataFusion <dev@datafusion.apache.org>",
+        "name": "datafusion-catalog-listing",
+        "version": "54.1.0",
+        "description": "datafusion-catalog-listing",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "f0668fb32c12065ec242be0e5b4bc62bd7a06a0be3ecd83791ef877e4be67e02"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/datafusion-catalog-listing@54.1.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://datafusion.apache.org"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/datafusion"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#datafusion-catalog@54.1.0",
+        "author": "Apache DataFusion <dev@datafusion.apache.org>",
+        "name": "datafusion-catalog",
+        "version": "54.1.0",
+        "description": "datafusion-catalog",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "06afd1e38dd27bbb1258685a1fc6524df6aff4e07b25b393a47de59635178d99"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/datafusion-catalog@54.1.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://datafusion.apache.org"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/datafusion"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#datafusion-common-runtime@54.1.0",
+        "author": "Apache DataFusion <dev@datafusion.apache.org>",
+        "name": "datafusion-common-runtime",
+        "version": "54.1.0",
+        "description": "Common Runtime functionality for DataFusion query engine",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "05f0ba2b864792bdca4d76c59a1de0ab6e1b61946596b9936888dbd6360035f2"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/datafusion-common-runtime@54.1.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://datafusion.apache.org"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/datafusion"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#datafusion-common@54.1.0",
+        "author": "Apache DataFusion <dev@datafusion.apache.org>",
+        "name": "datafusion-common",
+        "version": "54.1.0",
+        "description": "Common functionality for DataFusion query engine",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "ca43b263cdff57042cfa8fb817fb3469f4878933380dccff25f5e793580abbf9"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/datafusion-common@54.1.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://datafusion.apache.org"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/datafusion"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#datafusion-datasource-arrow@54.1.0",
+        "author": "Apache DataFusion <dev@datafusion.apache.org>",
+        "name": "datafusion-datasource-arrow",
+        "version": "54.1.0",
+        "description": "datafusion-datasource-arrow",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "a24cc0b9cf6e367f27f27406eff13abf48a11b72446aaa40b3105c0ded5c17d9"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/datafusion-datasource-arrow@54.1.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://datafusion.apache.org"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/datafusion"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#datafusion-datasource-csv@54.1.0",
+        "author": "Apache DataFusion <dev@datafusion.apache.org>",
+        "name": "datafusion-datasource-csv",
+        "version": "54.1.0",
+        "description": "datafusion-datasource-csv",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "e1abe56b2a7a2d1d6de5117dd1a203181e267f28529faa5da546947621b697d7"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/datafusion-datasource-csv@54.1.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://datafusion.apache.org"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/datafusion"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#datafusion-datasource-json@54.1.0",
+        "author": "Apache DataFusion <dev@datafusion.apache.org>",
+        "name": "datafusion-datasource-json",
+        "version": "54.1.0",
+        "description": "datafusion-datasource-json",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "9c3e467f0611ad7bdd5aad17c63c9bb6182d04e5282e5496d897ea2b49c024ba"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/datafusion-datasource-json@54.1.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://datafusion.apache.org"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/datafusion"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#datafusion-datasource@54.1.0",
+        "author": "Apache DataFusion <dev@datafusion.apache.org>",
+        "name": "datafusion-datasource",
+        "version": "54.1.0",
+        "description": "datafusion-datasource",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "b840a8bce0bcbf5afad02946d438591e7c373f7afccaf3d874c04485772514dd"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/datafusion-datasource@54.1.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://datafusion.apache.org"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/datafusion"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#datafusion-doc@54.1.0",
+        "author": "Apache DataFusion <dev@datafusion.apache.org>",
+        "name": "datafusion-doc",
+        "version": "54.1.0",
+        "description": "Documentation module for DataFusion query engine",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "d69bb69d8769e34f76839c960dbde24c1ac0c885a79b6c3c2287bdc56ec67891"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/datafusion-doc@54.1.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://datafusion.apache.org"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/datafusion"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#datafusion-execution@54.1.0",
+        "author": "Apache DataFusion <dev@datafusion.apache.org>",
+        "name": "datafusion-execution",
+        "version": "54.1.0",
+        "description": "Execution configuration support for DataFusion query engine",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "d8eac0a09bc8d263f52025cad9e001da4d8138d633fa288edda4d06b1772eae6"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/datafusion-execution@54.1.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://datafusion.apache.org"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/datafusion"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#datafusion-expr-common@54.1.0",
+        "author": "Apache DataFusion <dev@datafusion.apache.org>",
+        "name": "datafusion-expr-common",
+        "version": "54.1.0",
+        "description": "Logical plan and expression representation for DataFusion query engine",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "b7b19a8c95522bee8cbb313d74263b85e355d2b52f42e67ef5694bf5de9e9356"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/datafusion-expr-common@54.1.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://datafusion.apache.org"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/datafusion"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#datafusion-expr@54.1.0",
+        "author": "Apache DataFusion <dev@datafusion.apache.org>",
+        "name": "datafusion-expr",
+        "version": "54.1.0",
+        "description": "Logical plan and expression representation for DataFusion query engine",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "eeb14d374767ee0fc62dc79a5ba8bcf8a63c14e993c7d992d0e63adfa23d77d3"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/datafusion-expr@54.1.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://datafusion.apache.org"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/datafusion"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#datafusion-functions-aggregate-common@54.1.0",
+        "author": "Apache DataFusion <dev@datafusion.apache.org>",
+        "name": "datafusion-functions-aggregate-common",
+        "version": "54.1.0",
+        "description": "Utility functions for implementing aggregate functions for the DataFusion query engine",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "97dd2a9e865c6108059f5b37b77934f84b50bfb108f837bd0e5c9536e03f0545"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/datafusion-functions-aggregate-common@54.1.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://datafusion.apache.org"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/datafusion"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#datafusion-functions-aggregate@54.1.0",
+        "author": "Apache DataFusion <dev@datafusion.apache.org>",
+        "name": "datafusion-functions-aggregate",
+        "version": "54.1.0",
+        "description": "Traits and types for logical plans and expressions for DataFusion query engine",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "89bc17041e424a47ed062f43df24d84aab8b57c4c3221e5c1a5eef46d6c5718b"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/datafusion-functions-aggregate@54.1.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://datafusion.apache.org"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/datafusion"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#datafusion-functions-nested@54.1.0",
+        "author": "Apache DataFusion <dev@datafusion.apache.org>",
+        "name": "datafusion-functions-nested",
+        "version": "54.1.0",
+        "description": "Nested Type Function packages for the DataFusion query engine",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "75f0bdfeef16d96417b9632ef855645376b242e9006a126dfd0bedfc54a93f5f"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/datafusion-functions-nested@54.1.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://datafusion.apache.org"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/datafusion"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#datafusion-functions-table@54.1.0",
+        "author": "Apache DataFusion <dev@datafusion.apache.org>",
+        "name": "datafusion-functions-table",
+        "version": "54.1.0",
+        "description": "Traits and types for logical plans and expressions for DataFusion query engine",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "f4e4941673c917819616877e9993da4503e4f4739812be0bc32c5356184c6383"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/datafusion-functions-table@54.1.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://datafusion.apache.org"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/datafusion"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#datafusion-functions-window-common@54.1.0",
+        "author": "Apache DataFusion <dev@datafusion.apache.org>",
+        "name": "datafusion-functions-window-common",
+        "version": "54.1.0",
+        "description": "Common functions for implementing user-defined window functions for the DataFusion query engine",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "4cdc5e4b6f8b6ef823cc1c761f85088ad4c884fe8df64df3cbcc6b2b84698441"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/datafusion-functions-window-common@54.1.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://datafusion.apache.org"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/datafusion"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#datafusion-functions-window@54.1.0",
+        "author": "Apache DataFusion <dev@datafusion.apache.org>",
+        "name": "datafusion-functions-window",
+        "version": "54.1.0",
+        "description": "Window function packages for the DataFusion query engine",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "12dd2e16c12b84b6f6b41b19f55b366dd1c46876bb35b86896c6349067379e8d"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/datafusion-functions-window@54.1.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://datafusion.apache.org"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/datafusion"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#datafusion-functions@54.1.0",
+        "author": "Apache DataFusion <dev@datafusion.apache.org>",
+        "name": "datafusion-functions",
+        "version": "54.1.0",
+        "description": "Function packages for the DataFusion query engine",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "5f64c983bbbdcb729d921a2b2ac3375598719b5cc0c30345ad664936f3176fc7"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/datafusion-functions@54.1.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://datafusion.apache.org"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/datafusion"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#datafusion-macros@54.1.0",
+        "author": "Apache DataFusion <dev@datafusion.apache.org>",
+        "name": "datafusion-macros",
+        "version": "54.1.0",
+        "description": "Procedural macros for DataFusion query engine",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "1a3614234dd93578c92428cb4f408e020874f0d2b7e6c90c928d9d28b5df2ceb"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/datafusion-macros@54.1.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://datafusion.apache.org"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/datafusion"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#datafusion-optimizer@54.1.0",
+        "author": "Apache DataFusion <dev@datafusion.apache.org>",
+        "name": "datafusion-optimizer",
+        "version": "54.1.0",
+        "description": "DataFusion Query Optimizer",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "a0635620b050b81bb92764e99250868f654e2cd5ad1bece413283b3f73c83179"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/datafusion-optimizer@54.1.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://datafusion.apache.org"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/datafusion"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#datafusion-physical-expr-adapter@54.1.0",
+        "author": "Apache DataFusion <dev@datafusion.apache.org>",
+        "name": "datafusion-physical-expr-adapter",
+        "version": "54.1.0",
+        "description": "Physical expression schema adaptation utilities for DataFusion",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "de222e04f7e6744501555a54ab0abe26bfdfebee380af79a9bdc175704246859"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/datafusion-physical-expr-adapter@54.1.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://datafusion.apache.org"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/datafusion"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#datafusion-physical-expr-common@54.1.0",
+        "author": "Apache DataFusion <dev@datafusion.apache.org>",
+        "name": "datafusion-physical-expr-common",
+        "version": "54.1.0",
+        "description": "Common functionality of physical expression for DataFusion query engine",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "72d0d0057fc5a502d45c870cb6d47c66eb7bdd5edb1bd71ad6f3f724975ac2a8"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/datafusion-physical-expr-common@54.1.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://datafusion.apache.org"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/datafusion"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#datafusion-physical-expr@54.1.0",
+        "author": "Apache DataFusion <dev@datafusion.apache.org>",
+        "name": "datafusion-physical-expr",
+        "version": "54.1.0",
+        "description": "Physical expression implementation for DataFusion query engine",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "8cabf7a86eb70b816729e33c81bf7767c936ee1226f607a114f5dac2decac8d0"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/datafusion-physical-expr@54.1.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://datafusion.apache.org"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/datafusion"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#datafusion-physical-optimizer@54.1.0",
+        "author": "Apache DataFusion <dev@datafusion.apache.org>",
+        "name": "datafusion-physical-optimizer",
+        "version": "54.1.0",
+        "description": "DataFusion Physical Optimizer",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "86046eed10950c5f9aaed9acfd148e9bd2e1dfdfe4f9aef607d1447b271e4183"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/datafusion-physical-optimizer@54.1.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://datafusion.apache.org"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/datafusion"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#datafusion-physical-plan@54.1.0",
+        "author": "Apache DataFusion <dev@datafusion.apache.org>",
+        "name": "datafusion-physical-plan",
+        "version": "54.1.0",
+        "description": "Physical (ExecutionPlan) implementations for DataFusion query engine",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "9bc84da934c903407ba297971ebcc020c4c1a38aafd765d6c144c76eff3fa6a1"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/datafusion-physical-plan@54.1.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://datafusion.apache.org"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/datafusion"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#datafusion-pruning@54.1.0",
+        "author": "Apache DataFusion <dev@datafusion.apache.org>",
+        "name": "datafusion-pruning",
+        "version": "54.1.0",
+        "description": "DataFusion Pruning Logic",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "eb63eeac6de19be40f487b65dd84e546195f783c5a9928618e0c4f2a3569b0d7"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/datafusion-pruning@54.1.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://datafusion.apache.org"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/datafusion"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#datafusion-session@54.1.0",
+        "author": "Apache DataFusion <dev@datafusion.apache.org>",
+        "name": "datafusion-session",
+        "version": "54.1.0",
+        "description": "datafusion-session",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "5f961d209177f91bd014db5cbb2c33b7d28a2597b9003e77f17aeb712964315a"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/datafusion-session@54.1.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://datafusion.apache.org"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/datafusion"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#datafusion-sql@54.1.0",
+        "author": "Apache DataFusion <dev@datafusion.apache.org>",
+        "name": "datafusion-sql",
+        "version": "54.1.0",
+        "description": "DataFusion SQL Query Planner",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "b1d71cb454da682b2af7488e1fc1ddd72ee1b28f19297b8ccad73f0a21ee9a69"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/datafusion-sql@54.1.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://datafusion.apache.org"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/datafusion"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#datafusion@54.1.0",
+        "author": "Apache DataFusion <dev@datafusion.apache.org>",
+        "name": "datafusion",
+        "version": "54.1.0",
+        "description": "DataFusion is an in-memory query engine that uses Apache Arrow as the memory model",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "754ef4e8f073922a26f5b23133b9db4829342362b09be0bc94309cf261c2f098"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/datafusion@54.1.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://datafusion.apache.org"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/datafusion"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#foyer-tokio@0.22.6",
+        "author": "MrCroxx <mrcroxx@outlook.com>",
+        "name": "foyer-tokio",
+        "version": "0.22.6",
+        "description": "tokio adapter for foyer - Hybrid cache for Rust",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "6741d1133dfaab64d3f8a9290bbfed3685084add28f8b6ee7a6264aa4dc26918"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/foyer-tokio@0.22.6",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://github.com/foyer-rs/foyer"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/foyer-rs/foyer"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#lance-arrow-scalar@58.0.0",
+        "author": "Lance Devs <dev@lance.org>",
+        "name": "lance-arrow-scalar",
+        "version": "58.0.0",
+        "description": "Arrow scalar type with Ord, Hash, and Eq support",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "771f68b04b47f3addf781116f65061808de94b05e1e9411c23c18f32d14ebe79"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/lance-arrow-scalar@58.0.0",
+        "externalReferences": [
+          {
+            "type": "vcs",
+            "url": "https://github.com/lance-format/lance"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#lance-arrow-stats@58.0.0",
+        "author": "Lance Devs <dev@lance.org>",
+        "name": "lance-arrow-stats",
+        "version": "58.0.0",
+        "description": "Statistics accumulator for Arrow arrays (min, max, null_count, nan_count)",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "dd47ec33c90bf29f688fd02118e37d3a5ad5c339caa3163f89e417dc0867001f"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/lance-arrow-stats@58.0.0",
+        "externalReferences": [
+          {
+            "type": "vcs",
+            "url": "https://github.com/lance-format/lance"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#lance-arrow@13.0.0",
+        "author": "Lance Devs <dev@lance.org>",
+        "name": "lance-arrow",
+        "version": "13.0.0",
+        "description": "Arrow Extension for Lance",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "bab6e64549f9ad9a6380a35b56d7dca612555a6272c07b3abca84e59ded6f463"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/lance-arrow@13.0.0",
+        "externalReferences": [
+          {
+            "type": "vcs",
+            "url": "https://github.com/lance-format/lance"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#lance-bitpacking@13.0.0",
+        "author": "Lance Devs <dev@lance.org>",
+        "name": "lance-bitpacking",
+        "version": "13.0.0",
+        "description": "Vendored copy of https://github.com/spiraldb/fastlanes for use in Lance",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "38984429670b348e62eda38315a6d01a930c5c5e8b85bbfd8b998e7d1fe6a257"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/lance-bitpacking@13.0.0",
+        "externalReferences": [
+          {
+            "type": "vcs",
+            "url": "https://github.com/lance-format/lance"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#lance-core@13.0.0",
+        "author": "Lance Devs <dev@lance.org>",
+        "name": "lance-core",
+        "version": "13.0.0",
+        "description": "Lance Columnar Format -- Core Library",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "d3e377ee5bc5118efe5c321ecff0a07ac8f56db6bed16e31304e7d876ddcd96c"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/lance-core@13.0.0",
+        "externalReferences": [
+          {
+            "type": "vcs",
+            "url": "https://github.com/lance-format/lance"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#lance-datafusion@13.0.0",
+        "name": "lance-datafusion",
+        "version": "13.0.0",
+        "description": "Internal utilities used by other lance modules to simplify working with datafusion",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "7be43992965983ed8238a969b36239093102fdfe6c3dfcaa0007eeb17195ca34"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/lance-datafusion@13.0.0",
+        "externalReferences": [
+          {
+            "type": "vcs",
+            "url": "https://github.com/lance-format/lance"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#lance-datagen@13.0.0",
+        "name": "lance-datagen",
+        "version": "13.0.0",
+        "description": "A columnar data format that is 100x faster than Parquet for random access.",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "fd1c8d822e0133757ef46e566b24dc867326753d82e9b31503a326d867b230c2"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/lance-datagen@13.0.0",
+        "externalReferences": [
+          {
+            "type": "vcs",
+            "url": "https://github.com/lance-format/lance"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#lance-derive@13.0.0",
+        "author": "Lance Devs <dev@lance.org>",
+        "name": "lance-derive",
+        "version": "13.0.0",
+        "description": "Derive macros for Lance",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "e847c0e4bf23d21967fe79473d8001309c7351895afb347e1a997d5fadca59fd"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/lance-derive@13.0.0",
+        "externalReferences": [
+          {
+            "type": "vcs",
+            "url": "https://github.com/lance-format/lance"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#lance-encoding@13.0.0",
+        "author": "Lance Devs <dev@lance.org>",
+        "name": "lance-encoding",
+        "version": "13.0.0",
+        "description": "Encoders and decoders for the Lance file format",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "3c04a91e545b505b5e6ec98854c7eadc56689cbc072f138dd26805ef0095e81a"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/lance-encoding@13.0.0",
+        "externalReferences": [
+          {
+            "type": "vcs",
+            "url": "https://github.com/lance-format/lance"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#lance-file@13.0.0",
+        "author": "Lance Devs <dev@lance.org>",
+        "name": "lance-file",
+        "version": "13.0.0",
+        "description": "Utilities for the Lance file format",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "f0393605ef4f2bdd9894950de6c68fd2ca99a1de76d743e52e001177ccd9994f"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/lance-file@13.0.0",
+        "externalReferences": [
+          {
+            "type": "vcs",
+            "url": "https://github.com/lance-format/lance"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#lance-index-core@13.0.0",
+        "author": "Lance Devs <dev@lance.org>",
+        "name": "lance-index-core",
+        "version": "13.0.0",
+        "description": "Core traits and types for Lance index plugins",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "f90986278ab82f1f1b1fe43eed060f547e0da0ad98a1038785f055e407fca3db"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/lance-index-core@13.0.0",
+        "externalReferences": [
+          {
+            "type": "vcs",
+            "url": "https://github.com/lance-format/lance"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#lance-index@13.0.0",
+        "author": "Lance Devs <dev@lance.org>",
+        "name": "lance-index",
+        "version": "13.0.0",
+        "description": "Lance indices implementation",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "21b5e0ccd1b4bffdccbb3b5c989e62eb545587d84b0785da50eda5a4d87d0a5d"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/lance-index@13.0.0",
+        "externalReferences": [
+          {
+            "type": "vcs",
+            "url": "https://github.com/lance-format/lance"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#lance-io@13.0.0",
+        "author": "Lance Devs <dev@lance.org>",
+        "name": "lance-io",
+        "version": "13.0.0",
+        "description": "I/O utilities for Lance",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "224730479e781d24b81a0afecfe230b5b21a86a4f767ba7655b974402d0c67c5"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/lance-io@13.0.0",
+        "externalReferences": [
+          {
+            "type": "vcs",
+            "url": "https://github.com/lance-format/lance"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#lance-linalg@13.0.0",
+        "name": "lance-linalg",
+        "version": "13.0.0",
+        "description": "A columnar data format that is 100x faster than Parquet for random access.",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "84e97d99cab96a320119f2be2c1ccbc4b69e5190c152b9bac96ad902b4409efe"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/lance-linalg@13.0.0",
+        "externalReferences": [
+          {
+            "type": "vcs",
+            "url": "https://github.com/lance-format/lance"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#lance-namespace-impls@13.0.0",
+        "author": "Lance Devs <dev@lance.org>",
+        "name": "lance-namespace-impls",
+        "version": "13.0.0",
+        "description": "Lance Namespace Implementations",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "0c576ee693de6c290003c52acca14cf97f3d5697f69eee536e511f4f96967e9a"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/lance-namespace-impls@13.0.0",
+        "externalReferences": [
+          {
+            "type": "vcs",
+            "url": "https://github.com/lance-format/lance"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#lance-namespace-reqwest-client@0.13.0",
+        "author": "OpenAPI Generator team and contributors",
+        "name": "lance-namespace-reqwest-client",
+        "version": "0.13.0",
+        "description": "This OpenAPI specification is a part of the Lance namespace specification. It contains 2 parts:  The `components/schemas`, `components/responses`, `components/examples`, `tags` sections define the request and response shape for each operation in a Lance Namespace across all implementations. See https://lancedb.github.io/lance-namespace/spec/operations for more details.  The `servers`, `security`, `paths`, `components/parameters` sections are for the  Lance REST Namespace implementation, which defines a complete REST server that can work with Lance datasets. See https://lancedb.github.io/lance-namespace/spec/impls/rest for more details. ",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "828f291764feda98898452bea4ce3756b73e5d5c7c67b62edda27456b7cc72c1"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/lance-namespace-reqwest-client@0.13.0"
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#lance-namespace@13.0.0",
+        "author": "Lance Devs <dev@lance.org>",
+        "name": "lance-namespace",
+        "version": "13.0.0",
+        "description": "Lance Namespace Core APIs",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "eedb0930505992009d9a1b9aefc2e9fde6026fcc1b345211e2a609dace5be022"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/lance-namespace@13.0.0",
+        "externalReferences": [
+          {
+            "type": "vcs",
+            "url": "https://github.com/lance-format/lance"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#lance-select@13.0.0",
+        "author": "Lance Devs <dev@lance.org>",
+        "name": "lance-select",
+        "version": "13.0.0",
+        "description": "Row-selection masks and index-result algebra for Lance",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "6cd00ec21363c9449f10409bf5b56e914b807dd9110745f0d616f65c16188ddb"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/lance-select@13.0.0",
+        "externalReferences": [
+          {
+            "type": "vcs",
+            "url": "https://github.com/lance-format/lance"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#lance-table@13.0.0",
+        "author": "Lance Devs <dev@lance.org>",
+        "name": "lance-table",
+        "version": "13.0.0",
+        "description": "Utilities for the Lance table format",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "0b770bac5033a6b3f11b3e3ffb05f8bce2cfc004ecb7992354af7627fd278747"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/lance-table@13.0.0",
+        "externalReferences": [
+          {
+            "type": "vcs",
+            "url": "https://github.com/lance-format/lance"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#lance-tokenizer@13.0.0",
+        "author": "Lance Devs <dev@lance.org>",
+        "name": "lance-tokenizer",
+        "version": "13.0.0",
+        "description": "Tokenizer abstractions and implementations for Lance",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "3fec4342e22fa493efec9cc96584efe4cecbdc1ae218d6a40f47b16bd4f1ea13"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/lance-tokenizer@13.0.0",
+        "externalReferences": [
+          {
+            "type": "vcs",
+            "url": "https://github.com/lance-format/lance"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#lance@13.0.0",
+        "author": "Lance Devs <dev@lance.org>",
+        "name": "lance",
+        "version": "13.0.0",
+        "description": "A columnar data format that is 100x faster than Parquet for random access.",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "0e8dc0a0759fa0fcdbb970eec48ade5d02dbbd255147ff1f7b06d402d2f86b97"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/lance@13.0.0",
+        "externalReferences": [
+          {
+            "type": "vcs",
+            "url": "https://github.com/lance-format/lance"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#lz4-sys@1.11.1+lz4-1.10.0",
+        "author": "Jens Heyens <jens.heyens@ewetel.net>, Artem V. Navrotskiy <bozaro@buzzsoft.ru>, Patrick Marks <pmarks@gmail.com>",
+        "name": "lz4-sys",
+        "version": "1.11.1+lz4-1.10.0",
+        "description": "Rust LZ4 sys package.",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "6bd8c0d6c6ed0cd30b3652886bb8711dc4bb01d637a68105a3d5158039b418e6"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "MIT"
+          }
+        ],
+        "purl": "pkg:cargo/lz4-sys@1.11.1+lz4-1.10.0",
+        "externalReferences": [
+          {
+            "type": "other",
+            "url": "lz4"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/10xGenomics/lz4-rs"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#lz4@1.28.1",
+        "author": "Jens Heyens <jens.heyens@ewetel.net>, Artem V. Navrotskiy <bozaro@buzzsoft.ru>, Patrick Marks <pmarks@gmail.com>",
+        "name": "lz4",
+        "version": "1.28.1",
+        "description": "Rust LZ4 bindings library.",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "a20b523e860d03443e98350ceaac5e71c6ba89aea7d960769ec3ce37f4de5af4"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "MIT"
+          }
+        ],
+        "purl": "pkg:cargo/lz4@1.28.1",
+        "externalReferences": [
+          {
+            "type": "documentation",
+            "url": "https://docs.rs/lz4"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/10xGenomics/lz4-rs"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#lz4_flex@0.13.1",
+        "author": "Pascal Seitz <pascal.seitz@gmail.com>, Arthur Silva <arthurprs@gmail.com>, ticki <Ticki@users.noreply.github.com>",
+        "name": "lz4_flex",
+        "version": "0.13.1",
+        "description": "Fastest LZ4 implementation in Rust, no unsafe by default.",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "7ef0d4ed8669f8f8826eb00dc878084aa8f253506c4fd5e8f58f5bce72ddb97e"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "MIT"
+          }
+        ],
+        "purl": "pkg:cargo/lz4_flex@0.13.1",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://github.com/pseitz/lz4_flex"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/pseitz/lz4_flex"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#openssl-probe@0.2.1",
+        "author": "Alex Crichton <alex@alexcrichton.com>",
+        "name": "openssl-probe",
+        "version": "0.2.1",
+        "description": "A library for helping to find system-wide trust anchor (\"root\") certificate locations based on paths typically used by `openssl`. ",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "7c87def4c32ab89d880effc9e097653c8da5d6ef28e6b539d313baaacfbafcbe"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "MIT OR Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/openssl-probe@0.2.1",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://github.com/rustls/openssl-probe"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/rustls/openssl-probe"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#reqsign-file-read-tokio@3.0.6",
+        "name": "reqsign-file-read-tokio",
+        "version": "3.0.6",
+        "description": "Tokio-based file reader implementation for reqsign",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "b3235df90a6bca681aa47dd86f2393d122a6d77042aa8a7c81e218cd45c5bfc0"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/reqsign-file-read-tokio@3.0.6",
+        "externalReferences": [
+          {
+            "type": "vcs",
+            "url": "https://github.com/apache/opendal-reqsign"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#tokio-macros@2.7.0",
+        "author": "Tokio Contributors <team@tokio.rs>",
+        "name": "tokio-macros",
+        "version": "2.7.0",
+        "description": "Tokio's proc macros. ",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "385a6cb71ab9ab790c5fe8d67f1645e6c450a7ce006a33de03daa956cf70a496"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "MIT"
+          }
+        ],
+        "purl": "pkg:cargo/tokio-macros@2.7.0",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://tokio.rs"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/tokio-rs/tokio"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#tokio-retry@0.3.1",
+        "name": "tokio-retry",
+        "version": "0.3.1",
+        "description": "Extensible, asynchronous retry behaviours for futures/tokio",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "40f644c762e9d396831ae2f8935c954b0d758c4532e924bead0f666d0c1c8640"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "MIT"
+          }
+        ],
+        "purl": "pkg:cargo/tokio-retry@0.3.1",
+        "externalReferences": [
+          {
+            "type": "documentation",
+            "url": "https://docs.rs/tokio-retry"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/djc/tokio-retry"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#tokio-rustls@0.24.1",
+        "name": "tokio-rustls",
+        "version": "0.24.1",
+        "description": "Asynchronous TLS/SSL streams for Tokio using Rustls.",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "c28327cf380ac148141087fbfb9de9d7bd4e84ab5d2c28fbc911d753de8a7081"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "MIT OR Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/tokio-rustls@0.24.1",
+        "externalReferences": [
+          {
+            "type": "documentation",
+            "url": "https://docs.rs/tokio-rustls"
+          },
+          {
+            "type": "website",
+            "url": "https://github.com/rustls/tokio-rustls"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/rustls/tokio-rustls"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#tokio-rustls@0.26.4",
+        "name": "tokio-rustls",
+        "version": "0.26.4",
+        "description": "Asynchronous TLS/SSL streams for Tokio using Rustls.",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "1729aa945f29d91ba541258c8df89027d5792d85a8841fb65e8bf0f4ede4ef61"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "MIT OR Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/tokio-rustls@0.26.4",
+        "externalReferences": [
+          {
+            "type": "documentation",
+            "url": "https://docs.rs/tokio-rustls"
+          },
+          {
+            "type": "website",
+            "url": "https://github.com/rustls/tokio-rustls"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/rustls/tokio-rustls"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#tokio-stream@0.1.18",
+        "author": "Tokio Contributors <team@tokio.rs>",
+        "name": "tokio-stream",
+        "version": "0.1.18",
+        "description": "Utilities to work with `Stream` and `tokio`. ",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "32da49809aab5c3bc678af03902d4ccddea2a87d028d86392a4b1560c6906c70"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "MIT"
+          }
+        ],
+        "purl": "pkg:cargo/tokio-stream@0.1.18",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://tokio.rs"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/tokio-rs/tokio"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#tokio-util@0.7.18",
+        "author": "Tokio Contributors <team@tokio.rs>",
+        "name": "tokio-util",
+        "version": "0.7.18",
+        "description": "Additional utilities for working with Tokio. ",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "9ae9cec805b01e8fc3fd2fe289f89149a9b66dd16786abd8b19cfa7b48cb0098"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "MIT"
+          }
+        ],
+        "purl": "pkg:cargo/tokio-util@0.7.18",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://tokio.rs"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/tokio-rs/tokio"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#tokio@1.53.1",
+        "author": "Tokio Contributors <team@tokio.rs>",
+        "name": "tokio",
+        "version": "1.53.1",
+        "description": "An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications. ",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "202caea871b69668250d242070849eb495be178ed697a3e98aebce5bc81a0bed"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "MIT"
+          }
+        ],
+        "purl": "pkg:cargo/tokio@1.53.1",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://tokio.rs"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/tokio-rs/tokio"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#tokio_with_wasm@0.8.8",
+        "name": "tokio_with_wasm",
+        "version": "0.8.8",
+        "description": "Mimicking tokio functionalities on web browsers",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "34e40fbbbd95441133fe9483f522db15dbfd26dc636164ebd8f2dd28759a6aa6"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "MIT"
+          }
+        ],
+        "purl": "pkg:cargo/tokio_with_wasm@0.8.8",
+        "externalReferences": [
+          {
+            "type": "vcs",
+            "url": "https://github.com/cunarist/tokio-with-wasm"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#tokio_with_wasm_proc@0.8.8",
+        "name": "tokio_with_wasm_proc",
+        "version": "0.8.8",
+        "description": "Mimicking tokio functionalities on web browsers",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "d01145a2c788d6aae4cd653afec1e8332534d7d783d01897cefcafe4428de992"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "MIT"
+          }
+        ],
+        "purl": "pkg:cargo/tokio_with_wasm_proc@0.8.8",
+        "externalReferences": [
+          {
+            "type": "vcs",
+            "url": "https://github.com/cunarist/tokio-with-wasm"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#zstd-safe@7.2.4",
+        "author": "Alexandre Bury <alexandre.bury@gmail.com>",
+        "name": "zstd-safe",
+        "version": "7.2.4",
+        "description": "Safe low-level bindings for the zstd compression library.",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "8f49c4d5f0abb602a93fb8736af2a4f4dd9512e36f7f570d66e65ff867ed3b9d"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "MIT OR Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/zstd-safe@7.2.4",
+        "externalReferences": [
+          {
+            "type": "vcs",
+            "url": "https://github.com/gyscos/zstd-rs"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#zstd-sys@2.0.16+zstd.1.5.7",
+        "author": "Alexandre Bury <alexandre.bury@gmail.com>",
+        "name": "zstd-sys",
+        "version": "2.0.16+zstd.1.5.7",
+        "description": "Low-level bindings for the zstd compression library.",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "91e19ebc2adc8f83e43039e79776e3fda8ca919132d68a1fed6a5faca2683748"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "MIT OR Apache-2.0"
+          }
+        ],
+        "purl": "pkg:cargo/zstd-sys@2.0.16+zstd.1.5.7",
+        "externalReferences": [
+          {
+            "type": "other",
+            "url": "zstd"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/gyscos/zstd-rs"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "bom-ref": "registry+https://github.com/rust-lang/crates.io-index#zstd@0.13.3",
+        "author": "Alexandre Bury <alexandre.bury@gmail.com>",
+        "name": "zstd",
+        "version": "0.13.3",
+        "description": "Binding for the zstd compression library.",
+        "scope": "required",
+        "hashes": [
+          {
+            "alg": "SHA-256",
+            "content": "e91ee311a569c327171651566e07972200e76fcfe2242a4fa446149a3881c08a"
+          }
+        ],
+        "licenses": [
+          {
+            "expression": "MIT"
+          }
+        ],
+        "purl": "pkg:cargo/zstd@0.13.3",
+        "externalReferences": [
+          {
+            "type": "documentation",
+            "url": "https://docs.rs/zstd"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/gyscos/zstd-rs"
+          }
+        ]
+      }
+    ]
+  },
+  "pydantic-core": {
+    "sha256": "5367c561194d03751d49d0253ea152d1b9c54e5a239a333baa4f955704ae9bc4",
+    "components": 99,
+    "metadata": {
+      "timestamp": "2026-10-11T17:59:13.444129200Z",
+      "tools": [
+        {
+          "vendor": "CycloneDX",
+          "name": "cargo-cyclonedx",
+          "version": "0.5.9"
+        }
+      ],
+      "component": {
+        "type": "library",
+        "bom-ref": "path+file:///D:/a/pydantic/pydantic/pydantic-core#2.50.1",
+        "name": "pydantic-core",
+        "version": "2.50.1",
+        "scope": "required",
+        "licenses": [
+          {
+            "expression": "MIT"
+          }
+        ],
+        "purl": "pkg:cargo/pydantic-core@2.50.1?download_url=file://.",
+        "externalReferences": [
+          {
+            "type": "website",
+            "url": "https://github.com/pydantic/pydantic"
+          },
+          {
+            "type": "vcs",
+            "url": "https://github.com/pydantic/pydantic.git"
+          }
+        ],
+        "components": [
+          {
+            "type": "library",
+            "bom-ref": "path+file:///D:/a/pydantic/pydantic/pydantic-core#2.50.1 bin-target-0",
+            "name": "_pydantic_core",
+            "version": "2.50.1",
+            "purl": "pkg:cargo/pydantic-core@2.50.1?download_url=file://.#src/lib.rs"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "cdx:rustc:sbom:target:all_targets",
+          "value": "true"
+        }
+      ]
+    },
+    "selected": []
+  }
+}

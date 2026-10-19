@@ -1,0 +1,12 @@
+{
+  "command": [
+    "C:/Users/14156/AppData/Roaming/npm/pnpm.cmd",
+    "audit",
+    "--json",
+    "--registry=https://registry.npmjs.org"
+  ],
+  "cwd": "D:\\graghRAG-agent\\frontend",
+  "exit_code": 0,
+  "started_utc": "2026-10-19T10:03:12.340761+00:00",
+  "finished_utc": "2026-10-19T10:03:18.216745+00:00"
+}

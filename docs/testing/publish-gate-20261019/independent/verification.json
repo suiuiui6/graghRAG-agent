@@ -1,0 +1,58 @@
+{
+  "candidate_files": 903,
+  "old_candidate_files": 843,
+  "unchanged_candidate_files": 833,
+  "delta_files": 70,
+  "candidate_source_and_stage_hashes_equal": true,
+  "all_stage_blob_ids_verified": 2832,
+  "safe_parent": "0ae36f25c63cb9f483899992534af41bebf32089",
+  "safe_parent_root_count": 1,
+  "master_not_ancestor": true,
+  "links": {
+    "harness-engineering": "833ef5894074d61f0a46d1c5cca189f41eba9a41",
+    "langextract": "6542a98a67c7ffb60c161c888286cafda590bbe0"
+  },
+  "tested_inputs": {
+    "backend": 195,
+    "frontend": 49,
+    "rag_eval": 22
+  },
+  "production_ranges": {
+    "backend": 104,
+    "frontend": 29,
+    "rag_eval": 12
+  },
+  "metrics": {
+    "backend": {
+      "covered_lines": 14424,
+      "num_statements": 15499,
+      "covered_branches": 4744,
+      "num_branches": 5222
+    },
+    "rag_eval": {
+      "covered_lines": 1722,
+      "num_statements": 1742,
+      "covered_branches": 415,
+      "num_branches": 440
+    },
+    "frontend": {
+      "covered_lines": 927,
+      "num_statements": 957,
+      "covered_branches": 853,
+      "num_branches": 913
+    }
+  },
+  "nonutf8_verified": [
+    "docs/testing/sqlite-r8-final-independent-20261017/differential-final/public.json",
+    "docs/testing/sqlite-r8-final-independent-20261017/differential-history/diff-r4-20261017/public.json"
+  ],
+  "tar_members_verified": 1348,
+  "tar_source": "https://github.com/RustSec/advisory-db.git",
+  "tar_source_commit": "edb58f5974b83eb8302332821cb6d389777aa351",
+  "delta_findings": 1165,
+  "delta_classifications": {
+    "RECOMPUTED_FILE_SHA256": 676,
+    "VERIFIED_REFERENCE_DIGEST": 489
+  },
+  "unexplained": 0
+}

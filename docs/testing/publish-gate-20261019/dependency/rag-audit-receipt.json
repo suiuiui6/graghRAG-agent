@@ -1,0 +1,28 @@
+{
+  "command": [
+    "D:\\graghRAG-agent\\.tmp\\audit-tools-20261012\\Scripts\\python.exe",
+    "-m",
+    "pip_audit",
+    "-r",
+    "D:\\graghRAG-agent\\.tmp\\publish-final-audit-20261019\\rag-audit-pins.txt",
+    "--no-deps",
+    "--disable-pip",
+    "--strict",
+    "--index-url",
+    "https://pypi.org/simple",
+    "--cache-dir",
+    "D:\\graghRAG-agent\\.tmp\\publish-final-audit-20261019\\rag-audit-cache",
+    "--timeout",
+    "30",
+    "--progress-spinner",
+    "off",
+    "-f",
+    "json",
+    "-o",
+    "D:\\graghRAG-agent\\.tmp\\publish-final-audit-20261019\\rag-audit.json"
+  ],
+  "cwd": "D:\\graghRAG-agent",
+  "exit_code": 0,
+  "started_utc": "2026-10-19T10:03:12.339771+00:00",
+  "finished_utc": "2026-10-19T10:03:24.235175+00:00"
+}

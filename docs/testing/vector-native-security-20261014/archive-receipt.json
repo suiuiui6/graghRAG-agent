@@ -1,0 +1,13 @@
+{
+  "files": {
+    "lancedb-sbom.json": "96f7bac683f2f951dd46f05e5081da8f66deae65d3cb7bee8ff4fc264c9190e2",
+    "manifest.json": "6ba260fee1ea6699249b168f64af300877f1de5c7533a251db74a94b33332fd6",
+    "probe.py": "50ff040528d62f86fe0e309947bf2a98c13781a35995bb7e08190abb294989b6",
+    "pydantic-core-sbom.json": "5367c561194d03751d49d0253ea152d1b9c54e5a239a333baa4f955704ae9bc4",
+    "runtime-native.json": "cdbd9e23aee365c55e924baadf3885f9df4069ce4dd97fa474fa69a35cec2cf8",
+    "sbom-summary.json": "3de0cae8b77d70855c7495dd78f409cb9d682f5b1be04488abcf94412fd8b1b9",
+    "sbom.py": "ebcb9a6321c335d0a363396a9144f50931908380c2ce1abe23b71bc5a1c3895a"
+  },
+  "source": ".tmp\\vector-native-audit-20261014",
+  "scope": "Byte-exact archival; not a new native vulnerability scan."
+}

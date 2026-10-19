@@ -1,0 +1,29 @@
+{
+  "executable": "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Scripts\\python.exe",
+  "python": "3.12.8",
+  "lock_sha256": "28d9b74c05eca7f5d5f8378a8415594e00b2e0adc2757ac6239c996ece03525b",
+  "locked_registry_packages": 18,
+  "installed_packages": {
+    "annotated-types": "0.8.0",
+    "colorama": "0.4.6",
+    "deprecation": "2.1.0",
+    "lancedb": "0.40.0",
+    "lance-namespace": "0.13.0",
+    "lance-namespace-urllib3-client": "0.13.0",
+    "numpy": "2.5.4",
+    "packaging": "26.3",
+    "pyarrow": "26.0.0",
+    "pydantic": "2.14.1",
+    "pydantic-core": "2.50.1",
+    "python-dateutil": "2.9.0.post0",
+    "six": "1.17.0",
+    "structlog": "26.1.0",
+    "tqdm": "4.70.1",
+    "typing-extensions": "4.16.0",
+    "typing-inspection": "0.4.4",
+    "urllib3": "2.8.0"
+  },
+  "drift": {},
+  "extra_packages": [],
+  "scope": "Python package identity only; not a fresh vulnerability audit or native safety proof"
+}

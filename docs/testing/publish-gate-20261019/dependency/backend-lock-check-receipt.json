@@ -1,0 +1,15 @@
+{
+  "command": [
+    "D:/Python/Scripts/uv.exe",
+    "lock",
+    "--check",
+    "--project",
+    "D:\\graghRAG-agent\\backend",
+    "--cache-dir",
+    "D:\\graghRAG-agent\\.tmp\\publish-final-audit-20261019\\uv-cache"
+  ],
+  "cwd": "D:\\graghRAG-agent",
+  "exit_code": 0,
+  "started_utc": "2026-10-19T10:03:12.340761+00:00",
+  "finished_utc": "2026-10-19T10:03:13.731407+00:00"
+}

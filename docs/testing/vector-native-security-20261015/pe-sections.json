@@ -1,0 +1,39 @@
+{
+  "file": ".tmp\\vector-errors-testenv-20261014\\.venv\\Lib\\site-packages\\lancedb\\_lancedb.pyd",
+  "sections": [
+    {
+      "name": ".text",
+      "raw_size": 182428672
+    },
+    {
+      "name": ".rdata",
+      "raw_size": 44903936
+    },
+    {
+      "name": ".data",
+      "raw_size": 70656
+    },
+    {
+      "name": ".pdata",
+      "raw_size": 7874048
+    },
+    {
+      "name": ".fptable",
+      "raw_size": 512
+    },
+    {
+      "name": ".tls",
+      "raw_size": 1536
+    },
+    {
+      "name": "_RDATA",
+      "raw_size": 1536
+    },
+    {
+      "name": ".reloc",
+      "raw_size": 477184
+    }
+  ],
+  "cargo_auditable_dep_v0_section_present": false,
+  "limitation": "No cargo-auditable metadata section is evidence for panic-string recovery fallback; dependency inventory not complete or feature reachability."
+}

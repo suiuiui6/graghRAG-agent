@@ -8,9 +8,22 @@ scattering hardcoded strings.
 
 from __future__ import annotations
 
+import os
 from dataclasses import dataclass, field
 from enum import Enum
 from source_control import normalize_enabled_sources
+
+
+def non_thinking_options(model: str) -> dict:
+    """HTTP body fields for DeepSeek models whose default enables thinking."""
+    if model == "deepseek-flash" or model.startswith("deepseek-v4"):
+        return {"thinking": {"type": "disabled"}}
+    return {}
+
+
+def non_thinking_provider_options(model: str) -> dict:
+    """Use LangExtract's supported SDK field to disable DeepSeek thinking."""
+    return {"reasoning_effort": "none"} if non_thinking_options(model) else {}
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -115,7 +128,7 @@ class EmbeddingConfig:
 @dataclass
 class GenerationConfig:
     """LLM generation configuration."""
-    model: str = "deepseek-chat"
+    model: str = field(default_factory=lambda: os.getenv("LANGEXTRACT_MODEL_ID", "deepseek-flash"))
     temperature: float = 0.0
     max_tokens: int = 2048
     timeout: int = 120

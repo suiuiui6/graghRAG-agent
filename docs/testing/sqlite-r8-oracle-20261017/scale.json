@@ -1,0 +1,11 @@
+{
+  "python": "3.12.8",
+  "chromadb": "1.5.9",
+  "count": 11001,
+  "topk_requested": 1001,
+  "topk_returned": 1001,
+  "page_offset": 10000,
+  "page_returned": 1000,
+  "wide_document_chars": 1048577,
+  "input": "range(11000), dimension2, repeated [1,0], wide ASCII x*(1MiB+1)"
+}

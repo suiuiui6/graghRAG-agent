@@ -2,8 +2,8 @@
 LLM Generation Module — §2.6 of rag-engineering-blueprint-v1.0.
 
 Calls LLM (DeepSeek) to generate final answers with citation verification,
-format validation, and fallback strategies. Disables thinking mode for
-deepseek-v4-pro to prevent tool-call chain breakage in multi-turn scenarios.
+format validation, and fallback strategies. Explicitly disables thinking mode
+for DeepSeek flash/v4 requests to preserve non-thinking generation behavior.
 """
 
 from __future__ import annotations
@@ -17,7 +17,7 @@ from copy import deepcopy
 from evidence_trace import chunk_candidate, generation_trace, answer_stage, identify, merge_evidence, stable_key, LOCATION_FIELDS, capture_stage
 
 from logging_config import get_logger
-from config import RetrievalConfig
+from config import RetrievalConfig, non_thinking_options
 from source_control import (
     build_effective_config, record_source, source_allowed, source_skip_reason, summarize_sources,
 )
@@ -45,7 +45,7 @@ class GenerationResult:
 class GenerationConfig:
     temperature: float = 0.0
     max_tokens: int = 2048
-    model: str = "deepseek-chat"
+    model: str = field(default_factory=lambda: os.getenv("LANGEXTRACT_MODEL_ID", "deepseek-flash"))
     api_key: str | None = None
     base_url: str | None = None
     timeout: int = 30
@@ -56,7 +56,7 @@ class GenerationConfig:
 
 def _default_config() -> GenerationConfig:
     return GenerationConfig(
-        model=os.getenv("LANGEXTRACT_MODEL_ID", "deepseek-chat"),
+        model=os.getenv("LANGEXTRACT_MODEL_ID", "deepseek-flash"),
         api_key=os.getenv("LANGEXTRACT_API_KEY", ""),
         base_url=os.getenv("LANGEXTRACT_BASE_URL", "https://api.deepseek.com"),
         timeout=30,
@@ -187,9 +187,7 @@ def generate_answer(
         "max_tokens": cfg.max_tokens,
     }
 
-    # Disable thinking mode for deepseek-v4-pro
-    if "v4-pro" in cfg.model or "deepseek-v4" in cfg.model:
-        body["extra_body"] = {"thinking": {"type": "disabled"}}
+    body.update(non_thinking_options(cfg.model))
 
     answer_text = ""
     token_usage = {}

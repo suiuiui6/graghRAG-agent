@@ -26,6 +26,7 @@ from kg_store import (
 from models import QueryRequest, QueryResponse, SourceNode
 from errors import ErrorCode, ErrorContext, UpstreamUnavailableError
 from logging_config import get_logger
+from config import non_thinking_options
 
 logger = get_logger(__name__)
 
@@ -103,11 +104,14 @@ def reload_kg():
 
 
 def _get_model():
+    model = os.getenv("LANGEXTRACT_MODEL_ID", "deepseek-flash")
+    options = non_thinking_options(model)
     return ChatOpenAI(
-        model=os.getenv("LANGEXTRACT_MODEL_ID", "deepseek-chat"),
+        model=model,
         base_url=os.getenv("LANGEXTRACT_BASE_URL", "https://api.deepseek.com"),
         api_key=os.getenv("LANGEXTRACT_API_KEY", ""),
         temperature=0.0, timeout=120,
+        **({"extra_body": options} if options else {}),
     )
 
 
@@ -318,7 +322,7 @@ async def query(req: QueryRequest, request: Request):
         metadata={
             "document_id": req.document_id,
             "document_ids": [doc["document_id"] for doc in docs],
-            "model": os.getenv("LANGEXTRACT_MODEL_ID", "deepseek-chat"),
+            "model": os.getenv("LANGEXTRACT_MODEL_ID", "deepseek-flash"),
             "tool_calls": len([m for m in messages if hasattr(m, "tool_calls") and m.tool_calls]),
             "duration_ms": int((time.time() - t0) * 1000),
             "timestamp": datetime.now(timezone.utc).isoformat(),

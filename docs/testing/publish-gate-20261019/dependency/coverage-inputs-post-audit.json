@@ -1,0 +1,18 @@
+{
+  "frontend": {
+    "historical_inputs": 49,
+    "current_inputs": 49,
+    "equal": true,
+    "changed": [],
+    "added": [],
+    "removed": []
+  },
+  "rag_eval": {
+    "historical_inputs": 22,
+    "current_inputs": 22,
+    "equal": true,
+    "changed": [],
+    "added": [],
+    "removed": []
+  }
+}

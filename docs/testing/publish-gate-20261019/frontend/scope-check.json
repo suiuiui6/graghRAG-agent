@@ -1,0 +1,38 @@
+{
+  "total": {
+    "lines": {
+      "total": 957,
+      "covered": 927,
+      "skipped": 0,
+      "pct": 96.86
+    },
+    "statements": {
+      "total": 1138,
+      "covered": 1093,
+      "skipped": 0,
+      "pct": 96.04
+    },
+    "functions": {
+      "total": 369,
+      "covered": 351,
+      "skipped": 0,
+      "pct": 95.12
+    },
+    "branches": {
+      "total": 913,
+      "covered": 853,
+      "skipped": 0,
+      "pct": 93.42
+    },
+    "branchesTrue": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "expected_files": 29,
+  "reported_files": 29,
+  "missing": [],
+  "extra": []
+}

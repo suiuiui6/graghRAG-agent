@@ -35,6 +35,7 @@ from errors import (
 from grounding import grounding_stats, resolve_grounding
 from kg_builder import build_knowledge_graph, serialize_kg
 from logging_config import get_logger
+from config import non_thinking_provider_options
 # MinerU 传输层已抽到独立模块（mineru_client）。这三个符号在这里**再导出**，
 # 因为既有的 tests/test_errors.py 从 worker 导入 `_http_status_error`，
 # 且 worker.py 自身仍在用。实现只有一份，在 mineru_client 里。
@@ -1180,11 +1181,12 @@ def _run_langextract(documents):
         examples.append(lxdata.ExampleData(text=ex["text"], extractions=extractions))
 
     config = ModelConfig(
-        model_id=os.getenv("LANGEXTRACT_MODEL_ID", "deepseek-chat"),
+        model_id=os.getenv("LANGEXTRACT_MODEL_ID", "deepseek-flash"),
         provider="openai",
         provider_kwargs={
             "api_key": os.getenv("LANGEXTRACT_API_KEY"),
             "base_url": os.getenv("LANGEXTRACT_BASE_URL", "https://api.deepseek.com"),
+            **non_thinking_provider_options(os.getenv("LANGEXTRACT_MODEL_ID", "deepseek-flash")),
         },
     )
 

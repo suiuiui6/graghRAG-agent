@@ -1,0 +1,26 @@
+{
+  "lancedb": {
+    "sbom_sha256": "96f7bac683f2f951dd46f05e5081da8f66deae65d3cb7bee8ff4fc264c9190e2",
+    "components": 800,
+    "registry": 799,
+    "non_registry": [
+      {
+        "name": "lancedb",
+        "version": "0.40.0",
+        "purl": "pkg:cargo/lancedb@0.40.0?download_url=file://..\\rust\\lancedb"
+      }
+    ],
+    "inventory_sha256": "39effc0c697757e88c93e0410a916e93ea2a2f70006289c1b96e0c01227525e7",
+    "synthetic": true,
+    "scope": "SBOM all-targets package name/version inventory only; no graph/features/Windows reachability"
+  },
+  "pydantic-core": {
+    "sbom_sha256": "5367c561194d03751d49d0253ea152d1b9c54e5a239a333baa4f955704ae9bc4",
+    "components": 99,
+    "registry": 99,
+    "non_registry": [],
+    "inventory_sha256": "012b407123b21c2e84e914ada250bf7e83280557a208b1b9ad55651dc4c36d65",
+    "synthetic": true,
+    "scope": "SBOM all-targets package name/version inventory only; no graph/features/Windows reachability"
+  }
+}

@@ -184,7 +184,7 @@ Content-Type: multipart/form-data
 | `enable_formula` | `bool` | 否 | `true` | 是否识别公式 |
 | `enable_table` | `bool` | 否 | `true` | 是否识别表格 |
 | `model_version` | `string` | 否 | `"pipeline"` | MinerU 引擎: `pipeline` / `vlm` |
-| `extraction_model` | `string` | 否 | `"deepseek-chat"` | LangExtract 模型 |
+| `extraction_model` | `string` | 否 | `"deepseek-flash"` | LangExtract 模型；运行时以 LANGEXTRACT_MODEL_ID 配置为准 |
 | `metadata` | `string` (JSON) | 否 | `"{}"` | 自定义元数据 |
 
 **文件限制**:
@@ -393,7 +393,7 @@ Content-Type: application/json
   },
   "metadata": {
     "document_id": "doc_a1b2c3d4",
-    "model": "deepseek-chat",
+    "model": "deepseek-flash",
     "tool_calls": 2,
     "duration_ms": 3200,
     "timestamp": "2026-05-24T17:32:00Z"

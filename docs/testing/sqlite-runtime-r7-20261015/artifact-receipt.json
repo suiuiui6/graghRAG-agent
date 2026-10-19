@@ -1,0 +1,26 @@
+{
+  "command": [
+    "curl.exe",
+    "--fail",
+    "--location",
+    "--max-time",
+    "90",
+    "--retry",
+    "0",
+    "--output",
+    "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\python-mirror.tar.gz",
+    "https://registry.npmmirror.com/-/binary/python-build-standalone/20261013/cpython-3.12.15%2B20261013-x86_64-pc-windows-msvc-install_only_stripped.tar.gz"
+  ],
+  "exit_code": 0,
+  "seconds": 25.375,
+  "transport": "third-party mirror; never trusted as provenance",
+  "official_url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261013/cpython-3.12.15%2B20261013-x86_64-pc-windows-msvc-install_only_stripped.tar.gz",
+  "official_asset_id": 638902136,
+  "official_digest": "sha256:7a2aef48e5ee569e310b29b32681debbc5d888e92790d85331a47736c6b06aad",
+  "release": "20261013",
+  "bytes": 22019610,
+  "sha256": "7a2aef48e5ee569e310b29b32681debbc5d888e92790d85331a47736c6b06aad",
+  "digest_verified": true,
+  "runtime": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\runtime",
+  "prior_attempts": "direct timeout28; slow direct resume manually interrupted; official API bounded attempt logged separately. All partials retained and unexecuted."
+}

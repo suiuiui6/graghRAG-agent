@@ -1,0 +1,54 @@
+{
+  "existing-numpy-build.json": {
+    "sha256": "bce7ebf35c9dee208fe5a98fa1f5b9b8b8b829829f61c4423c45f106bb3d7172",
+    "size": 3578
+  },
+  "numpy-pypi.json": {
+    "sha256": "a42b40d53fac5388e974f21aa1f01d3b47440ad8181fc827b08023bf8ca3cc96",
+    "size": 63149
+  },
+  "openblas-build-pypi.json": {
+    "sha256": "046a2de2d48e9ec43d59bb4137855431903b83dbc6ca2d2682046dcb0d84f9ac",
+    "size": 68986
+  },
+  "openblas-security.txt": {
+    "sha256": "43199b22a30942e0917aee22a17ad5e610099c191f463a671d1e4dd4e7a26a53",
+    "size": 959
+  },
+  "sources-receipt.json": {
+    "sha256": "5c4fd12ad6fca36ca3c81efe78dd456e4bf351f3919dbea7e8e112207e2f57af",
+    "size": 839
+  },
+  "audit-requirements.txt": {
+    "sha256": "d5074a05bcc216d1e3adeeed5a6717cd820474ee7aea02fdc888260ae48e4f0e",
+    "size": 14
+  },
+  "pip-audit.json": {
+    "sha256": "45e975ed0b43802732904eeb54377c5cffb48b96fd85f434a51dca5826f63c2e",
+    "size": 85
+  },
+  "pip-audit.log": {
+    "sha256": "e82148c0c30269ca5a2c35420ece6af011a4faf5a375325d750e243ffdb10625",
+    "size": 268
+  },
+  "pip-audit.exit": {
+    "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+    "size": 1
+  },
+  "pip-audit-receipt.json": {
+    "sha256": "d6f14d5622a4d11a04cd1a1615f6c036154cb5f21aa26c593eb627c21b6826e3",
+    "size": 954
+  },
+  "scripts/probe_r7_numpy_build.py": {
+    "sha256": "fc20ae271fb5c9c33ac93564c90c5bf52d3694f5a59e0060e064993d965922c1",
+    "size": 1331
+  },
+  "scripts/fetch_r7_native_sources.py": {
+    "sha256": "4f079624e0e0b7df4babf2f797bfd4889a0c59ff34b9080731a8e2443ab093f4",
+    "size": 1343
+  },
+  "scripts/audit_r7_numpy.py": {
+    "sha256": "9aa8979ef486b7fdbad07447176905cdb647121e9205100e7f4d381ecc747aa8",
+    "size": 1328
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-17T03:26:49.335097+00:00",
+  "manifest_sha256": "9d4e97242ea1e536669502ab28d16a9b5beaa0dff6ce410d1726666293761cc7",
+  "verified_count": 42,
+  "result": "29 passed, 3 subtests passed in 11.19s",
+  "pytest_exit": 0,
+  "command": ".tmp/sqlite-r8-integration-env-20261017/.venv/Scripts/python.exe -B -X utf8 -m pytest .tmp/sqlite-r8-r2-review-20261017/adapter-r2/tests -q -p no:cacheprovider --basetemp=.tmp/sqlite-r8-r2-review-20261017/r2-final-pytest-temp",
+  "independent_case_sha256": "c7b3c84c52fcbbe07fc23a12b29a79a1e37f57d7a9dd07b2a423dbedea4cbec5",
+  "log_sha256": "77b5d0f6abd89f0475c74b4dc09fc5332bbd4655b28bb1cf1f1b95f22137269e",
+  "initial_fixture_wal_error": "26 passed 3 failed/3subtests; uncheckpointed WAL meant restore source contained pre-mutation schema; corrected independent fixtures only, complete rerun"
+}

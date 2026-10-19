@@ -1,0 +1,20 @@
+{
+  "exit_codes": [
+    0,
+    0
+  ],
+  "manifest": {
+    "parser_port.py": "18a85b55345caa9ce4ac7ea2e344cedc9561cdda8c1c0eb6824499b3a629753d",
+    "sqlite_vector_payload.py": "e38deeb935a8dc6740b1719cebaa0baa3feee0bb5066f93c0b33e03f32c764b3",
+    "vector_errors.py": "b9a23b941eb84a7b50c866716e0c9dbcff3b1248be7c9daf2f9f594dc7ed4661",
+    "vector_store.py": "ff84400e52da5a00f03110f2cf2faeeed222f77b89a2dd9e4bb746afda414f46"
+  },
+  "after": {
+    "parser_port.py": "18a85b55345caa9ce4ac7ea2e344cedc9561cdda8c1c0eb6824499b3a629753d",
+    "sqlite_vector_payload.py": "e38deeb935a8dc6740b1719cebaa0baa3feee0bb5066f93c0b33e03f32c764b3",
+    "vector_errors.py": "b9a23b941eb84a7b50c866716e0c9dbcff3b1248be7c9daf2f9f594dc7ed4661",
+    "vector_store.py": "ff84400e52da5a00f03110f2cf2faeeed222f77b89a2dd9e4bb746afda414f46"
+  },
+  "cases": 335,
+  "diffs": {}
+}

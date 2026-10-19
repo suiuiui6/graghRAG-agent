@@ -14,6 +14,9 @@ dependencies = [
     "langgraph>=1.0.0",
     "langchain>=1.2.0",
     "langchain-openai>=0.3.0",
+    # Research budget and local ASGI adapters import these directly.
+    "openai>=3.14.1",
+    "starlette>=1.6.0",
     # RAG pipeline
     "chromadb>=0.5.0",
     "networkx>=3.0.0",

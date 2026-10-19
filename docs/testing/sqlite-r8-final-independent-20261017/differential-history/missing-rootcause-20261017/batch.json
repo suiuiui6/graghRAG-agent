@@ -1,0 +1,82 @@
+{
+  "same-100": {
+    "config": {
+      "hnsw": {
+        "space": "cosine",
+        "ef_construction": 100,
+        "ef_search": 100,
+        "max_neighbors": 16,
+        "resize_factor": 1.2,
+        "sync_threshold": 1000
+      },
+      "spann": null,
+      "embedding_function": null
+    },
+    "count": 201,
+    "n": [
+      156,
+      156,
+      156
+    ]
+  },
+  "near-100": {
+    "config": {
+      "hnsw": {
+        "space": "cosine",
+        "ef_construction": 100,
+        "ef_search": 100,
+        "max_neighbors": 16,
+        "resize_factor": 1.2,
+        "sync_threshold": 1000
+      },
+      "spann": null,
+      "embedding_function": null
+    },
+    "count": 201,
+    "n": [
+      70,
+      70,
+      70
+    ]
+  },
+  "same-1000": {
+    "config": {
+      "hnsw": {
+        "space": "cosine",
+        "ef_construction": 100,
+        "ef_search": 100,
+        "max_neighbors": 16,
+        "resize_factor": 1.2,
+        "sync_threshold": 1000
+      },
+      "spann": null,
+      "embedding_function": null
+    },
+    "count": 201,
+    "n": [
+      166,
+      166,
+      166
+    ]
+  },
+  "near-1000": {
+    "config": {
+      "hnsw": {
+        "space": "cosine",
+        "ef_construction": 100,
+        "ef_search": 100,
+        "max_neighbors": 16,
+        "resize_factor": 1.2,
+        "sync_threshold": 1000
+      },
+      "spann": null,
+      "embedding_function": null
+    },
+    "count": 201,
+    "n": [
+      137,
+      137,
+      137
+    ]
+  }
+}

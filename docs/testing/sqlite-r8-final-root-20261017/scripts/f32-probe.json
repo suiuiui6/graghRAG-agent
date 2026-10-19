@@ -1,0 +1,577 @@
+{
+  "source_sha256": "e429aa8f5e3afbd5fca4c6e97a460421753dba0c5adc891f6964489e5c79977b",
+  "numpy": "2.5.4",
+  "scope": "81 saved counterexamples only; no general HNSW equivalence claim",
+  "tested": 81,
+  "distance_mismatches": 0,
+  "score_mismatches": 0,
+  "rows": [
+    {
+      "id": "101",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "102",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "103",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "104",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "105",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "106",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "107",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "108",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "109",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "110",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "111",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "112",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "113",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "114",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "115",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "116",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "117",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "118",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "119",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "120",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "121",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "122",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "123",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "124",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "125",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "126",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "127",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "128",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "129",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "130",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "131",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "132",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "133",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "134",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "135",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "136",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "137",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "138",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "139",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "140",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "141",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "142",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "143",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "144",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "145",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "146",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "147",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "148",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "149",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "150",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "151",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "152",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "153",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "154",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "155",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "156",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "157",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "158",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "159",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "160",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "161",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "162",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "163",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "164",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "165",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "166",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "167",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "168",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "169",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "170",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "171",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "172",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "173",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "174",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "175",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "176",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "177",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "178",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "179",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "180",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    },
+    {
+      "id": "181",
+      "distance": 0.8765000104904175,
+      "oracle_distance": 0.8765000104904175,
+      "score": 0.5617,
+      "oracle_score": 0.5617
+    }
+  ]
+}

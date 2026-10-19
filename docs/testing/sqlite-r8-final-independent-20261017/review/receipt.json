@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-17T03:17:16.695228+00:00",
+  "frozen_manifest_sha256": "63d4084f6ad92d6df1e80c3132e1ff9ac9ff385f9d392df20eb64d4ae8206f8d",
+  "verified_count": 66,
+  "pytest_exit": 0,
+  "result": "32 passed in 4.79s",
+  "command": ".tmp/sqlite-r8-integration-env-20261017/.venv/Scripts/python.exe -B -X utf8 -m pytest .tmp/sqlite-r8-r2-review-20261017/source/backend/tests/test_r8_paged_consumers.py .tmp/sqlite-r8-r2-review-20261017/source/backend/tests/test_independent_edges.py .tmp/sqlite-r8-r2-review-20261017/source/backend/tests/test_r2_review_edges.py -q -p no:cacheprovider",
+  "independent_tests_sha256": "1f13951b0e1b805916c1e3dcf7b1dcf4d1f32ed632592a78a24c68952c974217",
+  "log_sha256": "c60b93c834e7443ebc83c38a724dcb0dc49c74d39a7c208a50a38fa2328731e5",
+  "prior_fixture_error": "Chunk content_type omitted in reviewer test; corrected test only; prior run 31 pass / 1 fail exit1, fixture-error.log retained"
+}

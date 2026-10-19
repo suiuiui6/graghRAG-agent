@@ -1,0 +1,12 @@
+{
+  "command": [
+    "gh",
+    "api",
+    "-H",
+    "Accept: application/octet-stream",
+    "repos/rustsec/rustsec/releases/assets/439294720"
+  ],
+  "exit": 0,
+  "seconds": 40.42200000002049,
+  "stderr": ""
+}

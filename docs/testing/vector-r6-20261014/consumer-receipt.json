@@ -1,0 +1,40 @@
+{
+  "source_hashes": {
+    ".tmp\\vector-r6-20261014\\current-consumer\\retrieval.py": "25b5d116659a1aed95a8bd54767ee3287f2587cfc4ccc1c5afaf154699bef6e6",
+    ".tmp\\vector-r6-20261014\\current-consumer\\logging_config.py": "0e25712534474a5f5d1d1ba0f1d15c8e36969f4c54a929d6158ce9bdaef0eb6b",
+    ".tmp\\vector-r6-20261014\\current-consumer\\source_control.py": "b92d65ad4604207c0bdc65670197a3c63c37c668abacb8d6b38451d025001c25",
+    ".tmp\\vector-r6-20261014\\current-consumer\\evidence_trace.py": "07cc6a3cce87c788a9639510a6540639f6b6d57e93f639b10a2593254b18bf65"
+  },
+  "functions": [
+    "_search_vector_store_with_projection",
+    "_vector_recall",
+    "multi_path_recall"
+  ],
+  "receipts": [
+    {
+      "fault_injection": "ValueError",
+      "trace": {
+        "status": "failed",
+        "reason": "recall_failed",
+        "candidate_count": null
+      },
+      "search_calls": 1
+    },
+    {
+      "fault_injection": "TypeError",
+      "trace": {
+        "status": "failed",
+        "reason": "recall_failed",
+        "candidate_count": null
+      },
+      "search_calls": 1
+    }
+  ],
+  "final_log_bare_marker_present": true,
+  "api_key_value_redacted": true,
+  "not_run": [
+    "full_worker",
+    "full_API",
+    "provider_models"
+  ]
+}

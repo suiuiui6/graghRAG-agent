@@ -1,0 +1,14 @@
+{
+  "files": {
+    "root-receipt.json": "36e1f351d6438595e9d58ed85c01e39b906638941148dd96af8403e7d4045b13",
+    "root-test_r6.py.log": "88763a299256b69aa2c72d3d3b286c3073e2979f74ff369fc21e7387f69ecb76",
+    "root-test_errors.py.log": "35fb3596bd701339134e1ad3ac0dd2fcd4efa69628466d4ec0f4757f93cad719",
+    "root-test_facade.py.log": "8c1fa4aa0403b7ba400c883d8a543c8a442c705ed3e0940aa327c3d970910478",
+    "root-fresh_wide_record.py.log": "0c439f1ef05fa155a19e9db3aced569ec9663701578097121e3ba05e2de52950",
+    "verify_vector_r6_final.py": "f5fbc6cf486fbac0a65bddf82ca69621636688ba88d74ee2b011ed98d47bcbbc",
+    "environment-verification.json": "08021b0fa9e483df90369271baa2942c69838b473e110db3ee9ed2f37e614f4a",
+    "subclass-precheck.json": "44d400c29c132aee6e8944ca2cae1647e3b86e002d5bc5368248fd22e63c68bb",
+    "probe_r6_log_subclass.py": "9875330d7ab9bd595bde33ead4b9fb2876ec26c5907291d20ee8d8a62c7d2827"
+  },
+  "scope": "root final author reruns and preliminary subclass red; independent review separate"
+}

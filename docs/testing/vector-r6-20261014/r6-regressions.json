@@ -1,0 +1,109 @@
+[
+  {
+    "name": "original76",
+    "command": [
+      "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Scripts\\python.exe",
+      "D:\\graghRAG-agent\\.tmp\\vector-r6-20261014\\lance_truth.py"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "boundary_chroma",
+    "command": [
+      "D:\\graghRAG-agent\\.tmp\\backend-quality-venv-20261012\\Scripts\\python.exe",
+      "D:\\graghRAG-agent\\.tmp\\vector-r6-20261014\\boundary_probe.py",
+      "chroma"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "boundary_lance",
+    "command": [
+      "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Scripts\\python.exe",
+      "D:\\graghRAG-agent\\.tmp\\vector-r6-20261014\\boundary_probe.py",
+      "lance"
+    ],
+    "exit_code": 1
+  },
+  {
+    "name": "matrix_chroma",
+    "command": [
+      "D:\\graghRAG-agent\\.tmp\\backend-quality-venv-20261012\\Scripts\\python.exe",
+      "D:\\graghRAG-agent\\.tmp\\vector-r6-20261014\\numeric_matrix.py",
+      "chroma"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "matrix_lance",
+    "command": [
+      "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Scripts\\python.exe",
+      "D:\\graghRAG-agent\\.tmp\\vector-r6-20261014\\numeric_matrix.py",
+      "lance"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "wide_chroma",
+    "command": [
+      "D:\\graghRAG-agent\\.tmp\\backend-quality-venv-20261012\\Scripts\\python.exe",
+      "D:\\graghRAG-agent\\.tmp\\vector-r6-20261014\\wide_matrix.py",
+      "chroma",
+      "oracle"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "wide_lance",
+    "command": [
+      "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Scripts\\python.exe",
+      "D:\\graghRAG-agent\\.tmp\\vector-r6-20261014\\wide_matrix.py",
+      "lance",
+      "green"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "ingress",
+    "command": [
+      "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Scripts\\python.exe",
+      "D:\\graghRAG-agent\\.tmp\\vector-r6-20261014\\ingress_matrix.py",
+      "green"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "fresh_chroma",
+    "command": [
+      "D:\\graghRAG-agent\\.tmp\\backend-quality-venv-20261012\\Scripts\\python.exe",
+      "D:\\graghRAG-agent\\.tmp\\vector-r6-20261014\\fresh_matrix.py",
+      "chroma"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "fresh_lance",
+    "command": [
+      "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Scripts\\python.exe",
+      "D:\\graghRAG-agent\\.tmp\\vector-r6-20261014\\fresh_matrix.py",
+      "lance"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "facade",
+    "command": [
+      "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Scripts\\python.exe",
+      "D:\\graghRAG-agent\\.tmp\\vector-r6-20261014\\test_facade.py"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "r6",
+    "command": [
+      "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Scripts\\python.exe",
+      "D:\\graghRAG-agent\\.tmp\\vector-r6-20261014\\test_r6.py"
+    ],
+    "exit_code": 0
+  }
+]

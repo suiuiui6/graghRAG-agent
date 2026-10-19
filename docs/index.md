@@ -25,6 +25,8 @@
 
 索引提供导航，不复制规范正文。当前工作范围以具体任务 memory 和批准的计划为准；此索引不代表仓库所有未完成任务均已验收。
 
+- 2026-10-15：[公开开发隔离与结构适配契约](contracts/2026-10-14-development-isolation-adapters.md)、[P0/A预算实测](review/2026-10-15-development-p0-a-budget.md)、[执行复核](review/2026-10-15-development-execution-review.md)、[资源独立审查](review/2026-10-15-development-resource-review.md)。仅开发资源profile，未做质量比较或留出验证。
+
 - 2026-10-14：[数值入口合同](contracts/2026-10-14-vector-ingress-semantics.md)、[R4b宽整数修复及专项证据](testing/2026-10-14-vector-ingress-r4b.md)。仅隔离候选，生产替换未放行。
 
 - 2026-10-14：[公共异常契约](contracts/2026-10-14-vector-error-semantics.md)、[消费者审计](review/2026-10-14-vector-error-consumer-audit.md)、[R5隔离验证](testing/2026-10-14-vector-errors-r5.md)。实现/复核状态以报告为准，宽记录/NaN向量和日志原因链仍有开放边界。

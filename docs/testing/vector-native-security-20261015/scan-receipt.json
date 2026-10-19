@@ -1,0 +1,42 @@
+{
+  "utc": "2026-10-15T05:29:40.144075+00:00",
+  "results": [
+    {
+      "name": "lancedb",
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\vector-native-audit-20261014\\tooling\\bin\\cargo-audit-x86_64-pc-windows-msvc-v0.22.2\\cargo-audit.exe",
+        "audit",
+        "--file",
+        "D:\\graghRAG-agent\\.tmp\\vector-native-audit-20261014\\tooling\\lancedb.inventory.lock",
+        "--db",
+        "D:\\graghRAG-agent\\.tmp\\vector-native-audit-20261014\\tooling\\db-fixed",
+        "--no-fetch",
+        "--no-yanked",
+        "--json",
+        "--deny",
+        "warnings"
+      ],
+      "exit": 1,
+      "seconds": 32.56200000003446
+    },
+    {
+      "name": "pydantic-core",
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\vector-native-audit-20261014\\tooling\\bin\\cargo-audit-x86_64-pc-windows-msvc-v0.22.2\\cargo-audit.exe",
+        "audit",
+        "--file",
+        "D:\\graghRAG-agent\\.tmp\\vector-native-audit-20261014\\tooling\\pydantic-core.inventory.lock",
+        "--db",
+        "D:\\graghRAG-agent\\.tmp\\vector-native-audit-20261014\\tooling\\db-fixed",
+        "--no-fetch",
+        "--no-yanked",
+        "--json",
+        "--deny",
+        "warnings"
+      ],
+      "exit": 0,
+      "seconds": 0.2809999999590218
+    }
+  ],
+  "scope": "SBOM synthetic version inventory, not actual Cargo graph; no target filter; yanked registry lookup intentionally NOT_RUN to keep fixed offline DB audit"
+}

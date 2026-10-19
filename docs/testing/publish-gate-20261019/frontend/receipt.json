@@ -1,0 +1,16 @@
+{
+  "command": [
+    "D:\\graghRAG-agent\\.tmp\\node22-runtime\\node-v22.23.3-win-x64\\node.exe",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "--coverage",
+    "--coverage.reportsDirectory=D:\\graghRAG-agent\\.tmp\\publish-retry-front-20261017\\coverage",
+    "--pool=threads",
+    "--maxWorkers=1"
+  ],
+  "cwd": "D:\\graghRAG-agent\\frontend",
+  "exit": 0,
+  "seconds": 43.11533164978027,
+  "drift": false,
+  "pid": 20744
+}

@@ -1,0 +1,59 @@
+{
+  "manifest_verified": 45,
+  "manifest_sha256": "fcf0ecf3cbf8c5a57ceb98d970333a7c54f9de09ab5ec6951d2fcbfeab41fc2d",
+  "input_before": {
+    "capture.py": "70c6ea27408f1d92b96b3948b741a14c5e5e7fbf62aa2c3738afcb3f80590294",
+    "finalize.py": "191d27747f8adf3486a2dcae5ab7e78f8151f14fb0ab2c7f2ac8b89531fbb073",
+    "identity.py": "a8dd253b823cb930dba8e63d6e45c6a3e5fab49336302d0326754e803c494176",
+    "pyproject.toml": "269081af7b7e7bdfb7697b3606995c3bf78b43ea0c45a5177ff28061f0a1c32e",
+    "store.py": "28cede24b74aaaad92ccd0c3ca327203f9e3648e8afbbadfe5d61b6870b750da",
+    "test_independent.py": "be73846396f126f729754ca4bf8fa1b96b36c26784cf93e23c82b35e946d9fbb",
+    "test_store.py": "6e9a801305fa57aed281562f9e8ad3c7ab82993c951be3c53b0545bced4d63f2",
+    "uv.lock": "989951eae09c2b8524f0fcecf4f0d1d955a72b7c0c8aadce9edfee0567d4225a"
+  },
+  "input_after": {
+    "capture.py": "70c6ea27408f1d92b96b3948b741a14c5e5e7fbf62aa2c3738afcb3f80590294",
+    "finalize.py": "191d27747f8adf3486a2dcae5ab7e78f8151f14fb0ab2c7f2ac8b89531fbb073",
+    "identity.py": "a8dd253b823cb930dba8e63d6e45c6a3e5fab49336302d0326754e803c494176",
+    "pyproject.toml": "269081af7b7e7bdfb7697b3606995c3bf78b43ea0c45a5177ff28061f0a1c32e",
+    "store.py": "28cede24b74aaaad92ccd0c3ca327203f9e3648e8afbbadfe5d61b6870b750da",
+    "test_independent.py": "be73846396f126f729754ca4bf8fa1b96b36c26784cf93e23c82b35e946d9fbb",
+    "test_store.py": "6e9a801305fa57aed281562f9e8ad3c7ab82993c951be3c53b0545bced4d63f2",
+    "uv.lock": "989951eae09c2b8524f0fcecf4f0d1d955a72b7c0c8aadce9edfee0567d4225a"
+  },
+  "input_drift": false,
+  "commands": [
+    {
+      "label": "author-nine",
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\sqlite-numpy-r7-20261015\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "test_store",
+        "-v"
+      ],
+      "cwd": "D:\\graghRAG-agent\\.tmp\\sqlite-numpy-r7-review-20261015\\private-final",
+      "exit_code": 0,
+      "started": 1792045585.2656004,
+      "elapsed": 3.2584400177001953
+    },
+    {
+      "label": "independent-new",
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\sqlite-numpy-r7-20261015\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "test_independent",
+        "-v"
+      ],
+      "cwd": "D:\\graghRAG-agent\\.tmp\\sqlite-numpy-r7-review-20261015\\private-final",
+      "exit_code": 0,
+      "started": 1792045588.5240405,
+      "elapsed": 1.6638448238372803
+    }
+  ]
+}

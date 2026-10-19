@@ -1,0 +1,19 @@
+{
+  "command": [
+    "D:\\graghRAG-agent\\iteration-2\\eval-2-existing-components\\rag_eval\\.venv\\Scripts\\python.exe",
+    "-m",
+    "coverage",
+    "run",
+    "--data-file=D:\\graghRAG-agent\\.tmp\\publish-other-20261017\\rag.coverage",
+    "-m",
+    "pytest",
+    "-q",
+    "--tb=short",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp=D:\\graghRAG-agent\\.tmp\\publish-other-20261017\\rag-temp"
+  ],
+  "cwd": "D:\\graghRAG-agent\\iteration-2\\eval-2-existing-components\\rag_eval",
+  "exit": 0,
+  "seconds": 12.433976173400879
+}

@@ -1,0 +1,65 @@
+{
+  "utc": "2026-10-15T05:34:57.921959+00:00",
+  "manifest_sha256": "37a4ca29ce343e1621235b1bb8fdbee52beb120b67134fc3b32d1e6c1d1fbac5",
+  "frozen_files": 186,
+  "validated_inputs": 38,
+  "commands": [
+    {
+      "command": "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Scripts\\python.exe D:\\graghRAG-agent\\.tmp\\vector-r6-review-20261015/verify_freeze.py",
+      "exit_code": 0,
+      "scope": "186 frozen files,38 validated inputs,private copied hashes"
+    },
+    {
+      "command": "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Scripts\\python.exe D:\\graghRAG-agent\\.tmp\\vector-r6-review-20261015/precheck.py D:\\graghRAG-agent\\.tmp\\vector-r6-review-20261015/frozen",
+      "exit_code": 0,
+      "scope": "independent prior red subclass regression, evil metaclass/attributes, cause identity"
+    },
+    {
+      "command": "D:\\graghRAG-agent/.tmp/backend-quality-venv-20261012/Scripts/python.exe D:\\graghRAG-agent\\.tmp\\vector-r6-review-20261015/independent_numeric.py .tmp/vector-r6-20261014 chroma",
+      "exit_code": 0,
+      "scope": "independent Chroma oracle 32 records/90 where, get/query"
+    },
+    {
+      "command": "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Scripts\\python.exe D:\\graghRAG-agent\\.tmp\\vector-r6-review-20261015/independent_numeric.py D:\\graghRAG-agent\\.tmp\\vector-r6-review-20261015/frozen lance",
+      "exit_code": 0,
+      "scope": "32 records/90 where type,bits,raw,projection,get/query,overflow;differences0"
+    },
+    {
+      "command": "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Scripts\\python.exe D:\\graghRAG-agent\\.tmp\\vector-r6-review-20261015/independent_logging.py D:\\graghRAG-agent\\.tmp\\vector-r6-review-20261015/frozen",
+      "exit_code": 0,
+      "scope": "final runner6 actual console/file events,evil hooks0,cause retained,3 actual AST functions success/zero/failure,one search each"
+    }
+  ],
+  "post_run_drift": {
+    "archive": [],
+    "private": []
+  },
+  "post_run_input_drift": [],
+  "evidence": {
+    "consumer-source-check.json": "05a43c0a4f1b913337de8bc510fde4860984e104bb15e955e013f4408321c171",
+    "final_receipt.py": "04e6475abc2aed286bd0d850b257a68bef735bf070a9599091732ea1c096ab33",
+    "freeze-check.json": "945a93a02cbf9e90f8118e22d0681ef062507c869ce7a5bb100899efdce5fa79",
+    "independent-console.log": "99996562cff48ec11fe6da49dedc2b52fdb4b0455cac4667efbf84a21d289c23",
+    "independent-file.log": "99996562cff48ec11fe6da49dedc2b52fdb4b0455cac4667efbf84a21d289c23",
+    "independent-logging.json": "35464a8c1a7485d23c7f7b27bbd9cfd4cfd36cee0524f7fad40434a0f8a819a6",
+    "independent-numeric-chroma.json": "78767652bace76e015b4d623ea9c8cfdaf5f7cd5376c279fa9c320faab93d220",
+    "independent-numeric-lance.json": "6089e5f37c9b0f8d7a34f18cffb121d535ddd114bda7b3bbcc8574facb157bd7",
+    "independent_logging.py": "7b38789b88dd86d7e441f56c7612fd56e37723498ca12b92ee1837aeab22acce",
+    "independent_numeric.py": "d13ff6149416fa292a7fda0b79440a230a2c01b7a430c9c9263eda95311f82f6",
+    "precheck-final.json": "1fd8c642e70c57c1cf03bef3301d8d2a075af092bc5488203378e410ec6be6de",
+    "precheck.json": "6c6756352c0ea26a96952285a2b498cfe632d44bee79eb8f29f88d51328b52ab",
+    "precheck.py": "c78707d67deab171a703984ebafb6beded532de92120e49e2c2d561dc3cd4196",
+    "safe_vector_logging.py": "2c54cdaf512fd9c18c2c7e283f89ee18d04f16fa57c1ac57db9825e080a11852",
+    "vector_errors.py": "b9a23b941eb84a7b50c866716e0c9dbcff3b1248be7c9daf2f9f594dc7ed4661",
+    "verify_freeze.py": "1101b146994588cdc4cd032b69d714237b2bfaa6d7af58bf0fb61eca7eebf00d"
+  },
+  "limits": [
+    "bounded isolated MVP",
+    "actual3consumerASTfunctions only",
+    "backend failure injected",
+    "no fullworker/API",
+    "no production integration/migration",
+    "no formatter equivalence proof",
+    "no product full coverage or security scan"
+  ]
+}

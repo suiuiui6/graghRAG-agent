@@ -1,0 +1,11 @@
+{
+  "manifest_sha256": "ff9d60f7e90477debc95f93781aaf8e239452069ccd328c75e704d78c321506a",
+  "verified_count": 37,
+  "base_plus_four_result": "20 passed, 3 subtests passed in 10.22s",
+  "base_plus_four_exit": 0,
+  "new_schema_case_result": "1 failed in 0.53s",
+  "new_schema_case_exit": 1,
+  "test_sha256": "a17d6b9a737c6e88b26bec6ea1dedf9602b7ab7d3c82208510aa29da3dba8bc7",
+  "log_sha256": "f3851bc46ff8435b2705bb3d525ffde0a88dde0cdf22cdb1d9e9022ffeada58b",
+  "schema_log_sha256": "a469164a13ae498212103da66b69efc96bb8b6c871b52b93c89f353d70007de6"
+}

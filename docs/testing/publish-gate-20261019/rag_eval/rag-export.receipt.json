@@ -1,0 +1,14 @@
+{
+  "command": [
+    "D:\\graghRAG-agent\\iteration-2\\eval-2-existing-components\\rag_eval\\.venv\\Scripts\\python.exe",
+    "-m",
+    "coverage",
+    "json",
+    "--data-file=D:\\graghRAG-agent\\.tmp\\publish-other-20261017\\rag.coverage",
+    "-o",
+    "D:\\graghRAG-agent\\.tmp\\publish-other-20261017\\rag-coverage.json"
+  ],
+  "cwd": "D:\\graghRAG-agent\\iteration-2\\eval-2-existing-components\\rag_eval",
+  "exit": 0,
+  "seconds": 0.6196832656860352
+}

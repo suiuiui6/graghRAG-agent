@@ -33,11 +33,12 @@ def local_client(monkeypatch, sandbox_tmp_path):
     monkeypatch.setattr(retrieval, "_rewrite_cache", cache)
     base_url = "https://invalid.example"
     monkeypatch.setenv("LANGEXTRACT_BASE_URL", base_url)
+    monkeypatch.setenv("LANGEXTRACT_MODEL_ID", "deepseek-flash")
     monkeypatch.setenv("LANGEXTRACT_API_KEY", "")
     monkeypatch.setenv("DEEPSEEK_API_KEY", "")
     # Freeze preprocessing inputs through the real cache replay path; no LLM mock.
     for question in (QUERY, "请用一段简洁的中文总结以下内容要点：\n\n" + QUERY):
-        cache_key = retrieval._build_rewrite_cache_key("query_preprocess", question, "deepseek-chat", base_url, [])
+        cache_key = retrieval._build_rewrite_cache_key("query_preprocess", question, "deepseek-flash", base_url, [])
         cache.set(cache_key, {"rewritten": question, "intent": "hybrid", "entity_types": [], "table_conditions": []})
     index = build_bm25_from_chunks([
         Chunk("software_fixture_storage", "软件测试夹具：加装储能后年产量从9023提升至10903吨。", "text"),

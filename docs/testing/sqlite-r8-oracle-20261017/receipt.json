@@ -1,0 +1,42 @@
+{
+  "exit_codes": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "commands": [
+    "python.exe -B .tmp/sqlite-r8-oracle-20261016/oracle.py",
+    "python.exe -B .tmp/sqlite-r8-oracle-20261016/scale.py",
+    "python.exe -B .tmp/sqlite-r8-oracle-20261016/float_crud.py",
+    "python.exe -B .tmp/sqlite-r8-oracle-20261016/score_boundary.py"
+  ],
+  "utc": "2026-10-16T11:18:35.6864547Z",
+  "scope": "synthetic only; no production mutation or external provider",
+  "hashes": {
+    "D:\\graghRAG-agent\\.tmp\\sqlite-r8-oracle-20261016\\oracle.py": "97c640679f800eb58328a92c079abcdf26ce6b825e43ff14e05378fde435b1ca",
+    "D:\\graghRAG-agent\\.tmp\\sqlite-r8-oracle-20261016\\float-crud.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "D:\\graghRAG-agent\\.tmp\\sqlite-r8-oracle-20261016\\score-boundary.json": "e429aa8f5e3afbd5fca4c6e97a460421753dba0c5adc891f6964489e5c79977b",
+    "D:\\graghRAG-agent\\.tmp\\sqlite-r8-oracle-20261016\\float_crud.py": "b96df8880668edc580e91515aab233768d7e4b1e11087bc3aeff0021dace94f0",
+    "backend/vector_store.py": "18d8fc6ff90823186034f5f10c876981a0da814bba5bb57c9299400eec0a6c82",
+    "D:\\graghRAG-agent\\.tmp\\sqlite-r8-oracle-20261016\\score-boundary.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "D:\\graghRAG-agent\\.tmp\\sqlite-r8-oracle-20261016\\score_boundary.py": "a2644039086b19a3d5fcdf1edf8647cf09f256d2b7c640e72da8291855546421",
+    "D:\\graghRAG-agent\\.tmp\\sqlite-r8-oracle-20261016\\scale.json": "bb43ec09619459e051e07e28ffbd25a42f09ee1f6eac2d256777e0c6e81b3712",
+    "D:\\graghRAG-agent\\.tmp\\sqlite-r8-oracle-20261016\\oracle.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "D:\\graghRAG-agent\\.tmp\\sqlite-r8-oracle-20261016\\float-crud.json": "9a567a93bfd453100bbbd1da04878019381b5d0ba6e3719448af63fe8b4c51ed",
+    "docs/testing/vector-r6-20261014/parser_port.py": "18a85b55345caa9ce4ac7ea2e344cedc9561cdda8c1c0eb6824499b3a629753d",
+    "docs/testing/vector-r6-20261014/generic_filter.py": "31f21998e01bb06c548727275168634d8ae39f04b17d962c7576b6c7a4fbb51a",
+    "D:\\graghRAG-agent\\.tmp\\sqlite-r8-oracle-20261016\\scale.py": "d1881f7c0462a5dbb27c6e19258c339b641466b4f69c7ad568fc7a4dd939ab7b",
+    "D:\\graghRAG-agent\\.tmp\\sqlite-r8-oracle-20261016\\oracle.json": "7004b58e02dd0d2a8874e7cd8bf0d26f5d0ea47a7474620de61cffdfae956a64",
+    "backend/uv.lock": "0b9618aede31fd0553ff10b845a2feb5a388d1e153c8e38549d769a3074dacf6",
+    "D:\\graghRAG-agent\\.tmp\\sqlite-r8-oracle-20261016\\scale.log": "02824c80c5a136ecac79f516a9f008b412cdcf22156fa2457c16c3c9c59d0244",
+    "docs/testing/vector-r6-20261014/safe_vector_logging.py": "b3a0eee22c0b8d0a98cae8da58a1f8e06d71f17c925f3cf40d20afdcee058173",
+    "docs/testing/vector-r6-20261014/r6-freeze-manifest.json": "37a4ca29ce343e1621235b1bb8fdbee52beb120b67134fc3b32d1e6c1d1fbac5",
+    "D:\\graghRAG-agent\\.tmp\\sqlite-r8-oracle-20261016\\float-crud.log": "fa73a4896007f293105cfb6fa351b8eb85ca7089b9ca23920d7de9ed6ee97fd5",
+    "D:\\graghRAG-agent\\.tmp\\sqlite-r8-oracle-20261016\\oracle.log": "231af7a9eee01c54fbb4e1d2a38935e4b298f934ad6b324773d3ba52f1e81fd1",
+    "docs/testing/vector-r6-20261014/vector_errors.py": "b9a23b941eb84a7b50c866716e0c9dbcff3b1248be7c9daf2f9f594dc7ed4661",
+    "D:\\graghRAG-agent\\.tmp\\sqlite-r8-oracle-20261016\\score-boundary.log": "9c105ec8561af5e535497356351a06f531039d45f99a19ce442808552a552a5d",
+    "D:\\graghRAG-agent\\.tmp\\sqlite-r8-oracle-20261016\\scale.exit": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+  },
+  "executable": "D:/graghRAG-agent/.tmp/backend-quality-venv-20261012/Scripts/python.exe"
+}

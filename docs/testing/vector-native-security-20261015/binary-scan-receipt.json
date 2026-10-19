@@ -1,0 +1,20 @@
+{
+  "command": [
+    "D:\\graghRAG-agent\\.tmp\\vector-native-audit-20261014\\tooling\\bin\\cargo-audit-x86_64-pc-windows-msvc-v0.22.2\\cargo-audit.exe",
+    "audit",
+    "--db",
+    "D:\\graghRAG-agent\\.tmp\\vector-native-audit-20261014\\tooling\\db-fixed",
+    "--no-fetch",
+    "--no-yanked",
+    "--json",
+    "--deny",
+    "warnings",
+    "bin",
+    "--max-binary-size",
+    "268435456",
+    "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Lib\\site-packages\\lancedb\\_lancedb.pyd"
+  ],
+  "exit": 1,
+  "seconds": 0.4220000000204891,
+  "scope": "read-only static PE audit; complete only if cargo-auditable metadata present, otherwise panic-string partial inventory"
+}

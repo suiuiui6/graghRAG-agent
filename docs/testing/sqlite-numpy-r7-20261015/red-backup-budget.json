@@ -1,0 +1,35 @@
+{
+  "command": [
+    "D:/graghRAG-agent/.tmp/sqlite-numpy-r7-20261015/.venv/Scripts/python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "-v",
+    "test_store.StoreTests.test_backup_checks_policy_size_before_reading_bytes"
+  ],
+  "cwd": "D:\\graghRAG-agent\\.tmp\\sqlite-numpy-r7-20261015",
+  "started_utc": "2026-10-15T06:21:51.516814+00:00",
+  "finished_utc": "2026-10-15T06:21:52.323949+00:00",
+  "exit_code": 1,
+  "source_before": {
+    "capture.py": "70c6ea27408f1d92b96b3948b741a14c5e5e7fbf62aa2c3738afcb3f80590294",
+    "finalize.py": "191d27747f8adf3486a2dcae5ab7e78f8151f14fb0ab2c7f2ac8b89531fbb073",
+    "identity.py": "a8dd253b823cb930dba8e63d6e45c6a3e5fab49336302d0326754e803c494176",
+    "pyproject.toml": "269081af7b7e7bdfb7697b3606995c3bf78b43ea0c45a5177ff28061f0a1c32e",
+    "store.py": "c922d05d01da04c498a20080e903f046739ce34166dea81aa1dece76c8e79d68",
+    "test_store.py": "6e9a801305fa57aed281562f9e8ad3c7ab82993c951be3c53b0545bced4d63f2",
+    "uv.lock": "989951eae09c2b8524f0fcecf4f0d1d955a72b7c0c8aadce9edfee0567d4225a"
+  },
+  "source_after": {
+    "capture.py": "70c6ea27408f1d92b96b3948b741a14c5e5e7fbf62aa2c3738afcb3f80590294",
+    "finalize.py": "191d27747f8adf3486a2dcae5ab7e78f8151f14fb0ab2c7f2ac8b89531fbb073",
+    "identity.py": "a8dd253b823cb930dba8e63d6e45c6a3e5fab49336302d0326754e803c494176",
+    "pyproject.toml": "269081af7b7e7bdfb7697b3606995c3bf78b43ea0c45a5177ff28061f0a1c32e",
+    "store.py": "c922d05d01da04c498a20080e903f046739ce34166dea81aa1dece76c8e79d68",
+    "test_store.py": "6e9a801305fa57aed281562f9e8ad3c7ab82993c951be3c53b0545bced4d63f2",
+    "uv.lock": "989951eae09c2b8524f0fcecf4f0d1d955a72b7c0c8aadce9edfee0567d4225a"
+  },
+  "source_drift": false
+}

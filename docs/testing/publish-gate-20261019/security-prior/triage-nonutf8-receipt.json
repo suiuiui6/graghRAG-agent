@@ -1,0 +1,20 @@
+{
+  "exit_code": 0,
+  "files": [
+    {
+      "path": "docs/testing/sqlite-r8-final-independent-20261017/differential-final/public.json",
+      "source_sha256": "480ed86c5066e7e9bd306fe8cc806409df379e096c24d3def9d666b42bf49521",
+      "decoding": "gb18030-strict + JSON parse",
+      "transcoded": ".tmp\\publish-retry-security-20261017\\triage-nonutf8-0.json",
+      "transcoded_sha256": "838ba73d9c72c6b48752c9842f64c5bb37db73954588289343aefd44c117241a"
+    },
+    {
+      "path": "docs/testing/sqlite-r8-final-independent-20261017/differential-history/diff-r4-20261017/public.json",
+      "source_sha256": "480ed86c5066e7e9bd306fe8cc806409df379e096c24d3def9d666b42bf49521",
+      "decoding": "gb18030-strict + JSON parse",
+      "transcoded": ".tmp\\publish-retry-security-20261017\\triage-nonutf8-1.json",
+      "transcoded_sha256": "838ba73d9c72c6b48752c9842f64c5bb37db73954588289343aefd44c117241a"
+    }
+  ],
+  "findings": 0
+}

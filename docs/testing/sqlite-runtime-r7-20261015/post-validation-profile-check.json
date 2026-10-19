@@ -1,0 +1,13 @@
+{
+  "original_inputs_drift": {
+    "runtime": {
+      "changed": [],
+      "extra": []
+    },
+    "derived": {
+      "changed": [],
+      "extra": []
+    }
+  },
+  "scope": "Full composition input hashes; extra generated files separately disclosed"
+}

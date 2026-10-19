@@ -1,0 +1,78 @@
+{
+  "actual": {
+    "none": {
+      "chunk_id": "none",
+      "text": "null metadata",
+      "metadata": {
+        "source_file": "",
+        "source_format": "",
+        "content_type": "text",
+        "page_idx": 0
+      }
+    },
+    "lists": {
+      "chunk_id": "lists",
+      "text": "JSON metadata",
+      "metadata": {
+        "source_file": "",
+        "source_format": "",
+        "page_idx": 0,
+        "content_type": "text",
+        "project_id": "",
+        "token_count": 1,
+        "entity_types": [
+          "人物",
+          "a\"b"
+        ],
+        "section_path": [
+          "章节",
+          null
+        ],
+        "entity_ids": [
+          "id1",
+          "id2"
+        ],
+        "char_start": "",
+        "char_end": ""
+      }
+    }
+  },
+  "expected": {
+    "none": {
+      "chunk_id": "none",
+      "text": "null metadata",
+      "metadata": {
+        "source_file": "",
+        "source_format": "",
+        "content_type": "text",
+        "page_idx": 0
+      }
+    },
+    "lists": {
+      "chunk_id": "lists",
+      "text": "JSON metadata",
+      "metadata": {
+        "source_file": "",
+        "source_format": "",
+        "page_idx": 0,
+        "content_type": "text",
+        "project_id": "",
+        "token_count": 1,
+        "entity_types": [
+          "人物",
+          "a\"b"
+        ],
+        "section_path": [
+          "章节",
+          null
+        ],
+        "entity_ids": [
+          "id1",
+          "id2"
+        ],
+        "char_start": "",
+        "char_end": ""
+      }
+    }
+  }
+}

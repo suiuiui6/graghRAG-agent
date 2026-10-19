@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "events": 6,
+  "user_code_calls": [],
+  "cause_preserved": true,
+  "consumer_scope": "3 actual frozen AST functions, real Lance success/zero; injected backend ValueError failure",
+  "consumer_results": [
+    {
+      "status": "executed",
+      "reason": null,
+      "candidate_count": 1
+    },
+    {
+      "status": "executed",
+      "reason": null,
+      "candidate_count": 0
+    },
+    {
+      "status": "failed",
+      "reason": "recall_failed",
+      "candidate_count": null
+    }
+  ],
+  "inputs": {
+    "safe_vector_logging.py": "b3a0eee22c0b8d0a98cae8da58a1f8e06d71f17c925f3cf40d20afdcee058173",
+    "generic_filter.py": "31f21998e01bb06c548727275168634d8ae39f04b17d962c7576b6c7a4fbb51a",
+    "current-consumer\\evidence_trace.py": "07cc6a3cce87c788a9639510a6540639f6b6d57e93f639b10a2593254b18bf65",
+    "current-consumer\\logging_config.py": "0e25712534474a5f5d1d1ba0f1d15c8e36969f4c54a929d6158ce9bdaef0eb6b",
+    "current-consumer\\retrieval.py": "25b5d116659a1aed95a8bd54767ee3287f2587cfc4ccc1c5afaf154699bef6e6",
+    "current-consumer\\source_control.py": "b92d65ad4604207c0bdc65670197a3c63c37c668abacb8d6b38451d025001c25"
+  }
+}

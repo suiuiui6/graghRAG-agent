@@ -1,0 +1,43 @@
+contract_version: "1.0"
+expert_skill: sci-skills-statistical-reporting
+project_id: graphrag-paper-001
+paper_family: M
+stage_id: M2
+task_id: null
+task_status: COMPLETE
+inputs_reviewed:
+  - docs/contracts/2026-10-15-common-three-arm-evaluation.md
+  - docs/plans/2026-10-15-common-three-arm-evaluation.md
+  - backend/research/common_three_arm.py
+  - backend/tests/test_common_three_arm.py
+  - .tmp/common-three-arm-final-20261015/registration.json
+  - .tmp/common-three-arm-final-20261015/registration.sha256.json
+  - docs/review/development-budget-20261014/receipt-freeze.json
+outputs:
+  - docs/review/2026-10-15-common-budget-design-review.md
+  - docs/review/2026-10-15-common-three-arm-code-review.md
+  - docs/review/2026-10-15-common-three-arm-expert-review.yaml
+evidence_status:
+  - "EXECUTED_LOCAL: independent final25offline tests passed/3.28s/exit0 in locked quality environment."
+  - "EXECUTED_LOCAL: verify_registration and6fresh A resolutions matched;54balanced units/177attempt path verified."
+  - "VERIFIED_USER_MATERIAL: historical4KG identities match permanent receipt-freeze; frozen code/inputs/governance/dependencies verified."
+  - "NOT_EXECUTED: new remote generation, semantic adjudication, heldout evaluation and method-gap conclusion."
+assumptions:
+  - "Authorization and execution remain with orchestrator; this review only covers bounded public-development admission."
+  - "Two sources/six questions/three technical reruns do not establish independent population samples."
+  - "Actual token caps checked after responses; byte caps are not token-equivalent."
+  - "Unknown costs stop entire profile; known resource breaches retain costs and mark RESOURCE_CAP."
+author_input_needed: []
+manual_actions: []
+quality_checks:
+  - "C1fresh automatic resolver/assembly per A unit and C2body/heading input separation closed."
+  - "flash/0/nonthinking/2048 plus native preprocess300 guarded; native scopedKG prompt/repair preserved."
+  - "8attempts/unit,177path global,120s including startup,5400s global; all54status denominator preserved."
+  - "Final runner SHA d5cbf52cb9dc5ff30bdd13fe7de9c050751cec6413f4e69f31f49f2abc998d9e."
+  - "Final registration SHA0bc8fe290a67d3b3c047372e2685eb33cd5fed7c681ddd95da76df40233228ec."
+  - "No network, Gold or secret read in independent review; no code/test mutation."
+conflicts: []
+conflict_resolution_status: NOT_REQUIRED
+merge_permission: orchestrator_only
+recommended_next_action: "Execute the authorized frozen public-development profile under its registered limits."
+stage_acceptance_recommendation: PASS_CANDIDATE

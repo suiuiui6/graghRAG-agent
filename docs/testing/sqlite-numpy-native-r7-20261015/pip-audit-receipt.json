@@ -1,0 +1,28 @@
+{
+  "utc": "2026-10-15T06:17:17.767185+00:00",
+  "command": [
+    "D:\\graghRAG-agent\\.tmp\\audit-tools-20261012\\Scripts\\python.exe",
+    "-m",
+    "pip_audit",
+    "-r",
+    "D:\\graghRAG-agent\\.tmp\\sqlite-numpy-native-audit-20261015\\audit-requirements.txt",
+    "--no-deps",
+    "--disable-pip",
+    "--strict",
+    "--index-url",
+    "https://pypi.org/simple",
+    "--cache-dir",
+    "D:\\graghRAG-agent\\.tmp\\sqlite-numpy-native-audit-20261015\\audit-http-cache",
+    "--timeout",
+    "30",
+    "--progress-spinner",
+    "off",
+    "-f",
+    "json",
+    "-o",
+    "D:\\graghRAG-agent\\.tmp\\sqlite-numpy-native-audit-20261015\\pip-audit.json"
+  ],
+  "exit_code": 0,
+  "requirements_sha256": "d5074a05bcc216d1e3adeeed5a6717cd820474ee7aea02fdc888260ae48e4f0e",
+  "scope": "One fully pinned registry dependency; installed lock identity checked separately. Does not audit CPython/SQLite DLL/OpenBLAS/Windows runtimes."
+}

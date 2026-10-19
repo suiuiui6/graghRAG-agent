@@ -1,0 +1,31 @@
+{
+  "command": [
+    "D:/graghRAG-agent/.tmp/sqlite-runtime-r7-20261015/derived/python/python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "-v",
+    "test_store"
+  ],
+  "cwd": "D:\\graghRAG-agent\\.tmp\\sqlite-numpy-r7-20261015",
+  "started_utc": "2026-10-15T06:14:26.354017+00:00",
+  "finished_utc": "2026-10-15T06:14:26.682547+00:00",
+  "exit_code": 1,
+  "source_before": {
+    "capture.py": "70c6ea27408f1d92b96b3948b741a14c5e5e7fbf62aa2c3738afcb3f80590294",
+    "identity.py": "a8dd253b823cb930dba8e63d6e45c6a3e5fab49336302d0326754e803c494176",
+    "pyproject.toml": "269081af7b7e7bdfb7697b3606995c3bf78b43ea0c45a5177ff28061f0a1c32e",
+    "store.py": "2787dad7973405de8b99dc4174a7ffba58994fcc7828093c1d9aa9ba38e51b73",
+    "test_store.py": "2321e1d46b1b8d9b016bd3e3cccad303772b1db4a7bcd9a537df650bb6a25692"
+  },
+  "source_after": {
+    "capture.py": "70c6ea27408f1d92b96b3948b741a14c5e5e7fbf62aa2c3738afcb3f80590294",
+    "identity.py": "a8dd253b823cb930dba8e63d6e45c6a3e5fab49336302d0326754e803c494176",
+    "pyproject.toml": "269081af7b7e7bdfb7697b3606995c3bf78b43ea0c45a5177ff28061f0a1c32e",
+    "store.py": "2787dad7973405de8b99dc4174a7ffba58994fcc7828093c1d9aa9ba38e51b73",
+    "test_store.py": "2321e1d46b1b8d9b016bd3e3cccad303772b1db4a7bcd9a537df650bb6a25692"
+  },
+  "source_drift": false
+}

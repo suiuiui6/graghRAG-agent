@@ -1,5 +1,15 @@
 # 向量存储替换设计与隔离 MVP 评估
 
+2026-10-15 R7最终更新：SQLite＋NumPy运行库及固定schema真实I/O隔离验证通过，进入完整适配器设计的候选阶段。[验证报告](../testing/2026-10-15-sqlite-numpy-runtime.md)、[独立评审](../review/2026-10-15-sqlite-numpy-runtime-review.md)。实际组合Python3.12.15＋官方SQLite3.54.0 DLL＋NumPy2.5.4为项目派生profile；原Python构建SQLite3.53.1未满足安全版本floor，原构建未修改。最终45文件冻结，作者9项、root9项、独立9＋2项均exit0。包审计NumPy已知公告0不代表原生组件全审通过。此结论不替换下列Lance原生审计失败，也不构成完整Chroma兼容或生产准入。
+
+剩余先完成：外部输入分配前资源限制、分批检索内存预算；完整VectorStore/metadata过滤及formatter兼容、生命周期/恢复验证；运行库更新与原生安全清单、性能规模测试，随后适用全量双90与真实消费者集成。零向量拒绝仅为当前原型政策；非有限查询拒绝沿用用户确认。现役Chroma四项公告仍在，生产存储及现有数据未切换，本轮无提交/推送/部署。
+
+2026-10-15最终阶段更新：R6宽record、非有限查询政策及typed异常安全日志的所测隔离缺口已通过作者15命令、root复制复验及独立新seed/攻击输入复审，[合同及证据](../contracts/2026-10-14-vector-r6-semantics.md)。原生安全证据推翻“Lance可直接进入集成”的假设：固定RustSec DB对SBOM匹配20记录/18唯一漏洞，Windows PE不完整恢复中9记录匹配；当前无直接可升级修补发行版。[精确报告](../review/2026-10-14-vector-native-security-review.md)及[61文件冻结](../testing/vector-native-security-20261015/scan-manifest.json)。这些不是全部可利用的结论，但已足够维持安全门槛BLOCKED，不直接集成0.40.0。
+
+仅重开候选安全部分：按本文既有比较优先推进SQLite+NumPy最小依赖基线的精确安全运行库验证；现有Python3.12.8/SQLite3.45.3不能直接沿用为安全生产构建。需先取得并核实受支持Python3.12构建、SQLite实际版本/编译选项及NumPy原生构建身份，再跑同一真实CRUD/过滤/余弦/分页/快照/并发恢复门槛。若继续Lance则须经审查的修补构建/新版、实际构建SBOM及适用公告处理，不以改包名/ignore/禁云跳过内存安全项。formatter依据、完整adapter及迁移门槛独立保留；此修订不授权生产切换或原数据迁移。
+
+2026-10-15当日早期接续（历史）：R6仅在新隔离副本修复宽整数record的i64→f64转换与typed异常安全日志，尚待完整差分/独立审闭环，不能替换生产。用户已明确拒绝NaN及±Infinity查询向量，执行前返回invalid_input，这是有意的兼容变化，见[R6局部合同](../contracts/2026-10-14-vector-r6-semantics.md)。原生审计已取得Lance800/pydantic-core99组件all_targets SBOM并归档[证据](../testing/vector-native-security-20261014/manifest.json)，尚不代表Windows实际链接组件或零漏洞；固定RustSec扫描继续执行，SQLite/Arrow/OpenBLAS/CPython及完整生命周期门槛保持独立。其他任务已改变现役后端输入，不再沿用旧双90证明当前全树；本轮不修改其源码。
+
 R3局部修复（2026-10-14）：[修复证据](../testing/2026-10-14-vector-numeric-r3.md)及[独立复验](../review/2026-10-14-vector-numeric-review.md)关闭原4项有限大float过滤拒绝（H1有界范围）。原76、原44、新162稳定条件零差异；9cosine消费者通过。H2原始record/query入口舍入及超I64 Python int兼容仍OPEN，原始312中的76模型偏差未回写。当前仍不允许把局部修复等同完整替换。
 
 数值语义后续修订（2026-10-14）：已形成并独立确认[版本绑定的有界转换合同](../contracts/2026-10-14-vector-numeric-semantics.md)。r3仅按该合同修复有限float比较分支；原始metadata及查询literal入口舍入、超范围Python int不对称行为另标H2 OPEN。下方r2失败为历史实证，不回写其结果；局部修复不能自动解除完整替换与原生安全门槛。

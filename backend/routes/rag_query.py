@@ -243,7 +243,7 @@ def _generate_scoped_rag(req: QueryRequest, docs: list[dict]):
                      enable_multi_query=False, enable_cross_encoder=False)
     pipeline = RetrievalPipeline(None, None, kg_graph=snapshot, config=config)
     generation = GenerationConfig(temperature=req.options.temperature,
-                                  model=os.getenv("LANGEXTRACT_MODEL_ID", "deepseek-chat"),
+                                  model=os.getenv("LANGEXTRACT_MODEL_ID", "deepseek-flash"),
                                   api_key=os.getenv("LANGEXTRACT_API_KEY", ""),
                                   base_url=os.getenv("LANGEXTRACT_BASE_URL", "https://api.deepseek.com"))
     result = RAGGenerator(pipeline, config=generation).generate(
@@ -327,7 +327,7 @@ async def rag_query(req: QueryRequest, request: Request):
             sources=None,
             metadata={
                 "document_id": req.document_id or "doc_default",
-                "model": os.getenv("LANGEXTRACT_MODEL_ID", "deepseek-chat"),
+                "model": os.getenv("LANGEXTRACT_MODEL_ID", "deepseek-flash"),
                 "mode": "kg_agent_fallback",
                 "duration_ms": int((time.time() - t0) * 1000),
                 "session_id": conv_id,
@@ -341,7 +341,7 @@ async def rag_query(req: QueryRequest, request: Request):
 
     gen_config = GenerationConfig(
         temperature=req.options.temperature,
-        model=os.getenv("LANGEXTRACT_MODEL_ID", "deepseek-chat"),
+        model=os.getenv("LANGEXTRACT_MODEL_ID", "deepseek-flash"),
         api_key=os.getenv("LANGEXTRACT_API_KEY", ""),
         base_url=os.getenv("LANGEXTRACT_BASE_URL", "https://api.deepseek.com"),
     )

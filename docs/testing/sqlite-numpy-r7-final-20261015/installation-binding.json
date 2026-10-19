@@ -1,0 +1,20 @@
+{
+  "lock_registry_dependencies": {
+    "numpy": "2.5.4"
+  },
+  "actual_installed": {
+    "numpy": "2.5.4"
+  },
+  "selected_wheel": {
+    "url": "https://files.pythonhosted.org/packages/12/33/fefe62073dc8acfd0f2b9ed7c003af2f50aa61555e113e6db02b8f79f145/numpy-2.5.4-cp312-cp312-win_amd64.whl",
+    "hash": "sha256:a7b1b6353e36a7e50de2973a38d705c88ee93adcf120673cee7f45a4a3fa223a",
+    "size": 12573091,
+    "upload-time": "2026-10-10T20:03:04.349Z"
+  },
+  "record_sha256_verified_files": 948,
+  "record_unhashed": [
+    "numpy-2.5.4.dist-info/RECORD"
+  ],
+  "wheel_bytes_retained": false,
+  "wheel_hash_scope": "uv frozen sync validates official wheel against lock; this receipt also independently verifies installed hashed RECORD files, not an independently retained wheel ZIP hash"
+}

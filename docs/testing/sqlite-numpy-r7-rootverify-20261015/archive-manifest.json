@@ -1,0 +1,18 @@
+{
+  "root-receipt.json": {
+    "sha256": "93e47d007aecd710211c53e6acfef856640781b81dab50fb1741071de055d185",
+    "size": 1721
+  },
+  "root-tests.stdout.log": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0
+  },
+  "root-tests.stderr.log": {
+    "sha256": "d7968f8b3099311d135ff58e2d65f5fda71bf6748590a326fc9112478d5ce40f",
+    "size": 1189
+  },
+  "verify_r7_final.py": {
+    "sha256": "f43a1053532a5872fe60e9099f462a6a18acb061c464d5b791d7710e3b156471",
+    "size": 2985
+  }
+}

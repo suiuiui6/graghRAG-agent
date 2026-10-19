@@ -10,6 +10,47 @@ CLI_T20_EXEMPT = {
     # 与 scripts/check_imports.py 同属「文件角色即 CLI」一类，故同样豁免 T20。
     "scripts/purge_log_secrets.py",
 }
+# These research modules are also imported as libraries. Only their command
+# entrypoint bodies may print; their helpers have no file-wide exemption.
+RESEARCH_CLI_ENTRYPOINTS = {
+    "research/common_evaluate_summary.py", "research/common_evaluation_packets.py",
+    "research/common_protection.py", "research/common_resource_audit.py",
+    "research/common_scope_audit.py", "research/common_three_arm.py",
+    "research/development_isolation.py", "research/development_profile_cli.py",
+    "research/development_run_authorized.py", "research/development_summarize.py",
+}
+
+
+def _library_print_lines(tree, registered_cli=False):
+    parents = {child: node for node in ast.walk(tree) for child in ast.iter_child_nodes(node)}
+    allowed_roots = set()
+    if registered_cli:
+        for node in tree.body:
+            if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)) and node.name == "main":
+                # Defaults, annotations and decorators execute during import.
+                allowed_roots.update(child for child in node.body if not isinstance(
+                    child, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)
+                ))
+            elif isinstance(node, ast.If) and ast.dump(node.test) == ast.dump(
+                ast.parse("__name__ == '__main__'", mode="eval").body
+            ):
+                # The else branch runs during import and is library code.
+                allowed_roots.update(child for child in node.body if not isinstance(
+                    child, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)
+                ))
+    for node in ast.walk(tree):
+        if not (isinstance(node, ast.Call) and getattr(node.func, "id", "") == "print"):
+            continue
+        parent = parents.get(node)
+        while parent is not None:
+            if parent in allowed_roots:
+                break
+            if isinstance(parent, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)):
+                parent = None
+                break
+            parent = parents.get(parent)
+        if parent is None:
+            yield node.lineno
 # 被跳过的目录。注意 .venv 下有近 2 万个 .py —— 必须**在遍历时剪枝**，
 # 而不是 rglob 出来再过滤（后者每个测试多走 2 万次 stat）。
 _SKIP_DIRS = {".venv", "output", "__pycache__", "uploads", "node_modules", ".pytest-tmp"}
@@ -22,6 +63,9 @@ def _sources():
         d = stack.pop()
         for entry in d.iterdir():
             if entry.is_dir():
+                # tests 已排除在源码范围外，须在遍历前剪枝其生成目录树。
+                if entry == BACKEND / "tests":
+                    continue
                 if entry.name in _SKIP_DIRS or entry.name.startswith("."):
                     continue
                 stack.append(entry)
@@ -33,15 +77,13 @@ def _sources():
 
 
 def test_library_modules_have_no_print():
-    """库代码 print 清零；5 个 CLI 脚本是显式豁免。"""
+    """Library stdout is forbidden; registered research CLIs allow entrypoints only."""
     offenders = []
     for path, rel in _sources():
         if rel in CLI_T20_EXEMPT:
             continue
         tree = ast.parse(path.read_text(encoding="utf-8", errors="replace"))
-        for node in ast.walk(tree):
-            if isinstance(node, ast.Call) and getattr(node.func, "id", "") == "print":
-                offenders.append(f"{rel}:{node.lineno}")
+        offenders.extend(f"{rel}:{line}" for line in _library_print_lines(tree, rel in RESEARCH_CLI_ENTRYPOINTS))
     assert not offenders, f"库代码仍有 print()：{offenders}"
 
 
@@ -50,6 +92,11 @@ def test_cli_exemptions_are_load_bearing():
     for rel in CLI_T20_EXEMPT:
         src = (BACKEND / rel).read_text(encoding="utf-8")
         assert "print(" in src, f"{rel} 已无 print，应从豁免清单移除"
+    for rel in RESEARCH_CLI_ENTRYPOINTS:
+        tree = ast.parse((BACKEND / rel).read_text(encoding="utf-8"))
+        guards = [n for n in tree.body if isinstance(n, ast.If) and ast.dump(n.test) == ast.dump(ast.parse("__name__ == '__main__'", mode="eval").body)]
+        assert guards, f"{rel} must retain an executable CLI guard"
+        assert any(isinstance(n, ast.Call) and getattr(n.func, "id", "") == "print" for n in ast.walk(tree)), rel
 
 
 def test_no_bare_except_outside_tests():

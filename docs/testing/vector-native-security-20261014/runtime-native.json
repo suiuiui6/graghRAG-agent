@@ -1,0 +1,449 @@
+{
+  "utc": "2026-10-14T14:04:27.110407+00:00",
+  "python": "3.12.8 (tags/v3.12.8:2dc476b, Dec  3 2024, 19:30:04) [MSC v.1942 64 bit (AMD64)]",
+  "base_prefix": "C:\\Users\\14156\\AppData\\Local\\Programs\\Python\\Python312",
+  "sqlite_version": "3.45.3",
+  "sqlite_threadsafety": 3,
+  "sqlite_compile_options": [
+    "ATOMIC_INTRINSICS=0",
+    "COMPILER=msvc-1942",
+    "DEFAULT_AUTOVACUUM",
+    "DEFAULT_CACHE_SIZE=-2000",
+    "DEFAULT_FILE_FORMAT=4",
+    "DEFAULT_JOURNAL_SIZE_LIMIT=-1",
+    "DEFAULT_MMAP_SIZE=0",
+    "DEFAULT_PAGE_SIZE=4096",
+    "DEFAULT_PCACHE_INITSZ=20",
+    "DEFAULT_RECURSIVE_TRIGGERS",
+    "DEFAULT_SECTOR_SIZE=4096",
+    "DEFAULT_SYNCHRONOUS=2",
+    "DEFAULT_WAL_AUTOCHECKPOINT=1000",
+    "DEFAULT_WAL_SYNCHRONOUS=2",
+    "DEFAULT_WORKER_THREADS=0",
+    "DIRECT_OVERFLOW_READ",
+    "ENABLE_FTS3",
+    "ENABLE_FTS4",
+    "ENABLE_FTS5",
+    "ENABLE_MATH_FUNCTIONS",
+    "ENABLE_RTREE",
+    "MALLOC_SOFT_LIMIT=1024",
+    "MAX_ATTACHED=10",
+    "MAX_COLUMN=2000",
+    "MAX_COMPOUND_SELECT=500",
+    "MAX_DEFAULT_PAGE_SIZE=8192",
+    "MAX_EXPR_DEPTH=1000",
+    "MAX_FUNCTION_ARG=127",
+    "MAX_LENGTH=1000000000",
+    "MAX_LIKE_PATTERN_LENGTH=50000",
+    "MAX_MMAP_SIZE=0x7fff0000",
+    "MAX_PAGE_COUNT=0xfffffffe",
+    "MAX_PAGE_SIZE=65536",
+    "MAX_SQL_LENGTH=1000000000",
+    "MAX_TRIGGER_DEPTH=1000",
+    "MAX_VARIABLE_NUMBER=32766",
+    "MAX_VDBE_OP=250000000",
+    "MAX_WORKER_THREADS=8",
+    "MUTEX_W32",
+    "OMIT_AUTOINIT",
+    "SYSTEM_MALLOC",
+    "TEMP_STORE=1",
+    "THREADSAFE=1"
+  ],
+  "sqlite_source_id": "2024-04-15 13:34:05 8653b758870e6ef0c98d46b3ace27849054af85da891eb121e9aaa537f1e8355",
+  "defensive_constant": 1010,
+  "defensive_initial": false,
+  "defensive_enabled": true,
+  "trusted_schema_initial": 1,
+  "packages": {
+    "lancedb": {
+      "version": "0.40.0",
+      "wheel": "Wheel-Version: 1.0\nGenerator: maturin (1.12.4)\nRoot-Is-Purelib: false\nTag: cp310-abi3-win_amd64\n",
+      "native": [
+        {
+          "path": "lancedb/_lancedb.pyd",
+          "sha256": "c0472c885b0df1a0f10b91aa52d33b792b1e684d28b37581f995ea3e68533756",
+          "size": 235759104
+        }
+      ],
+      "sbom_candidates": [
+        "lancedb-0.40.0.dist-info/sboms/lancedb-python.cyclonedx.json"
+      ]
+    },
+    "pyarrow": {
+      "version": "26.0.0",
+      "wheel": "Wheel-Version: 1.0\nGenerator: scikit-build-core 1.1.0\nRoot-Is-Purelib: false\nTag: cp312-cp312-win_amd64\n\n",
+      "native": [
+        {
+          "path": "pyarrow.libs/msvcp140-0fa7eb792d3fbcf2233e4ea47e9144b9.dll",
+          "sha256": "0fa7eb792d3fbcf2233e4ea47e9144b9b1309ba8ed5d4731a72fffa8f4f556d6",
+          "size": 557416
+        },
+        {
+          "path": "pyarrow.libs/msvcp140_atomic_wait-aa4e4b3f35a38f595be5cf8631717b66.dll",
+          "sha256": "d8ecedcc568cdbf98221c8128a735b348a7ce052a1c69c75b3ef288418af4830",
+          "size": 29696
+        },
+        {
+          "path": "pyarrow/_acero.cp312-win_amd64.pyd",
+          "sha256": "ca4da013a7bf42e10b75188002ae7e937509366066d1e73563fb86f192584a71",
+          "size": 194048
+        },
+        {
+          "path": "pyarrow/_azurefs.cp312-win_amd64.pyd",
+          "sha256": "6195ade51ecf0ec78854a5bd395a7a5904a4e0d109e2a4ec48fbdc3ea3224cfd",
+          "size": 91648
+        },
+        {
+          "path": "pyarrow/_compute.cp312-win_amd64.pyd",
+          "sha256": "ef2c4f45ea0e279e7039219fe1e1d4036cb103bb872c2208557cee68e42ef515",
+          "size": 785408
+        },
+        {
+          "path": "pyarrow/_csv.cp312-win_amd64.pyd",
+          "sha256": "d97ab6bb1aef32f36c2426ef2288f136bb3940ce2fc8aefbb22ffbc186a20e25",
+          "size": 280064
+        },
+        {
+          "path": "pyarrow/_dataset.cp312-win_amd64.pyd",
+          "sha256": "1c2810398b09f4479174c4c4617f514b56fc9df1344342694fecfd1c10eff0a0",
+          "size": 704512
+        },
+        {
+          "path": "pyarrow/_dataset_orc.cp312-win_amd64.pyd",
+          "sha256": "8035f44120208aaa897f3733410e6eecba4454268accb9d777dcdf642ff7b1a3",
+          "size": 70144
+        },
+        {
+          "path": "pyarrow/_dataset_parquet.cp312-win_amd64.pyd",
+          "sha256": "edf73a36a7d01a170ae9042632afa4a7ebbcbdeb9418d06494e4f0798a0c1fbc",
+          "size": 259072
+        },
+        {
+          "path": "pyarrow/_dataset_parquet_encryption.cp312-win_amd64.pyd",
+          "sha256": "341026f11a7dea2aef1e1ec7dfe87c6f1a9f87d6aa76243d9a59bf397b3f02b6",
+          "size": 93184
+        },
+        {
+          "path": "pyarrow/_feather.cp312-win_amd64.pyd",
+          "sha256": "da3cb66b3c4bff484a69cde702f360ec7576b9bc328655046e7cdbd0ea7cda1a",
+          "size": 80896
+        },
+        {
+          "path": "pyarrow/_flight.cp312-win_amd64.pyd",
+          "sha256": "774f034ef96160024276545b8a50900cd5bcf007b78bdeaf3e6de101a4b9cec3",
+          "size": 801280
+        },
+        {
+          "path": "pyarrow/_fs.cp312-win_amd64.pyd",
+          "sha256": "d510141a58a3355b118aac75220556ceeffe5ead277aa232275d7d341b7a958c",
+          "size": 311296
+        },
+        {
+          "path": "pyarrow/_gcsfs.cp312-win_amd64.pyd",
+          "sha256": "2ec07633c6bab7a4d7d3d0143a6a479a7c3f1fb4556bb9f2064069b84a689440",
+          "size": 94720
+        },
+        {
+          "path": "pyarrow/_hdfs.cp312-win_amd64.pyd",
+          "sha256": "1bde784f1f33c903d05666ae8abd969dc85243d2129fce0be7695428aafc1e39",
+          "size": 99840
+        },
+        {
+          "path": "pyarrow/_json.cp312-win_amd64.pyd",
+          "sha256": "02329af5a6884e5f3d044904c845c9c21e2af234fbcecefe3bb4132dc317ab03",
+          "size": 103936
+        },
+        {
+          "path": "pyarrow/_orc.cp312-win_amd64.pyd",
+          "sha256": "923ca68e78dd7b44ef058c5488fe06ea9779fdf3a450dc3b4f49307b7b155613",
+          "size": 140288
+        },
+        {
+          "path": "pyarrow/_parquet.cp312-win_amd64.pyd",
+          "sha256": "cb7fea77b28886e0c3ade4fb9a13bc3279e32304cd683a682bca5d53cbe35a04",
+          "size": 413696
+        },
+        {
+          "path": "pyarrow/_parquet_encryption.cp312-win_amd64.pyd",
+          "sha256": "828ff7828419ba440d4031284500d5505f7e7841f408ce90cc30f76a5b3bf2cc",
+          "size": 248320
+        },
+        {
+          "path": "pyarrow/_pyarrow_cpp_tests.cp312-win_amd64.pyd",
+          "sha256": "1221fdd163cb027465631a967709f8786ab49383d169f29edaf00031c74983e3",
+          "size": 75776
+        },
+        {
+          "path": "pyarrow/_s3fs.cp312-win_amd64.pyd",
+          "sha256": "adc4e7338cf35461af63f897d76ef80a38e86f883f2800e6eafd88d005535f5f",
+          "size": 143360
+        },
+        {
+          "path": "pyarrow/_substrait.cp312-win_amd64.pyd",
+          "sha256": "f1674792c13bb826254c1693a1e80292c89339fbabdb1ae1d3414ec479c7ecd6",
+          "size": 142336
+        },
+        {
+          "path": "pyarrow/arrow.dll",
+          "sha256": "047bbf332a1a5c5f2ffa5fa6d8c9ee724de024ba6b317a50d0e01a3199093e90",
+          "size": 18696704
+        },
+        {
+          "path": "pyarrow/arrow_acero.dll",
+          "sha256": "1f525e128e84bdfb28276614983401c35c640fde6fea5e11f737efc0975b0e8e",
+          "size": 1256448
+        },
+        {
+          "path": "pyarrow/arrow_compute.dll",
+          "sha256": "168d822798947398e4d7bd941cc63afe0514a468903a57bb6da2a2d5246725bb",
+          "size": 10118656
+        },
+        {
+          "path": "pyarrow/arrow_dataset.dll",
+          "sha256": "76b9437bf3a2fc925f4fa7747180434521b115190c8ae0b705ae4ead265c30af",
+          "size": 1332736
+        },
+        {
+          "path": "pyarrow/arrow_flight.dll",
+          "sha256": "5ca9e835c67c57d1be919be041794d31c3abf2dccc4763fc3e6c95bba13a7be1",
+          "size": 14660096
+        },
+        {
+          "path": "pyarrow/arrow_python.dll",
+          "sha256": "cc51477cfb1f20978c5385ce13e98e60e24d96f2cc5ecfff82dda072ef35b5a7",
+          "size": 1212928
+        },
+        {
+          "path": "pyarrow/arrow_python_flight.dll",
+          "sha256": "9379834740fe221d239ddede238735ee2edc05ce503b42e354860106afe17303",
+          "size": 65024
+        },
+        {
+          "path": "pyarrow/arrow_python_parquet_encryption.dll",
+          "sha256": "3c1c1b695fae48e092ca09228f659707f20c59754e25e0be7ac8a8b751990934",
+          "size": 32256
+        },
+        {
+          "path": "pyarrow/arrow_s3.dll",
+          "sha256": "414b8c4f4eaa7519e49f8c3215f478aa0d24551df8042a75995db05b57162d46",
+          "size": 3927552
+        },
+        {
+          "path": "pyarrow/arrow_substrait.dll",
+          "sha256": "9e1cc116ff5252b15662ce833262a98f4835ec2414f6f7242436997a57a10271",
+          "size": 2772480
+        },
+        {
+          "path": "pyarrow/lib.cp312-win_amd64.pyd",
+          "sha256": "81c1078d3510a4393b5198a4541d33b907419bb38f7771055ed2d3b3757ca148",
+          "size": 3792384
+        },
+        {
+          "path": "pyarrow/parquet.dll",
+          "sha256": "5e6c44ece80d6e5cb2abe66e4c5fb8f9999b5869f94348ec16939de526787e0f",
+          "size": 7079424
+        }
+      ],
+      "sbom_candidates": []
+    },
+    "numpy": {
+      "version": "2.5.4",
+      "wheel": "Wheel-Version: 1.0\nGenerator: meson\nRoot-Is-Purelib: false\nTag: cp312-cp312-win_amd64",
+      "native": [
+        {
+          "path": "numpy.libs/libscipy_openblas64_-ed4f167a5330424524f45258e7ca2c8d.dll",
+          "sha256": "ed4f167a5330424524f45258e7ca2c8d7f03c0cba1f30ee4985553ac1f88ecf8",
+          "size": 20589056
+        },
+        {
+          "path": "numpy.libs/msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll",
+          "sha256": "a4c2229bdc2a2a630acdc095b4d86008e5c3e3bc7773174354f3da4f5beb9cde",
+          "size": 575056
+        },
+        {
+          "path": "numpy/_core/_multiarray_tests.cp312-win_amd64.pyd",
+          "sha256": "f09f60242eaed510e1af6384284f53ff56ae42770a62e630bd415bc2b6854d66",
+          "size": 65536
+        },
+        {
+          "path": "numpy/_core/_multiarray_umath.cp312-win_amd64.pyd",
+          "sha256": "9c10617e66e992b5ac6d9f78fe7cedd0011618e1c2f89d09a185bb63073e2c90",
+          "size": 3855872
+        },
+        {
+          "path": "numpy/_core/_operand_flag_tests.cp312-win_amd64.pyd",
+          "sha256": "1a392918237439dcb48a6562ae7d44d4e12b5c9d4d7333ffb377ba795c94bb47",
+          "size": 12288
+        },
+        {
+          "path": "numpy/_core/_rational_tests.cp312-win_amd64.pyd",
+          "sha256": "78d4ee6d7f8a0c2ff10d4e093e10f4bf5d27ebbdb434b8c1a4a837d7c6b47081",
+          "size": 43520
+        },
+        {
+          "path": "numpy/_core/_simd.cp312-win_amd64.pyd",
+          "sha256": "cf6064fb2c44cc27983359b0c7e19e53e16e585357fc33783a6a93ea50e35022",
+          "size": 831488
+        },
+        {
+          "path": "numpy/_core/_struct_ufunc_tests.cp312-win_amd64.pyd",
+          "sha256": "d82ae25c7b7e370b47bf71f768452528b22aac055074786a7a81465028a26a1d",
+          "size": 14336
+        },
+        {
+          "path": "numpy/_core/_umath_tests.cp312-win_amd64.pyd",
+          "sha256": "0c955075230dde0907ee573e470cedc97f771fb10fda2c528d1b9cafadbb06f5",
+          "size": 34304
+        },
+        {
+          "path": "numpy/fft/_pocketfft_umath.cp312-win_amd64.pyd",
+          "sha256": "4f008612d6b9e2ab3820ee17a1c758c499e45e80a36764c9dfb7bf304b066f03",
+          "size": 276480
+        },
+        {
+          "path": "numpy/linalg/_umath_linalg.cp312-win_amd64.pyd",
+          "sha256": "03bc9de2d6d8e2d9ea3ec781f3c16bcbc9960095cc02ca588f4229cd1560c661",
+          "size": 112640
+        },
+        {
+          "path": "numpy/linalg/lapack_lite.cp312-win_amd64.pyd",
+          "sha256": "7558dc0d0a5ef5f584d40f0caf3914c1e6ed8f09632000d1be1b8e240c9a1d67",
+          "size": 18944
+        },
+        {
+          "path": "numpy/random/_bounded_integers.cp312-win_amd64.pyd",
+          "sha256": "927c1673ba698a85e6253b4d8d2223eb019b021792c54604489767c694d2ab93",
+          "size": 208896
+        },
+        {
+          "path": "numpy/random/_common.cp312-win_amd64.pyd",
+          "sha256": "712a7bb4b2d3e56548cdf255eb4e6c1ca0737d7d81d76f09bdccebb0703ae572",
+          "size": 174080
+        },
+        {
+          "path": "numpy/random/_generator.cp312-win_amd64.pyd",
+          "sha256": "0fa509dcf5ae21910cb2b3c74271977d0fac7fab15ffd5f32017e08b97e71de6",
+          "size": 624640
+        },
+        {
+          "path": "numpy/random/_mt19937.cp312-win_amd64.pyd",
+          "sha256": "e6938df4dd3a193b7d9171d3e192702be3a70de2ebe866cf6fcd92f9e368349d",
+          "size": 92672
+        },
+        {
+          "path": "numpy/random/_pcg64.cp312-win_amd64.pyd",
+          "sha256": "8eb5569b221d40884093def83d897376bddd99c9279f182b9db3145b9b897d34",
+          "size": 105984
+        },
+        {
+          "path": "numpy/random/_philox.cp312-win_amd64.pyd",
+          "sha256": "cc0c03e2c1443e8981300ddb9cc5ceb504e7f8494323d4ec0a1ad95ae16fbf75",
+          "size": 89088
+        },
+        {
+          "path": "numpy/random/_sfc64.cp312-win_amd64.pyd",
+          "sha256": "20c551734cd2b2be2425c8773b795f1e92de8826ebbe6c1103cd0fa6b5c94408",
+          "size": 64000
+        },
+        {
+          "path": "numpy/random/bit_generator.cp312-win_amd64.pyd",
+          "sha256": "c7f637df1fa0db9fe4bba6c05dac680d89aed245401423f1ffd16d93366a35a7",
+          "size": 173056
+        },
+        {
+          "path": "numpy/random/mtrand.cp312-win_amd64.pyd",
+          "sha256": "e8bdaf22830ceaabc596854a816d39d96d1d60e96c2e12a9a17950b624d480a1",
+          "size": 522752
+        }
+      ],
+      "sbom_candidates": []
+    },
+    "pydantic-core": {
+      "version": "2.50.1",
+      "wheel": "Wheel-Version: 1.0\nGenerator: maturin (1.15.0)\nRoot-Is-Purelib: false\nTag: cp312-cp312-win_amd64\n",
+      "native": [
+        {
+          "path": "pydantic_core/_pydantic_core.cp312-win_amd64.pyd",
+          "sha256": "d38e098d798d381cc44f867162bc6da2ebc5d77bf444f0dd00d42a1bc8484297",
+          "size": 5541888
+        }
+      ],
+      "sbom_candidates": [
+        "pydantic_core-2.50.1.dist-info/sboms/pydantic-core.cyclonedx.json"
+      ]
+    }
+  },
+  "arrow_cpp_build_info": "CppBuildInfo(version='26.0.0', version_info=VersionInfo(major=26, minor=0, patch=0), so_version='2600', full_so_version='2600.0.0', compiler_id='MSVC', compiler_version='19.44.35229.0', compiler_flags=' /DWIN32 /D_WINDOWS /EHsc /D_SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING  /EHsc /Zc:preprocessor /bigobj /utf-8 /W3 /wd4800 /wd4996 /wd4065 /arch:SSE4.2 /MP', git_id='446167169a0dc547e00e1bc29f417a40c0ca267a', git_description='apache-arrow-26.0.0-rc0', package_kind='python-wheel-windows', build_type='release')",
+  "arrow_runtime_info": "RuntimeInfo(simd_level='avx2', detected_simd_level='avx2')",
+  "lancedb_version": "0.40.0",
+  "numpy_config": {
+    "Compilers": {
+      "c": {
+        "name": "msvc",
+        "linker": "link",
+        "version": "19.44.35229",
+        "commands": "cl"
+      },
+      "cython": {
+        "name": "cython",
+        "linker": "cython",
+        "version": "3.3.0",
+        "commands": "cython"
+      },
+      "c++": {
+        "name": "msvc",
+        "linker": "link",
+        "version": "19.44.35229",
+        "commands": "cl"
+      }
+    },
+    "Machine Information": {
+      "host": {
+        "cpu": "x86_64",
+        "family": "x86_64",
+        "endian": "little",
+        "system": "windows"
+      },
+      "build": {
+        "cpu": "x86_64",
+        "family": "x86_64",
+        "endian": "little",
+        "system": "windows"
+      }
+    },
+    "Build Dependencies": {
+      "blas": {
+        "name": "scipy-openblas",
+        "found": true,
+        "version": "0.3.34.106.0",
+        "detection method": "pkgconfig",
+        "include directory": "C:/Users/runneradmin/AppData/Local/Temp/cibw-run-j3umgqti/cp312-win_amd64/build/venv/Lib/site-packages/scipy_openblas64/include",
+        "lib directory": "C:/Users/runneradmin/AppData/Local/Temp/cibw-run-j3umgqti/cp312-win_amd64/build/venv/Lib/site-packages/scipy_openblas64/lib",
+        "openblas configuration": "OpenBLAS 0.3.34.106.0  USE64BITINT DYNAMIC_ARCH NO_AFFINITY Haswell MAX_THREADS=24",
+        "pc file directory": "D:/a/numpy-release/numpy-release/.openblas"
+      },
+      "lapack": {
+        "name": "scipy-openblas",
+        "found": true,
+        "version": "0.3.34.106.0",
+        "detection method": "pkgconfig",
+        "include directory": "C:/Users/runneradmin/AppData/Local/Temp/cibw-run-j3umgqti/cp312-win_amd64/build/venv/Lib/site-packages/scipy_openblas64/include",
+        "lib directory": "C:/Users/runneradmin/AppData/Local/Temp/cibw-run-j3umgqti/cp312-win_amd64/build/venv/Lib/site-packages/scipy_openblas64/lib",
+        "openblas configuration": "OpenBLAS 0.3.34.106.0  USE64BITINT DYNAMIC_ARCH NO_AFFINITY Haswell MAX_THREADS=24",
+        "pc file directory": "D:/a/numpy-release/numpy-release/.openblas"
+      }
+    },
+    "Python Information": {
+      "path": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\build-env-1rr8oud1\\Scripts\\python.exe",
+      "version": "3.12"
+    },
+    "SIMD Extensions": {
+      "baseline": [
+        "X86_V2"
+      ],
+      "found": [
+        "X86_V3"
+      ]
+    }
+  }
+}

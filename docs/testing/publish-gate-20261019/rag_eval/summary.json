@@ -1,0 +1,34 @@
+{
+  "rag": {
+    "covered_lines": 1722,
+    "num_statements": 1742,
+    "percent_covered": 97.93767186067828,
+    "percent_covered_display": "98",
+    "missing_lines": 20,
+    "excluded_lines": 0,
+    "percent_statements_covered": 98.85189437428244,
+    "percent_statements_covered_display": "99",
+    "num_branches": 440,
+    "num_partial_branches": 23,
+    "covered_branches": 415,
+    "missing_branches": 25,
+    "percent_branches_covered": 94.31818181818181,
+    "percent_branches_covered_display": "94"
+  },
+  "rag_expected": [
+    "backend_validation.py",
+    "build_ground_truth.py",
+    "conversation_rewrite_metrics.py",
+    "conversation_validation.py",
+    "metrics_a1_retrieval.py",
+    "metrics_a2_faithfulness.py",
+    "metrics_a3_robustness.py",
+    "metrics_a4_multihop.py",
+    "metrics_a5_performance.py",
+    "release_gate.py",
+    "run_inference.py",
+    "run_inference_helpers.py"
+  ],
+  "rag_scope_equal": true,
+  "input_drift": false
+}

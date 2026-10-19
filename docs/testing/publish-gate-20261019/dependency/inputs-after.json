@@ -1,0 +1,8 @@
+{
+  "backend/uv.lock": "38ff460089d45739d2e2eb4fc91a04e93a7cba6085fd0e3628ecf3c5b7f00e4b",
+  "backend/pyproject.toml": "6fecddc05c40c318a8e18e978bb17720394433922ca1a9833d70e443ef36c2a0",
+  "frontend/pnpm-lock.yaml": "46df2f2b62b8e23fa7afa02300a3178650e9c3df6eea7132639f77221d4640e7",
+  "frontend/package.json": "a5dfba90bdeec1d88ac775c53c41be1188fd739dac95eca49b4b8690d05b1c56",
+  "iteration-2/eval-2-existing-components/rag_eval/uv.lock": "f001718c239e83a84b2ba16f8adbe71a08c34404b3f1749ac6bfb904a44b7cf7",
+  "iteration-2/eval-2-existing-components/rag_eval/pyproject.toml": "2c58db3a8ecc1b88913c45c25b2427710075aea5efbd19dff8b50a39516c971f"
+}

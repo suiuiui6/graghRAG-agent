@@ -23,6 +23,7 @@ import os
 import sys
 import time
 from datetime import datetime
+from config import non_thinking_provider_options
 
 from dotenv import load_dotenv
 
@@ -253,11 +254,12 @@ def run_langextract(
     print(f"  Few-shot examples loaded: {len(examples)}")
 
     config = ModelConfig(
-        model_id=os.getenv("LANGEXTRACT_MODEL_ID", "deepseek-chat"),
+        model_id=os.getenv("LANGEXTRACT_MODEL_ID", "deepseek-flash"),
         provider="openai",
         provider_kwargs={
             "api_key": os.getenv("LANGEXTRACT_API_KEY"),
             "base_url": os.getenv("LANGEXTRACT_BASE_URL", "https://api.deepseek.com"),
+            **non_thinking_provider_options(os.getenv("LANGEXTRACT_MODEL_ID", "deepseek-flash")),
         },
     )
 
@@ -320,7 +322,7 @@ def run_grounding_and_kg(
 
     metadata = {
         "pipeline": "MinerU → LangExtract",
-        "model": os.getenv("LANGEXTRACT_MODEL_ID", "deepseek-chat"),
+        "model": os.getenv("LANGEXTRACT_MODEL_ID", "deepseek-flash"),
         "timestamp": datetime.now().isoformat(),
     }
 

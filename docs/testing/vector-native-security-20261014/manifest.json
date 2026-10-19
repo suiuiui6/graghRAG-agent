@@ -1,0 +1,29 @@
+{
+  "utc": "2026-10-14T14:08:06.140331+00:00",
+  "files": {
+    "lancedb-sbom.json": "96f7bac683f2f951dd46f05e5081da8f66deae65d3cb7bee8ff4fc264c9190e2",
+    "probe.py": "50ff040528d62f86fe0e309947bf2a98c13781a35995bb7e08190abb294989b6",
+    "pydantic-core-sbom.json": "5367c561194d03751d49d0253ea152d1b9c54e5a239a333baa4f955704ae9bc4",
+    "runtime-native.json": "cdbd9e23aee365c55e924baadf3885f9df4069ce4dd97fa474fa69a35cec2cf8",
+    "sbom-summary.json": "3de0cae8b77d70855c7495dd78f409cb9d682f5b1be04488abcf94412fd8b1b9",
+    "sbom.py": "ebcb9a6321c335d0a363396a9144f50931908380c2ce1abe23b71bc5a1c3895a"
+  },
+  "runtime_environment_lock_sha256": "28d9b74c05eca7f5d5f8378a8415594e00b2e0adc2757ac6239c996ece03525b",
+  "frozen_receipt_lock_sha256": "28d9b74c05eca7f5d5f8378a8415594e00b2e0adc2757ac6239c996ece03525b",
+  "commands": [
+    {
+      "command": ".tmp/vector-errors-testenv-20261014/.venv/Scripts/python.exe .tmp/vector-native-audit-20261014/probe.py",
+      "exit": 0
+    },
+    {
+      "command": ".tmp/vector-errors-testenv-20261014/.venv/Scripts/python.exe .tmp/vector-native-audit-20261014/sbom.py",
+      "exit": 0
+    }
+  ],
+  "not_run": [
+    "complete RustSec database audit",
+    "native C++/OpenBLAS audit",
+    "CPython full security patch reachability",
+    "production integration or migration"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "baseline_directory_immutable": false,
+  "known_overwritten_baseline_paths": [
+    "source/store.py",
+    "source/test_store.py",
+    "manifest.json"
+  ],
+  "baseline_original_manifest_bytes_retained": false,
+  "baseline_historical_command_logs_unchanged": true,
+  "baseline_status": "historical diagnostic only; original manifest cannot be claimed unchanged",
+  "cause": "freeze-budget completed before new instruction to use separate final directory arrived",
+  "recovery": "copy current corrected source and all actual command evidence to new final directory; do not modify existing baseline further",
+  "rejected_recovery": "Automatic approval review rejected script to reconstruct baseline because it would modify/delete baseline evidence; script did not execute; no bypass attempted",
+  "final_test": "green-budget-final.json: exit0, 9 tests, source_drift=false"
+}

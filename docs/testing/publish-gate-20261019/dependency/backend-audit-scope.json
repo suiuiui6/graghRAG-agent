@@ -1,0 +1,5 @@
+{
+  "registry_pins": 206,
+  "lock_sha256": "38ff460089d45739d2e2eb4fc91a04e93a7cba6085fd0e3628ecf3c5b7f00e4b",
+  "scope": "all exact registry name/version pairs across lock platforms; excludes first-party editable package"
+}

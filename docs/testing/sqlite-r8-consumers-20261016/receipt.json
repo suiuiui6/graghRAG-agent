@@ -1,0 +1,39 @@
+{
+  "scope": "Phase1 consumer-only; real SQLite fixture, not candidate adapter; no provider/production data",
+  "timestamp": "2026-10-16T11:23:20.329676+00:00",
+  "python": "3.12.8 (tags/v3.12.8:2dc476b, Dec  3 2024, 19:30:04) [MSC v.1942 64 bit (AMD64)]",
+  "executable": "D:\\graghRAG-agent\\.tmp\\backend-quality-venv-20261012\\Scripts\\python.exe",
+  "versions": {
+    "rank-bm25": "0.2.2",
+    "numpy": "2.5.3",
+    "duckdb": "1.5.5",
+    "pytest": "9.1.1"
+  },
+  "commands": [
+    {
+      "command": "D:/graghRAG-agent/.tmp/backend-quality-venv-20261012/Scripts/python.exe -B -X utf8 -m pytest .tmp/sqlite-r8-consumers-20261016/backend/tests/test_r8_paged_consumers.py -q -p no:cacheprovider",
+      "exit": 0,
+      "result": "20 passed in 4.62s",
+      "log": "green.log"
+    },
+    {
+      "command": "same command before implementation (8 tests)",
+      "exit": 1,
+      "result": "7 failed, 1 passed",
+      "log": "red.log"
+    },
+    {
+      "command": "same command -k missing_rank before boundary fix",
+      "exit": 1,
+      "result": "1 failed, 19 deselected",
+      "log": "soft-rank-red.log"
+    }
+  ],
+  "limitations": [
+    "quality existing environment, not R7 runtime",
+    "no full backend suite or dual coverage",
+    "legacy Chroma fallback single full get, no stable paging snapshot",
+    "BM25 final model/chunks O(N), table fallback O(N)",
+    "candidate adapter integration pending"
+  ]
+}

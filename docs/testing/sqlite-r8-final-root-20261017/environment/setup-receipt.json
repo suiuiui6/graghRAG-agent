@@ -1,0 +1,31 @@
+[
+  {
+    "command": [
+      "D:/Python/Scripts/uv.exe",
+      "venv",
+      ".venv",
+      "--python",
+      "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\python.exe",
+      "--no-python-downloads"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "D:/Python/Scripts/uv.exe",
+      "lock",
+      "--index-url",
+      "https://pypi.org/simple"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "D:/Python/Scripts/uv.exe",
+      "sync",
+      "--frozen",
+      "--no-python-downloads"
+    ],
+    "exit_code": 0
+  }
+]

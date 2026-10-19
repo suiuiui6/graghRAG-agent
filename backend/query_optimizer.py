@@ -12,6 +12,7 @@ from __future__ import annotations
 import os
 import re
 from dataclasses import dataclass, field
+from config import non_thinking_options
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -263,7 +264,8 @@ def _llm_resolve_pronouns(
         resp = requests.post(
             f"{base_url.rstrip('/')}/chat/completions",
             json={
-                "model": "deepseek-chat",
+                "model": os.getenv("LANGEXTRACT_MODEL_ID", "deepseek-flash"),
+                **non_thinking_options(os.getenv("LANGEXTRACT_MODEL_ID", "deepseek-flash")),
                 "messages": [{"role": "user", "content": prompt}],
                 "temperature": 0.0,
                 "max_tokens": 150,

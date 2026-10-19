@@ -1,0 +1,218 @@
+{
+  "inputs_before": {
+    ".tmp\\vector-r6-20261014\\boundary_probe.py": "a0360744f109ce9539213f79cc08b39cd12098a8299610d985a605c895474a2f",
+    ".tmp\\vector-r6-20261014\\chroma_errors.py": "83e673e9f6b62ec34f5eb04719029b60dba26858679c7c045f0ff642f6c32d55",
+    ".tmp\\vector-r6-20261014\\execute_r4b.py": "34a0864c8e6a372210837ff75db04677af7b93a68d4758cdf6630f58723ee87d",
+    ".tmp\\vector-r6-20261014\\extend_tests.py": "56b39e41bfa0e3e0a90b3db32f2058cc3a4b24785c85ad23a44e24a02bc0c7b8",
+    ".tmp\\vector-r6-20261014\\fix_facade.py": "db77c08dadaa277a4258aed4c9eac3d9b4b32bccfec8b655d8bfe2af599ef0b7",
+    ".tmp\\vector-r6-20261014\\freeze_r4b.py": "5d6c4216e834632dadda0973d08ac94b1ad54bbfdc3de1a89beb1758532e4e16",
+    ".tmp\\vector-r6-20261014\\freeze_r5.py": "2c2cb961a32864b8bd61aee4729222d640f1f839e0effc84112d154590f1b260",
+    ".tmp\\vector-r6-20261014\\fresh_matrix.py": "246ab3b8e1fbc51edbcb69599840b1d6728f5163e71bb54cf045d2ca1593a846",
+    ".tmp\\vector-r6-20261014\\fresh_wide_record.py": "25c07688067f44a8aeb4d0beda46b9bda781ec899d8237fb511e97e845524d23",
+    ".tmp\\vector-r6-20261014\\generic_filter.py": "31f21998e01bb06c548727275168634d8ae39f04b17d962c7576b6c7a4fbb51a",
+    ".tmp\\vector-r6-20261014\\implement_r5.py": "54e19af159986b713689b52a3ef59eb7d3f43f999af4e2d6462cf2669fad4948",
+    ".tmp\\vector-r6-20261014\\ingress_matrix.py": "11b722b98b872ef9819e048b0bb9609199f41d1d29ebfa0fff5065434bdb127e",
+    ".tmp\\vector-r6-20261014\\lance_truth.py": "e4089b75ca9889e0dea8150fe8ae3b4450846016e6bb490000276a7e5dbb41ef",
+    ".tmp\\vector-r6-20261014\\logging_baseline_red.py": "ae91b864112dec1d866a74652a16fbf968a7427126c4a10e42274630d8798282",
+    ".tmp\\vector-r6-20261014\\numeric_matrix-r3-historical.py": "cd8e3652b25e824793b0c0bf5b09c7850f4bef9790b54673eb301db38a5095d5",
+    ".tmp\\vector-r6-20261014\\numeric_matrix.py": "d935dd19403f7cb252b3d561a05c5279bfea02767dd6b80132f323b8ed1cbec4",
+    ".tmp\\vector-r6-20261014\\parser_port.py": "18a85b55345caa9ce4ac7ea2e344cedc9561cdda8c1c0eb6824499b3a629753d",
+    ".tmp\\vector-r6-20261014\\prepare.py": "fc04f1b0fb0ffa93dcfe686e338be0698484f9bf83d6179232457067e8143686",
+    ".tmp\\vector-r6-20261014\\probe_store.py": "5cef32dcc4e5c595c71ddbc686158dc52899a9333b6af5a1e5f329cf793df51b",
+    ".tmp\\vector-r6-20261014\\record_environment.py": "b7beeb306de340ef1f6910b7ebfa80cdd2f94969f092c230072f0064ba29e976",
+    ".tmp\\vector-r6-20261014\\red_contract.py": "0b62aab9fc5e182ea1488e0677acad00703c91babc6c29dcef980b6f21c81a37",
+    ".tmp\\vector-r6-20261014\\run_checks.py": "b69e1bfaef245d80ca549e16b29c392d2b4f6bbc249352009fcea71182095b60",
+    ".tmp\\vector-r6-20261014\\run_r6_regressions.py": "52d2abcffccac83dc2f812293a327c469daa0f6e1437bcb754c74fc20db9873e",
+    ".tmp\\vector-r6-20261014\\safe_vector_logging.py": "c3a1bc1d47def17e3b69935ab2a2b4e9f8e51d712a099b8a1593615991eaecb4",
+    ".tmp\\vector-r6-20261014\\test_errors.py": "935b3180e005e0853716c7e4181c93d354941cdd913cff650d017bed58fa6289",
+    ".tmp\\vector-r6-20261014\\test_facade.py": "e47c1220d455d623517e55eb604bd4e91dfa4d7270c815de44ab5f2517f1f037",
+    ".tmp\\vector-r6-20261014\\test_r6.py": "b6d9f7823c600a6ba06dd08175b40bc73b99421a26129bf7fece72d292db9451",
+    ".tmp\\vector-r6-20261014\\update_facade_report.py": "f63692eaeae33dc4e5e0f196bcd7a7cc77166b0817507aecc3a6d994191a4594",
+    ".tmp\\vector-r6-20261014\\vector_errors.py": "b9a23b941eb84a7b50c866716e0c9dbcff3b1248be7c9daf2f9f594dc7ed4661",
+    ".tmp\\vector-r6-20261014\\verify_baseline.py": "aab7ac0d444be11f8f87bd806389f2693e04a7b0cde2b3672dac27f2d199da69",
+    ".tmp\\vector-r6-20261014\\wide_integer.py": "fac36833a9d062810272878748c912111f3f7f619e65e79c904e33a6bd147b0f",
+    ".tmp\\vector-r6-20261014\\wide_matrix.py": "8bb009d2ea836d7e2ecc558dbace16b80e83380139cfb406778aca22fc37dcbd",
+    ".tmp\\vector-r6-20261014\\current-consumer\\evidence_trace.py": "07cc6a3cce87c788a9639510a6540639f6b6d57e93f639b10a2593254b18bf65",
+    ".tmp\\vector-r6-20261014\\current-consumer\\logging_config.py": "0e25712534474a5f5d1d1ba0f1d15c8e36969f4c54a929d6158ce9bdaef0eb6b",
+    ".tmp\\vector-r6-20261014\\current-consumer\\retrieval.py": "25b5d116659a1aed95a8bd54767ee3287f2587cfc4ccc1c5afaf154699bef6e6",
+    ".tmp\\vector-r6-20261014\\current-consumer\\source_control.py": "b92d65ad4604207c0bdc65670197a3c63c37c668abacb8d6b38451d025001c25",
+    ".tmp\\vector-errors-testenv-20261014\\uv.lock": "28d9b74c05eca7f5d5f8378a8415594e00b2e0adc2757ac6239c996ece03525b",
+    "backend\\uv.lock": "0b9618aede31fd0553ff10b845a2feb5a388d1e153c8e38549d769a3074dacf6"
+  },
+  "inputs_after": {
+    ".tmp\\vector-r6-20261014\\boundary_probe.py": "a0360744f109ce9539213f79cc08b39cd12098a8299610d985a605c895474a2f",
+    ".tmp\\vector-r6-20261014\\chroma_errors.py": "83e673e9f6b62ec34f5eb04719029b60dba26858679c7c045f0ff642f6c32d55",
+    ".tmp\\vector-r6-20261014\\execute_r4b.py": "34a0864c8e6a372210837ff75db04677af7b93a68d4758cdf6630f58723ee87d",
+    ".tmp\\vector-r6-20261014\\extend_tests.py": "56b39e41bfa0e3e0a90b3db32f2058cc3a4b24785c85ad23a44e24a02bc0c7b8",
+    ".tmp\\vector-r6-20261014\\fix_facade.py": "db77c08dadaa277a4258aed4c9eac3d9b4b32bccfec8b655d8bfe2af599ef0b7",
+    ".tmp\\vector-r6-20261014\\freeze_r4b.py": "5d6c4216e834632dadda0973d08ac94b1ad54bbfdc3de1a89beb1758532e4e16",
+    ".tmp\\vector-r6-20261014\\freeze_r5.py": "2c2cb961a32864b8bd61aee4729222d640f1f839e0effc84112d154590f1b260",
+    ".tmp\\vector-r6-20261014\\fresh_matrix.py": "246ab3b8e1fbc51edbcb69599840b1d6728f5163e71bb54cf045d2ca1593a846",
+    ".tmp\\vector-r6-20261014\\fresh_wide_record.py": "25c07688067f44a8aeb4d0beda46b9bda781ec899d8237fb511e97e845524d23",
+    ".tmp\\vector-r6-20261014\\generic_filter.py": "31f21998e01bb06c548727275168634d8ae39f04b17d962c7576b6c7a4fbb51a",
+    ".tmp\\vector-r6-20261014\\implement_r5.py": "54e19af159986b713689b52a3ef59eb7d3f43f999af4e2d6462cf2669fad4948",
+    ".tmp\\vector-r6-20261014\\ingress_matrix.py": "11b722b98b872ef9819e048b0bb9609199f41d1d29ebfa0fff5065434bdb127e",
+    ".tmp\\vector-r6-20261014\\lance_truth.py": "e4089b75ca9889e0dea8150fe8ae3b4450846016e6bb490000276a7e5dbb41ef",
+    ".tmp\\vector-r6-20261014\\logging_baseline_red.py": "ae91b864112dec1d866a74652a16fbf968a7427126c4a10e42274630d8798282",
+    ".tmp\\vector-r6-20261014\\numeric_matrix-r3-historical.py": "cd8e3652b25e824793b0c0bf5b09c7850f4bef9790b54673eb301db38a5095d5",
+    ".tmp\\vector-r6-20261014\\numeric_matrix.py": "d935dd19403f7cb252b3d561a05c5279bfea02767dd6b80132f323b8ed1cbec4",
+    ".tmp\\vector-r6-20261014\\parser_port.py": "18a85b55345caa9ce4ac7ea2e344cedc9561cdda8c1c0eb6824499b3a629753d",
+    ".tmp\\vector-r6-20261014\\prepare.py": "fc04f1b0fb0ffa93dcfe686e338be0698484f9bf83d6179232457067e8143686",
+    ".tmp\\vector-r6-20261014\\probe_store.py": "5cef32dcc4e5c595c71ddbc686158dc52899a9333b6af5a1e5f329cf793df51b",
+    ".tmp\\vector-r6-20261014\\record_environment.py": "b7beeb306de340ef1f6910b7ebfa80cdd2f94969f092c230072f0064ba29e976",
+    ".tmp\\vector-r6-20261014\\red_contract.py": "0b62aab9fc5e182ea1488e0677acad00703c91babc6c29dcef980b6f21c81a37",
+    ".tmp\\vector-r6-20261014\\run_checks.py": "b69e1bfaef245d80ca549e16b29c392d2b4f6bbc249352009fcea71182095b60",
+    ".tmp\\vector-r6-20261014\\run_r6_regressions.py": "52d2abcffccac83dc2f812293a327c469daa0f6e1437bcb754c74fc20db9873e",
+    ".tmp\\vector-r6-20261014\\safe_vector_logging.py": "c3a1bc1d47def17e3b69935ab2a2b4e9f8e51d712a099b8a1593615991eaecb4",
+    ".tmp\\vector-r6-20261014\\test_errors.py": "935b3180e005e0853716c7e4181c93d354941cdd913cff650d017bed58fa6289",
+    ".tmp\\vector-r6-20261014\\test_facade.py": "e47c1220d455d623517e55eb604bd4e91dfa4d7270c815de44ab5f2517f1f037",
+    ".tmp\\vector-r6-20261014\\test_r6.py": "b6d9f7823c600a6ba06dd08175b40bc73b99421a26129bf7fece72d292db9451",
+    ".tmp\\vector-r6-20261014\\update_facade_report.py": "f63692eaeae33dc4e5e0f196bcd7a7cc77166b0817507aecc3a6d994191a4594",
+    ".tmp\\vector-r6-20261014\\vector_errors.py": "b9a23b941eb84a7b50c866716e0c9dbcff3b1248be7c9daf2f9f594dc7ed4661",
+    ".tmp\\vector-r6-20261014\\verify_baseline.py": "aab7ac0d444be11f8f87bd806389f2693e04a7b0cde2b3672dac27f2d199da69",
+    ".tmp\\vector-r6-20261014\\wide_integer.py": "fac36833a9d062810272878748c912111f3f7f619e65e79c904e33a6bd147b0f",
+    ".tmp\\vector-r6-20261014\\wide_matrix.py": "8bb009d2ea836d7e2ecc558dbace16b80e83380139cfb406778aca22fc37dcbd",
+    ".tmp\\vector-r6-20261014\\current-consumer\\evidence_trace.py": "07cc6a3cce87c788a9639510a6540639f6b6d57e93f639b10a2593254b18bf65",
+    ".tmp\\vector-r6-20261014\\current-consumer\\logging_config.py": "0e25712534474a5f5d1d1ba0f1d15c8e36969f4c54a929d6158ce9bdaef0eb6b",
+    ".tmp\\vector-r6-20261014\\current-consumer\\retrieval.py": "25b5d116659a1aed95a8bd54767ee3287f2587cfc4ccc1c5afaf154699bef6e6",
+    ".tmp\\vector-r6-20261014\\current-consumer\\source_control.py": "b92d65ad4604207c0bdc65670197a3c63c37c668abacb8d6b38451d025001c25",
+    ".tmp\\vector-errors-testenv-20261014\\uv.lock": "28d9b74c05eca7f5d5f8378a8415594e00b2e0adc2757ac6239c996ece03525b",
+    "backend\\uv.lock": "0b9618aede31fd0553ff10b845a2feb5a388d1e153c8e38549d769a3074dacf6"
+  },
+  "unchanged": true,
+  "commands": [
+    {
+      "name": "original76",
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-r6-20261014\\lance_truth.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "boundary_chroma",
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\backend-quality-venv-20261012\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-r6-20261014\\boundary_probe.py",
+        "chroma"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "boundary_lance",
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-r6-20261014\\boundary_probe.py",
+        "lance"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "matrix_chroma",
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\backend-quality-venv-20261012\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-r6-20261014\\numeric_matrix.py",
+        "chroma"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "matrix_lance",
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-r6-20261014\\numeric_matrix.py",
+        "lance"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "wide_chroma",
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\backend-quality-venv-20261012\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-r6-20261014\\wide_matrix.py",
+        "chroma",
+        "oracle"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "wide_lance",
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-r6-20261014\\wide_matrix.py",
+        "lance",
+        "green"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "ingress",
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-r6-20261014\\ingress_matrix.py",
+        "green"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "fresh_chroma",
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\backend-quality-venv-20261012\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-r6-20261014\\fresh_matrix.py",
+        "chroma"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "fresh_lance",
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-r6-20261014\\fresh_matrix.py",
+        "lance"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "facade",
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-r6-20261014\\test_facade.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "r6",
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-r6-20261014\\test_r6.py"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "errors",
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-r6-20261014\\test_errors.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "new_record_chroma",
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\backend-quality-venv-20261012\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-r6-20261014\\fresh_wide_record.py",
+        "chroma"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "new_record_lance",
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-r6-20261014\\fresh_wide_record.py",
+        "lance"
+      ],
+      "exit_code": 0
+    }
+  ]
+}

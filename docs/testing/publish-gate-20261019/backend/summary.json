@@ -1,0 +1,58 @@
+{
+  "time_utc": "2026-10-19T10:04:43.525007+00:00",
+  "commands": [
+    {
+      "name": "tests",
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\backend-quality-venv-20261012\\Scripts\\python.exe",
+        "-m",
+        "coverage",
+        "run",
+        "--rcfile=docs/testing/coverage-backend-2026-10-12.ini",
+        "--data-file=D:\\graghRAG-agent\\.tmp\\publish-final-full-20261019\\backend.coverage",
+        "-m",
+        "pytest",
+        "backend/tests",
+        "backend/research/test_deepseek_scope_pilot.py",
+        "-q",
+        "--tb=short",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "D:\\graghRAG-agent\\.tmp\\publish-final-full-20261019\\test-temp"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "export",
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\backend-quality-venv-20261012\\Scripts\\python.exe",
+        "-m",
+        "coverage",
+        "json",
+        "--rcfile=docs/testing/coverage-backend-2026-10-12.ini",
+        "--data-file=D:\\graghRAG-agent\\.tmp\\publish-final-full-20261019\\backend.coverage",
+        "-o",
+        "D:\\graghRAG-agent\\.tmp\\publish-final-full-20261019\\coverage.json"
+      ],
+      "exit": 0
+    }
+  ],
+  "inputs_stable": true,
+  "production_count": 104,
+  "coverage_count": 104,
+  "missing": [],
+  "extra": [],
+  "totals": {
+    "covered_lines": 14424,
+    "num_statements": 15499,
+    "percent_covered": 92.5051879735534,
+    "percent_covered_display": "93",
+    "missing_lines": 1075,
+    "excluded_lines": 0,
+    "num_branches": 5222,
+    "num_partial_branches": 310,
+    "covered_branches": 4744,
+    "missing_branches": 478
+  }
+}

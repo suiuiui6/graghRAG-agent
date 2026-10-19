@@ -1,0 +1,897 @@
+{
+  "exit_codes": [
+    0,
+    0
+  ],
+  "manifest": {
+    "parser_port.py": "18a85b55345caa9ce4ac7ea2e344cedc9561cdda8c1c0eb6824499b3a629753d",
+    "sqlite_vector_payload.py": "e38deeb935a8dc6740b1719cebaa0baa3feee0bb5066f93c0b33e03f32c764b3",
+    "vector_errors.py": "b9a23b941eb84a7b50c866716e0c9dbcff3b1248be7c9daf2f9f594dc7ed4661",
+    "vector_store.py": "da5dddc29570f7d8626565ca0c67f5cace05d67286161dd2c9bef07cb11b0636"
+  },
+  "after": {
+    "parser_port.py": "18a85b55345caa9ce4ac7ea2e344cedc9561cdda8c1c0eb6824499b3a629753d",
+    "sqlite_vector_payload.py": "e38deeb935a8dc6740b1719cebaa0baa3feee0bb5066f93c0b33e03f32c764b3",
+    "vector_errors.py": "b9a23b941eb84a7b50c866716e0c9dbcff3b1248be7c9daf2f9f594dc7ed4661",
+    "vector_store.py": "da5dddc29570f7d8626565ca0c67f5cace05d67286161dd2c9bef07cb11b0636"
+  },
+  "cases": 335,
+  "diffs": {
+    "boundary-0": {
+      "chroma": {},
+      "sqlite": {
+        "0": 0.5617
+      }
+    },
+    "boundary-1": {
+      "chroma": {},
+      "sqlite": {
+        "1": 0.5617
+      }
+    },
+    "boundary-2": {
+      "chroma": {},
+      "sqlite": {
+        "2": 0.5617
+      }
+    },
+    "boundary-4": {
+      "chroma": {},
+      "sqlite": {
+        "4": 0.5617
+      }
+    },
+    "boundary-5": {
+      "chroma": {},
+      "sqlite": {
+        "5": 0.5617
+      }
+    },
+    "boundary-6": {
+      "chroma": {},
+      "sqlite": {
+        "6": 0.5617
+      }
+    },
+    "boundary-7": {
+      "chroma": {},
+      "sqlite": {
+        "7": 0.5617
+      }
+    },
+    "boundary-8": {
+      "chroma": {},
+      "sqlite": {
+        "8": 0.5617
+      }
+    },
+    "boundary-13": {
+      "chroma": {},
+      "sqlite": {
+        "13": 0.5617
+      }
+    },
+    "boundary-14": {
+      "chroma": {},
+      "sqlite": {
+        "14": 0.5617
+      }
+    },
+    "boundary-16": {
+      "chroma": {},
+      "sqlite": {
+        "16": 0.5617
+      }
+    },
+    "boundary-17": {
+      "chroma": {},
+      "sqlite": {
+        "17": 0.5617
+      }
+    },
+    "boundary-21": {
+      "chroma": {},
+      "sqlite": {
+        "21": 0.5617
+      }
+    },
+    "boundary-22": {
+      "chroma": {},
+      "sqlite": {
+        "22": 0.5617
+      }
+    },
+    "boundary-23": {
+      "chroma": {},
+      "sqlite": {
+        "23": 0.5617
+      }
+    },
+    "boundary-24": {
+      "chroma": {},
+      "sqlite": {
+        "24": 0.5617
+      }
+    },
+    "boundary-25": {
+      "chroma": {},
+      "sqlite": {
+        "25": 0.5617
+      }
+    },
+    "boundary-26": {
+      "chroma": {},
+      "sqlite": {
+        "26": 0.5617
+      }
+    },
+    "boundary-27": {
+      "chroma": {},
+      "sqlite": {
+        "27": 0.5617
+      }
+    },
+    "boundary-28": {
+      "chroma": {},
+      "sqlite": {
+        "28": 0.5617
+      }
+    },
+    "boundary-29": {
+      "chroma": {},
+      "sqlite": {
+        "29": 0.5617
+      }
+    },
+    "boundary-30": {
+      "chroma": {},
+      "sqlite": {
+        "30": 0.5617
+      }
+    },
+    "boundary-31": {
+      "chroma": {},
+      "sqlite": {
+        "31": 0.5617
+      }
+    },
+    "boundary-33": {
+      "chroma": {},
+      "sqlite": {
+        "33": 0.5617
+      }
+    },
+    "boundary-34": {
+      "chroma": {},
+      "sqlite": {
+        "34": 0.5617
+      }
+    },
+    "boundary-36": {
+      "chroma": {},
+      "sqlite": {
+        "36": 0.5617
+      }
+    },
+    "boundary-37": {
+      "chroma": {},
+      "sqlite": {
+        "37": 0.5617
+      }
+    },
+    "boundary-38": {
+      "chroma": {},
+      "sqlite": {
+        "38": 0.5617
+      }
+    },
+    "boundary-39": {
+      "chroma": {},
+      "sqlite": {
+        "39": 0.5617
+      }
+    },
+    "boundary-41": {
+      "chroma": {},
+      "sqlite": {
+        "41": 0.5617
+      }
+    },
+    "boundary-43": {
+      "chroma": {},
+      "sqlite": {
+        "43": 0.5617
+      }
+    },
+    "boundary-46": {
+      "chroma": {},
+      "sqlite": {
+        "46": 0.5617
+      }
+    },
+    "boundary-47": {
+      "chroma": {},
+      "sqlite": {
+        "47": 0.5617
+      }
+    },
+    "boundary-48": {
+      "chroma": {},
+      "sqlite": {
+        "48": 0.5617
+      }
+    },
+    "boundary-49": {
+      "chroma": {},
+      "sqlite": {
+        "49": 0.5617
+      }
+    },
+    "boundary-50": {
+      "chroma": {},
+      "sqlite": {
+        "50": 0.5617
+      }
+    },
+    "boundary-51": {
+      "chroma": {},
+      "sqlite": {
+        "51": 0.5617
+      }
+    },
+    "boundary-52": {
+      "chroma": {},
+      "sqlite": {
+        "52": 0.5617
+      }
+    },
+    "boundary-54": {
+      "chroma": {},
+      "sqlite": {
+        "54": 0.5617
+      }
+    },
+    "boundary-55": {
+      "chroma": {},
+      "sqlite": {
+        "55": 0.5617
+      }
+    },
+    "boundary-56": {
+      "chroma": {},
+      "sqlite": {
+        "56": 0.5617
+      }
+    },
+    "boundary-57": {
+      "chroma": {},
+      "sqlite": {
+        "57": 0.5617
+      }
+    },
+    "boundary-58": {
+      "chroma": {},
+      "sqlite": {
+        "58": 0.5617
+      }
+    },
+    "boundary-61": {
+      "chroma": {},
+      "sqlite": {
+        "61": 0.5617
+      }
+    },
+    "boundary-62": {
+      "chroma": {},
+      "sqlite": {
+        "62": 0.5617
+      }
+    },
+    "boundary-63": {
+      "chroma": {},
+      "sqlite": {
+        "63": 0.5617
+      }
+    },
+    "boundary-65": {
+      "chroma": {},
+      "sqlite": {
+        "65": 0.5617
+      }
+    },
+    "boundary-66": {
+      "chroma": {},
+      "sqlite": {
+        "66": 0.5617
+      }
+    },
+    "boundary-67": {
+      "chroma": {},
+      "sqlite": {
+        "67": 0.5617
+      }
+    },
+    "boundary-68": {
+      "chroma": {},
+      "sqlite": {
+        "68": 0.5617
+      }
+    },
+    "boundary-69": {
+      "chroma": {},
+      "sqlite": {
+        "69": 0.5617
+      }
+    },
+    "boundary-73": {
+      "chroma": {},
+      "sqlite": {
+        "73": 0.5617
+      }
+    },
+    "boundary-74": {
+      "chroma": {},
+      "sqlite": {
+        "74": 0.5617
+      }
+    },
+    "boundary-75": {
+      "chroma": {},
+      "sqlite": {
+        "75": 0.5617
+      }
+    },
+    "boundary-76": {
+      "chroma": {},
+      "sqlite": {
+        "76": 0.5617
+      }
+    },
+    "boundary-77": {
+      "chroma": {},
+      "sqlite": {
+        "77": 0.5617
+      }
+    },
+    "boundary-78": {
+      "chroma": {},
+      "sqlite": {
+        "78": 0.5617
+      }
+    },
+    "boundary-79": {
+      "chroma": {},
+      "sqlite": {
+        "79": 0.5617
+      }
+    },
+    "boundary-80": {
+      "chroma": {},
+      "sqlite": {
+        "80": 0.5617
+      }
+    },
+    "boundary-81": {
+      "chroma": {},
+      "sqlite": {
+        "81": 0.5617
+      }
+    },
+    "boundary-82": {
+      "chroma": {},
+      "sqlite": {
+        "82": 0.5617
+      }
+    },
+    "boundary-84": {
+      "chroma": {},
+      "sqlite": {
+        "84": 0.5617
+      }
+    },
+    "boundary-86": {
+      "chroma": {},
+      "sqlite": {
+        "86": 0.5617
+      }
+    },
+    "boundary-90": {
+      "chroma": {},
+      "sqlite": {
+        "90": 0.5617
+      }
+    },
+    "boundary-91": {
+      "chroma": {},
+      "sqlite": {
+        "91": 0.5617
+      }
+    },
+    "boundary-92": {
+      "chroma": {},
+      "sqlite": {
+        "92": 0.5617
+      }
+    },
+    "boundary-93": {
+      "chroma": {},
+      "sqlite": {
+        "93": 0.5617
+      }
+    },
+    "boundary-94": {
+      "chroma": {},
+      "sqlite": {
+        "94": 0.5617
+      }
+    },
+    "boundary-96": {
+      "chroma": {},
+      "sqlite": {
+        "96": 0.5617
+      }
+    },
+    "boundary-100": {
+      "chroma": {},
+      "sqlite": {
+        "100": 0.5617
+      }
+    },
+    "boundary-101": {
+      "chroma": {},
+      "sqlite": {
+        "101": 0.5617
+      }
+    },
+    "boundary-102": {
+      "chroma": {},
+      "sqlite": {
+        "102": 0.5617
+      }
+    },
+    "boundary-104": {
+      "chroma": {},
+      "sqlite": {
+        "104": 0.5617
+      }
+    },
+    "boundary-105": {
+      "chroma": {},
+      "sqlite": {
+        "105": 0.5617
+      }
+    },
+    "boundary-107": {
+      "chroma": {},
+      "sqlite": {
+        "107": 0.5617
+      }
+    },
+    "boundary-108": {
+      "chroma": {},
+      "sqlite": {
+        "108": 0.5617
+      }
+    },
+    "boundary-109": {
+      "chroma": {},
+      "sqlite": {
+        "109": 0.5617
+      }
+    },
+    "boundary-110": {
+      "chroma": {},
+      "sqlite": {
+        "110": 0.5617
+      }
+    },
+    "boundary-111": {
+      "chroma": {},
+      "sqlite": {
+        "111": 0.5617
+      }
+    },
+    "boundary-112": {
+      "chroma": {},
+      "sqlite": {
+        "112": 0.5617
+      }
+    },
+    "boundary-113": {
+      "chroma": {},
+      "sqlite": {
+        "113": 0.5617
+      }
+    },
+    "boundary-114": {
+      "chroma": {},
+      "sqlite": {
+        "114": 0.5617
+      }
+    },
+    "boundary-116": {
+      "chroma": {},
+      "sqlite": {
+        "116": 0.5617
+      }
+    },
+    "boundary-117": {
+      "chroma": {},
+      "sqlite": {
+        "117": 0.5617
+      }
+    },
+    "boundary-119": {
+      "chroma": {},
+      "sqlite": {
+        "119": 0.5617
+      }
+    },
+    "boundary-120": {
+      "chroma": {},
+      "sqlite": {
+        "120": 0.5617
+      }
+    },
+    "boundary-122": {
+      "chroma": {},
+      "sqlite": {
+        "122": 0.5617
+      }
+    },
+    "boundary-123": {
+      "chroma": {},
+      "sqlite": {
+        "123": 0.5617
+      }
+    },
+    "boundary-125": {
+      "chroma": {},
+      "sqlite": {
+        "125": 0.5617
+      }
+    },
+    "boundary-126": {
+      "chroma": {},
+      "sqlite": {
+        "126": 0.5617
+      }
+    },
+    "boundary-129": {
+      "chroma": {},
+      "sqlite": {
+        "129": 0.5617
+      }
+    },
+    "boundary-130": {
+      "chroma": {},
+      "sqlite": {
+        "130": 0.5617
+      }
+    },
+    "boundary-132": {
+      "chroma": {},
+      "sqlite": {
+        "132": 0.5617
+      }
+    },
+    "boundary-133": {
+      "chroma": {},
+      "sqlite": {
+        "133": 0.5617
+      }
+    },
+    "boundary-134": {
+      "chroma": {},
+      "sqlite": {
+        "134": 0.5617
+      }
+    },
+    "boundary-137": {
+      "chroma": {},
+      "sqlite": {
+        "137": 0.5617
+      }
+    },
+    "boundary-138": {
+      "chroma": {},
+      "sqlite": {
+        "138": 0.5617
+      }
+    },
+    "boundary-139": {
+      "chroma": {},
+      "sqlite": {
+        "139": 0.5617
+      }
+    },
+    "boundary-140": {
+      "chroma": {},
+      "sqlite": {
+        "140": 0.5617
+      }
+    },
+    "boundary-141": {
+      "chroma": {},
+      "sqlite": {
+        "141": 0.5617
+      }
+    },
+    "boundary-142": {
+      "chroma": {},
+      "sqlite": {
+        "142": 0.5617
+      }
+    },
+    "boundary-143": {
+      "chroma": {},
+      "sqlite": {
+        "143": 0.5617
+      }
+    },
+    "boundary-144": {
+      "chroma": {},
+      "sqlite": {
+        "144": 0.5617
+      }
+    },
+    "boundary-145": {
+      "chroma": {},
+      "sqlite": {
+        "145": 0.5617
+      }
+    },
+    "boundary-146": {
+      "chroma": {},
+      "sqlite": {
+        "146": 0.5617
+      }
+    },
+    "boundary-147": {
+      "chroma": {},
+      "sqlite": {
+        "147": 0.5617
+      }
+    },
+    "boundary-149": {
+      "chroma": {},
+      "sqlite": {
+        "149": 0.5617
+      }
+    },
+    "boundary-150": {
+      "chroma": {},
+      "sqlite": {
+        "150": 0.5617
+      }
+    },
+    "boundary-151": {
+      "chroma": {},
+      "sqlite": {
+        "151": 0.5617
+      }
+    },
+    "boundary-153": {
+      "chroma": {},
+      "sqlite": {
+        "153": 0.5617
+      }
+    },
+    "boundary-155": {
+      "chroma": {},
+      "sqlite": {
+        "155": 0.5617
+      }
+    },
+    "boundary-156": {
+      "chroma": {},
+      "sqlite": {
+        "156": 0.5617
+      }
+    },
+    "boundary-157": {
+      "chroma": {},
+      "sqlite": {
+        "157": 0.5617
+      }
+    },
+    "boundary-158": {
+      "chroma": {},
+      "sqlite": {
+        "158": 0.5617
+      }
+    },
+    "boundary-159": {
+      "chroma": {},
+      "sqlite": {
+        "159": 0.5617
+      }
+    },
+    "boundary-161": {
+      "chroma": {},
+      "sqlite": {
+        "161": 0.5617
+      }
+    },
+    "boundary-162": {
+      "chroma": {},
+      "sqlite": {
+        "162": 0.5617
+      }
+    },
+    "boundary-163": {
+      "chroma": {},
+      "sqlite": {
+        "163": 0.5617
+      }
+    },
+    "boundary-164": {
+      "chroma": {},
+      "sqlite": {
+        "164": 0.5617
+      }
+    },
+    "boundary-166": {
+      "chroma": {},
+      "sqlite": {
+        "166": 0.5617
+      }
+    },
+    "boundary-167": {
+      "chroma": {},
+      "sqlite": {
+        "167": 0.5617
+      }
+    },
+    "boundary-168": {
+      "chroma": {},
+      "sqlite": {
+        "168": 0.5617
+      }
+    },
+    "boundary-169": {
+      "chroma": {},
+      "sqlite": {
+        "169": 0.5617
+      }
+    },
+    "boundary-170": {
+      "chroma": {},
+      "sqlite": {
+        "170": 0.5617
+      }
+    },
+    "boundary-171": {
+      "chroma": {},
+      "sqlite": {
+        "171": 0.5617
+      }
+    },
+    "boundary-172": {
+      "chroma": {},
+      "sqlite": {
+        "172": 0.5617
+      }
+    },
+    "boundary-173": {
+      "chroma": {},
+      "sqlite": {
+        "173": 0.5617
+      }
+    },
+    "boundary-174": {
+      "chroma": {},
+      "sqlite": {
+        "174": 0.5617
+      }
+    },
+    "boundary-175": {
+      "chroma": {},
+      "sqlite": {
+        "175": 0.5617
+      }
+    },
+    "boundary-177": {
+      "chroma": {},
+      "sqlite": {
+        "177": 0.5617
+      }
+    },
+    "boundary-178": {
+      "chroma": {},
+      "sqlite": {
+        "178": 0.5617
+      }
+    },
+    "boundary-180": {
+      "chroma": {},
+      "sqlite": {
+        "180": 0.5617
+      }
+    },
+    "boundary-181": {
+      "chroma": {},
+      "sqlite": {
+        "181": 0.5617
+      }
+    },
+    "boundary-182": {
+      "chroma": {},
+      "sqlite": {
+        "182": 0.5618
+      }
+    },
+    "boundary-184": {
+      "chroma": {},
+      "sqlite": {
+        "184": 0.5618
+      }
+    },
+    "boundary-185": {
+      "chroma": {},
+      "sqlite": {
+        "185": 0.5618
+      }
+    },
+    "boundary-186": {
+      "chroma": {},
+      "sqlite": {
+        "186": 0.5618
+      }
+    },
+    "boundary-187": {
+      "chroma": {},
+      "sqlite": {
+        "187": 0.5618
+      }
+    },
+    "boundary-188": {
+      "chroma": {},
+      "sqlite": {
+        "188": 0.5618
+      }
+    },
+    "boundary-189": {
+      "chroma": {},
+      "sqlite": {
+        "189": 0.5618
+      }
+    },
+    "boundary-191": {
+      "chroma": {},
+      "sqlite": {
+        "191": 0.5618
+      }
+    },
+    "boundary-192": {
+      "chroma": {},
+      "sqlite": {
+        "192": 0.5618
+      }
+    },
+    "boundary-193": {
+      "chroma": {},
+      "sqlite": {
+        "193": 0.5618
+      }
+    },
+    "boundary-194": {
+      "chroma": {},
+      "sqlite": {
+        "194": 0.5618
+      }
+    },
+    "boundary-197": {
+      "chroma": {},
+      "sqlite": {
+        "197": 0.5618
+      }
+    },
+    "boundary-200": {
+      "chroma": {},
+      "sqlite": {
+        "200": 0.5618
+      }
+    }
+  }
+}

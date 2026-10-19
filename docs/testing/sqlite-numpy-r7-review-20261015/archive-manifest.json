@@ -1,0 +1,74 @@
+{
+  "author-nine.stderr.log": {
+    "sha256": "8fd0259c47b18a1dbac98289cd47a2046b0b088952d4b5080d8314779a8f8188",
+    "size": 1189
+  },
+  "author-nine.stdout.log": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0
+  },
+  "independent-new.stderr.log": {
+    "sha256": "41bccaed7b2fe4c89b8c909db2cc3e65b3222428bd51254c68ecb17bab237aa1",
+    "size": 351
+  },
+  "independent-new.stdout.log": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0
+  },
+  "pe_review.py": {
+    "sha256": "2903456ed8454d0dde9ce45a8468f218a33801f15ec2f1d61d21fd22ba9a44a8",
+    "size": 2789
+  },
+  "pe-review.json": {
+    "sha256": "86b8859376ef25d2bc2d550502dc421492665e6ae4f4233a31e380c05a29395d",
+    "size": 27187
+  },
+  "review-receipt.json": {
+    "sha256": "80216349f87d5fdf4c831984e8e9c8cc3f798ea06d25d1110bbc666b45266c76",
+    "size": 2567
+  },
+  "run_review.py": {
+    "sha256": "d825e19379896c189f6e45a06831dc53c99208ca5a2319e5df61ec3c5a8f3097",
+    "size": 2186
+  },
+  "test_independent.py": {
+    "sha256": "be73846396f126f729754ca4bf8fa1b96b36c26784cf93e23c82b35e946d9fbb",
+    "size": 3979
+  },
+  "private-final/capture.py": {
+    "sha256": "70c6ea27408f1d92b96b3948b741a14c5e5e7fbf62aa2c3738afcb3f80590294",
+    "size": 1381
+  },
+  "private-final/finalize.py": {
+    "sha256": "191d27747f8adf3486a2dcae5ab7e78f8151f14fb0ab2c7f2ac8b89531fbb073",
+    "size": 2586
+  },
+  "private-final/identity.py": {
+    "sha256": "a8dd253b823cb930dba8e63d6e45c6a3e5fab49336302d0326754e803c494176",
+    "size": 2720
+  },
+  "private-final/pyproject.toml": {
+    "sha256": "269081af7b7e7bdfb7697b3606995c3bf78b43ea0c45a5177ff28061f0a1c32e",
+    "size": 149
+  },
+  "private-final/store.py": {
+    "sha256": "28cede24b74aaaad92ccd0c3ca327203f9e3648e8afbbadfe5d61b6870b750da",
+    "size": 11176
+  },
+  "private-final/test_independent.py": {
+    "sha256": "be73846396f126f729754ca4bf8fa1b96b36c26784cf93e23c82b35e946d9fbb",
+    "size": 3979
+  },
+  "private-final/test_store.py": {
+    "sha256": "6e9a801305fa57aed281562f9e8ad3c7ab82993c951be3c53b0545bced4d63f2",
+    "size": 10193
+  },
+  "private-final/uv.lock": {
+    "sha256": "989951eae09c2b8524f0fcecf4f0d1d955a72b7c0c8aadce9edfee0567d4225a",
+    "size": 4117
+  },
+  "review-manifest.json": {
+    "sha256": "b23a51554423eb8b7d8a459a6469e1f4504623e37d052e23aeaa536eb37abbf2",
+    "size": 2350
+  }
+}

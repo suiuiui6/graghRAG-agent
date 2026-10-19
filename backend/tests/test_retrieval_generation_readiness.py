@@ -41,6 +41,7 @@ def offline_provider(monkeypatch, tmp_path):
     monkeypatch.setattr(requests, "post", lambda *a, **kw: (_ for _ in ()).throw(requests.ConnectionError("offline")))
     monkeypatch.setenv("LANGEXTRACT_API_KEY", "offline-test-placeholder")
     monkeypatch.setenv("LANGEXTRACT_BASE_URL", "https://offline.invalid")
+    monkeypatch.setenv("LANGEXTRACT_MODEL_ID", "deepseek-flash")
 
 
 def cfg(**kw):
@@ -95,7 +96,8 @@ def test_answer_notices_preserve_raw_output(monkeypatch, answer, finish, notice)
     result = g.generate_answer([], cfg(model="deepseek-v4-pro"), [chunk("证据")])
     assert result.raw_model_answer == answer and result.finish_reason == finish
     assert result.token_usage["total_tokens"] == 12
-    assert captured[0]["json"]["extra_body"] == {"thinking": {"type": "disabled"}}
+    assert captured[0]["json"]["thinking"] == {"type": "disabled"}
+    assert "extra_body" not in captured[0]["json"]
     if notice:
         assert notice in result.answer_text
     else:
@@ -128,7 +130,7 @@ def test_preprocessing_cache_and_provider_normalize_entity_types(monkeypatch, ca
     monkeypatch.setattr(requests, "post", post)
     history = [{"role": "user", "content": "之前的问题"}]
     if cached:
-        key = r._build_rewrite_cache_key("query_preprocess", "预算", "deepseek-chat", "https://offline.invalid", history)
+        key = r._build_rewrite_cache_key("query_preprocess", "预算", "deepseek-flash", "https://offline.invalid", history)
         r._rewrite_cache.set(key, payload)
     result = r.preprocess_query("预算", chat_history=history)
     assert result.rewritten == "查询预算" and result.table_conditions == ["budget > 5"]

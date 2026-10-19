@@ -1,0 +1,8 @@
+{
+  "manifest_sha256": "9f79d425c3107f03ebb75ddfaefa4198e721f25a43afaf171d4d30703e1384ce",
+  "archived_files": 61,
+  "hash_drift": 0,
+  "lancedb_records": 20,
+  "unique_advisories": 18,
+  "scope": "root independently verified scan files/counts/exits and archived; scans executed by independent native auditor"
+}

@@ -1,0 +1,182 @@
+{
+  "commands": {
+    "backend-audit": {
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\audit-tools-20261012\\Scripts\\python.exe",
+        "-m",
+        "pip_audit",
+        "-r",
+        "D:\\graghRAG-agent\\.tmp\\publish-final-audit-20261019\\backend-audit-pins.txt",
+        "--no-deps",
+        "--disable-pip",
+        "--strict",
+        "--index-url",
+        "https://pypi.org/simple",
+        "--cache-dir",
+        "D:\\graghRAG-agent\\.tmp\\publish-final-audit-20261019\\backend-audit-cache",
+        "--timeout",
+        "30",
+        "--progress-spinner",
+        "off",
+        "-f",
+        "json",
+        "-o",
+        "D:\\graghRAG-agent\\.tmp\\publish-final-audit-20261019\\backend-audit.json"
+      ],
+      "cwd": "D:\\graghRAG-agent",
+      "exit_code": 1,
+      "started_utc": "2026-10-19T10:03:12.339771+00:00",
+      "finished_utc": "2026-10-19T10:04:15.006512+00:00"
+    },
+    "rag-audit": {
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\audit-tools-20261012\\Scripts\\python.exe",
+        "-m",
+        "pip_audit",
+        "-r",
+        "D:\\graghRAG-agent\\.tmp\\publish-final-audit-20261019\\rag-audit-pins.txt",
+        "--no-deps",
+        "--disable-pip",
+        "--strict",
+        "--index-url",
+        "https://pypi.org/simple",
+        "--cache-dir",
+        "D:\\graghRAG-agent\\.tmp\\publish-final-audit-20261019\\rag-audit-cache",
+        "--timeout",
+        "30",
+        "--progress-spinner",
+        "off",
+        "-f",
+        "json",
+        "-o",
+        "D:\\graghRAG-agent\\.tmp\\publish-final-audit-20261019\\rag-audit.json"
+      ],
+      "cwd": "D:\\graghRAG-agent",
+      "exit_code": 0,
+      "started_utc": "2026-10-19T10:03:12.339771+00:00",
+      "finished_utc": "2026-10-19T10:03:24.235175+00:00"
+    },
+    "backend-lock-check": {
+      "command": [
+        "D:/Python/Scripts/uv.exe",
+        "lock",
+        "--check",
+        "--project",
+        "D:\\graghRAG-agent\\backend",
+        "--cache-dir",
+        "D:\\graghRAG-agent\\.tmp\\publish-final-audit-20261019\\uv-cache"
+      ],
+      "cwd": "D:\\graghRAG-agent",
+      "exit_code": 0,
+      "started_utc": "2026-10-19T10:03:12.340761+00:00",
+      "finished_utc": "2026-10-19T10:03:13.731407+00:00"
+    },
+    "frontend-audit": {
+      "command": [
+        "C:/Users/14156/AppData/Roaming/npm/pnpm.cmd",
+        "audit",
+        "--json",
+        "--registry=https://registry.npmjs.org"
+      ],
+      "cwd": "D:\\graghRAG-agent\\frontend",
+      "exit_code": 0,
+      "started_utc": "2026-10-19T10:03:12.340761+00:00",
+      "finished_utc": "2026-10-19T10:03:18.216745+00:00"
+    }
+  },
+  "inputs_drift": false,
+  "lock_comparison": {
+    "before_package_count": 208,
+    "current_package_count": 208,
+    "versions_and_sources_equal": false,
+    "before_artifact_count": 994,
+    "current_artifact_count": 994,
+    "artifact_urls_and_hashes_equal": false,
+    "historical_lock_sha256": "0b9618aede31fd0553ff10b845a2feb5a388d1e153c8e38549d769a3074dacf6",
+    "current_lock_sha256": "38ff460089d45739d2e2eb4fc91a04e93a7cba6085fd0e3628ecf3c5b7f00e4b"
+  },
+  "audit_summaries": {
+    "backend-audit": {
+      "dependencies": 206,
+      "skipped": [],
+      "vulnerable_packages": [
+        {
+          "name": "chromadb",
+          "version": "1.5.9",
+          "vulns": [
+            {
+              "id": "PYSEC-2026-311",
+              "fix_versions": [],
+              "aliases": [
+                "CVE-2026-45829",
+                "GHSA-f4j7-r4q5-qw2c"
+              ],
+              "description": "A pre-authentication, code injection vulnerability in version 1.0.0 or later of the ChromaDB Python project allows an unauthenticated attacker to run arbitrary code on the server by sending a malicious model repository and trust_remote_code set to true in the /api/v2/tenants/{tenant}/databases/{db}/collections endpoint."
+            },
+            {
+              "id": "PYSEC-2026-311",
+              "fix_versions": [],
+              "aliases": [
+                "CVE-2026-45829",
+                "GHSA-f4j7-r4q5-qw2c"
+              ],
+              "description": "A pre-authentication, code injection vulnerability in version 1.0.0 or later of the ChromaDB Python project allows an unauthenticated attacker to run arbitrary code on the server by sending a malicious model repository and trust_remote_code set to true in the /api/v2/tenants/{tenant}/databases/{db}/collections endpoint."
+            },
+            {
+              "id": "PYSEC-2026-3814",
+              "fix_versions": [],
+              "aliases": [
+                "CVE-2026-45833",
+                "GHSA-36p7-vc44-83pf"
+              ],
+              "description": "A code injection vulnerability in version 0.4.17 or later of the ChromaDB Python project allows an authenticated attacker to run arbitrary code on the server by sending a malicious model repository and trust_remote_code set to true in the /api/v2/tenants/default_tenant/databases/default_database/collections/{collection_id} if they have the UPDATE_COLLECTION permission."
+            },
+            {
+              "id": "PYSEC-2026-3815",
+              "fix_versions": [],
+              "aliases": [
+                "CVE-2026-45831",
+                "GHSA-xph7-9rjv-w5fr"
+              ],
+              "description": "The SimpleRBACAuthorizationProvider authorization provider in versions 0.5.0 or later of the ChromaDB Python project evaluates whether a user holds a given permission but never checks which tenant, database, or collection that permission applies to allowing users to perform cross tenant actions."
+            },
+            {
+              "id": "PYSEC-2026-3813",
+              "fix_versions": [],
+              "aliases": [
+                "GHSA-2wm9-hf6c-p5cr",
+                "CVE-2026-45830"
+              ],
+              "description": "A lack of authorization validation in version 0.4.17 or later of the ChromaDB Python project allows any authenticated users to arbitrarily read, write, update, or delete data in any tenant's collection regardless of which tenant they belong to."
+            }
+          ]
+        }
+      ],
+      "total_advisory_records": 5
+    },
+    "rag-audit": {
+      "dependencies": 23,
+      "skipped": [],
+      "vulnerable_packages": [],
+      "total_advisory_records": 0
+    }
+  },
+  "coverage_inputs_changed_during_audit": {
+    "frontend": {
+      "historical_inputs": 49,
+      "current_inputs": 49,
+      "equal": true,
+      "changed": [],
+      "added": [],
+      "removed": []
+    },
+    "rag_eval": {
+      "historical_inputs": 22,
+      "current_inputs": 22,
+      "equal": true,
+      "changed": [],
+      "added": [],
+      "removed": []
+    }
+  }
+}

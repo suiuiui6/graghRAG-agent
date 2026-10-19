@@ -189,7 +189,7 @@ class BotHandler:
             config = RetrievalConfig(enable_cross_encoder=True, max_total_candidates=8)
             pipeline = RetrievalPipeline(vector_store=vs, embedding_client=ec, config=config)
             gen_config = GenerationConfig(
-                model=os.getenv("LANGEXTRACT_MODEL_ID", "deepseek-chat"),
+                model=os.getenv("LANGEXTRACT_MODEL_ID", "deepseek-flash"),
                 api_key=os.getenv("LANGEXTRACT_API_KEY", ""),
                 base_url=os.getenv("LANGEXTRACT_BASE_URL", "https://api.deepseek.com"),
             )

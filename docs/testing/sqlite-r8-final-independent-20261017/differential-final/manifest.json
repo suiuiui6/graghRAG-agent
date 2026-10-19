@@ -1,0 +1,50 @@
+{
+  "sqlite.log": {
+    "size": 2,
+    "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+  },
+  "public.json": {
+    "size": 1609,
+    "sha256": "480ed86c5066e7e9bd306fe8cc806409df379e096c24d3def9d666b42bf49521"
+  },
+  "candidate\\sqlite_vector_payload.py": {
+    "size": 239,
+    "sha256": "e38deeb935a8dc6740b1719cebaa0baa3feee0bb5066f93c0b33e03f32c764b3"
+  },
+  "candidate\\vector_store.py": {
+    "size": 25886,
+    "sha256": "ff84400e52da5a00f03110f2cf2faeeed222f77b89a2dd9e4bb746afda414f46"
+  },
+  "comparison.json": {
+    "size": 871,
+    "sha256": "ee87a4be3f31d09435f2b8cde8c1412da56ef433d0ca73e5ff1d71ba43131f70"
+  },
+  "public.py": {
+    "size": 1131,
+    "sha256": "84bb3662b3fe177bf148804d3407078949bacce712cf750712d27e3a1bd4ad7a"
+  },
+  "chroma.json": {
+    "size": 119366,
+    "sha256": "61bc8a2953c52fb66391010ec0fb1f4a7ec27e0d4c6a44909bf3a6f85d0fa190"
+  },
+  "sqlite.json": {
+    "size": 119366,
+    "sha256": "61bc8a2953c52fb66391010ec0fb1f4a7ec27e0d4c6a44909bf3a6f85d0fa190"
+  },
+  "run.py": {
+    "size": 3931,
+    "sha256": "2b6efd0d6c18703819327182d557917327c7799f28af6c739c9b2b97ae6b427e"
+  },
+  "chroma.log": {
+    "size": 2,
+    "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+  },
+  "candidate\\parser_port.py": {
+    "size": 1195,
+    "sha256": "18a85b55345caa9ce4ac7ea2e344cedc9561cdda8c1c0eb6824499b3a629753d"
+  },
+  "candidate\\vector_errors.py": {
+    "size": 1149,
+    "sha256": "b9a23b941eb84a7b50c866716e0c9dbcff3b1248be7c9daf2f9f594dc7ed4661"
+  }
+}

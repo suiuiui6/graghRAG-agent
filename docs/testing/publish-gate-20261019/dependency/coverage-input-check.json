@@ -1,0 +1,53 @@
+{
+  "frontend": {
+    "historical_inputs": 49,
+    "current_inputs": 49,
+    "equal": true,
+    "changed": [],
+    "added": [],
+    "removed": []
+  },
+  "rag_eval": {
+    "historical_inputs": 22,
+    "current_inputs": 22,
+    "equal": true,
+    "changed": [],
+    "added": [],
+    "removed": []
+  },
+  "frontend_historical_receipt": {
+    "command": [
+      "D:\\graghRAG-agent\\.tmp\\node22-runtime\\node-v22.23.3-win-x64\\node.exe",
+      "node_modules/vitest/vitest.mjs",
+      "run",
+      "--coverage",
+      "--coverage.reportsDirectory=D:\\graghRAG-agent\\.tmp\\publish-retry-front-20261017\\coverage",
+      "--pool=threads",
+      "--maxWorkers=1"
+    ],
+    "cwd": "D:\\graghRAG-agent\\frontend",
+    "exit": 0,
+    "seconds": 43.11533164978027,
+    "drift": false,
+    "pid": 20744
+  },
+  "rag_historical_receipt": {
+    "command": [
+      "D:\\graghRAG-agent\\iteration-2\\eval-2-existing-components\\rag_eval\\.venv\\Scripts\\python.exe",
+      "-m",
+      "coverage",
+      "run",
+      "--data-file=D:\\graghRAG-agent\\.tmp\\publish-other-20261017\\rag.coverage",
+      "-m",
+      "pytest",
+      "-q",
+      "--tb=short",
+      "-p",
+      "no:cacheprovider",
+      "--basetemp=D:\\graghRAG-agent\\.tmp\\publish-other-20261017\\rag-temp"
+    ],
+    "cwd": "D:\\graghRAG-agent\\iteration-2\\eval-2-existing-components\\rag_eval",
+    "exit": 0,
+    "seconds": 12.433976173400879
+  }
+}

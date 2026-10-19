@@ -1,0 +1,59 @@
+{
+  "utc": "2026-10-15T05:33:38.254745+00:00",
+  "freeze_sha256": "37a4ca29ce343e1621235b1bb8fdbee52beb120b67134fc3b32d1e6c1d1fbac5",
+  "frozen_files_verified": 186,
+  "core_before": {
+    "generic_filter.py": "31f21998e01bb06c548727275168634d8ae39f04b17d962c7576b6c7a4fbb51a",
+    "probe_store.py": "5cef32dcc4e5c595c71ddbc686158dc52899a9333b6af5a1e5f329cf793df51b",
+    "parser_port.py": "18a85b55345caa9ce4ac7ea2e344cedc9561cdda8c1c0eb6824499b3a629753d",
+    "vector_errors.py": "b9a23b941eb84a7b50c866716e0c9dbcff3b1248be7c9daf2f9f594dc7ed4661",
+    "safe_vector_logging.py": "b3a0eee22c0b8d0a98cae8da58a1f8e06d71f17c925f3cf40d20afdcee058173",
+    "test_r6.py": "c66bbad49283748afc90591765bc7731eeff2a5f9148c8469ec7b83dd8de508f",
+    "test_errors.py": "935b3180e005e0853716c7e4181c93d354941cdd913cff650d017bed58fa6289",
+    "test_facade.py": "e47c1220d455d623517e55eb604bd4e91dfa4d7270c815de44ab5f2517f1f037",
+    "fresh_wide_record.py": "25c07688067f44a8aeb4d0beda46b9bda781ec899d8237fb511e97e845524d23"
+  },
+  "core_after": {
+    "generic_filter.py": "31f21998e01bb06c548727275168634d8ae39f04b17d962c7576b6c7a4fbb51a",
+    "probe_store.py": "5cef32dcc4e5c595c71ddbc686158dc52899a9333b6af5a1e5f329cf793df51b",
+    "parser_port.py": "18a85b55345caa9ce4ac7ea2e344cedc9561cdda8c1c0eb6824499b3a629753d",
+    "vector_errors.py": "b9a23b941eb84a7b50c866716e0c9dbcff3b1248be7c9daf2f9f594dc7ed4661",
+    "safe_vector_logging.py": "b3a0eee22c0b8d0a98cae8da58a1f8e06d71f17c925f3cf40d20afdcee058173",
+    "test_r6.py": "c66bbad49283748afc90591765bc7731eeff2a5f9148c8469ec7b83dd8de508f",
+    "test_errors.py": "935b3180e005e0853716c7e4181c93d354941cdd913cff650d017bed58fa6289",
+    "test_facade.py": "e47c1220d455d623517e55eb604bd4e91dfa4d7270c815de44ab5f2517f1f037",
+    "fresh_wide_record.py": "25c07688067f44a8aeb4d0beda46b9bda781ec899d8237fb511e97e845524d23"
+  },
+  "commands": [
+    {
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-r6-root-run-20261015\\test_r6.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-r6-root-run-20261015\\test_errors.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-r6-root-run-20261015\\test_facade.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "D:\\graghRAG-agent\\.tmp\\vector-errors-testenv-20261014\\.venv\\Scripts\\python.exe",
+        "D:\\graghRAG-agent\\.tmp\\vector-r6-root-run-20261015\\fresh_wide_record.py",
+        "lance"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "scope": "root reruns copied author final snapshot; independent reviewer tests separate"
+}

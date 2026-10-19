@@ -1,0 +1,97 @@
+{
+  "utc": "2026-10-15T05:35:22.254015+00:00",
+  "official_github_latest": "v0.40.0",
+  "release_date": "2026-10-07T09:17:29Z",
+  "official_pypi_latest": "0.40.0",
+  "lock_selected": {
+    "lancedb-main-Cargo.lock": [
+      {
+        "name": "event-listener",
+        "version": "5.4.1"
+      },
+      {
+        "name": "lru",
+        "version": "0.16.4"
+      },
+      {
+        "name": "memmap2",
+        "version": "0.7.1"
+      },
+      {
+        "name": "memmap2",
+        "version": "0.9.10"
+      },
+      {
+        "name": "pyo3",
+        "version": "0.28.3"
+      },
+      {
+        "name": "quick-xml",
+        "version": "0.26.0"
+      },
+      {
+        "name": "quick-xml",
+        "version": "0.40.1"
+      },
+      {
+        "name": "quick-xml",
+        "version": "0.41.0"
+      },
+      {
+        "name": "rsa",
+        "version": "0.9.10"
+      },
+      {
+        "name": "rustls",
+        "version": "0.23.45"
+      }
+    ],
+    "lancedb-v0.40.0-Cargo.lock": [
+      {
+        "name": "event-listener",
+        "version": "5.4.1"
+      },
+      {
+        "name": "lru",
+        "version": "0.16.4"
+      },
+      {
+        "name": "memmap2",
+        "version": "0.7.1"
+      },
+      {
+        "name": "memmap2",
+        "version": "0.9.10"
+      },
+      {
+        "name": "pyo3",
+        "version": "0.28.3"
+      },
+      {
+        "name": "quick-xml",
+        "version": "0.26.0"
+      },
+      {
+        "name": "quick-xml",
+        "version": "0.40.1"
+      },
+      {
+        "name": "quick-xml",
+        "version": "0.41.0"
+      },
+      {
+        "name": "rsa",
+        "version": "0.9.10"
+      },
+      {
+        "name": "rustls",
+        "version": "0.21.12"
+      },
+      {
+        "name": "rustls",
+        "version": "0.23.45"
+      }
+    ]
+  },
+  "conclusion": "No later published lancedb version observed; main selected packages still include affected versions. Source lock/default feature metadata is not attestation of exact wheel build features."
+}

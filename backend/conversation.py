@@ -21,6 +21,7 @@ from uuid import uuid4
 import requests
 
 from logging_config import get_logger
+from config import non_thinking_options
 
 logger = get_logger(__name__)
 
@@ -376,7 +377,7 @@ Rewritten question (output ONLY the rewritten question, no explanation):"""
 def resolve_coreference(
     question: str,
     history: list[dict],
-    model: str = "deepseek-chat",
+    model: str | None = None,
     api_key: str | None = None,
     base_url: str | None = None,
 ) -> str:
@@ -394,6 +395,8 @@ def resolve_coreference(
     """
     if not history:
         return question
+
+    model = model if model is not None else os.getenv("LANGEXTRACT_MODEL_ID", "deepseek-flash")
 
     # Build history summary
     history_lines = []
@@ -426,6 +429,7 @@ def resolve_coreference(
             f"{base_url.rstrip('/')}/chat/completions",
             json={
                 "model": model,
+                **non_thinking_options(model),
                 "messages": [{"role": "user", "content": prompt}],
                 "temperature": 0.0,
                 "max_tokens": 200,

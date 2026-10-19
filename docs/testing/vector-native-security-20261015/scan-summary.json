@@ -1,0 +1,623 @@
+{
+  "lancedb": {
+    "exit": 1,
+    "inventory_count": 800,
+    "vulnerability_records": 20,
+    "unique_vulnerability_ids": 18,
+    "warnings": {
+      "unmaintained": 2,
+      "unsound": 3
+    },
+    "matches": [
+      {
+        "id": "RUSTSEC-2026-0258",
+        "crate": "h2",
+        "version": "0.3.27",
+        "patched": [
+          ">=0.4.16"
+        ],
+        "unaffected": [],
+        "title": "h2 unbounded empty DATA frames",
+        "affected": null,
+        "kind": "vulnerability"
+      },
+      {
+        "id": "RUSTSEC-2026-0176",
+        "crate": "pyo3",
+        "version": "0.28.3",
+        "patched": [
+          ">=0.29.0"
+        ],
+        "unaffected": [
+          "<0.24.0"
+        ],
+        "title": "Out-of-bounds read in `nth` / `nth_back` for `PyList` and `PyTuple` iterators",
+        "affected": {
+          "arch": [],
+          "os": [],
+          "functions": {
+            "pyo3::types::list::BoundListIterator::nth": [
+              ">=0.24.0, <0.29.0"
+            ],
+            "pyo3::types::list::BoundListIterator::nth_back": [
+              ">=0.24.0, <0.29.0"
+            ],
+            "pyo3::types::tuple::BoundTupleIterator::nth": [
+              ">=0.24.0, <0.29.0"
+            ],
+            "pyo3::types::tuple::BoundTupleIterator::nth_back": [
+              ">=0.24.0, <0.29.0"
+            ]
+          }
+        },
+        "kind": "vulnerability"
+      },
+      {
+        "id": "RUSTSEC-2026-0177",
+        "crate": "pyo3",
+        "version": "0.28.3",
+        "patched": [
+          ">=0.29.0"
+        ],
+        "unaffected": [],
+        "title": "Missing `Sync` bound on `PyCFunction::new_closure` closures",
+        "affected": {
+          "arch": [],
+          "os": [],
+          "functions": {
+            "pyo3::types::PyCFunction::new_closure": [
+              ">=0.15.0, <0.29.0"
+            ],
+            "pyo3::types::PyCFunction::new_closure_bound": [
+              ">=0.21.0, <0.23.0"
+            ]
+          }
+        },
+        "kind": "vulnerability"
+      },
+      {
+        "id": "RUSTSEC-2026-0194",
+        "crate": "quick-xml",
+        "version": "0.40.1",
+        "patched": [
+          ">=0.41.0"
+        ],
+        "unaffected": [],
+        "title": "Quadratic run time when checking a start tag for duplicate attribute names",
+        "affected": null,
+        "kind": "vulnerability"
+      },
+      {
+        "id": "RUSTSEC-2026-0195",
+        "crate": "quick-xml",
+        "version": "0.40.1",
+        "patched": [
+          ">=0.41.0"
+        ],
+        "unaffected": [],
+        "title": "Unbounded namespace-declaration allocation in `NsReader` enables memory-exhaustion denial of service",
+        "affected": null,
+        "kind": "vulnerability"
+      },
+      {
+        "id": "RUSTSEC-2026-0185",
+        "crate": "quinn-proto",
+        "version": "0.11.14",
+        "patched": [
+          ">=0.11.15"
+        ],
+        "unaffected": [],
+        "title": " Remote memory exhaustion in quinn-proto from unbounded out-of-order stream reassembly",
+        "affected": null,
+        "kind": "vulnerability"
+      },
+      {
+        "id": "RUSTSEC-2026-0338",
+        "crate": "quinn-proto",
+        "version": "0.11.14",
+        "patched": [
+          ">=0.11.18"
+        ],
+        "unaffected": [
+          "<0.7.0"
+        ],
+        "title": "Remote peer can panic quinn-proto with zero-length STREAM frames during unordered reads",
+        "affected": null,
+        "kind": "vulnerability"
+      },
+      {
+        "id": "RUSTSEC-2026-0339",
+        "crate": "quinn-proto",
+        "version": "0.11.14",
+        "patched": [
+          ">=0.11.17"
+        ],
+        "unaffected": [
+          "<0.6.0"
+        ],
+        "title": "Unbounded growth of pending connection ID retirements in quinn-proto",
+        "affected": null,
+        "kind": "vulnerability"
+      },
+      {
+        "id": "RUSTSEC-2026-0340",
+        "crate": "quinn-proto",
+        "version": "0.11.14",
+        "patched": [
+          ">=0.11.18"
+        ],
+        "unaffected": [
+          "<0.11.0"
+        ],
+        "title": "Peer minimum ACK delay can panic quinn-proto when ACK_FREQUENCY transmission is enabled",
+        "affected": null,
+        "kind": "vulnerability"
+      },
+      {
+        "id": "RUSTSEC-2026-0342",
+        "crate": "quinn-proto",
+        "version": "0.11.14",
+        "patched": [
+          ">=0.11.17"
+        ],
+        "unaffected": [
+          "<0.5.0"
+        ],
+        "title": "Zero-length DATAGRAM frames bypass the receive buffer limit in quinn-proto",
+        "affected": null,
+        "kind": "vulnerability"
+      },
+      {
+        "id": "RUSTSEC-2023-0071",
+        "crate": "rsa",
+        "version": "0.9.10",
+        "patched": [],
+        "unaffected": [],
+        "title": "Marvin Attack: potential key recovery through timing sidechannels",
+        "affected": null,
+        "kind": "vulnerability"
+      },
+      {
+        "id": "RUSTSEC-2026-0346",
+        "crate": "rustls",
+        "version": "0.21.12",
+        "patched": [
+          ">=0.23.46"
+        ],
+        "unaffected": [
+          "<0.21.0"
+        ],
+        "title": "`Debug` impls for client session values expose TLS secrets",
+        "affected": null,
+        "kind": "vulnerability"
+      },
+      {
+        "id": "RUSTSEC-2026-0349",
+        "crate": "rustls",
+        "version": "0.21.12",
+        "patched": [
+          ">=0.23.46"
+        ],
+        "unaffected": [],
+        "title": "Unauthenticated ServerHello can downgrade later connections to classical key exchange",
+        "affected": null,
+        "kind": "vulnerability"
+      },
+      {
+        "id": "RUSTSEC-2026-0346",
+        "crate": "rustls",
+        "version": "0.23.45",
+        "patched": [
+          ">=0.23.46"
+        ],
+        "unaffected": [
+          "<0.21.0"
+        ],
+        "title": "`Debug` impls for client session values expose TLS secrets",
+        "affected": null,
+        "kind": "vulnerability"
+      },
+      {
+        "id": "RUSTSEC-2026-0347",
+        "crate": "rustls",
+        "version": "0.23.45",
+        "patched": [
+          ">=0.23.46"
+        ],
+        "unaffected": [
+          "<0.23.44"
+        ],
+        "title": "Buffered application data sent to outer server after ECH rejection",
+        "affected": null,
+        "kind": "vulnerability"
+      },
+      {
+        "id": "RUSTSEC-2026-0348",
+        "crate": "rustls",
+        "version": "0.23.45",
+        "patched": [
+          ">=0.23.46"
+        ],
+        "unaffected": [
+          "<0.23.9"
+        ],
+        "title": "Brotli certificate decompression can allocate up to 1 GiB before authentication",
+        "affected": null,
+        "kind": "vulnerability"
+      },
+      {
+        "id": "RUSTSEC-2026-0349",
+        "crate": "rustls",
+        "version": "0.23.45",
+        "patched": [
+          ">=0.23.46"
+        ],
+        "unaffected": [],
+        "title": "Unauthenticated ServerHello can downgrade later connections to classical key exchange",
+        "affected": null,
+        "kind": "vulnerability"
+      },
+      {
+        "id": "RUSTSEC-2026-0098",
+        "crate": "rustls-webpki",
+        "version": "0.101.7",
+        "patched": [
+          ">=0.103.12, <0.104.0-alpha.1",
+          ">=0.104.0-alpha.6"
+        ],
+        "unaffected": [],
+        "title": "Name constraints for URI names were incorrectly accepted",
+        "affected": null,
+        "kind": "vulnerability"
+      },
+      {
+        "id": "RUSTSEC-2026-0099",
+        "crate": "rustls-webpki",
+        "version": "0.101.7",
+        "patched": [
+          ">=0.103.12, <0.104.0-alpha.1",
+          ">=0.104.0-alpha.6"
+        ],
+        "unaffected": [],
+        "title": "Name constraints were accepted for certificates asserting a wildcard name",
+        "affected": null,
+        "kind": "vulnerability"
+      },
+      {
+        "id": "RUSTSEC-2026-0104",
+        "crate": "rustls-webpki",
+        "version": "0.101.7",
+        "patched": [
+          ">=0.103.13, <0.104.0-alpha.1",
+          ">=0.104.0-alpha.7"
+        ],
+        "unaffected": [],
+        "title": "Reachable panic in certificate revocation list parsing",
+        "affected": null,
+        "kind": "vulnerability"
+      },
+      {
+        "id": "RUSTSEC-2024-0436",
+        "crate": "paste",
+        "version": "1.0.15",
+        "patched": [],
+        "unaffected": [],
+        "title": "paste - no longer maintained",
+        "affected": null,
+        "kind": "warning"
+      },
+      {
+        "id": "RUSTSEC-2024-0449",
+        "crate": "unsafe-libyaml",
+        "version": "0.2.11",
+        "patched": [],
+        "unaffected": [],
+        "title": "unsafe-libyaml is unmaintained",
+        "affected": null,
+        "kind": "warning"
+      },
+      {
+        "id": "RUSTSEC-2026-0221",
+        "crate": "event-listener",
+        "version": "5.4.1",
+        "patched": [
+          ">=5.4.2"
+        ],
+        "unaffected": [
+          "<5.1.0"
+        ],
+        "title": "`event-listener` allows `!Send` tags to cross thread boundaries via `StackSlot`",
+        "affected": null,
+        "kind": "warning"
+      },
+      {
+        "id": "RUSTSEC-2026-0253",
+        "crate": "lru",
+        "version": "0.16.4",
+        "patched": [
+          ">=0.18.2"
+        ],
+        "unaffected": [],
+        "title": "Potential use-after-free due to lack of panic safety in `LruCache::pop()`",
+        "affected": null,
+        "kind": "warning"
+      },
+      {
+        "id": "RUSTSEC-2026-0186",
+        "crate": "memmap2",
+        "version": "0.9.10",
+        "patched": [
+          ">=0.9.11"
+        ],
+        "unaffected": [],
+        "title": "Unchecked pointer offset in crate `memmap2`",
+        "affected": {
+          "arch": [],
+          "os": [],
+          "functions": {
+            "memmap2::Mmap::advise_range": [
+              ">=0.5.9",
+              "<0.9.11"
+            ],
+            "memmap2::Mmap::unchecked_advise_range": [
+              ">=0.8.0",
+              "<0.9.11"
+            ],
+            "memmap2::MmapMut::advise_range": [
+              ">=0.5.9",
+              "<0.9.11"
+            ],
+            "memmap2::MmapMut::flush_async_range": [
+              "<0.9.11"
+            ],
+            "memmap2::MmapMut::flush_range": [
+              "<0.9.11"
+            ],
+            "memmap2::MmapMut::unchecked_advise_range": [
+              ">=0.8.0",
+              "<0.9.11"
+            ]
+          }
+        },
+        "kind": "warning"
+      }
+    ]
+  },
+  "pydantic-core": {
+    "exit": 0,
+    "inventory_count": 99,
+    "vulnerability_records": 0,
+    "unique_vulnerability_ids": 0,
+    "warnings": {},
+    "matches": []
+  },
+  "lancedb.binary": {
+    "exit": 1,
+    "inventory_count": 309,
+    "vulnerability_records": 9,
+    "unique_vulnerability_ids": 9,
+    "warnings": {
+      "unmaintained": 1,
+      "unsound": 3
+    },
+    "matches": [
+      {
+        "id": "RUSTSEC-2026-0176",
+        "crate": "pyo3",
+        "version": "0.28.3",
+        "patched": [
+          ">=0.29.0"
+        ],
+        "unaffected": [
+          "<0.24.0"
+        ],
+        "title": "Out-of-bounds read in `nth` / `nth_back` for `PyList` and `PyTuple` iterators",
+        "affected": {
+          "arch": [],
+          "os": [],
+          "functions": {
+            "pyo3::types::list::BoundListIterator::nth": [
+              ">=0.24.0, <0.29.0"
+            ],
+            "pyo3::types::list::BoundListIterator::nth_back": [
+              ">=0.24.0, <0.29.0"
+            ],
+            "pyo3::types::tuple::BoundTupleIterator::nth": [
+              ">=0.24.0, <0.29.0"
+            ],
+            "pyo3::types::tuple::BoundTupleIterator::nth_back": [
+              ">=0.24.0, <0.29.0"
+            ]
+          }
+        },
+        "kind": "vulnerability"
+      },
+      {
+        "id": "RUSTSEC-2026-0177",
+        "crate": "pyo3",
+        "version": "0.28.3",
+        "patched": [
+          ">=0.29.0"
+        ],
+        "unaffected": [],
+        "title": "Missing `Sync` bound on `PyCFunction::new_closure` closures",
+        "affected": {
+          "arch": [],
+          "os": [],
+          "functions": {
+            "pyo3::types::PyCFunction::new_closure": [
+              ">=0.15.0, <0.29.0"
+            ],
+            "pyo3::types::PyCFunction::new_closure_bound": [
+              ">=0.21.0, <0.23.0"
+            ]
+          }
+        },
+        "kind": "vulnerability"
+      },
+      {
+        "id": "RUSTSEC-2026-0194",
+        "crate": "quick-xml",
+        "version": "0.40.1",
+        "patched": [
+          ">=0.41.0"
+        ],
+        "unaffected": [],
+        "title": "Quadratic run time when checking a start tag for duplicate attribute names",
+        "affected": null,
+        "kind": "vulnerability"
+      },
+      {
+        "id": "RUSTSEC-2026-0195",
+        "crate": "quick-xml",
+        "version": "0.40.1",
+        "patched": [
+          ">=0.41.0"
+        ],
+        "unaffected": [],
+        "title": "Unbounded namespace-declaration allocation in `NsReader` enables memory-exhaustion denial of service",
+        "affected": null,
+        "kind": "vulnerability"
+      },
+      {
+        "id": "RUSTSEC-2023-0071",
+        "crate": "rsa",
+        "version": "0.9.10",
+        "patched": [],
+        "unaffected": [],
+        "title": "Marvin Attack: potential key recovery through timing sidechannels",
+        "affected": null,
+        "kind": "vulnerability"
+      },
+      {
+        "id": "RUSTSEC-2026-0346",
+        "crate": "rustls",
+        "version": "0.23.45",
+        "patched": [
+          ">=0.23.46"
+        ],
+        "unaffected": [
+          "<0.21.0"
+        ],
+        "title": "`Debug` impls for client session values expose TLS secrets",
+        "affected": null,
+        "kind": "vulnerability"
+      },
+      {
+        "id": "RUSTSEC-2026-0347",
+        "crate": "rustls",
+        "version": "0.23.45",
+        "patched": [
+          ">=0.23.46"
+        ],
+        "unaffected": [
+          "<0.23.44"
+        ],
+        "title": "Buffered application data sent to outer server after ECH rejection",
+        "affected": null,
+        "kind": "vulnerability"
+      },
+      {
+        "id": "RUSTSEC-2026-0348",
+        "crate": "rustls",
+        "version": "0.23.45",
+        "patched": [
+          ">=0.23.46"
+        ],
+        "unaffected": [
+          "<0.23.9"
+        ],
+        "title": "Brotli certificate decompression can allocate up to 1 GiB before authentication",
+        "affected": null,
+        "kind": "vulnerability"
+      },
+      {
+        "id": "RUSTSEC-2026-0349",
+        "crate": "rustls",
+        "version": "0.23.45",
+        "patched": [
+          ">=0.23.46"
+        ],
+        "unaffected": [],
+        "title": "Unauthenticated ServerHello can downgrade later connections to classical key exchange",
+        "affected": null,
+        "kind": "vulnerability"
+      },
+      {
+        "id": "RUSTSEC-2024-0449",
+        "crate": "unsafe-libyaml",
+        "version": "0.2.11",
+        "patched": [],
+        "unaffected": [],
+        "title": "unsafe-libyaml is unmaintained",
+        "affected": null,
+        "kind": "warning"
+      },
+      {
+        "id": "RUSTSEC-2026-0221",
+        "crate": "event-listener",
+        "version": "5.4.1",
+        "patched": [
+          ">=5.4.2"
+        ],
+        "unaffected": [
+          "<5.1.0"
+        ],
+        "title": "`event-listener` allows `!Send` tags to cross thread boundaries via `StackSlot`",
+        "affected": null,
+        "kind": "warning"
+      },
+      {
+        "id": "RUSTSEC-2026-0253",
+        "crate": "lru",
+        "version": "0.16.4",
+        "patched": [
+          ">=0.18.2"
+        ],
+        "unaffected": [],
+        "title": "Potential use-after-free due to lack of panic safety in `LruCache::pop()`",
+        "affected": null,
+        "kind": "warning"
+      },
+      {
+        "id": "RUSTSEC-2026-0186",
+        "crate": "memmap2",
+        "version": "0.9.10",
+        "patched": [
+          ">=0.9.11"
+        ],
+        "unaffected": [],
+        "title": "Unchecked pointer offset in crate `memmap2`",
+        "affected": {
+          "arch": [],
+          "os": [],
+          "functions": {
+            "memmap2::Mmap::advise_range": [
+              ">=0.5.9",
+              "<0.9.11"
+            ],
+            "memmap2::Mmap::unchecked_advise_range": [
+              ">=0.8.0",
+              "<0.9.11"
+            ],
+            "memmap2::MmapMut::advise_range": [
+              ">=0.5.9",
+              "<0.9.11"
+            ],
+            "memmap2::MmapMut::flush_async_range": [
+              "<0.9.11"
+            ],
+            "memmap2::MmapMut::flush_range": [
+              "<0.9.11"
+            ],
+            "memmap2::MmapMut::unchecked_advise_range": [
+              ">=0.8.0",
+              "<0.9.11"
+            ]
+          }
+        },
+        "kind": "warning"
+      }
+    ]
+  }
+}

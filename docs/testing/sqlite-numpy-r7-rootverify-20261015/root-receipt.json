@@ -1,0 +1,42 @@
+{
+  "utc": "2026-10-15T06:27:16.013760+00:00",
+  "frozen_manifest_sha256": "fcf0ecf3cbf8c5a57ceb98d970333a7c54f9de09ab5ec6951d2fcbfeab41fc2d",
+  "frozen_files_verified": 45,
+  "command": [
+    "D:\\graghRAG-agent\\.tmp\\sqlite-numpy-r7-20261015\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "-v",
+    "test_store"
+  ],
+  "cwd": "D:\\graghRAG-agent\\.tmp\\sqlite-numpy-r7-rootverify-20261015\\source",
+  "exit_code": 0,
+  "source_before": {
+    "store.py": "28cede24b74aaaad92ccd0c3ca327203f9e3648e8afbbadfe5d61b6870b750da",
+    "test_store.py": "6e9a801305fa57aed281562f9e8ad3c7ab82993c951be3c53b0545bced4d63f2",
+    "pyproject.toml": "269081af7b7e7bdfb7697b3606995c3bf78b43ea0c45a5177ff28061f0a1c32e",
+    "uv.lock": "989951eae09c2b8524f0fcecf4f0d1d955a72b7c0c8aadce9edfee0567d4225a"
+  },
+  "source_after": {
+    "store.py": "28cede24b74aaaad92ccd0c3ca327203f9e3648e8afbbadfe5d61b6870b750da",
+    "test_store.py": "6e9a801305fa57aed281562f9e8ad3c7ab82993c951be3c53b0545bced4d63f2",
+    "pyproject.toml": "269081af7b7e7bdfb7697b3606995c3bf78b43ea0c45a5177ff28061f0a1c32e",
+    "uv.lock": "989951eae09c2b8524f0fcecf4f0d1d955a72b7c0c8aadce9edfee0567d4225a"
+  },
+  "identity": {
+    "python": "3.12.15 (main, Oct 14 2026, 01:08:45) [MSC v.1944 64 bit (AMD64)]",
+    "base_prefix": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python",
+    "sqlite": "3.54.0",
+    "numpy": "2.5.4",
+    "installed": {
+      "numpy": "2.5.4"
+    }
+  },
+  "lock_packages": {
+    "numpy": "2.5.4"
+  },
+  "scope": "root copied final source actual author tests; independent reviewer fixtures separate; no production coverage or deployment"
+}

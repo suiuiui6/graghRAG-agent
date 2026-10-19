@@ -23,7 +23,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from uuid import uuid4
 
-from config import RetrievalConfig
+from config import RetrievalConfig, non_thinking_options
 from source_control import (
     SourceRecallSkipped, build_effective_config, record_source, source_allowed, source_skip_reason, summarize_sources,
 )
@@ -278,7 +278,7 @@ def _normalize_query_typos(raw_query: str) -> str:
 
 def preprocess_query(
     raw_query: str,
-    model_name: str = "deepseek-chat",
+    model_name: str | None = None,
     api_key: str | None = None,
     base_url: str | None = None,
     chat_history: list[dict] | None = None,
@@ -288,6 +288,8 @@ def preprocess_query(
     Uses a single lightweight LLM call (not dependent on retrieval results).
     """
     import os as _os
+
+    model_name = model_name if model_name is not None else _os.getenv("LANGEXTRACT_MODEL_ID", "deepseek-flash")
 
     # Apply lightweight typo correction before LLM processing
     raw_query = _normalize_query_typos(raw_query)
@@ -344,6 +346,7 @@ def preprocess_query(
             f"{base_url.rstrip('/')}/chat/completions",
             json={
                 "model": model_name,
+                **non_thinking_options(model_name),
                 "messages": [{"role": "user", "content": prompt}],
                 "temperature": 0.0,
                 "max_tokens": 300,
@@ -1802,7 +1805,8 @@ Variants (JSON list only):"""
         resp = requests.post(
             f"{base_url.rstrip('/')}/chat/completions",
             json={
-                "model": "deepseek-chat",
+                "model": _os.getenv("LANGEXTRACT_MODEL_ID", "deepseek-flash"),
+                **non_thinking_options(_os.getenv("LANGEXTRACT_MODEL_ID", "deepseek-flash")),
                 "messages": [{"role": "user", "content": prompt}],
                 "temperature": 0.3,
                 "max_tokens": 200,

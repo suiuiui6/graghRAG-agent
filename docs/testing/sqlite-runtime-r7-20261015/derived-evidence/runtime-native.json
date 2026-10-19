@@ -1,0 +1,557 @@
+{
+  "utc": "2026-10-15T06:12:29.042963+00:00",
+  "executable": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\python.exe",
+  "python": "3.12.15 (main, Oct 14 2026, 01:08:45) [MSC v.1944 64 bit (AMD64)]",
+  "base_prefix": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python",
+  "sqlite_version": "3.54.0",
+  "sqlite_source_id": "2026-10-09 15:46:58 be8d059e9a49089ab2dce5ed26dd87aaf598fdc5fbe0b107c0dd758464bcd5e3",
+  "sqlite_threadsafety": 3,
+  "compile_options": [
+    "ATOMIC_INTRINSICS=0",
+    "COMPILER=msvc-1951",
+    "DEFAULT_AUTOVACUUM",
+    "DEFAULT_CACHE_SIZE=-2000",
+    "DEFAULT_FILE_FORMAT=4",
+    "DEFAULT_JOURNAL_SIZE_LIMIT=-1",
+    "DEFAULT_MMAP_SIZE=0",
+    "DEFAULT_PAGE_SIZE=4096",
+    "DEFAULT_PCACHE_INITSZ=20",
+    "DEFAULT_RECURSIVE_TRIGGERS",
+    "DEFAULT_SECTOR_SIZE=4096",
+    "DEFAULT_SYNCHRONOUS=2",
+    "DEFAULT_WAL_AUTOCHECKPOINT=1000",
+    "DEFAULT_WAL_SYNCHRONOUS=2",
+    "DEFAULT_WORKER_THREADS=0",
+    "DIRECT_OVERFLOW_READ",
+    "ENABLE_BYTECODE_VTAB",
+    "ENABLE_CARRAY",
+    "ENABLE_COLUMN_METADATA",
+    "ENABLE_DBPAGE_VTAB",
+    "ENABLE_DBSTAT_VTAB",
+    "ENABLE_FTS3",
+    "ENABLE_FTS5",
+    "ENABLE_GEOPOLY",
+    "ENABLE_MATH_FUNCTIONS",
+    "ENABLE_PERCENTILE",
+    "ENABLE_PREUPDATE_HOOK",
+    "ENABLE_RBU",
+    "ENABLE_RTREE",
+    "ENABLE_SESSION",
+    "ENABLE_STMTVTAB",
+    "MALLOC_SOFT_LIMIT=1024",
+    "MAX_ATTACHED=10",
+    "MAX_COLUMN=2000",
+    "MAX_COMPOUND_SELECT=500",
+    "MAX_DEFAULT_PAGE_SIZE=8192",
+    "MAX_EXPR_DEPTH=1000",
+    "MAX_FUNCTION_ARG=1000",
+    "MAX_LENGTH=1000000000",
+    "MAX_LIKE_PATTERN_LENGTH=50000",
+    "MAX_MMAP_SIZE=0x7fff0000",
+    "MAX_PAGE_COUNT=0xfffffffe",
+    "MAX_PAGE_SIZE=65536",
+    "MAX_SCHEMA=10000000",
+    "MAX_SQL_LENGTH=1000000000",
+    "MAX_TRIGGER_DEPTH=100",
+    "MAX_VARIABLE_NUMBER=32766",
+    "MAX_VDBE_OP=250000000",
+    "MAX_WORKER_THREADS=8",
+    "MUTEX_W32",
+    "SYSTEM_MALLOC",
+    "TEMP_STORE=1",
+    "THREADSAFE=1"
+  ],
+  "module_paths": {
+    "sqlite3": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\Lib\\sqlite3\\__init__.py",
+    "_sqlite3": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_sqlite3.pyd",
+    "_ssl": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_ssl.pyd",
+    "_ctypes": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_ctypes.pyd"
+  },
+  "openssl": "OpenSSL 3.5.9 29 Sep 2026",
+  "zlib_compiled": "1.3.2",
+  "zlib_runtime": "1.3.2",
+  "expat": "expat_2.8.5",
+  "defensive_initial": false,
+  "defensive_hardened": true,
+  "trusted_schema_initial": 1,
+  "trusted_schema_hardened": 0,
+  "extension_initial": false,
+  "extension_hardened": false,
+  "extension_sql_rejection": "not authorized",
+  "synthetic_parameterized_blob_roundtrip": true,
+  "loaded_modules": [
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\python.exe",
+      "sha256": "407de1f8feb303d3249bb835e5ff7f543daada4e229c2c496d24a5b99fdba9ec",
+      "size": 91648
+    },
+    {
+      "path": "C:\\Windows\\SYSTEM32\\ntdll.dll",
+      "sha256": "a74f7482085eab125ccc09152ab7e0b5994bcb13e1a7b29880bdbb24179ecb8b",
+      "size": 2522080
+    },
+    {
+      "path": "C:\\Windows\\System32\\KERNEL32.DLL",
+      "sha256": "8f8629741558b5df71def4e1dd8ef9645d4f806b949762c47757c50fea1a9e6d",
+      "size": 844496
+    },
+    {
+      "path": "C:\\Windows\\System32\\KERNELBASE.dll",
+      "sha256": "becad014fb8efa8cb5e314931cca92778ad42c649b12a6909632cacd68af4f40",
+      "size": 4212112
+    },
+    {
+      "path": "C:\\Windows\\System32\\ucrtbase.dll",
+      "sha256": "5c52e3a303baaac0e0af8bd9b96134993da34bc9d834a31ef37e1d2cdc7fe192",
+      "size": 1377512
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\VCRUNTIME140.dll",
+      "sha256": "d5e4d9a3e835fa679450145d6a7d94e36573a509317111904d9b3712c30d9066",
+      "size": 124544
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\python312.dll",
+      "sha256": "90a28a195c89d19055ef57718325854c95dd6228f5706af2b263b2a6bd2fa395",
+      "size": 6969856
+    },
+    {
+      "path": "C:\\Windows\\System32\\WS2_32.dll",
+      "sha256": "535d7a8336ddbae77b1f2c68339e5e7dbeb5f06445d6e42b19c794ef0e26f6a3",
+      "size": 534592
+    },
+    {
+      "path": "C:\\Windows\\System32\\RPCRT4.dll",
+      "sha256": "89af87b6387bde4243306036fce2be89c67a328f93c25c53542e4c665b114747",
+      "size": 1162656
+    },
+    {
+      "path": "C:\\Windows\\System32\\ADVAPI32.dll",
+      "sha256": "e036c9baecd170d7ef4759a5a7eb76036158cacc4cd9e3f697dbf410a3457224",
+      "size": 778344
+    },
+    {
+      "path": "C:\\Windows\\System32\\msvcrt.dll",
+      "sha256": "a1bd0acd64e1a60368b8878d3987f603d966ed45be2252d2d4d0f92feb10fa8e",
+      "size": 699848
+    },
+    {
+      "path": "C:\\Windows\\SYSTEM32\\VERSION.dll",
+      "sha256": "cea99f212af557a9613150c5509631403ed0f05f5d9a06ac42039bd59b40e39a",
+      "size": 55192
+    },
+    {
+      "path": "C:\\Windows\\System32\\sechost.dll",
+      "sha256": "c760d6c0dfa2705446aa7a2260206c9076182d92231854c04aa526403217eb9a",
+      "size": 704008
+    },
+    {
+      "path": "C:\\Windows\\SYSTEM32\\bcrypt.dll",
+      "sha256": "b5691584e857caf0c6c590dda13779966b383d66be3c87d5b3cbbc2f5005495b",
+      "size": 183376
+    },
+    {
+      "path": "C:\\Windows\\System32\\bcryptprimitives.dll",
+      "sha256": "46c06a0f0323d25a32c2b16da1a4a09e9234d282be7714469b7985bb98031ab6",
+      "size": 716408
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\python3.DLL",
+      "sha256": "d8eba45a0c97355d4597e6de0b2755887b887b0de07b67866d038acd0602ca7a",
+      "size": 56320
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_ctypes.pyd",
+      "sha256": "6b66de8ff621394d37537b6d389b80e25db027be5ec7c879dd73462175cdaedf",
+      "size": 116224
+    },
+    {
+      "path": "C:\\Windows\\System32\\ole32.dll",
+      "sha256": "4b81e4a4cb982915ceb3ebef0148227689306c274d5b2f6068ea143ae4db3e40",
+      "size": 1695680
+    },
+    {
+      "path": "C:\\Windows\\System32\\msvcp_win.dll",
+      "sha256": "c50165e6aaf74395c059564d65fa78b0911844828cbcf791d78f80d964a60f4e",
+      "size": 642016
+    },
+    {
+      "path": "C:\\Windows\\System32\\GDI32.dll",
+      "sha256": "772c73e294a4c5f5e0d4146288af95287a85c074d3aee3fa9f320dc010d7dbfe",
+      "size": 187456
+    },
+    {
+      "path": "C:\\Windows\\System32\\win32u.dll",
+      "sha256": "9cd636e8a1b300e2f4b16f339d650eda71fa02b92b100e4b2f89ce7c04811767",
+      "size": 170952
+    },
+    {
+      "path": "C:\\Windows\\System32\\gdi32full.dll",
+      "sha256": "bde2077a56c90f68c5fa1ce5ebd4a40755c97a5080b91a87d2beff47349dd01e",
+      "size": 1220496
+    },
+    {
+      "path": "C:\\Windows\\System32\\USER32.dll",
+      "sha256": "93a4310e66a47fa359f588c2ebda64fe3651771c6f9ff30d462a77215a2e558e",
+      "size": 1914656
+    },
+    {
+      "path": "C:\\Windows\\System32\\combase.dll",
+      "sha256": "39a2e2ba1ca6012953c94c10011fff5a18783120a2a34f5b66deb2d374a362c9",
+      "size": 3716184
+    },
+    {
+      "path": "C:\\Windows\\System32\\OLEAUT32.dll",
+      "sha256": "e276bb09983606469c50f0f03c9604bbeffd7d669d996526c8c1af89042fbae0",
+      "size": 898200
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\libffi-8.dll",
+      "sha256": "63fa5753ec5a721bbcafc2185736c8bc6cd756a52bf4e4cd22876b698217e954",
+      "size": 28160
+    },
+    {
+      "path": "C:\\Windows\\System32\\IMM32.DLL",
+      "sha256": "7e45f12c1c555e2407c5ca082bd925b34655278fde4dbfac53a0468cc1e77411",
+      "size": 212288
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_hashlib.pyd",
+      "sha256": "3c3dfbe4f60b0c537b26e4098e14b7be6c59031cd906dc9b6ff08163642a7206",
+      "size": 54784
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\libcrypto-3-x64.dll",
+      "sha256": "4bf8299c7d3e3abca06536c2a8faf682c7f8b166b1b81d60d6f1eb55f25ae51f",
+      "size": 7856640
+    },
+    {
+      "path": "C:\\Windows\\System32\\CRYPT32.dll",
+      "sha256": "c720af58976a3624dbc5b74ec4e470d8fec8a4645dc06947906c49e929862dc3",
+      "size": 1559296
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_sqlite3.pyd",
+      "sha256": "ab560414e7121c61c1cec4a499f238d66520105cc1d320cc6272e1d078861108",
+      "size": 112128
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\sqlite3.dll",
+      "sha256": "5ca6a16bdd2c5a5037b1e3a942d9ac1c66efe2def902b202d44774680a8a4656",
+      "size": 3518976
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_ssl.pyd",
+      "sha256": "07b8caa7ee74730d57a102b48d84442f47025b54491e0f9b9d204cc1e8bd47fe",
+      "size": 165376
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\libssl-3-x64.dll",
+      "sha256": "76b45e2b2dc61be97dad22c5144a1f480e64c90004c3f1d0487cefcc12904d11",
+      "size": 1571840
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_socket.pyd",
+      "sha256": "c8e6648d57dd000de5226fbf1635a6b091b2b319f44dba5a0b2789efd13579fa",
+      "size": 71680
+    },
+    {
+      "path": "C:\\Windows\\SYSTEM32\\IPHLPAPI.DLL",
+      "sha256": "8521026d021cc5193a7cd7c0256bd14c7ab39738d22c019e6d544b37deee12c0",
+      "size": 220528
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\select.pyd",
+      "sha256": "4752467fbb831925931a379c5e9b1a080c5d5e64f6e404fdb4c466f0ecf64194",
+      "size": 18944
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\pyexpat.pyd",
+      "sha256": "6ffe9cce42729f48bbeec91816fe937e092544a41a36798fca12e3dbbd137233",
+      "size": 210944
+    },
+    {
+      "path": "C:\\Windows\\System32\\psapi.DLL",
+      "sha256": "6c8ebe6621224d11ded0c920873d67b5255fd515e8c4ea803cd587c8232bee5c",
+      "size": 42864
+    }
+  ],
+  "runtime_files": [
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\python.exe",
+      "sha256": "407de1f8feb303d3249bb835e5ff7f543daada4e229c2c496d24a5b99fdba9ec",
+      "size": 91648
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\python3.dll",
+      "sha256": "d8eba45a0c97355d4597e6de0b2755887b887b0de07b67866d038acd0602ca7a",
+      "size": 56320
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\python312.dll",
+      "sha256": "90a28a195c89d19055ef57718325854c95dd6228f5706af2b263b2a6bd2fa395",
+      "size": 6969856
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\pythonw.exe",
+      "sha256": "d8301f0c7e37aab3a71766eccb378f3f510b324367cadb7b1d7f39b948d52aa8",
+      "size": 90112
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\vcruntime140.dll",
+      "sha256": "d5e4d9a3e835fa679450145d6a7d94e36573a509317111904d9b3712c30d9066",
+      "size": 124544
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\vcruntime140_1.dll",
+      "sha256": "1f2d41c4aa5db0bc33ebf7b66d72943a817d7ce6cbe880502a9403823633093f",
+      "size": 49792
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\libcrypto-3-x64.dll",
+      "sha256": "4bf8299c7d3e3abca06536c2a8faf682c7f8b166b1b81d60d6f1eb55f25ae51f",
+      "size": 7856640
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\libffi-8.dll",
+      "sha256": "63fa5753ec5a721bbcafc2185736c8bc6cd756a52bf4e4cd22876b698217e954",
+      "size": 28160
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\libssl-3-x64.dll",
+      "sha256": "76b45e2b2dc61be97dad22c5144a1f480e64c90004c3f1d0487cefcc12904d11",
+      "size": 1571840
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\pyexpat.pyd",
+      "sha256": "6ffe9cce42729f48bbeec91816fe937e092544a41a36798fca12e3dbbd137233",
+      "size": 210944
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\select.pyd",
+      "sha256": "4752467fbb831925931a379c5e9b1a080c5d5e64f6e404fdb4c466f0ecf64194",
+      "size": 18944
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\sqlite3.dll",
+      "sha256": "5ca6a16bdd2c5a5037b1e3a942d9ac1c66efe2def902b202d44774680a8a4656",
+      "size": 3518976
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\tcl86t.dll",
+      "sha256": "a308beae8555cff5ac2aff7eaf0aef40b5fe173f047e246dc49da9a4d3ef62f9",
+      "size": 1839896
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\tk86t.dll",
+      "sha256": "20f4876506bce7f89e53570e64fd1dce30a64548326b45f372871c7019560df4",
+      "size": 1589528
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\unicodedata.pyd",
+      "sha256": "8cac3d1a3ea35f28a55eb136d55a2a166f2db9c12a380fb7a1665351c3ecb8da",
+      "size": 1127936
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\winsound.pyd",
+      "sha256": "0e1b3b984b930b9942bce4d96ba14b85c98e57e9697546bf1ff31b33e10dd3d3",
+      "size": 18432
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\zlib1.dll",
+      "sha256": "1dd27f0411ebb31bd148a61589cee254410915f1e6c37aa3ffa52fac71a5426c",
+      "size": 146208
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_asyncio.pyd",
+      "sha256": "c1c7f4e24603b72637f92c20ee568f6feac4d0d5a3e94065ac45fa8a8dc5e5b6",
+      "size": 59392
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_bz2.pyd",
+      "sha256": "3de3a94e538a2bd234b1c84203d3f58d1e5a826e21669d23d5fd7531a61e6a54",
+      "size": 73216
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_ctypes.pyd",
+      "sha256": "6b66de8ff621394d37537b6d389b80e25db027be5ec7c879dd73462175cdaedf",
+      "size": 116224
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_ctypes_test.pyd",
+      "sha256": "fd941ccb72c0eb3ca3fb2b684131f7a5e893c07661c407f20d2cc88c707d7a4e",
+      "size": 25088
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_decimal.pyd",
+      "sha256": "3439d51e65f436553fde7a4d862ca2e25fff0e62f03fed525a6292dfbf18c82d",
+      "size": 247296
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_elementtree.pyd",
+      "sha256": "42cb6cdf60d8d356aa757eee8b9fb550758e7e6c46d43aab0823dfece28bea9d",
+      "size": 122368
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_hashlib.pyd",
+      "sha256": "3c3dfbe4f60b0c537b26e4098e14b7be6c59031cd906dc9b6ff08163642a7206",
+      "size": 54784
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_lzma.pyd",
+      "sha256": "9d4c2a845af64187eb3fb867f7c3863630dfaa5840228c9afc0cde9d767f794a",
+      "size": 153088
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_msi.pyd",
+      "sha256": "f151004b261af3ec6ae3d2b274f12beb4aa554077804f253476a84f689a8bd79",
+      "size": 33280
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_multiprocessing.pyd",
+      "sha256": "c680fa7be1193a7e9e4b0692fb3a02899a4ec84e5a86a8da3f9fae2c3396f76b",
+      "size": 24064
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_overlapped.pyd",
+      "sha256": "5ace31110daab245de503d97435a1976c333c6a44e997c7e263dabe627c9eb3a",
+      "size": 44032
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_queue.pyd",
+      "sha256": "f350d38997cb6e388038418b25a142af5ca9c5417fcf413932ee0fabeb259d10",
+      "size": 20480
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_socket.pyd",
+      "sha256": "c8e6648d57dd000de5226fbf1635a6b091b2b319f44dba5a0b2789efd13579fa",
+      "size": 71680
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_sqlite3.pyd",
+      "sha256": "ab560414e7121c61c1cec4a499f238d66520105cc1d320cc6272e1d078861108",
+      "size": 112128
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_ssl.pyd",
+      "sha256": "07b8caa7ee74730d57a102b48d84442f47025b54491e0f9b9d204cc1e8bd47fe",
+      "size": 165376
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_testbuffer.pyd",
+      "sha256": "4732388777f045ed70752a4a94c62c2fb5539b046d285ea8db30a0ae88616b64",
+      "size": 43520
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_testcapi.pyd",
+      "sha256": "5209483d34747df6112887fa786493e5c1d54761a1501bc207576c2126a50587",
+      "size": 297984
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_testclinic.pyd",
+      "sha256": "12d0f3a93f34a7a3d43cf985c39031c7f79b23d29fb9b3a9a6ce892b81ba6913",
+      "size": 55296
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_testconsole.pyd",
+      "sha256": "c235c27fdff8dd8ae3425724621da2099e98051cb908ce1f189baafa6e08c105",
+      "size": 15360
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_testimportmultiple.pyd",
+      "sha256": "5c40f836ec246c02401b73a72e7680a0621877ad6237301bf29157dcdc881800",
+      "size": 13312
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_testinternalcapi.pyd",
+      "sha256": "8acb722579d67153353f577a289e5d16c8ff47cea2f8d08a016239c339b4e718",
+      "size": 39936
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_testmultiphase.pyd",
+      "sha256": "95d046c36145ab06ce9ff2a2d484f5fa5a1e68b9e7b16b0f572669549078e850",
+      "size": 27648
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_testsinglephase.pyd",
+      "sha256": "c5db64f657d1b4ad38f66039f882dbeba0413f50f8f55ecfc52735ac6718caf3",
+      "size": 18432
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_tkinter.pyd",
+      "sha256": "85e9558c769f2a52ef2b7eb061c2fb1f22ea630fee34927cb76ffee2cdb1dfb6",
+      "size": 55296
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_uuid.pyd",
+      "sha256": "af3f265b3b4508bc094d1d8923968fda52de5919b6c79c505d3410821530c992",
+      "size": 13824
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_wmi.pyd",
+      "sha256": "05d39994359cfa31f0c952bef662aa1c2702ecb2f32195387f3518c559e55b60",
+      "size": 25600
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\DLLs\\_zoneinfo.pyd",
+      "sha256": "f234a5bc95ee8806740b232aa7da1b436d334a4438cd75fae7cc759540563ca1",
+      "size": 36352
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\Lib\\site-packages\\pip\\_vendor\\distlib\\t32.exe",
+      "sha256": "5fd873e09786a1eaabaa44261e9e30609d88745da040ebb702c1a5069ab345ca",
+      "size": 97792
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\Lib\\site-packages\\pip\\_vendor\\distlib\\t64-arm.exe",
+      "sha256": "81f7936c6d05cadd4a185bb9a8a64abe9a72c937ad979ea5afe672de59123fcc",
+      "size": 182784
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\Lib\\site-packages\\pip\\_vendor\\distlib\\t64.exe",
+      "sha256": "acd47a82dc01132e3b8414f683c2e117c18aedbf650a370249fe9fdbc445cda1",
+      "size": 108032
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\Lib\\site-packages\\pip\\_vendor\\distlib\\w32.exe",
+      "sha256": "f27b3724964ff524e837374847d2856f7d10a884516fc34200d0a2332a739789",
+      "size": 91648
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\Lib\\site-packages\\pip\\_vendor\\distlib\\w64-arm.exe",
+      "sha256": "f6704d3a1022f69ad6b7e604a927d00ce2f9dae515bfad5a7df9a2e3e4bd2448",
+      "size": 168448
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\Lib\\site-packages\\pip\\_vendor\\distlib\\w64.exe",
+      "sha256": "55b21889fd3d28799b834fba3d29482e7aa1b0519864b790e3914af7cdda666b",
+      "size": 101888
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\Lib\\venv\\scripts\\nt\\python.exe",
+      "sha256": "f9475ecd98ef320792a4946b80b1915500a318e9ad537097b8188c28fd659928",
+      "size": 262144
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\Lib\\venv\\scripts\\nt\\pythonw.exe",
+      "sha256": "c5abf7750cf672fe044759c7d35d55c0ba5bb05010be972fea50a94b4979297c",
+      "size": 249856
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\tcl\\dde1.4\\tcldde14.dll",
+      "sha256": "95454d21be84b4bef1f90b7aff56484b0111b30384d7c6d1a05463871c8036d3",
+      "size": 37664
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\tcl\\reg1.3\\tclreg13.dll",
+      "sha256": "0250f59bf28cb7b65ed46a3befab5cff58785628502c5bd982e4c890580b85ad",
+      "size": 34584
+    },
+    {
+      "path": "D:\\graghRAG-agent\\.tmp\\sqlite-runtime-r7-20261015\\derived\\python\\tcl\\tix8.4.3\\tix84.dll",
+      "sha256": "5b98953e5e36f4a3c889131a852d92e35070c708033f470319317fd7cd4a7b1d",
+      "size": 371200
+    }
+  ],
+  "sqlite_floor_met": true
+}

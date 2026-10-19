@@ -1,0 +1,607 @@
+{
+  "ordinary_add": {
+    "ok": true,
+    "result": null
+  },
+  "ordinary_get": {
+    "ok": true,
+    "result": {
+      "ids": [
+        "x"
+      ],
+      "embeddings": null,
+      "documents": [
+        "doc"
+      ],
+      "uris": null,
+      "included": [
+        "metadatas",
+        "documents"
+      ],
+      "data": null,
+      "metadatas": [
+        {
+          "entity_ids": "[\"x\"]",
+          "n": 9.223372036854776e+18,
+          "fresh": true
+        }
+      ]
+    }
+  },
+  "ordinary_query": {
+    "ok": true,
+    "result": {
+      "query": {
+        "ids": [
+          [
+            "x"
+          ]
+        ],
+        "embeddings": null,
+        "documents": [
+          [
+            "doc"
+          ]
+        ],
+        "uris": null,
+        "included": [
+          "metadatas",
+          "documents",
+          "distances"
+        ],
+        "data": null,
+        "metadatas": [
+          [
+            {
+              "entity_ids": "[\"x\"]",
+              "n": 9.223372036854776e+18,
+              "fresh": true
+            }
+          ]
+        ],
+        "distances": [
+          [
+            0.8774312138557434
+          ]
+        ]
+      },
+      "project_score": [
+        0.5613
+      ],
+      "binary64_reference_score": 0.5613
+    }
+  },
+  "ordinary_large_query": {
+    "ok": true,
+    "result": {
+      "ids": [
+        [
+          "x"
+        ]
+      ],
+      "embeddings": null,
+      "documents": [
+        [
+          "doc"
+        ]
+      ],
+      "uris": null,
+      "included": [
+        "metadatas",
+        "documents",
+        "distances"
+      ],
+      "data": null,
+      "metadatas": [
+        [
+          {
+            "entity_ids": "[\"x\"]",
+            "fresh": true,
+            "n": 9.223372036854776e+18
+          }
+        ]
+      ],
+      "distances": [
+        [
+          NaN
+        ]
+      ]
+    }
+  },
+  "ordinary_delete_where": {
+    "ok": true,
+    "result": {
+      "deleted": 1
+    }
+  },
+  "ordinary_after_delete": {
+    "ok": true,
+    "result": {
+      "count": 0,
+      "get": {
+        "ids": [],
+        "embeddings": null,
+        "documents": [],
+        "uris": null,
+        "included": [
+          "metadatas",
+          "documents"
+        ],
+        "data": null,
+        "metadatas": []
+      }
+    }
+  },
+  "ordinary_readd": {
+    "ok": true,
+    "result": null
+  },
+  "ordinary_new_key_query": {
+    "ok": true,
+    "result": {
+      "ids": [
+        "x"
+      ],
+      "embeddings": null,
+      "documents": [
+        "new"
+      ],
+      "uris": null,
+      "included": [
+        "metadatas",
+        "documents"
+      ],
+      "data": null,
+      "metadatas": [
+        {
+          "new_key": "now"
+        }
+      ]
+    }
+  },
+  "round_edge_add": {
+    "ok": true,
+    "result": null
+  },
+  "round_edge_get": {
+    "ok": true,
+    "result": {
+      "ids": [
+        "x"
+      ],
+      "embeddings": null,
+      "documents": [
+        "doc"
+      ],
+      "uris": null,
+      "included": [
+        "metadatas",
+        "documents"
+      ],
+      "data": null,
+      "metadatas": [
+        {
+          "entity_ids": "[\"x\"]",
+          "n": 9.223372036854776e+18,
+          "fresh": true
+        }
+      ]
+    }
+  },
+  "round_edge_query": {
+    "ok": true,
+    "result": {
+      "query": {
+        "ids": [
+          [
+            "x"
+          ]
+        ],
+        "embeddings": null,
+        "documents": [
+          [
+            "doc"
+          ]
+        ],
+        "uris": null,
+        "included": [
+          "metadatas",
+          "documents",
+          "distances"
+        ],
+        "data": null,
+        "metadatas": [
+          [
+            {
+              "entity_ids": "[\"x\"]",
+              "n": 9.223372036854776e+18,
+              "fresh": true
+            }
+          ]
+        ],
+        "distances": [
+          [
+            0.8774311542510986
+          ]
+        ]
+      },
+      "project_score": [
+        0.5613
+      ],
+      "binary64_reference_score": 0.5613
+    }
+  },
+  "round_edge_large_query": {
+    "ok": true,
+    "result": {
+      "ids": [
+        [
+          "x"
+        ]
+      ],
+      "embeddings": null,
+      "documents": [
+        [
+          "doc"
+        ]
+      ],
+      "uris": null,
+      "included": [
+        "metadatas",
+        "documents",
+        "distances"
+      ],
+      "data": null,
+      "metadatas": [
+        [
+          {
+            "entity_ids": "[\"x\"]",
+            "n": 9.223372036854776e+18,
+            "fresh": true
+          }
+        ]
+      ],
+      "distances": [
+        [
+          NaN
+        ]
+      ]
+    }
+  },
+  "round_edge_delete_where": {
+    "ok": true,
+    "result": {
+      "deleted": 1
+    }
+  },
+  "round_edge_after_delete": {
+    "ok": true,
+    "result": {
+      "count": 0,
+      "get": {
+        "ids": [],
+        "embeddings": null,
+        "documents": [],
+        "uris": null,
+        "included": [
+          "metadatas",
+          "documents"
+        ],
+        "data": null,
+        "metadatas": []
+      }
+    }
+  },
+  "round_edge_readd": {
+    "ok": true,
+    "result": null
+  },
+  "round_edge_new_key_query": {
+    "ok": true,
+    "result": {
+      "ids": [
+        "x"
+      ],
+      "embeddings": null,
+      "documents": [
+        "new"
+      ],
+      "uris": null,
+      "included": [
+        "metadatas",
+        "documents"
+      ],
+      "data": null,
+      "metadatas": [
+        {
+          "new_key": "now"
+        }
+      ]
+    }
+  },
+  "large_add": {
+    "ok": false,
+    "type": "InvalidArgumentError",
+    "message": "Validation error: embeddings: Embeddings must not contain NaN or Infinity values"
+  },
+  "large_get": {
+    "ok": true,
+    "result": {
+      "ids": [],
+      "embeddings": null,
+      "documents": [],
+      "uris": null,
+      "included": [
+        "metadatas",
+        "documents"
+      ],
+      "data": null,
+      "metadatas": []
+    }
+  },
+  "large_query": {
+    "ok": true,
+    "result": {
+      "query": {
+        "ids": [
+          []
+        ],
+        "embeddings": null,
+        "documents": [
+          []
+        ],
+        "uris": null,
+        "included": [
+          "metadatas",
+          "documents",
+          "distances"
+        ],
+        "data": null,
+        "metadatas": [
+          []
+        ],
+        "distances": [
+          []
+        ]
+      },
+      "project_score": [],
+      "binary64_reference_score": 1.0
+    }
+  },
+  "large_large_query": {
+    "ok": true,
+    "result": {
+      "ids": [
+        []
+      ],
+      "embeddings": null,
+      "documents": [
+        []
+      ],
+      "uris": null,
+      "included": [
+        "metadatas",
+        "documents",
+        "distances"
+      ],
+      "data": null,
+      "metadatas": [
+        []
+      ],
+      "distances": [
+        []
+      ]
+    }
+  },
+  "large_delete_where": {
+    "ok": true,
+    "result": {
+      "deleted": 0
+    }
+  },
+  "large_after_delete": {
+    "ok": true,
+    "result": {
+      "count": 0,
+      "get": {
+        "ids": [],
+        "embeddings": null,
+        "documents": [],
+        "uris": null,
+        "included": [
+          "metadatas",
+          "documents"
+        ],
+        "data": null,
+        "metadatas": []
+      }
+    }
+  },
+  "large_readd": {
+    "ok": true,
+    "result": null
+  },
+  "large_new_key_query": {
+    "ok": true,
+    "result": {
+      "ids": [
+        "x"
+      ],
+      "embeddings": null,
+      "documents": [
+        "new"
+      ],
+      "uris": null,
+      "included": [
+        "metadatas",
+        "documents"
+      ],
+      "data": null,
+      "metadatas": [
+        {
+          "new_key": "now"
+        }
+      ]
+    }
+  },
+  "tiny_add": {
+    "ok": true,
+    "result": null
+  },
+  "tiny_get": {
+    "ok": true,
+    "result": {
+      "ids": [
+        "x"
+      ],
+      "embeddings": null,
+      "documents": [
+        "doc"
+      ],
+      "uris": null,
+      "included": [
+        "metadatas",
+        "documents"
+      ],
+      "data": null,
+      "metadatas": [
+        {
+          "n": 9.223372036854776e+18,
+          "entity_ids": "[\"x\"]",
+          "fresh": true
+        }
+      ]
+    }
+  },
+  "tiny_query": {
+    "ok": true,
+    "result": {
+      "query": {
+        "ids": [
+          [
+            "x"
+          ]
+        ],
+        "embeddings": null,
+        "documents": [
+          [
+            "doc"
+          ]
+        ],
+        "uris": null,
+        "included": [
+          "metadatas",
+          "documents",
+          "distances"
+        ],
+        "data": null,
+        "metadatas": [
+          [
+            {
+              "fresh": true,
+              "entity_ids": "[\"x\"]",
+              "n": 9.223372036854776e+18
+            }
+          ]
+        ],
+        "distances": [
+          [
+            1.0
+          ]
+        ]
+      },
+      "project_score": [
+        0.5
+      ],
+      "binary64_reference_score": 0.5
+    }
+  },
+  "tiny_large_query": {
+    "ok": true,
+    "result": {
+      "ids": [
+        [
+          "x"
+        ]
+      ],
+      "embeddings": null,
+      "documents": [
+        [
+          "doc"
+        ]
+      ],
+      "uris": null,
+      "included": [
+        "metadatas",
+        "documents",
+        "distances"
+      ],
+      "data": null,
+      "metadatas": [
+        [
+          {
+            "n": 9.223372036854776e+18,
+            "fresh": true,
+            "entity_ids": "[\"x\"]"
+          }
+        ]
+      ],
+      "distances": [
+        [
+          NaN
+        ]
+      ]
+    }
+  },
+  "tiny_delete_where": {
+    "ok": true,
+    "result": {
+      "deleted": 1
+    }
+  },
+  "tiny_after_delete": {
+    "ok": true,
+    "result": {
+      "count": 0,
+      "get": {
+        "ids": [],
+        "embeddings": null,
+        "documents": [],
+        "uris": null,
+        "included": [
+          "metadatas",
+          "documents"
+        ],
+        "data": null,
+        "metadatas": []
+      }
+    }
+  },
+  "tiny_readd": {
+    "ok": true,
+    "result": null
+  },
+  "tiny_new_key_query": {
+    "ok": true,
+    "result": {
+      "ids": [
+        "x"
+      ],
+      "embeddings": null,
+      "documents": [
+        "new"
+      ],
+      "uris": null,
+      "included": [
+        "metadatas",
+        "documents"
+      ],
+      "data": null,
+      "metadatas": [
+        {
+          "new_key": "now"
+        }
+      ]
+    }
+  }
+}

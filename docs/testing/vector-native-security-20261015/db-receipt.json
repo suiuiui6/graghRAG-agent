@@ -1,0 +1,8 @@
+{
+  "source": "https://github.com/RustSec/advisory-db.git",
+  "commit": "edb58f5974b83eb8302332821cb6d389777aa351",
+  "commit_time": "2026-10-14T22:18:32+02:00",
+  "archive_sha256": "0c3e3b16dc0bdf62a446b2b7808a567bfcaab9f52fad6336899c1306eecbef2c",
+  "archive_exit": 0,
+  "advisory_files": 1309
+}

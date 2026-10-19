@@ -1,0 +1,29 @@
+{
+  "command": [
+    "D:\\graghRAG-agent\\.tmp\\sqlite-r8-integration-env-20261017\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "pytest",
+    "D:\\graghRAG-agent\\.tmp\\sqlite-r8-combined-20261017\\backend\\tests",
+    "D:\\graghRAG-agent\\.tmp\\sqlite-r8-combined-20261017\\adapter-tests",
+    "-q",
+    "-p",
+    "no:cacheprovider"
+  ],
+  "cwd": "D:\\graghRAG-agent\\.tmp\\sqlite-r8-combined-20261017",
+  "exit_code": 2,
+  "inputs": [
+    {
+      "archive": "sqlite-r8-consumers-r2-20261017",
+      "files": 66,
+      "manifest_sha256": "63d4084f6ad92d6df1e80c3132e1ff9ac9ff385f9d392df20eb64d4ae8206f8d"
+    },
+    {
+      "archive": "sqlite-vector-r8-20261017",
+      "files": 37,
+      "manifest_sha256": "ff9d60f7e90477debc95f93781aaf8e239452069ccd328c75e704d78c321506a"
+    }
+  ]
+}

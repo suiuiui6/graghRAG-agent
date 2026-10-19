@@ -1,0 +1,517 @@
+{
+  "python": "3.12.8",
+  "chromadb": "1.5.9",
+  "executable": "D:\\graghRAG-agent\\.tmp\\backend-quality-venv-20261012\\Scripts\\python.exe",
+  "utc": "2026-10-16T11:13:51.412301+00:00",
+  "cases": {
+    "get_all": {
+      "ok": true,
+      "result": {
+        "ids": [
+          "z",
+          "a",
+          "m"
+        ],
+        "embeddings": null,
+        "documents": [
+          "Z",
+          "A",
+          "M"
+        ],
+        "uris": null,
+        "included": [
+          "metadatas",
+          "documents"
+        ],
+        "data": null,
+        "metadatas": [
+          {
+            "n": 1
+          },
+          {
+            "n": 2
+          },
+          {
+            "n": 3
+          }
+        ]
+      }
+    },
+    "get_requested_order": {
+      "ok": true,
+      "result": {
+        "ids": [
+          "z",
+          "a",
+          "m"
+        ],
+        "embeddings": null,
+        "documents": [
+          "Z",
+          "A",
+          "M"
+        ],
+        "uris": null,
+        "included": [
+          "metadatas",
+          "documents"
+        ],
+        "data": null,
+        "metadatas": [
+          {
+            "n": 1
+          },
+          {
+            "n": 2
+          },
+          {
+            "n": 3
+          }
+        ]
+      }
+    },
+    "get_repeated": {
+      "ok": false,
+      "type": "DuplicateIDError",
+      "message": "Expected IDs to be unique, found duplicates of: z in get."
+    },
+    "get_empty_ids": {
+      "ok": false,
+      "type": "ValueError",
+      "message": "Expected IDs to be a non-empty list, got 0 IDs in get."
+    },
+    "get_missing": {
+      "ok": true,
+      "result": {
+        "ids": [
+          "a"
+        ],
+        "embeddings": null,
+        "documents": [
+          "A"
+        ],
+        "uris": null,
+        "included": [
+          "metadatas",
+          "documents"
+        ],
+        "data": null,
+        "metadatas": [
+          {
+            "n": 2
+          }
+        ]
+      }
+    },
+    "empty_where": {
+      "ok": false,
+      "type": "ValueError",
+      "message": "Expected where to have exactly one operator, got {} in get."
+    },
+    "get_page": {
+      "ok": true,
+      "result": {
+        "ids": [
+          "a"
+        ],
+        "embeddings": null,
+        "documents": [
+          "A"
+        ],
+        "uris": null,
+        "included": [
+          "metadatas",
+          "documents"
+        ],
+        "data": null,
+        "metadatas": [
+          {
+            "n": 2
+          }
+        ]
+      }
+    },
+    "get_limit_zero": {
+      "ok": true,
+      "result": {
+        "ids": [],
+        "embeddings": null,
+        "documents": [],
+        "uris": null,
+        "included": [
+          "metadatas",
+          "documents"
+        ],
+        "data": null,
+        "metadatas": []
+      }
+    },
+    "get_negative_offset": {
+      "ok": false,
+      "type": "OverflowError",
+      "message": "can't convert negative int to unsigned"
+    },
+    "duplicate_batch": {
+      "ok": false,
+      "type": "DuplicateIDError",
+      "message": "Expected IDs to be unique, found duplicates of: b in add."
+    },
+    "duplicate_existing": {
+      "ok": true,
+      "result": null
+    },
+    "after_duplicate": {
+      "ok": true,
+      "result": {
+        "ids": [
+          "z"
+        ],
+        "embeddings": null,
+        "documents": [
+          "Z"
+        ],
+        "uris": null,
+        "included": [
+          "metadatas",
+          "documents"
+        ],
+        "data": null,
+        "metadatas": [
+          {
+            "n": 1
+          }
+        ]
+      }
+    },
+    "dimension_mismatch": {
+      "ok": false,
+      "type": "InvalidArgumentError",
+      "message": "Collection expecting embedding with dimension of 2, got 3"
+    },
+    "topk_-1": {
+      "ok": false,
+      "type": "TypeError",
+      "message": "Number of requested results -1, cannot be negative, or zero. in query."
+    },
+    "topk_0": {
+      "ok": false,
+      "type": "TypeError",
+      "message": "Number of requested results 0, cannot be negative, or zero. in query."
+    },
+    "topk_1": {
+      "ok": true,
+      "result": {
+        "ids": [
+          [
+            "z"
+          ]
+        ],
+        "embeddings": null,
+        "documents": [
+          [
+            "Z"
+          ]
+        ],
+        "uris": null,
+        "included": [
+          "metadatas",
+          "documents",
+          "distances"
+        ],
+        "data": null,
+        "metadatas": [
+          [
+            {
+              "n": 1
+            }
+          ]
+        ],
+        "distances": [
+          [
+            0.0
+          ]
+        ]
+      }
+    },
+    "topk_3": {
+      "ok": true,
+      "result": {
+        "ids": [
+          [
+            "z",
+            "a",
+            "m"
+          ]
+        ],
+        "embeddings": null,
+        "documents": [
+          [
+            "Z",
+            "A",
+            "M"
+          ]
+        ],
+        "uris": null,
+        "included": [
+          "metadatas",
+          "documents",
+          "distances"
+        ],
+        "data": null,
+        "metadatas": [
+          [
+            {
+              "n": 1
+            },
+            {
+              "n": 2
+            },
+            {
+              "n": 3
+            }
+          ]
+        ],
+        "distances": [
+          [
+            0.0,
+            1.0,
+            2.0
+          ]
+        ]
+      }
+    },
+    "topk_4": {
+      "ok": true,
+      "result": {
+        "ids": [
+          [
+            "z",
+            "a",
+            "m"
+          ]
+        ],
+        "embeddings": null,
+        "documents": [
+          [
+            "Z",
+            "A",
+            "M"
+          ]
+        ],
+        "uris": null,
+        "included": [
+          "metadatas",
+          "documents",
+          "distances"
+        ],
+        "data": null,
+        "metadatas": [
+          [
+            {
+              "n": 1
+            },
+            {
+              "n": 2
+            },
+            {
+              "n": 3
+            }
+          ]
+        ],
+        "distances": [
+          [
+            0.0,
+            1.0,
+            2.0
+          ]
+        ]
+      }
+    },
+    "topk_1001": {
+      "ok": true,
+      "result": {
+        "ids": [
+          [
+            "z",
+            "a",
+            "m"
+          ]
+        ],
+        "embeddings": null,
+        "documents": [
+          [
+            "Z",
+            "A",
+            "M"
+          ]
+        ],
+        "uris": null,
+        "included": [
+          "metadatas",
+          "documents",
+          "distances"
+        ],
+        "data": null,
+        "metadatas": [
+          [
+            {
+              "n": 1
+            },
+            {
+              "n": 2
+            },
+            {
+              "n": 3
+            }
+          ]
+        ],
+        "distances": [
+          [
+            0.0,
+            1.0,
+            2.0
+          ]
+        ]
+      }
+    },
+    "zero_add": {
+      "ok": true,
+      "result": null
+    },
+    "zero_query": {
+      "ok": true,
+      "result": {
+        "ids": [
+          [
+            "zero",
+            "unit"
+          ]
+        ],
+        "embeddings": null,
+        "documents": [
+          [
+            "zero",
+            "unit"
+          ]
+        ],
+        "uris": null,
+        "included": [
+          "metadatas",
+          "documents",
+          "distances"
+        ],
+        "data": null,
+        "metadatas": [
+          [
+            null,
+            null
+          ]
+        ],
+        "distances": [
+          [
+            1.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    "unit_query_with_zero": {
+      "ok": true,
+      "result": {
+        "ids": [
+          [
+            "unit",
+            "zero"
+          ]
+        ],
+        "embeddings": null,
+        "documents": [
+          [
+            "unit",
+            "zero"
+          ]
+        ],
+        "uris": null,
+        "included": [
+          "metadatas",
+          "documents",
+          "distances"
+        ],
+        "data": null,
+        "metadatas": [
+          [
+            null,
+            null
+          ]
+        ],
+        "distances": [
+          [
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    "empty_query": {
+      "ok": true,
+      "result": {
+        "ids": [
+          []
+        ],
+        "embeddings": null,
+        "documents": [
+          []
+        ],
+        "uris": null,
+        "included": [
+          "metadatas",
+          "documents",
+          "distances"
+        ],
+        "data": null,
+        "metadatas": [
+          []
+        ],
+        "distances": [
+          []
+        ]
+      }
+    },
+    "first_add_ignores_declared_dimension": {
+      "ok": true,
+      "result": null
+    },
+    "query_wrong_dimension": {
+      "ok": false,
+      "type": "InvalidArgumentError",
+      "message": "Collection expecting embedding with dimension of 2, got 3"
+    },
+    "actual_dim_0": {
+      "ok": false,
+      "type": "IndexError",
+      "message": "list index out of range in add."
+    },
+    "actual_dim_1": {
+      "ok": true,
+      "result": null
+    },
+    "actual_dim_4097": {
+      "ok": true,
+      "result": null
+    },
+    "max_batch_size": {
+      "ok": true,
+      "result": 5461
+    },
+    "more_than_1000_add": {
+      "ok": true,
+      "result": null
+    },
+    "count_after_large_batch": {
+      "ok": true,
+      "result": 1004
+    }
+  },
+  "source_sha256": "97c640679f800eb58328a92c079abcdf26ce6b825e43ff14e05378fde435b1ca",
+  "input_policy": "fixed synthetic literals and range(1001), no production data or provider"
+}

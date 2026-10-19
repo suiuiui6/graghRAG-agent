@@ -1,0 +1,26 @@
+{
+  "utc": "2026-10-15T05:55:59.431823+00:00",
+  "sources": [
+    {
+      "file": "numpy-pypi.json",
+      "url": "https://pypi.org/pypi/numpy/2.5.4/json",
+      "status": 200,
+      "bytes": 63149,
+      "sha256": "a42b40d53fac5388e974f21aa1f01d3b47440ad8181fc827b08023bf8ca3cc96"
+    },
+    {
+      "file": "openblas-build-pypi.json",
+      "url": "https://pypi.org/pypi/scipy-openblas64/0.3.34.106.0/json",
+      "status": 200,
+      "bytes": 68986,
+      "sha256": "046a2de2d48e9ec43d59bb4137855431903b83dbc6ca2d2682046dcb0d84f9ac"
+    },
+    {
+      "file": "openblas-security.txt",
+      "url": "https://raw.githubusercontent.com/OpenMathLib/OpenBLAS/develop/SECURITY.md",
+      "status": 200,
+      "bytes": 959,
+      "sha256": "43199b22a30942e0917aee22a17ad5e610099c191f463a671d1e4dd4e7a26a53"
+    }
+  ]
+}

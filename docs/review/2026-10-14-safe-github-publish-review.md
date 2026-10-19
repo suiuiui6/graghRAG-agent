@@ -68,3 +68,15 @@ Base64全部逐项核：646个integrity字段有算法前缀及正确解码长�
 ```
 
 最终各命令exit0。verify_tree首次因发布新增.gitattributes源路径不存在停止，已明确单列该规则后重新完整核验，未忽略其目标哈希。尚未独立核最终commit或远端推送状态；无提交/推送由reviewer执行。任务负责人归档文件证据并更新memory。
+
+## 最终提交定点复核：允许推送此诊断分支
+
+提交后独立只读复核已完成，上文两项“待核”关闭。最终提交 `0ae36f25c63cb9f483899992534af41bebf32089`，tree `ad9f5f92871b962440af9aea87b97e311e489429`：parents空、可达commit数1；旧本地82提交交集0；2个已知历史环境文件credential blob均不可达。仅读取历史文件名/blob身份，没有读取旧凭据内容。
+
+实际从该commit的tree列出1954普通blob及2个gitlink，对1954个已扫描当前blob用git cat-file --batch重新计算内容SHA256，与最终source-manifest逐项一致，漂移0。gitlink完全等于既有远端指针，工作区clean。新增两文档的增量扫描finding0、plugin配置与全树scan一致；产品171/53/22输入范围未变。
+
+命令 `.tmp/backend-quality-venv-20261012/Scripts/python.exe .tmp/safe-github-publish-review-20261014/verify_commit.py` 正规require_escalated只读执行exit0；证据 `commit-verification.json` 在reviewer独占目录。首次普通sandbox读取native worktree遇Permission denied，正规提升后完成，没有绕过或修改权限。
+
+**结论：可按用户授权仅推送 `codex/safe-snapshot-20261014` 的上述独立诊断快照提交。** 不推送旧master祖先，不将gitlink解释为子仓库内容审计，不宣称4个Chroma公告修复或release/deploy通过。reviewer没有执行push，远端发布结果待root核验。
+
+本定点复核追加仅写源工作区审查记录；已提交target文件保持原字节和上述tree。不能把该root侧追加文字假称已经包含在0ae36f2提交中。若root另改提交内容或amend，则新commit/tree需重新绑定复核。

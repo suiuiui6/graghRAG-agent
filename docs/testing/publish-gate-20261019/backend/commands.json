@@ -1,0 +1,38 @@
+[
+  {
+    "name": "tests",
+    "command": [
+      "D:\\graghRAG-agent\\.tmp\\backend-quality-venv-20261012\\Scripts\\python.exe",
+      "-m",
+      "coverage",
+      "run",
+      "--rcfile=docs/testing/coverage-backend-2026-10-12.ini",
+      "--data-file=D:\\graghRAG-agent\\.tmp\\publish-final-full-20261019\\backend.coverage",
+      "-m",
+      "pytest",
+      "backend/tests",
+      "backend/research/test_deepseek_scope_pilot.py",
+      "-q",
+      "--tb=short",
+      "-p",
+      "no:cacheprovider",
+      "--basetemp",
+      "D:\\graghRAG-agent\\.tmp\\publish-final-full-20261019\\test-temp"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "export",
+    "command": [
+      "D:\\graghRAG-agent\\.tmp\\backend-quality-venv-20261012\\Scripts\\python.exe",
+      "-m",
+      "coverage",
+      "json",
+      "--rcfile=docs/testing/coverage-backend-2026-10-12.ini",
+      "--data-file=D:\\graghRAG-agent\\.tmp\\publish-final-full-20261019\\backend.coverage",
+      "-o",
+      "D:\\graghRAG-agent\\.tmp\\publish-final-full-20261019\\coverage.json"
+    ],
+    "exit": 0
+  }
+]
